@@ -1,0 +1,18 @@
+<div class="post-list-container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr *ngFor="let post of postList">
+                            <td>{{post.title}}</td>
+                            <td>{{post.postTime}}</td>
+                            <td>{{post.userName}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination [totalItems]="bigTotalItems" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" class="pagination-sm" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)"></pagination>
+            </div>
+        </div>
+    </div>
+</div>

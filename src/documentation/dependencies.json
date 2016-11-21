@@ -1,0 +1,734 @@
+[
+  {
+    "name": "AppModule",
+    "file": "src/app/app.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "AppComponent",
+        "file": "src/app/app.component.ts",
+        "selector": "app-root",
+        "providers": [],
+        "templateUrl": [
+          "app.component.html"
+        ],
+        "styleUrls": [
+          "app.component.scss"
+        ],
+        "__raw": [
+          {
+            "kind": 253,
+            "pos": 56,
+            "end": 79,
+            "flags": 0,
+            "name": {
+              "kind": 69,
+              "pos": 56,
+              "end": 67,
+              "flags": 0,
+              "text": "selector"
+            },
+            "initializer": {
+              "kind": 9,
+              "pos": 68,
+              "end": 79,
+              "flags": 0,
+              "text": "app-root"
+            }
+          },
+          {
+            "kind": 253,
+            "pos": 80,
+            "end": 118,
+            "flags": 0,
+            "name": {
+              "kind": 69,
+              "pos": 80,
+              "end": 94,
+              "flags": 0,
+              "text": "templateUrl"
+            },
+            "initializer": {
+              "kind": 9,
+              "pos": 95,
+              "end": 118,
+              "flags": 0,
+              "text": "./app.component.html"
+            }
+          },
+          {
+            "kind": 253,
+            "pos": 119,
+            "end": 157,
+            "flags": 0,
+            "name": {
+              "kind": 69,
+              "pos": 119,
+              "end": 131,
+              "flags": 0,
+              "text": "styleUrls"
+            },
+            "initializer": {
+              "kind": 170,
+              "pos": 132,
+              "end": 157,
+              "flags": 0,
+              "elements": [
+                {
+                  "kind": 9,
+                  "pos": 134,
+                  "end": 156,
+                  "flags": 0,
+                  "text": "./app.component.scss"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "BrowserModule"
+      },
+      {
+        "name": "RouterModule"
+      },
+      {
+        "name": "appRoutes"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [
+      {
+        "name": "AppComponent"
+      }
+    ],
+    "__raw": [
+      {
+        "kind": 253,
+        "pos": 255,
+        "end": 297,
+        "flags": 0,
+        "name": {
+          "kind": 69,
+          "pos": 255,
+          "end": 271,
+          "flags": 0,
+          "text": "declarations"
+        },
+        "initializer": {
+          "kind": 170,
+          "pos": 272,
+          "end": 297,
+          "flags": 0,
+          "multiLine": true,
+          "elements": [
+            {
+              "kind": 69,
+              "pos": 274,
+              "end": 292,
+              "flags": 0,
+              "text": "AppComponent"
+            }
+          ]
+        }
+      },
+      {
+        "kind": 253,
+        "pos": 298,
+        "end": 371,
+        "flags": 0,
+        "name": {
+          "kind": 69,
+          "pos": 298,
+          "end": 309,
+          "flags": 0,
+          "text": "imports"
+        },
+        "initializer": {
+          "kind": 170,
+          "pos": 310,
+          "end": 371,
+          "flags": 0,
+          "multiLine": true,
+          "elements": [
+            {
+              "kind": 69,
+              "pos": 312,
+              "end": 331,
+              "flags": 0,
+              "text": "BrowserModule"
+            },
+            {
+              "kind": 69,
+              "pos": 332,
+              "end": 350,
+              "flags": 0,
+              "text": "RouterModule"
+            },
+            {
+              "kind": 69,
+              "pos": 351,
+              "end": 366,
+              "flags": 0,
+              "text": "appRoutes"
+            }
+          ]
+        }
+      },
+      {
+        "kind": 253,
+        "pos": 372,
+        "end": 389,
+        "flags": 0,
+        "name": {
+          "kind": 69,
+          "pos": 372,
+          "end": 385,
+          "flags": 0,
+          "text": "providers"
+        },
+        "initializer": {
+          "kind": 170,
+          "pos": 386,
+          "end": 389,
+          "flags": 0,
+          "elements": []
+        }
+      },
+      {
+        "kind": 253,
+        "pos": 390,
+        "end": 419,
+        "flags": 0,
+        "name": {
+          "kind": 69,
+          "pos": 390,
+          "end": 403,
+          "flags": 0,
+          "text": "bootstrap"
+        },
+        "initializer": {
+          "kind": 170,
+          "pos": 404,
+          "end": 419,
+          "flags": 0,
+          "elements": [
+            {
+              "kind": 69,
+              "pos": 406,
+              "end": 418,
+              "flags": 0,
+              "text": "AppComponent"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "HomeModule",
+    "file": "app/home/home.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "HomeComponent",
+        "file": "app/home/home.component.ts",
+        "selector": "app-home",
+        "providers": [],
+        "templateUrl": [
+          "home.component.html"
+        ],
+        "styleUrls": [
+          "home.component.scss"
+        ],
+        "__raw": [
+          {
+            "kind": 253,
+            "pos": 66,
+            "end": 90,
+            "flags": 0,
+            "name": {
+              "kind": 69,
+              "pos": 66,
+              "end": 78,
+              "flags": 0,
+              "text": "selector"
+            },
+            "initializer": {
+              "kind": 9,
+              "pos": 79,
+              "end": 90,
+              "flags": 0,
+              "text": "app-home"
+            }
+          },
+          {
+            "kind": 253,
+            "pos": 91,
+            "end": 131,
+            "flags": 0,
+            "name": {
+              "kind": 69,
+              "pos": 91,
+              "end": 106,
+              "flags": 0,
+              "text": "templateUrl"
+            },
+            "initializer": {
+              "kind": 9,
+              "pos": 107,
+              "end": 131,
+              "flags": 0,
+              "text": "./home.component.html"
+            }
+          },
+          {
+            "kind": 253,
+            "pos": 132,
+            "end": 172,
+            "flags": 0,
+            "name": {
+              "kind": 69,
+              "pos": 132,
+              "end": 145,
+              "flags": 0,
+              "text": "styleUrls"
+            },
+            "initializer": {
+              "kind": 170,
+              "pos": 146,
+              "end": 172,
+              "flags": 0,
+              "elements": [
+                {
+                  "kind": 9,
+                  "pos": 148,
+                  "end": 171,
+                  "flags": 0,
+                  "text": "./home.component.scss"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "homeRoutes"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "kind": 253,
+        "pos": 151,
+        "end": 192,
+        "flags": 0,
+        "name": {
+          "kind": 69,
+          "pos": 151,
+          "end": 166,
+          "flags": 0,
+          "text": "declarations"
+        },
+        "initializer": {
+          "kind": 170,
+          "pos": 167,
+          "end": 192,
+          "flags": 0,
+          "multiLine": true,
+          "elements": [
+            {
+              "kind": 69,
+              "pos": 169,
+              "end": 186,
+              "flags": 0,
+              "text": "HomeComponent"
+            }
+          ]
+        }
+      },
+      {
+        "kind": 253,
+        "pos": 193,
+        "end": 230,
+        "flags": 0,
+        "name": {
+          "kind": 69,
+          "pos": 193,
+          "end": 205,
+          "flags": 0,
+          "text": "imports"
+        },
+        "initializer": {
+          "kind": 170,
+          "pos": 206,
+          "end": 230,
+          "flags": 0,
+          "multiLine": true,
+          "elements": [
+            {
+              "kind": 69,
+              "pos": 208,
+              "end": 224,
+              "flags": 0,
+              "text": "homeRoutes"
+            }
+          ]
+        }
+      },
+      {
+        "kind": 253,
+        "pos": 231,
+        "end": 249,
+        "flags": 0,
+        "name": {
+          "kind": 69,
+          "pos": 231,
+          "end": 245,
+          "flags": 0,
+          "text": "providers"
+        },
+        "initializer": {
+          "kind": 170,
+          "pos": 246,
+          "end": 249,
+          "flags": 0,
+          "elements": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "UserModule",
+    "file": "app/user/user.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "UserComponent",
+        "file": "app/user/user.component.ts",
+        "selector": "app-user",
+        "providers": [],
+        "templateUrl": [
+          "user.component.html"
+        ],
+        "styleUrls": [
+          "user.component.scss"
+        ],
+        "__raw": [
+          {
+            "kind": 253,
+            "pos": 191,
+            "end": 214,
+            "flags": 0,
+            "name": {
+              "kind": 69,
+              "pos": 191,
+              "end": 202,
+              "flags": 0,
+              "text": "selector"
+            },
+            "initializer": {
+              "kind": 9,
+              "pos": 203,
+              "end": 214,
+              "flags": 0,
+              "text": "app-user"
+            }
+          },
+          {
+            "kind": 253,
+            "pos": 215,
+            "end": 254,
+            "flags": 0,
+            "name": {
+              "kind": 69,
+              "pos": 215,
+              "end": 229,
+              "flags": 0,
+              "text": "templateUrl"
+            },
+            "initializer": {
+              "kind": 9,
+              "pos": 230,
+              "end": 254,
+              "flags": 0,
+              "text": "./user.component.html"
+            }
+          },
+          {
+            "kind": 253,
+            "pos": 255,
+            "end": 294,
+            "flags": 0,
+            "name": {
+              "kind": 69,
+              "pos": 255,
+              "end": 267,
+              "flags": 0,
+              "text": "styleUrls"
+            },
+            "initializer": {
+              "kind": 170,
+              "pos": 268,
+              "end": 294,
+              "flags": 0,
+              "elements": [
+                {
+                  "kind": 9,
+                  "pos": 270,
+                  "end": 293,
+                  "flags": 0,
+                  "text": "./user.component.scss"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "AddUserComponent",
+        "file": "user/add-user/add-user.component.ts",
+        "selector": "app-add-user",
+        "providers": [],
+        "templateUrl": [
+          "add-user.component.html"
+        ],
+        "styleUrls": [
+          "add-user.component.scss"
+        ],
+        "__raw": [
+          {
+            "kind": 253,
+            "pos": 122,
+            "end": 149,
+            "flags": 0,
+            "name": {
+              "kind": 69,
+              "pos": 122,
+              "end": 133,
+              "flags": 0,
+              "text": "selector"
+            },
+            "initializer": {
+              "kind": 9,
+              "pos": 134,
+              "end": 149,
+              "flags": 0,
+              "text": "app-add-user"
+            }
+          },
+          {
+            "kind": 253,
+            "pos": 150,
+            "end": 193,
+            "flags": 0,
+            "name": {
+              "kind": 69,
+              "pos": 150,
+              "end": 164,
+              "flags": 0,
+              "text": "templateUrl"
+            },
+            "initializer": {
+              "kind": 9,
+              "pos": 165,
+              "end": 193,
+              "flags": 0,
+              "text": "./add-user.component.html"
+            }
+          },
+          {
+            "kind": 253,
+            "pos": 194,
+            "end": 237,
+            "flags": 0,
+            "name": {
+              "kind": 69,
+              "pos": 194,
+              "end": 206,
+              "flags": 0,
+              "text": "styleUrls"
+            },
+            "initializer": {
+              "kind": 170,
+              "pos": 207,
+              "end": 237,
+              "flags": 0,
+              "elements": [
+                {
+                  "kind": 9,
+                  "pos": 209,
+                  "end": 236,
+                  "flags": 0,
+                  "text": "./add-user.component.scss"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "PaginationModule"
+      },
+      {
+        "name": "AlertModule"
+      },
+      {
+        "name": "userRoutes"
+      }
+    ],
+    "exports": [
+      {
+        "name": "UserComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "kind": 253,
+        "pos": 411,
+        "end": 477,
+        "flags": 0,
+        "name": {
+          "kind": 69,
+          "pos": 411,
+          "end": 427,
+          "flags": 0,
+          "text": "declarations"
+        },
+        "initializer": {
+          "kind": 170,
+          "pos": 428,
+          "end": 477,
+          "flags": 0,
+          "multiLine": true,
+          "elements": [
+            {
+              "kind": 69,
+              "pos": 430,
+              "end": 449,
+              "flags": 0,
+              "text": "UserComponent"
+            },
+            {
+              "kind": 69,
+              "pos": 450,
+              "end": 472,
+              "flags": 0,
+              "text": "AddUserComponent"
+            }
+          ]
+        }
+      },
+      {
+        "kind": 253,
+        "pos": 478,
+        "end": 570,
+        "flags": 0,
+        "name": {
+          "kind": 69,
+          "pos": 478,
+          "end": 489,
+          "flags": 0,
+          "text": "imports"
+        },
+        "initializer": {
+          "kind": 170,
+          "pos": 490,
+          "end": 570,
+          "flags": 0,
+          "multiLine": true,
+          "elements": [
+            {
+              "kind": 69,
+              "pos": 492,
+              "end": 507,
+              "flags": 0,
+              "text": "CommonModule"
+            },
+            {
+              "kind": 69,
+              "pos": 508,
+              "end": 530,
+              "flags": 0,
+              "text": "PaginationModule"
+            },
+            {
+              "kind": 69,
+              "pos": 531,
+              "end": 548,
+              "flags": 0,
+              "text": "AlertModule"
+            },
+            {
+              "kind": 69,
+              "pos": 549,
+              "end": 565,
+              "flags": 0,
+              "text": "userRoutes"
+            }
+          ]
+        }
+      },
+      {
+        "kind": 253,
+        "pos": 571,
+        "end": 607,
+        "flags": 0,
+        "name": {
+          "kind": 69,
+          "pos": 571,
+          "end": 582,
+          "flags": 0,
+          "text": "exports"
+        },
+        "initializer": {
+          "kind": 170,
+          "pos": 583,
+          "end": 607,
+          "flags": 0,
+          "multiLine": true,
+          "elements": [
+            {
+              "kind": 69,
+              "pos": 584,
+              "end": 602,
+              "flags": 0,
+              "text": "UserComponent"
+            }
+          ]
+        }
+      },
+      {
+        "kind": 253,
+        "pos": 608,
+        "end": 625,
+        "flags": 0,
+        "name": {
+          "kind": 69,
+          "pos": 608,
+          "end": 621,
+          "flags": 0,
+          "text": "providers"
+        },
+        "initializer": {
+          "kind": 170,
+          "pos": 622,
+          "end": 625,
+          "flags": 0,
+          "elements": []
+        }
+      }
+    ]
+  }
+]

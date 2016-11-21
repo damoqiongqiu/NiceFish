@@ -1,0 +1,15 @@
+<div class="user-type-container">
+    <accordion [closeOthers]="oneAtATime">
+        <accordion-group *ngFor="let group of groups" [isOpen]="group.isOpen">
+        	<div accordion-heading>
+        		<i class="fa fa-users" aria-hidden="true"></i>
+        		{{group.title}}
+		    </div>
+        	<p *ngFor="let team of group.teams">
+        		&nbsp;&nbsp;&nbsp;&nbsp;
+	        	<i class="fa fa-user" aria-hidden="true"></i>
+	        	<a [routerLink]="['/user/team',team.teamId]">{{team.teamName}}</a>
+        	</p>
+        </accordion-group>
+    </accordion>
+</div>

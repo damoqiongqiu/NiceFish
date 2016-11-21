@@ -1,0 +1,28 @@
+<div class="navbar navbar-fixed-top main-nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button #button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse" (click)="toggle(button)">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#home.html" class="navbar-brand">
+                Angular2中文社区
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-responsive-collapse" aria-expanded="false">
+            <ul class="nav navbar-nav">
+                <li class="dropdown active">
+                    <a routerLink="home">动态</a>
+                </li>
+                <li class="dropdown">
+                    <a href="http://www.angular.cn/" data-toggle="dropdown" class="dropdown-toggle" target="_blank">官方文档</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="main-container">
+    <router-outlet></router-outlet>
+</div>
