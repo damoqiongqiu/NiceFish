@@ -9,7 +9,7 @@ export class SitestatComponent implements OnInit {
 	public currentTime: Date = new Date();
 
 	constructor() {
-		var me=this;
+		let me=this;
 		window.setInterval(function(){
 			me.currentTime=new Date();
 		},1000);

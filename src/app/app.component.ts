@@ -21,4 +21,8 @@ export class AppComponent {
 	toggle(button){
 		console.log(button);
 	}
+
+	private doLogout():void{
+		this.userLoginService.logout();
+	}
 }

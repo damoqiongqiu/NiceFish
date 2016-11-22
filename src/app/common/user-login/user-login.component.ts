@@ -1,4 +1,5 @@
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserLoginService } from './user-login.service';
 import { Observable } from 'rxjs/Observable';
 
@@ -9,7 +10,11 @@ import { Observable } from 'rxjs/Observable';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(private userLoginService: UserLoginService) {
+  constructor(
+      private router: Router,
+      private route: ActivatedRoute,
+      private userLoginService: UserLoginService
+  ) {
     console.log(userLoginService);
   }
 
@@ -19,6 +24,10 @@ export class UserLoginComponent implements OnInit {
   public doLogin():void{
     console.log("开始登录...");
     this.userLoginService.login();
+    let routerInstance=this.router;
+    setTimeout(function(){
+      routerInstance.navigateByUrl("home");
+    },1000);
   }
 
   public doLogout():void{
