@@ -21,12 +21,20 @@
                     <a href="http://www.angular.cn/" data-toggle="dropdown" class="dropdown-toggle" target="_blank">官方文档</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul *ngIf="!userLoginService.hasLogin" class="nav navbar-nav navbar-right">
                 <li>
                     <a routerLink="login">登录</a>
                 </li>
                 <li>
                     <a routerLink="register">注册</a>
+                </li>
+            </ul>
+            <ul *ngIf="userLoginService.hasLogin" class="nav navbar-nav navbar-right">
+                <li>
+                    <a routerLink="profile">欢迎你：大漠穷秋</a>
+                </li>
+                <li>
+                    <a routerLink="logout">退出</a>
                 </li>
             </ul>
         </div>

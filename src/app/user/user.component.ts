@@ -27,7 +27,7 @@ import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap';
   ]
 })
 export class UserComponent implements OnInit {
-	constructor() {
+	  constructor() {
     }
     ngOnInit() {
   	}
