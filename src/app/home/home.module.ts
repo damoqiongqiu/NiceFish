@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 import { HomeComponent } from './home.component';
 import { PostlistComponent } from '../common/postlist/postlist.component';
-import { PostdetailComponent } from '../common/postdetail/postdetail.component';
+import { PostDetailMainComponent } from '../common/post-detail-main/post-detail-main.component';
+import { PostDetailComponent } from '../common/post-detail/post-detail.component';
+import { AddCommentComponent } from '../common/add-comment/add-comment.component';
 import { SitestatComponent } from '../sitestat/sitestat.component';
 import homeRoutes from './home.routes';
 
@@ -11,7 +14,9 @@ import homeRoutes from './home.routes';
 	declarations: [
 		HomeComponent,
 		PostlistComponent,
-		PostdetailComponent,
+		PostDetailMainComponent,
+		PostDetailComponent,
+		AddCommentComponent,
 		SitestatComponent
   	],
   	imports: [

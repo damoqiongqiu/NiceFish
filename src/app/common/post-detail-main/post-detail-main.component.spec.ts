@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { PostdetailComponent } from './postdetail.component';
+import { PostDetailMainComponent } from './post-detail-main.component';
 
-describe('Component: Postdetail', () => {
+describe('Component: PostDetailMain', () => {
   it('should create an instance', () => {
-    let component = new PostdetailComponent();
+    let component = new PostDetailMainComponent();
     expect(component).toBeTruthy();
   });
 });

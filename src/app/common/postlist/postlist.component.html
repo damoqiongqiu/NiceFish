@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="文章标题/用户名">
+                    <input class="form-control" type="text" placeholder="搜索">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button">搜索</button>
                     </span>
@@ -15,7 +15,7 @@
         <div class="col-sm-12">
             <div class="post-item-container" *ngFor="let post of postList">
                 <h4>
-                    <a [routerLink]="['/post/postdetail',post.postId]">{{post.title}}</a>
+                    <a [routerLink]="['/postdetail',post.postId]">{{post.title}}</a>
                 </h4>
                 <p>
                     {{post.userName}}
