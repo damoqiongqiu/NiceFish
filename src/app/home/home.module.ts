@@ -7,6 +7,7 @@ import { PostlistComponent } from '../common/postlist/postlist.component';
 import { PostDetailMainComponent } from '../common/post-detail-main/post-detail-main.component';
 import { PostDetailComponent } from '../common/post-detail/post-detail.component';
 import { AddCommentComponent } from '../common/add-comment/add-comment.component';
+import { UserInfoComponent } from '../common/user-info/user-info.component';
 import { SitestatComponent } from '../sitestat/sitestat.component';
 import homeRoutes from './home.routes';
 
@@ -17,6 +18,7 @@ import homeRoutes from './home.routes';
 		PostDetailMainComponent,
 		PostDetailComponent,
 		AddCommentComponent,
+		UserInfoComponent,
 		SitestatComponent
   	],
   	imports: [
