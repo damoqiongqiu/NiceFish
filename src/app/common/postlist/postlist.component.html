@@ -1,18 +1,30 @@
 <div class="post-list-container">
+    <form class="form-vertical" role="form">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="文章标题/用户名">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">搜索</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
     <div class="row">
         <div class="col-sm-12">
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr *ngFor="let post of postList">
-                            <td>{{post.title}}</td>
-                            <td>{{post.postTime}}</td>
-                            <td>{{post.userName}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <pagination [totalItems]="bigTotalItems" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" class="pagination-sm" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)"></pagination>
+            <div class="post-item-container" *ngFor="let post of postList">
+                <h4>
+                    <a [routerLink]="['/post/postdetail',post.postId]">{{post.title}}</a>
+                </h4>
+                <p>
+                    {{post.userName}}
+                    &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}} 
+                    &nbsp;&nbsp;&nbsp;&nbsp;点击：{{post.readTimes}} 
+                    &nbsp;&nbsp;&nbsp;&nbsp;评论：{{post.commentTimes}}
+                </p>
             </div>
+            <pagination [totalItems]="bigTotalItems" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" class="pagination-sm" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)"></pagination>
         </div>
     </div>
 </div>

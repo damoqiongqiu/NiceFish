@@ -14,17 +14,16 @@ export class PostlistComponent implements OnInit {
 	public bigCurrentPage:number = 5;
 
 	private postList:Array<any>=[
-		{title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋'},
-		{title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋'},
-		{title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋'},
-		{title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋'},
-		{title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋'},
-		{title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋'},
-		{title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋'},
-		{title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋'},
-		{title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋'},
-		{title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋'},
-		{title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋'}
+		{postId:"1",title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋',userId:'1',readTimes:'10000',commentTimes:'10000'},
+		{postId:"2",title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋',userId:'1',readTimes:'10000',commentTimes:'10000'},
+		{postId:"3",title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋',userId:'1',readTimes:'10000',commentTimes:'10000'},
+		{postId:"4",title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋',userId:'1',readTimes:'10000',commentTimes:'10000'},
+		{postId:"5",title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋',userId:'1',readTimes:'10000',commentTimes:'10000'},
+		{postId:"6",title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋',userId:'1',readTimes:'10000',commentTimes:'10000'},
+		{postId:"7",title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋',userId:'1',readTimes:'10000',commentTimes:'10000'},
+		{postId:"8",title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋',userId:'1',readTimes:'10000',commentTimes:'10000'},
+		{postId:"9",title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋',userId:'1',readTimes:'10000',commentTimes:'10000'},
+		{postId:"10",title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋',userId:'1',readTimes:'10000',commentTimes:'10000'}
 	];
 
 	constructor() { }
