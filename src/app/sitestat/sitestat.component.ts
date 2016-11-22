@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sitestat.component.scss']
 })
 export class SitestatComponent implements OnInit {
+	public currentTime: Date = new Date();
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+	constructor() {
+		var me=this;
+		window.setInterval(function(){
+			me.currentTime=new Date();
+		},1000);
+	}
+	
+	ngOnInit() {
+		
+	}
 }

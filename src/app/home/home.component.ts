@@ -25,9 +25,11 @@ import { Component, OnInit, trigger, state, style, transition, animate,keyframes
   ]
 })
 export class HomeComponent implements OnInit {
-	date: Date = new Date();
+    private hasLogin:boolean=false;
 
-  	constructor() { }
+  	constructor() { 
+
+    }
 
   	ngOnInit() {
   		
