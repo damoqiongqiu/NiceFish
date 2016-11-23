@@ -8,6 +8,7 @@ import { UserLoginComponent } from './common/user-login/user-login.component';
 import { UserLoginService } from './common/user-login/user-login.service';
 import { UserRegisterComponent} from './common/user-register/user-register.component';
 import { UserProfileComponent} from './common/user-profile/user-profile.component';
+import { UserMainComponent} from './common/user-main/user-main.component';
 
 import appRoutes from './app.routes';
 
@@ -16,7 +17,8 @@ import appRoutes from './app.routes';
     AppComponent,
     UserLoginComponent,
     UserRegisterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    UserMainComponent
   ],
   imports: [
     BrowserModule,
