@@ -26,7 +26,7 @@ export class UserLoginComponent implements OnInit {
     this.userLoginService.login();
     let routerInstance=this.router;
     setTimeout(function(){
-      routerInstance.navigateByUrl("home");
+      routerInstance.navigateByUrl("usermain");
     },1000);
   }
 
