@@ -1,5 +1,5 @@
 import { Component,HostListener,ElementRef,Renderer} from '@angular/core';
-import { UserLoginService } from './common/user-login/user-login.service';
+import { UserLoginService } from './user/user-login/user-login.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
