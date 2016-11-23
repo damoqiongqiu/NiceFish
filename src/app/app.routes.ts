@@ -1,6 +1,7 @@
 import { RouterModule } from '@angular/router';
 import { UserLoginComponent} from './common/user-login/user-login.component';
 import { UserRegisterComponent} from './common/user-register/user-register.component';
+import { UserProfileComponent} from './common/user-profile/user-profile.component';
 
 const appRoutes=[
 	{
@@ -17,6 +18,10 @@ const appRoutes=[
 	},
 	{
 		path:'register',
+		component:UserRegisterComponent
+	},
+	{
+		path:'profile',
 		component:UserRegisterComponent
 	},
 	{
