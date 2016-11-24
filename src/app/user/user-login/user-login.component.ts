@@ -10,24 +10,29 @@ import { Observable } from 'rxjs/Observable';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(
-      private router: Router,
-      private route: ActivatedRoute,
-      private userLoginService: UserLoginService
-  ) {
-    console.log(userLoginService);
-  }
+    constructor(
+        private router: Router,
+        private route: ActivatedRoute,
+        private userLoginService: UserLoginService
+    ) {
+      console.log(userLoginService);
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  public doLogin():void{
-    this.userLoginService.login();
-    this.router.navigateByUrl("usermain");
-  }
+    public doLogin():void{
+      this.userLoginService.login();
+      this.router.navigateByUrl("usermain");
+    }
 
-  public doLogout():void{
-    this.userLoginService.logout();
-    this.router.navigateByUrl("home");
-  }
+    public doLogout():void{
+      this.userLoginService.logout();
+      this.router.navigateByUrl("home");
+    }
+
+    public forgetPwd():void{
+
+    }
+    
 }
