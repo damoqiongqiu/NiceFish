@@ -6,6 +6,8 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后�
 
 ## 用法
 
+用git克隆本项目，进入项目目录后依次执行以下命令：
+
 	npm install
 	npm install -g angular-cli
 	ng serve
@@ -40,4 +42,4 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后�
  【请特别注意】定制开发这种事情总是很麻烦，所以我要收费。
 
 ## 关于我
-我是大漠穷秋，我目前负责Angular在中国的推广工作，我会经常发布一些与Angular相关的技术文章，希望能给大家带来一点点帮助，请点这里：https://my.oschina.net/mumu/blog  。
+我是大漠穷秋，目前是Google Angular项目组在中国的PM，负责Angular的推广工作，我会经常发布一些与Angular相关的技术文章，希望能给大家带来一点点帮助，请点这里：https://my.oschina.net/mumu/blog  。
