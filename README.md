@@ -34,5 +34,4 @@ NiceFish是一个微型Blog系统，基于Angular 2开发。 可以用来搭建�
  如果你想要定制开发什么的，也请加我的微信scriptbaby。【请特别注意】定制开发这种事情总是很麻烦，所以我要收费。
 
 ## 关于我
-
-https://my.oschina.net/mumu/blog
+我是大漠穷秋，我目前负责Angular在中国的推广工作，我会经常发布一些与Angular相关的技术文章，希望能给大家带来一点点帮助，请点这里：https://my.oschina.net/mumu/blog
