@@ -16,6 +16,7 @@ import { PostlistComponent } from './post/postlist/postlist.component';
 import { HomeComponent } from './home/home.component';
 import { PostDetailMainComponent } from './post/post-detail-main/post-detail-main.component';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
+import { WritePostComponent } from './post/write-post/write-post.component';
 import { AddCommentComponent } from './comment/add-comment/add-comment.component';
 import { SitestatComponent } from './sitestat/sitestat.component';
 
@@ -33,6 +34,7 @@ import appRoutes from './app.routes';
     HomeComponent,
     PostDetailMainComponent,
     PostDetailComponent,
+    WritePostComponent,
     AddCommentComponent,
     SitestatComponent
   ],

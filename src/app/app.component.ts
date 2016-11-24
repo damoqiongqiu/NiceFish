@@ -14,7 +14,7 @@ export class AppComponent {
 		private userLoginService: UserLoginService
 	) {
 	    renderer.listen(elementRef.nativeElement, 'click', (event) => {
-	    	console.log(event);
+	    	//console.log(event);
 	    });
 	}
 
