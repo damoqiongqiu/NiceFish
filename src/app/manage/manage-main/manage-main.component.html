@@ -1,0 +1,15 @@
+<div class="container manage-main-container" [@flyIn]="active">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="list-group">
+                <a routerLink="../posttable" class="list-group-item"><span class="badge">10000</span>文章管理</a>
+                <a routerLink="../commenttable" class="list-group-item"><span class="badge">1000000</span>评论管理</a>
+                <a routerLink="../usertable" class="list-group-item"><span class="badge">1000000</span>用户管理</a>
+                <a routerLink="../sysparam" class="list-group-item">系统设置</a>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <app-postlist></app-postlist>
+        </div>
+    </div>
+</div>

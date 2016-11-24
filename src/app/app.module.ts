@@ -19,6 +19,11 @@ import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { WritePostComponent } from './post/write-post/write-post.component';
 import { AddCommentComponent } from './comment/add-comment/add-comment.component';
 import { SitestatComponent } from './sitestat/sitestat.component';
+import { ManageMainComponent } from './manage/manage-main/manage-main.component';
+import { UserTableComponent } from './manage/user-table/user-table.component';
+import { PostTableComponent } from './manage/post-table/post-table.component';
+import { CommentTableComponent } from './manage/comment-table/comment-table.component';
+import { SysParamComponent } from './manage/sys-param/sys-param.component';
 
 import appRoutes from './app.routes';
 
@@ -36,7 +41,12 @@ import appRoutes from './app.routes';
     PostDetailComponent,
     WritePostComponent,
     AddCommentComponent,
-    SitestatComponent
+    SitestatComponent,
+    ManageMainComponent,
+    UserTableComponent,
+    PostTableComponent,
+    CommentTableComponent,
+    SysParamComponent
   ],
   imports: [
     BrowserModule,

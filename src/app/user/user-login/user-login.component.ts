@@ -22,16 +22,12 @@ export class UserLoginComponent implements OnInit {
   }
 
   public doLogin():void{
-    console.log("开始登录...");
     this.userLoginService.login();
-    let routerInstance=this.router;
-    setTimeout(function(){
-      routerInstance.navigateByUrl("usermain");
-    },1000);
+    this.router.navigateByUrl("usermain");
   }
 
   public doLogout():void{
-    console.log("开始退出...");
     this.userLoginService.logout();
+    this.router.navigateByUrl("home");
   }
 }

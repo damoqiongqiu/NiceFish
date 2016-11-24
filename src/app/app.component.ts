@@ -1,4 +1,5 @@
 import { Component,HostListener,ElementRef,Renderer} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserLoginService } from './user/user-login/user-login.service';
 import { Observable } from 'rxjs/Observable';
 
@@ -11,6 +12,8 @@ export class AppComponent {
 	constructor(
 		private elementRef: ElementRef, 
 		private renderer: Renderer,
+		private router: Router,
+        private route: ActivatedRoute,
 		private userLoginService: UserLoginService
 	) {
 	    renderer.listen(elementRef.nativeElement, 'click', (event) => {
@@ -24,5 +27,6 @@ export class AppComponent {
 
 	private doLogout():void{
 		this.userLoginService.logout();
+		this.router.navigateByUrl("home");
 	}
 }
