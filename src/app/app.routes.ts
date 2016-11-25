@@ -1,19 +1,14 @@
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { UserLoginComponent } from './user/user-login/user-login.component';
-import { UserLoginService } from './user/user-login/user-login.service';
-import { UserRegisterComponent} from './user/user-register/user-register.component';
-import { UserProfileComponent} from './user/user-profile/user-profile.component';
-import { UserMainComponent} from './user/user-main/user-main.component';
-import { UserInfoComponent } from './user/user-info/user-info.component';
 import { PostlistComponent } from './post/postlist/postlist.component';
 import { HomeComponent } from './home/home.component';
 import { PostDetailMainComponent } from './post/post-detail-main/post-detail-main.component';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
-import { WritePostComponent } from './post/write-post/write-post.component';
 import { AddCommentComponent } from './comment/add-comment/add-comment.component';
 import { SitestatComponent } from './sitestat/sitestat.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
 
 const appRoutes=[
 	{
@@ -33,20 +28,12 @@ const appRoutes=[
 		component:UserRegisterComponent
 	},
 	{
-		path:'profile',
-		component:UserProfileComponent
-	},
-	{
-		path:'usermain',
-		component:UserMainComponent
+		path:'user',
+		loadChildren:'app/user/user.module'
 	},
 	{ 
 		path: 'postdetail/:postId', 
 		component: PostDetailMainComponent 
-	},
-	{ 
-		path: 'write', 
-		component: WritePostComponent 
 	},
 	{ 
 		path: 'manage', 

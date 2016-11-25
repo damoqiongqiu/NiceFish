@@ -23,7 +23,7 @@ export class UserLoginComponent implements OnInit {
 
     public doLogin():void{
       this.userLoginService.login();
-      this.router.navigateByUrl("usermain");
+      this.router.navigateByUrl("user");
     }
 
     public doLogout():void{

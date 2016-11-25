@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#home.html" class="navbar-brand">
+            <a routerLink="home" class="navbar-brand">
                 Angular2中文社区
             </a>
         </div>
@@ -31,7 +31,7 @@
             </ul>
             <ul *ngIf="userLoginService.hasLogin" class="nav navbar-nav navbar-right">
                 <li>
-                    <a routerLink="usermain">欢迎你：大漠穷秋</a>
+                    <a routerLink="user">欢迎你：大漠穷秋</a>
                 </li>
                 <li>
                     <a routerLink="manage">管理后台</a>

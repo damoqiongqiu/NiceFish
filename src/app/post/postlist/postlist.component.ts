@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-postlist',
@@ -26,7 +27,8 @@ export class PostlistComponent implements OnInit {
 		{postId:"10",title:'这是文章的标题，可以很长',postTime:'2016-11-21 10:44',userName:'大漠穷秋',userId:'1',readTimes:'10000',commentTimes:'10000'}
 	];
 
-	constructor() { }
+	constructor(private router: Router,
+        private route: ActivatedRoute) { }
 
   	ngOnInit() {
 
@@ -43,4 +45,9 @@ export class PostlistComponent implements OnInit {
 	public pageChanged(event:any):void {
 		console.log(event);
 	};
+
+	private gotoWrite():void{
+		//如果没有登录，调往登录页，如果已登录，跳往写作页
+		this.router.navigateByUrl("user/write");
+	}
 }
