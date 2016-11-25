@@ -1,3 +1,72 @@
-<p>
-  comment-table works!
-</p>
+<div class="comment-table-container" [@flyIn]="active">
+    <form class="form-vertical" role="form">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="搜索">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">搜索</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="comment-item-container">
+                <!--                 <h4>
+                    <a [routerLink]="['/postdetail',post.postId]">{{post.title}}</a>
+                </h4>
+                <p>
+                    {{post.userName}}
+                    &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}} 
+                    &nbsp;&nbsp;&nbsp;&nbsp;点击：{{post.readTimes}} 
+                    &nbsp;&nbsp;&nbsp;&nbsp;评论：{{post.commentTimes}}
+                </p> -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Table heading</th>
+                            <th>Table heading</th>
+                            <th>Table heading</th>
+                            <th>Table heading</th>
+                            <th>Table heading</th>
+                            <th>Table heading</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <pagination [totalItems]="bigTotalItems" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" class="pagination-sm" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)"></pagination>
+        </div>
+    </div>
+</div>
