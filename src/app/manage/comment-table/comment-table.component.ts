@@ -10,13 +10,19 @@ import { flyIn } from '../../animations/fly-in';
   ]
 })
 export class CommentTableComponent implements OnInit {
-	private commentList:Array<any>;
-  	
-  	constructor() {
+  	public totalItems:number = 64;
+    public currentPage:number = 4;
+     
+    public maxSize:number = 10;
+    public bigTotalItems:number = 175;
+    public bigCurrentPage:number = 5;
 
-  	}
-  	
-  	ngOnInit() {
-  	
-  	}
+    constructor() { }
+
+    ngOnInit() {
+    }
+
+    private pageChanged():void{
+      
+    }
 }

@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
+import { PostSharedModule } from '../shared/post.module';
 
-import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { AlertModule } from 'ng2-bootstrap/components/alert';
 import { AccordionModule } from 'ng2-bootstrap/ng2-bootstrap';
 
@@ -21,10 +21,10 @@ import userRoutes from './user.routes';
   ],
   imports: [
 	  CommonModule,
-    PaginationModule,
     AlertModule,
     AccordionModule,
     SharedModule,
+    PostSharedModule,
     userRoutes
   ],
   exports:[
