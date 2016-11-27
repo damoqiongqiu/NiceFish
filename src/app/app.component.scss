@@ -31,24 +31,13 @@
 
 .main-container {
     padding-top: 80px;
+    min-height: 800px;
 }
 
 .footer {
     text-align: left;
     padding: 40px 48px;
+    margin-top: 20px;
     background: #263238;
     color: #fff;
-}
-
-.footer-link {
-    color: #747e8a;
-}
-
-.footer-link:hover {
-    color: #fbba2d;
-    text-decoration: none;
-}
-
-.footer p {
-    font-size: 14px;
 }
