@@ -14,6 +14,7 @@ const mangeRoutes = [
 	    	{ path: '', component: PostTableComponent },
 	    	{ path: 'posttable', component: PostTableComponent },
 	    	{ path: 'commenttable', component: CommentTableComponent },
+	    	{ path: 'tagtable', component: TagTableComponent },
 	    	{ path: 'usertable', component: UserTableComponent },
 	    	{ path: 'sysparam', component: SysParamComponent }
 	    ]
