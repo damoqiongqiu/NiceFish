@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { PostDetailMainComponent } from './post/post-detail-main/post-detail-main.component';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { AddCommentComponent } from './comment/add-comment/add-comment.component';
+import { SocialChannelComponent } from './home/social-channel/social-channel.component';
+import { OnlineContactComponent } from './home/online-contact/online-contact.component';
 import { SitestatComponent } from './sitestat/sitestat.component';
 
 import { UserLoginService } from './user/user-login/user-login.service';
@@ -31,6 +33,8 @@ import appRoutes from './app.routes';
     PostDetailComponent,
     AddCommentComponent,
     SitestatComponent,
+    SocialChannelComponent,
+    OnlineContactComponent,
     UserLoginComponent,
     ForgetPwdComponent,
     UserRegisterComponent
