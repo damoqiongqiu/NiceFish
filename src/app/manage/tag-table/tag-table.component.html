@@ -1,0 +1,85 @@
+<div class="tag-table-container" [@flyIn]="active">
+    <form class="form-vertical" role="form">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="标签，用户">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">搜索</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="tag-item-container">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>标签</th>
+                            <th>作者</th>
+                            <th>日期</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Angular2</td>
+                            <td>大漠穷秋</td>
+                            <td>2016-11-27</td>
+                            <td>
+                                <a href="#">编辑</a>
+                                <a href="#">取消置顶</a>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Angular1</td>
+                            <td>大漠穷秋</td>
+                            <td>2016-11-27</td>
+                            <td>
+                                <a href="#">编辑</a>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>招聘</td>
+                            <td>大漠穷秋</td>
+                            <td>2016-11-27</td>
+                            <td>
+                                <a href="#">编辑</a>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>问题</td>
+                            <td>大漠穷秋</td>
+                            <td>2016-11-27</td>
+                            <td>
+                                <a href="#">编辑</a>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>求助</td>
+                            <td>大漠穷秋</td>
+                            <td>2016-11-27</td>
+                            <td>
+                                <a href="#">编辑</a>
+                                <a href="#">删除</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" [firstText]="firstText" [lastText]="lastText" [previousText]="previousText" [nextText]="nextText" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)" class="pagination-sm"></pagination>
+        </div>
+    </div>
+</div>
