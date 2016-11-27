@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { flyIn } from '../../animations/fly-in';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-table',
@@ -11,14 +12,20 @@ import { flyIn } from '../../animations/fly-in';
 })
 export class PostTableComponent implements OnInit {
 	  private postList:Array<any>;
-    public totalItems:number = 64;
-    public currentPage:number = 4;
-   
-    public maxSize:number = 10;
-    public bigTotalItems:number = 175;
-    public bigCurrentPage:number = 5;
+    public maxSize:number = 5;
+    public itemsPerPage:number=5;
+    public totalItems:number = 15;
+    public currentPage:number = 1;
 
-  	constructor() { }
+    public firstText:string="首页";
+    public lastText:string="尾页";
+    public previousText:string="上一页";
+    public nextText:string="下一页";
+
+  	constructor(private router: Router,
+        private route: ActivatedRoute) { 
+
+    }
 
   	ngOnInit() {
   		
@@ -26,5 +33,9 @@ export class PostTableComponent implements OnInit {
 
     private pageChanged():void{
       
+    }
+
+    private goToWrite():void{
+      this.router.navigateByUrl("user/write");
     }
 }

@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="搜索">
+                    <input class="form-control" type="text" placeholder="用户名，昵称">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button">搜索</button>
                     </span>
@@ -14,59 +14,31 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="user-item-container">
-                <!--                 <h4>
-                    <a [routerLink]="['/postdetail',post.postId]">{{post.title}}</a>
-                </h4>
-                <p>
-                    {{post.userName}}
-                    &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}} 
-                    &nbsp;&nbsp;&nbsp;&nbsp;点击：{{post.readTimes}} 
-                    &nbsp;&nbsp;&nbsp;&nbsp;评论：{{post.commentTimes}}
-                </p> -->
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Table heading</th>
-                            <th>Table heading</th>
-                            <th>Table heading</th>
-                            <th>Table heading</th>
-                            <th>Table heading</th>
-                            <th>Table heading</th>
+                            <th>序号</th>
+                            <th>用户名</th>
+                            <th>注册时间</th>
+                            <th>最后登录</th>
+                            <th>操作</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
+                            <td>damoqiongqiu@126.com</td>
+                            <td>2010-11-11 11:11</td>
+                            <td>2016-11-27 09:34</td>
+                            <td>
+                                <a href="">禁用</a>
+                                <a href="">重置密码</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <pagination [totalItems]="bigTotalItems" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" class="pagination-sm" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)"></pagination>
+            <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" [firstText]="firstText" [lastText]="lastText" [previousText]="previousText" [nextText]="nextText" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)" class="pagination-sm"></pagination>
         </div>
     </div>
 </div>
