@@ -25,8 +25,8 @@
                 <p>
                     {{post.userName}}
                     &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}} 
-                    &nbsp;&nbsp;&nbsp;&nbsp;点击：{{post.readTimes}} 
-                    &nbsp;&nbsp;&nbsp;&nbsp;评论：{{post.commentTimes}}
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;{{post.readTimes}} 
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;{{post.commentTimes}}
                 </p>
             </div>
             <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" [firstText]="firstText" [lastText]="lastText" [previousText]="previousText" [nextText]="nextText" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)" class="pagination-sm" ></pagination>
