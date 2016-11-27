@@ -17,6 +17,7 @@ import { SitestatComponent } from './sitestat/sitestat.component';
 
 import { UserLoginService } from './user/user-login/user-login.service';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 
 import appRoutes from './app.routes';
@@ -31,6 +32,7 @@ import appRoutes from './app.routes';
     AddCommentComponent,
     SitestatComponent,
     UserLoginComponent,
+    ForgetPwdComponent,
     UserRegisterComponent
   ],
   imports: [

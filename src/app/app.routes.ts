@@ -8,6 +8,7 @@ import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { AddCommentComponent } from './comment/add-comment/add-comment.component';
 import { SitestatComponent } from './sitestat/sitestat.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 
 const appRoutes=[
@@ -22,6 +23,10 @@ const appRoutes=[
 	{
 		path:'login',
 		component:UserLoginComponent
+	},
+	{
+		path:'forgetpwd',
+		component:ForgetPwdComponent
 	},
 	{
 		path:'register',
