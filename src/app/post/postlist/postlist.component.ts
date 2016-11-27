@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -16,6 +17,8 @@ export class PostlistComponent implements OnInit {
 	public lastText:string="尾页";
 	public previousText:string="上一页";
 	public nextText:string="下一页";
+
+	private searchText:string;
 
 	private postList:Array<any>=[
 		{postId:"1",title:'angular1.3是因为什么特性导致不支持ie8的？',postTime:'2016-11-21 10:44',userName:'大漠穷秋',userId:'1',readTimes:'10000',commentTimes:'10000'},
@@ -55,5 +58,9 @@ export class PostlistComponent implements OnInit {
 	private gotoWrite():void{
 		//如果没有登录，调往登录页，如果已登录，跳往写作页
 		this.router.navigateByUrl("user/write");
+	}
+
+	private searchChanged($event):void{
+		console.log(this.searchText);
 	}
 }
