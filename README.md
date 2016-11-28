@@ -1,10 +1,10 @@
 # NiceFish（美人鱼）
 
-NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后端是基于Node的http服务端，数据存储用的MangoDB。 
+NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后端是基于Node的http服务端，数据存储用的MongoDB。 
 
 可以用来搭建团队Blog，微信SNS站点，个人站点，或者用于学习Angular2（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
 
-【注意】上面两句话都是吹牛的，因为我现在连前端功能都没写完呢，后端一点儿都没写呢，不过我会尽快的，请给我加个星儿，谢谢。
+【注意】上面两句话都是吹牛的，因为前端架子刚刚写完，数据都是假的。后端昨天刚开始搭，不过我会尽快的，请给我加个星儿，谢谢。
 
 ## 用法
 
@@ -18,7 +18,7 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后�
 
 ## 注意（请仔细看）
 
- - 如果在npm install的过程中有报错，可能是某些包被墙掉(f**k GFW)了，请自己设置翻墙代理之后再运行npm install，设置方式示例：npm config set proxy=http://127.0.0.1:1080  。
+ - 如果在npm install的过程中有报错，可能是某些包被墙掉(f**k GFW)了，请自己设置翻墙代理之后再运行npm install，设置方式示例：npm config set proxy=http://127.0.0.1:1080  ，或者用cnpm进行安装。
 
  - 如果有node-gyp的报错，可以在npm install的后面加上参数 --no-optional  。
 
