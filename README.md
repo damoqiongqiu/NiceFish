@@ -18,11 +18,11 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后�
 
 ## 注意（请仔细看）
 
- - 如果在npm install的过程中有报错，可能是某些包被墙掉(f**k GFW)了，请自己设置翻墙代理之后再运行npm install，设置方式示例：npm config set proxy=http://127.0.0.1:1080  ，或者用cnpm进行安装。
+ - 如果在npm install的过程中有报错，可能是某些包被Qiang掉了，请自己设置翻墙代理之后再运行npm install，设置方式示例：npm config set proxy=http://127.0.0.1:1080  ，或者用cnpm进行安装。
 
  - 如果有node-gyp的报错，可以在npm install的后面加上参数 --no-optional  。
 
- - 如果有node-sass的报错，尝试一下翻墙，再次f**k GFW 。
+ - 如果有node-sass的报错，尝试一下翻Qiang。
 
  - 如果你是在Windows下安装，启动cmd的时候要用管理员身份启动。
 
