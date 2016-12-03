@@ -37,11 +37,5 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后�
 
  你可以随意使用此项目，无需通知我，因为我可能很忙没空搭理你。
 
- 如果你想给我捐赠一杯咖啡，请加我的微信scriptbaby，然后直接发红包即可。
-
- 如果你想要定制开发什么的，也请加我的微信scriptbaby。
-
- 【请特别注意】定制开发这种事情总是很麻烦，所以我要收费。
-
 ## 关于我
-我是大漠穷秋，目前是Google Angular项目组在中国的PM，负责Angular的推广工作，我会经常发布一些与Angular相关的技术文章，希望能给大家带来一点点帮助，请点这里：https://my.oschina.net/mumu/blog  。
+我是大漠穷秋，目前是Google Angular项目组在中国的开发者PM，负责Angular的推广工作，我会在各种渠道经常发布一些与Angular相关的技术文章，希望能给大家带来一点点帮助，请点这里：https://my.oschina.net/mumu/blog  。
