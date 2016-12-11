@@ -9,10 +9,8 @@ export class SitestatComponent implements OnInit {
 	public currentTime: Date = new Date();
 
 	constructor() {
-		let me=this;
-		window.setInterval(function(){
-			me.currentTime=new Date();
-		},1000);
+		window.setInterval(()=>this.currentTime=new Date()
+		,1000);
 	}
 	
 	ngOnInit() {
