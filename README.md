@@ -24,13 +24,13 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后�
 
  - 如果有node-sass的报错，尝试一下翻Qiang。
 
- - 如果你是在Windows下安装，启动cmd的时候要用管理员身份启动。
+ - 如果你是在Windows下开发，启动cmd的时候要用管理员身份启动。
 
- - 如果你是在MAC或者Linx下安装，请尝试用sudo执行安装命令，否则某些目录可能权限不够。
+ - 如果你是在MAC或者Linux下安装，请尝试用sudo执行安装命令，否则某些目录可能权限不够。
 
  - 如果你想要生成模块之间的依赖关系图，请使用angular2-dependencies-graph，这是一个第三方的node模块，路径在这里https://github.com/manekinekko/angular2-dependencies-graph 。当前的模块依赖关系图我已经生成在src/documentation目录下。
 
- - 这个项目暂时不接受issue或者PR，演进修改什么的完全看我自己的心情。
+ - 这个项目接受issue或者PR，收到之后我会尽快处理的。
 
 ## 开源许可证
  MIT
