@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AlertModule } from 'ng2-bootstrap/components/alert';
 import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { HttpModule,JsonpModule } from '@angular/http';
 
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
+import { PostListService } from './post/postlist/services/postlist-service';
 import { PostlistComponent } from './post/postlist/postlist.component';
 import { HomeComponent } from './home/home.component';
 import { PostDetailMainComponent } from './post/post-detail-main/post-detail-main.component';
@@ -44,10 +46,12 @@ import appRoutes from './app.routes';
     RouterModule,
     AlertModule,
     PaginationModule,
+    HttpModule,
+    JsonpModule,
     SharedModule,
     appRoutes
   ],
-  providers: [UserLoginService],
+  providers: [UserLoginService,PostListService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
