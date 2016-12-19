@@ -4,7 +4,9 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后�
 
 可以用来搭建团队Blog，微信SNS站点，个人站点，或者用于学习Angular2（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
 
-【注意】上面两句话都是吹牛的，因为前端架子刚刚写完，数据都是假的。后端昨天刚开始搭，不过我会尽快的，请给我加个星儿，谢谢。
+NiceFish做完之后将会用来升级Angular中文社区，现在的社区还是严清的jsgen，然后严大神说他太忙不再升级jsgen了。所以没办法啦，我只能自己上了。2016年12月北京和上海的Google Developer Day 活动期间已经和核心团队PM商量好，做完之后我自己升级就可以了。所以呢，如果还有人愿意来参与这件事，请加我微信联系，我的号是scriptbaby。
+
+【注意】上面都是吹牛的，这个小东西还没有整体做完，不过我会尽快的，请给我加个星儿，谢谢。
 
 ## 用法
 
@@ -31,6 +33,12 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后�
  - 如果你想要生成模块之间的依赖关系图，请使用angular2-dependencies-graph，这是一个第三方的node模块，路径在这里https://github.com/manekinekko/angular2-dependencies-graph 。当前的模块依赖关系图我已经生成在src/documentation目录下。
 
  - 这个项目接受issue或者PR，收到之后我会尽快处理的。
+
+## TODO
+
+ - 找一个地方放演示效果。
+
+ - 完成Node+Express+MongoDB的后端服务。
 
 ## 开源许可证
  MIT
