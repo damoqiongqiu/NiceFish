@@ -24,19 +24,19 @@
                     <a href="http://git.oschina.net/mumu-osc/NiceFish" data-toggle="dropdown" class="dropdown-toggle" target="_blank">NiceFish</a>
                 </li>
             </ul>
-            <ul *ngIf="!userLoginService.hasLogin" class="nav navbar-nav navbar-right">
-                <li>
+            <ul *ngIf="!userLoginService.currentUser" class="nav navbar-nav navbar-right">
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a routerLink="login">登录</a>
                 </li>
-                <li>
+                <li routerLinkActive="active">
                     <a routerLink="register">注册</a>
                 </li>
             </ul>
-            <ul *ngIf="userLoginService.hasLogin" class="nav navbar-nav navbar-right">
-                <li>
-                    <a routerLink="user">欢迎你：大漠穷秋</a>
+            <ul *ngIf="userLoginService.currentUser" class="nav navbar-nav navbar-right">
+                <li routerLinkActive="active">
+                    <a routerLink="user">欢迎你：{{userLoginService.currentUser.nickName}}</a>
                 </li>
-                <li>
+                <li routerLinkActive="active" >
                     <a routerLink="manage">管理后台</a>
                 </li>
                 <li>

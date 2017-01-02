@@ -19,6 +19,8 @@ export class AppComponent {
 	    renderer.listen(elementRef.nativeElement, 'click', (event) => {
 	    	//console.log(event);
 	    });
+
+		this.userLoginService.currentUser = JSON.parse(localStorage.getItem("currentUser"));
 	}
 
 	toggle(button){

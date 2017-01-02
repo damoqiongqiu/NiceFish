@@ -4,34 +4,43 @@
             <h3 class="panel-title">用户登录</h3>
         </div>
         <div class="panel-body">
-            <form class="form-horizontal" role="form">
+            <form #form="ngForm" (ngSubmit)="form.form.valid && doLogin()" class="form-horizontal" role="form">
                 <div class="form-group">
                     <label class="col-sm-2 control-label">用户名：</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="用户名">
+                        <input required name="username" [(ngModel)]="model.username"
+                        #username="ngModel"
+                        type="text" class="form-control" placeholder="请输入用户名...">
+                        <div [hidden]="username.valid || username.pristine" class="text-danger">用户名必须输入！</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">密码：</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" placeholder="密码，至少8位">
+                        <input required minlength="8" [(ngModel)]="model.password" 
+                                name="password" #password="ngModel"
+                        type="password" class="form-control" placeholder="请输入密码...">
+                        <div [hidden]="password.valid || password.pristine" class="text-danger">密码必须输入，并且要大于8位！</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox">记住我
+                                <input name="remeberMe" type="checkbox" [(ngModel)]="model.remeberMe"
+                                #remeberMe="ngModel">记住我
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="button" class="btn btn-success" (click)="doLogin()">登录</button>
+                        <button type="submit" class="btn btn-success" >登录</button>
                         <button type="button" class="btn btn-danger" (click)="forgetPwd()">忘记密码？</button>
                     </div>
                 </div>
+                {{ form.submitted }}
+                {{model | json}}
             </form>
         </div>
     </div>

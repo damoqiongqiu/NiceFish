@@ -3,12 +3,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserLoginService } from './user-login.service';
 import { Observable } from 'rxjs/Observable';
 
+import { User } from '../model/index';
+
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.scss']
 })
 export class UserLoginComponent implements OnInit {
+    private model:User = new User();
 
     constructor(
         private router: Router,
@@ -19,11 +22,20 @@ export class UserLoginComponent implements OnInit {
     }
 
     ngOnInit() {
+      
     }
 
     public doLogin():void{
-      this.userLoginService.login();
-      this.router.navigateByUrl("user");
+      console.log(this.model);
+      this.userLoginService.login(this.model)
+        .subscribe(
+                data => {
+                    this.router.navigateByUrl("user");
+                },
+                error => {
+                    console.error(error);
+                }
+          );
     }
 
     public doLogout():void{
@@ -32,7 +44,7 @@ export class UserLoginComponent implements OnInit {
     }
 
     public forgetPwd():void{
-      this.router.navigateByUrl("forgetpwd");
+
     }
     
 }
