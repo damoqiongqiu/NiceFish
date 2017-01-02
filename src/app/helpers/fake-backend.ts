@@ -4,21 +4,25 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 export let fakeBackendProvider = {
     provide: Http,
     useFactory: (backend: MockBackend, options: BaseRequestOptions) => {
-        let user = {id:1,username:"admin",password:"admin$admin"};
 
         backend.connections.subscribe((connection: MockConnection) => {
             setTimeout(() => {
                 if (connection.request.url.endsWith('/api/users/login') && connection.request.method === RequestMethod.Post) {
                     let params = JSON.parse(connection.request.getBody());
-                    connection.mockRespond(new Response(new ResponseOptions({
+                    if("admin"===params.username && "admin$admin"===params.password){
+                        connection.mockRespond(new Response(new ResponseOptions({
                             status: 200,
                             body: {
-                                id: user.id,
-                                username: user.username,
+                                id: 1,
+                                username: "admin",
                                 nickName:"管理员",
                                 token: 'fake-jwt-token'
                             }
                         })));
+                    }else {
+                        connection.mockError(new Error('用户名或密码错误！'));
+                    }
+                    
                 }
             }, 500);
         });

@@ -4,23 +4,23 @@
             <h3 class="panel-title">用户登录</h3>
         </div>
         <div class="panel-body">
-            <form #form="ngForm" (ngSubmit)="form.form.valid && doLogin()" class="form-horizontal" role="form">
-                <div class="form-group">
+            <form #form="ngForm" (ngSubmit)="form.form.valid && doLogin()" novalidate class="form-horizontal" role="form">
+                <div class="form-group" [ngClass]="{ 'has-error': form.submitted && !username.valid }">
                     <label class="col-sm-2 control-label">用户名：</label>
                     <div class="col-sm-10">
                         <input required name="username" [(ngModel)]="model.username"
                         #username="ngModel"
                         type="text" class="form-control" placeholder="请输入用户名...">
-                        <div [hidden]="username.valid || username.pristine" class="text-danger">用户名必须输入！</div>
+                        <div *ngIf="form.submitted && !username.valid" class="text-danger">用户名必须输入！</div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group" [ngClass]="{ 'has-error': form.submitted && !password.valid }">
                     <label class="col-sm-2 control-label">密码：</label>
                     <div class="col-sm-10">
                         <input required minlength="8" [(ngModel)]="model.password" 
                                 name="password" #password="ngModel"
                         type="password" class="form-control" placeholder="请输入密码...">
-                        <div [hidden]="password.valid || password.pristine" class="text-danger">密码必须输入，并且要大于8位！</div>
+                        <div *ngIf="form.submitted && !password.valid" class="text-danger">密码必须输入,至少要8位！</div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -33,6 +33,7 @@
                         </div>
                     </div>
                 </div>
+                <div *ngIf="error" class="col-sm-offset-2 col-sm-10 alert alert-danger">{{error}}</div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-success" >登录</button>

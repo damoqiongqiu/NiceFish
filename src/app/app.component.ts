@@ -29,6 +29,7 @@ export class AppComponent {
 
 	private doLogout():void{
 		this.userLoginService.logout();
+		debugger;
 		this.router.navigateByUrl("home");
 	}
 }

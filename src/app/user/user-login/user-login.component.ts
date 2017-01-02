@@ -12,7 +12,7 @@ import { User } from '../model/index';
 })
 export class UserLoginComponent implements OnInit {
     private model:User = new User();
-
+    private error : Error;
     constructor(
         private router: Router,
         private route: ActivatedRoute,
@@ -33,6 +33,7 @@ export class UserLoginComponent implements OnInit {
                     this.router.navigateByUrl("user");
                 },
                 error => {
+                    this.error = error.message;
                     console.error(error);
                 }
           );
