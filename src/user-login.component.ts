@@ -26,7 +26,6 @@ export class UserLoginComponent implements OnInit {
     }
 
     public doLogin():void{
-      console.log(this.model);
       this.userLoginService.login(this.model)
         .subscribe(
                 data => {

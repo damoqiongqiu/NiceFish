@@ -10,7 +10,7 @@ import { User } from './user/model/index';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
-	private currentUser : Observable<User> = new Observable<User>();
+	private currentUser : Observable<User> ;
 	constructor(
 		private elementRef: ElementRef, 
 		private renderer: Renderer,
@@ -22,7 +22,6 @@ export class AppComponent{
 	    	//console.log(event);
 	    });
 
-		console.log(this.userLoginService.currentUser);
 		this.currentUser = this.userLoginService.currentUser;
 	}
 	toggle(button){

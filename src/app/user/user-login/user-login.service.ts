@@ -9,6 +9,7 @@ import { User } from '../model/index';
 @Injectable()
 export class UserLoginService {
   subject: BehaviorSubject<User>;
+  
   constructor(private http:Http){
     console.log("UserLoginService init.");
     let user:User = JSON.parse(localStorage.getItem("currentUser"));
