@@ -14,7 +14,7 @@ export class PostListService {
 
   constructor(public http:Http) { }
   
-  public getPostList(searchText: string,page:number):Observable<Post[]>{
+  public getPostList(searchText: string,page:number=1):Observable<Post[]>{
     console.log("load post list...");
     let url = this.postListURL;
     let params = new URLSearchParams();
@@ -23,6 +23,7 @@ export class PostListService {
       url = this.postListSearchURL;
       console.log(`searchText=${searchText}`);
 		}
+    params.set('page',String(page));
     return this.http.get(url,{search:params})
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error || 'Server error'));
