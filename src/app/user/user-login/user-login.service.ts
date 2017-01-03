@@ -2,14 +2,13 @@ import { Injectable} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Http, Headers, Response } from '@angular/http';
-
-
-import { User } from '../model/index';
+import { User } from '../model/user-model';
 
 @Injectable()
 export class UserLoginService {
-  subject: BehaviorSubject<User>;
-  
+  private subject: BehaviorSubject<User>;
+  private userLoginURL = 'app/user/user-login/user-login-mock.json';
+
   constructor(private http:Http){
     console.log("UserLoginService init.");
     let user:User = JSON.parse(localStorage.getItem("currentUser"));
@@ -22,7 +21,8 @@ export class UserLoginService {
 
   public login(user:User){
   	console.log("user login service login...");
-    return this.http.post('/api/users/login',JSON.stringify({ username: user.username,password:user.password}))
+    //JSON.stringify({ username: user.username,password:user.password})
+    return this.http.get(this.userLoginURL)
             .map((response: Response) => {
               let user = response.json();
               if(user && user.token){

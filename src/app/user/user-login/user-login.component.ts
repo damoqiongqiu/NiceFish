@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserLoginService } from './user-login.service';
 import { Observable } from 'rxjs/Observable';
 
-import { User } from '../model/index';
+import { User } from '../model/user-model';
 
 @Component({
   selector: 'app-user-login',
@@ -11,8 +11,9 @@ import { User } from '../model/index';
   styleUrls: ['./user-login.component.scss']
 })
 export class UserLoginComponent implements OnInit {
-    private model:User = new User();
+    private user:User = new User();
     private error : Error;
+
     constructor(
         private router: Router,
         private route: ActivatedRoute,
@@ -26,8 +27,8 @@ export class UserLoginComponent implements OnInit {
     }
 
     public doLogin():void{
-      console.log(this.model);
-      this.userLoginService.login(this.model)
+      console.log(this.user);
+      this.userLoginService.login(this.user)
         .subscribe(
                 data => {
                     this.router.navigateByUrl("user");
