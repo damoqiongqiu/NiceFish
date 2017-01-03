@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+
 import { PostListService } from './services/postlist-service';
+import { Post } from '../model/post-model';
 
 @Component({
   selector: 'app-postlist',
@@ -20,17 +24,26 @@ export class PostlistComponent implements OnInit {
 	public nextText:string="下一页";
 
 	private searchText:string;
+	private searchTextStream:Subject<string> = new Subject<string>();
 
-	private postList:Array<any>;
+	private postList:Observable<Post[]>;
+
 
 	constructor(public router: Router,
         public route: ActivatedRoute,
         public postService:PostListService) {
-		this.loadData();
+		
 	}
 
   	ngOnInit() {
-
+		this.searchTextStream
+	        .debounceTime(1000)
+	        .distinctUntilChanged()
+	        .map(searchText => {
+	          this.searchText = searchText
+	          return {search: searchText, page: 1}
+	        })
+		this.loadData();
   	}
 
   	private loadData(){
@@ -57,5 +70,15 @@ export class PostlistComponent implements OnInit {
 
 	private searchChanged($event):void{
 		console.log(this.searchText);
+		
+		this.postService.search(this.searchText)
+		.subscribe(
+			postList=>{
+				console.log(postList);
+			  this.postList=postList;
+			},
+        	error => console.log(error),
+			() => console.log('Completed!')
+		);
 	}
 }

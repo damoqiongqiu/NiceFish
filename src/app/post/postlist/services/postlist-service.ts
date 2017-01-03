@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Http, Response, Headers, RequestOptions,URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 import 'rxjs/add/operator/map';
@@ -26,7 +26,16 @@ export class PostListService {
 
   }
 
-  public search(searchText: string) {
+  public search(searchText: string,page:number=1,limit:number=10) {
+    var params = new URLSearchParams();
+    if (searchText) {
+			params.set('searchText',searchText)
+		}
+    params.set('page', String(page));
+    params.set('limit', String(limit));
 
+    return this.http.get(this.postListURL,{search:params})
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error || 'Server error'));
   }
 }

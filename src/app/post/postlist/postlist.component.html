@@ -2,6 +2,7 @@
     <form class="form-vertical" role="form">
         <div class="row">
             <div class="col-sm-10">
+                测试用：{{this.route.queryParams | async | json}}
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="搜索" [(ngModel)]="searchText" (keyup)="searchChanged($event)" id="searchText" name="searchText">
                     <span class="input-group-btn">
