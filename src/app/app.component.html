@@ -14,7 +14,7 @@
         </div>
         <div class="collapse navbar-collapse navbar-responsive-collapse" aria-expanded="false">
             <ul class="nav navbar-nav">
-                <li class="dropdown active">
+                <li routerLinkActive="active" class="dropdown">
                     <a routerLink="home">动态</a>
                 </li>
                 <li class="dropdown">
@@ -24,19 +24,19 @@
                     <a href="http://git.oschina.net/mumu-osc/NiceFish" data-toggle="dropdown" class="dropdown-toggle" target="_blank">NiceFish</a>
                 </li>
             </ul>
-            <ul *ngIf="!userLoginService.hasLogin" class="nav navbar-nav navbar-right">
-                <li>
+            <ul *ngIf="!(currentUser | async)?.username" class="nav navbar-nav navbar-right">
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a routerLink="login">登录</a>
                 </li>
-                <li>
+                <li routerLinkActive="active">
                     <a routerLink="register">注册</a>
                 </li>
             </ul>
-            <ul *ngIf="userLoginService.hasLogin" class="nav navbar-nav navbar-right">
-                <li>
-                    <a routerLink="user">欢迎你：大漠穷秋</a>
+            <ul *ngIf="(currentUser | async)?.username" class="nav navbar-nav navbar-right">
+                <li routerLinkActive="active">
+                    <a routerLink="user">欢迎你：{{(currentUser | async)?.nickName}}</a>
                 </li>
-                <li>
+                <li routerLinkActive="active" >
                     <a routerLink="manage">管理后台</a>
                 </li>
                 <li>

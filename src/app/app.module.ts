@@ -24,6 +24,12 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 
+
+//mock Http service
+import { fakeBackendProvider } from './helpers/index';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+
 import appRoutes from './app.routes';
 
 @NgModule({
@@ -51,7 +57,13 @@ import appRoutes from './app.routes';
     SharedModule,
     appRoutes
   ],
-  providers: [UserLoginService,PostListService],
+  providers: [
+    UserLoginService,
+    PostListService,
+    
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions],
   bootstrap: [AppComponent]
 })
 export class AppModule {

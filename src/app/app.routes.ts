@@ -14,7 +14,8 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
 const appRoutes=[
 	{
 		path:'',
-		component:HomeComponent
+		redirectTo:'home',
+		pathMatch:'full'
 	},
 	{
 		path:'home',

@@ -3,12 +3,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserLoginService } from './user/user-login/user-login.service';
 import { Observable } from 'rxjs/Observable';
 
+import { User } from './user/model/index';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent{
+	private currentUser : Observable<User> ;
 	constructor(
 		private elementRef: ElementRef, 
 		private renderer: Renderer,
@@ -19,8 +21,9 @@ export class AppComponent {
 	    renderer.listen(elementRef.nativeElement, 'click', (event) => {
 	    	//console.log(event);
 	    });
-	}
 
+		this.currentUser = this.userLoginService.currentUser;
+	}
 	toggle(button){
 		console.log(button);
 	}
