@@ -2,11 +2,10 @@
     <form class="form-vertical" role="form">
         <div class="row">
             <div class="col-sm-10">
-                测试用：{{this.route.queryParams | async | json}}
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="搜索" [(ngModel)]="searchText" (keyup)="searchChanged($event)" id="searchText" name="searchText">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i> 搜索</button>
+                        <button class="btn btn-default" type="button" (onclik)="searchBtnClick()"><i class="fa fa-search" aria-hidden="true"></i> 搜索</button>
                     </span>
                 </div>
             </div>
@@ -30,7 +29,12 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;{{post.commentTimes}}
                 </p>
             </div>
-            <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" [firstText]="firstText" [lastText]="lastText" [previousText]="previousText" [nextText]="nextText" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)" class="pagination-sm" ></pagination>
+            <pagination [totalItems]="totalItems" [maxSize]="maxSize" 
+            [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" 
+            [firstText]="firstText" [lastText]="lastText" 
+            [previousText]="previousText" [nextText]="nextText" 
+            [boundaryLinks]="true" [rotate]="false" 
+            (numPages)="numPages = $event" (pageChanged)="pageChanged($event)" class="pagination-sm" ></pagination>
         </div>
     </div>
 </div>

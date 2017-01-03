@@ -5,15 +5,25 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
+import { Post } from '../../model/post-model';
+
 @Injectable()
 export class PostListService {
   private postListURL = 'app/post/postlist/services/postlist-mock.json';
+  private postListSearchURL = 'app/post/postlist/services/postlist-search-mock.json';
 
   constructor(public http:Http) { }
   
-  public getPostList():Observable<any>{
+  public getPostList(searchText: string,page:number):Observable<Post[]>{
     console.log("load post list...");
-    return this.http.get(this.postListURL)
+    let url = this.postListURL;
+    let params = new URLSearchParams();
+    if (searchText) {
+			params.set('searchText',searchText);
+      url = this.postListSearchURL;
+      console.log(`searchText=${searchText}`);
+		}
+    return this.http.get(url,{search:params})
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error || 'Server error'));
   }
@@ -26,16 +36,7 @@ export class PostListService {
 
   }
 
-  public search(searchText: string,page:number=1,limit:number=10) {
-    var params = new URLSearchParams();
-    if (searchText) {
-			params.set('searchText',searchText)
-		}
-    params.set('page', String(page));
-    params.set('limit', String(limit));
-
-    return this.http.get(this.postListURL,{search:params})
-      .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error || 'Server error'));
+  public search() {
+    
   }
 }
