@@ -46,15 +46,14 @@ export class PostlistComponent implements OnInit {
   	private loadData(searchText:string,page:number){
 		let offset = (this.currentPage-1)*this.itemsPerPage;
 		let end = (this.currentPage)*this.itemsPerPage;
-  		debugger;
-		  return this.postService.getPostList(searchText,page).subscribe(
-			  res=>{
+		return this.postService.getPostList(searchText,page).subscribe(
+			res=>{
 				this.totalItems = res["total"];
 				//TODO.正式环境中，需要去掉slice
 				this.postList = res["items"].slice(offset,end>this.totalItems?this.totalItems:end);
 				console.log(`第${this.currentPage}页的数据为：`,this.postList);
-			  },
-        	error => console.log(error),
+			},
+			error => console.log(error),
 			() => console.log('Completed!')
 		);
 	}
