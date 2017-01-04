@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AlertModule } from 'ng2-bootstrap/components/alert';
 import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { HttpModule,JsonpModule } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from './shared/shared.module';
 
@@ -44,6 +45,7 @@ import appRoutes from './app.routes';
   imports: [
     BrowserModule,
     RouterModule,
+    ReactiveFormsModule,
     AlertModule,
     PaginationModule,
     HttpModule,
