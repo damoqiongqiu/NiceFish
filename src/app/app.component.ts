@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserLoginService } from './user/user-login/user-login.service';
 import { Observable } from 'rxjs/Observable';
 
-import { User } from './user/model/index';
+import { User } from './user/model/user-model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
