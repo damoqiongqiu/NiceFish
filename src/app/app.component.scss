@@ -26,8 +26,18 @@
     background-color: #777;
 }
 
-.navbar-brand {
+.navbar-brand-my {
     color: #fff;
+    float: left;
+    height: 50px;
+    padding: 2px 15px 2px 0px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
 }
 
 .main-container {

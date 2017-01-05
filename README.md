@@ -9,6 +9,8 @@ NiceFish做完之后将会用来升级Angular中文社区，现在的社区还�
 【注意】上面都是吹牛的，这个小东西还没有整体做完，不过我会尽快的，请给我加个星儿，谢谢。
 后端的Node+Express+MongoDB已经搭好了，已经做好了一个雏形。后台RESTful接口做成了一个独立的项目，链接在这里：http://git.oschina.net/mumu-osc/NiceFish-BackEnd
 
+【特别注意】如果你不幸居然安装好了环境并运行起来了，千万不要手贱去升级npm、node或者angular-cli，在目前这些版本下面升级必死。
+
 ## 演示地址
 
 我在阿里云上面放了一个演示地址：http://121.196.220.118:8081/
@@ -17,19 +19,19 @@ NiceFish做完之后将会用来升级Angular中文社区，现在的社区还�
 
 ## 用法
 
-用git克隆本项目，进入项目目录后依次执行以下命令：
+用git克隆本项目，从命令行进入进入项目根目录，依次执行以下命令：
 
-	npm install
 	npm install -g angular-cli
+	npm install
 	ng serve
 
 打开你的浏览器，访问http://localhost:4200/
 
 ## 注意（请仔细看）
 
- - 如果在npm install的过程中有报错，可能是某些包被Qiang掉了，请自己设置翻墙代理之后再运行npm install，设置方式示例：npm config set proxy=http://127.0.0.1:1080  ，或者用cnpm进行安装。
+ - 如果在npm install的过程中有报错，可能是某些包被Qiang掉了，请自己设置翻墙代理之后再运行npm install 。比如，我本地的ShadowSocks代理运行在1080端口上，那么我就让npm安装Node模块的时候从这个代理走，设置方式：npm config set proxy="http://127.0.0.1:1080"  ，然后npm install。注意，尽量不要用cnpm安装，基本上没办法装成功，原因不明。
 
- - 如果有node-gyp的报错，可以在npm install的后面加上参数 --no-optional  。
+ - 如果有node-gyp的报错，可以在npm install的后面加上参数 --no-optional 另外，node-gyp在Windows下编译的时候可能需要依赖于Windows的某些API和.NET framework，具体的步骤请自己搜索node-gyp在github上的文档，只能帮你到这里了。
 
  - 如果有node-sass的报错，尝试一下翻Qiang。
 
@@ -40,6 +42,8 @@ NiceFish做完之后将会用来升级Angular中文社区，现在的社区还�
  - 如果你想要生成模块之间的依赖关系图，请使用angular2-dependencies-graph，这是一个第三方的node模块，路径在这里https://github.com/manekinekko/angular2-dependencies-graph 。当前的模块依赖关系图我已经生成在src/documentation目录下。
 
  - 这个项目接受issue或者PR，收到之后我会尽快处理的。
+
+ - 【特别注意】如果你不幸居然安装好了环境并运行起来了，千万不要手贱去升级npm、node或者angular-cli，在目前升级必挂。
 
 ## 开源许可证
  MIT
