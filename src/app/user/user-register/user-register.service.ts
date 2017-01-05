@@ -5,10 +5,12 @@ import { UserInfo } from '../model/user-info-model';
 
 @Injectable()
 export class UserRegisterService {
-    private userRegisterURL = "";
+    private userRegisterURL = "app/user/user-register/user-register-mock.json";
     constructor(private http:Http) { }
 
-    public register(userInfo:UserInfo):void{
-
+    public register(userInfo:UserInfo){
+        //JSON.stringify(userInfo)
+        return this.http.get(this.userRegisterURL)
+            .map((response: Response) => response.json());
     }
 }

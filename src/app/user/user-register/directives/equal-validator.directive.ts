@@ -1,4 +1,4 @@
-import {Component, Directive,Attribute,forwardRef} from '@angular/core';
+import { Directive,Input } from '@angular/core';
 import { Validator, AbstractControl, NG_VALIDATORS } from '@angular/forms';
 
 
@@ -9,42 +9,30 @@ import { Validator, AbstractControl, NG_VALIDATORS } from '@angular/forms';
     ]
 })
 export class EqualValidator implements Validator {
-    constructor(@Attribute('validateEqual') public validateEqual: string,
-        @Attribute('reverse') public reverse: string) {
-     }
-
-    private get isReverse() {
-        if (!this.reverse) return false;
-        return this.reverse === 'true';
-    }
+    @Input()validateEqual: string;
+    @Input()reverse: boolean;
+    constructor() { }
     
-     validate(control: AbstractControl): { [key: string]: any } {
-         debugger;
+    validate(control: AbstractControl): { [key: string]: any } {
+        //当前控件的值
         let selfValue = control.value;
-
-        // control vlaue
-        let e = control.root.get(this.validateEqual);
-
-        // value not equal
-        if (e && selfValue !== e.value && !this.isReverse) {
-          return {
-            validateEqual: false
-          }
+    
+        // 需要比较的控件，根据属性名称获取
+        let targetControl = control.root.get(this.validateEqual);
+        // 值不相等
+        if (targetControl && selfValue !== targetControl.value ) {
+            if(!this.reverse){
+                return {
+                    validateEqual: false
+                }
+            }else{
+                targetControl.setErrors({
+                    validateEqual: false
+                })
+            }
+        }else{//值相等，清空错误信息
+           targetControl.setErrors(null);
         }
-
-        // value equal and reverse
-        if (e && selfValue === e.value && this.isReverse) {
-            delete e.errors['validateEqual'];
-            if (!Object.keys(e.errors).length) e.setErrors(null);
-        }
-
-        // value not equal and reverse
-        if (e && selfValue !== e.value && this.isReverse) {
-            e.setErrors({
-                validateEqual: false
-            })
-        }
-
         return null;
     }
 }
