@@ -17,7 +17,8 @@ export class UserRegisterComponent implements OnInit {
   private formErrors = {
     'username': '',
     'email': '',
-    'password':''
+    'password':'',
+    'confirmPassword':'',
   };
   validationMessages = {
     'username': {
@@ -32,10 +33,11 @@ export class UserRegisterComponent implements OnInit {
       'required':'密码必须输入。',
       'minlength':'密码至少要8位。'
     },
-    'rePassword':{
+    'confirmPassword':{
       'required':'重复密码必须输入。',
-      'minlength':'密码至少要8位。'
-    }
+      'minlength':'密码至少要8位。',
+      'validateEqual':"两次输入的密码不一致。"
+    },
   };
 
   constructor(private fb: FormBuilder,private userRegisterService: UserRegisterService) { }
@@ -64,11 +66,11 @@ export class UserRegisterComponent implements OnInit {
         this.userInfo.password,
         [
           Validators.required,
-          Validators.minLength(8)
+          Validators.minLength(8),
         ]
       ],
-      "rePassword":[
-        this.userInfo.rePassword,
+      "confirmPassword":[
+        this.userInfo.confirmPassword,
         [
           Validators.required,
           Validators.minLength(8)
@@ -84,6 +86,7 @@ export class UserRegisterComponent implements OnInit {
     if (!this.userForm) { return; }
     const form = this.userForm;
     for (const field in this.formErrors) {
+      debugger;
       this.formErrors[field] = '';
       const control = form.get(field);
       if (control && control.dirty && !control.valid) {
