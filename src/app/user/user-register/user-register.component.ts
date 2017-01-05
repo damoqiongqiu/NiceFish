@@ -123,4 +123,17 @@ export class UserRegisterComponent implements OnInit {
     }
     console.log(this.userInfo);
   }
+
+  testEmail(){
+    let email = this.userForm.get("email").value;
+    this.userRegisterService.testEmail(email)
+      .subscribe(
+        data => {
+          console.log(data);
+        },
+        error => {
+          console.error(error);
+        }
+      )
+  }
 }
