@@ -11,6 +11,7 @@ import { WritePostComponent } from '../post/write-post/write-post.component';
 import { UserMainComponent } from './user-main/user-main.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
+
 import userRoutes from './user.routes';
 
 @NgModule({
@@ -30,6 +31,8 @@ import userRoutes from './user.routes';
   exports:[
   	UserMainComponent
   ],
-  providers: []
+  providers: [
+    
+  ]
 })
 export default class UserModule { }

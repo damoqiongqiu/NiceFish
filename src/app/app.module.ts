@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AlertModule } from 'ng2-bootstrap/components/alert';
 import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { HttpModule,JsonpModule } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from './shared/shared.module';
 
@@ -23,6 +24,9 @@ import { UserLoginService } from './user/user-login/user-login.service';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { UserRegisterService } from './user/user-register/user-register.service';
+
+import { EqualValidator } from './user/user-register/directives/equal-validator.directive';
 
 import appRoutes from './app.routes';
 
@@ -39,11 +43,13 @@ import appRoutes from './app.routes';
     OnlineContactComponent,
     UserLoginComponent,
     ForgetPwdComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
+    EqualValidator
   ],
   imports: [
     BrowserModule,
     RouterModule,
+    ReactiveFormsModule,
     AlertModule,
     PaginationModule,
     HttpModule,
@@ -53,7 +59,8 @@ import appRoutes from './app.routes';
   ],
   providers: [
     UserLoginService,
-    PostListService
+    PostListService,
+    UserRegisterService
   ],
   bootstrap: [AppComponent]
 })

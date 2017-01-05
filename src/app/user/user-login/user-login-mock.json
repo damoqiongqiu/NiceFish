@@ -1,6 +1,5 @@
 {
     "id": 1,
     "username": "admin",
-    "nickName": "管理员",
     "token": "fake-jwt-token"
 }
