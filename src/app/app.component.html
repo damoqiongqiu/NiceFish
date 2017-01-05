@@ -8,14 +8,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a routerLink="home" class="navbar-brand-my">
+            <a routerLink="posts" class="navbar-brand-my">
                 <img class="logo-img" alt="Brand" src="assets/imgs/angular2-small.png">
             </a>
         </div>
         <div class="collapse navbar-collapse navbar-responsive-collapse" aria-expanded="false">
             <ul class="nav navbar-nav">
                 <li routerLinkActive="active" class="dropdown">
-                    <a routerLink="home">动态</a>
+                    <a routerLink="posts">动态</a>
                 </li>
                 <li class="dropdown">
                     <a href="http://www.angular.io/" data-toggle="dropdown" class="dropdown-toggle" target="_blank">官方文档</a>
@@ -36,7 +36,7 @@
                 <li routerLinkActive="active">
                     <a routerLink="user">欢迎你：{{(currentUser | async)?.nickName}}</a>
                 </li>
-                <li routerLinkActive="active" >
+                <li routerLinkActive="active">
                     <a routerLink="manage">管理后台</a>
                 </li>
                 <li>

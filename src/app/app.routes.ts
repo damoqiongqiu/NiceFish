@@ -14,11 +14,16 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
 const appRoutes=[
 	{
 		path:'',
-		redirectTo:'home',
+		redirectTo:'posts/page/1',
 		pathMatch:'full'
 	},
 	{
-		path:'home',
+		path:'posts',
+		redirectTo:'posts/page/1',
+		pathMatch:'full'
+	},
+	{
+		path:'posts/page/:page',
 		component:HomeComponent
 	},
 	{
