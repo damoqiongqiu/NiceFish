@@ -15,7 +15,6 @@ export class PostListService {
   constructor(public http:Http) { }
   
   public getPostList(searchText: string,page:number=1):Observable<Post[]>{
-    console.log("load post list...");
     let url = this.postListURL;
     let params = new URLSearchParams();
     if (searchText) {
