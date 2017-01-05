@@ -16,6 +16,7 @@ export class PostlistComponent implements OnInit {
 	public maxSize:number = 5;
 	public itemsPerPage:number=5;
 	public totalItems:number;
+	//不要手动对这个属性进行赋值，它是和分页工具条自动绑定的
 	public currentPage:number = 1;
 
 	public firstText:string="首页";
@@ -37,7 +38,7 @@ export class PostlistComponent implements OnInit {
 
   	ngOnInit() {
   		this.activeRoute.params.subscribe(params => {
-  			// 从路由里面获取URL参数
+  			// 这里可以从路由里面获取URL参数
   			console.log(params);
 			this.loadData(this.searchText,this.currentPage);
    		});
@@ -61,15 +62,9 @@ export class PostlistComponent implements OnInit {
 			() => {}
 		);
 	}
-
-	public setPage(pageNo:number):void {
-
-	}
 	 
 	public pageChanged(event:any):void {
-		this.currentPage = event.page;
-		console.log(this.currentPage);
-		this.router.navigateByUrl("posts/page/"+this.currentPage);
+		this.router.navigateByUrl("posts/page/"+event.page);
 	}
 
 	public searchBtnClick(){
@@ -83,7 +78,6 @@ export class PostlistComponent implements OnInit {
 
 	private searchChanged($event):void{
 		console.log(this.searchText);
-		this.currentPage = 1;
 		this.searchTextStream.next(this.searchText);
 	}
 }
