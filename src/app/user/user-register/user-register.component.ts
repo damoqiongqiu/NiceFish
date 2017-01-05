@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { UserInfo } from '../model/user-info-model';
+import { User } from '../model/user-model';
 import { UserRegisterService } from './user-register.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { UserRegisterService } from './user-register.service';
 export class UserRegisterComponent implements OnInit {
 
   private userForm: FormGroup;
-  private userInfo: UserInfo = new UserInfo();
+  private userInfo: User = new User();
 
   private formErrors = {
     'username': '',
@@ -109,14 +109,13 @@ export class UserRegisterComponent implements OnInit {
       this.userInfo = this.userForm.value;
       this.userRegisterService.register(this.userInfo)
         .subscribe(
-        data => {
-          this.router.navigateByUrl("home");
-          console.log("注册成功，返回结果：", data);
-        },
-        error => {
-          this.formErrors.formError = error.message;
-          console.error(error);
-        }
+          data => {
+            this.router.navigateByUrl("home");
+          },
+          error => {
+            this.formErrors.formError = error.message;
+            console.error(error);
+          }
         );
     }else{
        this.formErrors.formError = "表单包含无效元素，请检查表单。";
@@ -126,6 +125,7 @@ export class UserRegisterComponent implements OnInit {
 
   testEmail(){
     let email = this.userForm.get("email").value;
+    
     this.userRegisterService.testEmail(email)
       .subscribe(
         data => {

@@ -1,19 +1,15 @@
 import { Injectable} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Subject } from 'rxjs/Subject';
 import { Http, Headers, Response } from '@angular/http';
 import { User } from '../model/user-model';
 
 @Injectable()
 export class UserLoginService {
-  private subject: BehaviorSubject<User>;
   private userLoginURL = 'app/user/user-login/user-login-mock.json';
+  private subject: Subject<User> = new Subject<User>();
 
-  constructor(private http:Http){
-    console.log("UserLoginService init.");
-    let user:User = JSON.parse(localStorage.getItem("currentUser"));
-    this.subject = new BehaviorSubject<User>(user);
-  }
+  constructor(private http:Http){}
 
   public get currentUser():Observable<User>{
       return this.subject.asObservable();

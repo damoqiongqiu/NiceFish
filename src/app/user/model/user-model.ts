@@ -3,4 +3,6 @@ export class User {
     username: string;
     password: string;
     remeberMe:boolean;
+    email: string;
+    confirmPassword: string;
 }
