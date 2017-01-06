@@ -27,15 +27,12 @@ export class AppComponent{
 	    });
 		this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-		this.userLoginService.currentUser.subscribe(
-			data => this.currentUser = data,
-			error => console.log(error)
-		)
-		
-		this.userRegisterService.currentUser.subscribe(
-			data => this.currentUser = data,
-			error => console.log(error)
-		)
+		this.userLoginService.currentUser
+			.merge(this.userRegisterService.currentUser)
+			.subscribe(
+				data => this.currentUser = data,
+				error => console.error(error)
+			)
 	}
 	toggle(button){
 		console.log(button);
