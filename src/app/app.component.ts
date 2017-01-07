@@ -42,6 +42,6 @@ export class AppComponent{
 
 	private doLogout():void{
 		this.userLoginService.logout();
-		this.router.navigateByUrl("home");
+		this.router.navigateByUrl("");
 	}
 }
