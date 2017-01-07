@@ -4,7 +4,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
-import { PostListService } from './services/postlist-service';
+import { PostlistService } from './services/postlist.service';
 import { Post } from '../model/post-model';
 
 @Component({
@@ -32,7 +32,7 @@ export class PostlistComponent implements OnInit {
 
 	constructor(public router: Router,
         public activeRoute: ActivatedRoute,
-        public postService:PostListService) {
+        public postService:PostlistService) {
 		
 	}
 
