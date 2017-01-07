@@ -6,11 +6,11 @@ import { PostlistComponent } from './postlist/postlist.component';
 const postRoutes=[
   {
 		path:'',
-		redirectTo:'posts/page/1',
+		redirectTo:'page/1',
 		pathMatch:'full'
 	},
 	{
-		path:'posts/page/:page',
+		path:'page/:page',
 		component:PostlistComponent
 	},
 	{ 

@@ -15,12 +15,7 @@ export class PostDetailService {
     }
 
     public getPost(id:number):Observable<Post>{
-        debugger;
         return this.http.get(this.postDetailURL)
-                .map((res: Response) => {
-                    debugger;
-                    return res.json();
-                })
-                .catch((error:any) => Observable.throw(error || 'Server error'));
+                .map((res: Response) => res.json());
     }
 }

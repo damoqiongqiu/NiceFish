@@ -25,13 +25,9 @@ export class PostDetailComponent implements OnInit {
   }
 
   public getPost(id:number){
-    debugger;
     this.postDetailService.getPost(id)
-      .map(
-        data => {
-          debugger;
-        this.post = data;
-      },
+      .subscribe(
+        data => this.post = data,
         error => console.error(error)
       );
   }

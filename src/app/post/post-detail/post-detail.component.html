@@ -2,13 +2,11 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<h4>{{ post.title }}</h4>
-			<h4>文章的标题，可以很长，超过32个单词则自动截断</h4>
-			<p>大漠穷秋 2016-11-22 11:32 点击：10000 评论：10000</p>
+			<p>{{ post.author }} {{ post.postTime }} 点击：{{ post.readTimes }} 评论：{{ post.commentTimes }}</p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-12">
-			{{ post.text }}
+		<div class="col-sm-12" [innerHTML]="post.text">
 		</div>
 	</div>
 </div>
