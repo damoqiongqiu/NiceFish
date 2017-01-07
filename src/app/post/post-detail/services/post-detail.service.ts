@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions,URLSearchParams } from '@angular/http';
 
 import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 import { Post } from '../../model/post-model';
 
@@ -9,7 +11,8 @@ import { Post } from '../../model/post-model';
 export class PostDetailService {
     private postDetailURL = "app/post/post-detail/services/post-mock.json";
 
-    constructor(private http: Http) { }
+    constructor(private http: Http) { 
+    }
 
     public getPost(id:number):Observable<Post>{
         debugger;
