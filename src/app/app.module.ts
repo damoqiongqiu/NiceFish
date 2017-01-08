@@ -12,6 +12,8 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserRegisterService } from './user/user-register/user-register.service';
+import { ForgetPwdService } from './user/forget-pwd/forget-pwd.service';
+
 import { EqualValidator } from './user/user-register/directives/equal-validator.directive';
 
 import appRoutes from './app.routes';
@@ -35,7 +37,8 @@ import appRoutes from './app.routes';
   ],
   providers: [
     UserLoginService,
-    UserRegisterService
+    UserRegisterService,
+    ForgetPwdService
   ],
   bootstrap: [AppComponent]
 })
