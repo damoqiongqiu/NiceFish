@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { PostSharedModule } from '../shared/post.module';
 
@@ -12,7 +12,7 @@ import { UserMainComponent } from './user-main/user-main.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
-import userRoutes from './user.routes';
+import {userRoutes} from './user.routes';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import userRoutes from './user.routes';
     AccordionModule,
     SharedModule,
     PostSharedModule,
-    userRoutes
+    RouterModule.forChild(userRoutes)
   ],
   exports:[
   	UserMainComponent
@@ -35,4 +35,4 @@ import userRoutes from './user.routes';
     
   ]
 })
-export default class UserModule { }
+export class UserModule { }

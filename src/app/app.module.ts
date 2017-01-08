@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpModule,JsonpModule } from '@angular/http';
@@ -16,7 +15,7 @@ import { ForgetPwdService } from './user/forget-pwd/forget-pwd.service';
 
 import { EqualValidator } from './user/user-register/directives/equal-validator.directive';
 
-import appRoutes from './app.routes';
+import {appRoutes} from './app.routes';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,7 @@ import appRoutes from './app.routes';
     HttpModule,
     JsonpModule,
     SharedModule,
-    appRoutes
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     UserLoginService,

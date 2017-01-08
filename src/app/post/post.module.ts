@@ -11,14 +11,14 @@ import { PostDetailMainComponent } from './post-detail-main/post-detail-main.com
 import { AddCommentComponent } from '../comment/add-comment/add-comment.component';
 import { CommentService } from '../comment/services/comment.service';
 
-import postRoutes from './post.routes';
+import {postRoutes} from './post.routes';
 
 @NgModule({
     imports: [
         SharedModule,
         RouterModule,
         PaginationModule,
-        postRoutes
+        RouterModule.forChild(postRoutes)
     ],
     exports: [],
     declarations: [
@@ -33,4 +33,4 @@ import postRoutes from './post.routes';
         CommentService
     ],
 })
-export default class PostModule { }
+export class PostModule { }

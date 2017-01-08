@@ -25,14 +25,14 @@ export class AppComponent{
 	    renderer.listen(elementRef.nativeElement, 'click', (event) => {
 	    	//console.log(event);
 	    });
-		this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
+		// this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-		this.userLoginService.currentUser
-			.merge(this.userRegisterService.currentUser)
-			.subscribe(
-				data => this.currentUser = data,
-				error => console.error(error)
-			);
+		// this.userLoginService.currentUser
+		// 	.merge(this.userRegisterService.currentUser)
+		// 	.subscribe(
+		// 		data => this.currentUser = data,
+		// 		error => console.error(error)
+		// 	);
 	}
 	toggle(button){
 		console.log(button);

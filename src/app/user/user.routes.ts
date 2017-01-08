@@ -5,7 +5,7 @@ import { WritePostComponent } from '../post/write-post/write-post.component';
 import { PostTableComponent } from '../manage/post-table/post-table.component';
 import { CommentTableComponent } from '../manage/comment-table/comment-table.component';
 
-const userRoutes = [
+export const userRoutes = [
   	{
 		path:'',
 		component:UserMainComponent,
@@ -18,4 +18,4 @@ const userRoutes = [
 	    ]
 	}
 ];
-export default RouterModule.forChild(userRoutes);
+// export default RouterModule.forChild(userRoutes);
