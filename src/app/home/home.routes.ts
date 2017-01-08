@@ -1,14 +1,14 @@
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 
-const homeRoutes=[
+export const homeRoutes=[
 	{
         path:'',
         component:HomeComponent,
         children:[{
             path:'',
-            loadChildren:'app/post/post.module'
+            loadChildren:'../post/post.module#PostModule'
         }]
     }
 ];
-export default RouterModule.forChild(homeRoutes);
+// export default RouterModule.forChild(homeRoutes);

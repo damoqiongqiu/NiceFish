@@ -1,4 +1,3 @@
-import {RouterModule} from "@angular/router";
 import { ManageMainComponent } from './manage-main/manage-main.component';
 import { PostTableComponent } from './post-table/post-table.component';
 import { CommentTableComponent } from './comment-table/comment-table.component';
@@ -6,7 +5,7 @@ import { TagTableComponent } from './tag-table/tag-table.component';
 import { UserTableComponent } from './user-table/user-table.component';
 import { SysParamComponent } from './sys-param/sys-param.component';
 
-const mangeRoutes = [
+export const manageRoutes = [
   	{
 		path:'',
 		component:ManageMainComponent,
@@ -20,4 +19,4 @@ const mangeRoutes = [
 	    ]
 	}
 ];
-export default RouterModule.forChild(mangeRoutes);
+// export default RouterModule.forChild(manageRoutes);

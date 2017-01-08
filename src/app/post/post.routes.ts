@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { PostDetailMainComponent } from './post-detail-main/post-detail-main.component';
 import { PostlistComponent } from './postlist/postlist.component';
 
-const postRoutes=[
+export const postRoutes=[
   {
 		path:'',
 		redirectTo:'page/1',
@@ -18,4 +18,4 @@ const postRoutes=[
 		component: PostDetailMainComponent 
 	}
 ];
-export default RouterModule.forChild(postRoutes);
+// export default RouterModule.forChild(postRoutes);

@@ -5,18 +5,18 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 
-const appRoutes=[
+export const appRoutes=[
 	{
 		path:'',
 		redirectTo:'posts',
 		pathMatch:'full'
 	},{
 		path:'posts',
-		loadChildren:'app/home/home.module'
+		loadChildren:'./home/home.module#HomeModule'
 	},
 	{
 		path:'post',
-		loadChildren:'app/post/post.module'
+		loadChildren:'./post/post.module#PostModule'
 	},
 	{
 		path:'login',
@@ -32,15 +32,15 @@ const appRoutes=[
 	},
 	{
 		path:'user',
-		loadChildren:'app/user/user.module'
+		loadChildren:'./user/user.module#UserModule'
 	},
 	{ 
 		path: 'manage', 
-		loadChildren:'app/manage/manage.module'
+		loadChildren:'./manage/manage.module#ManageModule'
 	},
 	{
 		path:'**',//fallback router must in the last
-		loadChildren:'app/home/home.module'
+		loadChildren:'./home/home.module#HomeModule'
 	}
 ];
-export default RouterModule.forRoot(appRoutes);
+// export default RouterModule.forRoot(appRoutes);

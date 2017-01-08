@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
+import {RouterModule} from "@angular/router";
 import { AccordionModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { PostSharedModule } from '../shared/post.module';
@@ -10,7 +10,7 @@ import { TagTableComponent } from './tag-table/tag-table.component';
 import { SysParamComponent } from './sys-param/sys-param.component';
 import { PostTableService } from './post-table/services/post-table.service';
 
-import manageRoutes from './manage.routes';
+import {manageRoutes} from './manage.routes';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import manageRoutes from './manage.routes';
 	  CommonModule,
     AccordionModule,
     PostSharedModule,
-    manageRoutes
+    RouterModule.forChild(manageRoutes)
   ],
   exports:[
   	ManageMainComponent
@@ -32,4 +32,4 @@ import manageRoutes from './manage.routes';
     PostTableService
   ]//providers registed here can be used in the whole application
 })
-export default class ManageModule { }
+export class ManageModule { }
