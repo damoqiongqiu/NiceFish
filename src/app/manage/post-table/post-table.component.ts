@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { flyIn } from '../../animations/fly-in';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PostTableService } from './services/post-table.service';
 
 @Component({
   selector: 'app-post-table',
@@ -23,13 +24,21 @@ export class PostTableComponent implements OnInit {
     public nextText:string="下一页";
 
   	constructor(private router: Router,
-        private route: ActivatedRoute) { 
+        private route: ActivatedRoute,
+        private postTableService: PostTableService) { 
 
     }
 
   	ngOnInit() {
   		
   	}
+    public del(postId: number){
+      this.postTableService.del(postId);
+    }
+
+    public toEdit(postId: number){
+      this.postTableService.toEdit(postId);
+    }
 
     private pageChanged():void{
       

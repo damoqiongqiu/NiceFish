@@ -46,7 +46,7 @@ export class UserLoginComponent implements OnInit {
     }
 
     public forgetPwd():void{
-
+      this.router.navigateByUrl("forgetpwd");
     }
     
 }

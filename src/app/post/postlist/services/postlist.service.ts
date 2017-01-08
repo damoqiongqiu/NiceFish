@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 import { Post } from '../../model/post-model';
 
 @Injectable()
-export class PostListService {
+export class PostlistService {
   private postListURL = 'app/post/postlist/services/postlist-mock.json';
   private postListSearchURL = 'app/post/postlist/services/postlist-search-mock.json';
 

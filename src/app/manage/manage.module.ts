@@ -8,6 +8,7 @@ import { ManageMainComponent } from './manage-main/manage-main.component';
 import { UserTableComponent } from './user-table/user-table.component';
 import { TagTableComponent } from './tag-table/tag-table.component';
 import { SysParamComponent } from './sys-param/sys-param.component';
+import { PostTableService } from './post-table/services/post-table.service';
 
 import manageRoutes from './manage.routes';
 
@@ -27,6 +28,8 @@ import manageRoutes from './manage.routes';
   exports:[
   	ManageMainComponent
   ],
-  providers: []//providers registed here can be used in the whole application
+  providers: [
+    PostTableService
+  ]//providers registed here can be used in the whole application
 })
 export default class ManageModule { }

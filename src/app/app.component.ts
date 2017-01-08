@@ -1,7 +1,7 @@
 import { Component,HostListener,ElementRef,Renderer} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/merge';
 
 import { UserLoginService } from './user/user-login/user-login.service';
 import { UserRegisterService } from './user/user-register/user-register.service';
@@ -27,15 +27,12 @@ export class AppComponent{
 	    });
 		this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-		this.userLoginService.currentUser.subscribe(
-			data => this.currentUser = data,
-			error => console.log(error)
-		)
-		
-		this.userRegisterService.currentUser.subscribe(
-			data => this.currentUser = data,
-			error => console.log(error)
-		)
+		this.userLoginService.currentUser
+			.merge(this.userRegisterService.currentUser)
+			.subscribe(
+				data => this.currentUser = data,
+				error => console.error(error)
+			);
 	}
 	toggle(button){
 		console.log(button);
@@ -43,6 +40,6 @@ export class AppComponent{
 
 	private doLogout():void{
 		this.userLoginService.logout();
-		this.router.navigateByUrl("home");
+		this.router.navigateByUrl("");
 	}
 }

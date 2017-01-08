@@ -13,13 +13,9 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                	<div class="comment-item-container">
-	                    <h5>这里是评论的内容</h5>
-    	                <p>大漠穷秋 2016-11-22 12:00</p>        		
-                	</div>
-                	<div class="comment-item-container">
-	                    <h5>这里是评论的内容</h5>
-    	                <p>大漠穷秋 2016-11-22 12:00</p>        		
+                	<div *ngFor="let comment of comments" class="comment-item-container">
+                        <h5>{{comment.content}}</h5>
+                        <p>{{comment.username}} {{comment.date}}</p>        		
                 	</div>
                 </div>
             </div>
