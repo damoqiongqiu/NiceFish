@@ -9,7 +9,7 @@ NiceFish做完之后将会用来升级Angular中文社区，现在的社区还�
 【注意】上面都是吹牛的，这个小东西还没有整体做完，不过我会尽快的，请给我加个星儿，谢谢。
 后端的Node+Express+MongoDB已经搭好了，已经做好了一个雏形。后台RESTful接口做成了一个独立的项目，链接在这里：http://git.oschina.net/mumu-osc/NiceFish-BackEnd
 
-【特别注意】如果你不幸居然安装好了环境并运行起来了，千万不要手贱去升级npm、node或者angular-cli，在目前这些版本下面升级必死。
+【特别注意】如果你不幸居然安装好了环境并运行起来了，千万不要手贱去升级npm、node或者angular-cli，在目前这些版本下面升级必挂！
 
 ## 演示地址
 
@@ -43,7 +43,29 @@ NiceFish做完之后将会用来升级Angular中文社区，现在的社区还�
 
  - 这个项目接受issue或者PR，收到之后我会尽快处理的。
 
- - 【特别注意】如果你不幸居然安装好了环境并运行起来了，千万不要手贱去升级npm、node或者angular-cli，在目前升级必挂。
+ - 【特别注意】如果你不幸居然安装好了环境并运行起来了，千万不要手贱去升级npm、node或者angular-cli，在目前这些版本下面升级必挂！
+
+## 可是我不想搭环境！
+
+我在很多群里面看到，很多刚刚入行的道友，或者刚刚入手Angular的道友，都说搭建开发环境好麻烦。有些人说搞了一整天都搞不定，于是就放弃了。看到这里，小僧很心痛啊！
+
+于是，我就拿Ubuntu 16.04做了一个VMware镜像，把环境都搭建好了，你们只要把它下载下来，就可以上手玩儿NiceFish了。
+
+VMware镜像百度网盘链接：https://pan.baidu.com/s/1pLlR4Rx
+
+在VMware里面导入虚拟机ova文件之后，启动Ubuntu
+
+虚拟机的用户名/密码是：angular/angular_2017 
+
+进入桌面环境之后启动命令行，进入/home/zhangxiaofei/workspace/NiceFish
+
+运行ng serve命令
+
+打开FireFox访问http://localhost:4200
+
+【请注意】登录之后务必修改密码，否则引起安全漏洞后果自负！
+
+【特别注意】如果你不幸居然安装好了环境并运行起来了，千万不要手贱去升级npm、node或者angular-cli，在目前这些版本下面升级必挂！
 
 ## 开源许可证
  MIT
