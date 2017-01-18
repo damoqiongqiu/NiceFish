@@ -22,7 +22,7 @@ export class AppComponent{
 		public userLoginService: UserLoginService,
 		public userRegisterService: UserRegisterService
 	) {
-	    renderer.listen(elementRef.nativeElement, 'click', (event) => {
+	    renderer.listen(elementRef.nativeElement, 'click', (event:any) => {
 	    	//console.log(event);
 	    });
 		this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -34,7 +34,7 @@ export class AppComponent{
 				error => console.error(error)
 			);
 	}
-	toggle(button){
+	toggle(button:any){
 		console.log(button);
 	}
 
