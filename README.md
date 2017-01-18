@@ -27,6 +27,13 @@ NiceFish做完之后将会用来升级Angular中文社区，现在的社区还�
 
 打开你的浏览器，访问http://localhost:4200/
 
+## 更新
+
+打开命令行，进入NiceFish根目录，依次执行以下命令：
+
+	git pull
+	npm update
+
 ## 注意（请仔细看）
 
  - 如果在npm install的过程中有报错，可能是某些包被Qiang掉了，请自己设置翻墙代理之后再运行npm install 。比如，我本地的ShadowSocks代理运行在1080端口上，那么我就让npm安装Node模块的时候从这个代理走，设置方式：npm config set proxy="http://127.0.0.1:1080"  ，然后npm install。注意，尽量不要用cnpm安装，基本上没办法装成功，原因不明。
