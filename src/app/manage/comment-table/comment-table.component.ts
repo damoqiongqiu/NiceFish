@@ -25,7 +25,7 @@ export class CommentTableComponent implements OnInit {
     ngOnInit() {
     }
 
-    private pageChanged():void{
+    public pageChanged():void{
       
     }
 }

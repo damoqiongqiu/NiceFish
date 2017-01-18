@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ForgetPwdService {
-    private validateEmailURL = "app/user/forget-pwd/forget-pwd-mock.json";
+    public validateEmailURL = "app/user/forget-pwd/forget-pwd-mock.json";
 
     constructor(public http: Http) { }
 

@@ -9,9 +9,9 @@ import { Post } from '../../model/post-model';
 
 @Injectable()
 export class PostDetailService {
-    private postDetailURL = "app/post/post-detail/services/post-mock.json";
+    public postDetailURL = "app/post/post-detail/services/post-mock.json";
 
-    constructor(private http: Http) { 
+    constructor(public http: Http) { 
     }
 
     public getPost(id:number):Observable<Post>{

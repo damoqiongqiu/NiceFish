@@ -9,9 +9,9 @@ import { User } from '../model/user-model';
   styleUrls: ['./forget-pwd.component.scss']
 })
 export class ForgetPwdComponent implements OnInit {
-	private user: User = new User();
-	private message: string;
-	private messgeType: string;
+	public user: User = new User();
+	public message: string;
+	public messgeType: string;
 	constructor(
 		public forgetPwdService: ForgetPwdService
 	) { }
@@ -20,7 +20,7 @@ export class ForgetPwdComponent implements OnInit {
 
 	}
 
-	private sendValidationEmail():void{
+	public sendValidationEmail():void{
 		this.forgetPwdService.sendValidationEmail(this.user.email)
 			.subscribe(
 				data => {

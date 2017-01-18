@@ -11,13 +11,13 @@ import { User } from '../model/user-model';
   styleUrls: ['./user-login.component.scss']
 })
 export class UserLoginComponent implements OnInit {
-    private user:User = new User();
-    private error : Error;
+    public user:User = new User();
+    public error : Error;
 
     constructor(
-        private router: Router,
-        private route: ActivatedRoute,
-        private userLoginService: UserLoginService
+        public router: Router,
+        public route: ActivatedRoute,
+        public userLoginService: UserLoginService
     ) {
       console.log(userLoginService);
     }

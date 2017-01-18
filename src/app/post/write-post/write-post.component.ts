@@ -11,7 +11,7 @@ import { flyIn } from '../../animations/fly-in';
 })
 
 export class WritePostComponent implements OnInit,AfterViewInit,OnDestroy {
-	  private editor;
+	  public editor;
 
   	constructor() { }
 
@@ -19,7 +19,7 @@ export class WritePostComponent implements OnInit,AfterViewInit,OnDestroy {
   	
     }
 
-    private fileInputChangeHandler():void{
+    public fileInputChangeHandler():void{
         let fileInput = <HTMLInputElement>document.getElementById('img_input');
         let inputValue=fileInput.value;
         if(!inputValue){

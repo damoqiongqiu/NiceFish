@@ -13,14 +13,14 @@ import { User } from './user/model/user-model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
-	private currentUser : User;
+	public currentUser : User;
 	constructor(
-		private elementRef: ElementRef, 
-		private renderer: Renderer,
-		private router: Router,
-        private route: ActivatedRoute,
-		private userLoginService: UserLoginService,
-		private userRegisterService: UserRegisterService
+		public elementRef: ElementRef, 
+		public renderer: Renderer,
+		public router: Router,
+        public route: ActivatedRoute,
+		public userLoginService: UserLoginService,
+		public userRegisterService: UserRegisterService
 	) {
 	    renderer.listen(elementRef.nativeElement, 'click', (event) => {
 	    	//console.log(event);
@@ -38,7 +38,7 @@ export class AppComponent{
 		console.log(button);
 	}
 
-	private doLogout():void{
+	public doLogout():void{
 		this.userLoginService.logout();
 		this.router.navigateByUrl("");
 	}

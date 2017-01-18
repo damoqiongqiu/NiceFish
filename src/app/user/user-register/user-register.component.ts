@@ -12,10 +12,10 @@ import { UserRegisterService } from './user-register.service';
 })
 export class UserRegisterComponent implements OnInit {
 
-  private userForm: FormGroup;
-  private userInfo: User = new User();
+  public userForm: FormGroup;
+  public userInfo: User = new User();
 
-  private formErrors = {
+  public formErrors = {
     'username': '',
     'email': '',
     'password': '',
@@ -43,10 +43,10 @@ export class UserRegisterComponent implements OnInit {
   };
 
   constructor(
-    private fb: FormBuilder,
-    private userRegisterService: UserRegisterService,
-    private router: Router,
-    private route: ActivatedRoute,
+    public fb: FormBuilder,
+    public userRegisterService: UserRegisterService,
+    public router: Router,
+    public route: ActivatedRoute,
   ) { }
 
   ngOnInit() {

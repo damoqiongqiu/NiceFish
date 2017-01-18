@@ -21,8 +21,8 @@ export class TagTableComponent implements OnInit {
     public previousText:string="上一页";
     public nextText:string="下一页";
 
-  	constructor(private router: Router,
-        private route: ActivatedRoute) { 
+  	constructor(public router: Router,
+        public route: ActivatedRoute) { 
 
     }
     
@@ -30,7 +30,7 @@ export class TagTableComponent implements OnInit {
   		
   	}
 
-    private pageChanged():void{
+    public pageChanged():void{
       
     }
 }

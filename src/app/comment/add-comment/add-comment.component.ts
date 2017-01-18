@@ -10,7 +10,7 @@ import { Comment } from '../model/comment-model';
   styleUrls: ['./add-comment.component.scss']
 })
 export class AddCommentComponent implements OnInit {
-  private comments: Array<Comment>;
+  public comments: Array<Comment>;
 
   constructor(public commentService: CommentService,
     public activeRoute: ActivatedRoute

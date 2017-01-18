@@ -7,11 +7,11 @@ import { User } from '../model/user-model';
 
 @Injectable()
 export class UserRegisterService {
-    private userRegisterURL = "app/user/user-register/user-register-mock.json";
-    private testEmailURL = "";
-    private subject: Subject<User> = new Subject<User>();
+    public userRegisterURL = "app/user/user-register/user-register-mock.json";
+    public testEmailURL = "";
+    public subject: Subject<User> = new Subject<User>();
 
-    constructor(private http:Http) { }
+    constructor(public http:Http) { }
 
     public get currentUser():Observable<User>{
       return this.subject.asObservable();
