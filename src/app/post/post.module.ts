@@ -17,7 +17,7 @@ import {postRoutes} from './post.routes';
     imports: [
         SharedModule,
         RouterModule,
-        PaginationModule,
+        PaginationModule.forRoot(),
         RouterModule.forChild(postRoutes)
     ],
     exports: [],

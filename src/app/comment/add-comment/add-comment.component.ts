@@ -23,7 +23,6 @@ export class AddCommentComponent implements OnInit {
   }
 
   public getCommentList(postId: number){
-    debugger;
     this.commentService.getCommentList(postId)
       .subscribe(
         data => {

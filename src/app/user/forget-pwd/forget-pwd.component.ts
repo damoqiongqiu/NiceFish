@@ -24,7 +24,6 @@ export class ForgetPwdComponent implements OnInit {
 		this.forgetPwdService.sendValidationEmail(this.user.email)
 			.subscribe(
 				data => {
-					debugger;
 					this.message = data.message;
 					this.messgeType = "success";
 				},
