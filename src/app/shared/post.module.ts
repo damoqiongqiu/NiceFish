@@ -7,9 +7,22 @@ import { CommentTableComponent } from '../manage/comment-table/comment-table.com
 import { PostTableComponent } from '../manage/post-table/post-table.component';
 
 @NgModule({
-  imports:      [ CommonModule,FormsModule,PaginationModule],
-  declarations: [ CommentTableComponent, PostTableComponent],
-  exports:      [ CommonModule, FormsModule,PaginationModule,CommentTableComponent, PostTableComponent ]
+  imports:[ 
+  	CommonModule,
+  	FormsModule,
+  	PaginationModule.forRoot()
+  ],
+  declarations:[ 
+  	CommentTableComponent, 
+  	PostTableComponent
+  ],
+  exports:[ 
+  	CommonModule,
+  	FormsModule,
+  	PaginationModule,
+  	CommentTableComponent, 
+  	PostTableComponent 
+  ]
 })
 
 export class PostSharedModule {

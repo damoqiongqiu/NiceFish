@@ -18,4 +18,3 @@ export const postRoutes=[
 		component: PostDetailMainComponent 
 	}
 ];
-// export default RouterModule.forChild(postRoutes);

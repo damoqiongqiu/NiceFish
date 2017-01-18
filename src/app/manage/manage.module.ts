@@ -30,6 +30,6 @@ import {manageRoutes} from './manage.routes';
   ],
   providers: [
     PostTableService
-  ]//providers registed here can be used in the whole application
+  ]
 })
 export class ManageModule { }

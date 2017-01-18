@@ -11,4 +11,3 @@ export const homeRoutes=[
         }]
     }
 ];
-// export default RouterModule.forChild(homeRoutes);

@@ -19,4 +19,3 @@ export const manageRoutes = [
 	    ]
 	}
 ];
-// export default RouterModule.forChild(manageRoutes);

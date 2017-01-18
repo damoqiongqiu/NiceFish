@@ -18,4 +18,3 @@ export const userRoutes = [
 	    ]
 	}
 ];
-// export default RouterModule.forChild(userRoutes);
