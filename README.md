@@ -33,6 +33,17 @@ NiceFish做完之后将会用来升级Angular中文社区，现在的社区还�
 
 	git pull
 	npm update
+	ng serve
+
+## AOT
+
+开发状态打出来的bundle体积比较大，在发布到生产环境之前需要进行prod和AOT编译，用法如下：
+
+打开命令行，进入NiceFish根目录，执行以下命令：
+	
+	ng build --prod --aot
+
+angular-cli会在项目根目录下生成一个dist目录，里面就是编译、压缩好的文件了。仔细观察你会发现，这些文件的体积被大幅度压缩，加上gz之后有一些文件只剩下1/4左右的大小。
 
 ## 注意（请仔细看）
 
