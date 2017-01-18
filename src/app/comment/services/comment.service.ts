@@ -9,7 +9,7 @@ import { Comment } from '../model/comment-model';
 
 @Injectable()
 export class CommentService {
-    private commentListURL = "app/comment/services/comment-mock.json";
+    public commentListURL = "app/comment/services/comment-mock.json";
 
     constructor(public http: Http) { }
 

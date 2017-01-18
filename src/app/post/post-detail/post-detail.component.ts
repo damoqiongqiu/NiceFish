@@ -10,7 +10,7 @@ import { PostDetailService } from './services/post-detail.service';
   styleUrls: ['./post-detail.component.scss']
 })
 export class PostDetailComponent implements OnInit {
-  private post: Post = new Post();
+  public post: Post = new Post();
 
   constructor(public postDetailService: PostDetailService,
       public activeRoute: ActivatedRoute

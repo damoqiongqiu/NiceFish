@@ -5,10 +5,10 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PostTableService {
-    private delURL: string = "";
-    private toEditURL: string = "";
+    public delURL: string = "";
+    public toEditURL: string = "";
     
-    constructor(private http: Http) { }
+    constructor(public http: Http) { }
 
     public getPostTable(){
 

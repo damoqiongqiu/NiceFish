@@ -25,7 +25,7 @@ export class UserTableComponent implements OnInit {
   	ngOnInit() {
   	}
 
-  	private pageChanged():void{
+  	public pageChanged():void{
       
     }
 }

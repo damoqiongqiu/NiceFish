@@ -12,7 +12,7 @@ import { PostTableService } from './services/post-table.service';
   ]
 })
 export class PostTableComponent implements OnInit {
-	  private postList:Array<any>;
+	  public postList:Array<any>;
     public maxSize:number = 5;
     public itemsPerPage:number=5;
     public totalItems:number = 15;
@@ -23,9 +23,9 @@ export class PostTableComponent implements OnInit {
     public previousText:string="上一页";
     public nextText:string="下一页";
 
-  	constructor(private router: Router,
-        private route: ActivatedRoute,
-        private postTableService: PostTableService) { 
+  	constructor(public router: Router,
+        public route: ActivatedRoute,
+        public postTableService: PostTableService) { 
 
     }
 
@@ -40,11 +40,11 @@ export class PostTableComponent implements OnInit {
       this.postTableService.toEdit(postId);
     }
 
-    private pageChanged():void{
+    public pageChanged():void{
       
     }
 
-    private goToWrite():void{
+    public goToWrite():void{
       this.router.navigateByUrl("user/write");
     }
 }

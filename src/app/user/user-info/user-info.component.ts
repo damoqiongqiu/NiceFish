@@ -8,7 +8,7 @@ import { User } from '../model/user-model';
   styleUrls: ['./user-info.component.scss']
 })
 export class UserInfoComponent implements OnInit {
-  private currentUser: User;
+  public currentUser: User;
   constructor() { 
     this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
   }

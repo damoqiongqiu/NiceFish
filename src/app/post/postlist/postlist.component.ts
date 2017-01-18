@@ -24,10 +24,10 @@ export class PostlistComponent implements OnInit {
 	public previousText:string="上一页";
 	public nextText:string="下一页";
 
-	private searchText:string;
-	private searchTextStream:Subject<string> = new Subject<string>();
+	public searchText:string;
+	public searchTextStream:Subject<string> = new Subject<string>();
 
-	private postList:Array<Post>;
+	public postList:Array<Post>;
 
 
 	constructor(public router: Router,
@@ -49,7 +49,7 @@ export class PostlistComponent implements OnInit {
 	        .subscribe(searchText => this.loadData(this.searchText,this.currentPage));
   	}
 
-  	private loadData(searchText:string,page:number){
+  	public loadData(searchText:string,page:number){
 		let offset = (this.currentPage-1)*this.itemsPerPage;
 		let end = (this.currentPage)*this.itemsPerPage;
 		return this.postService.getPostList(searchText,page).subscribe(
@@ -71,12 +71,12 @@ export class PostlistComponent implements OnInit {
 		this.loadData(this.searchText,this.currentPage);
 	}
 
-	private gotoWrite():void{
+	public gotoWrite():void{
 		//如果没有登录，跳转到登录页，如果已登录，跳往写作页
 		this.router.navigateByUrl("user/write");
 	}
 
-	private searchChanged($event):void{
+	public searchChanged($event):void{
 		console.log(this.searchText);
 		this.searchTextStream.next(this.searchText);
 	}
