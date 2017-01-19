@@ -1,5 +1,6 @@
 import { Component,HostListener,ElementRef,Renderer} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import {TranslateService} from 'ng2-translate';
 
 import 'rxjs/add/operator/merge';
 
@@ -19,6 +20,7 @@ export class AppComponent{
 		public renderer: Renderer,
 		public router: Router,
         public route: ActivatedRoute,
+		public translate: TranslateService,
 		public userLoginService: UserLoginService,
 		public userRegisterService: UserRegisterService
 	) {
@@ -34,6 +36,14 @@ export class AppComponent{
 				error => console.error(error)
 			);
 	}
+
+	ngOnInit() {
+        this.translate.addLangs(["zh", "en"]);
+        this.translate.setDefaultLang('zh');
+
+        const browserLang = this.translate.getBrowserLang();
+        this.translate.use(browserLang.match(/zh|en/) ? browserLang : 'zh');
+    }
 	toggle(button:any){
 		console.log(button);
 	}
