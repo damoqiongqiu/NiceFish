@@ -27,6 +27,10 @@ NiceFish做完之后将会用来升级Angular中文社区，现在的社区还�
 
 打开你的浏览器，访问http://localhost:4200/
 
+如果你想让加载的包更小，请使用以下方式启动angular-cli内置的轻量级http server
+
+	ng serve --prod --aot true
+
 ## 更新
 
 打开命令行，进入NiceFish根目录，依次执行以下命令：
