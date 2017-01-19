@@ -3,15 +3,15 @@
         <div class="row">
             <div class="col-sm-10">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="搜索" [(ngModel)]="searchText" (keyup)="searchChanged($event)" id="searchText" name="searchText">
+                    <input class="form-control" type="text" placeholder="{{'search' | translate}}" [(ngModel)]="searchText" (keyup)="searchChanged($event)" id="searchText" name="searchText">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" (onclik)="searchBtnClick()"><i class="fa fa-search" aria-hidden="true"></i> 搜索</button>
+                        <button class="btn btn-default" type="button" (onclik)="searchBtnClick()"><i class="fa fa-search" aria-hidden="true"></i> {{'search' | translate}}</button>
                     </span>
                 </div>
             </div>
             <div class="col-sm-2">
                 <div class="input-group">
-                    <button class="btn btn-success" type="button" (click)="gotoWrite()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 发表文章</button>
+                    <button class="btn btn-success" type="button" (click)="gotoWrite()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{'post.publish' | translate}}</button>
                 </div>
             </div>
         </div>

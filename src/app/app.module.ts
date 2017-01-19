@@ -36,12 +36,12 @@ export function createTranslateLoader(http: Http) {
     ReactiveFormsModule,
     HttpModule,
     JsonpModule,
-    SharedModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,
       useFactory: (createTranslateLoader),
       deps: [Http]
     }),
+    SharedModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
