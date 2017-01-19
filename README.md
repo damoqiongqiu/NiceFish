@@ -35,6 +35,8 @@ NiceFish做完之后将会用来升级Angular中文社区，现在的社区还�
 	npm update
 	ng serve
 
+噢对，如果你pull代码之后发现起不来了，请把你项目下的node_modules全部删掉，然后重新npm update。这里确实有点坑，但是我也不知道为什么。
+
 ## AOT
 
 开发状态打出来的bundle体积比较大，在发布到生产环境之前需要进行prod和AOT编译，用法如下：
