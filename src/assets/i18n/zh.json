@@ -4,12 +4,17 @@
         "welcome":"欢迎你",
         "logout":"退出",
         "login":"登录",
-        "register":"注册"
+        "register":"注册",
+        "doc":"官方文档",
+        "console":"管理后台"
     },
-    "search":"搜索",
      "post":{
         "publish":"发布文章"
     },
-    "doc":"官方文档",
-    "console":"管理后台"
+    "search":"搜索",
+    "submit":"提交",
+    "firstPage":"首页",
+    "lastPage":"末页",
+    "previousPage":"上一页",
+    "nextPage":"下一页"
 }

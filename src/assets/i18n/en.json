@@ -4,12 +4,17 @@
         "logout":"Logout",
         "login":"Login",
         "register":"Register",
-        "articles":"Articles"
+        "articles":"Articles",
+        "doc":"Document",
+        "console":"Console"
     },
     "post":{
         "publish":"publish"
     },
     "search":"search",
-    "doc":"Document",
-    "console":"Console"
+    "submit":"Submit",
+    "firstPage":"First",
+    "lastPage":"Last",
+    "previousPage":"Previous",
+    "nextPage":"Next"
 }
