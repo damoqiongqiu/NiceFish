@@ -10,3 +10,9 @@ body {
     font-size: 14px;
     line-height: 1.5;
 }
+
+html {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 162px;
+}
