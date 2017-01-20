@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ng2-bootstrap';
 import { PaginationModule } from 'ng2-bootstrap';
 
+
+import { SharedModule } from './shared.module';
 import { CommentTableComponent } from '../manage/comment-table/comment-table.component';
 import { PostTableComponent } from '../manage/post-table/post-table.component';
 
@@ -11,6 +13,7 @@ import { PostTableComponent } from '../manage/post-table/post-table.component';
   imports:[ 
   	CommonModule,
   	FormsModule,
+    SharedModule,
     ModalModule.forRoot(),
   	PaginationModule.forRoot()
   ],

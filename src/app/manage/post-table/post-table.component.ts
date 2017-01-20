@@ -18,11 +18,6 @@ export class PostTableComponent implements OnInit {
     public totalItems:number = 15;
     public currentPage:number = 1;
 
-    public firstText:string="首页";
-    public lastText:string="尾页";
-    public previousText:string="上一页";
-    public nextText:string="下一页";
-
   	constructor(public router: Router,
         public activeRoute: ActivatedRoute,
         public postTableService: PostTableService) { 
