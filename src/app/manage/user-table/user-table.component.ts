@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { flyIn } from '../../animations/fly-in';
 
 @Component({
@@ -20,12 +21,22 @@ export class UserTableComponent implements OnInit {
     public previousText:string="上一页";
     public nextText:string="下一页";
 
-  	constructor() { }
+  	constructor(public router: Router,
+        public activeRoute: ActivatedRoute) { 
+
+    }
 
   	ngOnInit() {
+      this.activeRoute.params.subscribe(
+        params =>this.getUsersByPage(params["page"])
+      );
   	}
 
-  	public pageChanged():void{
-      
+    public getUsersByPage(page:Number):void{
+      console.log("页码>"+page);
+    }
+
+  	public pageChanged(event):void{
+      this.router.navigateByUrl("manage/usertable/page/"+event.page);
     }
 }

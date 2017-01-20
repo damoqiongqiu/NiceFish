@@ -10,12 +10,12 @@ export const manageRoutes = [
 		path:'',
 		component:ManageMainComponent,
 	    children: [
-	    	{ path: '', component: PostTableComponent },
-	    	{ path: 'posttable', component: PostTableComponent },
-	    	{ path: 'commenttable', component: CommentTableComponent },
-	    	{ path: 'tagtable', component: TagTableComponent },
-	    	{ path: 'usertable', component: UserTableComponent },
-	    	{ path: 'sysparam', component: SysParamComponent }
+	    	{ path: '',redirectTo:'posttable/page/1',pathMatch:'full'},
+	    	{ path: 'posttable/page/:page', component: PostTableComponent },
+	    	{ path: 'commenttable/page/:page', component: CommentTableComponent },
+	    	{ path: 'usertable/page/:page', component: UserTableComponent },
+	    	{ path: 'sysparam', component: SysParamComponent },
+	    	{ path:'**', redirectTo:'posttable/page/1' }
 	    ]
 	}
 ];

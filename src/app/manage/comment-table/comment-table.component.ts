@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSegment } from '@angular/router';
 import { flyIn } from '../../animations/fly-in';
 
 @Component({
@@ -20,12 +21,25 @@ export class CommentTableComponent implements OnInit {
     public previousText:string="上一页";
     public nextText:string="下一页";
 
-    constructor() { }
+    constructor(public router: Router,
+        public activeRoute: ActivatedRoute) {
 
-    ngOnInit() {
     }
 
-    public pageChanged():void{
-      
+    ngOnInit() {
+      this.activeRoute.params.subscribe(
+        params =>this.getCommentsByPage(params["page"])
+      );
+    }
+
+    public getCommentsByPage(page:Number):void{
+      console.log("页码>"+page);
+    }
+
+    public pageChanged(event:any):void {
+      let urlTree:UrlTree=this.router.parseUrl(this.router.url);
+      const g: UrlSegmentGroup = urlTree.root.children[PRIMARY_OUTLET];
+      const s: UrlSegment[] = g.segments;
+      this.router.navigateByUrl(s[0]+"/commenttable/page/"+event.page);
     }
 }

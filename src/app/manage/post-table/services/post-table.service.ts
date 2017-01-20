@@ -11,7 +11,7 @@ export class PostTableService {
     constructor(public http: Http) { }
 
     public getPostTable(){
-
+        
     }
 
     public del(postId: number):Observable<any>{

@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { flyIn } from '../../animations/fly-in';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSegment } from '@angular/router';
 import { PostTableService } from './services/post-table.service';
 
 @Component({
@@ -24,14 +24,17 @@ export class PostTableComponent implements OnInit {
     public nextText:string="下一页";
 
   	constructor(public router: Router,
-        public route: ActivatedRoute,
+        public activeRoute: ActivatedRoute,
         public postTableService: PostTableService) { 
 
     }
 
   	ngOnInit() {
-  		
+  		this.activeRoute.params.subscribe(
+        params =>this.getPostsByPage(params["page"])
+      );
   	}
+
     public del(postId: number){
       this.postTableService.del(postId);
     }
@@ -40,8 +43,15 @@ export class PostTableComponent implements OnInit {
       this.postTableService.toEdit(postId);
     }
 
-    public pageChanged():void{
-      
+    public getPostsByPage(page:Number):void{
+      console.log("页码>"+page);
+    }
+
+    public pageChanged(event:any):void {
+      let urlTree:UrlTree=this.router.parseUrl(this.router.url);
+      const g: UrlSegmentGroup = urlTree.root.children[PRIMARY_OUTLET];
+      const s: UrlSegment[] = g.segments;
+      this.router.navigateByUrl(s[0]+"/posttable/page/"+event.page);
     }
 
     public goToWrite():void{
