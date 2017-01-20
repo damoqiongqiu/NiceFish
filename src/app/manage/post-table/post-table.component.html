@@ -39,13 +39,28 @@
                                 <a href="javascript:void(0);" (click)="editPost(1)">编辑</a>
                                 <a href="javascript:void(0);" (click)="unTop(1)">取消置顶</a>
                                 <a href="javascript:void(0);" (click)="top(1)">置顶</a>
-                                <a href="javascript:void(0);" (click)="delPost(1)">删除</a>
+                                <a href="javascript:void(0);" (click)="staticModal.show()">删除</a>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" [firstText]="firstText" [lastText]="lastText" [previousText]="previousText" [nextText]="nextText" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)" class="pagination-sm"></pagination>
+        </div>
+    </div>
+</div>
+<div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">请确认</h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                确定删除吗？
+            </div>
         </div>
     </div>
 </div>

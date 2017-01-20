@@ -1,7 +1,8 @@
-import { NgModule }            from '@angular/core';
-import { CommonModule }        from '@angular/common';
-import { FormsModule }         from '@angular/forms';
-import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ng2-bootstrap';
+import { PaginationModule } from 'ng2-bootstrap';
 
 import { CommentTableComponent } from '../manage/comment-table/comment-table.component';
 import { PostTableComponent } from '../manage/post-table/post-table.component';
@@ -10,6 +11,7 @@ import { PostTableComponent } from '../manage/post-table/post-table.component';
   imports:[ 
   	CommonModule,
   	FormsModule,
+    ModalModule.forRoot(),
   	PaginationModule.forRoot()
   ],
   declarations:[ 
@@ -19,6 +21,7 @@ import { PostTableComponent } from '../manage/post-table/post-table.component';
   exports:[ 
   	CommonModule,
   	FormsModule,
+    ModalModule,
   	PaginationModule,
   	CommentTableComponent, 
   	PostTableComponent 

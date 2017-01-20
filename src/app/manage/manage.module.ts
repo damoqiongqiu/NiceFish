@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {RouterModule} from "@angular/router";
-import { AccordionModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AccordionModule } from 'ng2-bootstrap';
 
 import { PostSharedModule } from '../shared/post.module';
 import { ManageMainComponent } from './manage-main/manage-main.component';

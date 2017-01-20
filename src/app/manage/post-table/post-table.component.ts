@@ -74,6 +74,5 @@ export class PostTableComponent implements OnInit {
 
     public delPost(postId:Number):void{
       console.log(postId);
-
     }
 }
