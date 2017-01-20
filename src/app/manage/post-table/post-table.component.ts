@@ -57,4 +57,23 @@ export class PostTableComponent implements OnInit {
     public goToWrite():void{
       this.router.navigateByUrl("user/write");
     }
+
+    public editPost(postId:Number):void{
+      console.log(postId);
+    }
+
+    public top(postId:Number):void{
+      console.log(postId);
+
+    }
+
+    public unTop(postId:Number):void{
+      console.log(postId);
+
+    }
+
+    public delPost(postId:Number):void{
+      console.log(postId);
+
+    }
 }

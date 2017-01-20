@@ -22,8 +22,7 @@ export class UserTableComponent implements OnInit {
     public nextText:string="下一页";
 
   	constructor(public router: Router,
-        public activeRoute: ActivatedRoute) { 
-
+        public activeRoute: ActivatedRoute) {
     }
 
   	ngOnInit() {
@@ -38,5 +37,17 @@ export class UserTableComponent implements OnInit {
 
   	public pageChanged(event):void{
       this.router.navigateByUrl("manage/usertable/page/"+event.page);
+    }
+
+    public blockUser(userId:Number):void{
+      console.log(userId);
+    }
+
+    public unBlockUser(userId:Number):void{
+      console.log(userId);
+    }
+
+    public resetPwd(userId:Number):void{
+      console.log(userId);
     }
 }

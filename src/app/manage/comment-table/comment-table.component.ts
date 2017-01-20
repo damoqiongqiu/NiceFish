@@ -42,4 +42,9 @@ export class CommentTableComponent implements OnInit {
       const s: UrlSegment[] = g.segments;
       this.router.navigateByUrl(s[0]+"/commenttable/page/"+event.page);
     }
+    
+    public delComment(commentId:Number):void{
+      console.log(commentId);
+
+    }
 }
