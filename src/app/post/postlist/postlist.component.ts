@@ -19,11 +19,6 @@ export class PostlistComponent implements OnInit {
 	//不要手动对这个属性进行赋值，它是和分页工具条自动绑定的
 	public currentPage:number = 1;
 
-	public firstText:string="首页";
-	public lastText:string="尾页";
-	public previousText:string="上一页";
-	public nextText:string="下一页";
-
 	public searchText:string;
 	public searchTextStream:Subject<string> = new Subject<string>();
 
