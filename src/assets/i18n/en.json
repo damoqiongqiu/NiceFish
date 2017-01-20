@@ -1,0 +1,15 @@
+{
+    "app":{
+        "welcome":"Welcome",
+        "logout":"Logout",
+        "login":"Login",
+        "register":"Register",
+        "articles":"Articles"
+    },
+    "post":{
+        "publish":"publish"
+    },
+    "search":"search",
+    "doc":"Document",
+    "console":"Console"
+}

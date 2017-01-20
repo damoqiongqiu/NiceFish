@@ -15,10 +15,10 @@
         <div class="collapse navbar-collapse navbar-responsive-collapse" aria-expanded="false">
             <ul class="nav navbar-nav">
                 <li routerLinkActive="active" class="dropdown">
-                    <a routerLink="posts">动态</a>
+                    <a routerLink="posts">{{'app.articles' | translate}}</a>
                 </li>
                 <li class="dropdown">
-                    <a href="http://www.angular.io/" data-toggle="dropdown" class="dropdown-toggle" target="_blank">官方文档</a>
+                    <a href="http://www.angular.io/" data-toggle="dropdown" class="dropdown-toggle" target="_blank">{{'doc' | translate}}</a>
                 </li>
                 <li class="dropdown">
                     <a href="http://git.oschina.net/mumu-osc/NiceFish" data-toggle="dropdown" class="dropdown-toggle" target="_blank">NiceFish</a>
@@ -26,21 +26,21 @@
             </ul>
             <ul *ngIf="!currentUser?.username" class="nav navbar-nav navbar-right">
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a routerLink="login">登录</a>
+                    <a routerLink="login">{{'app.login' | translate}}</a>
                 </li>
                 <li routerLinkActive="active">
-                    <a routerLink="register">注册</a>
+                    <a routerLink="register">{{'app.register' | translate}}</a>
                 </li>
             </ul>
             <ul *ngIf="currentUser?.username" class="nav navbar-nav navbar-right">
                 <li routerLinkActive="active">
-                    <a routerLink="user">欢迎你：{{currentUser?.username}}</a>
+                    <a routerLink="user">{{'app.welcome' | translate}}：{{currentUser?.username}}</a>
                 </li>
                 <li routerLinkActive="active">
-                    <a routerLink="manage">管理后台</a>
+                    <a routerLink="manage">{{'console' | translate}}</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" (click)="doLogout()">退出</a>
+                    <a href="javascript:void(0);" (click)="doLogout()">{{'app.logout' | translate}}</a>
                 </li>
             </ul>
         </div>

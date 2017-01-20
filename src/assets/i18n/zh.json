@@ -1,0 +1,15 @@
+{
+    "app":{
+        "articles":"动态",
+        "welcome":"欢迎你",
+        "logout":"退出",
+        "login":"登录",
+        "register":"注册"
+    },
+    "search":"搜索",
+     "post":{
+        "publish":"发布文章"
+    },
+    "doc":"官方文档",
+    "console":"管理后台"
+}
