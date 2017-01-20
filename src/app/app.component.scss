@@ -48,7 +48,10 @@
 .footer {
     text-align: left;
     padding: 40px 48px;
-    margin-top: 20px;
     background: #263238;
     color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
