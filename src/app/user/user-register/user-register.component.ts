@@ -17,15 +17,21 @@ export class UserRegisterComponent implements OnInit {
 
   public formErrors = {
     'username': '',
+    'nickname': '',
     'email': '',
     'password': '',
     'confirmPassword': '',
-    'formError': ''
+    'formError': '',
+    'vcode':''
   };
   validationMessages = {
     'username': {
       'required': '用户名必须输入。',
-      'minlength': '用户名至少4位。'
+      'minlength': '用户名4到32个字符。'
+    },
+    'nickname': {
+      'required': '昵称必须输入。',
+      'minlength': '昵称2到32个字符。'
     },
     'email': {
       'required': '邮箱必须输入。',
@@ -39,6 +45,11 @@ export class UserRegisterComponent implements OnInit {
       'required': '重复密码必须输入。',
       'minlength': '密码至少要8位。',
       'validateEqual': "两次输入的密码不一致。"
+    },
+    'vcode': {
+      'required': '验证码必须输入。',
+      'minlength': '4位验证码',
+      'maxlength': '4位验证码'
     },
   };
 
@@ -59,7 +70,16 @@ export class UserRegisterComponent implements OnInit {
         this.userInfo.username,
         [
           Validators.required,
-          Validators.minLength(4)
+          Validators.minLength(4),
+          Validators.maxLength(32)
+        ]
+      ],
+      "nickname": [
+        this.userInfo.nickname,
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(32)
         ]
       ],
       "email": [
@@ -81,6 +101,14 @@ export class UserRegisterComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(8)
+        ]
+      ],
+      "vcode": [
+        this.userInfo.vcode,
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(4)
         ]
       ]
     });
@@ -118,14 +146,13 @@ export class UserRegisterComponent implements OnInit {
           }
         );
     }else{
-       this.formErrors.formError = "表单包含无效元素，请检查表单。";
+       this.formErrors.formError = "存在不合法的输入项，请检查。";
     }
     console.log(this.userInfo);
   }
 
   testEmail(){
     let email = this.userForm.get("email").value;
-    
     this.userRegisterService.testEmail(email)
       .subscribe(
         data => {

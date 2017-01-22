@@ -1,23 +1,32 @@
 <div class="container user-register-container">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">用户注册</h3>
+            <h3 class="panel-title">注册</h3>
         </div>
         <div class="panel-body">
             <form [formGroup]="userForm" (ngSubmit)="doRegister()" class="form-horizontal" role="form" novalidate>
                 <div class="form-group" [ngClass]="{'has-error': formErrors.username }">
                     <label class="col-sm-2 control-label">用户名：</label>
-                    <div class="col-sm-10">
-                        <input required formControlName="username" type="text" class="form-control" placeholder="用户名">
+                    <div class="col-sm-6">
+                        <input required formControlName="username" type="text" class="form-control" placeholder="用户名4到32个字符">
                         <div *ngIf="formErrors.username" class="text-danger">
                             {{ formErrors.username }}
                         </div>
                     </div>
                 </div>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.nickname }">
+                    <label class="col-sm-2 control-label">昵称：</label>
+                    <div class="col-sm-6">
+                        <input required formControlName="nickname" type="text" class="form-control" placeholder="昵称2到32个字符">
+                        <div *ngIf="formErrors.nickname" class="text-danger">
+                            {{ formErrors.nickname }}
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group" [ngClass]="{'has-error': formErrors.email }">
                     <label class="col-sm-2 control-label">常用邮箱：</label>
-                    <div class="col-sm-10">
-                        <input required formControlName="email" type="email" class="form-control" placeholder="常用邮箱">
+                    <div class="col-sm-6">
+                        <input required formControlName="email" type="email" class="form-control" placeholder="常用邮箱，验证后才能登录">
                         <div *ngIf="formErrors.email" class="text-danger">
                             {{ formErrors.email }}
                         </div>
@@ -25,12 +34,12 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button (click)="testEmail()" type="button" class="btn btn-danger">测试邮箱</button>
+                        <p class="form-control-static text-danger">【如果您未在收件箱收到验证邮件，请到垃圾箱查收。】</p>
                     </div>
                 </div>
                 <div class="form-group" [ngClass]="{'has-error': formErrors.password }">
                     <label class="col-sm-2 control-label">密码：</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-6">
                         <input required formControlName="password" validateEqual="confirmPassword" reverse=true type="password" class="form-control" placeholder="密码，至少8位">
                         <div *ngIf="formErrors.password" class="text-danger">
                             {{ formErrors.password }}
@@ -39,11 +48,24 @@
                 </div>
                 <div class="form-group" [ngClass]="{'has-error': formErrors.confirmPassword }">
                     <label class="col-sm-2 control-label">重复密码：</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-6">
                         <input required formControlName="confirmPassword" validateEqual="password" type="password" class="form-control" placeholder="重复密码">
                         <div *ngIf="formErrors.confirmPassword" class="text-danger">
                             {{ formErrors.confirmPassword }}
                         </div>
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.vcode }">
+                    <label class="col-sm-2 control-label">验证码：</label>
+                    <div class="col-sm-6">
+                        <input required formControlName="vcode" class="form-control" placeholder="验证码">
+                        <div *ngIf="formErrors.vcode" class="text-danger">
+                            {{ formErrors.vcode }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <img id="vCodeImg" src="" alt="验证码">
+                        <button class="btn btn-primary" id="reloadVCode">重新获取</button>
                     </div>
                 </div>
                 <div *ngIf="formErrors.formError" class="col-sm-offset-2 col-sm-10 alert alert-danger">{{ formErrors.formError }}</div>
