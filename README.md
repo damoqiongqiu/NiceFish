@@ -1,8 +1,8 @@
 # NiceFish（美人鱼）
 
-NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后端是基于Node的http服务端，数据存储用的MongoDB。 
+NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后端基于Java。
 
-可以用来搭建团队Blog，微信SNS站点，个人站点，或者用于学习Angular2（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
+可以用来搭建团队Blog，微型SNS站点，个人站点，或者用于学习Angular2（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
 
 ## 演示地址
 
@@ -20,7 +20,7 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后�
 
 如果你想让加载的包更小，请使用以下方式启动angular-cli内置的轻量级http server
 
-	ng serve --prod --aot true
+	ng serve --prod --aot
 
 ## 更新
 
