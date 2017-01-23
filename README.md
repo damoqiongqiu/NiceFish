@@ -6,23 +6,23 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 
 ## 演示地址
 
+阿里云上的演示地址：http://121.196.220.118:8081/
+
 以下是效果图：
 
-<img src="/src/assets/imgs/1.png" alt="效果图" width="80%">
+![效果图](src/assets/imgs/1.png)
 
-<img src="/src/assets/imgs/2.png" alt="效果图" width="80%">
+![效果图](src/assets/imgs/2.png)
 
-<img src="/src/assets/imgs/3.png" alt="效果图" width="80%">
+![效果图](src/assets/imgs/3.png)
 
-<img src="/src/assets/imgs/4.png" alt="效果图" width="80%">
+![效果图](src/assets/imgs/4.png)
 
-<img src="/src/assets/imgs/5.png" alt="效果图" width="80%">
-
-阿里云上的演示地址：http://121.196.220.118:8081/
+![效果图](src/assets/imgs/5.png)
 
 ## 目录结构
 
-<img src="/src/assets/imgs/6.png" alt="目录结构" width="80%">
+![目录结构](src/assets/imgs/6.png)
 
 ## 用法
 
