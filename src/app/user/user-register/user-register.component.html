@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{'has-error': formErrors.vcode }">
+                <!-- <div class="form-group" [ngClass]="{'has-error': formErrors.vcode }">
                     <label class="col-sm-2 control-label">验证码：</label>
                     <div class="col-sm-6">
                         <input required formControlName="vcode" class="form-control" placeholder="验证码">
@@ -67,7 +67,7 @@
                         <img id="vCodeImg" src="" alt="验证码">
                         <button class="btn btn-primary" id="reloadVCode">重新获取</button>
                     </div>
-                </div>
+                </div> -->
                 <div *ngIf="formErrors.formError" class="col-sm-offset-2 col-sm-10 alert alert-danger">{{ formErrors.formError }}</div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
