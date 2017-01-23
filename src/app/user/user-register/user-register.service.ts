@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Request, RequestOptions, Response, RequestMethod, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
@@ -18,7 +18,13 @@ export class UserRegisterService {
     }
 
     public register(user: User){
-        //JSON.stringify(userInfo)
+        console.log(user);
+        //向后台post数据的写法如下
+        // let data = new URLSearchParams();
+        // data.append('email', user.email);
+        // data.append('password', user.password);
+        // return this.http.post(this.userRegisterURL,data);
+        
         return this.http.get(this.userRegisterURL)
             .map((response: Response) => {
                 let user = response.json();

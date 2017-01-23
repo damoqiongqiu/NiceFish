@@ -1,8 +1,8 @@
 # NiceFish（美人鱼）
 
-NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后端可以是任意技术，所以我没有做后端啊 :)。
+NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2 + ng2-Bootstrap ，后端可以是任意技术，所以我没有做后端啊 :)。
 
-可以用来搭建团队Blog，微型SNS站点，个人站点，或者用于学习Angular2（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
+NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angular2（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
 
 ## 演示地址
 
