@@ -8,15 +8,15 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后�
 
 以下是效果图：
 
-![效果图](/src/assets/imgs/1.png)
+<img src="/src/assets/imgs/1.png" alt="效果图" width="80%">
 
-![效果图](/src/assets/imgs/2.png)
+<img src="/src/assets/imgs/2.png" alt="效果图" width="80%">
 
-![效果图](/src/assets/imgs/3.png)
+<img src="/src/assets/imgs/3.png" alt="效果图" width="80%">
 
-![效果图](/src/assets/imgs/4.png)
+<img src="/src/assets/imgs/4.png" alt="效果图" width="80%">
 
-![效果图](/src/assets/imgs/5.png)
+<img src="/src/assets/imgs/5.png" alt="效果图" width="80%">
 
 阿里云上的演示地址：http://121.196.220.118:8081/
 
