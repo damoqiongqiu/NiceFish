@@ -6,7 +6,19 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2，后�
 
 ## 演示地址
 
-我在阿里云上面放了一个演示地址：http://121.196.220.118:8081/
+以下是效果图：
+
+![效果图](/src/assets/imgs/1.png)
+
+![效果图](/src/assets/imgs/2.png)
+
+![效果图](/src/assets/imgs/3.png)
+
+![效果图](/src/assets/imgs/4.png)
+
+![效果图](/src/assets/imgs/5.png)
+
+阿里云上的演示地址：http://121.196.220.118:8081/
 
 ## 用法
 
@@ -89,3 +101,7 @@ VMware镜像百度网盘链接：https://pan.baidu.com/s/1pLlR4Rx
 
 ## 关于我
 我是大漠穷秋，目前是Google Angular项目组在中国的开发者PM，负责Angular的推广工作，我会在各种渠道经常发布一些与Angular相关的技术文章，希望能给大家带来一点点帮助，请点这里：https://my.oschina.net/mumu/blog  。
+
+如果你需要帮助，请联系发邮件到xiaofeiz@google.com
+
+【注意】我每天都会收到大量的求助消息，真的有点忙，所以请准确描述您的问题，最好能加上一些截图，非常感谢！
