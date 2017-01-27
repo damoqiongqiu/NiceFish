@@ -10,8 +10,10 @@ export class PostTableService {
     
     constructor(public http: Http) { }
 
-    public getPostTable(){
-        
+    public getPostTable(dataURL:string){
+        return this.http.get(dataURL)
+          .map((res:Response) => res.json())
+          .catch((error:any) => Observable.throw(error || 'Server error'));
     }
 
     public del(postId: number):Observable<any>{

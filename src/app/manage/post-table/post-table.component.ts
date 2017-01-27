@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { flyIn } from '../../animations/fly-in';
 import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSegment } from '@angular/router';
 import { PostTableService } from './services/post-table.service';
@@ -12,6 +12,8 @@ import { PostTableService } from './services/post-table.service';
   ]
 })
 export class PostTableComponent implements OnInit {
+    @Input() dataURL:string="app/manage/post-table/services/post-mock.json";
+
 	  public postList:Array<any>;
     public maxSize:number = 5;
     public itemsPerPage:number=5;
@@ -20,8 +22,7 @@ export class PostTableComponent implements OnInit {
 
   	constructor(public router: Router,
         public activeRoute: ActivatedRoute,
-        public postTableService: PostTableService) { 
-
+        public postTableService: PostTableService) {
     }
 
   	ngOnInit() {
@@ -30,16 +31,16 @@ export class PostTableComponent implements OnInit {
       );
   	}
 
-    public del(postId: number){
-      this.postTableService.del(postId);
-    }
-
-    public toEdit(postId: number){
-      this.postTableService.toEdit(postId);
-    }
-
-    public getPostsByPage(page:Number):void{
+    public getPostsByPage(page:Number){
       console.log("页码>"+page);
+      return this.postTableService.getPostTable(this.dataURL).subscribe(
+        res=>{
+          console.log(res);
+          this.postList=res.items;
+        },
+        error => {console.log(error)},
+        () => {}
+      );
     }
 
     public pageChanged(event:any):void {
@@ -53,21 +54,31 @@ export class PostTableComponent implements OnInit {
       this.router.navigateByUrl("user/write");
     }
 
-    public editPost(postId:Number):void{
-      console.log(postId);
+    public editPost(event):void{
+        var target = event.target || event.srcElement || event.currentTarget;
+        var nameAttr = target.attributes.name;
+        var value = nameAttr.nodeValue;
+        console.log("postId>"+value);
     }
 
-    public top(postId:Number):void{
-      console.log(postId);
-
+    public top(event):void{
+        var target = event.target || event.srcElement || event.currentTarget;
+        var nameAttr = target.attributes.name;
+        var value = nameAttr.nodeValue;
+        console.log("postId>"+value);
     }
 
-    public unTop(postId:Number):void{
-      console.log(postId);
-
+    public unTop(event):void{
+        var target = event.target || event.srcElement || event.currentTarget;
+        var nameAttr = target.attributes.name;
+        var value = nameAttr.nodeValue;
+        console.log("postId>"+value);
     }
 
-    public delPost(postId:Number):void{
-      console.log(postId);
+    public delPost(event):void{
+        var target = event.target || event.srcElement || event.currentTarget;
+        var nameAttr = target.attributes.name;
+        var value = nameAttr.nodeValue;
+        console.log("postId>"+value);
     }
 }
