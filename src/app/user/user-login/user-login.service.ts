@@ -6,9 +6,9 @@ import { User } from '../model/user-model';
 
 @Injectable()
 export class UserLoginService {
-  public userLoginURL = 'app/user/user-login/user-login-mock.json';
+  public userLoginURL = 'mock-data/user-login-mock.json';
   public subject: Subject<User> = new Subject<User>();
-
+  
   constructor(public http:Http){}
 
   public get currentUser():Observable<User>{
