@@ -50,15 +50,25 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 
 噢对，如果你pull代码之后发现起不来了，请把你项目下的node_modules全部删掉，然后重新npm update。这里确实有点坑，但是我也不知道为什么。
 
-## AOT
+## AOT&TreeShaking
 
-开发状态打出来的bundle体积比较大，在发布到生产环境之前需要进行prod和AOT编译，用法如下：
+开发状态打出来的bundle体积比较大，在发布到生产环境之前需要进行prod和AOT，用法如下：
 
 打开命令行，进入NiceFish根目录，执行以下命令：
 	
 	ng build --prod --aot
 
-angular-cli会在项目根目录下生成一个dist目录，里面就是编译、压缩好的文件了。仔细观察你会发现，这些文件的体积被大幅度压缩，加上gz之后有一些文件只剩下1/4左右的大小。
+加上--prod参数之后，angular-cli会自动启用TreeShaking（摇树）特性，简而言之，就是把用不到的包全部剔除掉，就像从树上把枯叶子摇下来一样，很形象吧？加上--aot参数是让angular-cli启动预编译特性。
+
+angular-cli会在项目根目录下生成一个dist目录，里面就是编译、压缩好的文件了。仔细观察你会发现，这些文件的体积已经被大幅度压缩，加上gzip之后有一些文件只剩下1/4左右的大小。
+
+![效果图](src/assets/imgs/7.png)
+
+![效果图](src/assets/imgs/8.png)
+
+关于Tomcat如何启动gzip，我专门写了一篇文章来介绍配置，请点这里：https://my.oschina.net/mumu/blog/830742
+
+【请注意】最新版本的angular-cli已经内置了对AOT和TreeShaking的支持，只要像上面这样在build的时候加上--prod和--aot参数就可以了，不需要再做任何其它任何配置工作，官方网站上的那一篇指南有点过时了。
 
 ## 注意（请仔细看）
 
