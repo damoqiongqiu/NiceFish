@@ -34,6 +34,15 @@ export class UserTableComponent implements OnInit {
       this.router.navigateByUrl("manage/usertable/page/"+event.page);
     }
 
+    public newUser():void{
+      this.router.navigateByUrl("manage/usertable/newuser");
+    }
+
+    public editUser(userId:Number):void{
+      console.log(userId);
+      this.router.navigateByUrl("manage/usertable/edituser/"+userId);
+    }
+
     public blockUser(userId:Number):void{
       console.log(userId);
     }
