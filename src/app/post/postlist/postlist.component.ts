@@ -63,16 +63,17 @@ export class PostlistComponent implements OnInit {
 	}
 
 	public searchBtnClick(){
+		console.log(this.searchText);
 		this.loadData(this.searchText,this.currentPage);
-	}
-
-	public gotoWrite():void{
-		//如果没有登录，跳转到登录页，如果已登录，跳往写作页
-		this.router.navigateByUrl("user/write");
 	}
 
 	public searchChanged($event):void{
 		console.log(this.searchText);
 		this.searchTextStream.next(this.searchText);
+	}
+	
+	public gotoWrite():void{
+		//TODO：如果没有登录，跳转到登录页，如果已登录，跳往写作页
+		this.router.navigateByUrl("user/write");
 	}
 }

@@ -55,28 +55,28 @@ export class PostTableComponent implements OnInit {
     }
 
     public editPost(event):void{
-        var target = event.target || event.srcElement || event.currentTarget;
+        var target = event.currentTarget;
         var nameAttr = target.attributes.name;
         var value = nameAttr.nodeValue;
         console.log("postId>"+value);
     }
 
     public top(event):void{
-        var target = event.target || event.srcElement || event.currentTarget;
+        var target = event.currentTarget;
         var nameAttr = target.attributes.name;
         var value = nameAttr.nodeValue;
         console.log("postId>"+value);
     }
 
     public unTop(event):void{
-        var target = event.target || event.srcElement || event.currentTarget;
+        var target = event.currentTarget;
         var nameAttr = target.attributes.name;
         var value = nameAttr.nodeValue;
         console.log("postId>"+value);
     }
 
     public delPost(event):void{
-        var target = event.target || event.srcElement || event.currentTarget;
+        var target = event.currentTarget;
         var nameAttr = target.attributes.name;
         var value = nameAttr.nodeValue;
         console.log("postId>"+value);

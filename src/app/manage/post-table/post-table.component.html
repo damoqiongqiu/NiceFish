@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="post-item-container">
-                <table class="table table-bordered">
+                <table class="table table-bordered table-condensed">
                     <thead>
                         <tr>
                             <th>序号</th>
@@ -36,10 +36,10 @@
                             <td>{{post.userName}}</td>
                             <td>{{post.postTime}}</td>
                             <td>
-                                <a href="javascript:void(0);" name="{{post.postId}}" (click)="editPost($event)">编辑</a>
-                                <a href="javascript:void(0);" name="{{post.postId}}" (click)="unTop($event)">取消置顶</a>
-                                <a href="javascript:void(0);" name="{{post.postId}}" (click)="top($event)">置顶</a>
-                                <a href="javascript:void(0);" name="{{post.postId}}" (click)="delPost($event)">删除</a>
+                                <a href="javascript:void(0);" name="{{post.postId}}" (click)="editPost($event)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a href="javascript:void(0);" name="{{post.postId}}" (click)="unTop($event)"><i class="fa fa-list-ul" aria-hidden="true"></i></a>
+                                <a href="javascript:void(0);" name="{{post.postId}}" (click)="top($event)"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+                                <a href="javascript:void(0);" name="{{post.postId}}" (click)="delPost($event)"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </td>
                         </tr>
                     </tbody>
