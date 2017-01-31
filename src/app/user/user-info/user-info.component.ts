@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { User } from '../model/user-model';
 
@@ -8,12 +8,16 @@ import { User } from '../model/user-model';
   styleUrls: ['./user-info.component.scss']
 })
 export class UserInfoComponent implements OnInit {
-  public currentUser: User;
-  constructor() { 
-    this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  }
+	  @Input() 
+    public panelTitle:string="用户信息";
 
-  ngOnInit() {
-  }
+  	public currentUser: User;
 
+  	constructor() { 
+    	this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  	}
+
+  	ngOnInit() {
+      
+  	}
 }

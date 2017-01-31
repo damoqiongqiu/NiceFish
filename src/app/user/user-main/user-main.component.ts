@@ -16,4 +16,13 @@ export class UserMainComponent implements OnInit {
   ngOnInit() {
   }
 
+  onActivate(component) {
+    // you have access to the component instance
+    console.log("组件加载完成>"+component);
+  }
+
+  onDeactivate(component) {
+    // you have access to the component instance
+    console.log("组件已经移除>"+component);
+  }
 }

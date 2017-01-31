@@ -1,10 +1,10 @@
 <div class="container user-main-container" [@flyIn]="active">
     <div class="row">
         <div class="col-sm-9">
-            <router-outlet></router-outlet>
+            <router-outlet (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'></router-outlet>
         </div>
         <div class="col-sm-3">
-            <app-user-info></app-user-info>
+            <app-user-info panelTitle="用户信息"></app-user-info>
             <div class="list-group">
                 <a routerLink="write" class="list-group-item">写作</a>
                 <a routerLink="posttable/page/1"  class="list-group-item"><span class="badge">1024</span>文章管理</a>
