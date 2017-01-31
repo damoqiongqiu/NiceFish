@@ -10,6 +10,7 @@ import { PostDetailService } from './post-detail/services/post-detail.service';
 import { PostDetailMainComponent } from './post-detail-main/post-detail-main.component';
 import { AddCommentComponent } from '../comment/add-comment/add-comment.component';
 import { CommentService } from '../comment/services/comment.service';
+import { BooleanPipe } from '../utils/boolean-pipe';
 
 import {postRoutes} from './post.routes';
 
@@ -20,17 +21,18 @@ import {postRoutes} from './post.routes';
         PaginationModule.forRoot(),
         RouterModule.forChild(postRoutes)
     ],
-    exports: [],
+    exports: [BooleanPipe],
     declarations: [
         PostlistComponent,
         PostDetailMainComponent,
         PostDetailComponent,
-        AddCommentComponent
+        AddCommentComponent,
+        BooleanPipe
     ],
     providers: [
         PostlistService,
         PostDetailService,
         CommentService
-    ],
+    ]
 })
 export class PostModule { }

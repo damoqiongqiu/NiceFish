@@ -22,8 +22,8 @@
                 <h4>
                     <a [routerLink]="['/post/postdetail',post.postId]">{{post.title}}</a>
                 </h4>
-                <p>
-                    {{post.userName}}
+                <p class="{{post.isfamous | boolean }}">
+                    {{post.userName }}
                     &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}} 
                     &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;{{post.readTimes}} 
                     &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;{{post.commentTimes}}

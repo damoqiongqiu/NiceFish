@@ -9,15 +9,18 @@ import { User } from '../model/user-model';
 })
 export class UserInfoComponent implements OnInit {
 	  @Input() 
-    public panelTitle:string="用户信息";
+    public panelTitle:string;
 
   	public currentUser: User;
 
   	constructor() { 
     	this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  	}
+      //构造组件的时候，@Input的属性还没有值
+      console.log(this.panelTitle);
+    }
 
-  	ngOnInit() {
-      
+    ngOnInit() {
+      //组件初始化完成之后，panelTitle才会有值
+      console.log(this.panelTitle);
   	}
 }

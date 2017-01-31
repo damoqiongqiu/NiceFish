@@ -15,7 +15,6 @@ import { UserRegisterService } from './user/user-register/user-register.service'
 import { ForgetPwdService } from './user/forget-pwd/forget-pwd.service';
 
 import { EqualValidator } from './user/user-register/directives/equal-validator.directive';
-
 import {appRoutes} from './app.routes';
 
 export function createTranslateLoader(http: Http) {
