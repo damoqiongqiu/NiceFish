@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStat
 import { flyIn } from '../../animations/fly-in';
 import { UserLoginService } from '../../user/user-login/user-login.service';
 import { UserInfoComponent } from '../../user/user-info/user-info.component';
+import { Subscription }   from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-post-detail-main',
@@ -13,6 +14,7 @@ import { UserInfoComponent } from '../../user/user-info/user-info.component';
   ]
 })
 export class PostDetailMainComponent implements OnInit {
+  private subscription:Subscription;
 
   constructor(
         public router: Router,
@@ -22,7 +24,7 @@ export class PostDetailMainComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.userLoginService.currentUser
+    this.subscription=this.userLoginService.currentUser
         .subscribe(
           data => {
               let activatedRouteSnapshot:ActivatedRouteSnapshot=this.activatedRoute.snapshot;
@@ -38,7 +40,13 @@ export class PostDetailMainComponent implements OnInit {
                 alert("用户登录成功，可以隐藏登录面板了！");
               }
           },
-          error => console.error(error)
+          error =>{
+             console.error(error);
+          }
         );
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 }

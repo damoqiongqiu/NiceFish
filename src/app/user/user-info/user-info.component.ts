@@ -8,7 +8,7 @@ import { User } from '../model/user-model';
   styleUrls: ['./user-info.component.scss']
 })
 export class UserInfoComponent implements OnInit {
-	  @Input() 
+	  @Input()
     public panelTitle:string;
 
   	public currentUser: User;
