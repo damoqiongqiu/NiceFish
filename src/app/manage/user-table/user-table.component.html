@@ -36,7 +36,7 @@
                             <td>2010-11-11 11:11</td>
                             <td>2016-11-27 09:34</td>
                             <td>
-                                <a href="javascript:void(0);" (click)="editUser(1)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a [routerLink]="['/manage/usertable/edituser',1]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                 <a href="javascript:void(0);" (click)="blockUser(1)"><i class="fa fa-lock" aria-hidden="true"></i></a>
                                 <a href="javascript:void(0);" (click)="unBlockUser(1)"><i class="fa fa-unlock" aria-hidden="true"></i></a>
                                 <a href="javascript:void(0);" (click)="resetPwd(1)"><i class="fa fa-user-secret" aria-hidden="true"></i></a>

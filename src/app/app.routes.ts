@@ -11,6 +11,9 @@ export const appRoutes=[
 		redirectTo:'posts',
 		pathMatch:'full'
 	},{
+		path:'home',
+		loadChildren:'./home/home.module#HomeModule'
+	},{
 		path:'posts',
 		loadChildren:'./home/home.module#HomeModule'
 	},
@@ -43,4 +46,3 @@ export const appRoutes=[
 		loadChildren:'./home/home.module#HomeModule'
 	}
 ];
-// export default RouterModule.forRoot(appRoutes);

@@ -11,10 +11,11 @@ export class UserRegisterService {
     public testEmailURL = "";
     public subject: Subject<User> = new Subject<User>();
 
-    constructor(public http:Http) { }
+    constructor(public http:Http) {
+    }
 
     public get currentUser():Observable<User>{
-      return this.subject.asObservable();
+        return this.subject.asObservable();
     }
 
     public register(user: User){

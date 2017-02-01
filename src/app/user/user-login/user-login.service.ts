@@ -1,4 +1,4 @@
-import { Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { Http, Headers, Response } from '@angular/http';
@@ -16,22 +16,28 @@ export class UserLoginService {
   }
 
   public login(user:User){
-  	console.log("user login service login...");
-    //JSON.stringify({ username: user.username,password:user.password})
-    return this.http.get(this.userLoginURL)
+    return this.http
+            .get(this.userLoginURL)
             .map((response: Response) => {
               let user = response.json();
+              console.log("user object>"+user);
               if(user && user.token){
                 localStorage.setItem("currentUser",JSON.stringify(user));
                 this.subject.next(Object.assign({},user));
               }
               return response;
-            });
+            })
+            .subscribe(
+                data => {
+                    console.log("login success>"+data);
+                },
+                error => {
+                    console.error(error);
+                }
+            );
   }
 
   public logout():void{
-  	console.log("user login service logout...");
-    //退出登录移除
     localStorage.removeItem("currentUser");
     this.subject.next(Object.assign({}));
   }

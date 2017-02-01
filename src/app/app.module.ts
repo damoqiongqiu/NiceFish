@@ -8,7 +8,6 @@ import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-tra
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { UserLoginService } from './user/user-login/user-login.service';
-import { UserLoginComponent } from './user/user-login/user-login.component';
 import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserRegisterService } from './user/user-register/user-register.service';
@@ -24,7 +23,6 @@ export function createTranslateLoader(http: Http) {
 @NgModule({
   declarations: [
     AppComponent,
-    UserLoginComponent,
     ForgetPwdComponent,
     UserRegisterComponent,
     EqualValidator

@@ -1,4 +1,4 @@
-<div class="container user-main-container" [@flyIn]="active">
+<div class="user-main-container" [@flyIn]="active">
     <div class="row">
         <div class="col-sm-9">
             <router-outlet (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'></router-outlet>

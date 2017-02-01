@@ -1,5 +1,5 @@
-import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit,Input } from '@angular/core';
+import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
 import { UserLoginService } from './user-login.service';
 import { Observable } from 'rxjs/Observable';
 
@@ -16,28 +16,29 @@ export class UserLoginComponent implements OnInit {
 
     constructor(
         public router: Router,
-        public route: ActivatedRoute,
+        public activatedRoute: ActivatedRoute,
         public userLoginService: UserLoginService
     ) {
-      console.log(userLoginService);
+        console.log(this.userLoginService);
     }
 
     ngOnInit() {
-      
+        console.log("--- user-login-component ---");
+        console.log(this.router);
+        console.log(this.activatedRoute);
+
+        let activatedRouteSnapshot:ActivatedRouteSnapshot=this.activatedRoute.snapshot;
+        let routerState: RouterState = this.router.routerState;
+        let routerStateSnapshot: RouterStateSnapshot = routerState.snapshot;
+
+        console.log(activatedRouteSnapshot);
+        console.log(routerState);
+        console.log(routerStateSnapshot);
     }
 
     public doLogin():void{
       console.log(this.user);
-      this.userLoginService.login(this.user)
-        .subscribe(
-                data => {
-                    this.router.navigateByUrl("user");
-                },
-                error => {
-                    this.error = error.message;
-                    console.error(error);
-                }
-          );
+      this.userLoginService.login(this.user);
     }
 
     public doLogout():void{
@@ -48,5 +49,4 @@ export class UserLoginComponent implements OnInit {
     public forgetPwd():void{
       this.router.navigateByUrl("forgetpwd");
     }
-    
 }

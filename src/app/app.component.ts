@@ -1,6 +1,6 @@
 import { Component,HostListener,ElementRef,Renderer} from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import {TranslateService} from 'ng2-translate';
+import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
+import { TranslateService } from 'ng2-translate';
 
 import 'rxjs/add/operator/merge';
 
@@ -15,35 +15,62 @@ import { User } from './user/model/user-model';
 })
 export class AppComponent{
 	public currentUser : User;
+	private globalClickCallbackFn: Function;
+	private loginSuccessCallbackFn: Function;
+
 	constructor(
 		public elementRef: ElementRef, 
 		public renderer: Renderer,
 		public router: Router,
-        public route: ActivatedRoute,
+        public activatedRoute: ActivatedRoute,
 		public translate: TranslateService,
 		public userLoginService: UserLoginService,
 		public userRegisterService: UserRegisterService
 	) {
-	    renderer.listen(elementRef.nativeElement, 'click', (event:any) => {
-	    	//console.log(event);
+
+	}
+
+	ngOnInit() {
+	    this.globalClickCallbackFn=this.renderer.listen(this.elementRef.nativeElement, 'click', (event:any) => {
+	    	console.log("全局监听点击事件>"+event);
 	    });
+	    
 		this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
 		this.userLoginService.currentUser
 			.merge(this.userRegisterService.currentUser)
 			.subscribe(
-				data => this.currentUser = data,
+				data => {
+					this.currentUser = data;
+					let activatedRouteSnapshot:ActivatedRouteSnapshot=this.activatedRoute.snapshot;
+			        let routerState: RouterState = this.router.routerState;
+			        let routerStateSnapshot: RouterStateSnapshot = routerState.snapshot;
+
+			        console.log(activatedRouteSnapshot);
+			        console.log(routerState);
+			        console.log(routerStateSnapshot);
+
+			        //如果是从/login这个URL进行的登录，跳转到首页，否则什么都不做
+			        if(routerStateSnapshot.url.indexOf("/login")!=-1){
+						this.router.navigateByUrl("/home");
+			        }
+				},
 				error => console.error(error)
 			);
-	}
 
-	ngOnInit() {
         this.translate.addLangs(["zh", "en"]);
         this.translate.setDefaultLang('zh');
 
         const browserLang = this.translate.getBrowserLang();
         this.translate.use(browserLang.match(/zh|en/) ? browserLang : 'zh');
     }
+
+    ngOnDestroy(){
+    	if(this.globalClickCallbackFn){
+    		this.globalClickCallbackFn();
+    	}
+    }
+
 	toggle(button:any){
 		console.log(button);
 	}
