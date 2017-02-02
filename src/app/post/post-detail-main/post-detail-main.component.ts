@@ -49,4 +49,8 @@ export class PostDetailMainComponent implements OnInit {
   ngOnDestroy(){
     this.subscription.unsubscribe();
   }
+
+  doFollow(){
+    alert("父组件监听子组件的事件...");
+  }
 }

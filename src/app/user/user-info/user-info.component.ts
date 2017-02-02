@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User } from '../model/user-model';
 
 @Component({
@@ -10,6 +9,9 @@ import { User } from '../model/user-model';
 export class UserInfoComponent implements OnInit {
 	  @Input()
     public panelTitle:string;
+
+    @Output()
+    public follow = new EventEmitter<string>();
 
   	public currentUser: User;
 
@@ -23,4 +25,8 @@ export class UserInfoComponent implements OnInit {
       //组件初始化完成之后，panelTitle才会有值
       console.log(this.panelTitle);
   	}
+
+    public followBtnClick(){
+        this.follow.emit("follow");
+    }
 }
