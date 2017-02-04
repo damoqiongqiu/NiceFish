@@ -15,7 +15,8 @@ export class UserProfileComponent implements OnInit {
 
   @Input() fields: Base<any>[] = [new Textbox({
     label:"头像",
-    placeholder:"上传头像"
+    placeholder:"上传头像",
+    type:"file"
   }),new Textbox({
     label:"用户名",
     placeholder:"用户名"
@@ -32,7 +33,8 @@ export class UserProfileComponent implements OnInit {
     placeholder:"重复密码"
   }),new TextArea({
     label:"个人简介",
-    placeholder:"个人简介，最多140字，不能放链接。"
+    placeholder:"个人简介，最多140字，不能放链接。",
+    rows:3
   })];
   form: FormGroup;
 
