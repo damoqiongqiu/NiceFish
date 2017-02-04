@@ -6,6 +6,7 @@ import { TranslateModule } from 'ng2-translate';
 import { UserLoginComponent } from '../user/user-login/user-login.component';
 import { UserInfoComponent } from '../user/user-info/user-info.component';
 import { UserProfileComponent } from '../user/user-profile/user-profile.component';
+import { FormControlComponent } from '../user/user-profile/dyn-form/form-control.component';
 
 @NgModule({
   imports:[ 
@@ -17,7 +18,8 @@ import { UserProfileComponent } from '../user/user-profile/user-profile.componen
   declarations:[
     UserLoginComponent,
   	UserInfoComponent,
-  	UserProfileComponent
+  	UserProfileComponent,
+    FormControlComponent
   ],
   exports:[
   	CommonModule,
