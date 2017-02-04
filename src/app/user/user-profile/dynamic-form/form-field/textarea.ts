@@ -1,6 +1,6 @@
-import { Base } from './base';
+import { FieldBase } from './field-base';
 
-export class TextArea extends Base<string> {
+export class TextArea extends FieldBase<string> {
   controlType = 'textarea';
   rows: number;
   constructor(options: {} = {}) {

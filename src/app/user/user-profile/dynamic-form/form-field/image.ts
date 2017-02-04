@@ -1,6 +1,6 @@
-import { Base } from './base';
+import { FieldBase } from './field-base';
 
-export class Image extends Base<string> {
+export class Image extends FieldBase<string> {
   controlType = 'image';
   src: string;
   constructor(options: {} = {}) {

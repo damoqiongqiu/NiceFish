@@ -1,9 +1,10 @@
-export class Base<T>{
+export class FieldBase<T>{
   value: T;
   key: string;
   label: string;
   controlType: string;
   placeholder: string;
+
   constructor(options: {
       value?: T,
       key?: string,

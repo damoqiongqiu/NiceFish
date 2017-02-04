@@ -1,6 +1,6 @@
-import { Base } from './base';
+import { FieldBase } from './field-base';
 
-export class Textbox extends Base<string> {
+export class Textbox extends FieldBase<string> {
   controlType = 'textbox';
   type: string;
   constructor(options: {} = {}) {
