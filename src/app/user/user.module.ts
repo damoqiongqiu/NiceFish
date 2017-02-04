@@ -1,18 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { SharedModule } from '../shared/shared.module';
 import { PostSharedModule } from '../shared/post.module';
 
-import { AlertModule } from 'ng2-bootstrap';
-import { AccordionModule } from 'ng2-bootstrap';
+import { AlertModule, AccordionModule } from 'ng2-bootstrap';
 
 import { WritePostComponent } from '../post/write-post/write-post.component';
 import { UserMainComponent } from './user-main/user-main.component';
 
 import { PostTableService } from '../manage/post-table/services/post-table.service';
 
-import {userRoutes} from './user.routes';
+import { userRoutes } from './user.routes';
 
 @NgModule({
   declarations: [
@@ -20,15 +21,16 @@ import {userRoutes} from './user.routes';
     WritePostComponent
   ],
   imports: [
-	  CommonModule,
+    CommonModule,
+    ReactiveFormsModule,
     AlertModule,
     AccordionModule,
     SharedModule,
     PostSharedModule,
     RouterModule.forChild(userRoutes)
   ],
-  exports:[
-  	UserMainComponent
+  exports: [
+    UserMainComponent
   ],
   providers: [
     PostTableService

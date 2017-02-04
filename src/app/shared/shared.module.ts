@@ -1,22 +1,25 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { TranslateModule } from 'ng2-translate';
 
 import { UserLoginComponent } from '../user/user-login/user-login.component';
 import { UserInfoComponent } from '../user/user-info/user-info.component';
 import { UserProfileComponent } from '../user/user-profile/user-profile.component';
+import { FormControlComponent } from '../user/user-profile/dyn-form/form-control.component';
 
 @NgModule({
   imports:[ 
   	CommonModule,
     FormsModule,
+    ReactiveFormsModule,
   	TranslateModule
   ],
   declarations:[
     UserLoginComponent,
   	UserInfoComponent,
-  	UserProfileComponent
+  	UserProfileComponent,
+    FormControlComponent
   ],
   exports:[
   	CommonModule,
