@@ -16,8 +16,8 @@ export class UserRegisterComponent implements OnInit {
   public userInfo: User = new User();
 
   public formErrors = {
-    'username': '',
-    'nickname': '',
+    'userName': '',
+    'nickName': '',
     'email': '',
     'password': '',
     'confirmPassword': '',
@@ -25,11 +25,11 @@ export class UserRegisterComponent implements OnInit {
     'vcode':''
   };
   validationMessages = {
-    'username': {
+    'userName': {
       'required': '用户名必须输入。',
       'minlength': '用户名4到32个字符。'
     },
-    'nickname': {
+    'nickName': {
       'required': '昵称必须输入。',
       'minlength': '昵称2到32个字符。'
     },
@@ -66,16 +66,16 @@ export class UserRegisterComponent implements OnInit {
 
   buildForm(): void {
     this.userForm = this.fb.group({
-      "username": [
-        this.userInfo.username,
+      "userName": [
+        this.userInfo.userName,
         [
           Validators.required,
           Validators.minLength(4),
           Validators.maxLength(32)
         ]
       ],
-      "nickname": [
-        this.userInfo.nickname,
+      "nickName": [
+        this.userInfo.nickName,
         [
           Validators.required,
           Validators.minLength(2),

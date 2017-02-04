@@ -5,21 +5,21 @@
         </div>
         <div class="panel-body">
             <form [formGroup]="userForm" (ngSubmit)="doRegister()" class="form-horizontal" role="form" novalidate>
-                <div class="form-group" [ngClass]="{'has-error': formErrors.username }">
+                <div class="form-group" [ngClass]="{'has-error': formErrors.userName }">
                     <label class="col-sm-3 control-label">{{'userRegister.userName' | translate}}</label>
                     <div class="col-sm-8">
-                        <input required formControlName="username" type="text" class="form-control" placeholder="{{'userRegister.userName-placeholder' | translate}}">
-                        <div *ngIf="formErrors.username" class="text-danger">
-                            {{ formErrors.username }}
+                        <input required formControlName="userName" type="text" class="form-control" placeholder="{{'userRegister.userName-placeholder' | translate}}">
+                        <div *ngIf="formErrors.userName" class="text-danger">
+                            {{ formErrors.userName }}
                         </div>
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{'has-error': formErrors.nickname }">
+                <div class="form-group" [ngClass]="{'has-error': formErrors.nickName }">
                     <label class="col-sm-3 control-label">{{'userRegister.nickName' | translate}}</label>
                     <div class="col-sm-8">
-                        <input required formControlName="nickname" type="text" class="form-control" placeholder="{{'userRegister.nickName-placeholder' | translate}}">
-                        <div *ngIf="formErrors.nickname" class="text-danger">
-                            {{ formErrors.nickname }}
+                        <input required formControlName="nickName" type="text" class="form-control" placeholder="{{'userRegister.nickName-placeholder' | translate}}">
+                        <div *ngIf="formErrors.nickName" class="text-danger">
+                            {{ formErrors.nickName }}
                         </div>
                     </div>
                 </div>
