@@ -22,7 +22,8 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 
 ## 目录结构
 
-![目录结构](src/assets/imgs/6.png)
+![目录结构1](src/assets/imgs/6.png)
+![目录结构2](src/assets/imgs/9.png)
 
 ## 用法
 
