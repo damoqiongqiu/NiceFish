@@ -38,14 +38,18 @@ export class PostlistComponent implements OnInit {
    		});
 		
 		this.searchTextStream
-	        .debounceTime(300)
+	        .debounceTime(500)
 	        .distinctUntilChanged()
-	        .subscribe(searchText => this.loadData(this.searchText,this.currentPage));
+	        .subscribe(searchText => {
+				console.log(this.searchText);
+	        	this.loadData(this.searchText,this.currentPage)
+	        });
   	}
 
   	public loadData(searchText:string,page:number){
 		let offset = (this.currentPage-1)*this.itemsPerPage;
 		let end = (this.currentPage)*this.itemsPerPage;
+		
 		return this.postService.getPostList(searchText,page).subscribe(
 			res=>{
 				this.totalItems = res["total"];
@@ -61,13 +65,7 @@ export class PostlistComponent implements OnInit {
 		this.router.navigateByUrl("posts/page/"+event.page);
 	}
 
-	public searchBtnClick(){
-		console.log(this.searchText);
-		this.loadData(this.searchText,this.currentPage);
-	}
-
 	public searchChanged($event):void{
-		console.log(this.searchText);
 		this.searchTextStream.next(this.searchText);
 	}
 	

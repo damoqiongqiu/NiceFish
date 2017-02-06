@@ -20,18 +20,20 @@ export class UserRegisterService {
 
     public register(user: User){
         console.log(user);
+        
         //向后台post数据的写法如下
         // let data = new URLSearchParams();
         // data.append('email', user.email);
         // data.append('password', user.password);
         // return this.http.post(this.userRegisterURL,data);
         
-        return this.http.get(this.userRegisterURL)
-            .map((response: Response) => {
-                let user = response.json();
-                localStorage.setItem("currentUser",JSON.stringify(user));
-                this.subject.next(user);    
-            });
+        return this.http
+                    .get(this.userRegisterURL)
+                    .map((response: Response) => {
+                        let user = response.json();
+                        localStorage.setItem("currentUser",JSON.stringify(user));
+                        this.subject.next(user);    
+                    });
     }
 
     public testEmail(email:string){

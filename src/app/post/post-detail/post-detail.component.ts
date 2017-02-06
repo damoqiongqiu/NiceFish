@@ -25,10 +25,11 @@ export class PostDetailComponent implements OnInit {
   }
 
   public getPost(id:number){
-    this.postDetailService.getPost(id)
-      .subscribe(
-        data => this.post = data,
-        error => console.error(error)
-      );
+    this.postDetailService
+        .getPost(id)
+        .subscribe(
+          data => this.post = data,
+          error => console.error(error)
+        );
   }
 }

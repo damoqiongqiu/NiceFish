@@ -15,7 +15,8 @@ export class PostDetailService {
     }
 
     public getPost(id:number):Observable<Post>{
-        return this.http.get(this.postDetailURL)
-                .map((res: Response) => res.json());
+        return 	this.http
+        			.get(this.postDetailURL)
+                	.map((res: Response) => res.json());
     }
 }

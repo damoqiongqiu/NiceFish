@@ -23,9 +23,15 @@ export class PostlistService {
       console.log(`searchText=${searchText}`);
 		}
     params.set('page',String(page));
-    return this.http.get(url,{search:params})
-      .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error || 'Server error'));
+    
+    return this.http
+               .get(url,{search:params})
+               .map((res:Response) => {
+                   let result=res.json();
+                   console.log(result);
+                   return result;
+               })
+               .catch((error:any) => Observable.throw(error || 'Server error'));
   }
 
   public getPostNumber():number{

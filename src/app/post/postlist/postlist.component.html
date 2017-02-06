@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-sm-10">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="{{'search' | translate}}" [(ngModel)]="searchText" (keyup)="searchChanged($event)" id="searchText" name="searchText">
+                    <input class="form-control" type="text" placeholder="{{'search' | translate}}" [(ngModel)]="searchText" (keyup)="searchChanged($event)" (change)="searchChanged($event)" id="searchText" name="searchText">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" (click)="searchBtnClick()"><i class="fa fa-search" aria-hidden="true"></i> {{'search' | translate}}</button>
+                        <button class="btn btn-default" type="button" (click)="searchChanged()"><i class="fa fa-search" aria-hidden="true"></i> {{'search' | translate}}</button>
                     </span>
                 </div>
             </div>

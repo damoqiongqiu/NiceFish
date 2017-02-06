@@ -6,7 +6,7 @@
                 placeholder="{{field.placeholder}}" />
             <textarea *ngSwitchCase="'textarea'" value="{{field.value}}" rows="{{field.rows}}" class="form-control" [formControlName]="field.key"
                 placeholder="{{field.placeholder}}"></textarea>
-                <img *ngSwitchCase="'image'" src="{{field.src}}">
+            <img *ngSwitchCase="'image'" src="{{field.src}}">
         </div>
     </div>
 </div>
