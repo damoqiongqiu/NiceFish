@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
-import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { HomeComponent }   from './home.component';
 import { SocialChannelComponent } from './social-channel/social-channel.component';
 import { SitestatComponent } from '../sitestat/sitestat.component';
@@ -11,7 +11,7 @@ import {homeRoutes} from './home.routes';
 @NgModule({
     imports: [
         SharedModule,
-         RouterModule.forChild(homeRoutes)
+        RouterTestingModule.withRoutes(homeRoutes)
     ],
     exports: [],
     declarations: [
