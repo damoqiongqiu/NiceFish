@@ -4,6 +4,12 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2 + ng2-B
 
 NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angular2（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
 
+## 视频教程
+
+此项目对应的视频教程请看这里：https://my.oschina.net/mumu/blog/834254
+
+持续发布中！
+
 ## 演示地址
 
 阿里云上的演示地址：http://121.196.220.118:8081/
