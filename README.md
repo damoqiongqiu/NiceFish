@@ -6,9 +6,11 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 
 ## 视频教程
 
-此项目对应的视频教程请看这里：https://my.oschina.net/mumu/blog/834254
+此项目对应的视频教程（超清）请看这里：https://my.oschina.net/mumu/blog/834254
 
 持续发布中！
+
+![视频教程截图](src/assets/imgs/10.png)
 
 ## 演示地址
 
