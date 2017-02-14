@@ -35,6 +35,8 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 
 ## 用法
 
+【请注意】如果你是在Windows下开发，用npm install -g angular-cli无法安装，或者安装报错，请直接到这里下载node_modules.zip，http://pan.baidu.com/s/1qYATzje ，下载完成之后解压到项目的根目录下，再次执行以上命令就行。
+
 用git克隆本项目，从命令行进入进入项目根目录，依次执行以下命令：
 
 	npm install -g angular-cli
