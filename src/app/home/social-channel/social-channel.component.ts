@@ -10,6 +10,6 @@ export class SocialChannelComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  	
   }
-
 }

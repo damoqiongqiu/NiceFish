@@ -6,6 +6,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 
 export class BooleanPipe implements PipeTransform { 
 	constructor() {}
+	
 	transform(flag: string): string { 
 		return flag==="true" ? "text-danger":"";
 	}

@@ -24,7 +24,8 @@ export class PostlistComponent implements OnInit {
 	public postList:Array<Post>;
 
 
-	constructor(public router: Router,
+	constructor(
+		public router: Router,
         public activeRoute: ActivatedRoute,
         public postService:PostlistService) {
 		

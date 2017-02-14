@@ -26,6 +26,9 @@
         "repeat-pwd-placeholder":"重复密码，两次输入必须一致",
         "signUp":"注册"
     },
+    "userLogin":{
+        "userLogin":"用户登录"
+    },
     "search": "搜索",
     "submit": "提交",
     "firstPage": "首页",

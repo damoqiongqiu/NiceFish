@@ -26,6 +26,9 @@
         "repeat-pwd-placeholder":"Repeat password, two inputs must be consistent.",
         "signUp":"SignUp"
     },
+    "userLogin":{
+        "userLogin":"User Login"
+    },
     "search":"search",
     "submit":"Submit",
     "firstPage":"First",
