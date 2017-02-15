@@ -35,12 +35,11 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 
 ## 用法
 
-【请注意】如果你是在Windows下开发，用npm install -g angular-cli无法安装，或者安装报错，请直接到这里下载node_modules.zip，http://pan.baidu.com/s/1qYATzje ，下载完成之后解压到项目的根目录下，再次执行以上命令就行。
-
 用git克隆本项目，从命令行进入进入项目根目录，依次执行以下命令：
 
-	npm install -g angular-cli
-	npm install
+	npm i -g cnpm
+	cnpm i -g angular-cli
+	cnpm install
 	ng serve
 
 打开你的浏览器，访问http://localhost:4200/
@@ -56,7 +55,7 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 打开命令行，进入NiceFish根目录，依次执行以下命令：
 
 	git pull
-	npm update
+	cnpm update
 	ng serve
 
 噢对，如果你pull代码之后发现起不来了，请把你项目下的node_modules全部删掉，然后重新npm update。这里确实有点坑，但是我也不知道为什么。
@@ -83,21 +82,9 @@ angular-cli会在项目根目录下生成一个dist目录，里面就是编译�
 
 ## 注意（请仔细看）
 
- - 如果在npm install的过程中有报错，可能是某些包被Qiang掉了，请自己设置翻墙代理之后再运行npm install 。比如，我本地的ShadowSocks代理运行在1080端口上，那么我就让npm安装Node模块的时候从这个代理走，设置方式：npm config set proxy="http://127.0.0.1:1080"  ，然后npm install。注意，尽量不要用cnpm安装，基本上没办法装成功，原因不明。
+如果你用原生的npm进行安装，可能需要采用科学的上网方式才能安装某些包！
 
- - 如果有node-gyp的报错，可以在npm install的后面加上参数 --no-optional 另外，node-gyp在Windows下编译的时候可能需要依赖于Windows的某些API和.NET framework，具体的步骤请自己搜索node-gyp在github上的文档，只能帮你到这里了。
-
- - 如果有node-sass的报错，尝试一下翻Qiang。
-
- - 如果你是在Windows下开发，启动cmd的时候要用管理员身份启动。
-
- - 如果你是在MAC或者Linux下安装，请尝试用sudo执行安装命令，否则某些目录可能权限不够。
-
- - 如果你想要生成模块之间的依赖关系图，请使用angular2-dependencies-graph，这是一个第三方的node模块，路径在这里https://github.com/manekinekko/angular2-dependencies-graph 。当前的模块依赖关系图我已经生成在src/documentation目录下。
-
- - 这个项目接受issue或者PR，收到之后我会尽快处理的。
-
- - 【特别注意】如果你不幸居然安装好了环境并运行起来了，千万不要手贱去升级npm、node或者angular-cli，在目前这些版本下面升级必挂！
+所以强烈推荐采用cnpm来安装！
 
 ## 可是我不想搭环境！
 
