@@ -17,7 +17,7 @@ import { EqualValidator } from './user/user-register/directives/equal-validator.
 import {appRoutes} from './app.routes';
 
 import { ChartComponent } from './chart/chart.component';
-import { Ng2Echarts } from 'ng2-echarts';
+import { EChartOptionDirective1 } from './chart/echart-option.directive';
 
 export function createTranslateLoader(http: Http) {
     return new TranslateStaticLoader(http, './assets/i18n', '.json');
@@ -29,8 +29,8 @@ export function createTranslateLoader(http: Http) {
     ForgetPwdComponent,
     UserRegisterComponent,
     EqualValidator,
-    ChartComponent,
-    Ng2Echarts
+    EChartOptionDirective1,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
