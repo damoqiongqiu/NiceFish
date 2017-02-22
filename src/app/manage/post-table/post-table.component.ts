@@ -12,7 +12,7 @@ import { PostTableService } from './services/post-table.service';
   ]
 })
 export class PostTableComponent implements OnInit {
-    @Input() dataURL:string="mock-data/postlist-mock.json";
+    @Input() dataURL:string="src/mock-data/postlist-mock.json";
 
 	  public postList:Array<any>;
     public maxSize:number = 5;

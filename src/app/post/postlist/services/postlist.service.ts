@@ -9,8 +9,8 @@ import { Post } from '../../model/post-model';
 
 @Injectable()
 export class PostlistService {
-  public postListURL = 'mock-data/postlist-mock.json';
-  public postListSearchURL = 'mock-data/postlist-search-mock.json';
+  public postListURL = 'src/mock-data/postlist-mock.json';
+  public postListSearchURL = 'src/mock-data/postlist-search-mock.json';
 
   constructor(public http:Http) { }
   
