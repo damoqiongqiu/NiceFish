@@ -33,8 +33,8 @@
     "zone.js": "0.7.2"
   },
   "devDependencies": {
+    "@angular/cli": "^1.0.0-beta.32.3",
     "@types/jasmine": "2.2.30",
-    "angular-cli": "1.0.0-beta.25.5",
     "codelyzer": "2.0.0-beta.4",
     "ember-cli": "2.10.0",
     "jasmine-core": "2.5.2",
