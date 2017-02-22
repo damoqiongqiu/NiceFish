@@ -38,7 +38,7 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 用git克隆本项目，从命令行进入进入项目根目录，依次执行以下命令：
 
 	npm i -g cnpm
-	cnpm i -g @angular/cli
+	cnpm i -g angular-cli
 	cnpm install
 	ng serve
 
