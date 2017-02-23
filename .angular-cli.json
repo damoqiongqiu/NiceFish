@@ -1,4 +1,5 @@
 {
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
     "project": {
         "version": "1.0.0-beta.24",
         "name": "NiceFish"
@@ -12,10 +13,10 @@
         ],
         "index": "index.html",
         "main": "main.ts",
+        "polyfills": "polyfills.ts",
         "test": "test.ts",
         "tsconfig": "tsconfig.json",
         "prefix": "app",
-        "mobile": false,
         "styles": [
             "styles.scss"
         ],
@@ -55,8 +56,8 @@
             "../node_modules/tinymce/plugins/textpattern/plugin.js",
             "../node_modules/tinymce/plugins/imagetools/plugin.js"
         ],
+        "environmentSource": "environments/environment.ts",
         "environments": {
-            "source": "environments/environment.ts",
             "dev": "environments/environment.ts",
             "prod": "environments/environment.prod.ts"
         }
@@ -68,6 +69,16 @@
             "config": "./protractor.conf.js"
         }
     },
+     "lint": [
+    {
+      "files": "src/**/*.ts",
+      "project": "src/tsconfig.json"
+    },
+    {
+      "files": "e2e/**/*.ts",
+      "project": "e2e/tsconfig.json"
+    }
+  ],
     "test": {
         "karma": {
             "config": "./karma.conf.js"
