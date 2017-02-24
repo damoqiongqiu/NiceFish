@@ -119,3 +119,7 @@ VMware镜像百度网盘链接：https://pan.baidu.com/s/1pLlR4Rx
 如果你需要帮助，请联系发邮件到xiaofeiz@google.com
 
 【注意】我每天都会收到大量的求助消息，真的有点忙，所以请准确描述您的问题，最好能加上一些截图，非常感谢！
+
+## 推荐项目
+ng2整合各种插件的项目-Code Be
+http://git.oschina.net/zt_zhong/ng2-demo
