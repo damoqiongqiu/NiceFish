@@ -6,11 +6,19 @@ NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2 + ng2-B
 
 NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angular2（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
 
-## 视频教程
+## 对应的视频教程
 
-此项目对应的视频教程（超清）请点这里：https://my.oschina.net/mumu/blog/834254
+此项目对应的视频教程（超清），包括所有PPT，请点这里：https://my.oschina.net/mumu/blog/834254
 
 这是全球第一个完整的Angular2.0中文视频教程，由大漠穷秋老师录制。此视频是完全开源免费的，你可以随意使用、转发，但是不能对课程相关的内容进行任何编辑，尤其不能向观众收取任何形式的费用。
+
+你见过哪一个开源项目会如此细致地配上视频教程？
+
+你见过哪个讲师会如此无私地把所有PPT都分享出来？
+
+所以你一定要仔细看啊！
+
+有些人问的那些个问题啊，too simple! somtimes naive!
 
 ![视频教程截图](src/assets/imgs/10.png)
 
@@ -127,7 +135,7 @@ http://git.oschina.net/zt_zhong/ng2-demo
 【注意】我每天都会收到大量的求助消息，真的有点忙，所以请准确描述您的问题，最好能加上一些截图，非常感谢！
 
 
-## 在线交流
+## 在线交流QQ群
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=8db5ed802cbddbf6432d7ba7dc4f2a316be020442491eb41cbfb1a12434e8cc7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular 1区:286047042（满）</a>
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=cbfcd79e7e90939b0e2c519f475fac4792985ce2abc5ad45ec5e06ffcfe944dd" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular 2区:139357161（将满）</a>
