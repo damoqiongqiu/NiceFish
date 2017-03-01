@@ -1,14 +1,13 @@
-import { Angular2BootstrapSassPage } from './app.po';
+import { NiceFish } from './app.po';
 
-describe('angular2-bootstrap-sass App', function() {
-  let page: Angular2BootstrapSassPage;
+describe('NiceFish App', function() {
+  let page: NiceFish;
 
   beforeEach(() => {
-    page = new Angular2BootstrapSassPage();
+    page = new NiceFish();
   });
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
   });
 });
