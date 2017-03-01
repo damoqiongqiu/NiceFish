@@ -120,7 +120,7 @@ VMware镜像百度网盘链接：https://pan.baidu.com/s/1pLlR4Rx
 
 ## 推荐项目
 ng2整合各种插件的项目-Code Be
-http://git.oschina.net/zt_zhong/ng2-demo
+https://git.oschina.net/zt_zhong/CodeBe
 
 ## 开源许可证
  MIT
