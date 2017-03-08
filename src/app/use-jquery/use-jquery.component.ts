@@ -1,8 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 
-let $ =require("jQuery");
-let jQuery=$;
-let zt=require("ztree");
+var jQuery =require("jQuery");
 
 @Component({
   selector: 'app-use-jquery',
@@ -18,8 +16,9 @@ export class UseJqueryComponent implements OnInit {
   	}
 
   	ngOnInit() {
-  		var el=$(this.rootNode.nativeElement).find("#example")[0];
+  		var el=jQuery(this.rootNode.nativeElement).find("#example")[0];
   		console.log(el);
-  		console.log(zt);
+  		console.log(jQuery);
+  		
   	}
 }
