@@ -2,7 +2,7 @@
 
 NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2 + ng2-Bootstrap ，后端可以是任意技术，所以我没有做后端啊 :)。
 
-噢对，我很想要一个SpringMVC+MyBatis的服务端程序，如果你刚好会这个，请联系我。
+我已经开启了一个SpringMVC+MyBatis的服务端程序，http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis ，如果你刚好会，一起来做吧。
 
 NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angular2（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
 
