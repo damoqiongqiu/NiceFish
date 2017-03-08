@@ -4,8 +4,8 @@ import { AppComponent } from './app.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
-
 import { ChartComponent } from './chart/chart.component';
+import { UseJqueryComponent } from './use-jquery/use-jquery.component';
 
 export const appRoutes=[
 	{
@@ -45,6 +45,10 @@ export const appRoutes=[
 	{ 
 		path: 'manage', 
 		loadChildren:'./manage/manage.module#ManageModule'
+	},	
+	{ 
+		path: 'jquery', 
+		component:UseJqueryComponent
 	},
 	{
 		path:'**',//fallback router must in the last

@@ -18,14 +18,16 @@
                     <a routerLink="posts">{{'app.articles' | translate}}</a>
                 </li>
                 <li class="dropdown">
+                    <a routerLink="echart">图表</a>
+                </li>
+                <li class="dropdown">
+                    <a routerLink="jquery">集成jQuery</a>
+                </li>
+                <li class="dropdown">
                     <a href="http://git.oschina.net/mumu-osc/NiceFish" data-toggle="dropdown" class="dropdown-toggle" target="_blank">NiceFish</a>
                 </li>
                 <li class="dropdown">
                     <a href="http://git.oschina.net/zt_zhong/CodeBe" data-toggle="dropdown" class="dropdown-toggle" target="_blank">CodeBe</a>
-                </li>
-               
-                <li class="dropdown" *ngIf="currentUser?.username">
-                    <a routerLink="echart">统计</a>
                 </li>
             </ul>
             <ul *ngIf="!currentUser?.username" class="nav navbar-nav navbar-right">
