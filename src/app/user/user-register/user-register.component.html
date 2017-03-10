@@ -55,19 +55,19 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="form-group" [ngClass]="{'has-error': formErrors.vcode }">
+                <div class="form-group" [ngClass]="{'has-error': formErrors.vcode }">
                     <label class="col-sm-3 control-label">验证码：</label>
-                    <div class="col-sm-8">
+                    <div class="col-sm-5">
                         <input required formControlName="vcode" class="form-control" placeholder="验证码">
                         <div *ngIf="formErrors.vcode" class="text-danger">
                             {{ formErrors.vcode }}
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <img id="vCodeImg" src="" alt="验证码">
                         <button class="btn btn-primary" id="reloadVCode">重新获取</button>
                     </div>
-                </div> -->
+                </div>
                 <div *ngIf="formErrors.formError" class="col-sm-offset-3 col-sm-8 alert alert-danger">{{ formErrors.formError }}</div>
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-8">
