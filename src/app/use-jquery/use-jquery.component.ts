@@ -19,6 +19,6 @@ export class UseJqueryComponent implements OnInit {
   		var el=jQuery(this.rootNode.nativeElement).find("#example")[0];
   		console.log(el);
   		console.log(jQuery);
-  		
+
   	}
 }
