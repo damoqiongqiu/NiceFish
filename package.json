@@ -37,7 +37,7 @@
     "ztree": "^3.5.24"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-rc.0",
+    "@angular/cli": "1.0.0-rc.1",
     "@types/jasmine": "2.2.30",
     "@types/jquery": "^2.0.40",
     "codelyzer": "2.0.0-beta.4",
