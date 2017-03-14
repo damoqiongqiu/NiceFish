@@ -52,6 +52,16 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 	cnpm install
 	ng serve
 
+如果之前装过angular-cli需要先卸载：npm uninstall -g angular-cli
+如果之前装过@angular/cli需要先卸载：npm uninstall -g @angular/cli
+然后依次执行以下命令：
+
+	npm cache clean
+	npm i -g cnpm
+	cnpm i -g @angular/cli
+	cnpm install
+	ng serve
+
 打开你的浏览器，访问http://localhost:4200/
 
 如果你想让加载的包更小，请使用以下方式启动angular-cli内置的轻量级http server
@@ -59,6 +69,8 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 	ng serve --prod --aot
 
 如果你需要把项目发布到其它类型的Server上，例如Tomcat，需要对Server进行一些简单的配置才能支持HTML5下的PushState路由模式，我在这篇文章里面有详细的介绍https://my.oschina.net/mumu/blog/830696。
+
+【注意】如果你发现ng serve起不来，或者起来有报错，请把NiceFish根目录下的node_modules目录删掉，然后重新执行cnpm install，全局的@angular/cli也需要重装。
 
 ## 更新
 
