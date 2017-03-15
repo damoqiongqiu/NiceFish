@@ -72,16 +72,13 @@
             "config": "./protractor.conf.js"
         }
     },
-     "lint": [
-    {
-      "files": "src/**/*.ts",
-      "project": "src/tsconfig.json"
-    },
-    {
-      "files": "e2e/**/*.ts",
-      "project": "e2e/tsconfig.json"
-    }
-  ],
+    "lint": [{
+        "files": "src/**/*.ts",
+        "project": "src/tsconfig.json"
+    }, {
+        "files": "e2e/**/*.ts",
+        "project": "e2e/tsconfig.json"
+    }],
     "test": {
         "karma": {
             "config": "./karma.conf.js"
@@ -91,16 +88,16 @@
         "styleExt": "scss",
         "prefixInterfaces": false,
         "inline": {
-          "style": false,
-          "template": false
+            "style": false,
+            "template": false
         },
         "spec": {
-          "class": false,
-          "component": true,
-          "directive": true,
-          "module": false,
-          "pipe": true,
-          "service": true
+            "class": false,
+            "component": true,
+            "directive": true,
+            "module": false,
+            "pipe": true,
+            "service": true
         }
     }
 }
