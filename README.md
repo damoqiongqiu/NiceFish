@@ -1,10 +1,14 @@
 # NiceFish（美人鱼）
 
-NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2 + ng2-Bootstrap ，后端可以是任意技术，所以我没有做后端啊 :)。
+NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2 + ng2-Bootstrap。
 
-我已经开启了一个SpringMVC+MyBatis的服务端程序，http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis ，如果你刚好会，一起来做吧。
+NiceFish的Java版后台（正在做）：http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis 
+
+NiceFish的系统管理界面（正在做）：http://git.oschina.net/mumu-osc/NiceFish-Admin
 
 NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angular2（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
+
+一起来玩儿吧！很好玩儿哦！
 
 ## 对应的视频教程
 
