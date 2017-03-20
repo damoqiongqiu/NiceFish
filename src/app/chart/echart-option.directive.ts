@@ -5,11 +5,11 @@ import * as echarts from 'echarts';
     selector: 'echart'
 })
 export class EChartOptionDirective1 implements OnInit {
-    @Input('option') option: any;
+    @Input('chartType') chartType: any;
 
     constructor(private el: ElementRef) {}
 
     public ngOnInit(): void {
-        echarts.init(this.el.nativeElement).setOption(this.option);
+        echarts.init(this.el.nativeElement).setOption(this.chartType);
     }
 }

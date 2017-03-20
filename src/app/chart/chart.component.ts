@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chart.component.scss'],
 })
 export class ChartComponent implements OnInit {
-  private chartData = {
+  private pieChart = {
     theme: '',
     event: [
       {
@@ -62,7 +62,7 @@ export class ChartComponent implements OnInit {
     }]
   };
 
-  chartData2 = {
+  barChart = {
     title: {
       text: 'NiceFish月访问量统计',
       subtext: '纯属虚构',
@@ -105,7 +105,8 @@ export class ChartComponent implements OnInit {
       }
     ]
   };
-  chartData3 = {
+  
+  lineChart = {
     title: {
       text: 'NiceFish月访问趋势图',
       subtext: '纯属虚构',
