@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
     moduleId: module.id,
     selector: 'amap',
     templateUrl: 'amap.component.html',
-    styleUrls: ['amap.component.css']
+    styleUrls: ['amap.component.scss']
 })
 export class AmapComponent implements OnInit {
     constructor() { }
