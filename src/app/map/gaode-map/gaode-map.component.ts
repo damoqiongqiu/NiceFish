@@ -9,10 +9,7 @@ import { AmapComponent } from './amap/amap.component';
   animations:[flyIn]
 })
 export class GaodeMapComponent implements OnInit {
-
   constructor() { }
-
   ngOnInit() {
   }
-
 }
