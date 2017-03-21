@@ -5,6 +5,8 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { ChartComponent } from './chart/chart.component';
+import { GaodeMapComponent } from './map/gaode-map/gaode-map.component';
+import { AmapComponent } from './map/gaode-map/amap/amap.component';
 import { UseJqueryComponent } from './use-jquery/use-jquery.component';
 
 export const appRoutes=[
@@ -12,13 +14,20 @@ export const appRoutes=[
 		path:'',
 		redirectTo:'posts',
 		pathMatch:'full'
-	},{
+	},
+	{
 		path:"echart",
 		component:ChartComponent
-	},{
+	},
+	{
+		path:"map",
+		component:GaodeMapComponent
+	},
+	{
 		path:'home',
 		loadChildren:'./home/home.module#HomeModule'
-	},{
+	},
+	{
 		path:'posts',
 		loadChildren:'./home/home.module#HomeModule'
 	},
