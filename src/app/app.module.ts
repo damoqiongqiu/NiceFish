@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpModule,JsonpModule ,Http} from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
-import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
@@ -41,6 +42,7 @@ export function createTranslateLoader(http: Http) {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule,
     ReactiveFormsModule,
     HttpModule,
