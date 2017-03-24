@@ -17,6 +17,7 @@ export class PostlistComponent implements OnInit {
 	public totalItems:number;
 	//不要手动对这个属性进行赋值，它是和分页工具条自动绑定的
 	public currentPage:number = 1;
+	public numPages
 
 	public searchText:string;
 	public searchTextStream:Subject<string> = new Subject<string>();
@@ -28,7 +29,7 @@ export class PostlistComponent implements OnInit {
 		public router: Router,
         public activeRoute: ActivatedRoute,
         public postService:PostlistService) {
-		
+
 	}
 
   	ngOnInit() {
@@ -37,7 +38,7 @@ export class PostlistComponent implements OnInit {
   			console.log(params);
 			this.loadData(this.searchText,this.currentPage);
    		});
-		
+
 		this.searchTextStream
 	        .debounceTime(500)
 	        .distinctUntilChanged()
@@ -50,7 +51,7 @@ export class PostlistComponent implements OnInit {
   	public loadData(searchText:string,page:number){
 		let offset = (this.currentPage-1)*this.itemsPerPage;
 		let end = (this.currentPage)*this.itemsPerPage;
-		
+
 		return this.postService.getPostList(searchText,page).subscribe(
 			res=>{
 				this.totalItems = res["total"];
@@ -61,7 +62,7 @@ export class PostlistComponent implements OnInit {
 			() => {}
 		);
 	}
-	 
+
 	public pageChanged(event:any):void {
 		this.router.navigateByUrl("posts/page/"+event.page);
 	}
@@ -69,7 +70,7 @@ export class PostlistComponent implements OnInit {
 	public searchChanged($event):void{
 		this.searchTextStream.next(this.searchText);
 	}
-	
+
 	public gotoWrite():void{
 		//TODO：如果没有登录，跳转到登录页，如果已登录，跳往写作页
 		this.router.navigateByUrl("user/write");

@@ -33,7 +33,7 @@
                     <a href="http://git.oschina.net/zt_zhong/CodeBe" data-toggle="dropdown" class="dropdown-toggle" target="_blank">CodeBe</a>
                 </li>
             </ul>
-            <ul *ngIf="!currentUser?.username" class="nav navbar-nav navbar-right">
+            <ul *ngIf="!currentUser?.userName" class="nav navbar-nav navbar-right">
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a routerLink="login">{{'app.login' | translate}}</a>
                 </li>
@@ -41,9 +41,9 @@
                     <a routerLink="register">{{'app.register' | translate}}</a>
                 </li>
             </ul>
-            <ul *ngIf="currentUser?.username" class="nav navbar-nav navbar-right">
+            <ul *ngIf="currentUser?.userName" class="nav navbar-nav navbar-right">
                 <li routerLinkActive="active">
-                    <a routerLink="user">{{'app.welcome' | translate}}：{{currentUser?.username}}</a>
+                    <a routerLink="user">{{'app.welcome' | translate}}：{{currentUser?.userName}}</a>
                 </li>
                 <li routerLinkActive="active">
                     <a routerLink="manage">{{'app.console' | translate}}</a>

@@ -15,6 +15,7 @@ export class CommentTableComponent implements OnInit {
   public itemsPerPage: number = 5;
   public totalItems: number = 15;
   public currentPage: number = 1;
+  public numPages
   public worker: Worker;
 
   constructor(public router: Router,

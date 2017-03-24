@@ -5,7 +5,7 @@
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="{{'search' | translate}}" [(ngModel)]="searchText" (keyup)="searchChanged($event)" (change)="searchChanged($event)" id="searchText" name="searchText">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" (click)="searchChanged()"><i class="fa fa-search" aria-hidden="true"></i> {{'search' | translate}}</button>
+                        <button class="btn btn-default" type="button" (click)="searchChanged($event)"><i class="fa fa-search" aria-hidden="true"></i> {{'search' | translate}}</button>
                     </span>
                 </div>
             </div>
@@ -24,16 +24,16 @@
                 </h4>
                 <p class="{{post.isfamous | boolean }}">
                     {{post.userName }}
-                    &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}} 
-                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;{{post.readTimes}} 
+                    &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}}
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;{{post.readTimes}}
                     &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;{{post.commentTimes}}
                 </p>
             </div>
-            <pagination [totalItems]="totalItems" [maxSize]="maxSize" 
-            [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" 
-            firstText="{{'firstPage' | translate}}" lastText="{{'lastPage' | translate}}" 
-            previousText="{{'previousPage' | translate}}" nextText="{{'nextPage' | translate}}" 
-            [boundaryLinks]="true" [rotate]="false" 
+            <pagination [totalItems]="totalItems" [maxSize]="maxSize"
+            [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage"
+            firstText="{{'firstPage' | translate}}" lastText="{{'lastPage' | translate}}"
+            previousText="{{'previousPage' | translate}}" nextText="{{'nextPage' | translate}}"
+            [boundaryLinks]="true" [rotate]="false"
             (numPages)="numPages = $event" (pageChanged)="pageChanged($event)" class="pagination-sm" ></pagination>
         </div>
     </div>

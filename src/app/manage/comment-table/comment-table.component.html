@@ -1,4 +1,4 @@
-<div class="comment-table-container" [@flyIn]="active">
+<div class="comment-table-container" [@flyIn]="'active'">
     <form class="form-vertical" role="form">
         <div class="row">
             <div class="col-sm-12">
@@ -35,9 +35,9 @@
                     </tbody>
                 </table>
             </div>
-            <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" 
-            firstText="{{'firstPage' | translate}}" lastText="{{'lastPage' | translate}}" 
-            previousText="{{'previousPage' | translate}}" nextText="{{'nextPage' | translate}}" 
+            <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage"
+            firstText="{{'firstPage' | translate}}" lastText="{{'lastPage' | translate}}"
+            previousText="{{'previousPage' | translate}}" nextText="{{'nextPage' | translate}}"
             [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event"
              (pageChanged)="pageChanged($event)" class="pagination-sm"></pagination>
         </div>

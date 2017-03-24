@@ -19,6 +19,7 @@ export class PostTableComponent implements OnInit {
     public itemsPerPage:number=5;
     public totalItems:number = 15;
     public currentPage:number = 1;
+    public numPages
 
   	constructor(public router: Router,
         public activeRoute: ActivatedRoute,
