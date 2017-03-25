@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
-import { User } from '../model/user-model';
-import { UserRegisterService } from './user-register.service';
+import {User} from '../model/user-model';
+import {UserRegisterService} from './user-register.service';
+import {fadeIn} from '../../animations/fade-in';
 
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
-  styleUrls: ['./user-register.component.scss']
+  styleUrls: ['./user-register.component.scss'],
+  animations:[ fadeIn ]
 })
 export class UserRegisterComponent implements OnInit {
 
@@ -22,7 +24,7 @@ export class UserRegisterComponent implements OnInit {
     'password': '',
     'confirmPassword': '',
     'formError': '',
-    'vcode':''
+    'vcode': ''
   };
   validationMessages = {
     'userName': {
@@ -53,12 +55,11 @@ export class UserRegisterComponent implements OnInit {
     },
   };
 
-  constructor(
-    public fb: FormBuilder,
-    public userRegisterService: UserRegisterService,
-    public router: Router,
-    public route: ActivatedRoute,
-  ) { }
+  constructor(public fb: FormBuilder,
+              public userRegisterService: UserRegisterService,
+              public router: Router,
+              public route: ActivatedRoute,) {
+  }
 
   ngOnInit() {
     this.buildForm();
@@ -118,7 +119,9 @@ export class UserRegisterComponent implements OnInit {
   }
 
   onValueChanged(data?: any) {
-    if (!this.userForm) { return; }
+    if (!this.userForm) {
+      return;
+    }
     const form = this.userForm;
     for (const field in this.formErrors) {
       this.formErrors[field] = '';
@@ -145,13 +148,13 @@ export class UserRegisterComponent implements OnInit {
             console.error(error);
           }
         );
-    }else{
-       this.formErrors.formError = "存在不合法的输入项，请检查。";
+    } else {
+      this.formErrors.formError = "存在不合法的输入项，请检查。";
     }
     console.log(this.userInfo);
   }
 
-  testEmail(){
+  testEmail() {
     let email = this.userForm.get("email").value;
     this.userRegisterService.testEmail(email)
       .subscribe(

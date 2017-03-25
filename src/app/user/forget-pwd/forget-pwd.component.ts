@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 import { ForgetPwdService } from './forget-pwd.service';
 import { User } from '../model/user-model';
+import { fadeIn } from '../../animations/fade-in';
 
 @Component({
   selector: 'app-forget-pwd',
   templateUrl: './forget-pwd.component.html',
-  styleUrls: ['./forget-pwd.component.scss']
+  styleUrls: ['./forget-pwd.component.scss'],
+  animations: [ fadeIn ]
 })
 export class ForgetPwdComponent implements OnInit {
 	public user: User = new User();
