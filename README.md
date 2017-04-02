@@ -1,15 +1,17 @@
 # NiceFish（美人鱼）
 【昨天红薯跟我讲，只要能有1000个星儿，就给我发一个开源奖杯，于是我就求你们了，给这个项目加个星儿吧！噗通~~双膝着地！】
 
-NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2 + ng2-Bootstrap。
+NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 4.0.0 + ng2-Bootstrap。
 
-NiceFish-Admin是系统管理界面（正在做）：http://git.oschina.net/mumu-osc/NiceFish-Admin
+【NiceFish-Admin是系统管理界面，基于Angular 4.0.0】：http://git.oschina.net/mumu-osc/NiceFish-Admin
 
-NiceFish-SpringMybatis是Java版后台（正在做）：http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis 
+【NiceFish-Admin-ng1是一个基于Angular 1.5的管理后台模板，刚开始做】https://git.oschina.net/mumu-osc/NiceFish-Admin-ng1.git
 
-NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angular2（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
+【NiceFish-SpringMybatis是Java版后台】：http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis 
 
-目前3个系列项目定位如下：NiceFish用来展示Angular2在典型的门户型项目中的用法，NiceFish-Admin用来展示Angular2在后台管理型项目里面的用法，NiceFish-SpringMybatis用来展示Angular2如何与Java版的Server端进行对接。
+NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angular（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
+
+目前3个系列项目定位如下：NiceFish用来展示Angular在典型的门户型项目中的用法，NiceFish-Admin用来展示Angular在后台管理型项目里面的用法，NiceFish-SpringMybatis用来展示Angular如何与Java版的Server端进行对接。
 
 一起来玩儿吧！很好玩儿哦！
 
@@ -17,7 +19,7 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 
 此项目对应的视频教程（超清），包括所有PPT，请点这里：https://my.oschina.net/mumu/blog/834254
 
-这是全球第一个完整的Angular2.0中文视频教程，由大漠穷秋老师录制。此视频是完全开源免费的，你可以随意使用、转发，但是不能对课程相关的内容进行任何编辑，尤其不能向观众收取任何形式的费用。
+这是全球第一个完整的“Angular中文视频教程”，由大漠穷秋老师录制。此视频是完全开源免费的，你可以随意使用、转发，但是不能对课程相关的内容进行任何编辑，尤其不能向观众收取任何形式的费用。
 
 你见过哪一个开源项目会如此细致地配上视频教程？
 
