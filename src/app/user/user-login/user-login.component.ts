@@ -4,11 +4,13 @@ import { UserLoginService } from './user-login.service';
 import { Observable } from 'rxjs/Observable';
 
 import { User } from '../model/user-model';
+import { fadeIn } from '../../animations/fade-in';
 
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.scss']
+  styleUrls: ['./user-login.component.scss'],
+  animations: [ fadeIn ]
 })
 export class UserLoginComponent implements OnInit {
     public user:User = new User();
