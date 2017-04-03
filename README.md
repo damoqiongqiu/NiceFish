@@ -11,8 +11,6 @@
 
 NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angular（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
 
-目前3个系列项目定位如下：NiceFish用来展示Angular在典型的门户型项目中的用法，NiceFish-Admin用来展示Angular在后台管理型项目里面的用法，NiceFish-SpringMybatis用来展示Angular如何与Java版的Server端进行对接。
-
 一起来玩儿吧！很好玩儿哦！
 
 ## 对应的视频教程
