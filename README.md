@@ -1,7 +1,7 @@
 # NiceFish（美人鱼）
 【昨天红薯跟我讲，只要能有1000个星儿，就给我发一个开源奖杯，于是我就求你们了，给这个项目加个星儿吧！噗通~~双膝着地！】
 
-- NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 4.0.0 + ng2-Bootstrap。
+- 【NiceFish（美人鱼）】：这是一个微型Blog系统，前端基于Angular 4.0.0 + ng-Bootstrap。
 
 - 【NiceFish-Admin是系统管理界面，基于Angular 4.0.0】：http://git.oschina.net/mumu-osc/NiceFish-Admin
 
