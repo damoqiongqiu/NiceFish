@@ -123,28 +123,6 @@ angular-cli会在项目根目录下生成一个dist目录，里面就是编译�
 
 所以强烈推荐采用cnpm来安装！
 
-## 可是我不想搭环境！
-
-我在很多群里面看到，很多刚刚入行的道友，或者刚刚入手Angular的道友，都说搭建开发环境好麻烦。有些人说搞了一整天都搞不定，于是就放弃了。看到这里，小僧很心痛啊！
-
-于是，我就拿Ubuntu 16.04做了一个VMware镜像，把环境都搭建好了，你们只要把它下载下来，就可以上手玩儿NiceFish了。
-
-VMware镜像百度网盘链接：https://pan.baidu.com/s/1pLlR4Rx
-
-在VMware里面导入虚拟机ova文件之后，启动Ubuntu
-
-虚拟机的用户名/密码是：angular/angular_2017 
-
-进入桌面环境之后启动命令行，进入/home/zhangxiaofei/workspace/NiceFish
-
-运行ng serve命令
-
-打开FireFox访问http://localhost:4200
-
-【请注意】登录之后务必修改密码，否则引起安全漏洞后果自负！
-
-【特别注意】如果你不幸居然安装好了环境并运行起来了，千万不要手贱去升级npm、node或者angular-cli，在目前这些版本下面升级必挂！
-
 ## 推荐项目
 ng2整合各种插件的项目-Code Be
 https://git.oschina.net/zt_zhong/CodeBe
