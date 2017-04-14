@@ -29,6 +29,7 @@ export function createTranslateLoader(http: Http) {
     return new TranslateStaticLoader(http, './assets/i18n', '.json');
 }
 
+
 @NgModule({
   declarations: [
     AppComponent,
