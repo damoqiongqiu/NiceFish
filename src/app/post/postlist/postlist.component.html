@@ -23,18 +23,12 @@
                     <a [routerLink]="['/post/postdetail',post.postId]">{{post.title}}</a>
                 </h4>
                 <p class="{{post.isfamous | boolean }}">
-                    {{post.userName }}
-                    &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}}
-                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;{{post.readTimes}}
-                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;{{post.commentTimes}}
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;{{post.likedTimes}} &nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-comment" aria-hidden="true"></i>&nbsp;{{post.commentTimes}} &nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;{{post.readTimes}} &nbsp;&nbsp;&nbsp;&nbsp;{{post.userName }} &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}}
                 </p>
             </div>
-            <pagination [totalItems]="totalItems" [maxSize]="maxSize"
-            [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage"
-            firstText="{{'firstPage' | translate}}" lastText="{{'lastPage' | translate}}"
-            previousText="{{'previousPage' | translate}}" nextText="{{'nextPage' | translate}}"
-            [boundaryLinks]="true" [rotate]="false"
-            (numPages)="numPages = $event" (pageChanged)="pageChanged($event)" class="pagination-sm" ></pagination>
+            <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" firstText="{{'firstPage' | translate}}" lastText="{{'lastPage' | translate}}" previousText="{{'previousPage' | translate}}" nextText="{{'nextPage' | translate}}" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)" class="pagination-sm"></pagination>
         </div>
     </div>
 </div>
