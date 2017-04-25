@@ -7,6 +7,7 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
 import { ChartComponent } from './chart/chart.component';
 import { GaodeMapComponent } from './map/gaode-map/gaode-map.component';
 import { UseJqueryComponent } from './use-jquery/use-jquery.component';
+import { JsplumbDemoComponent } from './jsplumb-demo/jsplumb-demo.component';
 
 export const appRoutes=[
 	{
@@ -57,6 +58,9 @@ export const appRoutes=[
 	{ 
 		path: 'jquery', 
 		component:UseJqueryComponent
+	},{
+		path:'jsplumb',
+		component:JsplumbDemoComponent
 	},
 	{
 		path:'**',//fallback router must in the last

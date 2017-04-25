@@ -22,11 +22,13 @@ import { EChartOptionDirective1 } from './chart/echart-option.directive';
 import { UseJqueryComponent } from './use-jquery/use-jquery.component';
 import { GaodeMapComponent } from './map/gaode-map/gaode-map.component';
 import { AmapComponent } from './map/gaode-map/amap/amap.component';
+import { JsplumbDemoComponent } from './jsplumb-demo/jsplumb-demo.component';
 import {appRoutes} from './app.routes';
 
 export function createTranslateLoader(http: Http) {
     return new TranslateStaticLoader(http, './assets/i18n', '.json');
 }
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ export function createTranslateLoader(http: Http) {
     ChartComponent,
     UseJqueryComponent,
     AmapComponent,
-    GaodeMapComponent
+    GaodeMapComponent,
+    JsplumbDemoComponent
   ],
   imports: [
     BrowserModule,

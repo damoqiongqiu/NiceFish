@@ -1,23 +1,29 @@
 # NiceFish（美人鱼）
-【昨天红薯跟我讲，只要能有1000个星儿，就给我发一个开源奖杯，于是我就求你们了，给这个项目加个星儿吧！噗通~~双膝着地！】
+谢谢大家，过了1000个星儿了，我可以拿到一个开源奖杯了 :)
 
-NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 2 + ng2-Bootstrap。
 
-NiceFish-Admin是系统管理界面（正在做）：http://git.oschina.net/mumu-osc/NiceFish-Admin
+NiceFish是一个系列项目，都是Angular这个技术栈。
 
-NiceFish-SpringMybatis是Java版后台（正在做）：http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis 
+- 【NiceFish（美人鱼）】：这是一个微型Blog系统，前端基于Angular 4.0.0 + ng-Bootstrap。http://git.oschina.net/mumu-osc/NiceFish/
 
-NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angular2（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
+- 【NiceFish-Admin是系统管理界面，基于Angular 4.0.0】：http://git.oschina.net/mumu-osc/NiceFish-Admin
 
-目前3个系列项目定位如下：NiceFish用来展示Angular2在典型的门户型项目中的用法，NiceFish-Admin用来展示Angular2在后台管理型项目里面的用法，NiceFish-SpringMybatis用来展示Angular2如何与Java版的Server端进行对接。
+- 【NiceFish-Admin-ng1是一个基于Angular 1.6.4（最新版）的管理后台模板，刚开始做】https://git.oschina.net/mumu-osc/NiceFish-Admin-ng1.git 。这个项目我需要特别说明一下，根据目前的统计数据，还有我在数十家企业实际看到的情况，国内还有大量的企业在使用Angular 1.x，而其中很多居然没有做任何AMD处理！我的天哪！前端开发发展到了今天这个状态，AMD是标配啊兄弟们。就算你还在用jQuery做项目，AMD也是必须的哦。把所有js全部压在一个大文件里面，然后在index里面一次性加载，不能再这样做了啊！所以我会很快做好这个项目，给你们一个示范，看看大型的业务项目应该如何切分目录、模块，如何做AMD加载。
+
+- 【NiceFish-ionic】：这是一个移动端的demo，基于ionic。http://git.oschina.net/mumu-osc/nicefish-ionic
+
+- 【NiceFish-SpringMybatis是Java版后台】：http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis 
+
+NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angular（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
 
 一起来玩儿吧！很好玩儿哦！
+
 
 ## 对应的视频教程
 
 此项目对应的视频教程（超清），包括所有PPT，请点这里：https://my.oschina.net/mumu/blog/834254
 
-这是全球第一个完整的Angular2.0中文视频教程，由大漠穷秋老师录制。此视频是完全开源免费的，你可以随意使用、转发，但是不能对课程相关的内容进行任何编辑，尤其不能向观众收取任何形式的费用。
+这是全球第一个完整的“Angular中文视频教程”，由大漠穷秋老师录制。此视频是完全开源免费的，你可以随意使用、转发，但是不能对课程相关的内容进行任何编辑，尤其不能向观众收取任何形式的费用。
 
 你见过哪一个开源项目会如此细致地配上视频教程？
 
@@ -48,6 +54,7 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 ## 目录结构
 
 ![目录结构1](src/assets/imgs/6.png)
+
 ![目录结构2](src/assets/imgs/9.png)
 
 ## 用法
@@ -116,28 +123,6 @@ angular-cli会在项目根目录下生成一个dist目录，里面就是编译�
 
 所以强烈推荐采用cnpm来安装！
 
-## 可是我不想搭环境！
-
-我在很多群里面看到，很多刚刚入行的道友，或者刚刚入手Angular的道友，都说搭建开发环境好麻烦。有些人说搞了一整天都搞不定，于是就放弃了。看到这里，小僧很心痛啊！
-
-于是，我就拿Ubuntu 16.04做了一个VMware镜像，把环境都搭建好了，你们只要把它下载下来，就可以上手玩儿NiceFish了。
-
-VMware镜像百度网盘链接：https://pan.baidu.com/s/1pLlR4Rx
-
-在VMware里面导入虚拟机ova文件之后，启动Ubuntu
-
-虚拟机的用户名/密码是：angular/angular_2017 
-
-进入桌面环境之后启动命令行，进入/home/zhangxiaofei/workspace/NiceFish
-
-运行ng serve命令
-
-打开FireFox访问http://localhost:4200
-
-【请注意】登录之后务必修改密码，否则引起安全漏洞后果自负！
-
-【特别注意】如果你不幸居然安装好了环境并运行起来了，千万不要手贱去升级npm、node或者angular-cli，在目前这些版本下面升级必挂！
-
 ## 推荐项目
 ng2整合各种插件的项目-Code Be
 https://git.oschina.net/zt_zhong/CodeBe
@@ -158,6 +143,9 @@ https://git.oschina.net/zt_zhong/CodeBe
 ## 在线交流QQ群
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=8db5ed802cbddbf6432d7ba7dc4f2a316be020442491eb41cbfb1a12434e8cc7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular 1区:286047042（满）</a>
+
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=cbfcd79e7e90939b0e2c519f475fac4792985ce2abc5ad45ec5e06ffcfe944dd" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular 2区:139357161（满）</a>
+
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=639229c8b6ad0c3a9a8f381dddf5d7785780b20d8c37eb25c91ac73ea7d37a5f" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular 3区:473129930（将满）</a>
+
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=12add102af3f67910bdc0de753dee10ebada08ab485af7e38f4dfa0ee27476f7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular 4区:483016484（空）</a>
