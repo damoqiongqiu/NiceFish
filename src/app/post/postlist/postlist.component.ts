@@ -62,7 +62,7 @@ export class PostlistComponent implements OnInit {
 			() => {}
 		);
 	}
-
+	
 	public pageChanged(event:any):void {
 		this.router.navigateByUrl("posts/page/"+event.page);
 	}
