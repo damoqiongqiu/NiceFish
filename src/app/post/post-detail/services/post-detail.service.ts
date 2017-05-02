@@ -9,7 +9,7 @@ import { Post } from '../../model/post-model';
 
 @Injectable()
 export class PostDetailService {
-    public postDetailURL = "src/mock-data/post-mock.json";
+    public postDetailURL = "mock-data/post-mock.json";
 
     constructor(public http: Http) { 
     }
