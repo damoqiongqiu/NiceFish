@@ -34,7 +34,7 @@
     "rxjs": "5.3.0",
     "tinymce": "4.5.6",
     "ts-helpers": "1.1.2",
-    "zone.js": "0.8.8"
+    "zone.js": "^0.8.9"
   },
   "devDependencies": {
     "@angular/cli": "1.0.1",
