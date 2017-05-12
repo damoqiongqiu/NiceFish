@@ -30,6 +30,7 @@ export class AppComponent {
 		public vcr: ViewContainerRef
 	) {
 		this.toastr.setRootViewContainerRef(vcr);
+		console.log("什么也没有...");
 	}
 
 	ngOnInit() {

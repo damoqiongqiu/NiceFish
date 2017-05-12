@@ -21,9 +21,12 @@ export class PostTableComponent implements OnInit {
     public currentPage:number = 1;
     public numPages
 
-  	constructor(public router: Router,
+  	constructor(
+        public router: Router,
         public activeRoute: ActivatedRoute,
-        public postTableService: PostTableService) {
+        public postTableService: PostTableService
+    ) {
+      
     }
 
   	ngOnInit() {
