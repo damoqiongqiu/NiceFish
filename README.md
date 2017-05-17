@@ -52,6 +52,12 @@ NiceFish系列项目可以用来帮助你快速搭建个人Blog、微型SNS站�
 
 ![效果图](src/assets/imgs/5.png)
 
+我很欣喜地看到，有一些道友已经以NiceFish这个教学项目为蓝本快速搭建了一些自己的小系统，比如下面这个：
+
+![效果图](src/assets/imgs/11.png)
+
+链接在这里：http://www.fuzhutech.com
+
 ## 目录结构
 
 ![目录结构1](src/assets/imgs/6.png)
