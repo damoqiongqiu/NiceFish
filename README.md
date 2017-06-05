@@ -1,23 +1,24 @@
 # NiceFish（美人鱼）
-谢谢大家，过了1000个星儿了，我可以拿到一个开源奖杯了 :)
 
-NiceFish是一个系列项目，所有前端代码全部采用最新版本的Angular技术栈。
+谢谢大家，过了1000个星儿了，我可以拿到一个开源奖杯了 :) 
 
-- 【NiceFish】：这是一个微型Blog系统，基于Angular 4.0.0 + ng-Bootstrap，纯前端无后台。http://git.oschina.net/mumu-osc/NiceFish/
+既然求星儿是有效的，那就继续求星儿、求捐助。
 
-- 【NiceFish-Admin】：这是系统管理界面，基于Angular 4.0.0，纯前端无后台。 http://git.oschina.net/mumu-osc/NiceFish-Admin
+NiceFish是一个系列项目，都是Angular这个技术栈。
 
-- 【NiceFish-Admin-ng1】：这是一个基于Angular 1.6.4（最新版）的管理后台模板，用于演示Angular 1.x最新版本的用法，纯前端无后台。https://git.oschina.net/mumu-osc/NiceFish-Admin-ng1.git 。
+- 【NiceFish（美人鱼）】：这是一个微型Blog系统，前端基于Angular 4.0.0 + ng-Bootstrap。http://git.oschina.net/mumu-osc/NiceFish/
 
-这个项目需要特别说明一下，根据目前的统计数据，还有我在数十家企业实际看到的情况，国内还有大量的企业在使用Angular 1.x，而其中很多居然没有做任何AMD处理！我的天哪！前端开发发展到了今天这个状态，AMD是标配啊兄弟们。就算你还在用jQuery做项目，AMD也是必须的哦。把所有js全部压在一个大文件里面，然后在index里面一次性加载，不能再这样做了啊！所以我会很快做好这个项目，给你们一个示范，看看大型的业务项目应该如何切分目录、模块，如何做AMD加载。
+- 【NiceFish-Admin是系统管理界面，基于Angular 4.0.0】：http://git.oschina.net/mumu-osc/NiceFish-Admin
 
-- 【NiceFish-ionic】：这是一个移动端的demo，基于ionic，也就是最新版本的Angular移动端。http://git.oschina.net/mumu-osc/nicefish-ionic
+- 【NiceFish-Admin-ng1是一个基于Angular 1.6.4（最新版）的管理后台模板，刚开始做】https://git.oschina.net/mumu-osc/NiceFish-Admin-ng1.git 。这个项目我需要特别说明一下，根据目前的统计数据，还有我在数十家企业实际看到的情况，国内还有大量的企业在使用Angular 1.x，而其中很多居然没有做任何AMD处理！我的天哪！前端开发发展到了今天这个状态，AMD是标配啊兄弟们。就算你还在用jQuery做项目，AMD也是必须的哦。把所有js全部压在一个大文件里面，然后在index里面一次性加载，不能再这样做了啊！所以我会很快做好这个项目，给你们一个示范，看看大型的业务项目应该如何切分目录、模块，如何做AMD加载。
 
-- 【NiceFish-SpringMybatis】：这是一个Java版的后台服务，http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis 
+- 【NiceFish-ionic】：这是一个移动端的demo，基于ionic。http://git.oschina.net/mumu-osc/nicefish-ionic
 
-NiceFish系列项目可以用来帮助你快速搭建个人Blog、微型SNS站点、后台管理系统、移动端应用，或者用于学习Angular。其实我并不在乎你用来干嘛，那关我什么事呢对吧？ 
+- 【NiceFish-SpringMybatis是Java版后台】：http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis 
 
-【注意】如果您希望获得功能更完善的定制版本，请私信联系我。但是请特别注意，功能定制是收费服务。
+NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angular（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
+
+一起来玩儿吧！很好玩儿哦！
 
 
 ## 对应的视频教程
@@ -52,12 +53,6 @@ NiceFish系列项目可以用来帮助你快速搭建个人Blog、微型SNS站�
 
 ![效果图](src/assets/imgs/5.png)
 
-我很欣喜地看到，有一些道友已经以NiceFish这个教学项目为蓝本快速搭建了一些自己的小系统，比如下面这个：
-
-![效果图](src/assets/imgs/11.png)
-
-链接在这里：http://www.fuzhutech.com
-
 ## 目录结构
 
 ![目录结构1](src/assets/imgs/6.png)
@@ -88,7 +83,7 @@ NiceFish系列项目可以用来帮助你快速搭建个人Blog、微型SNS站�
 
 如果你想让加载的包更小，请使用以下方式启动angular-cli内置的轻量级http server
 
-	ng serve --prod
+	ng serve --prod --aot
 
 如果你需要把项目发布到其它类型的Server上，例如Tomcat，需要对Server进行一些简单的配置才能支持HTML5下的PushState路由模式，我在这篇文章里面有详细的介绍https://my.oschina.net/mumu/blog/830696。
 
@@ -102,17 +97,17 @@ NiceFish系列项目可以用来帮助你快速搭建个人Blog、微型SNS站�
 	cnpm update
 	ng serve
 
-噢对，如果你pull代码之后发现起不来了，请把你项目下的node_modules全部删掉，然后重新cnpm install。这里确实有点坑，但是我也不知道为什么。
+噢对，如果你pull代码之后发现起不来了，请把你项目下的node_modules全部删掉，然后重新npm update。这里确实有点坑，但是我也不知道为什么。
 
 ## AOT&TreeShaking
 
-开发状态打出来的bundle体积比较大，在发布到生产环境之前需要进行AOT操作，用法如下：
+开发状态打出来的bundle体积比较大，在发布到生产环境之前需要进行prod和AOT，用法如下：
 
 打开命令行，进入NiceFish根目录，执行以下命令：
 	
-	ng build --prod
+	ng build --prod --aot
 
-加上--prod参数之后，angular-cli会自动启用TreeShaking（摇树）特性，简而言之，就是把用不到的包全部剔除掉，就像从树上把枯叶子摇下来一样，很形象吧？
+加上--prod参数之后，angular-cli会自动启用TreeShaking（摇树）特性，简而言之，就是把用不到的包全部剔除掉，就像从树上把枯叶子摇下来一样，很形象吧？加上--aot参数是让angular-cli启动预编译特性。
 
 angular-cli会在项目根目录下生成一个dist目录，里面就是编译、压缩好的文件了。仔细观察你会发现，这些文件的体积已经被大幅度压缩，加上gzip之后有一些文件只剩下1/4左右的大小。
 
@@ -122,7 +117,7 @@ angular-cli会在项目根目录下生成一个dist目录，里面就是编译�
 
 关于Tomcat如何启动gzip，我专门写了一篇文章来介绍配置，请点这里：https://my.oschina.net/mumu/blog/830742
 
-【请注意】最新版本的angular-cli已经内置了对AOT和TreeShaking的支持，只要像上面这样在build的时候加上--prod参数就可以了，不需要再做任何其它任何配置工作，官方网站上的那一篇文档没有及时更新。
+【请注意】最新版本的angular-cli已经内置了对AOT和TreeShaking的支持，只要像上面这样在build的时候加上--prod和--aot参数就可以了，不需要再做任何其它任何配置工作，官方网站上的那一篇指南有点过时了。
 
 ## 注意（请仔细看）
 
@@ -134,19 +129,6 @@ angular-cli会在项目根目录下生成一个dist目录，里面就是编译�
 ng2整合各种插件的项目-Code Be
 https://git.oschina.net/zt_zhong/CodeBe
 
-## 开源许可证
- MIT
-
- 你可以随意使用此项目，无需通知我，因为我可能很忙没空搭理你。
-
-## 关于我
-我是大漠穷秋，目前是Google Angular项目组在中国的开发者PM，负责Angular的推广工作，我会在各种渠道经常发布一些与Angular相关的技术文章，希望能给大家带来一点点帮助，请点这里：https://my.oschina.net/mumu/blog  。
-
-如果您的企业或者组织需要Angular方面的技术支持，请填写这份申请单：https://gdgdocs.org/forms/d/e/1FAIpQLSfKA15nS0md58fR__tAV6gSEIPsVsLksT9knOgObq9IbVPuQg/viewform
-
-【注意】我每天都会收到大量的求助消息，真的有点忙，所以请准确描述您的问题，最好能加上一些截图，非常感谢！
-
-
 ## 在线交流QQ群
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=8db5ed802cbddbf6432d7ba7dc4f2a316be020442491eb41cbfb1a12434e8cc7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular 1区:286047042（满）</a>
@@ -156,3 +138,84 @@ https://git.oschina.net/zt_zhong/CodeBe
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=639229c8b6ad0c3a9a8f381dddf5d7785780b20d8c37eb25c91ac73ea7d37a5f" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular 3区:473129930（满）</a>
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=12add102af3f67910bdc0de753dee10ebada08ab485af7e38f4dfa0ee27476f7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular 4区:483016484（将满）</a>
+
+
+## 关于我
+我是大漠穷秋，我的技术blog在这里：https://my.oschina.net/mumu/blog  ，我的知乎专栏在这里：https://zhuanlan.zhihu.com/damoqiongqiu ，慕课网上关于Angular 1.x的免费视频教程在这里：http://www.imooc.com/learn/156 ，最新版本Angular免费视频教程在这里：https://my.oschina.net/mumu/blog/834254 。
+
+如果您有Angular相关的问题需要讨论，或者单纯想跟我Say Hello，请加上面几个扣扣群。注意，我每天都会收到大量的求助消息，真的有点忙，所以请您优先在扣扣群里面讨论问题。
+
+如果您觉得看视频教程不过瘾，想要找我去现场讲，请联系我的微信号scriptbaby。当然，现场版的演讲会更仔细，内容也比线上的版本更新更丰富多彩。微信号只谈公事，不聊天儿，也不答技术问题。
+
+以下是我最近5年以来讲Angular的部分照片，按时间线排列，供您参考：
+
+![讲课照片](src/assets/imgs/angular-damo/1.png)
+
+![讲课照片](src/assets/imgs/angular-damo/2.png)
+
+![讲课照片](src/assets/imgs/angular-damo/3.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/3-1.png)
+
+![讲课照片](src/assets/imgs/angular-damo/4.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/4-1.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/4-2.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/4-3.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/4-4.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/5.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/5-1.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/6.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/7.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/8.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/9.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/10.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/11.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/12.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/13.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/14.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/15.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/16.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/17.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/18.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/19.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/20.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/21.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/22.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/23.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/24.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/25.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/26.jpg)
+
+![讲课照片](src/assets/imgs/angular-damo/27.jpg)
+
+## 开源许可证
+ MIT
+
+ 你可以随意使用此项目，无需通知我，因为我可能很忙没空搭理你。
