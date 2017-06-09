@@ -141,7 +141,9 @@ https://git.oschina.net/zt_zhong/CodeBe
 
 
 ## 关于我
-我是大漠穷秋，我的技术blog在这里：https://my.oschina.net/mumu/blog  ，我的知乎专栏在这里：https://zhuanlan.zhihu.com/damoqiongqiu ，慕课网上关于Angular 1.x的免费视频教程在这里：http://www.imooc.com/learn/156 ，最新版本Angular免费视频教程在这里：https://my.oschina.net/mumu/blog/834254 。
+![关于我](src/assets/imgs/angular-damo/BIO-Angular.jpg)
+
+我是大漠穷秋，我的技术blog在这里：https://my.oschina.net/mumu/blog  ，我的知乎专栏在这里：https://zhuanlan.zhihu.com/damoqiongqiu ，慕课网上关于Angular 1.x的免费视频教程在这里：http://www.imooc.com/learn/156 ，最新版本Angular免费视频教程在这里：https://my.oschina.net/mumu/blog/834254 。我在Angular官方的资料在这里：https://angular.io/about/  。
 
 如果您有Angular相关的问题需要讨论，或者单纯想跟我Say Hello，请加上面几个扣扣群。注意，我每天都会收到大量的求助消息，真的有点忙，所以请您优先在扣扣群里面讨论问题。
 
