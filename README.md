@@ -1,4 +1,5 @@
-![效果图](src/assets/imgs/nicefish-jigsaw.png)
+
+<img src="src/assets/imgs/nicefish-jigsaw.png" width="390" alt="nicefish-jigsaw"/>
 
 # NiceFish（美人鱼）
 
