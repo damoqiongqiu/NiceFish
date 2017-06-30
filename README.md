@@ -1,5 +1,5 @@
 
-<img src="src/assets/imgs/nicefish-jigsaw.png" width="390" alt="nicefish-jigsaw"/>
+<img src="src/assets/imgs/nicefish-jigsaw.png" width="240" alt="nicefish-jigsaw"/>
 
 # NiceFish（美人鱼）
 
