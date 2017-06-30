@@ -1,3 +1,5 @@
+![效果图](src/assets/imgs/nicefish-jigsaw.png)
+
 # NiceFish（美人鱼）
 
 谢谢大家，过了1000个星儿了，我可以拿到一个开源奖杯了 :) 
