@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-    font-family: '微软雅黑', Microsoft YaHei, '宋体', Tahoma, Helvetica, Arial, sans-serif;
+    font-family: '微软雅黑', 'Microsoft YaHei', '宋体', Tahoma, Helvetica, Arial, sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
 
+
 body {
-    font-family: '微软雅黑', Microsoft YaHei, '宋体', Tahoma, Helvetica, Arial, sans-serif;
+    font-family: '微软雅黑', 'Microsoft YaHei', '宋体', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
 }
@@ -17,5 +18,9 @@ html {
   padding-bottom: 162px;
 }
 
-@import "~jquery-ui-dist/jquery-ui.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+@import "~primeng/resources/primeng.min.css";
+@import "~primeng/resources/themes/omega/theme.css";
+@import "~jquery-ui-dist/jquery-ui.min.css";
 @import "~ng2-toastr/bundles/ng2-toastr.min.css";

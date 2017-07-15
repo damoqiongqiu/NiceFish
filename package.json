@@ -21,11 +21,11 @@
     "@angular/platform-browser": "^4.0.2",
     "@angular/platform-browser-dynamic": "^4.0.2",
     "@angular/router": "^4.0.2",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4",
     "datatables.net": "^1.10.13",
     "echarts": "^3.4.0",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.1.1",
     "jquery-ui-dist": "^1.12.1",
     "jsplumb": "^2.3.2",
@@ -34,8 +34,11 @@
     "ng2-toastr": "^4.0.1",
     "ng2-translate": "5.0.0",
     "portfinder": "1.0.13",
+    "primeng": "^4.1.0",
+    "rxjs": "^5.1.0",
     "tinymce": "4.5.6",
-    "ts-helpers": "1.1.2"
+    "ts-helpers": "1.1.2",
+    "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "@angular/cli": "1.2.1",
