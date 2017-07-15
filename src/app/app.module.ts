@@ -20,7 +20,6 @@ import { EqualValidator } from './user/user-register/directives/equal-validator.
 
 import { ChartComponent } from './chart/chart.component';
 import { EChartOptionDirective1 } from './chart/echart-option.directive';
-import { UseJqueryComponent } from './use-jquery/use-jquery.component';
 import { GaodeMapComponent } from './map/gaode-map/gaode-map.component';
 import { AmapComponent } from './map/gaode-map/amap/amap.component';
 import { JsplumbDemoComponent } from './jsplumb-demo/jsplumb-demo.component';
@@ -39,7 +38,6 @@ export function createTranslateLoader(http: Http) {
     EqualValidator,
     EChartOptionDirective1,
     ChartComponent,
-    UseJqueryComponent,
     AmapComponent,
     GaodeMapComponent,
     JsplumbDemoComponent

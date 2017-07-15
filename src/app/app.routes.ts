@@ -6,7 +6,6 @@ import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { ChartComponent } from './chart/chart.component';
 import { GaodeMapComponent } from './map/gaode-map/gaode-map.component';
-import { UseJqueryComponent } from './use-jquery/use-jquery.component';
 import { JsplumbDemoComponent } from './jsplumb-demo/jsplumb-demo.component';
 
 export const appRoutes=[
@@ -54,11 +53,8 @@ export const appRoutes=[
 	{ 
 		path: 'manage', 
 		loadChildren:'./manage/manage.module#ManageModule'
-	},	
-	{ 
-		path: 'jquery', 
-		component:UseJqueryComponent
-	},{
+	},
+	{
 		path:'jsplumb',
 		component:JsplumbDemoComponent
 	},
