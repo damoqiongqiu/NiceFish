@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^4.0.2",
+    "@angular/animations": "^4.3.0",
     "@angular/common": "^4.0.2",
     "@angular/compiler": "^4.0.2",
     "@angular/core": "^4.0.2",

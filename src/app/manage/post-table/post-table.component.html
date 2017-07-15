@@ -19,37 +19,15 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="post-item-container">
-                <table class="table table-bordered table-condensed">
-                    <thead>
-                        <tr>
-                            <th>序号</th>
-                            <th>标题</th>
-                            <th>作者</th>
-                            <th>日期</th>
-                            <th>操作</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let post of postList">
-                            <td>{{post.postId}}</td>
-                            <td>{{post.title}}</td>
-                            <td>{{post.userName}}</td>
-                            <td>{{post.postTime}}</td>
-                            <td>
-                                <a href="javascript:void(0);" name="{{post.postId}}" (click)="editPost($event)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0);" name="{{post.postId}}" (click)="unTop($event)"><i class="fa fa-list-ul" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0);" name="{{post.postId}}" (click)="top($event)"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0);" name="{{post.postId}}" (click)="delPost($event)"><i class="fa fa-times" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p-dataTable [value]="postList" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" dataKey="postId">
+                    <p-header>文章列表</p-header>
+                    <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+                    <p-column field="postId" header="序号" [sortable]="true"></p-column>
+                    <p-column field="title" header="标题" [sortable]="true" [editable]="true"></p-column>
+                    <p-column field="userName" header="作者" [sortable]="true" [editable]="true"></p-column>
+                    <p-column field="postTime" header="日期" [sortable]="true" [editable]="true"></p-column>
+                </p-dataTable>
             </div>
-            <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage"
-            firstText="{{'firstPage' | translate}}" lastText="{{'lastPage' | translate}}"
-            previousText="{{'previousPage' | translate}}" nextText="{{'nextPage' | translate}}"
-            [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event"
-             (pageChanged)="pageChanged($event)" class="pagination-sm"></pagination>
         </div>
     </div>
 </div>

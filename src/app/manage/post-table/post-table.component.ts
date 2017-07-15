@@ -2,6 +2,7 @@ import { Component, OnInit, Input} from '@angular/core';
 import { flyIn } from '../../animations/fly-in';
 import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSegment } from '@angular/router';
 import { PostTableService } from './services/post-table.service';
+import { DataTableModule } from 'primeng/primeng';
 
 @Component({
   selector: 'app-post-table',
@@ -14,7 +15,8 @@ import { PostTableService } from './services/post-table.service';
 export class PostTableComponent implements OnInit {
     @Input() dataURL:string="mock-data/postlist-mock.json";
 
-	  public postList:Array<any>;
+    public postList:Array<any>;
+    
     public maxSize:number = 5;
     public itemsPerPage:number=5;
     public totalItems:number = 15;
@@ -84,5 +86,13 @@ export class PostTableComponent implements OnInit {
         var nameAttr = target.attributes.name;
         var value = nameAttr.nodeValue;
         console.log("postId>"+value);
+    }
+
+    public onRowSelect(event):void{
+      console.log(event.data);
+    }
+
+    public onRowUnselect(event):void{
+      console.log(event.data);
     }
 }
