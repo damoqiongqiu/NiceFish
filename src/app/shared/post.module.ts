@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { ModalModule } from 'ng2-bootstrap';
-import { PaginationModule } from 'ng2-bootstrap';
 
 import { DataTableModule } from 'primeng/components/datatable/datatable';
 import { CalendarModule } from 'primeng/components/calendar/calendar';
@@ -14,17 +12,13 @@ import { PostTableComponent } from '../manage/post-table/post-table.component';
   imports:[ 
     SharedModule,
     DataTableModule,
-    CalendarModule,
-    ModalModule.forRoot(),
-  	PaginationModule.forRoot()
+    CalendarModule
   ],
   declarations:[ 
   	CommentTableComponent, 
   	PostTableComponent
   ],
-  exports:[ 
-    ModalModule,
-  	PaginationModule,
+  exports:[
   	CommentTableComponent, 
   	PostTableComponent
   ]

@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
-import { AccordionModule } from 'ng2-bootstrap';
+
+import { PaginatorModule } from 'primeng/components/paginator/paginator';
 
 import { SharedModule} from '../shared/shared.module';
 import { PostSharedModule } from '../shared/post.module';
@@ -22,9 +23,9 @@ import { manageRoutes } from './manage.routes';
   ],
   imports: [
 	  CommonModule,
-    AccordionModule,
     SharedModule,
     PostSharedModule,
+    PaginatorModule,
     RouterModule.forChild(manageRoutes)
   ],
   exports:[

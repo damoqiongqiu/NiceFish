@@ -35,7 +35,7 @@ export class CommentTableComponent implements OnInit {
       console.log(event);
     });
     this.worker.addEventListener('error', (event: MessageEvent) => {
-      console.error(event);
+      console.log(event);
     });
   }
 
@@ -52,7 +52,6 @@ export class CommentTableComponent implements OnInit {
 
   public delComment(commentId: Number): void {
     console.log(commentId);
-
   }
 
   public onRowSelect(event):void{

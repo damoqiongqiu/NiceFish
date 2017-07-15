@@ -45,7 +45,10 @@
                     </tbody>
                 </table>
             </div>
-            <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" firstText="{{'firstPage' | translate}}" lastText="{{'lastPage' | translate}}" previousText="{{'previousPage' | translate}}" nextText="{{'nextPage' | translate}}" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="pageChanged($event)" class="pagination-sm"></pagination>
+            <p-paginator rows="5" 
+                         totalRecords="20"
+                         first="0">
+            </p-paginator>
         </div>
     </div>
 </div>

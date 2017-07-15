@@ -6,8 +6,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { PostSharedModule } from '../shared/post.module';
 
-import { AlertModule, AccordionModule } from 'ng2-bootstrap';
-
 import { WritePostComponent } from '../post/write-post/write-post.component';
 import { UserMainComponent } from './user-main/user-main.component';
 
@@ -23,8 +21,6 @@ import { userRoutes } from './user.routes';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    AlertModule,
-    AccordionModule,
     SharedModule,
     PostSharedModule,
     RouterModule.forChild(userRoutes)

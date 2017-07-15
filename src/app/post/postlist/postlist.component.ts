@@ -12,18 +12,16 @@ import { Post } from '../model/post-model';
   styleUrls: ['./postlist.component.scss']
 })
 export class PostlistComponent implements OnInit {
-	public maxSize:number = 5;
 	public itemsPerPage:number=5;
-	public totalItems:number;
-	//不要手动对这个属性进行赋值，它是和分页工具条自动绑定的
-	public currentPage:number = 1;
-	public numPages
+	public totalRecords:number=11;
+	public currentPage:number=1;
+	public offset:number=0;
+	public end:number=0;
 
 	public searchText:string;
 	public searchTextStream:Subject<string> = new Subject<string>();
 
 	public postList:Array<Post>;
-
 
 	constructor(
 		public router: Router,
@@ -84,10 +82,11 @@ export class PostlistComponent implements OnInit {
 	}
 
   	ngOnInit() {
+  		//从路由里面获取URL参数
   		this.activeRoute.params.subscribe(params => {
-  			// 这里可以从路由里面获取URL参数
-  			console.log(params);
-			this.loadData(this.searchText,this.currentPage);
+			  console.log(params);
+			  this.currentPage=params.page;
+			  this.loadData(this.searchText);
    		});
 
 		this.searchTextStream
@@ -95,19 +94,16 @@ export class PostlistComponent implements OnInit {
 	        .distinctUntilChanged()
 	        .subscribe(searchText => {
 				console.log(this.searchText);
-	        	this.loadData(this.searchText,this.currentPage)
+	        	this.loadData(this.searchText)
 	        });
   	}
 
-  	public loadData(searchText:string,page:number){
-		let offset = (this.currentPage-1)*this.itemsPerPage;
-		let end = (this.currentPage)*this.itemsPerPage;
-
-		return this.postService.getPostList(searchText,page).subscribe(
+	public loadData(searchText:string){
+		this.offset = (this.currentPage-1)*this.itemsPerPage;
+		this.end = (this.currentPage)*this.itemsPerPage;
+		return this.postService.getPostList(searchText,this.currentPage).subscribe(
 			res=>{
-				this.totalItems = res["total"];
-				//TODO.正式环境中，需要去掉slice
-				this.postList = res["items"].slice(offset,end>this.totalItems?this.totalItems:end);
+				this.postList = res["items"].slice(this.offset,this.end>this.totalRecords?this.totalRecords:this.end);
 			},
 			error => {console.log(error)},
 			() => {}
@@ -115,7 +111,8 @@ export class PostlistComponent implements OnInit {
 	}
 	
 	public pageChanged(event:any):void {
-		this.router.navigateByUrl("posts/page/"+event.page);
+		let temp=parseInt(event.page)+1;
+		this.router.navigateByUrl("posts/page/"+temp);
 	}
 
 	public searchChanged($event):void{
