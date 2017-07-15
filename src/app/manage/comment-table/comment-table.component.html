@@ -14,32 +14,14 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="comment-item-container">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>序号</th>
-                            <th>内容</th>
-                            <th>用户</th>
-                            <th>时间</th>
-                            <th>操作</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>这是一条不合法的评论内容，需要删除掉。</td>
-                            <td>大漠穷秋</td>
-                            <td>2016-11-27</td>
-                            <td><a href="javascript:void(0);" (click)="delComment(1)">删除</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p-dataTable [value]="commentList" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" dataKey="id">
+                    <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+                    <p-column field="id" header="序号" [sortable]="true"></p-column>
+                    <p-column field="content" header="内容" [sortable]="true" [editable]="true"></p-column>
+                    <p-column field="userName" header="用户" [sortable]="true" [editable]="true"></p-column>
+                    <p-column field="time" header="日期" [sortable]="true" [editable]="true"></p-column>
+                </p-dataTable>
             </div>
-            <pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage"
-            firstText="{{'firstPage' | translate}}" lastText="{{'lastPage' | translate}}"
-            previousText="{{'previousPage' | translate}}" nextText="{{'nextPage' | translate}}"
-            [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event"
-             (pageChanged)="pageChanged($event)" class="pagination-sm"></pagination>
         </div>
     </div>
 </div>

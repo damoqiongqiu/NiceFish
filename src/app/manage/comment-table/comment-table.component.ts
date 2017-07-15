@@ -11,12 +11,11 @@ import { flyIn } from '../../animations/fly-in';
   ]
 })
 export class CommentTableComponent implements OnInit {
-  public maxSize: number = 5;
-  public itemsPerPage: number = 5;
-  public totalItems: number = 15;
-  public currentPage: number = 1;
-  public numPages
   public worker: Worker;
+
+  public commentList:Array<any>=[
+    {id:'1',content:'这是一条不合法的评论',userName:'damoqiongqiu',time:'2017-07-15 16:22:58'}
+  ];
 
   constructor(public router: Router,
     public activeRoute: ActivatedRoute) {
@@ -54,5 +53,13 @@ export class CommentTableComponent implements OnInit {
   public delComment(commentId: Number): void {
     console.log(commentId);
 
+  }
+
+  public onRowSelect(event):void{
+
+  }
+
+  public onRowUnselect(event):void{
+    
   }
 }
