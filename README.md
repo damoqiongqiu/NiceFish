@@ -28,25 +28,9 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 
 ## 对应的视频教程
 
-此项目对应的视频教程（超清），包括所有PPT，请点这里：https://my.oschina.net/mumu/blog/834254
-
-这是全球第一个完整的“Angular中文视频教程”，由大漠穷秋老师录制。此视频是完全开源免费的，你可以随意使用、转发，但是不能对课程相关的内容进行任何编辑，尤其不能向观众收取任何形式的费用。
-
-你见过哪一个开源项目会如此细致地配上视频教程？
-
-你见过哪个讲师会如此无私地把所有PPT都分享出来？
-
-所以你一定要仔细看啊！
-
-有些人问的那些个问题啊，too simple! somtimes naive!
-
-![视频教程截图](src/assets/imgs/10.png)
+此项目对应的视频教程（超清），包括所有PPT，请点这里：http://damoqiongqiu.github.io/videos/index.html
 
 ## 演示地址
-
-阿里云上的演示地址：http://121.196.220.118:8081/
-
-以下是效果图：
 
 ![效果图](src/assets/imgs/1.png)
 
@@ -58,7 +42,7 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 
 ![效果图](src/assets/imgs/5.png)
 
-## 目录结构
+## 目录结构描述
 
 ![目录结构1](src/assets/imgs/6.png)
 
@@ -79,6 +63,7 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 然后依次执行以下命令：
 
 	npm cache clean
+	npm prune
 	npm i -g cnpm
 	cnpm i -g @angular/cli
 	cnpm install
@@ -88,7 +73,7 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 
 如果你想让加载的包更小，请使用以下方式启动angular-cli内置的轻量级http server
 
-	ng serve --prod --aot
+	ng serve --prod
 
 如果你需要把项目发布到其它类型的Server上，例如Tomcat，需要对Server进行一些简单的配置才能支持HTML5下的PushState路由模式，我在这篇文章里面有详细的介绍https://my.oschina.net/mumu/blog/830696
 
@@ -102,7 +87,7 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 	cnpm update
 	ng serve
 
-噢对，如果你pull代码之后发现起不来了，请把你项目下的node_modules全部删掉，然后重新npm update。这里确实有点坑，但是我也不知道为什么。
+噢对，如果你pull代码之后发现起不来了，请把你项目下的node_modules全部删掉，然后重新cnpm update。这里确实有点坑，但是我也不知道为什么，目测是npm包的版本问题。
 
 ## AOT&TreeShaking
 
@@ -110,29 +95,21 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 
 打开命令行，进入NiceFish根目录，执行以下命令：
 	
-	ng build --prod --aot
+	ng build --prod
 
-加上--prod参数之后，angular-cli会自动启用TreeShaking（摇树）特性，简而言之，就是把用不到的包全部剔除掉，就像从树上把枯叶子摇下来一样，很形象吧？加上--aot参数是让angular-cli启动预编译特性。
+加上--prod参数之后，angular-cli会自动启用TreeShaking（摇树）特性，简而言之，就是把用不到的包全部剔除掉，就像从树上把枯叶子摇下来一样，很形象吧？
 
 angular-cli会在项目根目录下生成一个dist目录，里面就是编译、压缩好的文件了。仔细观察你会发现，这些文件的体积已经被大幅度压缩，加上gzip之后有一些文件只剩下1/4左右的大小。
 
-![效果图](src/assets/imgs/7.png)
-
-![效果图](src/assets/imgs/8.png)
-
 关于Tomcat如何启动gzip，我专门写了一篇文章来介绍配置，请点这里：https://my.oschina.net/mumu/blog/830742
 
-【请注意】最新版本的angular-cli已经内置了对AOT和TreeShaking的支持，只要像上面这样在build的时候加上--prod和--aot参数就可以了，不需要再做任何其它任何配置工作，官方网站上的那一篇指南有点过时了。
-
-## 注意（请仔细看）
-
-如果你用原生的npm进行安装，可能需要采用科学的上网方式才能安装某些包！
-
-所以强烈推荐采用cnpm来安装！
+【请注意】最新版本的@angular/cli已经内置了对AOT和TreeShaking的支持，只要像上面这样在build的时候加上--prod参数就可以了，不需要再做任何其它任何配置工作，中文网站上的那一篇指南过时了。
 
 ## 推荐项目
 ng2整合各种插件的项目-Code Be
 https://git.oschina.net/zt_zhong/CodeBe
+
+目前最完善的Angular组件库PrimeNG，共有81个组件，能全面覆盖你的日常开发需求：https://www.primefaces.org/primeng/#/
 
 ## 在线交流QQ群
 
@@ -144,16 +121,15 @@ https://git.oschina.net/zt_zhong/CodeBe
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=12add102af3f67910bdc0de753dee10ebada08ab485af7e38f4dfa0ee27476f7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular 4区:483016484（将满）</a>
 
+如果您有Angular相关的问题需要讨论，或者单纯想跟我Say Hello，请加上面几个扣扣群。注意，我每天都会收到大量的求助消息，真的有点忙，所以请您优先在扣扣群里面讨论问题。
 
 ## 关于我
 
-![关于我](src/assets/imgs/angular-damo/BIO-Angular.jpg)
+我是大漠穷秋，我的Github个人主页在这里：http://damoqiongqiu.github.io/ 。
 
-我是大漠穷秋，我的Github个人主页在这里：http://damoqiongqiu.github.io/，我的技术blog在这里：https://my.oschina.net/mumu/blog  ，我的知乎专栏在这里：https://zhuanlan.zhihu.com/damoqiongqiu ，慕课网上关于Angular 1.x的免费视频教程在这里：http://www.imooc.com/learn/156 ，最新版本Angular免费视频教程在这里：https://my.oschina.net/mumu/blog/834254 。我在Angular官方的资料在这里：https://angular.io/about/  。
+如果您觉得看视频教程不过瘾，想要找我去现场讲，请联系我的微信。当然，现场版的演讲会比线上内容更详细，而且可以带着大家实际上手写一些代码。
 
-如果您有Angular相关的问题需要讨论，或者单纯想跟我Say Hello，请加上面几个扣扣群。注意，我每天都会收到大量的求助消息，真的有点忙，所以请您优先在扣扣群里面讨论问题。
-
-如果您觉得看视频教程不过瘾，想要找我去现场讲，请联系我的微信。当然，现场版的演讲会更仔细，内容也比线上的版本更新更丰富多彩。微信号只谈公事，不聊天儿，也不答技术问题。
+注意，微信号只谈公事，不聊天儿，也不答技术问题。不要腆着个脸把那些很二的问题随便甩过来，有一个网站叫百度，你知道的！
 
 ![我的微信](src/assets/imgs/angular-damo/my_wechat.jpg)
 
