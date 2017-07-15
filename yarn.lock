@@ -4795,16 +4795,6 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "http://registry.npm.taobao.org/negotiator/download/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-ng2-bootstrap@1.4.2:
-  version "1.4.2"
-  resolved "http://registry.npm.taobao.org/ng2-bootstrap/download/ng2-bootstrap-1.4.2.tgz#39f3886967f21cffd362d8feb28cc47eecacf153"
-  dependencies:
-    moment "2.17.1"
-
-ng2-toastr@^4.0.1:
-  version "4.0.1"
-  resolved "http://registry.npm.taobao.org/ng2-toastr/download/ng2-toastr-4.0.1.tgz#87d5ea60e4fd0ff3626980a3c1bd9c76dc06bfdc"
-
 ng2-translate@5.0.0:
   version "5.0.0"
   resolved "http://registry.npm.taobao.org/ng2-translate/download/ng2-translate-5.0.0.tgz#0adbb510eb5007a2d6ded5f5d26888c14760aca5"

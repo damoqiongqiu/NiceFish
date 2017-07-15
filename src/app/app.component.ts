@@ -5,8 +5,7 @@ import { UserLoginService } from './user/user-login/user-login.service';
 import { UserRegisterService } from './user/user-register/user-register.service';
 import { User } from './user/model/user-model';
 import 'rxjs/add/operator/merge';
-
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { Message } from 'primeng/primeng';
 
 @Component({
 	selector: 'app-root',
@@ -14,6 +13,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+	public msgs: Message[] = [];
 	public currentUser: User;
 	private globalClickCallbackFn: Function;
 	private loginSuccessCallbackFn: Function;
@@ -25,12 +25,9 @@ export class AppComponent {
 		public activatedRoute: ActivatedRoute,
 		public translate: TranslateService,
 		public userLoginService: UserLoginService,
-		public userRegisterService: UserRegisterService,
-		public toastr: ToastsManager,
-		public vcr: ViewContainerRef
+		public userRegisterService: UserRegisterService
 	) {
-		this.toastr.setRootViewContainerRef(vcr);
-		console.log("什么也没有...");
+
 	}
 
 	ngOnInit() {
@@ -81,7 +78,8 @@ export class AppComponent {
 
 	public doLogout(): void {
 		this.userLoginService.logout();
-		this.toastr.success('退出成功！','系统提示');
+		this.msgs = [];
+        this.msgs.push({severity:'success', summary:'Success Message', detail:'退出成功'});
 		this.router.navigateByUrl("");
 	}
 }

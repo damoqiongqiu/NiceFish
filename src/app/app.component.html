@@ -1,6 +1,7 @@
 <!-- 顶部导航 -->
 <div class="navbar navbar-fixed-top main-nav" role="navigation">
     <div class="container">
+        <p-growl [(value)]="msgs"></p-growl>
         <div class="navbar-header">
             <button #button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse" (click)="toggle(button)">
                 <span class="sr-only">Toggle Navigation</span>
