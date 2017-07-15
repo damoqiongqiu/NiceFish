@@ -58,17 +58,17 @@ export class PostlistComponent implements OnInit {
 		// }, 1000);
 
 		//【第二个核心不同点来了】：Observable可以持续发射很多值，而Promise只能发射一个值就结束了
-		let stream2$ = new Observable(observer => {
-		    let count = 0;
-		    let interval = setInterval(() => {
-		        observer.next(count++);
-		    }, 1000);
+		// let stream2$ = new Observable(observer => {
+		//     let count = 0;
+		//     let interval = setInterval(() => {
+		//         observer.next(count++);
+		//     }, 1000);
 
-		    return () => {
-		        clearInterval(interval);
-		    }
-		});
-		stream2$.subscribe(value => console.log(value));
+		//     return () => {
+		//         clearInterval(interval);
+		//     }
+		// });
+		// stream2$.subscribe(value => console.log(value));
 
 		//【第三个核心不同点来了】：Observable提供了很多的工具函数，最最最常用的filter和map演示如下
 		// stream2$
