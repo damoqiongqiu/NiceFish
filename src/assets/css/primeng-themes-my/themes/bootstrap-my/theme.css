@@ -14,7 +14,7 @@ body .ui-widget-content {
 body .ui-widget-header {
     background: #ffffff;
     color: #2d353c;
-    border: 1px solid #cdcdcd;
+    /* border: 1px solid #cdcdcd; */
 }
 body .ui-state-active,
 body .ui-state-highlight {
@@ -1132,6 +1132,11 @@ body .ui-paginator {
     padding: 0;
     box-sizing: border-box;
 }
+
+body .ui-paginator .ui-paginator-element{
+    border: .125em solid #ddd;
+}
+
 body .ui-paginator .ui-paginator-first,
 body .ui-paginator .ui-paginator-prev,
 body .ui-paginator .ui-paginator-next,
