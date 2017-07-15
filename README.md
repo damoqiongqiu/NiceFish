@@ -19,7 +19,7 @@ NiceFish是一个系列项目，都是Angular这个技术栈。
 
 - NiceFish-SpringMybatis：这是Java版后台服务，http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis 
 
-- NiceBlogElectron：这是一个基于Electron的桌面端项目，把NiceFish用Electron打包成了一个桌面端运行的程序。这是由ZTE中兴通讯的前端道友提供的，如果您正在研究如何利用Electron开发桌面端应用，请参考这个项目。
+- NiceBlogElectron：https://github.com/CN-Tower/NiceBlogElectron ,这是一个基于Electron的桌面端项目，把NiceFish用Electron打包成了一个桌面端运行的程序。这是由ZTE中兴通讯的前端道友提供的，如果您正在研究如何利用Electron开发桌面端应用，请参考这个项目。
 
 NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angular（其实我并不在乎你用来干嘛，那关我什么事呢对吧？）。 
 
@@ -79,7 +79,7 @@ NiceFish可以用来搭建个人Blog、微型SNS站点，或者用于学习Angul
 
 【注意】如果你发现ng serve起不来，或者起来有报错，请把NiceFish根目录下的node_modules目录删掉，然后重新执行cnpm install，全局的@angular/cli也需要重装。
 
-## 更新
+## 如何更新NiceFish的代码
 
 打开命令行，进入NiceFish根目录，依次执行以下命令：
 
@@ -106,10 +106,15 @@ angular-cli会在项目根目录下生成一个dist目录，里面就是编译�
 【请注意】最新版本的@angular/cli已经内置了对AOT和TreeShaking的支持，只要像上面这样在build的时候加上--prod参数就可以了，不需要再做任何其它任何配置工作，中文网站上的那一篇指南过时了。
 
 ## 推荐项目
-ng2整合各种插件的项目-Code Be
+
+- ng2整合各种插件的项目-Code Be
 https://git.oschina.net/zt_zhong/CodeBe
 
-目前最完善的Angular组件库PrimeNG，共有81个组件，能全面覆盖你的日常开发需求：https://www.primefaces.org/primeng/#/
+- 目前最完善的Angular组件库PrimeNG，共有81个组件，能全面覆盖你的日常开发需求：https://www.primefaces.org/primeng/#/
+
+- ng2-admin: https://github.com/akveo/ng2-admin
+
+- awesome-angular: https://github.com/AngularClass/awesome-angular 几百个开源项目和组件列表
 
 ## 在线交流QQ群
 
