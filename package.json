@@ -21,23 +21,24 @@
     "@angular/platform-browser": "^4.0.2",
     "@angular/platform-browser-dynamic": "^4.0.2",
     "@angular/router": "^4.0.2",
-    "core-js": "2.4.1",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4",
     "datatables.net": "^1.10.13",
     "echarts": "^3.4.0",
     "jquery": "^3.1.1",
     "jquery-ui-dist": "^1.12.1",
     "jsplumb": "^2.3.2",
+    "md5": "^2.2.1",
     "ng2-bootstrap": "1.6.3",
     "ng2-toastr": "^4.0.1",
     "ng2-translate": "5.0.0",
     "portfinder": "1.0.13",
-    "rxjs": "5.3.0",
     "tinymce": "4.5.6",
-    "ts-helpers": "1.1.2",
-    "zone.js": "^0.8.9"
+    "ts-helpers": "1.1.2"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.1",
+    "@angular/cli": "1.2.1",
     "@angular/compiler-cli": "^4.0.2",
     "@types/jasmine": "2.5.47",
     "@types/node": "7.0.13",
@@ -52,9 +53,9 @@
     "karma-jasmine": "1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-remap-istanbul": "0.6.0",
-    "protractor": "5.1.1",
-    "ts-node": "3.0.2",
-    "tslint": "5.1.0",
-    "typescript": "~2.2.0"
+    "protractor": "~5.1.2",
+    "ts-node": "~3.0.4",
+    "tslint": "~5.3.2",
+    "typescript": "~2.3.3"
   }
 }
