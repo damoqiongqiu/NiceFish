@@ -5,7 +5,6 @@
     -webkit-text-size-adjust: 100%;
 }
 
-
 body {
     font-family: '微软雅黑', 'Microsoft YaHei', '宋体', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -21,6 +20,6 @@ html {
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
 @import "~primeng/resources/primeng.min.css";
-@import "~primeng/resources/themes/omega/theme.css";
+@import "~primeng/resources/themes/bootstrap/theme.css";
 @import "~jquery-ui-dist/jquery-ui.min.css";
 @import "~ng2-toastr/bundles/ng2-toastr.min.css";
