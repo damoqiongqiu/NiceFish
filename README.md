@@ -25,12 +25,6 @@ NiceFish是一个系列项目，都是Angular这个技术栈。
 
 此项目对应的视频教程（超清），包括所有PPT，请点这里：http://damoqiongqiu.github.io/videos/index.html
 
-## 目录结构描述
-
-![目录结构1](src/assets/imgs/6.png)
-
-![目录结构2](src/assets/imgs/9.png)
-
 ## 用法
 
 用git克隆本项目，从命令行进入进入项目根目录，依次执行以下命令：
@@ -93,11 +87,13 @@ angular-cli会在项目根目录下生成一个dist目录，里面就是编译�
 - ng2整合各种插件的项目-Code Be
 https://git.oschina.net/zt_zhong/CodeBe
 
-- 目前最完善的Angular组件库PrimeNG，共有81个组件，能全面覆盖你的日常开发需求：https://www.primefaces.org/primeng/#/
+- 目前最完善的Angular组件库PrimeNG，共有81个组件，十几套皮肤，能全面覆盖你的日常开发需求：https://www.primefaces.org/primeng/#/
 
-- ng2-admin: https://github.com/akveo/ng2-admin
+- 一个非常好的后台管理模板项目ng2-admin: https://github.com/akveo/ng2-admin
 
 - awesome-angular: https://github.com/AngularClass/awesome-angular 几百个开源项目和组件列表
+
+- 医院挂号系统，基于Ionic3：https://github.com/stewchicken/hospital-booking
 
 ## 在线交流QQ群
 
