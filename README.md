@@ -9,9 +9,9 @@
 
 NiceFish是一个系列项目，都是Angular这个技术栈。
 
-- NiceFish：美人鱼，这是一个微型Blog系统，前端基于Angular 4.0.0 + ng-Bootstrap。http://git.oschina.net/mumu-osc/NiceFish/
+- NiceFish：美人鱼，这是一个微型Blog系统，前端基于Angular 4.x + PrimeNG。http://git.oschina.net/mumu-osc/NiceFish/
 
-- NiceFish-Admin：这是系统管理界面，基于Angular 4.0.0，http://git.oschina.net/mumu-osc/NiceFish-Admin
+- NiceFish-Admin：这是系统管理界面，基于Angular 4.x+PrimeNG，http://git.oschina.net/mumu-osc/NiceFish-Admin
 
 - NiceFish-ionic：这是一个移动端的demo，基于ionic。http://git.oschina.net/mumu-osc/nicefish-ionic
 
@@ -27,7 +27,7 @@ NiceFish是一个系列项目，都是Angular这个技术栈。
 
 用git克隆本项目，从命令行进入进入项目根目录，依次执行以下命令：
 
-	npm i -g cnpm
+	npm i -g cnpm --registry=https://registry.npm.taobao.org
 	cnpm i -g @angular/cli
 	cnpm install
 	ng serve
