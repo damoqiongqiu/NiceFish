@@ -10,7 +10,7 @@ export class SitestatComponent implements OnInit {
 
 	constructor() {
 		window.setInterval(
-			()=>this.currentTime=new Date()
+			()=>{this.currentTime=new Date()}
 		,1000);
 	}
 	
