@@ -1,6 +1,9 @@
 {
     "app": {
         "articles": "动态",
+        "echarts":"集成图表",
+        "gaodemap":"高德地图",
+        "jsplumb":"jsplumb",
         "welcome": "欢迎你",
         "logout": "退出",
         "login": "登录",
