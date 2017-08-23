@@ -51,32 +51,31 @@ export class PostlistComponent implements OnInit {
 		let disposable = stream1$.subscribe(value => console.log(value));
 
 		//【第一个核心不同点来了】：Observable是可以中途取消的，而Promise一旦触发就不能取消了
-		// setTimeout(() => {
-		//     disposable.unsubscribe();
-		// }, 1000);
+		setTimeout(() => {
+		    disposable.unsubscribe();
+		}, 1000);
 
 		//【第二个核心不同点来了】：Observable可以持续发射很多值，而Promise只能发射一个值就结束了
-		// let stream2$ = new Observable(observer => {
-		//     let count = 0;
-		//     let interval = setInterval(() => {
-		//         observer.next(count++);
-		//     }, 1000);
+		let stream2$ = new Observable<number>(observer => {
+		    let count = 0;
+		    let interval = setInterval(() => {
+		        observer.next(count++);
+		    }, 1000);
 
-		//     return () => {
-		//         clearInterval(interval);
-		//     }
-		// });
-		// stream2$.subscribe(value => console.log(value));
+		    return () => {
+		        clearInterval(interval);
+		    }
+		});
+		stream2$.subscribe(value => console.log("Observable>"+value));
 
 		//【第三个核心不同点来了】：Observable提供了很多的工具函数，最最最常用的filter和map演示如下
-		// stream2$
-		//   .filter(value => value % 2 == 0)
-		//   .subscribe(value => console.log(value));
+		stream2$
+			.filter(val=>val%2==0)
+			.subscribe(value => console.log("filter>"+value));
 
-		// stream2$
-		//   .map(value => value * value)
-		//   .subscribe(value => console.log(value));
-
+		stream2$
+			.map(value => value * value)
+			.subscribe(value => console.log("map>"+value));
 
 		console.log("------------------------------------------------");
 	}
