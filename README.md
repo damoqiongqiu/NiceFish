@@ -19,7 +19,6 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 
 此项目对应的视频教程（超清），包括所有PPT，请点这里：http://damoqiongqiu.github.io/videos/index.html
 
-有一些人抱怨说视频没有从头手敲代码，跟不上节奏，如果你是从0开始学习Angular，还是看收费版的视频吧，讲得更细致一些（我自己觉得很啰嗦），内容提纲也在我的主页上，你自己找着看。
 
 ## 用法
 
@@ -37,7 +36,7 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 
 	npm cache clean
 	npm prune
-	npm i -g cnpm
+	npm i -g cnpm --registry=https://registry.npm.taobao.org
 	cnpm i -g @angular/cli
 	cnpm install
 	ng serve
@@ -64,7 +63,7 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 
 ## AOT&TreeShaking
 
-开发状态打出来的bundle体积比较大，在发布到生产环境之前需要进行prod和AOT，用法如下：
+开发状态打出来的bundle体积比较大，在发布到生产环境之前需要进行TreeShaking，用法如下：
 
 打开命令行，进入NiceFish根目录，执行以下命令：
 	
@@ -73,8 +72,6 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 加上--prod参数之后，angular-cli会自动启用TreeShaking（摇树）特性，简而言之，就是把用不到的包全部剔除掉，就像从树上把枯叶子摇下来一样，很形象吧？
 
 angular-cli会在项目根目录下生成一个dist目录，里面就是编译、压缩好的文件了。仔细观察你会发现，这些文件的体积已经被大幅度压缩，加上gzip之后有一些文件只剩下1/4左右的大小。
-
-【请注意】最新版本的@angular/cli已经内置了对AOT和TreeShaking的支持，只要像上面这样在build的时候加上--prod参数就可以了，不需要再做任何其它任何配置工作，中文网站上的那一篇指南过时了。
 
 ## 资源收集帖
 
