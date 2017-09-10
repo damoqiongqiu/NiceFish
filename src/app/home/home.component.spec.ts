@@ -40,8 +40,4 @@ describe('Component: Home', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('true is true', () => {
-    expect(true).toBe(false);
-  });
 });
