@@ -25,6 +25,11 @@ import { AmapComponent } from './map/gaode-map/amap/amap.component';
 import { JsplumbDemoComponent } from './jsplumb-demo/jsplumb-demo.component';
 import {appRoutes} from './app.routes';
 
+export function createTranslateLoader(http: Http) {
+    return new TranslateStaticLoader(http, './assets/i18n', '.json');
+}
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +51,7 @@ import {appRoutes} from './app.routes';
     JsonpModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,
-      useFactory: (http: Http) => new TranslateStaticLoader(http,'./assets/i18n', '.json'),
+      useFactory: (createTranslateLoader),
       deps: [Http]
     }),
     SharedModule,

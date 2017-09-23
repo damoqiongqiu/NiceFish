@@ -29,7 +29,7 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 	cnpm install
 	ng serve
 
-如果之前装过angular-cli需要先卸载：npm uninstall -g angular-cli
+如果之前装过@angular/cli需要先卸载：npm uninstall -g @angular/cli
 如果之前装过@angular/cli需要先卸载：npm uninstall -g @angular/cli
 如果你之前已经尝试安装过node模块，请把NiceFish根目录下的node_moduels目录删掉
 然后依次执行以下命令：
@@ -43,7 +43,7 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 
 打开你的浏览器，访问http://localhost:4200/
 
-如果你想让加载的包更小，请使用以下方式启动angular-cli内置的轻量级http server
+如果你想让加载的包更小，请使用以下方式启动@angular/cli内置的轻量级http server
 
 	ng serve --prod
 
@@ -67,11 +67,11 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 
 打开命令行，进入NiceFish根目录，执行以下命令：
 	
-	ng build --prod
+	ng build --env=prod
 
-加上--prod参数之后，angular-cli会自动启用TreeShaking（摇树）特性，简而言之，就是把用不到的包全部剔除掉，就像从树上把枯叶子摇下来一样，很形象吧？
+加上prod参数之后，@angular/cli会利用envionments/envionments.prod.js里面的配置项来构建项目，同时会自动启用TreeShaking（摇树）特性，简而言之，就是把用不到的包全部剔除掉，就像从树上把枯叶子摇下来一样，很形象吧？
 
-angular-cli会在项目根目录下生成一个dist目录，里面就是编译、压缩好的文件了。仔细观察你会发现，这些文件的体积已经被大幅度压缩，加上gzip之后有一些文件只剩下1/4左右的大小。
+@angular/cli会在项目根目录下生成一个dist目录，里面就是编译、压缩好的文件了。仔细观察你会发现，这些文件的体积已经被大幅度压缩，加上gzip之后有一些文件只剩下1/4左右的大小。
 
 ## 资源收集帖
 
