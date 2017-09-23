@@ -45,7 +45,7 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 
 如果你想让加载的包更小，请使用以下方式启动@angular/cli内置的轻量级http server
 
-	ng serve --prod
+	ng serve -prod
 
 如果你需要把项目发布到其它类型的Server上，例如Tomcat，需要对Server进行一些简单的配置才能支持HTML5下的PushState路由模式，我在这篇文章里面有详细的介绍https://my.oschina.net/mumu/blog/830696
 
