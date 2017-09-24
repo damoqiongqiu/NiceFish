@@ -17,8 +17,7 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 
 ## 对应的视频教程
 
-此项目对应的视频教程（超清），包括所有PPT，请点这里：http://damoqiongqiu.github.io/videos/index.html
-
+此项目对应的视频教程（超清），包括所有PPT，请点这里：http://damoqiongqiu.github.io/videos/index.html ，这个系列的视频教程专门讲的NiceFish，完全免费的。
 
 ## 用法
 
