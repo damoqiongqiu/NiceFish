@@ -47,7 +47,8 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 
 	ng serve -prod
 
-如果你需要把项目发布到其它类型的Server上，例如Tomcat，需要对Server进行一些简单的配置才能支持HTML5下的PushState路由模式，我在这篇文章里面有详细的介绍https://my.oschina.net/mumu/blog/830696
+如果你需要把项目发布到其它类型的Server上，例如Tomcat，需要对Server进行一些简单的配置才能支持HTML5下的PushState路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
+How to: Configure your server to work with html5Mode这个小节里面把常见的WEB容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat全部都有，你过去抄过来就行。
 
 【注意】如果你发现ng serve起不来，或者起来有报错，请把NiceFish根目录下的node_modules目录删掉，然后重新执行cnpm install，全局的@angular/cli也需要删掉重装。
 
@@ -72,10 +73,6 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 加上prod参数之后，@angular/cli会利用envionments/envionments.prod.js里面的配置项来构建项目，同时会自动启用TreeShaking（摇树）特性，简而言之，就是把用不到的包全部剔除掉，就像从树上把枯叶子摇下来一样，很形象吧？
 
 @angular/cli会在项目根目录下生成一个dist目录，里面就是编译、压缩好的文件了。仔细观察你会发现，这些文件的体积已经被大幅度压缩，加上gzip之后有一些文件只剩下1/4左右的大小。
-
-## 资源收集帖
-
-https://damoqiongqiu.github.io/web%E5%89%8D%E7%AB%AF/2017/08/07/angular-learning-materials.html
 
 ## 在线交流QQ群
 
