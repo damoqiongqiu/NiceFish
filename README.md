@@ -44,7 +44,7 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 
 如果你想让加载的包更小，请使用以下方式启动@angular/cli内置的轻量级http server
 
-	ng serve -prod
+	ng serve --prod
 
 如果你需要把项目发布到其它类型的Server上，例如Tomcat，需要对Server进行一些简单的配置才能支持HTML5下的PushState路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
 How to: Configure your server to work with html5Mode这个小节里面把常见的WEB容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat全部都有，你过去抄过来就行。
@@ -67,7 +67,7 @@ How to: Configure your server to work with html5Mode这个小节里面把常见�
 
 打开命令行，进入NiceFish根目录，执行以下命令：
 	
-	ng build --env=prod
+	ng build --prod
 
 加上prod参数之后，@angular/cli会利用envionments/envionments.prod.js里面的配置项来构建项目，同时会自动启用TreeShaking（摇树）特性，简而言之，就是把用不到的包全部剔除掉，就像从树上把枯叶子摇下来一样，很形象吧？
 
