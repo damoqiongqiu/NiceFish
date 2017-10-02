@@ -61,7 +61,7 @@ How to: Configure your server to work with html5Mode这个小节里面把常见�
 
 噢对，如果你pull代码之后发现起不来了，请把你项目下的node_modules全部删掉，然后重新cnpm update。这里确实有点坑，但是我也不知道为什么，目测是npm包的版本问题。
 
-## AOT&TreeShaking
+## TreeShaking
 
 开发状态打出来的bundle体积比较大，在发布到生产环境之前需要进行TreeShaking，用法如下：
 
