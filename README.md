@@ -15,10 +15,6 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 
 - NiceBlogElectron：https://github.com/damoqiongqiu/NiceBlogElectron ,这是一个基于Electron的桌面端项目，把NiceFish用Electron打包成了一个桌面端运行的程序。这是由ZTE中兴通讯的前端道友提供的，我fork了一个，有几个node模块的版本号老要改，如果您正在研究如何利用Electron开发桌面端应用，请参考这个项目。
 
-## 对应的视频教程
-
-此项目对应的视频教程（超清），包括所有PPT，请点这里：http://damoqiongqiu.github.io/videos/index.html ，这个系列的视频教程专门讲的NiceFish，完全免费的。
-
 ## 用法
 
 用git克隆本项目，从命令行进入进入项目根目录，依次执行以下命令：
@@ -96,6 +92,10 @@ Angular-6区-凉州:124641447（将满）
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=5d6b8c5296e4806142b8422ae7abca6f27b9b9b992a4dac80dc1392644e8970a"><i class="fa fa-qq" aria-hidden="true"></i>脚本娃娃-桃花岛-83163037（将满）</a>
 
 如果您有Angular相关的问题需要讨论，或者单纯想跟我Say Hello，请加上面几个扣扣群。注意，我每天都会收到大量的求助消息，真的有点忙，所以请您优先在扣扣群里面讨论问题。
+
+## 学习资源和视频教程
+
+此项目对应的视频教程（超清），包括所有PPT，请点这里：http://damoqiongqiu.github.io/videos/index.html ，这个系列的视频教程专门讲的NiceFish，完全免费的。
 
 ## 关于我
 
