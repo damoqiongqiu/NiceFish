@@ -28,7 +28,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "3.1.1",
     "jquery-ui-dist": "1.12.1",
-    "jsplumb": "2.3.2",//不要随意改这个版本号，会有兼容性问题！
+    "jsplumb": "2.3.2",
     "md5": "^2.2.1",
     "ng2-translate": "5.0.0",
     "portfinder": "1.0.13",
@@ -39,7 +39,7 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.2.6",//不要随意改这个版本号，会有兼容性问题！
+    "@angular/cli": "1.2.6",
     "@angular/compiler-cli": "^4.0.2",
     "@types/jasmine": "2.5.47",
     "@types/jquery": "^2.0.41",
