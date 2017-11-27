@@ -15,6 +15,12 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 
 - NiceBlogElectron：https://github.com/damoqiongqiu/NiceBlogElectron ,这是一个基于Electron的桌面端项目，把NiceFish用Electron打包成了一个桌面端运行的程序。这是由ZTE中兴通讯的前端道友提供的，我fork了一个，有几个node模块的版本号老要改，如果您正在研究如何利用Electron开发桌面端应用，请参考这个项目。
 
+## 在线演示
+
+http://47.104.13.149:4200
+
+（比较穷，买了一个阿里云小主机，您担待。）
+
 ## 用法
 
 用git克隆本项目，从命令行进入进入项目根目录，依次执行以下命令：
