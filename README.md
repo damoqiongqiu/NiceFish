@@ -107,7 +107,7 @@ Angular-6区-凉州:124641447（将满）
 
 ## 关于我
 
-我是大漠穷秋，我的Github个人主页在这里：http://damoqiongqiu.github.io/ 。
+我是大漠穷秋，我的Github个人主页在这里：http://damoqiongqiu.github.io/ 。我创建的Angular在线交流社区在这里：http://www.ngfans.net 。
 
 ## 开源许可证
  MIT
