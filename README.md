@@ -15,11 +15,15 @@ NiceFish是一个系列教学项目，都是Angular这个技术栈。
 
 - NiceBlogElectron：https://github.com/damoqiongqiu/NiceBlogElectron ,这是一个基于Electron的桌面端项目，把NiceFish用Electron打包成了一个桌面端运行的程序。这是由ZTE中兴通讯的前端道友提供的，我fork了一个，有几个node模块的版本号老要改，如果您正在研究如何利用Electron开发桌面端应用，请参考这个项目。
 
+- OpenWMS：https://gitee.com/mumu-osc/OpenWMS-Frontend ，这是OpenWMS项目的前端代码，基于当前最新的Angular 5.2.0和PrimeNG 4.1.0。
+
 ## 在线演示
 
 NiceFish:    http://47.104.13.149:4200
 
 NiceFish-Admin:   http://47.104.13.149:8080
+
+OpenWMS：http://47.104.80.251:4200
 
 （比较穷，买了一个阿里云小主机，您担待。）
 
@@ -32,9 +36,10 @@ NiceFish-Admin:   http://47.104.13.149:8080
 	cnpm install
 	ng serve
 
-如果之前装过@angular/cli需要先卸载：npm uninstall -g @angular/cli
-如果之前装过angular-cli需要先卸载：npm uninstall -g angular-cli
-如果你之前已经尝试安装过node模块，请把NiceFish根目录下的node_moduels目录删掉
+- 如果之前装过@angular/cli需要先卸载：npm uninstall -g @angular/cli
+- 如果之前装过angular-cli需要先卸载：npm uninstall -g angular-cli
+- 如果你之前已经尝试安装过node模块，请把NiceFish根目录下的node_moduels目录删掉
+
 然后依次执行以下命令：
 
 	npm cache clean
@@ -79,35 +84,33 @@ How to: Configure your server to work with html5Mode这个小节里面把常见�
 
 ## 在线交流QQ群
 
-<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=8db5ed802cbddbf6432d7ba7dc4f2a316be020442491eb41cbfb1a12434e8cc7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-1区-丝绸之路:286047042（满）</a>
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=8db5ed802cbddbf6432d7ba7dc4f2a316be020442491eb41cbfb1a12434e8cc7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-1区-丝绸之路（满）</a>
 
-<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=cbfcd79e7e90939b0e2c519f475fac4792985ce2abc5ad45ec5e06ffcfe944dd" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-2区-敦煌:139357161（满）</a>
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=cbfcd79e7e90939b0e2c519f475fac4792985ce2abc5ad45ec5e06ffcfe944dd" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-2区-敦煌（满）</a>
 
-<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=639229c8b6ad0c3a9a8f381dddf5d7785780b20d8c37eb25c91ac73ea7d37a5f" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-3区-玉门关:473129930（满）</a>
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=639229c8b6ad0c3a9a8f381dddf5d7785780b20d8c37eb25c91ac73ea7d37a5f" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-3区-玉门关（满）</a>
 
-<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=12add102af3f67910bdc0de753dee10ebada08ab485af7e38f4dfa0ee27476f7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-4区-河西走廊:483016484（满）</a>
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=12add102af3f67910bdc0de753dee10ebada08ab485af7e38f4dfa0ee27476f7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-4区-河西走廊（满）</a>
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=1293a6494fb306ea29d281e320a8f4ef82285fa5300f73118e6ff7a79ce76036"
 class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i>
-Angular-5区-楼兰:604253120（将满）
+Angular-5区-楼兰（将满）
 </a>
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=fcd880ba919983dc85690642d48cf00ad0affd8d35de5f30542c895e622a8ab8"
 class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i>
-Angular-6区-凉州:124641447（将满）
+Angular-6区-凉州（将满）
 </a>
 
-<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=5d6b8c5296e4806142b8422ae7abca6f27b9b9b992a4dac80dc1392644e8970a"><i class="fa fa-qq" aria-hidden="true"></i>脚本娃娃-桃花岛-83163037（将满）</a>
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=5d6b8c5296e4806142b8422ae7abca6f27b9b9b992a4dac80dc1392644e8970a"><i class="fa fa-qq" aria-hidden="true"></i>脚本娃娃-桃花岛（将满）</a>
 
 如果您有Angular相关的问题需要讨论，或者单纯想跟我Say Hello，请加上面几个扣扣群。注意，我每天都会收到大量的求助消息，真的有点忙，所以请您优先在扣扣群里面讨论问题。
 
 ## 学习资源和视频教程
 
-此项目对应的视频教程（超清），包括所有PPT，请点这里：http://damoqiongqiu.github.io/videos/index.html ，这个系列的视频教程专门讲的NiceFish，完全免费的。
+大漠演讲中的所有PPT已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
 
-## 关于我
-
-我是大漠穷秋，我的Github个人主页在这里：http://damoqiongqiu.github.io/ 。我创建的Angular在线交流社区在这里：http://www.ngfans.net 。
+如果您需要教程，请自己来这里查看，http://www.ngfans.net/ ，有视频也有文字，有免费版本也有收费版，您自己看着选。
 
 ## 开源许可证
  MIT
