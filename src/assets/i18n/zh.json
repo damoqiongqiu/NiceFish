@@ -9,7 +9,8 @@
         "login": "登录",
         "register": "注册",
         "doc": "官方文档",
-        "console": "管理后台"
+        "console": "管理后台",
+        "userlist":"用户列表"
     },
     "post": {
         "publish": "发布文章"
