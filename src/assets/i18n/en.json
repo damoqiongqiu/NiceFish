@@ -9,7 +9,8 @@
         "register":"Register",
         "articles":"Articles",
         "doc":"Document",
-        "console":"Console"
+        "console":"Console",
+        "userlist":"UserList"
     },
     "post":{
         "publish":"publish"

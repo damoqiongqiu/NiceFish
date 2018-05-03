@@ -1,21 +1,23 @@
 
-<img src="src/assets/imgs/nicefish-jigsaw.png" width="240" alt="nicefish-jigsaw"/>
+<img src="src/assets/imgs/dist.png" alt="nicefish"/>
 
-# NiceFish（美人鱼）
+### NiceFish（美人鱼）
 
-NiceFish是一个系列教学项目，都是Angular这个技术栈。
+NiceFish是一个系列教学项目，目标是全面示范Angular在浏览器、移动端、Electron环境中的用法。
 
 - NiceFish：美人鱼，这是一个微型Blog系统，前端基于Angular 4.x + PrimeNG。http://git.oschina.net/mumu-osc/NiceFish/
 
 - NiceFish-Admin：这是系统管理界面，基于Angular 4.x+PrimeNG，http://git.oschina.net/mumu-osc/NiceFish-Admin
 
-- NiceFish-ionic：这是一个移动端的demo，基于ionic。http://git.oschina.net/mumu-osc/nicefish-ionic
-
-- NiceFish-SpringMybatis：这是Java版后台服务，http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis 
+- NiceFish-ionic：这是一个移动端的demo，基于ionic，此项目已支持PWA。http://git.oschina.net/mumu-osc/nicefish-ionic
 
 - NiceBlogElectron：https://github.com/damoqiongqiu/NiceBlogElectron ,这是一个基于Electron的桌面端项目，把NiceFish用Electron打包成了一个桌面端运行的程序。这是由ZTE中兴通讯的前端道友提供的，我fork了一个，有几个node模块的版本号老要改，如果您正在研究如何利用Electron开发桌面端应用，请参考这个项目。
 
-- OpenWMS：https://gitee.com/mumu-osc/OpenWMS-Frontend ，这是OpenWMS项目的前端代码，基于当前最新的Angular 5.2.0和PrimeNG 4.1.0。
+### 产品代码
+
+OpenWMS是一个开源产品，复杂度比NiceFish高，请不要用此项目进行入门学习。
+
+- OpenWMS：https://gitee.com/mumu-osc/OpenWMS-Frontend ，这是OpenWMS项目的前端代码，基于当前最新的Angular 5.2.0和PrimeNG 5.2.4。
 
 ## 在线演示
 
@@ -25,7 +27,7 @@ NiceFish-Admin:   http://47.104.13.149:8080
 
 OpenWMS：http://47.104.80.251:4200
 
-（比较穷，买了一个阿里云小主机，您担待。）
+NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 
 ## 用法
 

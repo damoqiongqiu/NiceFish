@@ -64,6 +64,10 @@ export const appRoutes=[
 		component:JsplumbDemoComponent
 	},
 	{
+		path:'userlist',
+		loadChildren:'./user-list/user-list.module#UserListModule'
+	},
+	{
 		path:'**',//fallback router must in the last
 		loadChildren:'./home/home.module#HomeModule'
 	}
