@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
+import { map } from "rxjs/operators";
 
 @Injectable()
 export class ForgetPwdService {
@@ -9,8 +9,10 @@ export class ForgetPwdService {
 
     constructor(public http: Http) { }
 
-    public sendValidationEmail(email: string):Observable<any>{
+    public sendValidationEmail(email: string): Observable<any> {
         return this.http.get(this.validateEmailURL)
-            .map((res: Response) => res.json());
+            .pipe(
+                map((res: Response) => res.json())
+            );
     }
 }

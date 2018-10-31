@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Http, Headers, Response } from "@angular/http";
+import { map } from "rxjs/operators";
 import { User } from "../model/user-model";
 
 @Component({
@@ -34,10 +35,12 @@ export class UserInfoComponent implements OnInit {
     this.userInfoURL = this.userInfoURL + "/" + this.userId;
     return this.http
       .get(this.userInfoURL)
-      .map((response: Response) => {
-        let user = response.json();
-        return user;
-      })
+      .pipe(
+        map((response: Response) => {
+          let user = response.json();
+          return user;
+        })
+      )
       .subscribe(
         data => {
           console.log("用户信息>" + data);

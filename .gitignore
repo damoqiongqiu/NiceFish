@@ -34,3 +34,6 @@ Thumbs.db
 /*.zip
 /.vscode
 *.orig
+
+.angulardoc.json
+/.angulardoc.json

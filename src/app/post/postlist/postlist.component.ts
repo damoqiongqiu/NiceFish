@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { PostlistService } from './services/postlist.service';
 import { Post } from '../model/post-model';
 
@@ -89,8 +89,10 @@ export class PostlistComponent implements OnInit {
 		});
 
 		this.searchTextStream
-			.debounceTime(500)
-			.distinctUntilChanged()
+			.pipe(
+				debounceTime(500),
+				distinctUntilChanged()
+			)
 			.subscribe(searchText => {
 				console.log(this.searchText);
 				this.loadData(this.searchText)

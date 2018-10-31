@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { HttpModule,JsonpModule ,Http} from '@angular/http';
+import { HttpModule, JsonpModule, Http } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateService, TranslateStore } from '@ngx-translate/core';
 
 import { GrowlModule } from 'primeng/components/growl/growl';
 
@@ -24,12 +27,12 @@ import { GaodeMapComponent } from './map/gaode-map/gaode-map.component';
 import { AmapComponent } from './map/gaode-map/amap/amap.component';
 import { UseJqueryComponent } from './use-jquery/use-jquery.component';
 import { JsplumbDemoComponent } from './jsplumb-demo/jsplumb-demo.component';
-import {appRoutes} from './app.routes';
+import { appRoutes } from './app.routes';
 
-export function createTranslateLoader(http: Http) {
-    return new TranslateStaticLoader(http, './assets/i18n', '.json');
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
 }
-
 
 @NgModule({
   declarations: [
@@ -50,17 +53,22 @@ export function createTranslateLoader(http: Http) {
     RouterModule,
     ReactiveFormsModule,
     HttpModule,
+    HttpClientModule,
     JsonpModule,
     TranslateModule.forRoot({
-      provide: TranslateLoader,
-      useFactory: (createTranslateLoader),
-      deps: [Http]
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
     }),
     SharedModule,
     GrowlModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
+    TranslateService,
+    TranslateStore,
     UserLoginService,
     UserRegisterService,
     ForgetPwdService
@@ -68,5 +76,5 @@ export function createTranslateLoader(http: Http) {
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
+
 }

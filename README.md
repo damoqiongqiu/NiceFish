@@ -2,6 +2,8 @@
 
 ### NiceFish（美人鱼）
 
+**已经把所有模块都全部升级到当前最新的7.0版本，耗时5小时，主要是一些npm包的版本问题。**
+
 NiceFish 是一个系列教学项目，目标是全面示范 Angular 在浏览器、移动端、Electron 环境中的用法。
 
 * NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 4.x + PrimeNG。http://git.oschina.net/mumu-osc/NiceFish/
