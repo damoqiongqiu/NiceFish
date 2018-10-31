@@ -2,11 +2,11 @@
 
 ### NiceFish（美人鱼）
 
-**已经把所有模块都全部升级到当前最新的7.0版本，耗时5小时，主要是一些npm包的版本问题。**
+**已经把所有模块都全部升级到当前（2018-10-31）最新的7.0版本，耗时5小时，主要是一些npm包的版本问题。**
 
 NiceFish 是一个系列教学项目，目标是全面示范 Angular 在浏览器、移动端、Electron 环境中的用法。
 
-* NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 4.x + PrimeNG。http://git.oschina.net/mumu-osc/NiceFish/
+* NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 7.0 + PrimeNG 6.1.5。http://git.oschina.net/mumu-osc/NiceFish/
 
 * NiceFish-Admin：这是系统管理界面，基于 Angular 4.x+PrimeNG，http://git.oschina.net/mumu-osc/NiceFish-Admin
 
@@ -18,7 +18,7 @@ NiceFish 是一个系列教学项目，目标是全面示范 Angular 在浏览�
 
 OpenWMS 是一个开源产品，复杂度比 NiceFish 高，请不要用此项目进行入门学习。
 
-* OpenWMS：https://gitee.com/mumu-osc/OpenWMS-Frontend ，这是 OpenWMS 项目的前端代码，基于当前最新的 Angular 5.2.0 和 PrimeNG 5.2.4。
+* OpenWMS：https://gitee.com/mumu-osc/OpenWMS-Frontend ，这是 OpenWMS 项目的前端代码，基于当前最新的 Angular 7.0.0 和 PrimeNG 6.1.5。
 
 ## 在线演示
 
