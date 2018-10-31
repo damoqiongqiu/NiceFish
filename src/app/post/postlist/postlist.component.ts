@@ -7,27 +7,27 @@ import { PostlistService } from './services/postlist.service';
 import { Post } from '../model/post-model';
 
 @Component({
-  selector: 'app-postlist',
-  templateUrl: './postlist.component.html',
-  styleUrls: ['./postlist.component.scss']
+	selector: 'app-postlist',
+	templateUrl: './postlist.component.html',
+	styleUrls: ['./postlist.component.scss']
 })
 export class PostlistComponent implements OnInit {
-	public itemsPerPage:number=5;
-	public totalRecords:number=11;
-	public currentPage:number=1;
-	public offset:number=0;
-	public end:number=0;
+	public itemsPerPage: number = 5;
+	public totalRecords: number = 11;
+	public currentPage: number = 1;
+	public offset: number = 0;
+	public end: number = 0;
 
-	public searchText:string;
-	public searchTextStream:Subject<string> = new Subject<string>();
+	public searchText: string;
+	public searchTextStream: Subject<string> = new Subject<string>();
 
-	public postList:Array<Post>;
+	public postList: Array<Post>;
 
 	constructor(
 		public router: Router,
-        public activeRoute: ActivatedRoute,
-        public postService:PostlistService) {
-		
+		public activeRoute: ActivatedRoute,
+		public postService: PostlistService) {
+
 		// console.log("------这里开始对比Promise和Observable，这块代码是为了学习Observable使用的------");
 
 		// //以下是Promise的写法
@@ -80,45 +80,45 @@ export class PostlistComponent implements OnInit {
 		// console.log("------------------------------------------------");
 	}
 
-  	ngOnInit() {
-  		//从路由里面获取URL参数
-  		this.activeRoute.params.subscribe(params => {
-			  console.log(params);
-			  this.currentPage=params.page;
-			  this.loadData(this.searchText);
-   		});
+	ngOnInit() {
+		//从路由里面获取URL参数
+		this.activeRoute.params.subscribe(params => {
+			console.log(params);
+			this.currentPage = params.page;
+			this.loadData(this.searchText);
+		});
 
 		this.searchTextStream
-	        .debounceTime(500)
-	        .distinctUntilChanged()
-	        .subscribe(searchText => {
+			.debounceTime(500)
+			.distinctUntilChanged()
+			.subscribe(searchText => {
 				console.log(this.searchText);
-	        	this.loadData(this.searchText)
-	        });
-  	}
+				this.loadData(this.searchText)
+			});
+	}
 
-	public loadData(searchText:string){
-		this.offset = (this.currentPage-1)*this.itemsPerPage;
-		this.end = (this.currentPage)*this.itemsPerPage;
-		return this.postService.getPostList(searchText,this.currentPage).subscribe(
-			res=>{
-				this.postList = res["items"].slice(this.offset,this.end>this.totalRecords?this.totalRecords:this.end);
+	public loadData(searchText: string) {
+		this.offset = (this.currentPage - 1) * this.itemsPerPage;
+		this.end = (this.currentPage) * this.itemsPerPage;
+		return this.postService.getPostList(searchText, this.currentPage).subscribe(
+			res => {
+				this.postList = res["items"].slice(this.offset, this.end > this.totalRecords ? this.totalRecords : this.end);
 			},
-			error => {console.log(error)},
-			() => {}
+			error => { console.log(error) },
+			() => { }
 		);
 	}
-	
-	public pageChanged(event:any):void {
-		let temp=parseInt(event.page)+1;
-		this.router.navigateByUrl("posts/page/"+temp);
+
+	public pageChanged(event: any): void {
+		let temp = parseInt(event.page) + 1;
+		this.router.navigateByUrl("posts/page/" + temp);
 	}
 
-	public searchChanged($event):void{
+	public searchChanged($event): void {
 		this.searchTextStream.next(this.searchText);
 	}
 
-	public gotoWrite():void{
+	public gotoWrite(): void {
 		//TODO：如果没有登录，跳转到登录页，如果已登录，跳往写作页
 		this.router.navigateByUrl("user/write");
 	}
