@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, filter } from 'rxjs/operators';
 import { PostlistService } from './services/postlist.service';
 import { Post } from '../model/post-model';
 
@@ -57,25 +57,29 @@ export class PostlistComponent implements OnInit {
 
 		// //【第二个核心不同点来了】：Observable可以持续发射很多值，而Promise只能发射一个值就结束了
 		// let stream2$ = new Observable<number>(observer => {
-		//     let count = 0;
-		//     let interval = setInterval(() => {
-		//         observer.next(count++);
-		//     }, 1000);
+		// 	let count = 0;
+		// 	let interval = setInterval(() => {
+		// 		observer.next(count++);
+		// 	}, 1000);
 
-		//     return () => {
-		//         clearInterval(interval);
-		//     }
+		// 	return () => {
+		// 		clearInterval(interval);
+		// 	}
 		// });
-		// stream2$.subscribe(value => console.log("Observable>"+value));
+		// stream2$.subscribe(value => console.log("Observable>" + value));
 
 		// //【第三个核心不同点来了】：Observable提供了很多的工具函数，最最最常用的filter和map演示如下
 		// stream2$
-		// 	.filter(val=>val%2==0)
-		// 	.subscribe(value => console.log("filter>"+value));
+		// 	.pipe(
+		// 		filter(val => val % 2 == 0)
+		// 	)
+		// 	.subscribe(value => console.log("filter>" + value));
 
 		// stream2$
-		// 	.map(value => value * value)
-		// 	.subscribe(value => console.log("map>"+value));
+		// 	.pipe(
+		// 		map(value => value * value)
+		// 	)
+		// 	.subscribe(value => console.log("map>" + value));
 
 		// console.log("------------------------------------------------");
 	}
