@@ -32,6 +32,7 @@
     "md5": "^2.2.1",
     "ngx-echarts": "^4.0.0",
     "ngx-loading": "^1.0.14",
+    "primeicons": "^1.0.0",
     "primeng": "^6.1.5",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.3.3",

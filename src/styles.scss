@@ -17,7 +17,9 @@ html {
   padding-bottom: 162px;
 }
 
+@import "./assets/css/primeng-bootstrap-custom.scss";
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
-@import "./assets/css/primeng-themes-my/primeng.min.css";
-@import "./assets/css/primeng-themes-my/themes/bootstrap-my/theme.css";
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/themes/bootstrap/theme.css";
+@import "~primeng/resources/primeng.min.css";

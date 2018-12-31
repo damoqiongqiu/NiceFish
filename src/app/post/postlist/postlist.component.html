@@ -3,15 +3,18 @@
         <div class="row">
             <div class="col-sm-10">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="{{'search' | translate}}" [(ngModel)]="searchText" (keyup)="searchChanged($event)" (change)="searchChanged($event)" id="searchText" name="searchText">
+                    <input class="form-control" type="text" placeholder="{{'search' | translate}}" [(ngModel)]="searchText"
+                        (keyup)="searchChanged($event)" (change)="searchChanged($event)" id="searchText" name="searchText">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" (click)="searchChanged($event)"><i class="fa fa-search" aria-hidden="true"></i> {{'search' | translate}}</button>
+                        <button class="btn btn-default" type="button" (click)="searchChanged($event)"><i class="fa fa-search"
+                                aria-hidden="true"></i> {{'search' | translate}}</button>
                     </span>
                 </div>
             </div>
             <div class="col-sm-2">
                 <div class="input-group">
-                    <button class="btn btn-success" type="button" (click)="gotoWrite()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{'post.publish' | translate}}</button>
+                    <button class="btn btn-success" type="button" (click)="gotoWrite()"><i class="fa fa-pencil-square-o"
+                            aria-hidden="true"></i> {{'post.publish' | translate}}</button>
                 </div>
             </div>
         </div>
@@ -23,15 +26,16 @@
                     <a [routerLink]="['/post/postdetail',post.postId]">{{post.title}}</a>
                 </h4>
                 <p class="{{post.isfamous | boolean }}">
-                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;{{post.likedTimes}} &nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class="fa fa-comment" aria-hidden="true"></i>&nbsp;{{post.commentTimes}} &nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;{{post.readTimes}} &nbsp;&nbsp;&nbsp;&nbsp;{{post.userName }} &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}}
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;{{post.likedTimes}}
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-comment" aria-hidden="true"></i>&nbsp;{{post.commentTimes}}
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;{{post.readTimes}} &nbsp;&nbsp;&nbsp;&nbsp;{{post.userName }}
+                    &nbsp;&nbsp;&nbsp;&nbsp;{{post.postTime}}
                 </p>
             </div>
-            <p-paginator rows="{{itemsPerPage}}" 
-                         totalRecords="{{totalRecords}}"
-                         first="{{offset}}"
-                         (onPageChange)="pageChanged($event)">
+            <p-paginator rows="{{itemsPerPage}}" totalRecords="{{totalRecords}}" first="{{offset}}" pageLinkSize="3"
+                (onPageChange)="pageChanged($event)">
             </p-paginator>
         </div>
     </div>
