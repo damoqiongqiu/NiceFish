@@ -2,7 +2,7 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-md-12">
                     <form role="form">
                         <div class="form-group">
                             <textarea class="form-control" rows="5" placeholder="5-140个字符，非法字符自动截断。"></textarea>
@@ -12,11 +12,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12">
-                	<div *ngFor="let comment of comments" class="comment-item-container">
+                <div class="col-md-12">
+                    <div *ngFor="let comment of comments" class="comment-item-container">
                         <h5>{{comment.content}}</h5>
-                        <p>{{comment.username}} {{comment.date}}</p>        		
-                	</div>
+                        <p>{{comment.username}} {{comment.date}}</p>
+                    </div>
                 </div>
             </div>
         </div>

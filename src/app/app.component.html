@@ -16,12 +16,20 @@
         </div>
         <div class="collapse navbar-collapse navbar-responsive-collapse" aria-expanded="false">
             <ul class="nav navbar-nav">
-                <li routerLinkActive="active" class="dropdown">
+                <li routerLinkActive="active">
                     <a routerLink="posts">{{'app.articles' | translate}}</a>
                 </li>
-                <li class="dropdown">
+                <li>
                     <a routerLink="echart">{{'app.echarts' | translate}}</a>
                 </li>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button class="btn btn-default" type="button" (click)="searchChanged($event)"><i class="fa fa-search"
+                            aria-hidden="true"></i></button>
+                </form>
+                <button type="button" class="btn btn-success navbar-btn">发布文章</button>
             </ul>
             <ul *ngIf="!currentUser?.userName" class="nav navbar-nav navbar-right">
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">

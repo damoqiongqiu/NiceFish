@@ -6,8 +6,8 @@
         <div class="panel-body">
             <form [formGroup]="userForm" (ngSubmit)="doRegister()" class="form-horizontal" role="form" novalidate>
                 <div class="form-group" [ngClass]="{'has-error': formErrors.email }">
-                    <label class="col-sm-3 control-label">{{'userRegister.email' | translate}}</label>
-                    <div class="col-sm-8">
+                    <label class="col-md-3 control-label">{{'userRegister.email' | translate}}</label>
+                    <div class="col-md-8">
                         <input formControlName="email" type="email" class="form-control" placeholder="{{'userRegister.email-placeholder' | translate}}">
                         <div *ngIf="formErrors.email" class="text-danger">
                             {{ formErrors.email }}
@@ -15,8 +15,8 @@
                     </div>
                 </div>
                 <div class="form-group" [ngClass]="{'has-error': formErrors.password }">
-                    <label class="col-sm-3 control-label">{{'userRegister.password' | translate}}</label>
-                    <div class="col-sm-8">
+                    <label class="col-md-3 control-label">{{'userRegister.password' | translate}}</label>
+                    <div class="col-md-8">
                         <input formControlName="password" validateEqual="confirmPassword" reverse=true type="password"
                             class="form-control" placeholder="{{'userRegister.password-placeholder' | translate}}">
                         <div *ngIf="formErrors.password" class="text-danger">
@@ -25,8 +25,8 @@
                     </div>
                 </div>
                 <div class="form-group" [ngClass]="{'has-error': formErrors.confirmPassword }">
-                    <label class="col-sm-3 control-label">{{'userRegister.repeat-pwd' | translate}}</label>
-                    <div class="col-sm-8">
+                    <label class="col-md-3 control-label">{{'userRegister.repeat-pwd' | translate}}</label>
+                    <div class="col-md-8">
                         <input formControlName="confirmPassword" validateEqual="password" type="password" class="form-control"
                             placeholder="{{'userRegister.repeat-pwd-placeholder' | translate}}">
                         <div *ngIf="formErrors.confirmPassword" class="text-danger">
@@ -34,9 +34,9 @@
                         </div>
                     </div>
                 </div>
-                <div *ngIf="formErrors.formError" class="col-sm-offset-3 col-sm-8 alert alert-danger">{{ formErrors.formError }}</div>
+                <div *ngIf="formErrors.formError" class="col-md-offset-3 col-md-8 alert alert-danger">{{ formErrors.formError }}</div>
                 <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-8">
+                    <div class="col-md-offset-3 col-md-8">
                         <button [disabled]="userForm.invalid" type="submit" class="btn btn-success">{{'userRegister.signUp' | translate}}</button>
                     </div>
                 </div>
