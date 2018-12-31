@@ -23,10 +23,6 @@ import { EqualValidator } from './user/user-register/directives/equal-validator.
 
 import { ChartComponent } from './chart/chart.component';
 import { EChartOptionDirective1 } from './chart/echart-option.directive';
-import { GaodeMapComponent } from './map/gaode-map/gaode-map.component';
-import { AmapComponent } from './map/gaode-map/amap/amap.component';
-import { UseJqueryComponent } from './use-jquery/use-jquery.component';
-import { JsplumbDemoComponent } from './jsplumb-demo/jsplumb-demo.component';
 import { appRoutes } from './app.routes';
 
 
@@ -41,11 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     UserRegisterComponent,
     EqualValidator,
     EChartOptionDirective1,
-    ChartComponent,
-    AmapComponent,
-    GaodeMapComponent,
-    UseJqueryComponent,
-    JsplumbDemoComponent
+    ChartComponent
   ],
   imports: [
     BrowserModule,
