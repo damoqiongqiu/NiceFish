@@ -4,9 +4,8 @@ import { TranslateService, TranslateStore } from '@ngx-translate/core';
 import { UserLoginService } from './user/user-login/user-login.service';
 import { UserRegisterService } from './user/user-register/user-register.service';
 import { User } from './user/model/user-model';
-import { Observable } from "rxjs";
 import { merge } from 'rxjs'
-import { Message } from 'primeng/primeng';
+import { MessageService } from 'primeng/api';
 
 @Component({
 	selector: 'root',
@@ -14,10 +13,8 @@ import { Message } from 'primeng/primeng';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-	public msgs: Message[] = [];
 	public currentUser: User;
 	private globalClickCallbackFn: Function;
-	private loginSuccessCallbackFn: Function;
 
 	constructor(
 		public elementRef: ElementRef,
@@ -26,7 +23,8 @@ export class AppComponent {
 		public activatedRoute: ActivatedRoute,
 		public translate: TranslateService,
 		public userLoginService: UserLoginService,
-		public userRegisterService: UserRegisterService
+		public userRegisterService: UserRegisterService,
+		private messageService: MessageService
 	) {
 
 	}
@@ -78,8 +76,7 @@ export class AppComponent {
 
 	public doLogout(): void {
 		this.userLoginService.logout();
-		this.msgs = [];
-		this.msgs.push({ severity: 'success', summary: 'Success Message', detail: '退出成功' });
+		this.messageService.add({ severity: 'danger', summary: 'Success Message', detail: '退出成功' });
 		this.router.navigateByUrl("");
 	}
 }

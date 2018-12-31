@@ -9,7 +9,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateService, TranslateStore } from '@ngx-translate/core';
 
-import { GrowlModule } from 'primeng/components/growl/growl';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
@@ -55,7 +56,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     SharedModule,
-    GrowlModule,
+    ToastModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
@@ -63,7 +64,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslateStore,
     UserLoginService,
     UserRegisterService,
-    RetrievePwdService
+    RetrievePwdService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

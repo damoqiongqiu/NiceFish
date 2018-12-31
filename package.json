@@ -33,7 +33,7 @@
     "ngx-echarts": "^4.0.0",
     "ngx-loading": "^1.0.14",
     "primeicons": "^1.0.0",
-    "primeng": "^6.1.5",
+    "primeng": "^7.0.3",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.3.3",
     "ts-helpers": "^1.1.2",
