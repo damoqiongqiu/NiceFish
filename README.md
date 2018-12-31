@@ -1,6 +1,8 @@
 <img src="src/assets/imgs/dist.jpg" alt="nicefish"/>
 
-### NiceFish（美人鱼）
+## NiceFish（美人鱼）
+
+### 关于NiceFish
 
 **已经把所有模块都全部升级到当前（2018-10-31）最新的7.0版本，耗时5小时，主要是一些npm包的版本问题。**
 
@@ -18,7 +20,7 @@ OpenWMS 是一个开源产品，复杂度比 NiceFish 高，请不要用此项�
 
 * OpenWMS：https://gitee.com/mumu-osc/OpenWMS-Frontend ，这是 OpenWMS 项目的前端代码，基于当前最新的 Angular 7.0.0 和 PrimeNG 6.1.5。
 
-## 在线演示
+### 在线演示
 
 NiceFish: http://47.104.13.149:4200
 
@@ -26,7 +28,7 @@ OpenWMS：http://47.104.80.251:4200
 
 NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 
-## 用法
+### 用法
 
 用 git 克隆本项目，从命令行进入进入项目根目录，依次执行以下命令：
 
@@ -59,7 +61,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 【注意】如果你发现 ng serve 起不来，或者起来有报错，请把 NiceFish 根目录下的 node_modules 目录删掉，然后重新执行 cnpm install，全局的@angular/cli 也需要删掉重装。
 
-## 在线交流 QQ 群
+### 在线交流 QQ 群
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=8db5ed802cbddbf6432d7ba7dc4f2a316be020442491eb41cbfb1a12434e8cc7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-1区</a>
 
@@ -78,13 +80,13 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 如果您有 Angular 相关的问题需要讨论，或者单纯想跟我 Say Hello，请加上面几个扣扣群。注意，我每天都会收到大量的求助消息，真的有点忙，所以请您优先在扣扣群里面讨论问题。
 
-## 学习资源和视频教程
+### 学习资源
 
 大漠演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
 
 如果您需要教程，请自己来这里查看，http://www.ngfans.net/ ，有视频也有文字，有免费版本也有收费版，您自己看着选。
 
-## 开源许可证
+### 开源许可证
 
 MIT
 
