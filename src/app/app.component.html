@@ -29,7 +29,7 @@
                     <button class="btn btn-default" type="button" (click)="searchChanged($event)"><i class="fa fa-search"
                             aria-hidden="true"></i></button>
                 </form>
-                <button type="button" class="btn btn-success navbar-btn">发布文章</button>
+                <button type="button" class="btn btn-secondary navbar-btn">发布文章</button>
             </ul>
             <ul *ngIf="!currentUser?.userName" class="nav navbar-nav navbar-right">
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
