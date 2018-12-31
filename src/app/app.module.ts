@@ -14,10 +14,10 @@ import { GrowlModule } from 'primeng/components/growl/growl';
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { UserLoginService } from './user/user-login/user-login.service';
-import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
+import { RetrievePwdComponent } from './user/retrieve-pwd/retrieve-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserRegisterService } from './user/user-register/user-register.service';
-import { ForgetPwdService } from './user/forget-pwd/forget-pwd.service';
+import { RetrievePwdService } from './user/retrieve-pwd/retrieve-pwd.service';
 
 import { EqualValidator } from './user/user-register/directives/equal-validator.directive';
 
@@ -33,7 +33,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    ForgetPwdComponent,
+    RetrievePwdComponent,
     UserRegisterComponent,
     EqualValidator,
     EChartOptionDirective1,
@@ -63,7 +63,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslateStore,
     UserLoginService,
     UserRegisterService,
-    ForgetPwdService
+    RetrievePwdService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,5 @@
 import { UserLoginComponent } from './user/user-login/user-login.component';
-import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
+import { RetrievePwdComponent } from './user/retrieve-pwd/retrieve-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { ChartComponent } from './chart/chart.component';
 
@@ -30,8 +30,8 @@ export const appRoutes = [
 		component: UserLoginComponent
 	},
 	{
-		path: 'forgetpwd',
-		component: ForgetPwdComponent
+		path: 'retrievepwd',
+		component: RetrievePwdComponent
 	},
 	{
 		path: 'register',

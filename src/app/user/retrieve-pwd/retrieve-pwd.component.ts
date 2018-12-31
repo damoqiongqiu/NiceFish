@@ -1,29 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-
-import { ForgetPwdService } from './forget-pwd.service';
+import { RetrievePwdService } from './retrieve-pwd.service';
 import { User } from '../model/user-model';
 import { fadeIn } from '../../animations/fade-in';
 
 @Component({
-  selector: 'app-forget-pwd',
-  templateUrl: './forget-pwd.component.html',
-  styleUrls: ['./forget-pwd.component.scss'],
-  animations: [ fadeIn ]
+	selector: 'retrieve-pwd',
+	templateUrl: './retrieve-pwd.component.html',
+	styleUrls: ['./retrieve-pwd.component.scss'],
+	animations: [fadeIn]
 })
-export class ForgetPwdComponent implements OnInit {
+export class RetrievePwdComponent implements OnInit {
 	public user: User = new User();
 	public message: string;
 	public messgeType: string;
 	constructor(
-		public forgetPwdService: ForgetPwdService
+		public retrievePwdService: RetrievePwdService
 	) { }
 
 	ngOnInit() {
 
 	}
 
-	public sendValidationEmail():void{
-		this.forgetPwdService.sendValidationEmail(this.user.email)
+	public sendValidationEmail(): void {
+		this.retrievePwdService.sendValidationEmail(this.user.email)
 			.subscribe(
 				data => {
 					this.message = data.message;

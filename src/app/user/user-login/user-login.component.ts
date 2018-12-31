@@ -48,7 +48,7 @@ export class UserLoginComponent implements OnInit {
     this.router.navigateByUrl("home");
   }
 
-  public forgetPwd(): void {
-    this.router.navigateByUrl("forgetpwd");
+  public retrievePwd(): void {
+    this.router.navigateByUrl("retrievepwd");
   }
 }

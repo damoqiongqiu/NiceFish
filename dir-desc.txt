@@ -25,7 +25,7 @@
 │  ├─shared
 │  ├─sitestat
 │  ├─user 							//这里是与用户相关的组件
-│  │  ├─forget-pwd
+│  │  ├─retrieve-pwd
 │  │  ├─model
 │  │  ├─user-info                   //@Input和@Output的用法请参考这个目录
 │  │  ├─user-login                  //模板驱动型表单请参考这个目录
