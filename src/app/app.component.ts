@@ -9,7 +9,7 @@ import { merge } from 'rxjs'
 import { Message } from 'primeng/primeng';
 
 @Component({
-	selector: 'app-root',
+	selector: 'root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
 })

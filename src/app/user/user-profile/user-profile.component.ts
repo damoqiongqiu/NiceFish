@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FieldBase, Textbox, TextArea, Image } from './dynamic-form/form-field';
 
 @Component({
-  selector: 'app-user-profile',
+  selector: 'user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })

@@ -4,7 +4,7 @@ import { map } from "rxjs/operators";
 import { User } from "../model/user-model";
 
 @Component({
-  selector: "app-user-info",
+  selector: "user-info",
   templateUrl: "./user-info.component.html",
   styleUrls: ["./user-info.component.scss"]
 })

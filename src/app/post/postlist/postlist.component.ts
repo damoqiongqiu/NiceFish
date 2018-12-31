@@ -7,7 +7,7 @@ import { PostlistService } from './services/postlist.service';
 import { Post } from '../model/post-model';
 
 @Component({
-	selector: 'app-postlist',
+	selector: 'postlist',
 	templateUrl: './postlist.component.html',
 	styleUrls: ['./postlist.component.scss']
 })

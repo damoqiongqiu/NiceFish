@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { flyIn } from '../../animations/fly-in';
 
 @Component({
-  selector: 'app-write-post',
+  selector: 'write-post',
   templateUrl: './write-post.component.html',
   styleUrls: ['./write-post.component.scss'],
   animations: [flyIn]

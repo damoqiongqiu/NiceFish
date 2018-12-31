@@ -5,24 +5,6 @@
         </div>
         <div class="panel-body">
             <form [formGroup]="userForm" (ngSubmit)="doRegister()" class="form-horizontal" role="form" novalidate>
-                <div class="form-group" [ngClass]="{'has-error': formErrors.userName }">
-                    <label class="col-sm-3 control-label">{{'userRegister.userName' | translate}}</label>
-                    <div class="col-sm-8">
-                        <input formControlName="userName" type="text" class="form-control" placeholder="{{'userRegister.userName-placeholder' | translate}}">
-                        <div *ngIf="formErrors.userName" class="text-danger">
-                            {{ formErrors.userName }}
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group" [ngClass]="{'has-error': formErrors.nickName }">
-                    <label class="col-sm-3 control-label">{{'userRegister.nickName' | translate}}</label>
-                    <div class="col-sm-8">
-                        <input formControlName="nickName" type="text" class="form-control" placeholder="{{'userRegister.nickName-placeholder' | translate}}">
-                        <div *ngIf="formErrors.nickName" class="text-danger">
-                            {{ formErrors.nickName }}
-                        </div>
-                    </div>
-                </div>
                 <div class="form-group" [ngClass]="{'has-error': formErrors.email }">
                     <label class="col-sm-3 control-label">{{'userRegister.email' | translate}}</label>
                     <div class="col-sm-8">
@@ -32,15 +14,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <p class="form-control-static text-danger">{{'userRegister.notice' | translate}}</p>
-                    </div>
-                </div>
                 <div class="form-group" [ngClass]="{'has-error': formErrors.password }">
                     <label class="col-sm-3 control-label">{{'userRegister.password' | translate}}</label>
                     <div class="col-sm-8">
-                        <input formControlName="password" validateEqual="confirmPassword" reverse=true type="password" class="form-control" placeholder="{{'userRegister.password-placeholder' | translate}}">
+                        <input formControlName="password" validateEqual="confirmPassword" reverse=true type="password"
+                            class="form-control" placeholder="{{'userRegister.password-placeholder' | translate}}">
                         <div *ngIf="formErrors.password" class="text-danger">
                             {{ formErrors.password }}
                         </div>
@@ -49,23 +27,11 @@
                 <div class="form-group" [ngClass]="{'has-error': formErrors.confirmPassword }">
                     <label class="col-sm-3 control-label">{{'userRegister.repeat-pwd' | translate}}</label>
                     <div class="col-sm-8">
-                        <input formControlName="confirmPassword" validateEqual="password" type="password" class="form-control" placeholder="{{'userRegister.repeat-pwd-placeholder' | translate}}">
+                        <input formControlName="confirmPassword" validateEqual="password" type="password" class="form-control"
+                            placeholder="{{'userRegister.repeat-pwd-placeholder' | translate}}">
                         <div *ngIf="formErrors.confirmPassword" class="text-danger">
                             {{ formErrors.confirmPassword }}
                         </div>
-                    </div>
-                </div>
-                <div class="form-group" [ngClass]="{'has-error': formErrors.vcode }">
-                    <label class="col-sm-3 control-label">验证码：</label>
-                    <div class="col-sm-5">
-                        <input formControlName="vcode" class="form-control" placeholder="验证码">
-                        <div *ngIf="formErrors.vcode" class="text-danger">
-                            {{ formErrors.vcode }}
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <img id="vCodeImg" src="" alt="验证码">
-                        <button class="btn btn-primary" id="reloadVCode">重新获取</button>
                     </div>
                 </div>
                 <div *ngIf="formErrors.formError" class="col-sm-offset-3 col-sm-8 alert alert-danger">{{ formErrors.formError }}</div>

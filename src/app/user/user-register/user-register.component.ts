@@ -1,16 +1,16 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import {User} from '../model/user-model';
-import {UserRegisterService} from './user-register.service';
-import {fadeIn} from '../../animations/fade-in';
+import { User } from '../model/user-model';
+import { UserRegisterService } from './user-register.service';
+import { fadeIn } from '../../animations/fade-in';
 
 @Component({
-  selector: 'app-user-register',
+  selector: 'user-register',
   templateUrl: './user-register.component.html',
   styleUrls: ['./user-register.component.scss'],
-  animations:[ fadeIn ]
+  animations: [fadeIn]
 })
 export class UserRegisterComponent implements OnInit {
 
@@ -18,8 +18,6 @@ export class UserRegisterComponent implements OnInit {
   public userInfo: User = new User();
 
   public formErrors = {
-    'userName': '',
-    'nickName': '',
     'email': '',
     'password': '',
     'confirmPassword': '',
@@ -27,14 +25,6 @@ export class UserRegisterComponent implements OnInit {
     'vcode': ''
   };
   validationMessages = {
-    'userName': {
-      'required': '用户名必须输入。',
-      'minlength': '用户名4到32个字符。'
-    },
-    'nickName': {
-      'required': '昵称必须输入。',
-      'minlength': '昵称2到32个字符。'
-    },
     'email': {
       'required': '邮箱必须输入。',
       'pattern': '请输入正确的邮箱地址。'
@@ -47,18 +37,13 @@ export class UserRegisterComponent implements OnInit {
       'required': '重复密码必须输入。',
       'minlength': '密码至少要8位。',
       'validateEqual': "两次输入的密码不一致。"
-    },
-    'vcode': {
-      'required': '验证码必须输入。',
-      'minlength': '4位验证码',
-      'maxlength': '4位验证码'
-    },
+    }
   };
 
   constructor(public fb: FormBuilder,
-              public userRegisterService: UserRegisterService,
-              public router: Router,
-              public route: ActivatedRoute,) {
+    public userRegisterService: UserRegisterService,
+    public router: Router,
+    public route: ActivatedRoute, ) {
   }
 
   ngOnInit() {
@@ -67,22 +52,6 @@ export class UserRegisterComponent implements OnInit {
 
   buildForm(): void {
     this.userForm = this.fb.group({
-      "userName": [
-        this.userInfo.userName,
-        [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(32)
-        ]
-      ],
-      "nickName": [
-        this.userInfo.nickName,
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(32)
-        ]
-      ],
       "email": [
         this.userInfo.email,
         [
@@ -103,18 +72,9 @@ export class UserRegisterComponent implements OnInit {
           Validators.required,
           Validators.minLength(8)
         ]
-      ],
-      "vcode": [
-        this.userInfo.vcode,
-        [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(4)
-        ]
       ]
     });
-    this.userForm.valueChanges
-      .subscribe(data => this.onValueChanged(data));
+    this.userForm.valueChanges.subscribe(data => this.onValueChanged(data));
     this.onValueChanged();
   }
 

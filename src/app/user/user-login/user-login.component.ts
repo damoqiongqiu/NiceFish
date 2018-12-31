@@ -7,7 +7,7 @@ import { User } from '../model/user-model';
 import { fadeIn } from '../../animations/fade-in';
 
 @Component({
-  selector: 'app-user-login',
+  selector: 'user-login',
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.scss'],
   animations: [fadeIn]

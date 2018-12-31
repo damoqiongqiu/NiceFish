@@ -4,11 +4,11 @@
             <router-outlet (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'></router-outlet>
         </div>
         <div class="col-sm-3">
-            <app-user-info panelTitle="用户信息" (follow)="doFollow()"></app-user-info>
+            <user-info panelTitle="用户信息" (follow)="doFollow()"></user-info>
             <div class="list-group">
                 <a routerLink="write" class="list-group-item">写作</a>
-                <a routerLink="posttable/page/1"  class="list-group-item"><span class="badge">1024</span>文章管理</a>
-                <a routerLink="commenttable/page/1"  class="list-group-item"><span class="badge">1024</span>评论管理</a>
+                <a routerLink="posttable/page/1" class="list-group-item"><span class="badge">1024</span>文章管理</a>
+                <a routerLink="commenttable/page/1" class="list-group-item"><span class="badge">1024</span>评论管理</a>
                 <a routerLink="profile" class="list-group-item">个人设置</a>
             </div>
         </div>
