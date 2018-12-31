@@ -37,7 +37,6 @@
 │  │      └─directives
 │  └─utils
 ├─assets 							//这个目录里面是一些CSS、字体图标、图片等
-│  ├─bootstrap-v3.3.7
 │  ├─css
 │  ├─fonts
 │  │  ├─bootstrap
