@@ -10,7 +10,6 @@ import { FieldBase, Textbox, TextArea, Image } from './dynamic-form/form-field';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-
   @Input() fields: FieldBase<any>[] = [
     new Image({
       src: "assets/imgs/angular2-small.png"
@@ -19,25 +18,25 @@ export class UserProfileComponent implements OnInit {
       label: "头像:",
       placeholder: "上传头像",
       type: "file"
-    }), 
+    }),
     new Textbox({
       label: "用户名:",
       placeholder: "用户名"
-    }), 
+    }),
     new Textbox({
       label: "常用邮箱:",
       placeholder: "常用邮箱"
-    }), 
+    }),
     new Textbox({
       label: "密码:",
       type: "password",
       placeholder: "密码，至少8位"
-    }), 
+    }),
     new Textbox({
       label: "重复密码:",
       type: "password",
       placeholder: "重复密码"
-    }), 
+    }),
     new TextArea({
       label: "个人简介:",
       placeholder: "个人简介，最多140字，不能放链接。",
