@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { SharedModule} from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 
-import {PaginatorModule} from 'primeng/components/paginator/paginator';
+import { PaginatorModule } from 'primeng/components/paginator/paginator';
 
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostlistComponent } from './postlist/postlist.component';
@@ -13,7 +13,7 @@ import { AddCommentComponent } from '../comment/add-comment/add-comment.componen
 import { CommentService } from '../comment/services/comment.service';
 import { BooleanPipe } from '../utils/boolean-pipe';
 
-import {postRoutes} from './post.routes';
+import { postRoutes } from './post.routes';
 
 @NgModule({
     imports: [
