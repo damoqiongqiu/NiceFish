@@ -79,4 +79,9 @@ export class AppComponent {
 		this.messageService.add({ severity: 'danger', summary: 'Success Message', detail: '退出成功' });
 		this.router.navigateByUrl("");
 	}
+
+	public gotoWrite(): void {
+		//TODO：如果没有登录，跳转到登录页，如果已登录，跳往写作页
+		this.router.navigateByUrl("user/write");
+	}
 }
