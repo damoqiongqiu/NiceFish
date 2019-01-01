@@ -21,15 +21,6 @@
                         <div *ngIf="form.submitted && !password.valid" class="text-danger">密码必须输入,至少要8位！</div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            <label>
-                                <input name="remeberMe" type="checkbox" [(ngModel)]="user.remeberMe" #remeberMe="ngModel">记住我
-                            </label>
-                        </div>
-                    </div>
-                </div>
                 <div *ngIf="error" class="col-md-offset-2 col-md-10 alert alert-danger">{{error}}</div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
