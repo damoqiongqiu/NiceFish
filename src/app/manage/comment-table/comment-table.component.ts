@@ -3,7 +3,7 @@ import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSe
 import { flyIn } from '../../animations/fly-in';
 
 @Component({
-  selector: 'app-comment-table',
+  selector: 'comment-table',
   templateUrl: './comment-table.component.html',
   styleUrls: ['./comment-table.component.scss'],
   animations: [
@@ -13,8 +13,8 @@ import { flyIn } from '../../animations/fly-in';
 export class CommentTableComponent implements OnInit {
   public worker: Worker;
 
-  public commentList:Array<any>=[
-    {id:'1',content:'这是一条不合法的评论',userName:'damoqiongqiu',time:'2017-07-15 16:22:58'}
+  public commentList: Array<any> = [
+    { id: '1', content: '这是一条不合法的评论', userName: 'damoqiongqiu', time: '2017-07-15 16:22:58' }
   ];
 
   constructor(public router: Router,
@@ -54,11 +54,11 @@ export class CommentTableComponent implements OnInit {
     console.log(commentId);
   }
 
-  public onRowSelect(event):void{
+  public onRowSelect(event): void {
 
   }
 
-  public onRowUnselect(event):void{
-    
+  public onRowUnselect(event): void {
+
   }
 }

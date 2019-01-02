@@ -2,9 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
 
-import { PaginatorModule } from 'primeng/components/paginator/paginator';
-
-import { SharedModule} from '../shared/shared.module';
+import { PaginatorModule } from 'primeng/paginator';
+import { SharedModule } from '../shared/shared.module';
 import { PostSharedModule } from '../shared/post.module';
 import { ManageMainComponent } from './manage-main/manage-main.component';
 import { UserTableComponent } from './user-table/user-table.component';
@@ -22,14 +21,14 @@ import { manageRoutes } from './manage.routes';
     SysParamComponent
   ],
   imports: [
-	  CommonModule,
+    CommonModule,
     SharedModule,
     PostSharedModule,
     PaginatorModule,
     RouterModule.forChild(manageRoutes)
   ],
-  exports:[
-  	ManageMainComponent
+  exports: [
+    ManageMainComponent
   ],
   providers: [
     PostTableService,
