@@ -1,25 +1,22 @@
 <div class="post-table-container" [@flyIn]="'active'">
     <form class="form-vertical" role="form">
         <div class="row">
-            <div class="col-sm-10">
+            <div class="col-md-12">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="标题，作者">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i> 搜索</button>
+                        <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i>
+                            搜索</button>
                     </span>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <div class="input-group pull-right">
-                    <button class="btn btn-success" type="button" (click)="goToWrite()">发表文章</button>
                 </div>
             </div>
         </div>
     </form>
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
             <div class="post-item-container">
-                <p-dataTable [value]="postList" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" dataKey="postId">
+                <p-dataTable [value]="postList" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]"
+                    (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" dataKey="postId">
                     <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
                     <p-column field="postId" header="序号" [sortable]="true"></p-column>
                     <p-column field="title" header="标题" [sortable]="true" [editable]="true"></p-column>

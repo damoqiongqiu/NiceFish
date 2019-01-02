@@ -1,8 +1,8 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { flyIn } from '../../animations/fly-in';
 
 @Component({
-  selector: 'app-sys-param',
+  selector: 'sys-param',
   templateUrl: './sys-param.component.html',
   styleUrls: ['./sys-param.component.scss'],
   animations: [

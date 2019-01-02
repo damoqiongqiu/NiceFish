@@ -9,24 +9,21 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateService, TranslateStore } from '@ngx-translate/core';
 
-import { GrowlModule } from 'primeng/components/growl/growl';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { UserLoginService } from './user/user-login/user-login.service';
-import { ForgetPwdComponent } from './user/forget-pwd/forget-pwd.component';
+import { RetrievePwdComponent } from './user/retrieve-pwd/retrieve-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserRegisterService } from './user/user-register/user-register.service';
-import { ForgetPwdService } from './user/forget-pwd/forget-pwd.service';
+import { RetrievePwdService } from './user/retrieve-pwd/retrieve-pwd.service';
 
 import { EqualValidator } from './user/user-register/directives/equal-validator.directive';
 
 import { ChartComponent } from './chart/chart.component';
 import { EChartOptionDirective1 } from './chart/echart-option.directive';
-import { GaodeMapComponent } from './map/gaode-map/gaode-map.component';
-import { AmapComponent } from './map/gaode-map/amap/amap.component';
-import { UseJqueryComponent } from './use-jquery/use-jquery.component';
-import { JsplumbDemoComponent } from './jsplumb-demo/jsplumb-demo.component';
 import { appRoutes } from './app.routes';
 
 
@@ -37,15 +34,11 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    ForgetPwdComponent,
+    RetrievePwdComponent,
     UserRegisterComponent,
     EqualValidator,
     EChartOptionDirective1,
-    ChartComponent,
-    AmapComponent,
-    GaodeMapComponent,
-    UseJqueryComponent,
-    JsplumbDemoComponent
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +56,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     SharedModule,
-    GrowlModule,
+    ToastModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
@@ -71,7 +64,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslateStore,
     UserLoginService,
     UserRegisterService,
-    ForgetPwdService
+    RetrievePwdService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

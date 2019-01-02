@@ -1,23 +1,25 @@
 <div class="user-table-container" [@flyIn]="'active'">
     <form class="form-vertical" role="form">
         <div class="row">
-            <div class="col-sm-10">
+            <div class="col-md-10">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="用户名，昵称">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i> 搜索</button>
+                        <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i>
+                            搜索</button>
                     </span>
                 </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-md-2">
                 <div class="input-group">
-                    <button class="btn btn-success" type="button" (click)="newUser()"><i class="fa fa-user" aria-hidden="true"></i> 创建用户</button>
+                    <button class="btn btn-success" type="button" (click)="newUser()"><i class="fa fa-user" aria-hidden="true"></i>
+                        创建用户</button>
                 </div>
             </div>
         </div>
     </form>
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
             <div class="user-item-container">
                 <table class="table table-bordered">
                     <thead>
@@ -36,18 +38,19 @@
                             <td>2010-11-11 11:11</td>
                             <td>2016-11-27 09:34</td>
                             <td>
-                                <a [routerLink]="['/manage/usertable/edituser',1]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a [routerLink]="['/manage/usertable/edituser',1]"><i class="fa fa-pencil-square-o"
+                                        aria-hidden="true"></i></a>
                                 <a href="javascript:void(0);" (click)="blockUser(1)"><i class="fa fa-lock" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0);" (click)="unBlockUser(1)"><i class="fa fa-unlock" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0);" (click)="resetPwd(1)"><i class="fa fa-user-secret" aria-hidden="true"></i></a>
+                                <a href="javascript:void(0);" (click)="unBlockUser(1)"><i class="fa fa-unlock"
+                                        aria-hidden="true"></i></a>
+                                <a href="javascript:void(0);" (click)="resetPwd(1)"><i class="fa fa-user-secret"
+                                        aria-hidden="true"></i></a>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p-paginator rows="5" 
-                         totalRecords="20"
-                         first="0">
+            <p-paginator rows="5" totalRecords="20" first="0">
             </p-paginator>
         </div>
     </div>

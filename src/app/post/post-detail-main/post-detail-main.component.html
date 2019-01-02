@@ -1,12 +1,12 @@
 <div class="post-detail-main-container" [@flyIn]="'active'">
     <div class="row">
-        <div class="col-sm-9">
-            <app-post-detail></app-post-detail>
-            <app-user-login></app-user-login>
-            <app-add-comment></app-add-comment>
+        <div class="col-md-9">
+            <post-detail></post-detail>
+            <user-login></user-login>
+            <add-comment></add-comment>
         </div>
-        <div class="col-sm-3">
-            <app-user-info panelTitle="作者信息" (follow)="doFollow()"></app-user-info>
+        <div class="col-md-3">
+            <user-info panelTitle="作者信息" (follow)="doFollow()"></user-info>
         </div>
     </div>
 </div>

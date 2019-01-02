@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* 全局样式 */
 * {
     font-family: '微软雅黑', 'Microsoft YaHei', '宋体', Tahoma, Helvetica, Arial, sans-serif;
     -ms-text-size-adjust: 100%;
@@ -12,13 +12,16 @@ body {
 }
 
 html {
-  min-height: 100%;
-  position: relative;
-  padding-bottom: 162px;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 162px;
 }
 
-@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "./assets/css/primeng-bootstrap-custom.scss";
+@import "./assets/css/bootstrap-3.3.7-custom/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
-@import "~jquery-ui-dist/jquery-ui.css";
-@import "./assets/css/primeng-themes-my/primeng.min.css";
-@import "./assets/css/primeng-themes-my/themes/bootstrap-my/theme.scss";
+
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/themes/bootstrap/theme.css";
+@import "~primeng/resources/primeng.min.css";
+

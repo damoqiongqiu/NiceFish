@@ -5,7 +5,7 @@ import { CommentService } from '../services/comment.service';
 import { Comment } from '../model/comment-model';
 
 @Component({
-  selector: 'app-add-comment',
+  selector: 'add-comment',
   templateUrl: './add-comment.component.html',
   styleUrls: ['./add-comment.component.scss']
 })
@@ -14,8 +14,7 @@ export class AddCommentComponent implements OnInit {
 
   constructor(
     public commentService: CommentService,
-    public activeRoute: ActivatedRoute)
-  { 
+    public activeRoute: ActivatedRoute) {
 
   }
 
@@ -25,7 +24,7 @@ export class AddCommentComponent implements OnInit {
     );
   }
 
-  public getCommentList(postId: number){
+  public getCommentList(postId: number) {
     this.commentService.getCommentList(postId)
       .subscribe(
         data => {

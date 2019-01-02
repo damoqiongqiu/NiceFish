@@ -7,7 +7,7 @@
       {
         "name": "UserInfoComponent",
         "file": "user/user-info/user-info.component.ts",
-        "selector": "app-user-info",
+        "selector": "user-info",
         "providers": [],
         "templateUrl": [
           "user-info.component.html"
@@ -33,7 +33,7 @@
               "pos": 126,
               "end": 142,
               "flags": 0,
-              "text": "app-user-info"
+              "text": "user-info"
             }
           },
           {
@@ -243,7 +243,7 @@
       {
         "name": "AppComponent",
         "file": "src/app/app.component.ts",
-        "selector": "app-root",
+        "selector": "root",
         "providers": [],
         "templateUrl": [
           "app.component.html"
@@ -269,7 +269,7 @@
               "pos": 456,
               "end": 467,
               "flags": 0,
-              "text": "app-root"
+              "text": "root"
             }
           },
           {
@@ -325,7 +325,7 @@
       {
         "name": "UserLoginComponent",
         "file": "user/user-login/user-login.component.ts",
-        "selector": "app-user-login",
+        "selector": "user-login",
         "providers": [],
         "templateUrl": [
           "user-login.component.html"
@@ -351,7 +351,7 @@
               "pos": 316,
               "end": 333,
               "flags": 0,
-              "text": "app-user-login"
+              "text": "user-login"
             }
           },
           {
@@ -407,7 +407,7 @@
       {
         "name": "ForgetPwdComponent",
         "file": "user/forget-pwd/forget-pwd.component.ts",
-        "selector": "app-forget-pwd",
+        "selector": "forget-pwd",
         "providers": [],
         "templateUrl": [
           "forget-pwd.component.html"
@@ -433,7 +433,7 @@
               "pos": 184,
               "end": 201,
               "flags": 0,
-              "text": "app-forget-pwd"
+              "text": "forget-pwd"
             }
           },
           {
@@ -489,7 +489,7 @@
       {
         "name": "UserRegisterComponent",
         "file": "user/user-register/user-register.component.ts",
-        "selector": "app-user-register",
+        "selector": "user-register",
         "providers": [],
         "templateUrl": [
           "user-register.component.html"
@@ -515,7 +515,7 @@
               "pos": 319,
               "end": 339,
               "flags": 0,
-              "text": "app-user-register"
+              "text": "user-register"
             }
           },
           {
@@ -955,7 +955,7 @@
       {
         "name": "HomeComponent",
         "file": "app/home/home.component.ts",
-        "selector": "app-home",
+        "selector": "home",
         "providers": [],
         "templateUrl": [
           "home.component.html"
@@ -981,7 +981,7 @@
               "pos": 125,
               "end": 136,
               "flags": 0,
-              "text": "app-home"
+              "text": "home"
             }
           },
           {
@@ -1066,7 +1066,7 @@
       {
         "name": "SocialChannelComponent",
         "file": "home/social-channel/social-channel.component.ts",
-        "selector": "app-social-channel",
+        "selector": "social-channel",
         "providers": [],
         "templateUrl": [
           "social-channel.component.html"
@@ -1092,7 +1092,7 @@
               "pos": 79,
               "end": 100,
               "flags": 0,
-              "text": "app-social-channel"
+              "text": "social-channel"
             }
           },
           {
@@ -1148,7 +1148,7 @@
       {
         "name": "SitestatComponent",
         "file": "app/sitestat/sitestat.component.ts",
-        "selector": "app-sitestat",
+        "selector": "sitestat",
         "providers": [],
         "templateUrl": [
           "sitestat.component.html"
@@ -1174,7 +1174,7 @@
               "pos": 79,
               "end": 94,
               "flags": 0,
-              "text": "app-sitestat"
+              "text": "sitestat"
             }
           },
           {
@@ -1230,7 +1230,7 @@
       {
         "name": "OnlineContactComponent",
         "file": "home/online-contact/online-contact.component.ts",
-        "selector": "app-online-contact",
+        "selector": "online-contact",
         "providers": [],
         "templateUrl": [
           "online-contact.component.html"
@@ -1256,7 +1256,7 @@
               "pos": 79,
               "end": 100,
               "flags": 0,
-              "text": "app-online-contact"
+              "text": "online-contact"
             }
           },
           {
@@ -1486,7 +1486,7 @@
       {
         "name": "CommentTableComponent",
         "file": "manage/comment-table/comment-table.component.ts",
-        "selector": "app-comment-table",
+        "selector": "comment-table",
         "providers": [],
         "templateUrl": [
           "comment-table.component.html"
@@ -1512,7 +1512,7 @@
               "pos": 241,
               "end": 261,
               "flags": 0,
-              "text": "app-comment-table"
+              "text": "comment-table"
             }
           },
           {
@@ -1597,7 +1597,7 @@
       {
         "name": "PostTableComponent",
         "file": "manage/post-table/post-table.component.ts",
-        "selector": "app-post-table",
+        "selector": "post-table",
         "providers": [],
         "templateUrl": [
           "post-table.component.html"
@@ -1623,7 +1623,7 @@
               "pos": 315,
               "end": 332,
               "flags": 0,
-              "text": "app-post-table"
+              "text": "post-table"
             }
           },
           {
@@ -1958,7 +1958,7 @@
       {
         "name": "ManageMainComponent",
         "file": "manage/manage-main/manage-main.component.ts",
-        "selector": "app-manage-main",
+        "selector": "manage-main",
         "providers": [],
         "templateUrl": [
           "manage-main.component.html"
@@ -1984,7 +1984,7 @@
               "pos": 128,
               "end": 146,
               "flags": 0,
-              "text": "app-manage-main"
+              "text": "manage-main"
             }
           },
           {
@@ -2069,7 +2069,7 @@
       {
         "name": "UserTableComponent",
         "file": "manage/user-table/user-table.component.ts",
-        "selector": "app-user-table",
+        "selector": "user-table",
         "providers": [],
         "templateUrl": [
           "user-table.component.html"
@@ -2095,7 +2095,7 @@
               "pos": 187,
               "end": 204,
               "flags": 0,
-              "text": "app-user-table"
+              "text": "user-table"
             }
           },
           {
@@ -2180,7 +2180,7 @@
       {
         "name": "SysParamComponent",
         "file": "manage/sys-param/sys-param.component.ts",
-        "selector": "app-sys-param",
+        "selector": "sys-param",
         "providers": [],
         "templateUrl": [
           "sys-param.component.html"
@@ -2206,7 +2206,7 @@
               "pos": 128,
               "end": 144,
               "flags": 0,
-              "text": "app-sys-param"
+              "text": "sys-param"
             }
           },
           {
@@ -2520,7 +2520,7 @@
       {
         "name": "PostlistComponent",
         "file": "post/postlist/postlist.component.ts",
-        "selector": "app-postlist",
+        "selector": "postlist",
         "providers": [],
         "templateUrl": [
           "postlist.component.html"
@@ -2546,7 +2546,7 @@
               "pos": 392,
               "end": 407,
               "flags": 0,
-              "text": "app-postlist"
+              "text": "postlist"
             }
           },
           {
@@ -2602,7 +2602,7 @@
       {
         "name": "PostDetailMainComponent",
         "file": "post/post-detail-main/post-detail-main.component.ts",
-        "selector": "app-post-detail-main",
+        "selector": "post-detail-main",
         "providers": [],
         "templateUrl": [
           "post-detail-main.component.html"
@@ -2628,7 +2628,7 @@
               "pos": 207,
               "end": 230,
               "flags": 0,
-              "text": "app-post-detail-main"
+              "text": "post-detail-main"
             }
           },
           {
@@ -2713,7 +2713,7 @@
       {
         "name": "PostDetailComponent",
         "file": "post/post-detail/post-detail.component.ts",
-        "selector": "app-post-detail",
+        "selector": "post-detail",
         "providers": [],
         "templateUrl": [
           "post-detail.component.html"
@@ -2739,7 +2739,7 @@
               "pos": 262,
               "end": 280,
               "flags": 0,
-              "text": "app-post-detail"
+              "text": "post-detail"
             }
           },
           {
@@ -2795,7 +2795,7 @@
       {
         "name": "AddCommentComponent",
         "file": "comment/add-comment/add-comment.component.ts",
-        "selector": "app-add-comment",
+        "selector": "add-comment",
         "providers": [],
         "templateUrl": [
           "add-comment.component.html"
@@ -2821,7 +2821,7 @@
               "pos": 262,
               "end": 280,
               "flags": 0,
-              "text": "app-add-comment"
+              "text": "add-comment"
             }
           },
           {
@@ -3119,7 +3119,7 @@
       {
         "name": "UserMainComponent",
         "file": "user/user-main/user-main.component.ts",
-        "selector": "app-user-main",
+        "selector": "user-main",
         "providers": [],
         "templateUrl": [
           "user-main.component.html"
@@ -3145,7 +3145,7 @@
               "pos": 128,
               "end": 144,
               "flags": 0,
-              "text": "app-user-main"
+              "text": "user-main"
             }
           },
           {
@@ -3230,7 +3230,7 @@
       {
         "name": "UserProfileComponent",
         "file": "user/user-profile/user-profile.component.ts",
-        "selector": "app-user-profile",
+        "selector": "user-profile",
         "providers": [],
         "templateUrl": [
           "user-profile.component.html"
@@ -3256,7 +3256,7 @@
               "pos": 79,
               "end": 98,
               "flags": 0,
-              "text": "app-user-profile"
+              "text": "user-profile"
             }
           },
           {
@@ -3312,7 +3312,7 @@
       {
         "name": "WritePostComponent",
         "file": "post/write-post/write-post.component.ts",
-        "selector": "app-write-post",
+        "selector": "write-post",
         "providers": [],
         "templateUrl": [
           "write-post.component.html"
@@ -3338,7 +3338,7 @@
               "pos": 153,
               "end": 170,
               "flags": 0,
-              "text": "app-write-post"
+              "text": "write-post"
             }
           },
           {

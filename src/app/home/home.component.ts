@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { flyIn } from '../animations/fly-in';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [
