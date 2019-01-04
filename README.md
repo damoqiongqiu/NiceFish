@@ -2,10 +2,6 @@
 
 ## NiceFish（美人鱼）
 
-### 关于NiceFish
-
-**已经把所有模块都全部升级到当前（2018-10-31）最新的7.0版本，耗时5小时，主要是一些npm包的版本问题。**
-
 NiceFish 是一个系列教学项目，目标是全面示范 Angular 在浏览器、移动端、Electron 环境中的用法。
 
 * NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 7.0 + PrimeNG 7.0.3。http://git.oschina.net/mumu-osc/NiceFish/
@@ -13,6 +9,8 @@ NiceFish 是一个系列教学项目，目标是全面示范 Angular 在浏览�
 * NiceFish-ionic：这是一个移动端的 demo，基于 ionic，此项目已支持 PWA。http://git.oschina.net/mumu-osc/nicefish-ionic
 
 * NiceBlogElectron：https://github.com/damoqiongqiu/NiceBlogElectron ,这是一个基于 Electron 的桌面端项目，把 NiceFish 用 Electron 打包成了一个桌面端运行的程序。这是由 ZTE 中兴通讯的前端道友提供的，我 fork 了一个，有几个 node 模块的版本号老要改，如果您正在研究如何利用 Electron 开发桌面端应用，请参考这个项目。
+
+**已经把所有模块都全部升级到当前（2018-10-31）最新的7.0版本，耗时5小时，主要是一些npm包的版本问题。**
 
 ### 产品代码
 
