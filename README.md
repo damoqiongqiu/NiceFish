@@ -1,6 +1,6 @@
 ## NiceFish（美人鱼）
-
-NiceFish 是一个系列教学项目，目标是全面示范 Angular 在浏览器、移动端、Electron 环境中的用法。
+-----------------
+NiceFish 是一个系列项目，目标是全面示范 Angular 在浏览器、移动端、Electron 环境中的用法，同时提供了一个基于 SpringCloud 的服务端。
 
 * NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 7.0 + PrimeNG 7.0.3。http://git.oschina.net/mumu-osc/NiceFish/
 
@@ -8,16 +8,8 @@ NiceFish 是一个系列教学项目，目标是全面示范 Angular 在浏览�
 
 * NiceBlogElectron：https://github.com/damoqiongqiu/NiceBlogElectron ,这是一个基于 Electron 的桌面端项目，把 NiceFish 用 Electron 打包成了一个桌面端运行的程序。这是由 ZTE 中兴通讯的前端道友提供的，我 fork 了一个，有几个 node 模块的版本号老要改，如果您正在研究如何利用 Electron 开发桌面端应用，请参考这个项目。
 
-**已经把所有模块都全部升级到当前（2018-10-31）最新的7.0版本，耗时5小时，主要是一些npm包的版本问题。**
-
-### 产品代码
-
-OpenWMS 是一个开源产品，复杂度比 NiceFish 高。
-
-* OpenWMS：https://gitee.com/mumu-osc/OpenWMS-Frontend ，这是 OpenWMS 项目的前端代码，基于当前最新的 Angular 7.0.0 和 PrimeNG 6.1.5。
-
 ### 在线演示
-
+-----------------
 NiceFish: http://47.104.13.149:4200
 
 OpenWMS：http://47.104.80.251:4200
@@ -25,9 +17,11 @@ OpenWMS：http://47.104.80.251:4200
 NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 
 ### 用法
+-----------------
+打开你的命令行终端，依次执行以下命令：
 
-用 git 克隆本项目，从命令行进入进入项目根目录，依次执行以下命令：
-
+    git clone https://gitee.com/mumu-osc/NiceFish.git
+    cd NiceFish
     npm i -g cnpm --registry=https://registry.npm.taobao.org
     cnpm i -g @angular/cli
     cnpm install
@@ -35,21 +29,24 @@ NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 
 打开你的浏览器，访问http://localhost:4200/
 
+* 各种你懂的原因，中文开发者强烈建议使用 cnpm install
+* 如果你想让加载的包更小，请使用：ng serve --prod
 * 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
 * 如果之前装过 angular-cli 需要先卸载：npm uninstall -g angular-cli
-* 如果你之前已经尝试安装过 node 模块，请把 NiceFish 根目录下的 node_moduels 目录删掉
-
-如果你想让加载的包更小，请使用以下方式启动@angular/cli
-
-    ng serve --prod
-
-如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
+* 如果你之前已经尝试安装过 node 模块，请把 NiceFish 根目录下的 node_moduels 目录删掉重新 cnpm install
+* 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
 How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有，你过去抄过来就行。
 
-【注意】如果你发现 ng serve 起不来，或者起来有报错，请把 NiceFish 根目录下的 node_modules 目录删掉，然后重新执行 cnpm install，全局的@angular/cli 也需要删掉重装。
+### 学习资源
+-----------------
+历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
 
-### 在线交流 QQ 群
+如果您需要教程，请自己来这里查看，http://www.ngfans.net/ 。
 
+**如果你想要对NiceFish这个项目表示支持，可以在www.gitchat.cn上搜索关于Angular的系统教程。不提供任何形式的一对一咨询或技术服务，敬请谅解。**
+
+### 关联 QQ 群
+-----------------
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=8db5ed802cbddbf6432d7ba7dc4f2a316be020442491eb41cbfb1a12434e8cc7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-1区</a>
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=cbfcd79e7e90939b0e2c519f475fac4792985ce2abc5ad45ec5e06ffcfe944dd" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-2区</a>
@@ -64,14 +61,6 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 </a>
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=5d6b8c5296e4806142b8422ae7abca6f27b9b9b992a4dac80dc1392644e8970a"><i class="fa fa-qq" aria-hidden="true"></i>脚本娃娃-桃花岛</a>
-
-### 学习资源
-
-历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
-
-如果您需要教程，请自己来这里查看，http://www.ngfans.net/ 。
-
-**不提供任何形式的一对一咨询或技术服务，敬请谅解。**
 
 ### 开源许可证
 
