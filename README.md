@@ -1,12 +1,10 @@
-<img src="src/assets/imgs/dist.jpg" alt="nicefish"/>
-
 ## NiceFish（美人鱼）
 
 NiceFish 是一个系列教学项目，目标是全面示范 Angular 在浏览器、移动端、Electron 环境中的用法。
 
 * NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 7.0 + PrimeNG 7.0.3。http://git.oschina.net/mumu-osc/NiceFish/
 
-* NiceFish-ionic：这是一个移动端的 demo，基于 ionic，此项目已支持 PWA。http://git.oschina.net/mumu-osc/nicefish-ionic
+* nicefish-ionic：这是一个移动端的 demo，基于 ionic，此项目已支持 PWA。http://git.oschina.net/mumu-osc/nicefish-ionic
 
 * NiceBlogElectron：https://github.com/damoqiongqiu/NiceBlogElectron ,这是一个基于 Electron 的桌面端项目，把 NiceFish 用 Electron 打包成了一个桌面端运行的程序。这是由 ZTE 中兴通讯的前端道友提供的，我 fork 了一个，有几个 node 模块的版本号老要改，如果您正在研究如何利用 Electron 开发桌面端应用，请参考这个项目。
 
@@ -14,7 +12,7 @@ NiceFish 是一个系列教学项目，目标是全面示范 Angular 在浏览�
 
 ### 产品代码
 
-OpenWMS 是一个开源产品，复杂度比 NiceFish 高，请不要用此项目进行入门学习。
+OpenWMS 是一个开源产品，复杂度比 NiceFish 高。
 
 * OpenWMS：https://gitee.com/mumu-osc/OpenWMS-Frontend ，这是 OpenWMS 项目的前端代码，基于当前最新的 Angular 7.0.0 和 PrimeNG 6.1.5。
 
@@ -35,22 +33,13 @@ NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
     cnpm install
     ng serve
 
+打开你的浏览器，访问http://localhost:4200/
+
 * 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
 * 如果之前装过 angular-cli 需要先卸载：npm uninstall -g angular-cli
 * 如果你之前已经尝试安装过 node 模块，请把 NiceFish 根目录下的 node_moduels 目录删掉
 
-然后依次执行以下命令：
-
-    npm cache clean
-    npm prune
-    npm i -g cnpm --registry=https://registry.npm.taobao.org
-    cnpm i -g @angular/cli
-    cnpm install
-    ng serve
-
-打开你的浏览器，访问http://localhost:4200/
-
-如果你想让加载的包更小，请使用以下方式启动@angular/cli 内置的轻量级 http server
+如果你想让加载的包更小，请使用以下方式启动@angular/cli
 
     ng serve --prod
 
@@ -76,16 +65,14 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=5d6b8c5296e4806142b8422ae7abca6f27b9b9b992a4dac80dc1392644e8970a"><i class="fa fa-qq" aria-hidden="true"></i>脚本娃娃-桃花岛</a>
 
-如果您有 Angular 相关的问题需要讨论，或者单纯想跟我 Say Hello，请加上面几个扣扣群。注意，我每天都会收到大量的求助消息，真的有点忙，所以请您优先在扣扣群里面讨论问题。
-
 ### 学习资源
 
-大漠演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
+历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
 
-如果您需要教程，请自己来这里查看，http://www.ngfans.net/ ，有视频也有文字，有免费版本也有收费版，您自己看着选。
+如果您需要教程，请自己来这里查看，http://www.ngfans.net/ 。
+
+**不提供任何形式的一对一咨询或技术服务，敬请谅解。**
 
 ### 开源许可证
 
 MIT
-
-你可以随意使用此项目，无需通知我，因为我可能很忙没空搭理你。
