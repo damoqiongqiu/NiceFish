@@ -1,25 +1,33 @@
+$linkColor:#39b9c6;
 body {
     .ui-paginator {
         margin: 0;
-        text-align: left; 
+        text-align: left;
         padding: .125em;
         .ui-paginator-pages {
             .ui-paginator-page {
                 padding: 0;
                 min-width: 2em;
-                color: #0275d8;
+                color: $linkColor;
                 transition: background-color 0.3s;
                 border-radius: 0;
-                .ui-state-active {
-                    color: #ffffff;
+                &:hover.ui-state-active{
+                  background-color: $linkColor;
+                }
+                &:focus{
+                  outline: 0;
                 }
             }
+            .ui-state-active{
+             background-color: $linkColor;
+            }
+
         }
         .ui-paginator-first,
         .ui-paginator-prev,
         .ui-paginator-next,
         .ui-paginator-last {
-            color: #0275d8;
+            color: $linkColor;
             transition: background-color 0.3s;
             min-height: 0.875em;
             min-width: 2em;

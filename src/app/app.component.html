@@ -29,7 +29,7 @@
                     <button class="btn btn-default" type="button" (click)="searchChanged($event)"><i class="fa fa-search"
                             aria-hidden="true"></i></button>
                 </form>
-                <button type="button" class="btn btn-secondary navbar-btn" (click)="gotoWrite()">发布</button>
+                <button type="button" class="btn btn-default navbar-btn" (click)="gotoWrite()">发布</button>
             </ul>
             <ul *ngIf="!currentUser?.userName" class="nav navbar-nav navbar-right">
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -61,9 +61,10 @@
 <div class="footer bs-footer">
     <div class="container">
         <div class="row">
-            <p>
+            <p class="text-center">
                 Powered by <a href="http://git.oschina.net/mumu-osc/NiceFish" target="_blank">NiceFish</a>
             </p>
         </div>
     </div>
 </div>
+

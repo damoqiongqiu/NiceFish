@@ -1,5 +1,7 @@
+$navBgColor:#38434e;
+$navhoverColor:#242c33;
 .main-nav {
-    background: #303030;
+    background: $navBgColor;
     height: 50px;
     min-height: 50px;
     padding: 0;
@@ -23,7 +25,7 @@
 .nav .open > a:hover,
 .nav .open > a:focus {
     color: #fff;
-    background-color: #777;
+    background-color: $navhoverColor;
 }
 
 .navbar-brand-my {
@@ -35,17 +37,23 @@
 }
 .btn-secondary {
     color: #fff;
-    background-color: #444;
-    border-color: #444;
+    background-color: $navBgColor;
+    border-color: $navBgColor;
 }
 .btn-secondary:hover {
     color: #fff;
     background-color: #313131;
     border-color: #2b2a2a;
 }
-.btn:hover {
-    color: #fff;
-    text-decoration: none;
+.btn{
+    &:hover{
+     color: #fff;
+     text-decoration: none;
+    }
+    &:focus{
+      outline: 0;
+    }
+
 }
 
 .logo-img {
@@ -61,7 +69,7 @@
 .footer {
     text-align: left;
     padding: 40px 48px;
-    background: #303030;
+    background: $navBgColor;
     color: #fff;
     position: absolute;
     left: 0;
