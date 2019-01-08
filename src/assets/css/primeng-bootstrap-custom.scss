@@ -33,6 +33,9 @@ body {
             min-width: 2em;
             padding: 0.5em 0.5em;
             vertical-align: middle;
+            &:focus{
+              outline: 0;
+            }
         }
     }
 }
