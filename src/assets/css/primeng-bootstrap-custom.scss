@@ -1,8 +1,11 @@
 $linkColor:#39b9c6;
+@mixin text-center{
+   text-align: center;
+}
 body {
     .ui-paginator {
         margin: 0;
-        text-align: left;
+        @include text-center;
         padding: .125em;
         .ui-paginator-pages {
             .ui-paginator-page {
@@ -54,6 +57,9 @@ body .ui-datatable thead th
     border-color:$linkColor;
    }
 }
+body .ui-datatable .ui-datatable-data > tr > td{
+  text-align: center
+}
 body .ui-datatable .ui-datatable-data tr.ui-datatable-even.ui-state-highlight{
   background-color: $linkColor;
   border-color:$linkColor;
@@ -65,4 +71,13 @@ body .ui-datatable .ui-datatable-data tr.ui-state-highlight{
 body .ui-chkbox .ui-chkbox-box.ui-state-active{
   background-color: $linkColor;
   border-color:$linkColor;
+}
+
+.table.table-bordered{
+   thead th{
+     @include text-center
+   }
+   tbody td{
+     @include text-center
+   }
 }
