@@ -11,7 +11,6 @@ import { flyIn } from '../../animations/fly-in';
   ]
 })
 export class CommentTableComponent implements OnInit {
-  public worker: Worker;
 
   public commentList: Array<any> = [
     { id: '1', content: '这是一条不合法的评论', userName: 'damoqiongqiu', time: '2017-07-15 16:22:58' }
@@ -26,17 +25,6 @@ export class CommentTableComponent implements OnInit {
     this.activeRoute.params.subscribe(
       params => this.getCommentsByPage(params["page"])
     );
-
-    //启动web worker 加载数据
-    this.worker = new Worker('src/app/manage/comment-table/comment-worker.js');
-    this.worker.postMessage({ action: "load" });
-    //注册事件
-    this.worker.addEventListener('message', (event: MessageEvent) => {
-      console.log(event);
-    });
-    this.worker.addEventListener('error', (event: MessageEvent) => {
-      console.log(event);
-    });
   }
 
   public getCommentsByPage(page: Number): void {
