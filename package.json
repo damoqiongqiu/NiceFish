@@ -22,6 +22,8 @@
     "@angular/platform-browser": "7.2.0",
     "@angular/platform-browser-dynamic": "7.2.0",
     "@angular/router": "7.2.0",
+    "@ckeditor/ckeditor5-angular": "^1.0.1",
+    "@ckeditor/ckeditor5-build-classic": "^11.2.0",
     "@ngx-translate/core": "11.0.0",
     "@ngx-translate/http-loader": "4.0.0",
     "bootstrap": "3.3.7",

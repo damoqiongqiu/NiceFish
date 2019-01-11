@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { PaginatorModule } from 'primeng/paginator';
 import { PostDetailComponent } from './post-detail/post-detail.component';
@@ -21,6 +22,7 @@ import { postRoutes } from './post.routes';
         SharedModule,
         RouterModule,
         PaginatorModule,
+        CKEditorModule,
         RouterModule.forChild(postRoutes)
     ],
     exports: [BooleanPipe],

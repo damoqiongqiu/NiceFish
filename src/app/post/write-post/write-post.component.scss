@@ -1,3 +1,7 @@
 .write-post-container{
 	padding-right:2px;
 }
+
+:host ::ng-deep .ck-editor__editable {
+    min-height: 600px;
+}
