@@ -71,7 +71,7 @@ export class AppComponent {
 		}
 	}
 
-	onMenuToggle(button: any) {
+	onMenuToggle() {
 		this.showToggleMenu = !this.showToggleMenu;
 	}
 
