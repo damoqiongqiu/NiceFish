@@ -2,13 +2,11 @@ import { async, inject, ComponentFixture, TestBed } from '@angular/core/testing'
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { HomeComponent }   from './home.component';
-import { SocialChannelComponent } from './social-channel/social-channel.component';
-import { SitestatComponent } from '../sitestat/sitestat.component';
+import { HomeComponent } from './home.component';
 import { OnlineContactComponent } from './online-contact/online-contact.component';
 import { SharedModule } from '../shared/shared.module';
 
-import {homeRoutes} from './home.routes';
+import { homeRoutes } from './home.routes';
 
 describe('Component: Home', () => {
   let component: HomeComponent;
@@ -19,16 +17,12 @@ describe('Component: Home', () => {
       imports: [
         SharedModule
       ],
-      declarations: [         
+      declarations: [
         HomeComponent
-        // ,
-        // SocialChannelComponent,
-        // SitestatComponent,
-        // OnlineContactComponent 
       ],
-      schemas: [ NO_ERRORS_SCHEMA ]
+      schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
