@@ -9,6 +9,8 @@ import { PostlistService } from './postlist/services/postlist.service';
 import { PostDetailService } from './post-detail/services/post-detail.service';
 import { PostDetailMainComponent } from './post-detail-main/post-detail-main.component';
 import { AddCommentComponent } from '../comment/add-comment/add-comment.component';
+import { WritePostComponent } from '../post/write-post/write-post.component';
+
 import { CommentService } from '../comment/services/comment.service';
 import { BooleanPipe } from '../utils/boolean-pipe';
 
@@ -27,6 +29,7 @@ import { postRoutes } from './post.routes';
         PostDetailMainComponent,
         PostDetailComponent,
         AddCommentComponent,
+        WritePostComponent,
         BooleanPipe
     ],
     providers: [

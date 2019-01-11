@@ -8,6 +8,7 @@ import { UserLoginComponent } from '../user/user-login/user-login.component';
 import { UserInfoComponent } from '../user/user-info/user-info.component';
 import { UserProfileComponent } from '../user/user-profile/user-profile.component';
 import { FormControlComponent } from '../user/user-profile/dynamic-form/form-control.component';
+import { TrimStringPipe } from './trim-string.pipe';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { FormControlComponent } from '../user/user-profile/dynamic-form/form-con
     UserLoginComponent,
     UserInfoComponent,
     UserProfileComponent,
-    FormControlComponent
+    FormControlComponent,
+    TrimStringPipe
   ],
   exports: [
     TranslateModule,
@@ -28,7 +30,8 @@ import { FormControlComponent } from '../user/user-profile/dynamic-form/form-con
     FormsModule,
     UserLoginComponent,
     UserInfoComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    TrimStringPipe
   ]
 })
 

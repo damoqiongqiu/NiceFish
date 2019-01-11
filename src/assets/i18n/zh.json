@@ -6,16 +6,18 @@
         "jsplumb": "流程图",
         "welcome": "欢迎你",
         "logout": "退出",
-        "login": "登录",
-        "register": "注册",
+        "signin": "登录",
+        "signup": "注册",
         "doc": "官方文档",
         "console": "管理后台",
-        "userlist": "用户列表"
+        "userlist": "用户列表",
+        "read": "阅读",
+        "write": "写作"
     },
     "post": {
         "publish": "发布文章"
     },
-    "userRegister": {
+    "userSignUp": {
         "userSignUp": "用户注册",
         "userName": "用户名：",
         "userName-placeholder": "用户名4到32个字符",
@@ -30,8 +32,8 @@
         "repeat-pwd-placeholder": "重复密码，两次输入必须一致",
         "signUp": "注册"
     },
-    "userLogin": {
-        "userLogin": "用户登录"
+    "signIn": {
+        "signIn": "用户登录"
     },
     "search": "搜索",
     "submit": "提交",

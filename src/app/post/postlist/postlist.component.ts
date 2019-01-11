@@ -12,7 +12,7 @@ import { Post } from '../model/post-model';
 	styleUrls: ['./postlist.component.scss']
 })
 export class PostlistComponent implements OnInit {
-	public itemsPerPage: number = 5;
+	public itemsPerPage: number = 10;
 	public totalRecords: number = 11;
 	public currentPage: number = 1;
 	public offset: number = 0;
@@ -122,10 +122,5 @@ export class PostlistComponent implements OnInit {
 
 	public searchChanged($event): void {
 		this.searchTextStream.next(this.searchText);
-	}
-
-	public gotoWrite(): void {
-		//TODO：如果没有登录，跳转到登录页，如果已登录，跳往写作页
-		this.router.navigateByUrl("user/write");
 	}
 }
