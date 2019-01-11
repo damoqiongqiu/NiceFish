@@ -43,9 +43,9 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 -----------------
 历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
 
-如果您需要教程，请自己来这里查看，http://www.ngfans.net/ 。
+如果您需要那种非常详细的教程，用微信扫这个二维码：
 
-**如果你想要对NiceFish这个项目表示支持，可以在www.gitchat.cn上搜索关于Angular的系统教程。不提供任何形式的一对一咨询或技术服务，敬请谅解。**
+<img src="/src/assets/imgs/qr-code.png"/>
 
 ### 关联 QQ 群
 -----------------
