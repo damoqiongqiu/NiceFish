@@ -1,7 +1,5 @@
-$navBgColor:#38434e;
-$navhoverColor:#242c33;
 .main-nav {
-    background: $navBgColor;
+    background: #303030;
     height: 50px;
     min-height: 50px;
     padding: 0;
@@ -25,11 +23,15 @@ $navhoverColor:#242c33;
 .nav .open > a:hover,
 .nav .open > a:focus {
     color: #fff;
-    background-color: $navhoverColor;
+    background-color: #777;
 }
 
 .navbar-brand-my {
     color: #fff;
+    line-height: 50px;
+    padding: 0 15px 0 0;
+    text-align: left;
+    vertical-align: middle;
 }
 
 .btn:not(:disabled):not(.disabled) {
@@ -37,23 +39,17 @@ $navhoverColor:#242c33;
 }
 .btn-secondary {
     color: #fff;
-    background-color: $navBgColor;
-    border-color: $navBgColor;
+    background-color: #444;
+    border-color: #444;
 }
 .btn-secondary:hover {
     color: #fff;
     background-color: #313131;
     border-color: #2b2a2a;
 }
-.btn{
-    &:hover{
-     color: #fff;
-     text-decoration: none;
-    }
-    &:focus{
-      outline: 0;
-    }
-
+.btn:hover {
+    color: #fff;
+    text-decoration: none;
 }
 
 .logo-img {
@@ -62,14 +58,14 @@ $navhoverColor:#242c33;
 }
 
 .main-container {
-    padding-top: 80px;
-    min-height: 800px;
+    min-height: 1024px;
+    padding: 75px 0 0 0;
 }
 
 .footer {
     text-align: left;
     padding: 40px 48px;
-    background: $navBgColor;
+    background: #303030;
     color: #fff;
     position: absolute;
     left: 0;

@@ -1,7 +1,8 @@
 <!-- 顶部导航 -->
 <div class="navbar navbar-fixed-top main-nav" role="navigation">
     <div class="container">
-        <p-toast position="top-center"></p-toast>
+        <!-- 全局消息 -->
+        <p-toast position="top-center" sticky="true"></p-toast>
         <div class="navbar-header">
             <button #button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
                 (click)="toggle(button)">
@@ -10,44 +11,36 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a routerLink="posts" class="navbar-brand navbar-brand-my">
-                NiceFish
+            <a routerLink="posts" class="navbar-brand-my">
+                <img src="../assets/imgs/nice-fish.png" width="45">
             </a>
         </div>
         <div class="collapse navbar-collapse navbar-responsive-collapse" aria-expanded="false">
             <ul class="nav navbar-nav">
                 <li routerLinkActive="active">
-                    <a routerLink="posts">{{'app.articles' | translate}}</a>
+                    <a routerLink="posts">{{'app.read' | translate}}</a>
                 </li>
-                <li>
-                    <a routerLink="echart">{{'app.echarts' | translate}}</a>
+                <li routerLinkActive="active">
+                    <a routerLink="post/write">{{'app.write' | translate}}</a>
                 </li>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button class="btn btn-default" type="button" (click)="searchChanged($event)"><i class="fa fa-search"
-                            aria-hidden="true"></i></button>
-                </form>
-                <button type="button" class="btn btn-default navbar-btn" (click)="gotoWrite()">发布</button>
             </ul>
             <ul *ngIf="!currentUser?.userName" class="nav navbar-nav navbar-right">
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a routerLink="login">{{'app.login' | translate}}</a>
+                    <a routerLink="login"><i class="fa fa-sign-in"></i></a>
                 </li>
                 <li routerLinkActive="active">
-                    <a routerLink="register">{{'app.register' | translate}}</a>
+                    <a routerLink="register"><i class="fa fa-user-plus"></i></a>
                 </li>
             </ul>
             <ul *ngIf="currentUser?.userName" class="nav navbar-nav navbar-right">
                 <li routerLinkActive="active">
-                    <a routerLink="user">{{'app.welcome' | translate}}：{{currentUser?.userName}}</a>
+                    <a routerLink="home"><i class="fa fa-user"></i></a>
                 </li>
                 <li routerLinkActive="active">
-                    <a routerLink="manage">{{'app.console' | translate}}</a>
+                    <a routerLink="manage"><i class="fa fa-cog"></i></a>
                 </li>
-                <li>
-                    <a href="javascript:void(0);" (click)="doLogout()">{{'app.logout' | translate}}</a>
+                <li routerLinkActive="active">
+                    <a href="javascript:void(0);" (click)="doLogout()"><i class="fa fa-sign-out"></i></a>
                 </li>
             </ul>
         </div>
@@ -61,10 +54,18 @@
 <div class="footer bs-footer">
     <div class="container">
         <div class="row">
-            <p class="text-center">
-                Powered by <a href="http://git.oschina.net/mumu-osc/NiceFish" target="_blank">NiceFish</a>
-            </p>
+            <div class="col-md-12">
+                <p>
+                    Powered by <a href="http://git.oschina.net/mumu-osc/NiceFish" target="_blank">NiceFish</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <a href='https://gitee.com/mumu-osc/NiceFish/stargazers' target="_blank">
+                    <img src='https://gitee.com/mumu-osc/NiceFish/badge/star.svg?theme=dark' alt='star' />
+                </a>
+            </div>
         </div>
     </div>
 </div>
-

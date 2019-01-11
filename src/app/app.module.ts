@@ -22,8 +22,6 @@ import { RetrievePwdService } from './user/retrieve-pwd/retrieve-pwd.service';
 
 import { EqualValidator } from './user/user-register/directives/equal-validator.directive';
 
-import { ChartComponent } from './chart/chart.component';
-import { EChartOptionDirective1 } from './chart/echart-option.directive';
 import { appRoutes } from './app.routes';
 
 
@@ -36,9 +34,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     RetrievePwdComponent,
     UserRegisterComponent,
-    EqualValidator,
-    EChartOptionDirective1,
-    ChartComponent
+    EqualValidator
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,29 @@
 .post-list-container {
-    >form {
-        margin-bottom: 15px;
-    }
     .post-item-container {
-        padding-bottom: 20px;
-        margin-bottom: 30px;
-        border-bottom: 1px solid #d9d9d9;
+        margin: 0 0 30px 0;
+        h3 {
+            font-size: 18px;
+            margin: 0px;
+            padding-bottom: 5px;
+        }
+        .user-name-intitle {
+            font-size: 12px;
+            color: #999;
+            padding-bottom: 5px;
+        }
+        .abs{
+            line-height: 18px;
+            color: #545454;
+            font-size: small;
+            max-height: 80px;
+            padding-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            white-space: pre-wrap;      /* CSS3 */   
+            white-space: -moz-pre-wrap; /* Firefox */    
+            white-space: -pre-wrap;     /* Opera <7 */   
+            white-space: -o-pre-wrap;   /* Opera 7 */    
+            word-wrap: break-word;      /* IE */
+        }
     }
-}
-
-.user-name-intitle {
-    font-size: 12px;
-    color: #999;
 }

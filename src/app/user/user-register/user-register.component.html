@@ -1,34 +1,34 @@
 <div class="user-register-container" [@fadeIn]>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">{{'userRegister.userSignUp' | translate}}</h3>
+            <h3 class="panel-title">{{'userSignUp.userSignUp' | translate}}</h3>
         </div>
         <div class="panel-body">
             <form [formGroup]="userForm" (ngSubmit)="doRegister()" class="form-horizontal" role="form" novalidate>
                 <div class="form-group" [ngClass]="{'has-error': formErrors.email }">
-                    <label class="col-md-3 control-label">{{'userRegister.email' | translate}}</label>
+                    <label class="col-md-3 control-label">{{'userSignUp.email' | translate}}</label>
                     <div class="col-md-8">
-                        <input formControlName="email" type="email" class="form-control" placeholder="{{'userRegister.email-placeholder' | translate}}">
+                        <input formControlName="email" type="email" class="form-control" placeholder="{{'userSignUp.email-placeholder' | translate}}">
                         <div *ngIf="formErrors.email" class="text-danger">
                             {{ formErrors.email }}
                         </div>
                     </div>
                 </div>
                 <div class="form-group" [ngClass]="{'has-error': formErrors.password }">
-                    <label class="col-md-3 control-label">{{'userRegister.password' | translate}}</label>
+                    <label class="col-md-3 control-label">{{'userSignUp.password' | translate}}</label>
                     <div class="col-md-8">
                         <input formControlName="password" validateEqual="confirmPassword" reverse=true type="password"
-                            class="form-control" placeholder="{{'userRegister.password-placeholder' | translate}}">
+                            class="form-control" placeholder="{{'userSignUp.password-placeholder' | translate}}">
                         <div *ngIf="formErrors.password" class="text-danger">
                             {{ formErrors.password }}
                         </div>
                     </div>
                 </div>
                 <div class="form-group" [ngClass]="{'has-error': formErrors.confirmPassword }">
-                    <label class="col-md-3 control-label">{{'userRegister.repeat-pwd' | translate}}</label>
+                    <label class="col-md-3 control-label">{{'userSignUp.repeat-pwd' | translate}}</label>
                     <div class="col-md-8">
                         <input formControlName="confirmPassword" validateEqual="password" type="password" class="form-control"
-                            placeholder="{{'userRegister.repeat-pwd-placeholder' | translate}}">
+                            placeholder="{{'userSignUp.repeat-pwd-placeholder' | translate}}">
                         <div *ngIf="formErrors.confirmPassword" class="text-danger">
                             {{ formErrors.confirmPassword }}
                         </div>
@@ -37,7 +37,7 @@
                 <div *ngIf="formErrors.formError" class="col-md-offset-3 col-md-8 alert alert-danger">{{ formErrors.formError }}</div>
                 <div class="form-group">
                     <div class="col-md-offset-3 col-md-8">
-                        <button [disabled]="userForm.invalid" type="submit" class="btn btn-primary">{{'userRegister.signUp' | translate}}</button>
+                        <button [disabled]="userForm.invalid" type="submit" class="btn btn-primary">{{'userSignUp.signUp' | translate}}</button>
                     </div>
                 </div>
             </form>

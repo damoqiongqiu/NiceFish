@@ -1,17 +1,12 @@
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { RetrievePwdComponent } from './user/retrieve-pwd/retrieve-pwd.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
-import { ChartComponent } from './chart/chart.component';
 
 export const appRoutes = [
 	{
 		path: '',
 		redirectTo: 'posts',
 		pathMatch: 'full'
-	},
-	{
-		path: "echart",
-		component: ChartComponent
 	},
 	{
 		path: 'home',

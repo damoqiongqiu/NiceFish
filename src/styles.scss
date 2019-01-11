@@ -1,4 +1,11 @@
-/* 全局样式 */
+@import "./assets/css/primeng-bootstrap-custom.scss";
+@import "./assets/css/bootstrap-3.3.7-custom/bootstrap.min.css";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+@import "../node_modules/primeicons/primeicons.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "./assets/css/my-toast.scss";
+
+/* 我自己的全局样式 */
 * {
     font-family: '微软雅黑', 'Microsoft YaHei', '宋体', Tahoma, Helvetica, Arial, sans-serif;
     -ms-text-size-adjust: 100%;
@@ -9,6 +16,11 @@ body {
     font-family: '微软雅黑', 'Microsoft YaHei', '宋体', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
+
+    .ui-widget-header {
+        background: #ffffff;
+        color: #2d353c;
+    }
 }
 
 html {
@@ -16,14 +28,3 @@ html {
     position: relative;
     padding-bottom: 162px;
 }
-
-
-@import "./assets/css/primeng-bootstrap-custom.scss";
-@import "./assets/css/bootstrap-3.3.7-custom/bootstrap.min.css";
-@import "~font-awesome/css/font-awesome.min.css";
-
-@import "~primeicons/primeicons.css";
-@import "~primeng/resources/themes/bootstrap/theme.css";
-@import "~primeng/resources/primeng.min.css";
-@import "./assets/css/primeng-themes-my/themes/bootstrap-my/theme.scss";
-
