@@ -6,8 +6,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { PaginatorModule } from 'primeng/paginator';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostlistComponent } from './postlist/postlist.component';
-import { PostlistService } from './postlist/services/postlist.service';
-import { PostDetailService } from './post-detail/services/post-detail.service';
+import { PostService } from './post.service';
 import { PostDetailMainComponent } from './post-detail-main/post-detail-main.component';
 import { AddCommentComponent } from '../comment/add-comment/add-comment.component';
 import { WritePostComponent } from './write-post/write-post.component';
@@ -35,8 +34,7 @@ import { postRoutes } from './post.routes';
         BooleanPipe
     ],
     providers: [
-        PostlistService,
-        PostDetailService,
+        PostService,
         CommentService
     ]
 })

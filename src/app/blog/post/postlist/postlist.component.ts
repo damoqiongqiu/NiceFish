@@ -3,8 +3,7 @@ import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, filter } from 'rxjs/operators';
-import { PostlistService } from './services/postlist.service';
-import { Post } from '../model/post-model';
+import { PostService } from '../post.service';
 
 @Component({
 	selector: 'postlist',
@@ -21,12 +20,12 @@ export class PostlistComponent implements OnInit {
 	public searchText: string;
 	public searchTextStream: Subject<string> = new Subject<string>();
 
-	public postList: Array<Post>;
+	public postList: Array<any>;
 
 	constructor(
 		public router: Router,
 		public activeRoute: ActivatedRoute,
-		public postService: PostlistService) {
+		public postService: PostService) {
 
 		// console.log("------这里开始对比Promise和Observable，这块代码是为了学习Observable使用的------");
 

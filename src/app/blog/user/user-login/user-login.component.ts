@@ -1,9 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
 import { UserLoginService } from './user-login.service';
-import { Observable } from 'rxjs';
-
-import { User } from '../model/user-model';
 import { fadeIn } from '../../../shared/animations/fade-in';
 
 @Component({
@@ -13,7 +10,7 @@ import { fadeIn } from '../../../shared/animations/fade-in';
   animations: [fadeIn]
 })
 export class UserLoginComponent implements OnInit {
-  public user: User = new User();
+  public user: any = {};
   public error: Error;
 
   constructor(

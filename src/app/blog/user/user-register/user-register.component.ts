@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
-import { User } from '../model/user-model';
 import { UserRegisterService } from './user-register.service';
 import { fadeIn } from '../../../shared/animations/fade-in';
 
@@ -15,7 +13,7 @@ import { fadeIn } from '../../../shared/animations/fade-in';
 export class UserRegisterComponent implements OnInit {
 
   public userForm: FormGroup;
-  public userInfo: User = new User();
+  public userInfo: any = {};
 
   public formErrors = {
     'email': '',

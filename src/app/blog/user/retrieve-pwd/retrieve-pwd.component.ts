@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RetrievePwdService } from './retrieve-pwd.service';
-import { User } from '../model/user-model';
 import { fadeIn } from '../../../shared/animations/fade-in';
 
 @Component({
@@ -10,7 +9,7 @@ import { fadeIn } from '../../../shared/animations/fade-in';
 	animations: [fadeIn]
 })
 export class RetrievePwdComponent implements OnInit {
-	public user: User = new User();
+	public user: any = {};
 	public message: string;
 	public messgeType: string;
 	constructor(

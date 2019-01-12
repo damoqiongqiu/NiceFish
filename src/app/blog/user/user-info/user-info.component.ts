@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Http, Headers, Response } from "@angular/http";
 import { map } from "rxjs/operators";
-import { User } from "../model/user-model";
 
 @Component({
   selector: "user-info",
@@ -18,7 +17,7 @@ export class UserInfoComponent implements OnInit {
   @Output()
   public follow = new EventEmitter<string>();
 
-  public currentUser: User;
+  public currentUser: any;
   public userInfoURL = "user/getUserInfo";
 
   constructor(public http: Http) {

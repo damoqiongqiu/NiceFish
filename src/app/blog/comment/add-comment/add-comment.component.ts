@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
 import { CommentService } from '../services/comment.service';
-import { Comment } from '../model/comment-model';
 
 @Component({
   selector: 'add-comment',
@@ -10,7 +9,7 @@ import { Comment } from '../model/comment-model';
   styleUrls: ['./add-comment.component.scss']
 })
 export class AddCommentComponent implements OnInit {
-  public comments: Array<Comment>;
+  public comments: Array<any>;
 
   constructor(
     public commentService: CommentService,

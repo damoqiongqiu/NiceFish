@@ -2,20 +2,19 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { map } from "rxjs/operators";
 import { Http, Headers, Response } from '@angular/http';
-import { User } from '../model/user-model';
 
 @Injectable()
 export class UserLoginService {
   public userLoginURL = 'mock-data/user-login-mock.json';
-  public subject: Subject<User> = new Subject<User>();
+  public subject: Subject<any> = new Subject<any>();
 
   constructor(public http: Http) { }
 
-  public get currentUser(): Observable<User> {
+  public get currentUser(): Observable<any> {
     return this.subject.asObservable();
   }
 
-  public login(user: User) {
+  public login(user: any) {
     return this.http
       .get(this.userLoginURL)
       .pipe(

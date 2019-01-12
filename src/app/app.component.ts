@@ -3,7 +3,6 @@ import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStat
 import { TranslateService, TranslateStore } from '@ngx-translate/core';
 import { UserLoginService } from './blog/user/user-login/user-login.service';
 import { UserRegisterService } from './blog/user/user-register/user-register.service';
-import { User } from './blog/user/model/user-model';
 import { merge } from 'rxjs'
 import { MessageService } from 'primeng/api';
 
@@ -14,7 +13,7 @@ import { MessageService } from 'primeng/api';
 })
 export class AppComponent {
 	public showToggleMenu: boolean = false;
-	public currentUser: User;
+	public currentUser: any;
 	private globalClickCallbackFn: Function;
 
 	constructor(
