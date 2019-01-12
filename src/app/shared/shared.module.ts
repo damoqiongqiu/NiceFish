@@ -4,10 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { UserLoginComponent } from '../user/user-login/user-login.component';
-import { UserInfoComponent } from '../user/user-info/user-info.component';
-import { UserProfileComponent } from '../user/user-profile/user-profile.component';
-import { FormControlComponent } from '../user/user-profile/dynamic-form/form-control.component';
+import { UserLoginComponent } from '../blog/user/user-login/user-login.component';
+import { UserInfoComponent } from '../blog/user/user-info/user-info.component';
+import { UserProfileComponent } from '../blog/user/user-profile/user-profile.component';
+import { FormControlComponent } from '../blog/user/user-profile/dynamic-form/form-control.component';
 import { TrimStringPipe } from './trim-string.pipe';
 
 @NgModule({

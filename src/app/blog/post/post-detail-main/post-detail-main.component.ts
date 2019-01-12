@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
-import { flyIn } from '../../animations/fly-in';
+import { flyIn } from '../../../shared/animations/fly-in';
 import { UserLoginService } from '../../user/user-login/user-login.service';
-import { UserInfoComponent } from '../../user/user-info/user-info.component';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({

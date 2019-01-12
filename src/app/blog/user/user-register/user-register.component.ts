@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { User } from '../model/user-model';
 import { UserRegisterService } from './user-register.service';
-import { fadeIn } from '../../animations/fade-in';
+import { fadeIn } from '../../../shared/animations/fade-in';
 
 @Component({
   selector: 'user-register',

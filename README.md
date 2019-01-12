@@ -39,6 +39,61 @@ NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 * 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
 How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有，你过去抄过来就行。
 
+### 目录结构说明
+
+├─app
+│  ├─blog                               //跟blog相关的展示功能都在blog目录下
+│  │  ├─comment
+│  │  │  ├─add-comment
+│  │  │  ├─model
+│  │  │  └─services
+│  │  ├─home
+│  │  │  └─online-contact
+│  │  ├─post
+│  │  │  ├─model
+│  │  │  ├─post-detail
+│  │  │  │  └─services
+│  │  │  ├─post-detail-main
+│  │  │  ├─postlist
+│  │  │  │  └─services
+│  │  │  └─write-post
+│  │  └─user
+│  │      ├─model
+│  │      ├─retrieve-pwd
+│  │      ├─user-info
+│  │      ├─user-login
+│  │      ├─user-main
+│  │      ├─user-profile
+│  │      │  └─dynamic-form
+│  │      │      └─form-field
+│  │      └─user-register
+│  │          └─directives
+│  ├─manage                             //用户管理后台功能都在这个目录下
+│  │  ├─chart
+│  │  ├─comment-table
+│  │  ├─manage-main
+│  │  ├─post-table
+│  │  │  └─services
+│  │  ├─sys-param
+│  │  └─user-table
+│  └─shared
+│      └─animations
+├─assets                                //css、图片、国际化等资源文件
+│  ├─css
+│  │  ├─bootstrap-3.3.7-custom
+│  │  │  ├─css
+│  │  │  ├─fonts
+│  │  │  └─js
+│  │  └─primeng-themes-my
+│  │      └─themes
+│  │          ├─bootstrap-my
+│  │          └─omega
+│  ├─i18n
+│  └─imgs
+├─documentation
+├─environments
+└─mock-data                            //这里是测试用的假数据
+
 ### 学习资源
 -----------------
 历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。

@@ -2504,7 +2504,7 @@
   },
   {
     "name": "PostModule",
-    "file": "app/post/post.module.ts",
+    "file": "app/blog/post/post.module.ts",
     "providers": [
       {
         "name": "PostlistService"

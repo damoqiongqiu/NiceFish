@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RetrievePwdService } from './retrieve-pwd.service';
 import { User } from '../model/user-model';
-import { fadeIn } from '../../animations/fade-in';
+import { fadeIn } from '../../../shared/animations/fade-in';
 
 @Component({
 	selector: 'retrieve-pwd',

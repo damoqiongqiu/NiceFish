@@ -1,6 +1,6 @@
-import { UserLoginComponent } from './user/user-login/user-login.component';
-import { RetrievePwdComponent } from './user/retrieve-pwd/retrieve-pwd.component';
-import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { UserLoginComponent } from './blog/user/user-login/user-login.component';
+import { RetrievePwdComponent } from './blog/user/retrieve-pwd/retrieve-pwd.component';
+import { UserRegisterComponent } from './blog/user/user-register/user-register.component';
 
 export const appRoutes = [
 	{
@@ -10,15 +10,15 @@ export const appRoutes = [
 	},
 	{
 		path: 'home',
-		loadChildren: './home/home.module#HomeModule'
+		loadChildren: './blog/home/home.module#HomeModule'
 	},
 	{
 		path: 'posts',
-		loadChildren: './home/home.module#HomeModule'
+		loadChildren: './blog/home/home.module#HomeModule'
 	},
 	{
 		path: 'post',
-		loadChildren: './post/post.module#PostModule'
+		loadChildren: './blog/post/post.module#PostModule'
 	},
 	{
 		path: 'login',
@@ -34,7 +34,7 @@ export const appRoutes = [
 	},
 	{
 		path: 'user',
-		loadChildren: './user/user.module#UserModule'
+		loadChildren: './blog/user/user.module#UserModule'
 	},
 	{
 		path: 'manage',
@@ -42,6 +42,6 @@ export const appRoutes = [
 	},
 	{
 		path: '**',//fallback router must in the last
-		loadChildren: './home/home.module#HomeModule'
+		loadChildren: './blog/home/home.module#HomeModule'
 	}
 ];

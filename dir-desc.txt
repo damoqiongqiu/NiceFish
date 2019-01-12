@@ -1,56 +1,52 @@
 ├─app
-│  ├─animations						//这里定义了动画效果
-│  ├─comment 						//这里是添加评论组件
-│  │  ├─add-comment
-│  │  ├─model
-│  │  └─services
-│  ├─home 							//这是首页组件
-│  │  ├─online-contact
-│  │  └─social-channel
-│  ├─manage                         //这是管理员后台组件
+│  ├─blog                               //跟blog相关的展示功能都在blog目录下
+│  │  ├─comment
+│  │  │  ├─add-comment
+│  │  │  ├─model
+│  │  │  └─services
+│  │  ├─home
+│  │  │  └─online-contact
+│  │  ├─post
+│  │  │  ├─model
+│  │  │  ├─post-detail
+│  │  │  │  └─services
+│  │  │  ├─post-detail-main
+│  │  │  ├─postlist
+│  │  │  │  └─services
+│  │  │  └─write-post
+│  │  └─user
+│  │      ├─model
+│  │      ├─retrieve-pwd
+│  │      ├─user-info
+│  │      ├─user-login
+│  │      ├─user-main
+│  │      ├─user-profile
+│  │      │  └─dynamic-form
+│  │      │      └─form-field
+│  │      └─user-register
+│  │          └─directives
+│  ├─manage                             //用户管理后台功能都在这个目录下
+│  │  ├─chart
 │  │  ├─comment-table
 │  │  ├─manage-main
 │  │  ├─post-table
 │  │  │  └─services
 │  │  ├─sys-param
 │  │  └─user-table
-│  ├─post 							//这是跟文章有关的组件
-│  │  ├─model
-│  │  ├─post-detail
-│  │  │  └─services
-│  │  ├─post-detail-main
-│  │  ├─postlist
-│  │  │  └─services
-│  │  └─write-post                  //这是写文章组件，需要参考TinyMCE编辑器和ng2集成的请看这里
-│  ├─shared
-│  ├─sitestat
-│  ├─user 							//这里是与用户相关的组件
-│  │  ├─retrieve-pwd
-│  │  ├─model
-│  │  ├─user-info                   //@Input和@Output的用法请参考这个目录
-│  │  ├─user-login                  //模板驱动型表单请参考这个目录
-│  │  ├─user-main
-│  │  ├─user-profile                //动态表单请参考这个目录
-│  │  │  └─dyn-form
-│  │  │      └─field
-│  │  └─user-register               //响应式表单请参考这个目录
-│  │      └─directives
-│  └─utils
-├─assets 							//这个目录里面是一些CSS、字体图标、图片等
+│  └─shared
+│      └─animations
+├─assets                                //css、图片、国际化等资源文件
 │  ├─css
-│  ├─fonts
-│  │  ├─bootstrap
-│  │  ├─icomoon
-│  │  │  └─icomoon
-│  │  │      ├─demo-files
-│  │  │      └─fonts
-│  │  └─simple-line-icons
+│  │  ├─bootstrap-3.3.7-custom
+│  │  │  ├─css
+│  │  │  ├─fonts
+│  │  │  └─js
+│  │  └─primeng-themes-my
+│  │      └─themes
+│  │          ├─bootstrap-my
+│  │          └─omega
 │  ├─i18n
-│  ├─imgs
-│  └─skins
-│      └─lightgray
-│          ├─fonts
-│          └─img
+│  └─imgs
 ├─documentation
 ├─environments
-└─mock-data 						//测试数据全部放在这个目录里面，【注意】这个目录需要你手动拷贝到Tomcat去
+└─mock-data                            //这里是测试用的假数据

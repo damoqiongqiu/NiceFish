@@ -4,7 +4,7 @@ import { DebugElement } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HomeComponent } from './home.component';
 import { OnlineContactComponent } from './online-contact/online-contact.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 import { homeRoutes } from './home.routes';
 

@@ -4,7 +4,7 @@ import { UserLoginService } from './user-login.service';
 import { Observable } from 'rxjs';
 
 import { User } from '../model/user-model';
-import { fadeIn } from '../../animations/fade-in';
+import { fadeIn } from '../../../shared/animations/fade-in';
 
 @Component({
   selector: 'user-login',

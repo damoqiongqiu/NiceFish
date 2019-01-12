@@ -14,13 +14,13 @@ import { MessageService } from 'primeng/api';
 
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
-import { UserLoginService } from './user/user-login/user-login.service';
-import { RetrievePwdComponent } from './user/retrieve-pwd/retrieve-pwd.component';
-import { UserRegisterComponent } from './user/user-register/user-register.component';
-import { UserRegisterService } from './user/user-register/user-register.service';
-import { RetrievePwdService } from './user/retrieve-pwd/retrieve-pwd.service';
+import { UserLoginService } from './blog/user/user-login/user-login.service';
+import { RetrievePwdComponent } from './blog/user/retrieve-pwd/retrieve-pwd.component';
+import { UserRegisterComponent } from './blog/user/user-register/user-register.component';
+import { UserRegisterService } from './blog/user/user-register/user-register.service';
+import { RetrievePwdService } from './blog/user/retrieve-pwd/retrieve-pwd.service';
 
-import { EqualValidator } from './user/user-register/directives/equal-validator.directive';
+import { EqualValidator } from './blog/user/user-register/directives/equal-validator.directive';
 
 import { appRoutes } from './app.routes';
 

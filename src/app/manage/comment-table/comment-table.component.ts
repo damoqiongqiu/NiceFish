@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSegment } from '@angular/router';
-import { flyIn } from '../../animations/fly-in';
+import { flyIn } from '../../shared/animations/fly-in';
 
 @Component({
   selector: 'comment-table',

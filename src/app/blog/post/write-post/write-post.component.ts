@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import { flyIn } from '../../animations/fly-in';
+import { flyIn } from '../../../shared/animations/fly-in';
 
 @Component({
   selector: 'write-post',
