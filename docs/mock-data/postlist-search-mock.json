@@ -1,0 +1,7 @@
+{
+"total":3,
+"items":[
+    {"postId":"8","title":"这是搜索出来的啊。。。。","postTime":"2016-11-21 10:44","userName":"大漠穷秋","userId":"1","readTimes":"10000","commentTimes":"10000","isfamous":"true"},
+    {"postId":"9","title":"这是搜索出来的啊。。。。","postTime":"2016-11-21 10:44","userName":"大漠穷秋","userId":"1","readTimes":"10000","commentTimes":"10000","isfamous":"false"},
+    {"postId":"10","title":"这是搜索出来的啊。。。。","postTime":"2016-11-21 10:44","userName":"大漠穷秋","userId":"1","readTimes":"10000","commentTimes":"10000","isfamous":"false"}
+]}
