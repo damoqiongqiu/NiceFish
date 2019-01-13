@@ -1,24 +1,14 @@
-## NiceFish（美人鱼）
------------------
-NiceFish 是一个系列项目，目标是全面示范 Angular 在浏览器、移动端、Electron 环境中的用法，同时提供了一个基于 SpringCloud 的服务端。
+<p align="center">
+    <img width="100" src="./src/assets/imgs/nice-fish.png">
+</p>
 
-* NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 7.0 + PrimeNG 7.0.3。http://git.oschina.net/mumu-osc/NiceFish/
+<h1 align="center">NiceFish</h1>
 
-* nicefish-ionic：这是一个移动端的 demo，基于 ionic，此项目已支持 PWA。http://git.oschina.net/mumu-osc/nicefish-ionic
+<div align="left">
+NiceFish（美人鱼） 是一个系列项目，目标是全面示范 Angular 在浏览器、移动端、Electron 环境中的用法，同时提供了一个基于 SpringCloud 的服务端。
+</div>
 
-* NiceBlogElectron：https://github.com/damoqiongqiu/NiceBlogElectron ,这是一个基于 Electron 的桌面端项目，把 NiceFish 用 Electron 打包成了一个桌面端运行的程序。这是由 ZTE 中兴通讯的前端道友提供的，我 fork 了一个，有几个 node 模块的版本号老要改，如果您正在研究如何利用 Electron 开发桌面端应用，请参考这个项目。
-
-* nicefish-spring-cloud: https://gitee.com/mumu-osc/nicefish-spring-cloud ， 这是NiceFish的服务端代码，基于SpringCloud。已经完成了一些基本的功能，如 SpringSecurity+OAuth2+JWT 实现SSO，文章、用户、评论等的分页查询等。如果你需要与这个后端代码进行对接，请检出本项目的 for-spring-cloud 分支。
-
-### 在线演示
------------------
-NiceFish: http://47.104.13.149:4200
-
-OpenWMS：http://47.104.80.251:4200
-
-NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
-
-### 用法
+## 用法
 -----------------
 打开你的命令行终端，依次执行以下命令：
 
@@ -39,7 +29,26 @@ NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 * 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
 How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有，你过去抄过来就行。
 
-### 学习资源
+## 在线演示
+-----------------
+NiceFish: http://47.104.13.149:4200
+
+OpenWMS：http://47.104.80.251:4200
+
+NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
+
+## 系列项目
+-----------------
+
+* NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 7.0 + PrimeNG 7.0.3。http://git.oschina.net/mumu-osc/NiceFish/
+
+* nicefish-ionic：这是一个移动端的 demo，基于 ionic，此项目已支持 PWA。http://git.oschina.net/mumu-osc/nicefish-ionic
+
+* NiceBlogElectron：https://github.com/damoqiongqiu/NiceBlogElectron ,这是一个基于 Electron 的桌面端项目，把 NiceFish 用 Electron 打包成了一个桌面端运行的程序。这是由 ZTE 中兴通讯的前端道友提供的，我 fork 了一个，有几个 node 模块的版本号老要改，如果您正在研究如何利用 Electron 开发桌面端应用，请参考这个项目。
+
+* nicefish-spring-cloud: https://gitee.com/mumu-osc/nicefish-spring-cloud ， 这是NiceFish的服务端代码，基于SpringCloud。已经完成了一些基本的功能，如 SpringSecurity+OAuth2+JWT 实现SSO，文章、用户、评论等的分页查询等。如果你需要与这个后端代码进行对接，请检出本项目的 for-spring-cloud 分支。
+
+## 学习资源
 -----------------
 历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
 
@@ -47,7 +56,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 <img src="/src/assets/imgs/qr-code.png"/>
 
-### 关联 QQ 群
+## 关联 QQ 群
 -----------------
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=8db5ed802cbddbf6432d7ba7dc4f2a316be020442491eb41cbfb1a12434e8cc7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-1区</a>
 
@@ -64,6 +73,6 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=5d6b8c5296e4806142b8422ae7abca6f27b9b9b992a4dac80dc1392644e8970a"><i class="fa fa-qq" aria-hidden="true"></i>脚本娃娃-桃花岛</a>
 
-### 开源许可证
+## 开源许可证
 
 MIT
