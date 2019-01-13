@@ -96,16 +96,8 @@ export class UserRegisterComponent implements OnInit {
   doRegister() {
     if (this.userForm.valid) {
       this.userInfo = this.userForm.value;
-      this.userRegisterService.register(this.userInfo)
-        .subscribe(
-          data => {
-            this.router.navigateByUrl("home");
-          },
-          error => {
-            this.formErrors.formError = error.message;
-            console.error(error);
-          }
-        );
+      this.userRegisterService.register(this.userInfo);
+      this.router.navigateByUrl("home");
     } else {
       this.formErrors.formError = "存在不合法的输入项，请检查。";
     }

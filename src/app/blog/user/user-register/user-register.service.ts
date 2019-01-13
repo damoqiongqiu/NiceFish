@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Request, RequestOptions, Response, RequestMethod, URLSearchParams } from '@angular/http';
+import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
 import { Observable, Subject } from 'rxjs';
-import { map } from "rxjs/operators";
 
 @Injectable()
 export class UserRegisterService {
@@ -9,7 +8,7 @@ export class UserRegisterService {
     public testEmailURL = "";
     public subject: Subject<any> = new Subject<any>();
 
-    constructor(public http: Http) {
+    constructor(public httpClient: HttpClient) {
     }
 
     public get currentUser(): Observable<any> {
@@ -17,25 +16,22 @@ export class UserRegisterService {
     }
 
     public register(user: any) {
-        console.log(user);
-
-        //向后台post数据的写法如下
-        // let data = new URLSearchParams();
-        // data.append('email', user.email);
-        // data.append('password', user.password);
-        // return this.http.post(this.userRegisterURL,data);
-
-        return this.http
+        return this.httpClient
             .get(this.userRegisterURL)
-            .pipe(map((response: Response) => {
-                let user = response.json();
-                localStorage.setItem("currentUser", JSON.stringify(user));
-                this.subject.next(user);
-            }));
+            .subscribe(
+                data => {
+                    console.log("用户信息>" + data);
+                    let user = data;
+                    localStorage.setItem("currentUser", JSON.stringify(user));
+                    this.subject.next(user);
+                },
+                error => {
+                    console.error(error);
+                }
+            );
     }
 
-    public testEmail(email: string) {
-        return this.http.get(this.testEmailURL)
-            .pipe(map((response: Response) => response.json()));
+    public testEmail(email: string): Observable<any> {
+        return this.httpClient.get(this.testEmailURL);
     }
 }

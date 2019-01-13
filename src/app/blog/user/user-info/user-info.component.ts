@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { Http, Headers, Response } from "@angular/http";
-import { map } from "rxjs/operators";
+import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
 
 @Component({
   selector: "user-info",
@@ -20,7 +19,7 @@ export class UserInfoComponent implements OnInit {
   public currentUser: any;
   public userInfoURL = "user/getUserInfo";
 
-  constructor(public http: Http) {
+  constructor(public httpClient: HttpClient) {
     // 构造组件的时候，@Input的属性还没有值
     console.log(this.panelTitle);
   }
@@ -32,14 +31,8 @@ export class UserInfoComponent implements OnInit {
 
   public loadUserInfo() {
     this.userInfoURL = this.userInfoURL + "/" + this.userId;
-    return this.http
+    return this.httpClient
       .get(this.userInfoURL)
-      .pipe(
-        map((response: Response) => {
-          let user = response.json();
-          return user;
-        })
-      )
       .subscribe(
         data => {
           console.log("用户信息>" + data);
