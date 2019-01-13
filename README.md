@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="100" src="./src/assets/imgs/nice-fish.png">
+    <img width="150" src="./src/assets/imgs/nice-fish.png">
 </p>
 
 <h1 align="center">NiceFish</h1>
