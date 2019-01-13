@@ -31,9 +31,13 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 ## 在线演示
 
-NiceFish: http://47.104.13.149:4200
+NiceFish 在gitee上的演示地址: https://mumu-osc.gitee.io/nicefish
 
-OpenWMS：http://47.104.80.251:4200
+NiceFish 在阿里云上的演示地址: http://47.104.13.149:4200
+
+OpenWMS 在阿里云上的演示地址：http://47.104.80.251:4200
+
+OpenWMS 在gitee上的演示地址：https://mumu-osc.gitee.io/openwms-frontend
 
 NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 
