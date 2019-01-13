@@ -47,6 +47,21 @@ NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 
 * nicefish-spring-cloud: https://gitee.com/mumu-osc/nicefish-spring-cloud ， 这是NiceFish的服务端代码，基于SpringCloud。已经完成了一些基本的功能，如 SpringSecurity+OAuth2+JWT 实现SSO，文章、用户、评论等的分页查询等。如果你需要与这个后端代码进行对接，请检出本项目的 for-spring-cloud 分支。
 
+## 打包分析
+
+以下是用 webpack-bundle-analyzer 分析打包之后的模块构成：
+
+<img width="150" src="./src/assets/imgs/bundle-report.png">
+
+看起来CKEditor和ECharts占了很大的体积，需要做一下异步加载。
+
+webpack-bundle-analyzer 使用方法：
+
+    cnpm i webpack-bundle-analyzer --save-dev
+    package.json 的 scripts 配置里面加一行 "bundle-report": "webpack-bundle-analyzer dist/stats.json"
+    ng build --prod --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
+    执行 npm run bundle-report 查看打包构成
+
 ## 学习资源
 
 历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
