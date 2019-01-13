@@ -8,10 +8,10 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostlistComponent } from './postlist/postlist.component';
 import { PostService } from './post.service';
 import { PostDetailMainComponent } from './post-detail-main/post-detail-main.component';
-import { AddCommentComponent } from '../comment/add-comment/add-comment.component';
+import { CommentListComponent } from '../comment-list/comment-list.component';
 import { WritePostComponent } from './write-post/write-post.component';
 
-import { CommentService } from '../comment/services/comment.service';
+import { CommentListService } from '../comment-list/comment-list.service';
 import { BooleanPipe } from '../../shared/boolean-pipe';
 
 import { postRoutes } from './post.routes';
@@ -29,13 +29,13 @@ import { postRoutes } from './post.routes';
         PostlistComponent,
         PostDetailMainComponent,
         PostDetailComponent,
-        AddCommentComponent,
+        CommentListComponent,
         WritePostComponent,
         BooleanPipe
     ],
     providers: [
         PostService,
-        CommentService
+        CommentListService
     ]
 })
 export class PostModule { }

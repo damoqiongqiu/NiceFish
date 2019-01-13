@@ -1,8 +1,8 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { AddCommentComponent } from './add-comment.component';
+import { CommentListComponent } from './comment-list.component';
 
 describe('Component: AddComment', () => {
-	
+
 });

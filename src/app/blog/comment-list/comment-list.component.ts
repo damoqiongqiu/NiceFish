@@ -1,18 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
-import { CommentService } from '../services/comment.service';
+import { CommentListService } from './comment-list.service';
 
 @Component({
-  selector: 'add-comment',
-  templateUrl: './add-comment.component.html',
-  styleUrls: ['./add-comment.component.scss']
+  selector: 'comment-list',
+  templateUrl: './comment-list.component.html',
+  styleUrls: ['./comment-list.component.scss']
 })
-export class AddCommentComponent implements OnInit {
+export class CommentListComponent implements OnInit {
   public comments: Array<any>;
 
   constructor(
-    public commentService: CommentService,
+    public commentService: CommentListService,
     public activeRoute: ActivatedRoute) {
 
   }

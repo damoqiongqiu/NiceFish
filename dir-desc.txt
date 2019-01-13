@@ -1,7 +1,7 @@
 ├─app
 │  ├─blog                               //跟blog相关的展示功能都在blog目录下
 │  │  ├─comment
-│  │  │  ├─add-comment
+│  │  │  ├─comment-list
 │  │  │  ├─model
 │  │  │  └─services
 │  │  ├─home

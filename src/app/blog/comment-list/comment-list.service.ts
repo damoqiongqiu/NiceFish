@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from "rxjs/operators";
 
 @Injectable()
-export class CommentService {
+export class CommentListService {
     public commentListURL = "mock-data/comment-mock.json";
 
     constructor(public http: Http) { }
