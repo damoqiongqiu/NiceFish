@@ -6,7 +6,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12" [innerHTML]="post.text">
+		<div class="col-md-12" [innerHTML]="post.text | sanitizeHtml">
 		</div>
 	</div>
 </div>

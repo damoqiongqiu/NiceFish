@@ -1,7 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { UserLoginComponent } from '../blog/user/user-login/user-login.component';
@@ -9,6 +8,7 @@ import { UserInfoComponent } from '../blog/user/user-info/user-info.component';
 import { UserProfileComponent } from '../blog/user/user-profile/user-profile.component';
 import { FormControlComponent } from '../blog/user/user-profile/dynamic-form/form-control.component';
 import { TrimStringPipe } from './trim-string.pipe';
+import { SanitizeHtmlPipe } from './sanitize-html-pipe';
 
 @NgModule({
   imports: [
@@ -22,7 +22,8 @@ import { TrimStringPipe } from './trim-string.pipe';
     UserInfoComponent,
     UserProfileComponent,
     FormControlComponent,
-    TrimStringPipe
+    TrimStringPipe,
+    SanitizeHtmlPipe
   ],
   exports: [
     TranslateModule,
@@ -31,7 +32,8 @@ import { TrimStringPipe } from './trim-string.pipe';
     UserLoginComponent,
     UserInfoComponent,
     UserProfileComponent,
-    TrimStringPipe
+    TrimStringPipe,
+    SanitizeHtmlPipe
   ]
 })
 
