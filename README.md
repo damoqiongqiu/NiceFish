@@ -9,7 +9,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是全面示范 Angular �
 </div>
 
 ## 用法
------------------
+
 打开你的命令行终端，依次执行以下命令：
 
     git clone https://gitee.com/mumu-osc/NiceFish.git
@@ -30,7 +30,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是全面示范 Angular �
 How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有，你过去抄过来就行。
 
 ## 在线演示
------------------
+
 NiceFish: http://47.104.13.149:4200
 
 OpenWMS：http://47.104.80.251:4200
@@ -38,7 +38,6 @@ OpenWMS：http://47.104.80.251:4200
 NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 
 ## 系列项目
------------------
 
 * NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 7.0 + PrimeNG 7.0.3。http://git.oschina.net/mumu-osc/NiceFish/
 
@@ -49,7 +48,7 @@ NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 * nicefish-spring-cloud: https://gitee.com/mumu-osc/nicefish-spring-cloud ， 这是NiceFish的服务端代码，基于SpringCloud。已经完成了一些基本的功能，如 SpringSecurity+OAuth2+JWT 实现SSO，文章、用户、评论等的分页查询等。如果你需要与这个后端代码进行对接，请检出本项目的 for-spring-cloud 分支。
 
 ## 学习资源
------------------
+
 历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
 
 如果您需要那种非常详细的教程，用微信扫这个二维码：
@@ -57,7 +56,7 @@ NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 <img src="/src/assets/imgs/qr-code.png"/>
 
 ## 关联 QQ 群
------------------
+
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=8db5ed802cbddbf6432d7ba7dc4f2a316be020442491eb41cbfb1a12434e8cc7" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-1区</a>
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=cbfcd79e7e90939b0e2c519f475fac4792985ce2abc5ad45ec5e06ffcfe944dd" class="list-group-item"><i class="fa fa-qq" aria-hidden="true"></i> Angular-2区</a>
