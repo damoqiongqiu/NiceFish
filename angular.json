@@ -110,7 +110,7 @@
             ],
             "assets": [
               "src/assets",
-              "src/my-test-data",
+              "src/mock-data",
               "src/favicon.ico"
             ]
           }
