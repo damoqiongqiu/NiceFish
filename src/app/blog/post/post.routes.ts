@@ -1,6 +1,5 @@
 import { PostDetailMainComponent } from './post-detail-main/post-detail-main.component';
 import { PostlistComponent } from './postlist/postlist.component';
-import { WritePostComponent } from './write-post/write-post.component';
 
 export const postRoutes = [
 	{
@@ -18,6 +17,6 @@ export const postRoutes = [
 	},
 	{
 		path: 'write',
-		component: WritePostComponent
+		loadChildren: "./write-post/write-post.module#WritePostModule"
 	},
 ];
