@@ -5,7 +5,7 @@
 @import "../node_modules/primeng/resources/primeng.min.css";
 @import "./assets/css/my-toast.scss";
 
-/* 我自己的全局样式 */
+/* 一些自定义的全局样式 */
 * {
     font-family: '微软雅黑', 'Microsoft YaHei', '宋体', Tahoma, Helvetica, Arial, sans-serif;
     -ms-text-size-adjust: 100%;
@@ -16,9 +16,89 @@ body {
     font-family: '微软雅黑', 'Microsoft YaHei', '宋体', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
+}
 
-    .ui-widget-header {
-        background: #ffffff;
-        color: #2d353c;
+/* Loading 动画 */
+html,
+body,
+root {
+    height: 100%;
+    margin: 0;
+}
+
+.splash-screen {
+    background-color: #303030;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.splash-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    margin-top: -25px;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+    line-height: 46px;
+    font-size: 32px;
+    display: block;
+}
+
+.splash-loader,
+.splash-loader::before,
+.splash-loader::after {
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    position: absolute;
+    vertical-align: middle;
+    background: #ff3300;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.splash-loader::before {
+    content: "";
+    animation: bounce 1.5s infinite;
+}
+
+.splash-loader::after {
+    content: "";
+    animation: bounce 1.5s -0.4s infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        opacity: 0;
     }
 }
