@@ -36,38 +36,15 @@
     }
 }
 
-.btn:not(:disabled):not(.disabled) {
-    cursor: pointer;
-}
-.btn-secondary {
-    color: #fff;
-    background-color: #444;
-    border-color: #444;
-}
-.btn-secondary:hover {
-    color: #fff;
-    background-color: #313131;
-    border-color: #2b2a2a;
-}
-.btn:hover {
-    color: #fff;
-    text-decoration: none;
-}
-
 .main-container {
     min-height: 1024px;
-    padding: 75px 0 0 0;
+    padding: 80px 0 30px 0;
 }
 
 .footer {
-    text-align: left;
-    padding: 40px 48px;
+    padding: 30px 0px;
     background: #303030;
     color: #fff;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     a {
         color: #fff;
     }
