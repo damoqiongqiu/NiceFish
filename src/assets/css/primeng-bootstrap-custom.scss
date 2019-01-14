@@ -1,3 +1,14 @@
+/*
+ @create by hbxyxuxixiaodong
+  bootstrap样式重置
+*/
+$buttonBgColor: #39b9c6;
+$buttonHoverBgColor: #07a0a0;
+$buttondefaultBgColor: #3f4b57;
+$buttondefaultHoverBgColor: #303d47;
+$buttonTextColor: #fff;
+$formBgColor: #fff;
+$buttonMarginRight: 1rem;
 body {
     .ui-paginator {
         margin: 0;
@@ -7,9 +18,19 @@ body {
             .ui-paginator-page {
                 padding: 0;
                 min-width: 2em;
-                color: #0275d8;
+                color: $buttonBgColor;
                 transition: background-color 0.3s;
                 border-radius: 0;
+                &.ui-state-active {
+                  background-color: $buttonBgColor;
+                  color: #ffff;
+                }
+                &:focus{
+                  outline: 0;
+                }
+                &:hover{
+                  background-color:#e8e8e8;
+                }
                 .ui-state-active {
                     color: #ffffff;
                 }
@@ -19,7 +40,10 @@ body {
         .ui-paginator-prev,
         .ui-paginator-next,
         .ui-paginator-last {
-            color: #0275d8;
+           &:focus{
+             outline: 0;
+           }
+            color: $buttonBgColor;
             transition: background-color 0.3s;
             min-height: 0.875em;
             min-width: 2em;
@@ -27,4 +51,82 @@ body {
             vertical-align: middle;
         }
     }
+}
+
+
+.btn {
+  &:focus {
+    outline: none;
+    &:active {
+      outline: none;
+    }
+  }
+}
+.form-horizontal.form-bgcolor {
+  padding: 1.9rem 1rem 1rem 1rem;
+}
+.form-bgcolor {
+  background-color: $formBgColor;
+}
+.col-padding {
+  padding: 1.5rem;
+}
+.btn.btn-primary {
+  background-color: $buttonBgColor;
+  border-color: $buttonBgColor;
+
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    background-color: $buttonHoverBgColor;
+    border-color: $buttonHoverBgColor;
+  }
+  &:active {
+    outline: none;
+    background-color: darken($buttonHoverBgColor, 5%);
+    border-color: darken($buttonHoverBgColor, 5%);
+  }
+}
+.btn.btn-default {
+  background-color: $buttondefaultBgColor;
+  border-color: $buttondefaultBgColor;
+  color: $buttonTextColor;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    background-color: $buttondefaultHoverBgColor;
+    border-color: $buttondefaultHoverBgColor;
+  }
+  &:active {
+    outline: none;
+    color: $buttonTextColor;
+    background-color: darken($buttondefaultHoverBgColor, 5%);
+    border-color: darken($buttondefaultHoverBgColor, 5%);
+  }
+}
+.form-control:focus {
+  border-color: $buttonBgColor;
+}
+.btn-margin-1rem {
+  margin-right: $buttonMarginRight;
+}
+.margin-bottom-1rem {
+  margin-bottom: 1rem !important;
+}
+.no-padding-left {
+  padding-left: 0;
+}
+a{
+  color:$buttonBgColor;
+  &:hover{
+    color:darken($buttonBgColor,5%);
+  }
+  &.text-danger{
+    color:#cb4a1c;
+    &:hover{
+      color:darken( #cb4a1c, 5%)
+    }
+  }
 }
