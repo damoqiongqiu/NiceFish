@@ -9,51 +9,6 @@ $buttondefaultHoverBgColor: #303d47;
 $buttonTextColor: #fff;
 $formBgColor: #fff;
 $buttonMarginRight: 1rem;
-body {
-    .ui-paginator {
-        margin: 0;
-        text-align: left;
-        padding: .125em;
-        .ui-paginator-pages {
-            .ui-paginator-page {
-                padding: 0;
-                min-width: 2em;
-                color: $buttonBgColor;
-                transition: background-color 0.3s;
-                border-radius: 0;
-                &.ui-state-active {
-                  background-color: $buttonBgColor;
-                  color: #ffff;
-                }
-                &:focus{
-                  outline: 0;
-                }
-                &:hover{
-                  background-color:#e8e8e8;
-                }
-                .ui-state-active {
-                    color: #ffffff;
-                }
-            }
-        }
-        .ui-paginator-first,
-        .ui-paginator-prev,
-        .ui-paginator-next,
-        .ui-paginator-last {
-           &:focus{
-             outline: 0;
-           }
-            color: $buttonBgColor;
-            transition: background-color 0.3s;
-            min-height: 0.875em;
-            min-width: 2em;
-            padding: 0.5em 0.5em;
-            vertical-align: middle;
-        }
-    }
-}
-
-
 .btn {
   &:focus {
     outline: none;
@@ -129,4 +84,103 @@ a{
       color:darken( #cb4a1c, 5%)
     }
   }
+}
+
+//primeng and customtable style
+$linkColor:#39b9c6;
+$linkHoverBgColor:#e8e8e8;
+@mixin text-center{
+   text-align: center;
+}
+body {
+    .ui-paginator {
+        margin: 0;
+        @include text-center;
+        padding: .125em;
+        .ui-paginator-pages {
+            .ui-paginator-page {
+                padding: 0;
+                min-width: 2em;
+                color: $linkColor;
+                transition: background-color 0.3s;
+                border-radius: 0;
+                &:hover.ui-state-active{
+                  background-color: $linkColor;
+                }
+                &:focus{
+                  outline: 0;
+                }
+            }
+            .ui-state-active{
+              color:$buttonTextColor;
+              background-color: $linkColor;
+            }
+
+        }
+        .ui-paginator-first,
+        .ui-paginator-prev,
+        .ui-paginator-next,
+        .ui-paginator-last {
+            color: $linkColor;
+            transition: background-color 0.3s;
+            min-height: 0.875em;
+            min-width: 2em;
+            padding: 0.5em 0.5em;
+            vertical-align: middle;
+            &:focus{
+              outline: 0;
+            }
+        }
+    }
+}
+body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item.ui-state-highlight
+{
+   background-color: $linkColor;
+}
+.ui-dropdown label.ui-dropdown-label{
+  background-color: $linkColor;
+
+}
+.ui-dropdown-panel .ui-dropdown-item{
+    &:hover{
+       background-color: $linkHoverBgColor;
+    }
+}
+body .ui-datatable thead th
+{
+   &:focus.ui-state-active{
+    background-color: $linkColor;
+    border-color:$linkColor;
+   }
+   &:focus{
+     outline: 0;
+   }
+   &.ui-state-active{
+    background-color: $linkColor;
+    border-color:$linkColor;
+   }
+}
+body .ui-datatable .ui-datatable-data > tr > td{
+  text-align: center
+}
+body .ui-datatable .ui-datatable-data tr.ui-datatable-even.ui-state-highlight{
+  background-color: $linkColor;
+  border-color:$linkColor;
+}
+body .ui-datatable .ui-datatable-data tr.ui-state-highlight{
+  background-color: $linkColor;
+  border-color:$linkColor;
+}
+body .ui-chkbox .ui-chkbox-box.ui-state-active{
+  background-color: $linkColor;
+  border-color:$linkColor;
+}
+
+.table.table-bordered{
+   thead th{
+     @include text-center
+   }
+   tbody td{
+     @include text-center
+   }
 }
