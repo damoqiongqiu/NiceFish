@@ -6,6 +6,7 @@ $buttonBgColor: #39b9c6;
 $buttonHoverBgColor: #07a0a0;
 $buttondefaultBgColor: #3f4b57;
 $buttondefaultHoverBgColor: #303d47;
+$checkboxBorderColor:#757575;
 $buttonTextColor: #fff;
 $formBgColor: #fff;
 $buttonMarginRight: 1rem;
@@ -166,14 +167,17 @@ body .ui-datatable .ui-datatable-data > tr > td{
 body .ui-datatable .ui-datatable-data tr.ui-datatable-even.ui-state-highlight{
   background-color: $linkColor;
   border-color:$linkColor;
+  color:$buttonTextColor;
 }
 body .ui-datatable .ui-datatable-data tr.ui-state-highlight{
   background-color: $linkColor;
   border-color:$linkColor;
+  color:$buttonTextColor;
 }
 body .ui-chkbox .ui-chkbox-box.ui-state-active{
   background-color: $linkColor;
   border-color:$linkColor;
+  color:$buttonTextColor;
 }
 
 .table.table-bordered{
@@ -183,4 +187,8 @@ body .ui-chkbox .ui-chkbox-box.ui-state-active{
    tbody td{
      @include text-center
    }
+}
+body .ui-chkbox .ui-chkbox-box
+{
+  border: 2px solid $checkboxBorderColor;
 }
