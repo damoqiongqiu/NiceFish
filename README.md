@@ -53,7 +53,7 @@ NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 
 以下是用 webpack-bundle-analyzer 分析打包之后的模块构成：
 
-<img width="150" src="./src/assets/imgs/bundle-report.png">
+<img src="./src/assets/imgs/bundle-report.png">
 
 看起来CKEditor和ECharts占了很大的体积，需要做一下异步加载。
 
