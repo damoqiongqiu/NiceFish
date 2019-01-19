@@ -1,4 +1,5 @@
 $buttonBgColor: #39b9c6;
+$messageColor:#fff;
 .ui-toast {
 	position: fixed;
     width: 20em;
@@ -8,33 +9,33 @@ body .ui-toast .ui-toast-message
            &.ui-toast-message-info {
                 background-color: #7fbcec;
                 border: 0 none;
-                color: #212121;
+                color: $messageColor;
                 .ui-toast-close-icon {
-                    color: #212121;
+                    color: $messageColor;
                 }
             }
             &.ui-toast-message-success {
                 background-color: $buttonBgColor;
                 border: 0 none;
-                color: #212121;
+                color: $messageColor;
                 .ui-toast-close-icon {
-                    color: #212121;
+                    color: $messageColor;
                 }
             }
             &.ui-toast-message-warn {
                 background-color: #ffe399;
                 border: 0 none;
-                color: #212121;
+                color: $messageColor;
                 .ui-toast-close-icon {
-                    color: #212121;
+                    color: $messageColor;
                 }
             }
             &.ui-toast-message-error {
                 background-color: #f8b7bd;
                 border: 0 none;
-                color: #212121;
+                color: $messageColor;
                 .ui-toast-close-icon {
-                    color: #212121;
+                    color: $messageColor;
                 }
             }
 }
@@ -50,10 +51,6 @@ body .ui-toast .ui-toast-message
 	  display: block;
     margin-bottom: .75em;
     overflow: hidden;
-}
-
-.ui-toast .ui-toast-message-content {
-    padding: .5em 1em;
 }
 
 .ui-toast .ui-toast-close-icon {

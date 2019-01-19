@@ -77,7 +77,7 @@ export class AppComponent {
 	public doLogout(): void {
 		this.showToggleMenu = false;
 		this.userLoginService.logout();
-		this.messageService.add({ severity: 'success', summary: 'Success Message', detail: '退出成功', life: 500 });
+		this.messageService.add({ severity: 'success', summary: 'Success Message', detail: '退出成功', life: 50000 });
 		this.router.navigateByUrl("");
 	}
 }

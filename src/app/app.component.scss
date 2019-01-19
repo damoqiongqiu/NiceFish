@@ -1,5 +1,7 @@
+$navbarBgColor:#3f4b57;
+$navbarBgHoverColor:#303d47;
 .main-nav {
-    background: #303030;
+    background: $navbarBgColor;
     height: 50px;
     min-height: 50px;
     padding: 0;
@@ -12,7 +14,7 @@
     }
 
     .navbar-collapse{
-        background: #303030;
+        background: $navbarBgColor;
         li > a {
             color: #fff;
         }
@@ -23,7 +25,7 @@
         .open > a:hover,
         .open > a:focus {
             color: #fff;
-            background-color: #777;
+            background-color: $navbarBgHoverColor;
         }
     }
 
@@ -43,7 +45,7 @@
 
 .footer {
     padding: 30px 0px;
-    background: #303030;
+    background: $navbarBgColor;
     color: #fff;
     a {
         color: #fff;
