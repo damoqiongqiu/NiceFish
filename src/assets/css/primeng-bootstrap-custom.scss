@@ -10,6 +10,7 @@ $checkboxBorderColor:#757575;
 $buttonTextColor: #fff;
 $formBgColor: #fff;
 $buttonMarginRight: 1rem;
+$textColor:#666;
 .btn {
   &:focus {
     outline: none;
@@ -85,8 +86,14 @@ a{
       color:darken( #cb4a1c, 5%)
     }
   }
+  &.list-group-item{
+    color:$textColor;
+  }
 }
 
+.panel-default>.panel-heading{
+  color:$textColor;
+}
 //primeng and customtable style
 $linkColor:#39b9c6;
 $linkHoverBgColor:#e8e8e8;
