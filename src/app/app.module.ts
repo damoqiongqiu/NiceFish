@@ -36,7 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     EqualValidator
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'NiceFish' }),
     BrowserAnimationsModule,
     RouterModule,
     ReactiveFormsModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+// import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { flyIn } from '../../../shared/animations/fly-in';
 
@@ -13,7 +13,7 @@ import { flyIn } from '../../../shared/animations/fly-in';
 //CKEDitor的文档在这里https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/frameworks/angular.html
 export class WritePostComponent {
   public content = '';
-  public Editor = ClassicEditor;
+  // public Editor = ClassicEditor;
 
   constructor(
     public router: Router,
