@@ -5,7 +5,7 @@
 <h1 align="center">NiceFish</h1>
 
 <div align="left">
-NiceFish（美人鱼） 是一个系列项目，目标是全面示范 Angular 在浏览器、移动端、Electron 环境中的用法，同时提供了一个基于 SpringCloud 的服务端。
+NiceFish（美人鱼） 是一个系列项目，目标是全面示范前后端分离的开发模式，前端浏览器、移动端、Electron 环境中的各种开发模式，后端采用基于 SpringCloud 的微服务实现。
 </div>
 
 ## 用法
