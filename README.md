@@ -23,6 +23,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是全面示范前后端�
 
 * 各种你懂的原因，中文开发者强烈建议使用 cnpm （淘宝发布的一款npm包装器，方便中文开发者避免一些神秘的问题）
 * 如果你想让加载的包更小，请使用：ng serve --prod
+* 构建最终结果：ng build --prod
 * 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
 * 如果之前装过老版本的 angular-cli 需要先卸载：npm uninstall -g angular-cli
 * 如果你之前已经尝试用npm install安装过 node 模块，请把 NiceFish 根目录下的 node_moduels 目录删掉重新 cnpm install
