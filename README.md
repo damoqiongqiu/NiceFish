@@ -16,16 +16,17 @@ NiceFish（美人鱼） 是一个系列项目，目标是全面示范前后端�
     cd NiceFish
     npm i -g cnpm --registry=https://registry.npm.taobao.org
     cnpm i -g @angular/cli
-    cnpm install
+    cnpm i
     ng serve
 
 打开你的浏览器，访问http://localhost:4200/
 
-* 各种你懂的原因，中文开发者强烈建议使用 cnpm install
+* 各种你懂的原因，中文开发者强烈建议使用 cnpm （淘宝发布的一款npm包装器，方便中文开发者避免一些神秘的问题）
 * 如果你想让加载的包更小，请使用：ng serve --prod
 * 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
-* 如果之前装过 angular-cli 需要先卸载：npm uninstall -g angular-cli
-* 如果你之前已经尝试安装过 node 模块，请把 NiceFish 根目录下的 node_moduels 目录删掉重新 cnpm install
+* 如果之前装过老版本的 angular-cli 需要先卸载：npm uninstall -g angular-cli
+* 如果你之前已经尝试用npm install安装过 node 模块，请把 NiceFish 根目录下的 node_moduels 目录删掉重新 cnpm install
+* 命令行删除 node_modules 速度更快，Windows 平台使用： rmdir /s/q node_modules ，*nix平台使用：sudo rm -rf node_modules
 * 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
 How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有，你过去抄过来就行。
 
