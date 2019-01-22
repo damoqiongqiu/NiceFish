@@ -61,10 +61,10 @@ NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 
 webpack-bundle-analyzer 使用方法：
 
-    cnpm i webpack-bundle-analyzer --save-dev
-    package.json 的 scripts 配置里面加一行 "bundle-report": "webpack-bundle-analyzer dist/stats.json"
-    ng build --prod --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
-    执行 npm run bundle-report 查看打包构成
+- cnpm i webpack-bundle-analyzer --save-dev
+- package.json 的 scripts 配置里面加一行 "bundle-report": "webpack-bundle-analyzer dist/stats.json"
+- ng build --prod --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
+- 执行 npm run bundle-report 查看打包过程
 
 ## 学习资源
 
