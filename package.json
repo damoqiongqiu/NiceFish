@@ -12,6 +12,9 @@
     "bundle-report": "webpack-bundle-analyzer dist/stats.json"
   },
   "private": true,
+  "resolutions": {
+    "ajv": "6.8.1"
+  },
   "dependencies": {
     "@angular/animations": "7.2.0",
     "@angular/cdk": "7.2.1",
