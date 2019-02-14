@@ -15,8 +15,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="post-item-container">
-                <p-dataTable [value]="postList" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]"
-                    (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" dataKey="postId">
+                <p-dataTable [value]="postList" [rows]="10" [paginator]="true" [pageLinks]="3"
+                    [rowsPerPageOptions]="[5,10,20]" (onRowSelect)="onRowSelect($event)"
+                    (onRowUnselect)="onRowUnselect($event)" dataKey="postId">
                     <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
                     <p-column field="postId" header="序号" [sortable]="true"></p-column>
                     <p-column field="title" header="标题" [sortable]="true" [editable]="true"></p-column>

@@ -3,7 +3,7 @@
         <div class="col-md-12">
             <div class="post-item-container" *ngFor="let post of postList">
                 <h3>
-                    <a [routerLink]="['/post/post-detail',post.id]">{{post.title}}</a>
+                    <a [routerLink]="['/post/post-detail',post.postId]">{{post.title}}</a>
                 </h3>
                 <div class="user-name-intitle">
                     <div class="row">
