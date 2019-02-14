@@ -15,6 +15,8 @@ import { PostTableService } from './post-table/services/post-table.service';
 import { AuthGuard } from './auth-guard';
 
 import { manageRoutes } from './manage.routes';
+import { RoleTableComponent } from './role-table/role-table.component';
+import { PermissionTableComponent } from './permission-table/permission-table.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { manageRoutes } from './manage.routes';
     UserTableComponent,
     SysParamComponent,
     ChartComponent,
-    EChartOptionDirective1
+    EChartOptionDirective1,
+    RoleTableComponent,
+    PermissionTableComponent
   ],
   imports: [
     CommonModule,
