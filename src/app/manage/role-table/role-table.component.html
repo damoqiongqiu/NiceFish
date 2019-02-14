@@ -1,0 +1,55 @@
+<div class="role-table-container" [@flyIn]="'active'">
+  <form class="form-vertical" role="form">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="角色名称，角色代码">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i>
+              搜索</button>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="input-group pull-right">
+          <button class="btn btn-primary" type="button" (click)="newRole()"><i class="fa fa-user"
+              aria-hidden="true"></i>
+            创建角色</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="role-item-container">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>序号</th>
+              <th>名称</th>
+              <th>拥有权限</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>系统管理员</td>
+              <td>ALL</td>
+              <td>
+                <a [routerLink]="['/manage/roletable/editrole',1]"><i class="fa fa-pencil-square-o"
+                    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:void(0);" (click)="blockRole(1)"><i class="fa fa-lock"
+                    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:void(0);" (click)="unBlockRole(1)"><i class="fa fa-unlock"
+                    aria-hidden="true"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p-paginator rows="5" totalRecords="20" first="0">
+      </p-paginator>
+    </div>
+  </div>
+</div>

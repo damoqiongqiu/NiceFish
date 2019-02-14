@@ -11,8 +11,9 @@
                 </div>
             </div>
             <div class="col-md-2">
-                <div class="input-group">
-                    <button class="btn btn-primary" type="button" (click)="newUser()"><i class="fa fa-user" aria-hidden="true"></i>
+                <div class="input-group pull-right">
+                    <button class="btn btn-primary" type="button" (click)="newUser()"><i class="fa fa-user"
+                            aria-hidden="true"></i>
                         创建用户</button>
                 </div>
             </div>
@@ -39,10 +40,11 @@
                             <td>2016-11-27 09:34</td>
                             <td>
                                 <a [routerLink]="['/manage/usertable/edituser',1]"><i class="fa fa-pencil-square-o"
-                                        aria-hidden="true"></i></a>
-                                <a href="javascript:void(0);" (click)="blockUser(1)"><i class="fa fa-lock" aria-hidden="true"></i></a>
+                                        aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="javascript:void(0);" (click)="blockUser(1)"><i class="fa fa-lock"
+                                        aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="javascript:void(0);" (click)="unBlockUser(1)"><i class="fa fa-unlock"
-                                        aria-hidden="true"></i></a>
+                                        aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="javascript:void(0);" (click)="resetPwd(1)"><i class="fa fa-user-secret"
                                         aria-hidden="true"></i></a>
                             </td>
