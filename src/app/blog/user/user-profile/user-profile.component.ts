@@ -67,4 +67,8 @@ export class UserProfileComponent implements OnInit {
     });
     return new FormGroup(group);
   }
+
+  public cancel(): void {
+    window.history.back();
+  }
 }
