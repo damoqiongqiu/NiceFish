@@ -36,8 +36,8 @@
     "@nguniversal/module-map-ngfactory-loader": "7.1.0",
     "@nguniversal/common": "7.1.0",
     "@nguniversal/express-engine": "7.1.0",
-    "@ckeditor/ckeditor5-angular": "^1.0.1",
-    "@ckeditor/ckeditor5-build-classic": "^11.2.0",
+    "@ckeditor/ckeditor5-angular": "1.0.1",
+    "@ckeditor/ckeditor5-build-classic": "11.2.0",
     "@ngx-translate/core": "11.0.0",
     "@ngx-translate/http-loader": "4.0.0",
     "bootstrap": "3.3.7",
@@ -82,6 +82,6 @@
     "tslint": "5.11.0",
     "typescript": "3.2.2",
     "webpack-cli": "3.2.1",
-    "webpack-bundle-analyzer": "^3.0.3"
+    "webpack-bundle-analyzer": "3.0.3"
   }
 }
