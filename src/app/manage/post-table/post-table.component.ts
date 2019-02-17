@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { flyIn } from '../../shared/animations/fly-in';
 import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSegment } from '@angular/router';
-import { PostTableService } from './services/post-table.service';
+import { PostTableService } from './post-table.service';
 
 @Component({
   selector: 'post-table',

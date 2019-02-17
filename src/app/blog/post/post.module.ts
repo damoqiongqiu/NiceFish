@@ -11,7 +11,7 @@ import { PostDetailMainComponent } from './post-detail-main/post-detail-main.com
 import { CommentListComponent } from '../comment-list/comment-list.component';
 
 import { CommentListService } from '../comment-list/comment-list.service';
-import { BooleanPipe } from '../../shared/boolean-pipe';
+import { BooleanPipe } from '../../shared/pipes/boolean-pipe';
 
 import { postRoutes } from './post.routes';
 

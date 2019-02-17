@@ -9,7 +9,7 @@ import { RoleTableComponent } from './role-table/role-table.component';
 import { RoleEditComponent } from './role-edit/role-edit.component';
 import { PermissionTableComponent } from './permission-table/permission-table.component';
 import { PermissionEditComponent } from './permission-edit/permission-edit.component';
-import { AuthGuard } from './auth-guard';
+import { AuthGuard } from '../shared/auth-guard';
 
 export const manageRoutes = [
 	{
@@ -19,13 +19,13 @@ export const manageRoutes = [
 		children: [
 			{ path: '', redirectTo: 'chart', pathMatch: 'full' },
 			{ path: 'chart', component: ChartComponent },
-			{ path: 'posttable/page/:page', component: PostTableComponent },
-			{ path: 'commenttable/page/:page', component: CommentTableComponent },
-			{ path: 'usertable/page/:page', component: UserTableComponent },
-			{ path: 'usertable/edituser/:userId', component: UserProfileComponent },
-			{ path: 'roletable/page/:page', component: RoleTableComponent },
+			{ path: 'post-table/page/:page', component: PostTableComponent },
+			{ path: 'comment-table/page/:page', component: CommentTableComponent },
+			{ path: 'user-table/page/:page', component: UserTableComponent },
+			{ path: 'user-table/edituser/:userId', component: UserProfileComponent },
+			{ path: 'role-table/page/:page', component: RoleTableComponent },
 			{ path: 'role-edit/:roleId', component: RoleEditComponent },
-			{ path: 'permissiontable/page/:page', component: PermissionTableComponent },
+			{ path: 'permission-table/page/:page', component: PermissionTableComponent },
 			{ path: 'permission-edit/:permissionId', component: PermissionEditComponent },
 			{ path: 'profile', component: UserProfileComponent },
 			{ path: 'sysparam', component: SysParamComponent },

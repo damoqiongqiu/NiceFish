@@ -16,8 +16,8 @@ import { SysParamComponent } from './sys-param/sys-param.component';
 import { ChartComponent } from './chart/chart.component';
 import { EChartOptionDirective1 } from './chart/echart-option.directive';
 
-import { PostTableService } from './post-table/services/post-table.service';
-import { AuthGuard } from './auth-guard';
+import { PostTableService } from './post-table/post-table.service';
+import { AuthGuard } from '../shared/auth-guard';
 
 import { manageRoutes } from './manage.routes';
 
