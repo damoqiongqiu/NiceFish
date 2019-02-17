@@ -16,4 +16,7 @@ export class SysParamComponent implements OnInit {
   ngOnInit() {
   }
 
+  public cancel(): void {
+    window.history.back();
+  }
 }

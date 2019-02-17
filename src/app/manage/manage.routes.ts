@@ -5,7 +5,6 @@ import { UserProfileComponent } from '../blog/user/user-profile/user-profile.com
 import { SysParamComponent } from './sys-param/sys-param.component';
 import { ChartComponent } from './chart/chart.component';
 import { UserTableComponent } from './user-table/user-table.component';
-import { UserEditComponent } from './user-edit/user-edit.component';
 import { RoleTableComponent } from './role-table/role-table.component';
 import { RoleEditComponent } from './role-edit/role-edit.component';
 import { PermissionTableComponent } from './permission-table/permission-table.component';

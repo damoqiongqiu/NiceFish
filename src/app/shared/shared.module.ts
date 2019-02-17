@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { PickListModule } from 'primeng/picklist';
 import { UserLoginComponent } from '../blog/user/user-login/user-login.component';
 import { UserInfoComponent } from '../blog/user/user-info/user-info.component';
 import { UserProfileComponent } from '../blog/user/user-profile/user-profile.component';
@@ -15,6 +16,7 @@ import { SanitizeHtmlPipe } from './sanitize-html-pipe';
     TranslateModule,
     CommonModule,
     FormsModule,
+    PickListModule,
     ReactiveFormsModule
   ],
   declarations: [
@@ -29,6 +31,7 @@ import { SanitizeHtmlPipe } from './sanitize-html-pipe';
     TranslateModule,
     CommonModule,
     FormsModule,
+    PickListModule,
     UserLoginComponent,
     UserInfoComponent,
     UserProfileComponent,

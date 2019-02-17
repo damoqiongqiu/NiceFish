@@ -3,13 +3,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
 
 import { PaginatorModule } from 'primeng/paginator';
-import { PickListModule } from 'primeng/picklist';
 import { SharedModule } from '../shared/shared.module';
 import { PostSharedModule } from '../shared/post.module';
 
 import { ManageMainComponent } from './manage-main/manage-main.component';
 import { UserTableComponent } from './user-table/user-table.component';
-import { UserEditComponent } from './user-edit/user-edit.component';
 import { RoleTableComponent } from './role-table/role-table.component';
 import { RoleEditComponent } from './role-edit/role-edit.component';
 import { PermissionTableComponent } from './permission-table/permission-table.component';
@@ -33,15 +31,13 @@ import { manageRoutes } from './manage.routes';
     RoleTableComponent,
     PermissionTableComponent,
     RoleEditComponent,
-    PermissionEditComponent,
-    UserEditComponent
+    PermissionEditComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     PostSharedModule,
     PaginatorModule,
-    PickListModule,
     RouterModule.forChild(manageRoutes)
   ],
   exports: [

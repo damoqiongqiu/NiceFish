@@ -16,8 +16,8 @@
         <div class="form-group">
           <label class="col-md-2 control-label">权限：</label>
           <div class="col-md-10">
-            <p-pickList [source]="srcList" [target]="selectedList" [responsive]="true" dragdrop="true" sourceHeader="可选权限"
-              targetHeader="已选权限">
+            <p-pickList [source]="srcList" [target]="selectedList" [responsive]="true" dragdrop="true"
+              sourceHeader="可选权限" targetHeader="现有权限">
               <ng-template let-permission pTemplate="item">
                 <div class="ui-helper-clearfix">
                   <div>{{permission.permissionName}}</div>

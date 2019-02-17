@@ -45,6 +45,19 @@
                     aria-hidden="true"></i></a>
               </td>
             </tr>
+            <tr>
+              <td>2</td>
+              <td>基础权限</td>
+              <td>阅读文章、发表文章、发表评论、删除评论、更新个人资料、修改自己密码</td>
+              <td>
+                <a [routerLink]="['/manage/role-edit',1]"><i class="fa fa-pencil-square-o"
+                    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:void(0);" (click)="blockRole(1)"><i class="fa fa-lock"
+                    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:void(0);" (click)="unBlockRole(1)"><i class="fa fa-unlock"
+                    aria-hidden="true"></i></a>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

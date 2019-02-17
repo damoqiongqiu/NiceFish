@@ -46,6 +46,25 @@ export class UserProfileComponent implements OnInit {
 
   public form: FormGroup;
 
+  public error: Error;
+
+  public srcList: any[] = [
+    {
+      roleId: '1',
+      roleName: '系统管理员'
+    },
+    {
+      roleId: '2',
+      roleName: '签约作者'
+    }
+  ];
+  public selectedList: any[] = [
+    {
+      roleId: '3',
+      roleName: '默认权限'
+    }
+  ];
+
   constructor(public router: Router,
     public activeRoute: ActivatedRoute) {
 
