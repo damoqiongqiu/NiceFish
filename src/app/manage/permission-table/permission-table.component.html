@@ -37,10 +37,18 @@
               <td>
                 <a [routerLink]="['/manage/permission-edit',1]"><i class="fa fa-pencil-square-o"
                     aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="javascript:void(0);" (click)="blockPermission(1)"><i class="fa fa-lock"
+                <a href="javascript:void(0);" (click)="delete(1)"><i class="fa fa-trash"
                     aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="javascript:void(0);" (click)="unBlockPermission(1)"><i class="fa fa-unlock"
-                    aria-hidden="true"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>删除文章</td>
+              <td>
+                <a [routerLink]="['/manage/permission-edit',1]"><i class="fa fa-pencil-square-o"
+                    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:void(0);" (click)="delete(1)"><i class="fa fa-trash"
+                    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
               </td>
             </tr>
           </tbody>
