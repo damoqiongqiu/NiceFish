@@ -103,7 +103,7 @@
         top: 50%;
         left: 50%;
         z-index: 88;
-        transform: translate(-50%, -50%) ;
+        transform: translate(-50%, -50%);
         perspective: 2000px;
       }
       .parent {
@@ -129,140 +129,149 @@
         top: 50%;
         left: 50%;
         z-index: 98;
-        transform: translate(-50%, -50%) ;
+        transform: translate(-50%, -50%);
       }
-      .parent>div>div{
-          position: absolute;
-          width:100px;
-          height:100px;
-          line-height: 100px;
-          background-color: #e4393c;
-          z-index: 99;
+      .parent > div > div {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        background-color: #e4393c;
+        z-index: 99;
       }
-      .parent > div > span{
-         position: absolute;
-         display: block;
-         z-index: 3;
-         top:calc(50% - 50px);
-         left:50%;
-         width:30px;
-         height: 100px;
-         transform-origin:50% 100%;
-
+      .parent > div > span {
+        position: absolute;
+        display: block;
+        z-index: 3;
+        top: calc(50% - 50px);
+        left: 50%;
+        width: 30px;
+        height: 100px;
+        transform-origin: 50% 100%;
       }
-      .parent > div > span:nth-child(2){
-         transform: translate(-50%, -50%) rotate(-45deg);
-         animation: bling2 1s infinite;
+      .parent > div > span:nth-child(2) {
+        transform: translate(-50%, -50%) rotate(-45deg);
+        animation: bling2 1s infinite;
       }
-      .parent > div > span:nth-child(3){
-         transform: translate(-50%, -50%) rotate(-30deg);
-         animation: bling1 1s infinite;
+      .parent > div > span:nth-child(3) {
+        transform: translate(-50%, -50%) rotate(-30deg);
+        animation: bling1 1s infinite;
       }
-      .parent > div > span:nth-child(4){
-         transform: translate(-50%, -50%)  rotate(-15deg);
-         animation: bling2 1s infinite;
+      .parent > div > span:nth-child(4) {
+        transform: translate(-50%, -50%) rotate(-15deg);
+        animation: bling2 1s infinite;
       }
-      .parent > div > span:nth-child(5){
-         transform: translate(-50%, -50%) rotate(0deg);
-         animation: bling1 1s infinite;
-
+      .parent > div > span:nth-child(5) {
+        transform: translate(-50%, -50%) rotate(0deg);
+        animation: bling1 1s infinite;
       }
-      .parent > div > span:nth-child(6){
-         transform: translate(-50%, -50%)  rotate(15deg);
-         animation: bling2 1s infinite;
+      .parent > div > span:nth-child(6) {
+        transform: translate(-50%, -50%) rotate(15deg);
+        animation: bling2 1s infinite;
       }
-      .parent > div > span:nth-child(7){
-         transform:translate(-50%, -50%)  rotate(30deg);
-         animation: bling1 1s infinite;
+      .parent > div > span:nth-child(7) {
+        transform: translate(-50%, -50%) rotate(30deg);
+        animation: bling1 1s infinite;
       }
-      .parent > div > span:nth-child(8){
-         transform:translate(-50%, -50%)  rotate(45deg);
-         animation: bling2 1s infinite;
+      .parent > div > span:nth-child(8) {
+        transform: translate(-50%, -50%) rotate(45deg);
+        animation: bling2 1s infinite;
       }
-      .parent >div:first-child{
-        transform: translate(-50%, -50%) rotatey(0deg) translatez(180px)
+      .parent > div:first-child {
+        transform: translate(-50%, -50%) rotatey(0deg) translatez(180px);
       }
-      .parent >div:nth-child(2){
-        transform: translate(-50%, -50%) rotatey(90deg) translatez(180px)
+      .parent > div:nth-child(2) {
+        transform: translate(-50%, -50%) rotatey(90deg) translatez(180px);
       }
-      .parent >div:nth-child(3){
-        transform: translate(-50%, -50%) rotatey(180deg) translatez(180px)
+      .parent > div:nth-child(3) {
+        transform: translate(-50%, -50%) rotatey(180deg) translatez(180px);
       }
-      .parent >div:nth-child(4){
-        transform: translate(-50%, -50%) rotatey(270deg) translatez(180px)
+      .parent > div:nth-child(4) {
+        transform: translate(-50%, -50%) rotatey(270deg) translatez(180px);
       }
-      @keyframes rotate{
-        0%{
-          transform: translate(-50%, -50%)  rotateX(-30deg) rotateY(0deg) scale(1)  ;
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(0deg)
+            scale(1);
           font-size: 24px;
         }
-        10%{
-          transform: translate(-50%, -50%)   rotateX(-30deg) rotateY(36deg) scale(1);
+        10% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(36deg)
+            scale(1);
           font-size: 24px;
         }
-        20%{
-          transform: translate(-50%, -50%)   rotateX(-30deg) rotateY(72deg) scale(1);
+        20% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(72deg)
+            scale(1);
           font-size: 24px;
         }
-        25%{
-          transform: translate(-50%, -50%)  rotateX(-30deg) rotateY(90deg) scale(1.2);
+        25% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(90deg)
+            scale(1);
           font-size: 99px;
         }
-        30%{
-          transform: translate(-50%, -50%)   rotateX(-30deg) rotateY(108deg) scale(1);
-          font-size: 24px;
-
-        }
-        40%{
-          transform: translate(-50%, -50%)  rotateX(-30deg) rotateY(144deg) scale(1);
+        30% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(108deg)
+            scale(1);
           font-size: 24px;
         }
-        50%{
-          transform: translate(-50%, -50%)   rotateX(-30deg) rotateY(180deg) scale(1.2);
+        40% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(148deg)
+            scale(1);
+          font-size: 24px;
+        }
+        50% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(180deg)
+            scale(1.2);
           font-size: 99px;
         }
-        60%{
-          transform: translate(-50%, -50%)   rotateX(-30deg) rotateY(216deg) scale(1);
+        60% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(216deg)
+            scale(1);
           font-size: 24px;
         }
-        70%{
-          transform: translate(-50%, -50%)   rotateX(-30deg) rotateY(252deg) scale(1);
+        70% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(252deg)
+            scale(1);
           font-size: 24px;
         }
-        75%{
-          transform: translate(-50%, -50%)   rotateX(-30deg) rotateY(270deg) scale(1.2);
+        75% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(270deg)
+            scale(1.2);
           font-size: 99px;
         }
-        80%{
-          transform: translate(-50%, -50%)   rotateX(-30deg) rotateY(288deg) scale(1);
+        80% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(288deg)
+            scale(1);
           font-size: 24px;
         }
-        90%{
-          transform: translate(-50%, -50%)   rotateX(-30deg) rotateY(324deg) scale(1)
+        90% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(324deg)
+            scale(1);
         }
-        100%{
-          transform: translate(-50%, -50%)   rotateX(-30deg) rotateY(360deg) scale(1.2);
+        100% {
+          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(360deg)
+            scale(1.2);
           font-size: 99px;
         }
       }
-      @keyframes bling1{
-        0%{
-
-          background-image: linear-gradient(90deg , #f8edc5 , #e6ad4f);
+      @keyframes bling1 {
+        0% {
+          background-image: linear-gradient(90deg, #f8edc5, #e6ad4f);
           box-shadow: 0px 0px 20px #f8edc5;
         }
-        100%{
-          background-image: linear-gradient(90deg , #fdf9d5 0%, #f3ec7e 50%);
+        100% {
+          background-image: linear-gradient(90deg, #fdf9d5 0%, #f3ec7e 50%);
           box-shadow: 0px 0px 20px #e6ad4f;
         }
       }
-      @keyframes bling2{
-        0%{
-          background-image: linear-gradient(90deg , #fdf9d5 0%, #f3ec7e 50%);
+      @keyframes bling2 {
+        0% {
+          background-image: linear-gradient(90deg, #fdf9d5 0%, #f3ec7e 50%);
           box-shadow: 0px 0px 20px #e6ad4f;
         }
-        100%{
-          background-image: linear-gradient(90deg , #f8edc5 , #e6ad4f);
+        100% {
+          background-image: linear-gradient(90deg, #f8edc5, #e6ad4f);
           box-shadow: 0px 0px 20px #f8edc5;
         }
       }
@@ -274,46 +283,46 @@
       <div class="splash-screen">
         <div class="stage">
           <div class="parent">
-              <div>
-                <div>大</div>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div>
-                <div>秋</div>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div>
-                <div>穷</div>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div>
-                  <div>漠</div>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-              </div>
+            <div>
+              <div>大</div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div>
+              <div>秋</div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div>
+              <div>穷</div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div>
+              <div>漠</div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
         <div class="splash-loader"></div>
