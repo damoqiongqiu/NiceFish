@@ -43,7 +43,7 @@ NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 
 ## 系列项目
 
-* NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 7.0 + PrimeNG 7.0.3。http://git.oschina.net/mumu-osc/NiceFish/
+* NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 7.0 + PrimeNG 7.1.0。http://git.oschina.net/mumu-osc/NiceFish/
 
 * nicefish-ionic：这是一个移动端的 demo，基于 ionic，此项目已支持 PWA。http://git.oschina.net/mumu-osc/nicefish-ionic
 
