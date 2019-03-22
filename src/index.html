@@ -1,333 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="renderer" content="webkit" />
-    <title>NiceFish</title>
-    <base href="/" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <style type="text/css">
-      /* Loading 动画 */
-      html,
-      body,
-      root {
-        height: 100%;
-        margin: 0;
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="renderer" content="webkit" />
+  <title>NiceFish</title>
+  <base href="/" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style type="text/css">
+    /* Loading 动画 */
+    html,
+    body,
+    root {
+      height: 100%;
+      margin: 0;
+    }
+
+    .splash-screen {
+      background-color: #303030;
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    .splash-logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+      margin-left: -25px;
+      margin-top: -25px;
+      z-index: 2;
+      text-align: center;
+      color: #ffffff;
+      line-height: 46px;
+      font-size: 32px;
+      display: block;
+    }
+
+    .splash-loader,
+    .splash-loader::before,
+    .splash-loader::after {
+      left: 50%;
+      top: 50%;
+      margin-left: -50px;
+      margin-top: -50px;
+      position: absolute;
+      vertical-align: middle;
+      background: #ff3300;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .splash-loader::before {
+      content: "";
+      animation: bounce 1.5s infinite;
+    }
+
+    .splash-loader::after {
+      content: "";
+      animation: bounce 1.5s -0.4s infinite;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        opacity: 1;
       }
 
-      .splash-screen {
-        background-color: #303030;
-        position: relative;
-        height: 100%;
-        width: 100%;
+      100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    @-webkit-keyframes bounce {
+      0% {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        opacity: 1;
       }
 
-      .splash-logo {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 50px;
-        height: 50px;
-        margin-left: -25px;
-        margin-top: -25px;
-        z-index: 2;
-        text-align: center;
-        color: #ffffff;
-        line-height: 46px;
-        font-size: 32px;
-        display: block;
+      100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        opacity: 0;
       }
+    }
+  </style>
+</head>
 
-      .splash-loader,
-      .splash-loader::before,
-      .splash-loader::after {
-        left: 50%;
-        top: 50%;
-        margin-left: -50px;
-        margin-top: -50px;
-        position: absolute;
-        vertical-align: middle;
-        background: #ff3300;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        z-index: 1;
-      }
+<body>
+  <root>
+    <div class="splash-screen">
+      <div class="splash-loader"></div>
+      <div class="splash-logo">魚</div>
+    </div>
+  </root>
+</body>
 
-      .splash-loader::before {
-        content: "";
-        animation: bounce 1.5s infinite;
-      }
-
-      .splash-loader::after {
-        content: "";
-        animation: bounce 1.5s -0.4s infinite;
-      }
-
-      @keyframes bounce {
-        0% {
-          transform: scale(0.8);
-          -webkit-transform: scale(0.8);
-          opacity: 1;
-        }
-
-        100% {
-          transform: scale(2);
-          -webkit-transform: scale(2);
-          opacity: 0;
-        }
-      }
-
-      @-webkit-keyframes bounce {
-        0% {
-          transform: scale(0.8);
-          -webkit-transform: scale(0.8);
-          opacity: 1;
-        }
-
-        100% {
-          transform: scale(2);
-          -webkit-transform: scale(2);
-          opacity: 0;
-        }
-      }
-      .stage {
-        width: 400px;
-        height: 400px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 88;
-        transform: translate(-50%, -50%);
-        perspective: 2000px;
-      }
-      .parent {
-        width: 100px;
-        height: 100px;
-        color: #fff;
-        position: absolute;
-        perspective: 2000px;
-        top: 50%;
-        left: 50%;
-        z-index: 99;
-        transform-style: preserve-3d;
-        transform: translate(-50%, -50%) rotateX(-30deg);
-        animation: rotate 5s linear infinite;
-      }
-      .parent > div {
-        width: 100px;
-        height: 100px;
-        text-align: center;
-        color: #fff;
-        position: absolute;
-        background-color: #e4393c;
-        top: 50%;
-        left: 50%;
-        z-index: 98;
-        transform: translate(-50%, -50%);
-      }
-      .parent > div > div {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
-        background-color: #e4393c;
-        z-index: 99;
-      }
-      .parent > div > span {
-        position: absolute;
-        display: block;
-        z-index: 3;
-        top: calc(50% - 50px);
-        left: 50%;
-        width: 30px;
-        height: 100px;
-        transform-origin: 50% 100%;
-      }
-      .parent > div > span:nth-child(2) {
-        transform: translate(-50%, -50%) rotate(-45deg);
-        animation: bling2 1s infinite;
-      }
-      .parent > div > span:nth-child(3) {
-        transform: translate(-50%, -50%) rotate(-30deg);
-        animation: bling1 1s infinite;
-      }
-      .parent > div > span:nth-child(4) {
-        transform: translate(-50%, -50%) rotate(-15deg);
-        animation: bling2 1s infinite;
-      }
-      .parent > div > span:nth-child(5) {
-        transform: translate(-50%, -50%) rotate(0deg);
-        animation: bling1 1s infinite;
-      }
-      .parent > div > span:nth-child(6) {
-        transform: translate(-50%, -50%) rotate(15deg);
-        animation: bling2 1s infinite;
-      }
-      .parent > div > span:nth-child(7) {
-        transform: translate(-50%, -50%) rotate(30deg);
-        animation: bling1 1s infinite;
-      }
-      .parent > div > span:nth-child(8) {
-        transform: translate(-50%, -50%) rotate(45deg);
-        animation: bling2 1s infinite;
-      }
-      .parent > div:first-child {
-        transform: translate(-50%, -50%) rotatey(0deg) translatez(180px);
-      }
-      .parent > div:nth-child(2) {
-        transform: translate(-50%, -50%) rotatey(90deg) translatez(180px);
-      }
-      .parent > div:nth-child(3) {
-        transform: translate(-50%, -50%) rotatey(180deg) translatez(180px);
-      }
-      .parent > div:nth-child(4) {
-        transform: translate(-50%, -50%) rotatey(270deg) translatez(180px);
-      }
-      @keyframes rotate {
-        0% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(0deg)
-            scale(1);
-          font-size: 24px;
-        }
-        10% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(36deg)
-            scale(1);
-          font-size: 24px;
-        }
-        20% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(72deg)
-            scale(1);
-          font-size: 24px;
-        }
-        25% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(90deg)
-            scale(1);
-          font-size: 99px;
-        }
-        30% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(108deg)
-            scale(1);
-          font-size: 24px;
-        }
-        40% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(148deg)
-            scale(1);
-          font-size: 24px;
-        }
-        50% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(180deg)
-            scale(1.2);
-          font-size: 99px;
-        }
-        60% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(216deg)
-            scale(1);
-          font-size: 24px;
-        }
-        70% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(252deg)
-            scale(1);
-          font-size: 24px;
-        }
-        75% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(270deg)
-            scale(1.2);
-          font-size: 99px;
-        }
-        80% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(288deg)
-            scale(1);
-          font-size: 24px;
-        }
-        90% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(324deg)
-            scale(1);
-        }
-        100% {
-          transform: translate(-50%, -50%) rotateX(-30deg) rotateY(360deg)
-            scale(1.2);
-          font-size: 99px;
-        }
-      }
-      @keyframes bling1 {
-        0% {
-          background-image: linear-gradient(90deg, #f8edc5, #e6ad4f);
-          box-shadow: 0px 0px 20px #f8edc5;
-        }
-        100% {
-          background-image: linear-gradient(90deg, #fdf9d5 0%, #f3ec7e 50%);
-          box-shadow: 0px 0px 20px #e6ad4f;
-        }
-      }
-      @keyframes bling2 {
-        0% {
-          background-image: linear-gradient(90deg, #fdf9d5 0%, #f3ec7e 50%);
-          box-shadow: 0px 0px 20px #e6ad4f;
-        }
-        100% {
-          background-image: linear-gradient(90deg, #f8edc5, #e6ad4f);
-          box-shadow: 0px 0px 20px #f8edc5;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <root>
-      <div class="splash-screen">
-        <div class="stage">
-          <div class="parent">
-            <div>
-              <div>大</div>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div>
-              <div>秋</div>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div>
-              <div>穷</div>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div>
-              <div>漠</div>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-        </div>
-        <div class="splash-loader"></div>
-        <div class="splash-logo">魚</div>
-      </div>
-    </root>
-  </body>
 </html>
