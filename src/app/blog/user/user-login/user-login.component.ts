@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
 import { UserLoginService } from './user-login.service';
 import { fadeIn } from '../../../shared/animations/fade-in';
@@ -37,7 +37,7 @@ export class UserLoginComponent implements OnInit {
 
   public doLogin(): void {
     console.log(this.user);
-    this.userLoginService.login(this.user);
+    this.userLoginService.login();
   }
 
   public doLogout(): void {

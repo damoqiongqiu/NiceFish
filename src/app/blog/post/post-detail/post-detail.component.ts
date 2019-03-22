@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../post.service';
 
 @Component({
@@ -18,13 +18,13 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit() {
     this.activeRoute.params.subscribe(
-      params => this.getPost(params["postId"])
+      params => this.getPost()
     );
   }
 
-  public getPost(id: number) {
+  public getPost() {
     this.postDetailService
-      .getPost(id)
+      .getPost()
       .subscribe(
         data => this.post = data,
         error => console.error(error)

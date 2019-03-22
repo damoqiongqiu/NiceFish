@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Observable, Subject } from 'rxjs';
 
 @Injectable()
@@ -15,7 +15,7 @@ export class UserRegisterService {
         return this.subject.asObservable();
     }
 
-    public register(user: any) {
+    public register() {
         return this.httpClient
             .get(this.userRegisterURL)
             .subscribe(
@@ -31,7 +31,7 @@ export class UserRegisterService {
             );
     }
 
-    public testEmail(email: string): Observable<any> {
+    public testEmail(): Observable<any> {
         return this.httpClient.get(this.testEmailURL);
     }
 }

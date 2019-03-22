@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http"
+import { HttpClient } from "@angular/common/http"
 
 @Injectable()
 export class UserLoginService {
@@ -14,7 +14,7 @@ export class UserLoginService {
     return this.subject.asObservable();
   }
 
-  public login(user: any) {
+  public login() {
     return this.httpClient
       .get(this.userLoginURL)
       .subscribe(

@@ -1,6 +1,6 @@
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { flyIn } from '../../../shared/animations/fly-in';
 
 @Component({

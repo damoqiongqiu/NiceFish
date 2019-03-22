@@ -1,6 +1,6 @@
-import { Component, HostListener, ElementRef, Renderer, ViewContainerRef } from '@angular/core';
+import { Component, ElementRef, Renderer } from '@angular/core';
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
-import { TranslateService, TranslateStore } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { UserLoginService } from './blog/user/user-login/user-login.service';
 import { UserRegisterService } from './blog/user/user-register/user-register.service';
 import { merge } from 'rxjs'

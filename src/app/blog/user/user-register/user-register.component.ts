@@ -96,7 +96,7 @@ export class UserRegisterComponent implements OnInit {
   doRegister() {
     if (this.userForm.valid) {
       this.userInfo = this.userForm.value;
-      this.userRegisterService.register(this.userInfo);
+      this.userRegisterService.register();
       this.router.navigateByUrl("home");
     } else {
       this.formErrors.formError = "存在不合法的输入项，请检查。";
@@ -106,7 +106,7 @@ export class UserRegisterComponent implements OnInit {
 
   testEmail() {
     let email = this.userForm.get("email").value;
-    this.userRegisterService.testEmail(email)
+    this.userRegisterService.testEmail()
       .subscribe(
         data => {
           console.log(data);

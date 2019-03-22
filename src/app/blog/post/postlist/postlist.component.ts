@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { ActivatedRoute, Router, Params } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map, filter } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { PostService } from '../post.service';
 
 @Component({
@@ -88,7 +87,7 @@ export class PostlistComponent implements OnInit {
 		this.activeRoute.params.subscribe(params => {
 			console.log(params);
 			this.currentPage = params.page;
-			this.loadData(this.searchText);
+			this.loadData();
 		});
 
 		this.searchTextStream
@@ -96,16 +95,16 @@ export class PostlistComponent implements OnInit {
 				debounceTime(500),
 				distinctUntilChanged()
 			)
-			.subscribe(searchText => {
+			.subscribe(() => {
 				console.log(this.searchText);
-				this.loadData(this.searchText)
+				this.loadData()
 			});
 	}
 
-	public loadData(searchText: string) {
+	public loadData() {
 		this.offset = (this.currentPage - 1) * this.itemsPerPage;
 		this.end = (this.currentPage) * this.itemsPerPage;
-		return this.postService.getPostList(searchText, this.currentPage).subscribe(
+		return this.postService.getPostList().subscribe(
 			res => {
 				this.postList = res["items"].slice(this.offset, this.end > this.totalRecords ? this.totalRecords : this.end);
 			},
@@ -119,7 +118,7 @@ export class PostlistComponent implements OnInit {
 		this.router.navigateByUrl("posts/page/" + temp);
 	}
 
-	public searchChanged($event): void {
+	public searchChanged(): void {
 		this.searchTextStream.next(this.searchText);
 	}
 }
