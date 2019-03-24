@@ -86,9 +86,9 @@ webpack-bundle-analyzer 使用方法：
 
 ## 线上交流
 
-<img src="/src/assets/imgs/qq-1.jpg" width="350"/>
+<img src="/src/assets/imgs/qq-1.jpg" width="250"/>
 
-<img src="/src/assets/imgs/wx-1.jpg" width="350"/>
+<img src="/src/assets/imgs/wx-1.jpg" width="250"/>
 
 ## 开源许可证
 
