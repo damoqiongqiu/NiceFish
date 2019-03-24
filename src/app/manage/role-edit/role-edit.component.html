@@ -4,7 +4,7 @@
       <h3 class="panel-title">编辑角色</h3>
     </div>
     <div class="panel-body">
-      <form #form="ngForm" (ngSubmit)="form.form.valid && doLogin()" novalidate class="form-horizontal" role="form">
+      <form #form="ngForm" (ngSubmit)="form.form.valid" novalidate class="form-horizontal" role="form">
         <div class="form-group" [ngClass]="{ 'has-error': form.submitted && !roleName.valid }">
           <label class="col-md-2 control-label">名称：</label>
           <div class="col-md-10">
