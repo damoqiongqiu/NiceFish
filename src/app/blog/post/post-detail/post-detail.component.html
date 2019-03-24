@@ -5,8 +5,20 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h3>{{ post.title }}</h3>
-			<p class="post-info">{{ post.author }} {{ post.postTime }} 点击：{{ post.readTimes }}
-				评论：{{ post.commentTimes }}</p>
+		</div>
+	</div>
+	<div class="row post-info">
+		<div class="col-md-3">
+			<span class="fa fa-user"></span>{{ post.author }}
+		</div>
+		<div class="col-md-3">
+			<span class="fa fa-clock-o"></span>{{ post.postTime }}
+		</div>
+		<div class="col-md-3">
+			<span class="fa fa-hand-pointer-o"></span>点击：{{ post.readTimes }}
+		</div>
+		<div class="col-md-3">
+			<span class="fa fa-comment"></span>评论：{{ post.commentTimes }}
 		</div>
 	</div>
 	<div class="row">
