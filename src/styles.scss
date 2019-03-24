@@ -1,19 +1,7 @@
-@import "assets/css/primeng-bootstrap-custom.scss";
 @import "assets/css/bootstrap-3.3.7-custom/css/bootstrap.min.css";
+@import "assets/css/primeng-bootstrap-custom.scss";
+@import "assets/css/primeng-theme/nova-light/theme.scss";
+@import "assets/css/index.scss";
 @import "~font-awesome/css/font-awesome.min.css";
 @import "~primeng/resources/primeng.min.css";
-@import "assets/theme/nova-light/theme.css";
 @import "~primeicons/primeicons.css";
-
-/* 一些自定义的全局样式 */
-* {
-    font-family: '微软雅黑', 'Microsoft YaHei', '宋体', Tahoma, Helvetica, Arial, sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-}
-
-body {
-    font-family: '微软雅黑', 'Microsoft YaHei', '宋体', Tahoma, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-}
