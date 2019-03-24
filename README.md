@@ -10,7 +10,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是全面示范前后端�
 
 ## 用法
 
-打开你的命令行终端，依次执行以下命令：
+打开终端，依次执行以下命令：
 
     git clone https://gitee.com/mumu-osc/NiceFish.git
     cd NiceFish
@@ -19,7 +19,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是全面示范前后端�
     cnpm i
     ng serve
 
-打开你的浏览器，访问http://localhost:4200/
+打开浏览器，访问http://localhost:4200/
 
 * 各种你懂的原因，中文开发者强烈建议使用 cnpm （淘宝发布的一款npm包装器，方便中文开发者避免一些神秘的问题）
 * 如果你想让加载的包更小，请使用：ng serve --prod
@@ -44,11 +44,9 @@ NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 ## 系列项目
 
 * NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 7.0 + PrimeNG 7.1.0。http://git.oschina.net/mumu-osc/NiceFish/
-
+* NiceFish-React：这是React版的实现，界面外观完全相同。采用React Hooks 16.8.3 版本，使用TypeScript、Ant Design组件库以及Bootstrap v4.2.1 开发。
 * nicefish-ionic：这是一个移动端的 demo，基于 ionic，此项目已支持 PWA。http://git.oschina.net/mumu-osc/nicefish-ionic
-
 * NiceBlogElectron：https://github.com/damoqiongqiu/NiceBlogElectron ,这是一个基于 Electron 的桌面端项目，把 NiceFish 用 Electron 打包成了一个桌面端运行的程序。这是由 ZTE 中兴通讯的前端道友提供的，我 fork 了一个，有几个 node 模块的版本号老要改，如果您正在研究如何利用 Electron 开发桌面端应用，请参考这个项目。
-
 * nicefish-spring-cloud: https://gitee.com/mumu-osc/nicefish-spring-cloud ， 这是NiceFish的服务端代码，基于SpringCloud。已经完成了一些基本的功能，如 SpringSecurity+OAuth2+JWT 实现SSO，文章、用户、评论等的分页查询等。如果你需要与这个后端代码进行对接，请检出本项目的 for-spring-cloud 分支。
 
 ## 打包分析
@@ -96,4 +94,3 @@ webpack-bundle-analyzer 使用方法：
 ## 开源许可证
 
 MIT
-
