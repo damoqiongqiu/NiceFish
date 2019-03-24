@@ -1,12 +1,16 @@
 <div class="post-detail-container">
+	<div class="img-container">
+		<img src="assets/imgs/headline.png" alt="光刻机">
+	</div>
 	<div class="row">
 		<div class="col-md-12">
 			<h3>{{ post.title }}</h3>
-			<p>{{ post.author }} {{ post.postTime }} 点击：{{ post.readTimes }} 评论：{{ post.commentTimes }}</p>
+			<p class="post-info">{{ post.author }} {{ post.postTime }} 点击：{{ post.readTimes }}
+				评论：{{ post.commentTimes }}</p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12" [innerHTML]="post.text | sanitizeHtml">
+		<div class="col-md-12 post-content" [innerHTML]="post.text | sanitizeHtml">
 		</div>
 	</div>
 </div>
