@@ -39,6 +39,14 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 - OpenWMS 在gitee上的演示地址：https://mumu-osc.gitee.io/openwms-frontend
 - NiceFish-ionic：https://damoqiongqiu.github.io/NiceFish-ionic/
 
+## 主要模块选型
+
+- Angular 7.x
+- PrimeNG 7.x
+- Bootstrap 3.3.7
+- Echarts 3.4.0
+- ckeditor5-angular
+
 ## 系列项目
 
 * NiceFish：美人鱼，这是一个微型 Blog 系统，前端基于 Angular 7.0 + PrimeNG 7.1.0。http://git.oschina.net/mumu-osc/NiceFish/
