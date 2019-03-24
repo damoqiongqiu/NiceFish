@@ -1,4 +1,4 @@
-$navbarBgColor:#3f4b57;
+$navbarBgColor:#04091e;
 $navbarBgHoverColor:#303d47;
 .main-nav {
     background: $navbarBgColor;
@@ -6,29 +6,26 @@ $navbarBgHoverColor:#303d47;
     min-height: 50px;
     padding: 0;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
-
     .navbar-toggle {
         .icon-bar {
             background-color: #fff;
         }
     }
-
-    .navbar-collapse{
+    .navbar-collapse {
         background: $navbarBgColor;
-        li > a {
+        li>a {
             color: #fff;
         }
         li.active,
-        li > a:hover,
-        li > a:focus,
-        .open > a,
-        .open > a:hover,
-        .open > a:focus {
+        li>a:hover,
+        li>a:focus,
+        .open>a,
+        .open>a:hover,
+        .open>a:focus {
             color: #fff;
             background-color: $navbarBgHoverColor;
         }
     }
-
     .navbar-brand-my {
         color: #fff;
         line-height: 50px;

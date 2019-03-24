@@ -1,30 +1,38 @@
-$textColor:#666;
+$textColor:#777;
+$postListContainerBgColor:#ecf0f1;
 .post-list-container {
+    background-color: #ffffff;
+    padding: 20px;
     .post-item-container {
         margin: 0 0 30px 0;
+        background-color: #ffffff;
         h3 {
             font-size: 18px;
-            margin: 0px;
-            padding-bottom: 5px;
+            margin: 5px 0px;
+            font-weight: 600;
         }
         .user-name-intitle {
             font-size: 12px;
-            color: #999;
+            color: #777;
             padding-bottom: 5px;
         }
-        .abs{
+        .abs {
             line-height: 18px;
             color: $textColor;
-            font-size: small;
-            // max-height: 80px;
+            font-size: small; // max-height: 80px;
             padding-bottom: 5px;
             white-space: nowrap;
             overflow: hidden;
-            white-space: pre-wrap;      /* CSS3 */
-            white-space: -moz-pre-wrap; /* Firefox */
-            white-space: -pre-wrap;     /* Opera <7 */
-            white-space: -o-pre-wrap;   /* Opera 7 */
-            word-wrap: break-word;      /* IE */
+            white-space: pre-wrap;
+            /* CSS3 */
+            white-space: -moz-pre-wrap;
+            /* Firefox */
+            white-space: -pre-wrap;
+            /* Opera <7 */
+            white-space: -o-pre-wrap;
+            /* Opera 7 */
+            word-wrap: break-word;
+            /* IE */
         }
     }
 }

@@ -1,11 +1,12 @@
-/*
- @create by hbxyxuxixiaodong
-  bootstrap样式重置
+/**
+@create by hbxyxuxixiaodong，bootstrap样式重置
 */
 
-$buttonBgColor: #39b9c6;
-$buttonHoverBgColor: #07a0a0;
-$buttondefaultBgColor: #3f4b57;
+$buttonPrimaryBgColor:#f6214b;
+$buttonPrimaryHoverColor:#f6214b;
+$buttonBgColor: #04091e;
+$buttonHoverBgColor: #303d47;
+$buttondefaultBgColor: #04091e;
 $buttondefaultHoverBgColor: #303d47;
 $checkboxBorderColor:#757575;
 $buttonTextColor: #fff;
@@ -34,19 +35,19 @@ $textColor:#666;
 }
 
 .btn.btn-primary {
-    background-color: $buttonBgColor;
-    border-color: $buttonBgColor;
+    background-color: $buttonPrimaryBgColor;
+    border-color: $buttonPrimaryBgColor;
     &:focus {
         outline: 0;
     }
     &:hover {
-        background-color: $buttonHoverBgColor;
-        border-color: $buttonHoverBgColor;
+        background-color: $buttonPrimaryBgColor;
+        border-color: $buttonPrimaryBgColor;
     }
     &:active {
         outline: none;
-        background-color: darken($buttonHoverBgColor, 5%);
-        border-color: darken($buttonHoverBgColor, 5%);
+        background-color: darken($buttonPrimaryBgColor, 5%);
+        border-color: darken($buttonPrimaryBgColor, 5%);
     }
 }
 
@@ -106,7 +107,7 @@ a {
 }
 
 //primeng and customtable style
-$linkColor:#39b9c6;
+$linkColor:#f6214b;
 $linkHoverBgColor:#e8e8e8;
 @mixin text-center {
     text-align: center;

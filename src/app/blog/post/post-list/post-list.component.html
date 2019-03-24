@@ -2,20 +2,27 @@
     <div class="row">
         <div class="col-md-12">
             <div class="post-item-container" *ngFor="let post of postList">
-                <h3>
-                    <a [routerLink]="['/post/post-detail',post.postId]">{{post.title}}</a>
-                </h3>
-                <div class="user-name-intitle">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <span>{{post.nickName}}</span>
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="assets/imgs/img-alt.png" alt="..." class="img-thumbnail">
+                    </div>
+                    <div class="col-md-10">
+                        <h3>
+                            <a [routerLink]="['/post/post-detail',post.postId]">{{post.title}}</a>
+                        </h3>
+                        <div class="user-name-intitle">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <span>{{post.nickName}}</span>
+                                </div>
+                                <div class="col-md-3">
+                                    <span>{{post.time}}</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-3">
-                            <span>{{post.time}}</span>
-                        </div>
+                        <div class="abs">{{post.content | slice:0:140 | trim}}...</div>
                     </div>
                 </div>
-                <div class="abs">{{post.content | slice:0:140 | trim}}...</div>
             </div>
             <p-paginator rows="{{itemsPerPage}}" totalRecords="{{totalRecords}}" first="{{offset}}" pageLinkSize="3"
                 (onPageChange)="pageChanged($event)">

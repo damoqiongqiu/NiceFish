@@ -10,4 +10,9 @@ body {
     font-family: '微软雅黑', 'Microsoft YaHei', '宋体', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
+    background-color: #ecf0f1;
+    ::selection {
+        background-color: #f6214b;
+        color: #fff;
+    }
 }
