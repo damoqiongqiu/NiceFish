@@ -6,10 +6,10 @@ import { PostService } from '../post.service';
 
 @Component({
 	selector: 'postlist',
-	templateUrl: './postlist.component.html',
-	styleUrls: ['./postlist.component.scss']
+	templateUrl: './post-list.component.html',
+	styleUrls: ['./post-list.component.scss']
 })
-export class PostlistComponent implements OnInit {
+export class PostListComponent implements OnInit {
 	public itemsPerPage: number = 10;
 	public totalRecords: number = 11;
 	public currentPage: number = 1;
