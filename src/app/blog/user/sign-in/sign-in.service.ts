@@ -3,7 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { HttpClient } from "@angular/common/http"
 
 @Injectable()
-export class UserLoginService {
+export class SignInService {
   public userLoginURL = 'mock-data/user-login-mock.json';
   public subject: Subject<any> = new Subject<any>();
 

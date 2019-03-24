@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { PickListModule } from 'primeng/picklist';
-import { UserLoginComponent } from '../blog/user/user-login/user-login.component';
+import { SignInComponent } from '../blog/user/sign-in/sign-in.component';
 import { UserInfoComponent } from '../blog/user/user-info/user-info.component';
 import { UserProfileComponent } from '../blog/user/user-profile/user-profile.component';
 import { FormControlComponent } from '../blog/user/user-profile/dynamic-form/form-control.component';
@@ -20,7 +20,7 @@ import { SanitizeHtmlPipe } from './pipes/sanitize-html-pipe';
     ReactiveFormsModule
   ],
   declarations: [
-    UserLoginComponent,
+    SignInComponent,
     UserInfoComponent,
     UserProfileComponent,
     FormControlComponent,
@@ -32,7 +32,7 @@ import { SanitizeHtmlPipe } from './pipes/sanitize-html-pipe';
     CommonModule,
     FormsModule,
     PickListModule,
-    UserLoginComponent,
+    SignInComponent,
     UserInfoComponent,
     UserProfileComponent,
     TrimStringPipe,

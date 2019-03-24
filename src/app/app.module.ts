@@ -11,12 +11,12 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
-import { UserLoginService } from './blog/user/user-login/user-login.service';
+import { SignInService } from './blog/user/sign-in/sign-in.service';
 import { RetrievePwdComponent } from './blog/user/retrieve-pwd/retrieve-pwd.component';
-import { UserRegisterComponent } from './blog/user/user-register/user-register.component';
-import { UserRegisterService } from './blog/user/user-register/user-register.service';
+import { SignUpComponent } from './blog/user/sign-up/sign-up.component';
+import { SignUpService } from './blog/user/sign-up/sign-up.service';
 import { RetrievePwdService } from './blog/user/retrieve-pwd/retrieve-pwd.service';
-import { EqualValidator } from './blog/user/user-register/directives/equal-validator.directive';
+import { EqualValidator } from './blog/user/sign-up/directives/equal-validator.directive';
 import { appRoutes } from './app.routes';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -27,7 +27,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     RetrievePwdComponent,
-    UserRegisterComponent,
+    SignUpComponent,
     EqualValidator
   ],
   imports: [
@@ -50,8 +50,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [
     TranslateService,
     TranslateStore,
-    UserLoginService,
-    UserRegisterService,
+    SignInService,
+    SignUpService,
     RetrievePwdService,
     MessageService
   ],

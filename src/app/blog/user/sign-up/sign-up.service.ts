@@ -3,8 +3,8 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, Subject } from 'rxjs';
 
 @Injectable()
-export class UserRegisterService {
-    public userRegisterURL = "mock-data/user-register-mock.json";
+export class SignUpService {
+    public signUpURL = "mock-data/user-register-mock.json";
     public testEmailURL = "";
     public subject: Subject<any> = new Subject<any>();
 
@@ -17,7 +17,7 @@ export class UserRegisterService {
 
     public register() {
         return this.httpClient
-            .get(this.userRegisterURL)
+            .get(this.signUpURL)
             .subscribe(
                 data => {
                     console.log("用户信息>" + data);

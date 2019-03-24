@@ -1,28 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
-import { UserLoginService } from './user-login.service';
+import { SignInService } from './sign-in.service';
 import { fadeIn } from '../../../shared/animations/fade-in';
 
 @Component({
-  selector: 'user-login',
-  templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.scss'],
+  selector: 'sign-in',
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.scss'],
   animations: [fadeIn]
 })
-export class UserLoginComponent implements OnInit {
+export class SignInComponent implements OnInit {
   public user: any = {};
   public error: Error;
 
   constructor(
     public router: Router,
     public activatedRoute: ActivatedRoute,
-    public userLoginService: UserLoginService
+    public signInService: SignInService
   ) {
-    console.log(this.userLoginService);
+    console.log(this.signInService);
   }
 
   ngOnInit() {
-    console.log("--- user-login-component ---");
+    console.log("--- sign-in-component ---");
     console.log(this.router);
     console.log(this.activatedRoute);
 
@@ -37,11 +37,11 @@ export class UserLoginComponent implements OnInit {
 
   public doLogin(): void {
     console.log(this.user);
-    this.userLoginService.login();
+    this.signInService.login();
   }
 
   public doLogout(): void {
-    this.userLoginService.logout();
+    this.signInService.logout();
     this.router.navigateByUrl("home");
   }
 

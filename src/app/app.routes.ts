@@ -1,6 +1,6 @@
-import { UserLoginComponent } from './blog/user/user-login/user-login.component';
+import { SignInComponent } from './blog/user/sign-in/sign-in.component';
 import { RetrievePwdComponent } from './blog/user/retrieve-pwd/retrieve-pwd.component';
-import { UserRegisterComponent } from './blog/user/user-register/user-register.component';
+import { SignUpComponent } from './blog/user/sign-up/sign-up.component';
 
 export const appRoutes = [
 	{
@@ -22,7 +22,7 @@ export const appRoutes = [
 	},
 	{
 		path: 'login',
-		component: UserLoginComponent
+		component: SignInComponent
 	},
 	{
 		path: 'retrievepwd',
@@ -30,7 +30,7 @@ export const appRoutes = [
 	},
 	{
 		path: 'register',
-		component: UserRegisterComponent
+		component: SignUpComponent
 	},
 	{
 		path: 'user',

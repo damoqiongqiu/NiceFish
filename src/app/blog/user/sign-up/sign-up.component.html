@@ -8,7 +8,8 @@
                 <div class="form-group" [ngClass]="{'has-error': formErrors.email }">
                     <label class="col-md-3 control-label">{{'userSignUp.email' | translate}}</label>
                     <div class="col-md-8">
-                        <input formControlName="email" type="email" class="form-control" placeholder="{{'userSignUp.email-placeholder' | translate}}">
+                        <input formControlName="email" type="email" class="form-control"
+                            placeholder="{{'userSignUp.email-placeholder' | translate}}">
                         <div *ngIf="formErrors.email" class="text-danger">
                             {{ formErrors.email }}
                         </div>
@@ -27,17 +28,19 @@
                 <div class="form-group" [ngClass]="{'has-error': formErrors.confirmPassword }">
                     <label class="col-md-3 control-label">{{'userSignUp.repeat-pwd' | translate}}</label>
                     <div class="col-md-8">
-                        <input formControlName="confirmPassword" validateEqual="password" type="password" class="form-control"
-                            placeholder="{{'userSignUp.repeat-pwd-placeholder' | translate}}">
+                        <input formControlName="confirmPassword" validateEqual="password" type="password"
+                            class="form-control" placeholder="{{'userSignUp.repeat-pwd-placeholder' | translate}}">
                         <div *ngIf="formErrors.confirmPassword" class="text-danger">
                             {{ formErrors.confirmPassword }}
                         </div>
                     </div>
                 </div>
-                <div *ngIf="formErrors.formError" class="col-md-offset-3 col-md-8 alert alert-danger">{{ formErrors.formError }}</div>
+                <div *ngIf="formErrors.formError" class="col-md-offset-3 col-md-8 alert alert-danger">
+                    {{ formErrors.formError }}</div>
                 <div class="form-group">
                     <div class="col-md-offset-3 col-md-8">
-                        <button [disabled]="userForm.invalid" type="submit" class="btn btn-primary">{{'userSignUp.signUp' | translate}}</button>
+                        <button [disabled]="userForm.invalid" type="submit"
+                            class="btn btn-primary">{{'userSignUp.signUp' | translate}}</button>
                     </div>
                 </div>
             </form>

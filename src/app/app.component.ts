@@ -1,8 +1,8 @@
 import { Component, ElementRef, Renderer } from '@angular/core';
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { UserLoginService } from './blog/user/user-login/user-login.service';
-import { UserRegisterService } from './blog/user/user-register/user-register.service';
+import { SignInService } from './blog/user/sign-in/sign-in.service';
+import { SignUpService } from './blog/user/sign-up/sign-up.service';
 import { merge } from 'rxjs'
 import { MessageService } from 'primeng/api';
 
@@ -22,8 +22,8 @@ export class AppComponent {
 		public router: Router,
 		public activatedRoute: ActivatedRoute,
 		public translate: TranslateService,
-		public userLoginService: UserLoginService,
-		public userRegisterService: UserRegisterService,
+		public signInService: SignInService,
+		public signUpService: SignUpService,
 		private messageService: MessageService
 	) {
 
@@ -36,7 +36,7 @@ export class AppComponent {
 
 		this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-		merge(this.userLoginService.currentUser, this.userRegisterService.currentUser)
+		merge(this.signInService.currentUser, this.signUpService.currentUser)
 			.subscribe(
 				data => {
 					this.currentUser = data;
@@ -76,7 +76,7 @@ export class AppComponent {
 
 	public doLogout(): void {
 		this.showToggleMenu = false;
-		this.userLoginService.logout();
+		this.signInService.logout();
 		this.messageService.add({ severity: 'success', summary: 'Success Message', detail: '退出成功', life: 500 });
 		this.router.navigateByUrl("");
 	}

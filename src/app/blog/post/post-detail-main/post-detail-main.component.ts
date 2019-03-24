@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
 import { flyIn } from '../../../shared/animations/fly-in';
-import { UserLoginService } from '../../user/user-login/user-login.service';
+import { SignInService } from '../../user/sign-in/sign-in.service';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -18,12 +18,12 @@ export class PostDetailMainComponent implements OnInit {
   constructor(
     public router: Router,
     public activatedRoute: ActivatedRoute,
-    public userLoginService: UserLoginService) {
+    public signInService: SignInService) {
 
   }
 
   ngOnInit() {
-    this.subscription = this.userLoginService.currentUser
+    this.subscription = this.signInService.currentUser
       .subscribe(
         data => {
           let activatedRouteSnapshot: ActivatedRouteSnapshot = this.activatedRoute.snapshot;
