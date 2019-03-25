@@ -36,14 +36,6 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 * 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
 How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有。
 
-## 在线演示
-
-- NiceFish 在阿里云上的演示地址: http://47.104.13.149:4200
-- NiceFish-React 在gitee上的演示地址：https://mumu-osc.gitee.io/nicefish-react
-- NiceFish-ionic 在github上的演示地址：https://damoqiongqiu.github.io/NiceFish-ionic/
-- OpenWMS 在gitee上的演示地址：https://mumu-osc.gitee.io/openwms-frontend
-- OpenWMS 在阿里云上的演示地址：http://47.104.80.251:4200
-
 ## 主要依赖
 
 - Angular 7.2
@@ -52,6 +44,14 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 - Echarts 3.4.0
 - ckeditor5-angular 1.0
 
+## 在线演示
+
+- NiceFish 在阿里云上的演示地址: http://47.104.13.149:4200
+- NiceFish-React 在gitee上的演示地址：https://mumu-osc.gitee.io/nicefish-react
+- NiceFish-ionic 在github上的演示地址：https://damoqiongqiu.github.io/NiceFish-ionic/
+- OpenWMS 在gitee上的演示地址：https://mumu-osc.gitee.io/openwms-frontend
+- OpenWMS 在阿里云上的演示地址：http://47.104.80.251:4200
+
 ## 系列项目
 
 * NiceFish：美人鱼，这是 Angular 版本的实现，前端基于 Angular 7.2 + PrimeNG 7.1.0。http://git.oschina.net/mumu-osc/NiceFish/
@@ -59,6 +59,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 * nicefish-ionic：这是一个移动端的 demo，基于 ionic，此项目已支持 PWA。http://git.oschina.net/mumu-osc/nicefish-ionic
 * NiceBlogElectron：这是一个基于 Electron 的桌面端项目，把 NiceFish 用 Electron 打包成了一个桌面端运行的程序。这是由 ZTE 中兴通讯的前端道友提供的，我 fork 了一个，有几个 node 模块的版本号老要改，如果您正在研究如何利用 Electron 开发桌面端应用，请参考这个项目，https://github.com/damoqiongqiu/NiceBlogElectron。
 * nicefish-spring-cloud: https://gitee.com/mumu-osc/nicefish-spring-cloud ， 这是NiceFish的服务端代码，基于SpringCloud。已经完成了一些基本的功能，如 SpringSecurity+OAuth2+JWT 实现SSO，文章、用户、评论等的分页查询等。如果你需要与这个后端代码进行对接，请检出本项目的 for-spring-cloud 分支。
+* OpenWMS：用来示范管理后台型系统的最佳实践，https://gitee.com/mumu-osc/OpenWMS-Frontend 。
 
 ## 界面截图
 
