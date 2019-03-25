@@ -92,6 +92,7 @@ webpack-bundle-analyzer 使用方法：
 - Angular开发者论坛在这里：http://www.ngfans.net/ 。
 - 免费视频教程在这里【有点老但是还能用】：https://www.youtube.com/channel/UC6cY3GTGIk4-ahaIRj7Bk-Q?view_as=subscriber
 - 更详尽的图文教程，用微信扫二维码：
+  
   <img src="/src/assets/imgs/qr-code.png"/>
 
 ## 线上交流
