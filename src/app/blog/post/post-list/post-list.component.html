@@ -5,9 +5,9 @@
             <div class="post-item-container" *ngFor="let post of postList">
                 <div class="row">
                     <div class="col-md-2">
-                        <img src="assets/imgs/img-alt.png" alt="..." class="img-thumbnail">
+                        <img src="assets/imgs/2.jpg" alt="..." class="img-thumbnail">
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-10 post-item-text-container">
                         <h3>
                             <a [routerLink]="['/post/post-detail',post.postId]">{{post.title}}</a>
                         </h3>
