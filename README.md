@@ -4,11 +4,6 @@
 
 <h1 align="center">NiceFish</h1>
 
-[![star](https://gitee.com/mumu-osc/NiceFish/badge/star.svg?theme=gray)](https://gitee.com/mumu-osc/NiceFish/stargazers)
-
-[![fork](https://gitee.com/mumu-osc/NiceFish/badge/fork.svg?theme=gray)](https://gitee.com/mumu-osc/NiceFish/members)
-
-
 <div align="left">
 NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离的开发模式:前端浏览器、移动端、Electron 环境中的各种开发模式；后端有两个版本：SpringBoot 版本和 SpringCloud 版本。
 </div>
@@ -104,3 +99,5 @@ webpack-bundle-analyzer 使用方法：
 ## 开源许可证
 
 MIT
+
+（你可以随意使用此项目，不需要提前告知我，除非你需要其它服务。）
