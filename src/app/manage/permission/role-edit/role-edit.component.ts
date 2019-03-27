@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { flyIn } from '../../shared/animations/fly-in';
-import { fadeIn } from '../../shared/animations/fade-in';
+import { flyIn } from '../../../shared/animations/fly-in';
+import { fadeIn } from '../../../shared/animations/fade-in';
 
 @Component({
   selector: 'role-edit',
