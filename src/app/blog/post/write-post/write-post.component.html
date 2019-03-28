@@ -8,7 +8,7 @@
                 <div class="form-group">
                     <ckeditor [(ngModel)]="content" [editor]="Editor" name="content"></ckeditor>
                 </div>
-                <button type="button" class="btn btn-primary" (click)="doAddPost()">提交</button>
+                <button type="button" class="btn btn-primary" (click)="doAddPost()">{{'submit'|translate}}</button>
             </form>
         </div>
     </div>

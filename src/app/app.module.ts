@@ -16,7 +16,7 @@ import { RetrievePwdComponent } from './blog/user/retrieve-pwd/retrieve-pwd.comp
 import { SignUpComponent } from './blog/user/sign-up/sign-up.component';
 import { SignUpService } from './blog/user/sign-up/sign-up.service';
 import { RetrievePwdService } from './blog/user/retrieve-pwd/retrieve-pwd.service';
-import { EqualValidator } from './blog/user/sign-up/directives/equal-validator.directive';
+import { EqualValidator } from './blog/user/sign-up/equal-validator.directive';
 import { appRoutes } from './app.routes';
 
 export function HttpLoaderFactory(http: HttpClient) {

@@ -40,5 +40,8 @@
     "firstPage": "First",
     "lastPage": "Last",
     "previousPage": "Previous",
-    "nextPage": "Next"
+    "nextPage": "Next",
+    "click": "Click",
+    "comment": "Comment",
+    "authorInfo": "Author Info"
 }

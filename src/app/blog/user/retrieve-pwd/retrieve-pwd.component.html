@@ -4,8 +4,8 @@
             <h3 class="panel-title">找回密码</h3>
         </div>
         <div class="panel-body">
-            <form *ngIf="!message" class="form-horizontal" #form="ngForm" (ngSubmit)="form.form.valid && sendValidationEmail()"
-                role="form" novalidate>
+            <form *ngIf="!message" class="form-horizontal" #form="ngForm"
+                (ngSubmit)="form.form.valid && sendValidationEmail()" role="form" novalidate>
                 <div class="form-group" [ngClass]="{'has-error': form.submitted && !email.valid}">
                     <label class="col-md-2 control-label">邮箱：</label>
                     <div class="col-md-10">
