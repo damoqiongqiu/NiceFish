@@ -1,8 +1,8 @@
-import { WritePostComponent } from '../write-post/write-post.component';
+import { WritePostComponent } from "../write-post/write-post.component";
 
 export const writePostRoutes = [
     {
-        path: '',
+        path: "",
         component: WritePostComponent
     }
 ];

@@ -1,13 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, Input } from "@angular/core";
+import { FormControl, FormGroup } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
 
-import { FieldBase, Textbox, TextArea, Image } from './dynamic-form/form-field';
+import { FieldBase, Textbox, TextArea, Image } from "./dynamic-form/form-field";
 
 @Component({
-  selector: 'user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.scss']
+  selector: "user-profile",
+  templateUrl: "./user-profile.component.html",
+  styleUrls: ["./user-profile.component.scss"]
 })
 export class UserProfileComponent implements OnInit {
   @Input() fields: FieldBase<any>[] = [
@@ -50,18 +50,18 @@ export class UserProfileComponent implements OnInit {
 
   public srcList: any[] = [
     {
-      roleId: '1',
-      roleName: '系统管理员'
+      roleId: "1",
+      roleName: "系统管理员"
     },
     {
-      roleId: '2',
-      roleName: '签约作者'
+      roleId: "2",
+      roleName: "签约作者"
     }
   ];
   public selectedList: any[] = [
     {
-      roleId: '3',
-      roleName: '默认权限'
+      roleId: "3",
+      roleName: "默认权限"
     }
   ];
 
@@ -82,7 +82,7 @@ export class UserProfileComponent implements OnInit {
     let group: any = {};
 
     fields.forEach(field => {
-      group[field.key] = new FormControl(field.value || '');
+      group[field.key] = new FormControl(field.value || "");
     });
     return new FormGroup(group);
   }

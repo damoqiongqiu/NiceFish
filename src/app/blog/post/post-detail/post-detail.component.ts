@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { PostService } from '../post.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { PostService } from "../post.service";
 
 @Component({
-  selector: 'post-detail',
-  templateUrl: './post-detail.component.html',
-  styleUrls: ['./post-detail.component.scss']
+  selector: "post-detail",
+  templateUrl: "./post-detail.component.html",
+  styleUrls: ["./post-detail.component.scss"]
 })
 export class PostDetailComponent implements OnInit {
   public post: any = {};

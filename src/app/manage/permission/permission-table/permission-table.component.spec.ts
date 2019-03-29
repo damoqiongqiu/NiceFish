@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { PermissionTableComponent } from './permission-table.component';
+import { PermissionTableComponent } from "./permission-table.component";
 
-describe('PermissionTableComponent', () => {
+describe("PermissionTableComponent", () => {
   let component: PermissionTableComponent;
   let fixture: ComponentFixture<PermissionTableComponent>;
 
@@ -19,7 +19,7 @@ describe('PermissionTableComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

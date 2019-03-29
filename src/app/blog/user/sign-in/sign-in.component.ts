@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
-import { SignInService } from './sign-in.service';
-import { fadeIn } from '../../../shared/animations/fade-in';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from "@angular/router";
+import { SignInService } from "./sign-in.service";
+import { fadeIn } from "../../../shared/animations/fade-in";
 
 @Component({
-  selector: 'sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss'],
+  selector: "sign-in",
+  templateUrl: "./sign-in.component.html",
+  styleUrls: ["./sign-in.component.scss"],
   animations: [fadeIn]
 })
 export class SignInComponent implements OnInit {

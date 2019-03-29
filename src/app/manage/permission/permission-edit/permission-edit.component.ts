@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { flyIn } from '../../../shared/animations/fly-in';
-import { fadeIn } from '../../../shared/animations/fade-in';
+import { Component, OnInit } from "@angular/core";
+import { flyIn } from "../../../shared/animations/fly-in";
+import { fadeIn } from "../../../shared/animations/fade-in";
 
 @Component({
-  selector: 'permission-edit',
-  templateUrl: './permission-edit.component.html',
-  styleUrls: ['./permission-edit.component.scss'],
+  selector: "permission-edit",
+  templateUrl: "./permission-edit.component.html",
+  styleUrls: ["./permission-edit.component.scss"],
   animations: [flyIn, fadeIn]
 })
 export class PermissionEditComponent implements OnInit {

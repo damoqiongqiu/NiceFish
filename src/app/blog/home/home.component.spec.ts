@@ -1,14 +1,10 @@
-import { async, inject, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { HomeComponent } from './home.component';
-import { OnlineContactComponent } from './online-contact/online-contact.component';
-import { SharedModule } from '../../shared/shared.module';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { HomeComponent } from "./home.component";
+import { SharedModule } from "../../shared/shared.module";
 
-import { homeRoutes } from './home.routes';
 
-describe('Component: Home', () => {
+describe("Component: Home", () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
@@ -31,7 +27,7 @@ describe('Component: Home', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

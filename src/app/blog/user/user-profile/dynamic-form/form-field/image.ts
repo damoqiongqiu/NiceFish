@@ -1,10 +1,10 @@
-import { FieldBase } from './field-base';
+import { FieldBase } from "./field-base";
 
 export class Image extends FieldBase<string> {
-  controlType = 'image';
+  controlType = "image";
   src: string;
   constructor(options: {} = {}) {
     super(options);
-    this.src = options['src'] || '';
+    this.src = options["src"] || "";
   }
 }

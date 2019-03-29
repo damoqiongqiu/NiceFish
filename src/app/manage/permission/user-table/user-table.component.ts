@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { flyIn } from '../../../shared/animations/fly-in';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { flyIn } from "../../../shared/animations/fly-in";
 
 @Component({
-  selector: 'user-table',
-  templateUrl: './user-table.component.html',
-  styleUrls: ['./user-table.component.scss'],
+  selector: "user-table",
+  templateUrl: "./user-table.component.html",
+  styleUrls: ["./user-table.component.scss"],
   animations: [
     flyIn
   ]
 })
 export class UserTableComponent implements OnInit {
-  public maxSize: number = 5;
-  public itemsPerPage: number = 5;
-  public totalItems: number = 15;
-  public currentPage: number = 1;
+  public maxSize = 5;
+  public itemsPerPage = 5;
+  public totalItems = 15;
+  public currentPage = 1;
   public numPages
 
   constructor(public router: Router,

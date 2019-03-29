@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { SignUpService } from './sign-up.service';
-import { fadeIn } from '../../../shared/animations/fade-in';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { SignUpService } from "./sign-up.service";
+import { fadeIn } from "../../../shared/animations/fade-in";
 
 @Component({
-  selector: 'sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss'],
+  selector: "sign-up",
+  templateUrl: "./sign-up.component.html",
+  styleUrls: ["./sign-up.component.scss"],
   animations: [fadeIn]
 })
 export class SignUpComponent implements OnInit {
@@ -16,25 +16,25 @@ export class SignUpComponent implements OnInit {
   public userInfo: any = {};
 
   public formErrors = {
-    'email': '',
-    'password': '',
-    'confirmPassword': '',
-    'formError': '',
-    'vcode': ''
+    "email": "",
+    "password": "",
+    "confirmPassword": "",
+    "formError": "",
+    "vcode": ""
   };
   validationMessages = {
-    'email': {
-      'required': '邮箱必须输入。',
-      'pattern': '请输入正确的邮箱地址。'
+    "email": {
+      "required": "邮箱必须输入。",
+      "pattern": "请输入正确的邮箱地址。"
     },
-    'password': {
-      'required': '密码必须输入。',
-      'minlength': '密码至少要8位。'
+    "password": {
+      "required": "密码必须输入。",
+      "minlength": "密码至少要8位。"
     },
-    'confirmPassword': {
-      'required': '重复密码必须输入。',
-      'minlength': '密码至少要8位。',
-      'validateEqual': "两次输入的密码不一致。"
+    "confirmPassword": {
+      "required": "重复密码必须输入。",
+      "minlength": "密码至少要8位。",
+      "validateEqual": "两次输入的密码不一致。"
     }
   };
 
@@ -82,12 +82,12 @@ export class SignUpComponent implements OnInit {
     }
     const form = this.userForm;
     for (const field in this.formErrors) {
-      this.formErrors[field] = '';
+      this.formErrors[field] = "";
       const control = form.get(field);
       if (control && control.dirty && !control.valid) {
         const messages = this.validationMessages[field];
         for (const key in control.errors) {
-          this.formErrors[field] += messages[key] + ' ';
+          this.formErrors[field] += messages[key] + " ";
         }
       }
     }

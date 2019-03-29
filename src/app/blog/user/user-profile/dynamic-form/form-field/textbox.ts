@@ -1,10 +1,10 @@
-import { FieldBase } from './field-base';
+import { FieldBase } from "./field-base";
 
 export class Textbox extends FieldBase<string> {
-  controlType = 'textbox';
+  controlType = "textbox";
   type: string;
   constructor(options: {} = {}) {
     super(options);
-    this.type = options['type'] || '';
+    this.type = options["type"] || "";
   }
 }

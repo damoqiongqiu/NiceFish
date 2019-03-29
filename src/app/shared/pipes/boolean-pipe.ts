@@ -1,13 +1,13 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import {Pipe, PipeTransform} from "@angular/core";
 
 @Pipe({
-	name: 'boolean'
+	name: "boolean"
 })
 
-export class BooleanPipe implements PipeTransform { 
+export class BooleanPipe implements PipeTransform {
 	constructor() {}
-	
-	transform(flag: string): string { 
-		return flag==="true" ? "text-danger":"";
+
+	transform(flag: string): string {
+		return flag === "true" ? "text-danger" : "";
 	}
 }

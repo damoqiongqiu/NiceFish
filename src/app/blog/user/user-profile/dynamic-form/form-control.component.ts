@@ -1,11 +1,10 @@
-import { Component, OnInit ,Input} from '@angular/core';
-import { FormGroup } from '@angular/forms';
-
-import { FieldBase } from './form-field'; 
+import { Component, OnInit , Input} from "@angular/core";
+import { FormGroup } from "@angular/forms";
+import { FieldBase } from "./form-field";
 
 @Component({
-    selector: 'form-control',
-    templateUrl: 'form-control.component.html'
+    selector: "form-control",
+    templateUrl: "form-control.component.html"
 })
 export class FormControlComponent implements OnInit {
     @Input() field: FieldBase<any>;
@@ -14,5 +13,4 @@ export class FormControlComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }
-
 }

@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { flyIn } from '../../../shared/animations/fly-in';
+import { Component, OnInit } from "@angular/core";
+import { flyIn } from "../../../shared/animations/fly-in";
 
 @Component({
-  selector: 'user-main',
-  templateUrl: './user-main.component.html',
-  styleUrls: ['./user-main.component.scss'],
+  selector: "user-main",
+  templateUrl: "./user-main.component.html",
+  styleUrls: ["./user-main.component.scss"],
   animations: [
     flyIn
   ]

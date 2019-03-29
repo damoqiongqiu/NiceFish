@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { PostHeadlineComponent } from './post-headline.component';
+import { PostHeadlineComponent } from "./post-headline.component";
 
-describe('PostHeadlineComponent', () => {
+describe("PostHeadlineComponent", () => {
   let component: PostHeadlineComponent;
   let fixture: ComponentFixture<PostHeadlineComponent>;
 
@@ -19,7 +19,7 @@ describe('PostHeadlineComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,11 +1,11 @@
-import { Directive, ElementRef, HostListener, Input, OnInit } from '@angular/core';
-import * as echarts from 'echarts';
+import { Directive, ElementRef, HostListener, Input, OnInit } from "@angular/core";
+import * as echarts from "echarts";
 
 @Directive({
-    selector: 'echart'
+    selector: "echart"
 })
-export class EChartOptionDirective1 implements OnInit {
-    @Input('chartType') chartType: any;
+export class EChartOptionDirective implements OnInit {
+    @Input("chartType") chartType: any;
 
     constructor(private el: ElementRef) {}
 

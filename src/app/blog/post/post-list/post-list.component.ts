@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { PostService } from '../post.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Subject } from "rxjs";
+import { debounceTime, distinctUntilChanged } from "rxjs/operators";
+import { PostService } from "../post.service";
 
 @Component({
-	selector: 'postlist',
-	templateUrl: './post-list.component.html',
-	styleUrls: ['./post-list.component.scss']
+	selector: "postlist",
+	templateUrl: "./post-list.component.html",
+	styleUrls: ["./post-list.component.scss"]
 })
 export class PostListComponent implements OnInit {
-	public itemsPerPage: number = 10;
-	public totalRecords: number = 11;
-	public currentPage: number = 1;
-	public offset: number = 0;
-	public end: number = 0;
+	public itemsPerPage = 10;
+	public totalRecords = 11;
+	public currentPage = 1;
+	public offset = 0;
+	public end = 0;
 
 	public searchText: string;
 	public searchTextStream: Subject<string> = new Subject<string>();
@@ -31,7 +31,7 @@ export class PostListComponent implements OnInit {
 		// //以下是Promise的写法
 		// let promise = new Promise(resolve => {
 		//     setTimeout(() => {
-		//         resolve('---promise timeout---');
+		//         resolve("---promise timeout---");
 		//     }, 2000);
 		// });
 		// promise.then(value => console.log(value));
@@ -39,7 +39,7 @@ export class PostListComponent implements OnInit {
 		// //以下是Observable的写法
 		// let stream1$ = new Observable(observer => {
 		//     let timeout = setTimeout(() => {
-		//         observer.next('observable timeout');
+		//         observer.next("observable timeout");
 		//     }, 2000);
 
 		//     return () => {
@@ -83,7 +83,7 @@ export class PostListComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		//从路由里面获取URL参数
+		// 从路由里面获取URL参数
 		this.activeRoute.params.subscribe(params => {
 			console.log(params);
 			this.currentPage = params.page;

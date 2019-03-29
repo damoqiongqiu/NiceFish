@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { RoleTableComponent } from './role-table.component';
+import { RoleTableComponent } from "./role-table.component";
 
-describe('RoleTableComponent', () => {
+describe("RoleTableComponent", () => {
   let component: RoleTableComponent;
   let fixture: ComponentFixture<RoleTableComponent>;
 
@@ -19,7 +19,7 @@ describe('RoleTableComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

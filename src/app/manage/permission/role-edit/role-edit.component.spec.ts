@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { RoleEditComponent } from './role-edit.component';
+import { RoleEditComponent } from "./role-edit.component";
 
-describe('RoleEditComponent', () => {
+describe("RoleEditComponent", () => {
   let component: RoleEditComponent;
   let fixture: ComponentFixture<RoleEditComponent>;
 
@@ -19,7 +19,7 @@ describe('RoleEditComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

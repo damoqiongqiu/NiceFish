@@ -1,18 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSegment } from '@angular/router';
-import { PostTableService } from './post-table.service';
-import { flyIn } from '../../../shared/animations/fly-in';
+import { Component, OnInit, Input } from "@angular/core";
+import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSegment } from "@angular/router";
+import { PostTableService } from "./post-table.service";
+import { flyIn } from "../../../shared/animations/fly-in";
 
 @Component({
-  selector: 'post-table',
-  templateUrl: './post-table.component.html',
-  styleUrls: ['./post-table.component.scss'],
+  selector: "post-table",
+  templateUrl: "./post-table.component.html",
+  styleUrls: ["./post-table.component.scss"],
   animations: [
     flyIn
   ]
 })
 export class PostTableComponent implements OnInit {
-  @Input() dataURL: string = "mock-data/postlist-mock.json";
+  @Input() dataURL = "mock-data/postlist-mock.json";
 
   public postList: Array<any>;
 
@@ -54,30 +54,30 @@ export class PostTableComponent implements OnInit {
   }
 
   public editPost(event): void {
-    var target = event.currentTarget;
-    var nameAttr = target.attributes.name;
-    var value = nameAttr.nodeValue;
+    let target = event.currentTarget;
+    let nameAttr = target.attributes.name;
+    let value = nameAttr.nodeValue;
     console.log("postId>" + value);
   }
 
   public top(event): void {
-    var target = event.currentTarget;
-    var nameAttr = target.attributes.name;
-    var value = nameAttr.nodeValue;
+    let target = event.currentTarget;
+    let nameAttr = target.attributes.name;
+    let value = nameAttr.nodeValue;
     console.log("postId>" + value);
   }
 
   public unTop(event): void {
-    var target = event.currentTarget;
-    var nameAttr = target.attributes.name;
-    var value = nameAttr.nodeValue;
+    let target = event.currentTarget;
+    let nameAttr = target.attributes.name;
+    let value = nameAttr.nodeValue;
     console.log("postId>" + value);
   }
 
   public delPost(event): void {
-    var target = event.currentTarget;
-    var nameAttr = target.attributes.name;
-    var value = nameAttr.nodeValue;
+    let target = event.currentTarget;
+    let nameAttr = target.attributes.name;
+    let value = nameAttr.nodeValue;
     console.log("postId>" + value);
   }
 

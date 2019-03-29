@@ -62,15 +62,15 @@
       "check-whitespace"
     ],
     "quotemark": [
-      false,
+      true,
       "double"
     ],
-    "radix": true,
+    "radix": false,
     "semicolon": [
       "always"
     ],
     "triple-equals": [
-      true,
+      false,
       "allow-null-check"
     ],
     "typedef-whitespace": [
@@ -119,9 +119,9 @@
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "use-life-cycle-interface": true,
+    "no-input-rename": false,
+    "no-output-rename": false,
+    "use-life-cycle-interface": false,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true

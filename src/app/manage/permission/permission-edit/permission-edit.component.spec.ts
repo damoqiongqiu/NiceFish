@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { PermissionEditComponent } from './permission-edit.component';
+import { PermissionEditComponent } from "./permission-edit.component";
 
-describe('PermissionEditComponent', () => {
+describe("PermissionEditComponent", () => {
   let component: PermissionEditComponent;
   let fixture: ComponentFixture<PermissionEditComponent>;
 
@@ -19,7 +19,7 @@ describe('PermissionEditComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

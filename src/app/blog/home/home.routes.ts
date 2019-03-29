@@ -1,12 +1,12 @@
-import { HomeComponent } from './home.component';
+import { HomeComponent } from "./home.component";
 
 export const homeRoutes = [
     {
-        path: '',
+        path: "",
         component: HomeComponent,
         children: [{
-            path: '',
-            loadChildren: '../post/post.module#PostModule'
+            path: "",
+            loadChildren: "../post/post.module#PostModule"
         }]
     }
-];
+]

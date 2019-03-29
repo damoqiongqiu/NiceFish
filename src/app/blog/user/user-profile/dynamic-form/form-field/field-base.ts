@@ -1,4 +1,4 @@
-export class FieldBase<T>{
+export class FieldBase<T> {
   value: T;
   key: string;
   label: string;
@@ -15,9 +15,9 @@ export class FieldBase<T>{
       placeholder?: string
     } = {}) {
     this.value = options.value;
-    this.key = options.key || '';
-    this.label = options.label || '';
-    this.controlType = options.controlType || '';
-    this.placeholder = options.placeholder || '';
+    this.key = options.key || "";
+    this.label = options.label || "";
+    this.controlType = options.controlType || "";
+    this.placeholder = options.placeholder || "";
   }
 }

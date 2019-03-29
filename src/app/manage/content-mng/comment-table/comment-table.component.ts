@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSegment } from '@angular/router';
-import { flyIn } from '../../../shared/animations/fly-in';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSegment } from "@angular/router";
+import { flyIn } from "../../../shared/animations/fly-in";
 
 @Component({
-  selector: 'comment-table',
-  templateUrl: './comment-table.component.html',
-  styleUrls: ['./comment-table.component.scss'],
+  selector: "comment-table",
+  templateUrl: "./comment-table.component.html",
+  styleUrls: ["./comment-table.component.scss"],
   animations: [
     flyIn
   ]
@@ -13,7 +13,7 @@ import { flyIn } from '../../../shared/animations/fly-in';
 export class CommentTableComponent implements OnInit {
 
   public commentList: Array<any> = [
-    { id: '1', content: '这是一条不合法的评论', userName: 'damoqiongqiu', time: '2017-07-15 16:22:58' }
+    { id: "1", content: "这是一条不合法的评论", userName: "damoqiongqiu", time: "2017-07-15 16:22:58" }
   ];
 
   constructor(public router: Router,

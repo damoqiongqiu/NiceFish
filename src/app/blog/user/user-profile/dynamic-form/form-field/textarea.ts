@@ -1,10 +1,10 @@
-import { FieldBase } from './field-base';
+import { FieldBase } from "./field-base";
 
 export class TextArea extends FieldBase<string> {
-  controlType = 'textarea';
+  controlType = "textarea";
   rows: number;
   constructor(options: {} = {}) {
     super(options);
-    this.rows = options['rows'] || 1;
+    this.rows = options["rows"] || 1;
   }
 }

@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { RetrievePwdService } from './retrieve-pwd.service';
-import { fadeIn } from '../../../shared/animations/fade-in';
+import { Component, OnInit } from "@angular/core";
+import { RetrievePwdService } from "./retrieve-pwd.service";
+import { fadeIn } from "../../../shared/animations/fade-in";
 
 @Component({
-	selector: 'retrieve-pwd',
-	templateUrl: './retrieve-pwd.component.html',
-	styleUrls: ['./retrieve-pwd.component.scss'],
+	selector: "retrieve-pwd",
+	templateUrl: "./retrieve-pwd.component.html",
+	styleUrls: ["./retrieve-pwd.component.scss"],
 	animations: [fadeIn]
 })
 export class RetrievePwdComponent implements OnInit {
