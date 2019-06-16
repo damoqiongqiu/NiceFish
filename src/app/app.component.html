@@ -20,9 +20,9 @@
                 <li routerLinkActive="active">
                     <a routerLink="posts">{{'app.read' | translate}}</a>
                 </li>
-                <li routerLinkActive="active">
+                <!-- <li routerLinkActive="active">
                     <a routerLink="post/write">{{'app.write' | translate}}</a>
-                </li>
+                </li> -->
             </ul>
             <ul *ngIf="!currentUser?.userName" class="nav navbar-nav navbar-right" (click)="onMenuToggle()">
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">

@@ -35,11 +35,11 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 ## 主要依赖
 
-- Angular 7.2
+- Angular 8.0
 - PrimeNG 7.1
 - Bootstrap 3.3.7
 - Echarts 3.4.0
-- ckeditor5-angular 1.0
+- ckeditor5-angular 1.0（目前有bug，不能兼容Angular8.0，注释掉了CKEditor的入口，等官方升级到8.0）
 
 ## 在线演示
 
@@ -51,7 +51,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 ## 系列项目
 
-* NiceFish：美人鱼，这是 Angular 版本的实现，前端基于 Angular 7.2 + PrimeNG 7.1.0。http://git.oschina.net/mumu-osc/NiceFish/
+* NiceFish：美人鱼，这是 Angular 版本的实现，前端基于 Angular 8.0 + PrimeNG 7.1.0。http://git.oschina.net/mumu-osc/NiceFish/
 * NiceFish-React：这是 React 版的实现，界面外观完全相同。采用React Hooks 16.8.3 版本，使用TypeScript、Ant Design组件库以及Bootstrap v4.2.1 开发。
 * nicefish-ionic：这是一个移动端的 demo，基于 ionic，此项目已支持 PWA。http://git.oschina.net/mumu-osc/nicefish-ionic
 * NiceBlogElectron：这是一个基于 Electron 的桌面端项目，把 NiceFish 用 Electron 打包成了一个桌面端运行的程序。这是由 ZTE 中兴通讯的前端道友提供的，我 fork 了一个，有几个 node 模块的版本号老要改，如果您正在研究如何利用 Electron 开发桌面端应用，请参考这个项目，https://github.com/damoqiongqiu/NiceBlogElectron。
