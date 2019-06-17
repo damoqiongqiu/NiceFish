@@ -41,14 +41,6 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 - Echarts 3.4.0
 - ckeditor5-angular 1.0（目前有bug，不能兼容Angular8.0，注释掉了CKEditor的入口，等官方升级到8.0）
 
-## 在线演示
-
-- NiceFish 在阿里云上的演示地址: http://47.104.13.149:4200
-- NiceFish-React 在gitee上的演示地址：https://mumu-osc.gitee.io/nicefish-react
-- NiceFish-ionic 在github上的演示地址：https://damoqiongqiu.github.io/NiceFish-ionic/
-- OpenWMS 在gitee上的演示地址：https://mumu-osc.gitee.io/openwms-frontend
-- OpenWMS 在阿里云上的演示地址：http://47.104.80.251:4200
-
 ## 系列项目
 
 * NiceFish：美人鱼，这是 Angular 版本的实现，前端基于 Angular 8.0 + PrimeNG 7.1.0。http://git.oschina.net/mumu-osc/NiceFish/
