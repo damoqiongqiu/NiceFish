@@ -17,6 +17,6 @@ export const postRoutes = [
 	},
 	{
 		path: "write",
-		loadChildren: "./write-post/write-post.module#WritePostModule"
+		loadChildren: () => import("./write-post/write-post.module").then(m => m.WritePostModule)
 	},
 ];

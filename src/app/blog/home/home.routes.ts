@@ -6,7 +6,7 @@ export const homeRoutes = [
         component: HomeComponent,
         children: [{
             path: "",
-            loadChildren: "../post/post.module#PostModule"
+            loadChildren: () => import("../post/post.module").then(m => m.PostModule)
         }]
     }
 ]

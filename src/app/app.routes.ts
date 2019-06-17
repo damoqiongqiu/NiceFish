@@ -10,15 +10,15 @@ export const appRoutes = [
 	},
 	{
 		path: "home",
-		loadChildren: "./blog/home/home.module#HomeModule"
+		loadChildren: () => import("./blog/home/home.module").then(m => m.HomeModule)
 	},
 	{
 		path: "posts",
-		loadChildren: "./blog/home/home.module#HomeModule"
+		loadChildren: () => import("./blog/home/home.module").then(m => m.HomeModule)
 	},
 	{
 		path: "post",
-		loadChildren: "./blog/post/post.module#PostModule"
+		loadChildren: () => import("./blog/post/post.module").then(m => m.PostModule)
 	},
 	{
 		path: "login",
@@ -34,14 +34,14 @@ export const appRoutes = [
 	},
 	{
 		path: "user",
-		loadChildren: "./blog/user/user.module#UserModule"
+		loadChildren: () => import("./blog/user/user.module").then(m => m.UserModule)
 	},
 	{
 		path: "manage",
-		loadChildren: "./manage/manage.module#ManageModule"
+		loadChildren: () => import("./manage/manage.module").then(m => m.ManageModule)
 	},
 	{
 		path: "**",
-		loadChildren: "./blog/home/home.module#HomeModule"
+		loadChildren: () => import("./blog/home/home.module").then(m => m.HomeModule)
 	}
 ];
