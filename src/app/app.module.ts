@@ -17,7 +17,7 @@ import { SignUpComponent } from "./blog/user/sign-up/sign-up.component";
 import { SignUpService } from "./blog/user/sign-up/sign-up.service";
 import { RetrievePwdService } from "./blog/user/retrieve-pwd/retrieve-pwd.service";
 import { EqualValidator } from "./blog/user/sign-up/equal-validator.directive";
-import { appRoutes } from "./app.routes";
+import { AppRoutingModule } from './app.routing.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -45,7 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     SharedModule,
     ToastModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [
     TranslateService,
