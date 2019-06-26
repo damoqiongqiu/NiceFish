@@ -1,3 +1,5 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { ManageMainComponent } from "./manage-main/manage-main.component";
 import { PostTableComponent } from "./content-mng/post-table/post-table.component";
 import { CommentTableComponent } from "./content-mng/comment-table/comment-table.component";
@@ -11,7 +13,7 @@ import { PermissionTableComponent } from "./permission/permission-table/permissi
 import { PermissionEditComponent } from "./permission/permission-edit/permission-edit.component";
 import { AuthGuard } from "../shared/auth-guard";
 
-export const manageRoutes = [
+export const manageRoutes:Routes = [
 	{
 		path: "",
 		component: ManageMainComponent,
@@ -33,3 +35,9 @@ export const manageRoutes = [
 		]
 	}
 ];
+
+@NgModule({
+	imports: [RouterModule.forChild(manageRoutes)],
+	exports: [RouterModule]
+})
+export class ManageRoutingModule { }

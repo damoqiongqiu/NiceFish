@@ -14,7 +14,7 @@ import { CommentListComponent } from "../comment-list/comment-list.component";
 import { CommentListService } from "../comment-list/comment-list.service";
 import { BooleanPipe } from "../../shared/pipes/boolean-pipe";
 
-import { postRoutes } from "./post.routes";
+import { PostRoutingModule } from "./post.routing.module";
 
 @NgModule({
     imports: [
@@ -22,7 +22,7 @@ import { postRoutes } from "./post.routes";
         RouterModule,
         PaginatorModule,
         CKEditorModule,
-        RouterModule.forChild(postRoutes)
+        PostRoutingModule
     ],
     exports: [BooleanPipe],
     declarations: [

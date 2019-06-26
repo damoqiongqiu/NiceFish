@@ -1,6 +1,5 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
 
 import { PaginatorModule } from "primeng/paginator";
 import { SharedModule } from "../shared/shared.module";
@@ -19,7 +18,7 @@ import { EChartOptionDirective } from "./chart/echart-option.directive";
 import { PostTableService } from "./content-mng/post-table/post-table.service";
 import { AuthGuard } from "../shared/auth-guard";
 
-import { manageRoutes } from "./manage.routes";
+import { ManageRoutingModule } from "./manage.routing.module";
 
 @NgModule({
   declarations: [
@@ -38,7 +37,7 @@ import { manageRoutes } from "./manage.routes";
     SharedModule,
     PostSharedModule,
     PaginatorModule,
-    RouterModule.forChild(manageRoutes)
+    ManageRoutingModule
   ],
   exports: [
     ManageMainComponent
