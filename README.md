@@ -14,21 +14,19 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
     git clone https://gitee.com/mumu-osc/NiceFish.git
     cd NiceFish
-    npm i -g cnpm --registry=https://registry.npm.taobao.org
-    cnpm i -g @angular/cli
-    cnpm i
+    npm i -g @angular/cli
+    npm i
     ng serve --open
 
 打开浏览器，访问http://localhost:4200/
 
 ## 常见坑点
 
-* 各种你懂的原因，中文开发者强烈建议使用 cnpm （淘宝发布的一款npm包装器，方便中文开发者避免一些神秘的问题）
 * 如果你想让打包体积更小，请使用参数构建：ng serve --prod
 * 构建最终结果：ng build --prod
 * 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
 * 如果之前装过老版本的 angular-cli 需要先卸载：npm uninstall -g angular-cli
-* 如果你之前已经尝试用npm install安装过 node 模块，请把 NiceFish 根目录下的 node_moduels 目录删掉重新 cnpm install
+* 如果你之前已经尝试用npm install安装过 node 模块，请把 NiceFish 根目录下的 node_moduels 目录删掉重新 npm install
 * 命令行删除 node_modules 速度更快，Windows 平台使用： rmdir /s/q node_modules ，*nix平台使用：sudo rm -rf node_modules
 * 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
 How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有。
@@ -70,7 +68,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 webpack-bundle-analyzer 使用方法：
 
-- cnpm i webpack-bundle-analyzer --save-dev
+- npm i webpack-bundle-analyzer --save-dev
 - package.json 的 scripts 配置里面加一行 "bundle-report": "webpack-bundle-analyzer dist/stats.json"
 - ng build --prod --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
 - 执行 npm run bundle-report 查看打包过程
