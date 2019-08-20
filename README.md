@@ -45,7 +45,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 - PrimeNG 7.1
 - Bootstrap 3.3.7
 - Echarts 3.4.0
-- ckeditor5-angular 1.0（目前有bug，不能兼容Angular8.0，注释掉了CKEditor的入口，等官方升级到8.0）
+- ckeditor5-angular 1.1
 
 ## 系列项目
 
