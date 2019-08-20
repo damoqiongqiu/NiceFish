@@ -6,7 +6,7 @@
                     <input type="text" class="form-control" placeholder="标题，2到32个字符">
                 </div>
                 <div class="form-group">
-                    <ckeditor [(ngModel)]="content" [editor]="Editor" name="content"></ckeditor>
+                    <ckeditor [(ngModel)]="content" [editor]="Editor" name="content" (ready)="onReady($event)"></ckeditor>
                 </div>
                 <button type="button" class="btn btn-primary" (click)="doAddPost()">{{'submit'|translate}}</button>
             </form>

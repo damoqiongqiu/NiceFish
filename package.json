@@ -29,7 +29,7 @@
     "@angular/platform-browser-dynamic": "8.2.0-next.1",
     "@angular/router": "8.2.0-next.1",
     "@ckeditor/ckeditor5-angular": "1.1.0",
-    "@ckeditor/ckeditor5-build-classic": "11.2.0",
+    "@ckeditor/ckeditor5-build-classic": "12.3.1",
     "@ngx-translate/core": "11.0.0",
     "@ngx-translate/http-loader": "4.0.0",
     "acorn": "6.0.5",
