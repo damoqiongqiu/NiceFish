@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { fadeIn } from "../../shared/animations/fade-in";
 import Color from "../../shared/color.util";
 
+/**
+ * ngx-echarts 文档 https://xieziyu.github.io/ngx-echarts/#/home
+ */
 @Component({
   selector: "chart",
   templateUrl: "./chart.component.html",
@@ -9,7 +12,7 @@ import Color from "../../shared/color.util";
   animations: [fadeIn]
 })
 export class ChartComponent implements OnInit {
-  pieChart = {
+  public pieChart = {
     theme: "",
     event: [
       {
@@ -66,7 +69,7 @@ export class ChartComponent implements OnInit {
     }]
   };
 
-  barChart = {
+  public barChart = {
     title: {
       text: "NiceFish月访问量统计",
       subtext: "纯属虚构",
@@ -118,7 +121,7 @@ export class ChartComponent implements OnInit {
     ]
   };
 
-  lineChart = {
+  public lineChart = {
     title: {
       text: "NiceFish月访问趋势图",
       subtext: "纯属虚构",
