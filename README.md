@@ -42,10 +42,13 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 ## 主要依赖
 
 - Angular 8.0
-- PrimeNG 7.1
+- PrimeNG 8.0.2
 - Bootstrap 3.3.7
-- Echarts 3.4.0
-- ckeditor5-angular 1.1
+- Echarts 4.1.0
+- ngx-echarts 4.1.0
+- ckeditor5-angular 1.1.0
+
+**注意：为了防止依赖冲突，本项目在 package.json 中锁定了所有 Node 模块版本，如有需要，您可以自己测试兼容版本号。**
 
 ## 系列项目
 

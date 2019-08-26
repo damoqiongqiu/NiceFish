@@ -74,18 +74,8 @@ export class PostTableComponent implements OnInit {
     console.log("postId>" + value);
   }
 
-  public delPost(event): void {
-    let target = event.currentTarget;
-    let nameAttr = target.attributes.name;
-    let value = nameAttr.nodeValue;
-    console.log("postId>" + value);
-  }
-
-  public onRowSelect(event): void {
-    console.log(event.data);
-  }
-
-  public onRowUnselect(event): void {
-    console.log(event.data);
+  public delPost(rowData, ri): void {
+    let postId = rowData.postId;
+    console.log(postId);
   }
 }
