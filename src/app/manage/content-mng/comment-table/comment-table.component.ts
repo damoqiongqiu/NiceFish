@@ -38,15 +38,8 @@ export class CommentTableComponent implements OnInit {
     this.router.navigateByUrl(s[0] + "/commenttable/page/" + event.page);
   }
 
-  public delComment(commentId: Number): void {
+  public delComment(rowData, ri): void {
+    let commentId = rowData.id;
     console.log(commentId);
-  }
-
-  public onRowSelect(event): void {
-
-  }
-
-  public onRowUnselect(event): void {
-
   }
 }
