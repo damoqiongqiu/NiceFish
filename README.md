@@ -65,7 +65,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 http://118.25.136.164
 
-** 线上版本已与SpringBoot服务端集成好，后端代码近期整理好开源出来，前端代码在 for-spring-boot 分支上。**
+**线上版本已与SpringBoot服务端集成好，后端代码近期整理好开源出来，前端代码在 for-spring-boot 分支上。**
 
 ## 界面截图
 
