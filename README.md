@@ -61,6 +61,12 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 | nicefish-springboot  | 用来示范前后端分离模式下，前端代码与后端服务的对接方式，即将完成，代码最近放出。|
 | nicefish-springcloug  | 用来示范前后端分离模式下，前端代码与分布式后端服务的对接方式，即将完成，代码最近放出。|
 
+## 线上演示
+
+http://118.25.136.164
+
+** 线上版本已与SpringBoot服务端集成好，后端代码近期整理好开源出来，前端代码在 for-spring-boot 分支上。**
+
 ## 界面截图
 
 <img src="./src/assets/imgs/1.png">
