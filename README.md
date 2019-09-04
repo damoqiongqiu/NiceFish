@@ -77,6 +77,10 @@ http://118.25.136.164
 
 <img src="./src/assets/imgs/5.png">
 
+<img src="./src/assets/imgs/6.png">
+
+<img src="./src/assets/imgs/7.png">
+
 ## 打包分析
 
 以下是用 webpack-bundle-analyzer 分析打包之后的模块构成：
