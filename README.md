@@ -101,9 +101,16 @@ webpack-bundle-analyzer 使用方法：
 - 历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
 - Angular开发者论坛在这里：http://www.ngfans.net/ 。
 
+这是2018年录制的付费视频教程，现在已经过去了快2年，我把它公开出来，免费播放。虽然版本号不是最新的，但是核心的思路和用法基本相同，希望能帮助到有需要的人。
+
+- bilibili 地址：https://www.bilibili.com/video/av87528565
+- 油管地址：https://www.youtube.com/watch?v=sIa_KF0cUnE&list=PLbhC27Bf6WlmpDh_66g7Fpn8uCYG7jUn8
+
 ## 联系我
 
 <img src="./src/assets/imgs/damoqiongqiu-wechat.jpg" width="250"/>
+
+（不要随意加我，我这个人脾气不好，万一咱俩尿不到一个壶里弄到最后连朋友都没得做，还是做个点赞之交，就挺好。）
 
 ## 开源许可证
 
