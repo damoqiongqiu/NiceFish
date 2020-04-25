@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer } from "@angular/core";
+import { Component, ElementRef, Renderer2} from "@angular/core";
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
 import { SignInService } from "./blog/user/sign-in/sign-in.service";
@@ -18,7 +18,7 @@ export class AppComponent {
 
 	constructor(
 		public elementRef: ElementRef,
-		public renderer: Renderer,
+		public renderer: Renderer2,
 		public router: Router,
 		public activatedRoute: ActivatedRoute,
 		public translate: TranslateService,
