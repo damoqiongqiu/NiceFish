@@ -157,9 +157,9 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
-              ]
-            ,              "optimization": true
-}
+              ],
+              "optimization": true
+            }
           }
         }
       }
@@ -197,5 +197,8 @@
     "@schematics/angular:directive": {
       "prefix": ""
     }
+  },
+  "cli": {
+    "analytics": "431dadd7-96a7-44e9-ab8e-fae5200510fc"
   }
 }
