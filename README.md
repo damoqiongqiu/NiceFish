@@ -100,11 +100,6 @@ webpack-bundle-analyzer 使用方法：
 
 - 油管地址：https://www.youtube.com/watch?v=sIa_KF0cUnE&list=PLbhC27Bf6WlmpDh_66g7Fpn8uCYG7jUn8
 
-这是2018年录制的付费视频教程，现在已经过去了快2年，我把它公开出来，免费播放。虽然版本号不是最新的，但是核心的思路和用法基本相同，希望能帮助到有需要的人。
-
-- bilibili 地址：https://www.bilibili.com/video/av87528565
-- 油管地址：https://www.youtube.com/watch?v=sIa_KF0cUnE&list=PLbhC27Bf6WlmpDh_66g7Fpn8uCYG7jUn8
-
 ## 开源许可证
 
 MIT
