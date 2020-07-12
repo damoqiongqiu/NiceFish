@@ -44,7 +44,7 @@
     "ngx-loading": "1.0.14",
     "primeicons": "2.0.0",
     "primeng": "9.0.6",
-    "rxjs": "6.5.5",
+    "rxjs": "6.6.0",
     "rxjs-compat": "6.3.3",
     "ts-helpers": "1.1.2",
     "ts-loader": "5.3.3 ",
