@@ -42,7 +42,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 ## 主要依赖
 
 - Angular 10.0.3
-- PrimeNG 9.0.6
+- PrimeNG 10.0.0
 - Bootstrap 3.3.7
 - Echarts 4.1.0
 - ngx-echarts 4.1.0
