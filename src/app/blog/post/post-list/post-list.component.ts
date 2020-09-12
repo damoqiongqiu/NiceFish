@@ -97,7 +97,7 @@ export class PostListComponent implements OnInit {
 			)
 			.subscribe(() => {
 				console.log(this.searchText);
-				this.loadData()
+				this.loadData();
 			});
 	}
 
