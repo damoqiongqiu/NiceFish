@@ -95,11 +95,7 @@ webpack-bundle-analyzer 使用方法：
 ## 学习资源
 
 - 历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
-
-以下是2018年录制的付费视频教程，现在已经过去了快2年，我把它公开出来，免费播放。虽然版本号不是最新的，但是核心的思路和用法基本相同，希望能帮助到有需要的人。
-
-- 油管地址：https://www.youtube.com/watch?v=sIa_KF0cUnE&list=PLbhC27Bf6WlmpDh_66g7Fpn8uCYG7jUn8
-
+- 这里有93篇文章，详细解析了这个项目，或许对你有用：https://gitbook.cn/gitchat/column/5bebdaf22c33167c317cc285
 ## 开源许可证
 
 MIT
