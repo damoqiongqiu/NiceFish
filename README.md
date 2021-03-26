@@ -18,7 +18,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
     npm i
     ng serve --open
 
-打开浏览器，访问http://localhost:4200/
+打开浏览器，访问 http://localhost:4200/
 
 **中文开发者**：网络原因，推荐安装 nrm 来管理 npm 的 registry。
 
@@ -37,16 +37,16 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 * 如果你之前已经尝试用npm install安装过 node 模块，请把 NiceFish 根目录下的 node_moduels 目录删掉重新 npm install
 * 命令行删除 node_modules 速度更快，Windows 平台使用： rmdir /s/q node_modules ，*nix平台使用：sudo rm -rf node_modules
 * 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
-How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有。
+How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有。（请注意，这个配置不是 Angular 所特有的，当前主流的 SPA 型前端框架都需要做这个配置。）
 
 ## 主要依赖
 
-- Angular 10.0.3
-- PrimeNG 10.0.0
+- Angular 11.2.6
+- PrimeNG 11.3.1
 - Bootstrap 3.3.7
 - Echarts 4.1.0
 - ngx-echarts 4.1.0
-- ckeditor5-angular 1.1.0
+- ckeditor5-angular 2.0.1
 
 **注意：为了防止依赖冲突，本项目在 package.json 中锁定了所有 Node 模块版本，如有需要，您可以自己测试兼容版本号。**
 
