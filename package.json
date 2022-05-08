@@ -1,7 +1,7 @@
 {
   "name": "nicefish",
-  "description": "A demo project of Angular.",
-  "version": "9.0.1",
+  "description": "A boilerplate project of Angular.",
+  "version": "13.3.6",
   "license": "MIT",
   "author": "BigMO",
   "private": false,
@@ -55,7 +55,7 @@
     "zone.js": "0.11.5"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.1102.5",
+    "@angular-devkit/build-angular": "13.3.5",
     "@angular/cli": "13.3.5",
     "@angular/compiler-cli": "13.3.6",
     "@angular/language-service": "13.3.6",
