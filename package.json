@@ -22,9 +22,9 @@
     "bundle-report": "webpack-bundle-analyzer dist/stats.json"
   },
   "dependencies": {
-    "@angular/animations": "12.2.16",
-    "@angular/cdk": "11.2.5",
-    "@angular/common": "12.2.16",
+    "@angular/animations": "13.3.6",
+    "@angular/cdk": "13.3.6",
+    "@angular/common": "13.3.6",
     "@angular/compiler": "12.2.16",
     "@angular/core": "12.2.16",
     "@angular/forms": "12.2.16",
@@ -56,7 +56,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.1102.5",
-    "@angular/cli": "^13.3.5",
+    "@angular/cli": "13.3.5",
     "@angular/compiler-cli": "12.2.16",
     "@angular/language-service": "12.2.16",
     "@types/echarts": "4.1.3",

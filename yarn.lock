@@ -151,23 +151,23 @@
     ora "5.4.1"
     rxjs "6.6.7"
 
-"@angular/animations@12.2.16":
-  version "12.2.16"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-12.2.16.tgz#16f1e0d05f026a83847235ff34acc36623830759"
-  integrity sha512-Kf6C7Ta+fCMq5DvT9JNVhBkcECrqFa3wumiC6ssGo5sNaEzXz+tlep9ZgEbqfxSn7gAN7L1DgsbS9u0O6tbUkg==
+"@angular/animations@13.3.6":
+  version "13.3.6"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-13.3.6.tgz#a889e1422d30ce8d0b5e70072ab43143966d8d6d"
+  integrity sha512-uPIj5Fm5zRAmrHatmHr21LnL2rZNdL08aNIrIlPJxmjekvUUYphfRHwuhNQKS97uucWnlxGgMB/R6iAiisn5Hg==
   dependencies:
-    tslib "^2.2.0"
+    tslib "^2.3.0"
 
-"@angular/cdk@11.2.5":
-  version "11.2.5"
-  resolved "https://registry.npm.taobao.org/@angular/cdk/download/@angular/cdk-11.2.5.tgz#e0cce8b28ca635b6151b834c6e1c4bc0a8dd7c04"
-  integrity sha1-4MzosoymNbYVG4NMbhxLwKjdfAQ=
+"@angular/cdk@13.3.6":
+  version "13.3.6"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-13.3.6.tgz#4b62d33f82bd4cddaae78c53d2485ca385a26bae"
+  integrity sha512-sPwEGCHARxuUMzPLRiiN51GQP0P39ev+eL06NcyYXZ3AxyZIH5N/PWmGKf7EDOXIof4ata13jsIeW38mFe+wvg==
   dependencies:
-    tslib "^2.0.0"
+    tslib "^2.3.0"
   optionalDependencies:
     parse5 "^5.0.0"
 
-"@angular/cli@^13.3.5":
+"@angular/cli@13.3.5":
   version "13.3.5"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-13.3.5.tgz#908ff97f59836d1dbd79d6cae85337ddc5f9ff37"
   integrity sha512-FrPg86cfmm0arWZInt55muCTpcQSNlvoViVrIVkyqSN06GoyCAQ2zn6/OYJnx/XAg/XvXTbygL+58c0WXuOaiA==
@@ -192,12 +192,12 @@
     symbol-observable "4.0.0"
     uuid "8.3.2"
 
-"@angular/common@12.2.16":
-  version "12.2.16"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-12.2.16.tgz#dff620b1c81903059685be7e8887e9c720d53195"
-  integrity sha512-FEqTXTEsnbDInqV1yFlm97Tz1OFqZS5t0TUkm8gzXRgpIce/F/jLwAg0u1VQkgOsno6cNm0xTWPoZgu85NI4ug==
+"@angular/common@^13.3.6":
+  version "13.3.6"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-13.3.6.tgz#94dcbab315cd4c197b1a613d7c16f57fa088b004"
+  integrity sha512-IHWzyNzrvzdE23P7KX3qDgmT+xGpmXKaMLDEM9s8l2opKcMerjdullrYXwLfjFQr9pybnn+uE9fzj9dp0DCmzg==
   dependencies:
-    tslib "^2.2.0"
+    tslib "^2.3.0"
 
 "@angular/compiler-cli@12.2.16":
   version "12.2.16"
