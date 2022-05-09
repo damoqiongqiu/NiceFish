@@ -7831,17 +7831,17 @@ pretty-bytes@^5.3.0:
   resolved "https://registry.npm.taobao.org/pretty-bytes/download/pretty-bytes-5.6.0.tgz?cache=0&sync_timestamp=1613916817451&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpretty-bytes%2Fdownload%2Fpretty-bytes-5.6.0.tgz#356256f643804773c82f64723fe78c92c62beaeb"
   integrity sha1-NWJW9kOAR3PIL2RyP+eMksYr6us=
 
-primeicons@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npm.taobao.org/primeicons/download/primeicons-4.1.0.tgz#19eaef8ef5594b0006358ae64e738d03e167c9bb"
-  integrity sha1-GervjvVZSwAGNYrmTnONA+Fnybs=
+primeicons@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-5.0.0.tgz#73a0b6028a77c58a9eeb331ad13aaf085e8451ee"
+  integrity sha512-heygWF0X5HFI1otlZE62pp6ye7sZ8om78J9au2BRkg8O7Y8AHTZ9qKMRzchZUHLe8zUAvdi6hZzzm9XxgwIExw==
 
-primeng@11.3.1:
-  version "11.3.1"
-  resolved "https://registry.npm.taobao.org/primeng/download/primeng-11.3.1.tgz#644dd59d1f0808227a9529ea6ffaad31bdb5e5df"
-  integrity sha1-ZE3VnR8ICCJ6lSnqb/qtMb215d8=
+primeng@13.3.3:
+  version "13.3.3"
+  resolved "https://registry.yarnpkg.com/primeng/-/primeng-13.3.3.tgz#7fa2f650c5be4c37922a41bd6094d0fe7a5c9a6e"
+  integrity sha512-vuC4Ukv66fAH6iZp1WrBZtiogFBxH+sFRL6WcuL4NxYoxG4OoiU4yRXz2hawl/yBWqMsVDs9AvO7GwUTsKr9Hw==
   dependencies:
-    tslib "^2.0.0"
+    tslib "^2.3.0"
 
 process-nextick-args@~1.0.6:
   version "1.0.7"
