@@ -23,32 +23,32 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 **中文开发者**：网络原因，推荐安装 nrm 来管理 npm 的 registry。
 
     npm i -g nrm 
-    nrm use cnpm
+    nrm use taobao
 
-这时候用 npm 安装 node 模块就会使用 cnpm 提供的 registry 了。
+这时候用 npm 安装 node 模块就会使用 taobao 提供的 registry 了。
 
 ## 常见坑点
 
 * 中文开发者：如果你使用 cnpm 来安装依赖，可能会导致某些包不一致，导致应用起不来，目前原因不明，需要 cnpm 官方来解决。
 * 如果你想让打包体积更小，请使用参数构建：ng serve --prod
-* 构建最终结果：ng build --prod
+* 构建最终产品版本：ng build --prod
 * 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
 * 如果之前装过老版本的 angular-cli 需要先卸载：npm uninstall -g angular-cli
-* 如果你之前已经尝试用npm install安装过 node 模块，请把 NiceFish 根目录下的 node_moduels 目录删掉重新 npm install
+* 如果你之前已经尝试用npm install安装过 node 模块，请手动把 NiceFish 根目录下的 node_moduels 目录删掉重新 npm install
 * 命令行删除 node_modules 速度更快，Windows 平台使用： rmdir /s/q node_modules ，*nix平台使用：sudo rm -rf node_modules
 * 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
 How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有。（请注意，这个配置不是 Angular 所特有的，当前主流的 SPA 型前端框架都需要做这个配置。）
 
 ## 主要依赖
 
-- Angular 13.3.6
-- PrimeNG 11.3.1
+- Angular 15.2.0
+- PrimeNG 15.2.0
 - Bootstrap 3.3.7
 - Echarts 4.1.0
 - ngx-echarts 4.1.0
 - ckeditor5-angular 2.0.1
 
-**注意：为了防止依赖冲突，本项目在 package.json 中锁定了所有 Node 模块版本，如有需要，您可以自己测试兼容版本号。**
+**注意：为了防止依赖冲突，本项目在 package.json 中锁定了一些 Node 模块版本，如有需要，您可以自己测试兼容版本号。**
 
 ## 系列项目
 
@@ -96,7 +96,6 @@ webpack-bundle-analyzer 使用方法：
 
 - 历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
 - 这里有93篇文章，详细解析了这个项目，或许对你有用：https://gitbook.cn/gitchat/column/5bebdaf22c33167c317cc285
-- 【视频教程免费赠送】26 节，共 19 小时左右，如有需要请 VX 联系我，免费赠送。
 
 ## 开源许可证
 
