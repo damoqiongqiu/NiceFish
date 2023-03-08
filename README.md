@@ -30,8 +30,8 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 ## 常见坑点
 
 * 中文开发者：如果你使用 cnpm 来安装依赖，可能会导致某些包不一致，导致应用起不来，目前原因不明，需要 cnpm 官方来解决。
-* 如果你想让打包体积更小，请使用参数构建：ng serve --prod
-* 构建最终产品版本：ng build --prod
+* 如果你想让打包体积更小，请使用参数构建：ng serve
+* 构建最终产品版本：ng build
 * 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
 * 如果之前装过老版本的 angular-cli 需要先卸载：npm uninstall -g angular-cli
 * 如果你之前已经尝试用npm install安装过 node 模块，请手动把 NiceFish 根目录下的 node_moduels 目录删掉重新 npm install
@@ -89,7 +89,7 @@ webpack-bundle-analyzer 使用方法：
 
 - npm i webpack-bundle-analyzer --save-dev
 - package.json 的 scripts 配置里面加一行 "bundle-report": "webpack-bundle-analyzer dist/stats.json"
-- ng build --prod --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
+- ng build --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
 - 执行 npm run bundle-report 查看打包过程
 
 ## 学习资源
