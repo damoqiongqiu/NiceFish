@@ -8,6 +8,17 @@
 NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离的开发模式:前端浏览器、移动端、Electron 环境中的各种开发模式；后端有两个版本：SpringBoot 版本和 SpringCloud 版本。
 </div>
 
+## 主要依赖
+
+- Angular 15.2.0
+- PrimeNG 15.2.0
+- Bootstrap 3.3.7
+- Echarts 4.1.0
+- ngx-echarts 4.1.0
+- ckeditor5-angular 2.0.1
+
+**注意：为了防止依赖冲突，本项目在 package.json 中锁定了一些 Node 模块版本，如有需要，您可以自己测试兼容版本号。**
+
 ## 用法
 
 打开终端，依次执行以下命令：
@@ -39,16 +50,15 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 * 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
 How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有。（请注意，这个配置不是 Angular 所特有的，当前主流的 SPA 型前端框架都需要做这个配置。）
 
-## 主要依赖
+## 部署到 nginx
 
-- Angular 15.2.0
-- PrimeNG 15.2.0
-- Bootstrap 3.3.7
-- Echarts 4.1.0
-- ngx-echarts 4.1.0
-- ckeditor5-angular 2.0.1
+运行 ng build 构建出最终产物。
 
-**注意：为了防止依赖冲突，本项目在 package.json 中锁定了一些 Node 模块版本，如有需要，您可以自己测试兼容版本号。**
+安装好 nginx，把 dist/browser 目录下的所有内容拷贝到 nginx 的 html 目录下。
+
+参考 nginx.conf 配置文件，修改配置。
+
+启动 nginx。
 
 ## 系列项目
 
