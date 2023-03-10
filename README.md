@@ -71,6 +71,8 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
     查看容器日志：docker logs --details CONTAINER_ID
     进入容器：sudo docker exec -it CONTAINER_ID sh
 
+<img src="./src/assets/imgs/8.png">
+
 ## 系列项目
 
 |  名称   | 描述  |
