@@ -50,15 +50,28 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 * 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
 How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有。（请注意，这个配置不是 Angular 所特有的，当前主流的 SPA 型前端框架都需要做这个配置。）
 
-## 部署到 nginx
+## 直接部署到 nginx
 
 运行 ng build 构建出最终产物。
 
 安装好 nginx，把 dist/browser 目录下的所有内容拷贝到 nginx 的 html 目录下。
 
-参考 nginx.conf 配置文件，修改配置。
+参考 nginx.conf 配置文件，修改配置（此项目中的默认配置用于 Docker 环境，在 Windows 平台下无法使用）。
 
 启动 nginx。
+
+## 部署到 Docker 环境
+
+请以此执行以下命令（请不要使用我的 ID ，改成你自己的 Docker 平台 ID ）：
+
+    构建镜像：sudo docker build -t damoqiongqiu/nice-fish .
+    查看镜像列表：sudo docker images
+    启动容器：sudo docker run -d -it -p 8080:80/tcp --name nice-fish damoqiongqiu/nice-fish:latest
+    查看运行中的容器：sudo docker ps -a
+    查看容器日志：docker logs --details CONTAINER_ID
+    进入容器：sudo docker exec -it CONTAINER_ID sh
+
+<img src="./src/assets/imgs/8.png">
 
 ## 系列项目
 
