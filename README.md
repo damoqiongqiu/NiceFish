@@ -62,14 +62,14 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 ## 部署到 Docker 环境
 
-请以此执行以下命令（请不要使用我的 ID ，改成你自己的 Docker 平台 ID ）：
+请依次执行以下命令（请不要使用我的 ID ，改成你自己的 Docker 平台 ID ）：
 
-    构建镜像：sudo docker build -t damoqiongqiu/nice-fish .
-    查看镜像列表：sudo docker images
-    启动容器：sudo docker run -d -it -p 8080:80/tcp --name nice-fish damoqiongqiu/nice-fish:latest
-    查看运行中的容器：sudo docker ps -a
-    查看容器日志：docker logs --details CONTAINER_ID
-    进入容器：sudo docker exec -it CONTAINER_ID sh
+1. 构建镜像：sudo docker build -t damoqiongqiu/nice-fish .
+2. 查看镜像列表：sudo docker images
+3. 启动容器：sudo docker run -d -it -p 8080:80/tcp --name nice-fish damoqiongqiu/nice-fish:latest
+4. 查看运行中的容器：sudo docker ps -a
+5. 查看容器日志：docker logs --details CONTAINER_ID
+6. 进入容器：sudo docker exec -it CONTAINER_ID sh
 
 <img src="./src/assets/imgs/8.png">
 
