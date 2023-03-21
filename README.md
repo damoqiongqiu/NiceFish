@@ -15,7 +15,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 - Bootstrap 3.3.7
 - Echarts 4.1.0
 - ngx-echarts 4.1.0
-- ckeditor5-angular 2.0.1
+- ckeditor5-angular 5.2.1
 
 **注意：为了防止依赖冲突，本项目在 package.json 中锁定了一些 Node 模块版本，如有需要，您可以自己测试兼容版本号。**
 
