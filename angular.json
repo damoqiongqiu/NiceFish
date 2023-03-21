@@ -123,6 +123,7 @@
           "options": {
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "./karma.conf.js",
+            "codeCoverage": true,
             "polyfills": [
               "zone.js",
               "zone.js/testing"
