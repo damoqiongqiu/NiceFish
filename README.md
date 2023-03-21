@@ -46,6 +46,10 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 <img src="./src/assets/imgs/unit-test.png">
 
+代码覆盖率报告：
+
+<img src="./src/assets/imgs/codecoverage.png">
+
 关于单元测试的详细使用方法，以及 Jasmine 的语法，请参考： https://angular.io/guide/testing
 
 ## 集成测试
