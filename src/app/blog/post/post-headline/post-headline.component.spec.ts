@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-
 import { PostHeadlineComponent } from "./post-headline.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 describe("PostHeadlineComponent", () => {
   let component: PostHeadlineComponent;

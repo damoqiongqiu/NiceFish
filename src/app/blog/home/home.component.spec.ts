@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { HomeComponent } from "./home.component";
 import { SharedModule } from "../../shared/shared.module";
-
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 describe("Component: Home", () => {
   let component: HomeComponent;
@@ -11,6 +11,7 @@ describe("Component: Home", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        BrowserAnimationsModule,
         SharedModule
       ],
       declarations: [
