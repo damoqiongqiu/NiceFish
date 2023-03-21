@@ -19,7 +19,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 **注意：为了防止依赖冲突，本项目在 package.json 中锁定了一些 Node 模块版本，如有需要，您可以自己测试兼容版本号。**
 
-## 用法
+## 启动项目
 
 打开终端，依次执行以下命令：
 
@@ -37,6 +37,26 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
     nrm use taobao
 
 这时候用 npm 安装 node 模块就会使用 taobao 提供的 registry 了。
+
+## 单元测试
+
+执行以下命令进行单元测试：
+
+    ng test
+
+<img src="./src/assets/imgs/unit-test.png">
+
+关于单元测试的详细使用方法，以及 Jasmine 的语法，请参考： https://angular.io/guide/testing
+
+## 集成测试
+
+从 v12 开始，官方废弃了原来的集成测试工具 Protractor ，此项目已经切换到官方推荐的 Cypress 集成测试工具，执行以下命令启动集成测试：
+
+    ng e2e 
+
+<img src="./src/assets/imgs/cypress.png">
+
+关于 Cypress 的技术细节，请参考： https://testing-angular.com/end-to-end-testing/#end-to-end-testing
 
 ## 常见坑点
 
