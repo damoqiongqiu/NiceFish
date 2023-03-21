@@ -34,6 +34,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule.withServerTransition({ appId: "NiceFish" }),
     BrowserAnimationsModule,
     RouterModule,
+    AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
@@ -45,7 +46,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     SharedModule,
     ToastModule,
-    AppRoutingModule
   ],
   providers: [
     TranslateService,
