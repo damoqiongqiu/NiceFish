@@ -6,12 +6,15 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
   ],
   "include": [
-    "**/*.d.ts"
+    "**/*.d.ts",
   ],
   "exclude": [
-    "**/*.spec.ts"
+    "cypress/**/*.ts",
+    "**/*.spec.ts",
+    "node_modules",
+    "node_modules/cypress"
   ]
 }

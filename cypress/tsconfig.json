@@ -1,12 +1,15 @@
 {
   "extends": "../tsconfig.json",
-  "include": ["**/*.ts"],
-  "exclude": [
-    "**/*.spec.ts",
-    "node_modules",
-  ],
   "compilerOptions": {
     "sourceMap": false,
     "types": ["cypress"]
-  }
+  },
+  "include": [
+    "**/*.cy.ts",
+    "**/*.d.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "node_modules"
+  ],
 }

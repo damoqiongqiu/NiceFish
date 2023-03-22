@@ -9,5 +9,10 @@
   "include": [
     "**/*.spec.ts",
     "**/*.d.ts"
+  ],
+  "exclude": [
+    "cypress/**/*.ts",
+    "node_modules",
+    "node_modules/cypress"
   ]
 }
