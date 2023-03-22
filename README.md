@@ -132,12 +132,12 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 看起来CKEditor和ECharts占了很大的体积，需要做一下异步加载。
 
-webpack-bundle-analyzer 使用方法：
+webpack-bundle-analyzer 使用方法，请依次执行以下操作：
 
-- npm i webpack-bundle-analyzer --save-dev
-- package.json 的 scripts 配置里面加一行 "bundle-report": "webpack-bundle-analyzer dist/stats.json"
-- ng build --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
-- 执行 npm run bundle-report 查看打包过程
+1. npm i webpack-bundle-analyzer --save-dev
+1. package.json 的 scripts 配置里面加一行 "bundle-report": "webpack-bundle-analyzer dist/browser/stats.json"
+1. ng build --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
+1. 执行 npm run bundle-report 查看打包过程
 
 ## 学习资源
 
