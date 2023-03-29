@@ -17,7 +17,6 @@
             "main": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "polyfills": [
-              "src/polyfills.ts",
               "zone.js"
             ],
             "assets": [
@@ -152,16 +151,6 @@
             "production": {
               "devServerTarget": "NiceFish:serve:production"
             }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "cypress/tsconfig.json"
-            ],
-            "exclude": []
           }
         },
         "server": {

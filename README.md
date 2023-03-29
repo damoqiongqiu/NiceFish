@@ -65,7 +65,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 ## 常见坑点
 
 * 中文开发者：如果你使用 cnpm 来安装依赖，可能会导致某些包不一致，导致应用起不来，目前原因不明，需要 cnpm 官方来解决。
-* 如果你想让打包体积更小，请使用参数构建：ng serve
+* 如果你遇到任何看起来比较玄幻的问题，请手动删掉 node_modules 目录，然后切换到 npm 官方源，重新安装所有 node 模块
 * 构建最终产品版本：ng build
 * 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
 * 如果之前装过老版本的 angular-cli 需要先卸载：npm uninstall -g angular-cli
