@@ -1,17 +1,30 @@
-// Karma configuration file, see link for more information
-// https://karma-runner.github.io/1.0/config/configuration-file.html
+// NOTE:
+// Karma configuration file, 
+// see  https://karma-runner.github.io for more information.
+// This file references VWware Clarity UI library, 
+// see https://github.com/vmware-clarity/ng-clarity for more information.
+const isWatch = require('yargs').strict(false).option('watch', { type: 'boolean', default: false }).argv.watch;
+const cpusAvailable = require('os').cpus().length;
+const executors = isWatch ? 1 : Math.min(cpusAvailable - 1, 8);
+const browser = isWatch ? 'Chrome' : 'ChromeHeadless';
+
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    frameworks: ['parallel','jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
+      require('karma-parallel'),
       require('karma-chrome-launcher'),
       require('karma-coverage'),
       require('karma-htmlfile-reporter'),
       require('karma-mocha-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
+    parallelOptions: {
+      executors,
+      shardStrategy: 'round-robin',
+    },
     client:{
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
@@ -52,7 +65,8 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: true
+    browsers: [browser],
+    singleRun: true,
+    restartOnFileChange: true
   });
 };
