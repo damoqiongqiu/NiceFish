@@ -16,7 +16,7 @@
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
     "start:server": "npm run build:ssr && npm run serve:ssr",
     "start:ssr": "npm run start:server",
-    "test": "ng test",
+    "test": "ng test --source-map=false --watch=false",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "bundle-report": "webpack-bundle-analyzer dist/browser/stats.json",

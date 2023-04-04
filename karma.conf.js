@@ -1,5 +1,8 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
+const isWatch = require('yargs').strict(false).option('watch', { type: 'boolean', default: false }).argv.watch;
+const browser = isWatch ? 'Chrome' : 'ChromeHeadless';
+
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -52,7 +55,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: [browser],
     singleRun: true
   });
 };
