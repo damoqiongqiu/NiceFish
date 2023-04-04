@@ -46,6 +46,8 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 <img src="./src/assets/imgs/unit-test.png">
 
+默认使用 ChromeHeadless 执行单元测试，按照 CPU 核心数量并行执行，karmar.conf.js 配置方式参考了 VWware 的 Clarity 项目。
+
 代码覆盖率报告：
 
 <img src="./src/assets/imgs/codecoverage.png">
