@@ -10,14 +10,14 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 ## 主要依赖
 
-- Angular 15.2.0
+- Angular 15.2.4
 - PrimeNG 15.2.0
 - Bootstrap 3.3.7
 - Echarts 4.1.0
 - ngx-echarts 4.1.0
-- ckeditor5-angular 5.2.1
+- ckeditor5-angular 5.2.0
 
-**注意：为了防止依赖冲突，本项目在 package.json 中锁定了所有 Node 模块版本，如有需要，您可以自己测试兼容版本号（不建议这样做，因为会消耗掉大量的时间）。**
+**注意：为了防止依赖冲突，本项目在 package.json 中锁定了所有 Node 模块版本。如有需要，您可以自己测试兼容版本号（不建议这样做，因为会消耗掉大量的时间）。**
 
 ## 启动项目
 
@@ -62,7 +62,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 关于 Cypress 的技术细节，请参考： https://testing-angular.com/end-to-end-testing/#end-to-end-testing
 
-## 常见坑点
+## 关于环境的常见坑点
 
 * 中文开发者：如果你使用 cnpm 来安装依赖，可能会导致某些包不一致，导致应用起不来，目前原因不明，需要 cnpm 官方来解决。
 * 如果你遇到任何看起来比较玄幻的问题，请手动删掉 node_modules 目录，然后切换到 npm 官方源，重新安装所有 node 模块
@@ -108,6 +108,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 | nicefish-springboot  | 用来示范前后端分离模式下，前端代码与后端服务的对接方式，已经完成了基线版本，并且在腾讯云上面做了实际的部署。代码仓库在这里： https://gitee.com/mumu-osc/nicefish-spring-boot ，腾讯云上的演示地址在这里： http://118.25.136.164 ，以此为基础，你可以继续开发出适合自己业务场景的代码。|
 | nicefish-springcloud  | 用来示范前后端分离模式下，前端代码与分布式后端服务的对接方式，即将完成，代码最近放出。|
 | NiceFish-React  |  这是React 版本，基于React 18.0.0 ，使用 Antd、Inversify、 定制版 Bootstrap开发。  https://gitee.com/mumu-osc/NiceFish-React.git|s
+
 ## 界面截图
 
 <img src="./src/assets/imgs/1.png">
@@ -147,3 +148,5 @@ webpack-bundle-analyzer 使用方法，请依次执行以下操作：
 ## 开源许可证
 
 MIT
+
+（补充声明：您可以随意使用此项目，但是本人不对您使用此项目造成的任何损失承担责任。）

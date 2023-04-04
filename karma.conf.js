@@ -8,7 +8,6 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-coverage'),
-      require('karma-coverage-istanbul-reporter'),
       require('karma-htmlfile-reporter'),
       require('karma-mocha-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
@@ -42,10 +41,9 @@ module.exports = function (config) {
     reporters: ['progress','mocha','html'],
     htmlReporter: {
       outputFile: 'unit-test-report/report.html',
-
       // Optional 
       pageTitle: '单元测试结果',
-      subPageTitle: 'learn-test',
+      subPageTitle: 'nicefish-unit-test',
       groupSuites: true,
       useCompactStyle: true,
       useLegacyStyle: true
@@ -55,6 +53,6 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false
+    singleRun: true
   });
 };
