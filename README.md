@@ -12,7 +12,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 - Angular 15.2.4
 - PrimeNG 15.3.0
-- Bootstrap 3.3.7
+- Bootstrap 3.4.1
 - echarts 5.4.2
 - ngx-echarts 15.0.3
 - ckeditor5-angular 5.2.0

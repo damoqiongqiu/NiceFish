@@ -37,7 +37,7 @@
     "@ckeditor/ckeditor5-build-classic": "36.0.1",
     "@ngx-translate/core": "14.0.0",
     "@ngx-translate/http-loader": "7.0.0",
-    "bootstrap": "3.3.7",
+    "bootstrap": "3.4.1",
     "echarts": "5.4.2",
     "font-awesome": "4.7.0",
     "md5": "2.2.1",
