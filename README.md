@@ -13,8 +13,8 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 - Angular 15.2.4
 - PrimeNG 15.3.0
 - Bootstrap 3.3.7
-- Echarts 4.1.0
-- ngx-echarts 4.1.0
+- echarts 5.4.2
+- ngx-echarts 15.0.3
 - ckeditor5-angular 5.2.0
 - font-awesome 4.7.0
 
@@ -47,7 +47,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 <img src="./src/assets/imgs/unit-test.png">
 
-默认使用 ChromeHeadless 执行单元测试，按照 CPU 核心数量并行执行，karmar.conf.js 配置方式参考了 VWware 的 Clarity 项目。
+默认使用 ChromeHeadless 执行单元测试，按照 CPU 核心数量并发执行测试用例，karmar.conf.js 配置方式参考了 VWware 的 Clarity 项目，参见 https://github.com/vmware-clarity/ng-clarity 。
 
 代码覆盖率报告：
 
@@ -57,7 +57,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 ## 4.集成测试
 
-从 v12 开始，官方废弃了原来的集成测试工具 Protractor ，此项目已经切换到官方推荐的 Cypress 集成测试工具，执行以下命令启动集成测试：
+Angular 从 v12 开始，官方废弃了原来的集成测试工具 Protractor （量角器），本项目已经切换到官方推荐的 Cypress 集成测试工具，执行以下命令启动集成测试：
 
     ng e2e 
 
@@ -67,25 +67,22 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 ## 5.关于 NodeJS 环境的常见坑点
 
-* 中文开发者：如果你使用 cnpm 来安装依赖，可能会导致某些包不一致，导致应用起不来，目前原因不明，需要 cnpm 官方来解决。
-* 如果你遇到任何看起来比较玄幻的问题，请手动删掉 node_modules 目录，然后切换到 npm 官方源，重新安装所有 node 模块
+* 中文开发者：如果你使用 cnpm 来安装依赖，可能会导致某些包不一致，导致应用起不来，目前原因不明，需要 cnpm 官方来解决。（cnpm 不是单纯的加速节点，它做了很多自己的处理，包括对一些 C++ 编写的 Node 模块做了预编译缓存，因此用它安装的包可能和官方源不一致。这不是 Angular 框架的问题，所有前端框架都存在这个问题。）
 * 构建最终产品版本：ng build
 * 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
 * 如果之前装过老版本的 angular-cli 需要先卸载：npm uninstall -g angular-cli
 * 如果你之前已经尝试用npm install安装过 node 模块，请手动把 NiceFish 根目录下的 node_moduels 目录删掉重新 npm install
 * 命令行删除 node_modules 速度更快，Windows 平台使用： rmdir /s/q node_modules ，*nix平台使用：sudo rm -rf node_modules
+* 如果你遇到其它任何看起来比较玄幻的问题，请手动删掉 node_modules 目录，然后切换到 npm 官方源，重新安装所有 node 模块
 * 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
 How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有。（请注意，这个配置不是 Angular 所特有的，当前主流的 SPA 型前端框架都需要做这个配置。）
 
 ## 6.直接部署到 nginx
 
-运行 ng build 构建出最终产物。
-
-安装好 nginx，把 dist/browser 目录下的所有内容拷贝到 nginx 的 html 目录下。
-
-参考 nginx.conf 配置文件，修改配置（此项目中的默认配置用于 Docker 环境，在 Windows 平台下无法使用）。
-
-启动 nginx。
+1. 运行 ng build 构建出最终产物。
+1. 安装好 nginx，把 dist/browser 目录下的所有内容拷贝到 nginx 的 html 目录下。
+1. 参考本项目根目录下的 nginx.conf 配置文件，修改配置（此项目中的默认配置用于 Docker 环境，在 Windows 平台下无法使用）。
+1. 重启 nginx。
 
 ## 7.部署到 Docker 环境
 
