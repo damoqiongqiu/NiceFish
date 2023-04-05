@@ -37,7 +37,9 @@ import { ManageRoutingModule } from "./manage.routing.module";
     PostSharedModule,
     PaginatorModule,
     ManageRoutingModule,
-    NgxEchartsModule
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    })
   ],
   exports: [
     ManageMainComponent

@@ -5,21 +5,22 @@
 <h1 align="center">NiceFish</h1>
 
 <div align="left">
-NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离的开发模式:前端浏览器、移动端、Electron 环境中的各种开发模式；后端有两个版本：SpringBoot 版本和 SpringCloud 版本。
+NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离的开发+部署模式，包括: 浏览器环境、移动端环境、Electron 环境；后端有两个版本：SpringBoot 版本和 SpringCloud 版本。
 </div>
 
-## 主要依赖
+## 1.主要依赖
 
 - Angular 15.2.4
-- PrimeNG 15.2.0
+- PrimeNG 15.3.0
 - Bootstrap 3.3.7
-- Echarts 4.1.0
-- ngx-echarts 4.1.0
+- echarts 5.4.2
+- ngx-echarts 15.0.3
 - ckeditor5-angular 5.2.0
+- font-awesome 4.7.0
 
 **注意：为了防止依赖冲突，本项目在 package.json 中锁定了所有 Node 模块版本。如有需要，您可以自己测试兼容版本号（不建议这样做，因为会消耗掉大量的时间）。**
 
-## 启动项目
+## 2.启动项目
 
 打开终端，依次执行以下命令：
 
@@ -38,7 +39,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 这时候用 npm 安装 node 模块就会使用 taobao 提供的 registry 了。
 
-## 单元测试
+## 3.单元测试
 
 执行以下命令进行单元测试：
 
@@ -46,7 +47,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 <img src="./src/assets/imgs/unit-test.png">
 
-默认使用 ChromeHeadless 执行单元测试，按照 CPU 核心数量并行执行，karmar.conf.js 配置方式参考了 VWware 的 Clarity 项目。
+默认使用 ChromeHeadless 执行单元测试，按照 CPU 核心数量并发执行测试用例，karmar.conf.js 配置方式参考了 VWware 的 Clarity 项目，参见 https://github.com/vmware-clarity/ng-clarity 。
 
 代码覆盖率报告：
 
@@ -54,9 +55,9 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 关于单元测试的详细使用方法，以及 Jasmine 的语法，请参考： https://angular.io/guide/testing
 
-## 集成测试
+## 4.集成测试
 
-从 v12 开始，官方废弃了原来的集成测试工具 Protractor ，此项目已经切换到官方推荐的 Cypress 集成测试工具，执行以下命令启动集成测试：
+Angular 从 v12 开始，官方废弃了原来的集成测试工具 Protractor （量角器），本项目已经切换到官方推荐的 Cypress 集成测试工具，执行以下命令启动集成测试：
 
     ng e2e 
 
@@ -64,29 +65,26 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 关于 Cypress 的技术细节，请参考： https://testing-angular.com/end-to-end-testing/#end-to-end-testing
 
-## 关于环境的常见坑点
+## 5.关于 NodeJS 环境的常见坑点
 
-* 中文开发者：如果你使用 cnpm 来安装依赖，可能会导致某些包不一致，导致应用起不来，目前原因不明，需要 cnpm 官方来解决。
-* 如果你遇到任何看起来比较玄幻的问题，请手动删掉 node_modules 目录，然后切换到 npm 官方源，重新安装所有 node 模块
+* 中文开发者：如果你使用 cnpm 来安装依赖，可能会导致某些包不一致，导致应用起不来，目前原因不明，需要 cnpm 官方来解决。（cnpm 不是单纯的加速节点，它做了很多自己的处理，包括对一些 C++ 编写的 Node 模块做了预编译缓存，因此用它安装的包可能和官方源不一致。这不是 Angular 框架的问题，所有前端框架都存在这个问题。）
 * 构建最终产品版本：ng build
 * 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
 * 如果之前装过老版本的 angular-cli 需要先卸载：npm uninstall -g angular-cli
 * 如果你之前已经尝试用npm install安装过 node 模块，请手动把 NiceFish 根目录下的 node_moduels 目录删掉重新 npm install
 * 命令行删除 node_modules 速度更快，Windows 平台使用： rmdir /s/q node_modules ，*nix平台使用：sudo rm -rf node_modules
+* 如果你遇到其它任何看起来比较玄幻的问题，请手动删掉 node_modules 目录，然后切换到 npm 官方源，重新安装所有 node 模块
 * 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
 How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有。（请注意，这个配置不是 Angular 所特有的，当前主流的 SPA 型前端框架都需要做这个配置。）
 
-## 直接部署到 nginx
+## 6.直接部署到 nginx
 
-运行 ng build 构建出最终产物。
+1. 运行 ng build 构建出最终产物。
+1. 安装好 nginx，把 dist/browser 目录下的所有内容拷贝到 nginx 的 html 目录下。
+1. 参考本项目根目录下的 nginx.conf 配置文件，修改配置（此项目中的默认配置用于 Docker 环境，在 Windows 平台下无法使用）。
+1. 重启 nginx。
 
-安装好 nginx，把 dist/browser 目录下的所有内容拷贝到 nginx 的 html 目录下。
-
-参考 nginx.conf 配置文件，修改配置（此项目中的默认配置用于 Docker 环境，在 Windows 平台下无法使用）。
-
-启动 nginx。
-
-## 部署到 Docker 环境
+## 7.部署到 Docker 环境
 
 请依次执行以下命令（请不要使用我的 ID ，改成你自己的 Docker 平台 ID ）：
 
@@ -99,7 +97,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 <img src="./src/assets/imgs/8.png">
 
-## 系列项目
+## 8.系列项目
 
 |  名称   | 描述  |
 |  ----  | ----  |
@@ -111,7 +109,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 | nicefish-springcloud  | 用来示范前后端分离模式下，前端代码与分布式后端服务的对接方式，即将完成，代码最近放出。|
 | NiceFish-React  |  这是React 版本，基于React 18.0.0 ，使用 Antd、Inversify、 定制版 Bootstrap开发。  https://gitee.com/mumu-osc/NiceFish-React.git|s
 
-## 界面截图
+## 9.界面截图
 
 <img src="./src/assets/imgs/1.png">
 
@@ -127,7 +125,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 <img src="./src/assets/imgs/7.png">
 
-## 打包分析
+## 10.打包分析
 
 以下是用 webpack-bundle-analyzer 分析打包之后的模块构成：
 
@@ -142,12 +140,12 @@ webpack-bundle-analyzer 使用方法，请依次执行以下操作：
 1. ng build --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
 1. 执行 npm run bundle-report 查看打包过程
 
-## 学习资源
+## 11.学习资源
 
 - 历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
 - 这里有93篇文章，详细解析了这个项目，或许对你有用：https://gitbook.cn/gitchat/column/5bebdaf22c33167c317cc285
 
-## 开源许可证
+## 12.开源许可证
 
 MIT
 
