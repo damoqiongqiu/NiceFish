@@ -12,7 +12,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 - Angular 15.2.4
 - PrimeNG 15.3.0
-- Bootstrap 3.3.7
+- Bootstrap 3.4.1
 - echarts 5.4.2
 - ngx-echarts 15.0.3
 - ckeditor5-angular 5.2.0
@@ -68,7 +68,6 @@ Angular 从 v12 开始，官方废弃了原来的集成测试工具 Protractor �
 ## 5.关于 NodeJS 环境的常见坑点
 
 * 中文开发者：如果你使用 cnpm 来安装依赖，可能会导致某些包不一致，导致应用起不来，目前原因不明，需要 cnpm 官方来解决。（cnpm 不是单纯的加速节点，它做了很多自己的处理，包括对一些 C++ 编写的 Node 模块做了预编译缓存，因此用它安装的包可能和官方源不一致。这不是 Angular 框架的问题，所有前端框架都存在这个问题。）
-* 构建最终产品版本：ng build
 * 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
 * 如果之前装过老版本的 angular-cli 需要先卸载：npm uninstall -g angular-cli
 * 如果你之前已经尝试用npm install安装过 node 模块，请手动把 NiceFish 根目录下的 node_moduels 目录删掉重新 npm install
