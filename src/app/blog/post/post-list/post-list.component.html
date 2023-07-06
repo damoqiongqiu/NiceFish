@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <p-paginator rows="{{itemsPerPage}}" totalRecords="{{totalRecords}}" first="{{offset}}" pageLinkSize="3"
+            <p-paginator rows="{{rows}}" totalRecords="{{totalElements}}" first="{{offset}}" pageLinkSize="3"
                 (onPageChange)="pageChanged($event)">
             </p-paginator>
         </div>

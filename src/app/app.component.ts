@@ -5,6 +5,7 @@ import { SignInService } from "./blog/user/sign-in/sign-in.service";
 import { SignUpService } from "./blog/user/sign-up/sign-up.service";
 import { merge } from "rxjs"
 import { MessageService } from "primeng/api";
+import { environment } from "../environments/environment";
 
 @Component({
 	selector: "root",
@@ -12,6 +13,8 @@ import { MessageService } from "primeng/api";
 	styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
+	public isMock=environment.envName.indexOf("mock")!=-1;
+
 	public showToggleMenu = false;
 	public currentUser: any;
 	private globalClickCallbackFn: Function;
@@ -25,9 +28,7 @@ export class AppComponent {
 		public signInService: SignInService,
 		public signUpService: SignUpService,
 		private messageService: MessageService
-	) {
-
-	}
+	) {}
 
 	ngOnInit() {
 		this.globalClickCallbackFn = this.renderer.listen(this.elementRef.nativeElement, "click", (event: any) => {
@@ -62,6 +63,18 @@ export class AppComponent {
 		const browserLang = this.translate.getBrowserLang();
 		console.log("获取到浏览器的语言>" + browserLang);
 		this.translate.use(browserLang.match(/zh|en/) ? browserLang : "zh");
+
+
+		setTimeout(() => {
+			if(this.isMock){
+				this.messageService.add({
+					severity: "warn",
+					summary: "Warn",
+					detail: "注意：当前为 Mock 模式，不会与服务端交互，所有输入项都可以随意输入，符合校验规则即可。如果需要与服务端交互，请重新启动到 backend 模式 ng serve --configuration development-backend",
+					sticky: true
+				});
+			}
+		}, 1500);
 	}
 
 	ngOnDestroy() {
@@ -76,8 +89,7 @@ export class AppComponent {
 
 	public doLogout(): void {
 		this.showToggleMenu = false;
-		this.signInService.logout();
-		this.messageService.add({ severity: "success", summary: "Success Message", detail: "退出成功", life: 500 });
+		this.signInService.signOut();
 		this.router.navigateByUrl("");
 	}
 }

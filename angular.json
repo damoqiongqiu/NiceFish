@@ -16,9 +16,7 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "assets": [
               "src/assets",
               "src/mock-data",
@@ -32,7 +30,41 @@
             ]
           },
           "configurations": {
-            "mock": {
+            "development-mock": {
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": true,
+              "statsJson":true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.mock.ts"
+                }
+              ]
+            },
+            "development-backend": {
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": true,
+              "statsJson":true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.backend.ts"
+                }
+              ]
+            },
+            "production-mock": {
               "budgets": [
                 {
                   "type": "anyComponentStyle",
@@ -42,7 +74,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -50,12 +81,12 @@
               "buildOptimizer": true,
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.dev.ts",
-                  "with": "src/environments/environment.mock.ts"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.mock.ts"
                 }
               ]
             },
-            "production": {
+            "production-backend": {
               "budgets": [
                 {
                   "type": "anyComponentStyle",
@@ -65,7 +96,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -73,43 +103,35 @@
               "buildOptimizer": true,
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.dev.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "hmr": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.dev.ts",
-                  "with": "src/environments/environment.hmr.ts"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.backend.ts"
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": "development-mock"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "NiceFish:build"
+            "browserTarget": "NiceFish:build:development",
+            "proxyConfig": "proxy.config.json"
           },
           "configurations": {
-            "mock": {
-              "browserTarget": "NiceFish:build:mock"
+            "development-mock": {
+              "browserTarget": "NiceFish:build:development-mock"
             },
-            "production": {
-              "browserTarget": "NiceFish:build:production"
+            "development-backend": {
+              "browserTarget": "NiceFish:build:development-backend"
             },
-            "hmr": {
-              "browserTarget": "NiceFish:build:hmr"
+            "production-mock": {
+              "browserTarget": "NiceFish:build:production-mock"
+            },
+            "production-backend": {
+              "browserTarget": "NiceFish:build:production-backend"
             }
-          }
+          },
+          "defaultConfiguration": "development-mock"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -123,10 +145,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "./karma.conf.js",
             "codeCoverage": true,
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js","zone.js/testing"],
             "scripts": [
               "node_modules/echarts/dist/echarts.js"
             ],

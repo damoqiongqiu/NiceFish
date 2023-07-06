@@ -4,22 +4,48 @@
             <h3 class="panel-title">{{'signIn.signIn' | translate}}</h3>
         </div>
         <div class="panel-body">
-            <form #form="ngForm" (ngSubmit)="form.form.valid && doLogin()" novalidate class="form-horizontal"
+            <form #signInForm="ngForm" (ngSubmit)="signInForm.form.valid && doSignIn()" novalidate class="form-horizontal"
                 role="form">
-                <div class="form-group" [ngClass]="{ 'has-error': form.submitted && !userName.valid }">
-                    <label class="col-md-2 control-label">邮箱：</label>
+                <div class="form-group" [ngClass]="{ 'has-error': signInForm.submitted && !userName.valid }">
+                    <label class="col-md-2 control-label">用户名：</label>
                     <div class="col-md-10">
                         <input required name="userName" [(ngModel)]="user.userName" #userName="ngModel" type="text"
-                            class="form-control" placeholder="请输入邮箱">
-                        <div *ngIf="form.submitted && !userName.valid" class="text-danger">用户名必须输入！</div>
+                            class="form-control" placeholder="请输入完整邮箱或者手机号">
+                        <div *ngIf="signInForm.submitted && !userName.valid" class="text-danger">用户名必须输入</div>
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{ 'has-error': form.submitted && !password.valid }">
+                <div class="form-group" [ngClass]="{ 'has-error': signInForm.submitted && !password.valid }">
                     <label class="col-md-2 control-label">密码：</label>
                     <div class="col-md-10">
                         <input required minlength="8" [(ngModel)]="user.password" name="password" #password="ngModel"
                             type="password" class="form-control" placeholder="至少8位">
-                        <div *ngIf="form.submitted && !password.valid" class="text-danger">密码必须输入,至少要8位！</div>
+                        <div *ngIf="signInForm.submitted && !password.valid" class="text-danger">密码必须输入,至少要8位</div>
+                    </div>
+                </div>
+                <!-- Mock 环境下不显示验证码，也不提交数据。-->
+                <div *ngIf="!isMock">
+                    <div class="form-group" [ngClass]="{ 'has-error': signInForm.submitted && !captcha.valid }">
+                        <label class="col-md-2 control-label">验证码：</label>
+                        <div class="col-md-10">
+                            <input required maxlength="4" [(ngModel)]="user.captcha" name="captcha" 
+                                type="text" class="form-control" placeholder="至少1位，最多4位" autocomplete="off">
+                            <div *ngIf="signInForm.submitted && !captcha.valid" class="text-danger">至少1位，最多4位</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-10 col-md-offset-2">
+                            <img src={{capchaURL}} (click)="refreshCaptcha()"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]="{ 'has-error': signInForm.submitted && !password.valid }">
+                    <label class="col-md-2 control-label">记住我：</label>
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            <label>
+                                <input [(ngModel)]="user.rememberMe" name="rememberMe" type="checkbox">
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div *ngIf="error" class="col-md-offset-2 col-md-10 alert alert-danger">{{error}}</div>

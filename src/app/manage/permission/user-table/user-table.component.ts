@@ -1,42 +1,106 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { flyIn } from "../../../shared/animations/fly-in";
+import { Component, OnInit, Input } from "@angular/core";
+import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSegment } from "@angular/router";
+import { UserMngService } from "../user-mng.service";
+import { MessageService } from "primeng/api";
+import { ConfirmationService } from "primeng/api";
+import { fadeIn } from "../../../shared/animations/fade-in";
 
 @Component({
   selector: "user-table",
   templateUrl: "./user-table.component.html",
   styleUrls: ["./user-table.component.scss"],
   animations: [
-    flyIn
+    fadeIn
   ]
 })
 export class UserTableComponent implements OnInit {
-  public maxSize = 5;
-  public itemsPerPage = 5;
-  public totalItems = 15;
-  public currentPage = 1;
-  public numPages
+  public searchStr="";
+  public userList: Array<any>;
+  public totalRecords=0;
+  public currentPage=1;
 
-  constructor(public router: Router,
-    public activeRoute: ActivatedRoute) {
+  constructor(
+    public router: Router,
+    public activeRoute: ActivatedRoute,
+    public userMngService: UserMngService,
+    public messageService:MessageService,
+    private confirmationService: ConfirmationService
+  ) {
   }
 
   ngOnInit() {
     this.activeRoute.params.subscribe(
-      params => this.getUsersByPage(params["page"])
+      params => {
+        this.currentPage=params["page"];
+        this.getUserListByPage();
+      }
     );
   }
 
-  public getUsersByPage(page: Number): void {
-    console.log("页码>" + page);
+  public searchUser() {
+    this.currentPage=1;
+    this.getUserListByPage();
   }
 
-  public pageChanged(event): void {
-    this.router.navigateByUrl("manage/usertable/page/" + event.page);
+  public resetSearch() {
+    this.currentPage=1;
+    this.searchStr="";
+    this.getUserListByPage();
+  }
+
+  public getUserListByPage() {
+    return this.userMngService.getUserTable(this.currentPage,this.searchStr)
+      .subscribe(data => {
+        this.userList=data.content;
+        this.totalRecords=data.totalElements;
+      });
+  }
+
+  public pageChanged(event: any): void {
+    this.currentPage=(event.first/event.rows)+1;
+    this.router.navigateByUrl("/manage/user-table/page/" + this.currentPage);
+  }
+
+  public delUser(rowData,ri): void {
+    this.confirmationService.confirm({
+        message: "确定要删除吗？",
+        accept: () => {
+          let userId=rowData.userId;
+          this.userMngService.del(userId)
+          .subscribe(data=> {
+            if(data&&data.success) {
+              this.messageService.add({
+                severity: "success",
+                summary: "Success Message",
+                detail: "删除成功",
+                sticky: false,
+                life: 1000
+              });
+              this.getUserListByPage();
+            } else {
+              this.messageService.add({
+                severity: "error",
+                summary: "Fail Message",
+                detail: data.msg||"删除失败",
+                sticky: false,
+                life: 1000
+              });
+            }
+          },error=> {
+            this.messageService.add({
+              severity: "error",
+              summary: "Fail Message",
+              detail: error||"删除失败",
+              sticky: false,
+              life: 1000
+            });
+          });
+        }
+    });
   }
 
   public newUser(): void {
-    this.router.navigateByUrl("manage/usertable/newuser");
+    this.router.navigateByUrl("/manage/user-table/new-user");
   }
 
   public blockUser(userId: Number): void {

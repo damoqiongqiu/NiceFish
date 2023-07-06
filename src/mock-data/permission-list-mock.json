@@ -1,0 +1,33 @@
+{
+  "content": [
+    {
+      "permissionId": 1,
+      "permissionStr": "*:*:*",
+      "remark": "所有资源*所有实例*所有属性",
+      "status": -1
+    },
+    {
+      "permissionId": 4,
+      "permissionStr": "test1:test1:test1",
+      "remark": "test1:test1:test1",
+      "status": 0
+    }
+  ],
+  "pageable": {
+    "sort": { "sorted": false, "unsorted": true, "empty": true },
+    "offset": 0,
+    "pageSize": 10,
+    "pageNumber": 0,
+    "unpaged": false,
+    "paged": true
+  },
+  "totalElements": 2,
+  "totalPages": 1,
+  "last": true,
+  "size": 10,
+  "number": 0,
+  "sort": { "sorted": false, "unsorted": true, "empty": true },
+  "numberOfElements": 2,
+  "first": true,
+  "empty": false
+}

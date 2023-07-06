@@ -1,12 +1,13 @@
-<div class="user-table-container" [@flyIn]="'active'">
+<div class="user-table-container" [@fadeIn]="'active'">
     <form class="form-vertical" role="form">
         <div class="row">
             <div class="col-md-10">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="用户名，昵称">
+                    <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="用户名，手机号">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i>
-                            搜索</button>
+                        <button class="btn btn-default" type="button" (click)="searchUser()">
+                            <i class="fa fa-search" aria-hidden="true"></i>搜索
+                        </button>
                     </span>
                 </div>
             </div>
@@ -22,38 +23,44 @@
     <div class="row">
         <div class="col-md-12">
             <div class="user-item-container">
-                <table class="table table-bordered">
-                    <thead>
+                <p-table [value]="userList" dataKey="id" editMode="row"  
+                    [paginator]="true" [rows]="10" [pageLinks]="10" [totalRecords]="totalRecords"
+                    [lazy]="true" (onLazyLoad)="pageChanged($event)">
+                    <ng-template pTemplate="header">
                         <tr>
-                            <th>序号</th>
                             <th>用户名</th>
+                            <th>昵称</th>
+                            <th>email</th>
+                            <th>手机号</th>
                             <th>注册时间</th>
-                            <th>最后登录</th>
                             <th>操作</th>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>damoqiongqiu@126.com</td>
-                            <td>2010-11-11 11:11</td>
-                            <td>2016-11-27 09:34</td>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
+                        <tr [pEditableRow]="rowData">
                             <td>
-                                <a [routerLink]="['/manage/user-table/edituser',1]"><i class="fa fa-pencil-square-o"
-                                        aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="javascript:void(0);" (click)="blockUser(1)"><i class="fa fa-lock"
-                                        aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="javascript:void(0);" (click)="unBlockUser(1)"><i class="fa fa-trash"
-                                        aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="javascript:void(0);" (click)="resetPwd(1)"><i class="fa fa-user-secret"
-                                        aria-hidden="true"></i></a>
+                                {{rowData.userName}}
+                            </td>
+                            <td>
+                                {{rowData.nickName}}
+                            </td>
+                            <td>
+                                {{rowData.email}}
+                            </td>
+                            <td>
+                                {{rowData.cellphone}}
+                            </td>
+                            <td>
+                                {{rowData.createTime}}
+                            </td>
+                            <td style="text-align:center">
+                                <a href="javascript:void(0);" (click)="editUser(rowData, ri)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="javascript:void(0);" (click)="delUser(rowData, ri)"><i class="fa fa-trash" aria-hidden="true"></i></a>
                             </td>
                         </tr>
-                    </tbody>
-                </table>
+                    </ng-template>
+                </p-table>
             </div>
-            <p-paginator rows="5" totalRecords="20" first="0">
-            </p-paginator>
         </div>
     </div>
 </div>

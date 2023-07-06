@@ -5,7 +5,7 @@
 <h1 align="center">NiceFish</h1>
 
 <div align="left">
-NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离的开发+部署模式，包括: 浏览器环境、移动端环境、Electron 环境；后端有两个版本：SpringBoot 版本和 SpringCloud 版本。
+NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离的开发+部署模式。前端有3个版本：浏览器环境、移动端环境、Electron 环境；后端有2个版本：SpringBoot 版本和 SpringCloud 版本。
 </div>
 
 ## 1.主要依赖
@@ -28,7 +28,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
     cd NiceFish
     npm i -g @angular/cli
     npm i
-    ng serve --open
+    ng serve
 
 打开浏览器，访问 http://localhost:4200/
 
@@ -38,6 +38,18 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
     nrm use taobao
 
 这时候用 npm 安装 node 模块就会使用 taobao 提供的 registry 了。
+
+## 3.在 Mock 版本和带服务端版本之间切换
+
+为了方便前后端分离的开发模式，本项目提供2种启动模式：
+
+- 带 mock 数据的启动模式：ng serve --configuration development-mock （或者直接 ng serve 启动，默认是 mock 模式）
+- 访问真实的服务端接口的启动模式： ng serve --configuration development-backend 
+
+所有的 mock 数据都在 mock-data 目录中，json 格式。
+
+与启动环境有关的配置项在 environment.* 和 angular.json 中。
+当采用直接访问服务端接口的启动模式时，需要把 proxy.config.json 中的服务端地址改成你自己的接口地址，NiceFish 提供了一个基于 SpringBoot 的服务端接口实现版本，参见： https://gitee.com/mumu-osc/nicefish-spring-boot。
 
 ## 3.单元测试
 
@@ -104,8 +116,8 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 | nicefish-ionic  | 这是一个移动端的 demo，基于 ionic，此项目已支持 PWA。http://git.oschina.net/mumu-osc/nicefish-ionic |
 | NiceBlogElectron  | 这是一个基于 Electron 的桌面端项目，把 NiceFish 用 Electron 打包成了一个桌面端运行的程序。这是由 ZTE 中兴通讯的前端道友提供的，我 fork 了一个，有几个 node 模块的版本号老要改，如果您正在研究如何利用 Electron 开发桌面端应用，请参考这个项目，https://github.com/damoqiongqiu/NiceBlogElectron|
 | OpenWMS  | 用来示范管理后台型系统的最佳实践，https://gitee.com/mumu-osc/OpenWMS-Frontend|
-| nicefish-springboot  | 用来示范前后端分离模式下，前端代码与后端服务的对接方式，已经完成了基线版本，并且在腾讯云上面做了实际的部署。代码仓库在这里： https://gitee.com/mumu-osc/nicefish-spring-boot ，腾讯云上的演示地址在这里： http://118.25.136.164 ，以此为基础，你可以继续开发出适合自己业务场景的代码。|
-| nicefish-springcloud  | 用来示范前后端分离模式下，前端代码与分布式后端服务的对接方式，即将完成，代码最近放出。|
+| nicefish-springboot  | 用来示范前后端分离模式下，前端代码与后端服务的对接方式，已经完成了基线版本，并且在腾讯云上面做了实际的部署。代码仓库在这里： https://gitee.com/mumu-osc/nicefish-spring-boot ，以此为基础，你可以继续开发出适合自己业务场景的代码。|
+| nicefish-springcloud  | 用来示范前后端分离模式下，前端代码与分布式后端服务的对接方式， https://gitee.com/mumu-osc/nicefish-spring-boot。|
 | NiceFish-React  |  这是React 版本，基于React 18.0.0 ，使用 Antd、Inversify、 定制版 Bootstrap开发。  https://gitee.com/mumu-osc/NiceFish-React.git|s
 
 ## 9.界面截图

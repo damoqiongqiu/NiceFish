@@ -1,20 +1,38 @@
 <div class="add-component-container">
-    <div class="row">
-        <div class="col-md-12">
-            <form role="form">
-                <div class="form-group">
-                    <textarea class="form-control" rows="5" placeholder="5-140个字符，非法字符自动截断。"></textarea>
-                </div>
-                <button type="button" class="btn btn-primary">{{'submit' | translate}}</button>
-            </form>
+    <div *ngIf="currentUser?.userName">
+        <div class="row">
+            <div class="col-md-12">
+                <form role="form" #commentForm="ngForm" (ngSubmit)="commentForm.form.valid&&doWriteComment()"
+                    novalidate>
+                    <div class="form-group" [ngClass]="{ 'has-error': commentForm.submitted && !content.valid }">
+                        <textarea required minlength="5" maxlength="140" name="content" #content="ngModel"
+                            [(ngModel)]="comment.content" rows="5" class="form-control"
+                            placeholder="5-140个字符，非法字符自动截断。"></textarea>
+                    </div>
+                    <!-- Mock 环境下不显示验证码，也不提交数据。-->
+                    <div *ngIf="!isMock">
+                        <div class="form-group" [ngClass]="{ 'has-error': commentForm.submitted && !captcha.valid }">
+                            <input required maxlength="4" [(ngModel)]="comment.captcha" name="captcha" #captcha="ngModel"
+                                type="text" class="form-control" placeholder="至少1位，最多4位" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <img src={{capchaURL}} (click)="refreshCaptcha()"/>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">提交</button>
+                </form>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div *ngFor="let comment of comments" class="comment-item-container">
+                <p>{{comment.nickName}} {{comment.time}}</p>
                 <h5>{{comment.content}}</h5>
-                <p>{{comment.username}} {{comment.date}}</p>
             </div>
+            <p-paginator rows="{{rows}}" totalRecords="{{totalElements}}" first="{{offset}}" pageLinkSize="3"
+                (onPageChange)="pageChanged($event)">
+            </p-paginator>
         </div>
     </div>
 </div>

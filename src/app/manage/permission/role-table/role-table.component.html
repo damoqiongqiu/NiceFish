@@ -1,19 +1,21 @@
-<div class="role-table-container" [@flyIn]="'active'">
+<div class="role-table-container" [@fadeIn]="'active'">
   <form class="form-vertical" role="form">
     <div class="row">
       <div class="col-md-10">
         <div class="input-group">
-          <input class="form-control" type="text" placeholder="角色名称，角色代码">
+          <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="角色名称">
           <span class="input-group-btn">
-            <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i>
-              搜索</button>
+              <button class="btn btn-default" type="button" (click)="searchRole()">
+                  <i class="fa fa-search" aria-hidden="true"></i>搜索
+              </button>
           </span>
         </div>
       </div>
       <div class="col-md-2">
         <div class="input-group pull-right">
-          <button class="btn btn-primary" type="button"><i class="fa fa-user" aria-hidden="true"></i>
-            创建角色</button>
+          <button class="btn btn-primary" type="button" (click)="newRole()">
+            <i class="fa fa-user" aria-hidden="true"></i>创建角色
+          </button>
         </div>
       </div>
     </div>
@@ -21,51 +23,32 @@
   <div class="row">
     <div class="col-md-12">
       <div class="role-item-container">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>序号</th>
-              <th>名称</th>
-              <th>拥有权限</th>
-              <th>操作</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>游客</td>
-              <td>阅读文章</td>
-              <td>
-                <a [routerLink]="['/manage/role-edit',1]"><i class="fa fa-pencil-square-o"
-                    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="javascript:void(0);"><i class="fa fa-trash" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>注册用户</td>
-              <td>发表文章、删除文章、发表评论、删除评论、更新个人资料、修改自己密码</td>
-              <td>
-                <a [routerLink]="['/manage/role-edit',1]"><i class="fa fa-pencil-square-o"
-                    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="javascript:void(0);"><i class="fa fa-trash" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>系统管理员</td>
-              <td>ALL</td>
-              <td>
-                <a [routerLink]="['/manage/role-edit',1]"><i class="fa fa-pencil-square-o"
-                    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="javascript:void(0);"><i class="fa fa-trash" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <p-table [value]="roleList" dataKey="id" editMode="row"  
+            [paginator]="true" [rows]="10" [pageLinks]="10" [totalRecords]="totalRecords"
+            [lazy]="true" (onLazyLoad)="pageChanged($event)">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>名称</th>
+                    <th>代码</th>
+                    <th>操作</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
+                <tr [pEditableRow]="rowData">
+                    <td>
+                        {{rowData.roleName}}
+                    </td>
+                    <td>
+                        {{rowData.roleKey}}
+                    </td>
+                    <td style="text-align:center">
+                        <a href="javascript:void(0);" (click)="editRole(rowData, ri)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:void(0);" (click)="delRole(rowData, ri)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
       </div>
-      <p-paginator rows="5" totalRecords="20" first="0">
-      </p-paginator>
     </div>
   </div>
 </div>

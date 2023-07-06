@@ -1,32 +1,68 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { environment } from "../../../environments/environment";
+import * as _ from 'lodash'
 
 @Injectable()
 export class PostService {
-    public postDetailURL = "mock-data/post-mock.json";
-    public postListURL = "mock-data/postlist-mock.json";
-    public postListSearchURL = "mock-data/postlist-search-mock.json";
+    public postDetailURL =  environment.dataURL.postDetailURL;
+    public postListURL = environment.dataURL.postListURL;
 
     constructor(public httpClient: HttpClient) {
+        
     }
 
-    public getPost(): Observable<any> {
-        return this.httpClient.get(this.postDetailURL);
+    public getPostList (page = 1): Observable<any> {
+        let reqURL=_.template(this.postListURL)({page:page});
+        return this.httpClient.get(
+            reqURL,
+            {
+                headers: new HttpHeaders({
+                    "Content-Type": "application/json"
+                })
+            }
+        );
     }
 
-    public getPostList(): Observable<any> {
-        return this.httpClient.get(this.postListURL);
+    public getPostDetail(id: string): Observable<any> {
+        let reqURL=_.template(this.postDetailURL)({id:id});
+        console.log(reqURL);
+        return this.httpClient.get(reqURL);
     }
 
-    public getPostNumber(): number {
-        return 0;
+    public writePost(post: any): Observable<any> {
+        return this.httpClient.post(
+            "/cms/post/write-post",
+            {
+                title: post.title,
+                content: post.content,
+                userId: post.userId
+            },
+            {
+                headers: new HttpHeaders({
+                    "Content-Type": "application/json"
+                })
+            }
+        )
     }
 
-    public addPost() {
-
+    public editPost(post: any): Observable<any> {
+        return this.httpClient.post(
+            "/cms/post/edit-post",
+            {
+                title: post.title,
+                content: post.content,
+                userId: post.userId
+            },
+            {
+                headers: new HttpHeaders({
+                    "Content-Type": "application/json"
+                })
+            }
+        )
     }
-
+    
     public search() {
 
     }

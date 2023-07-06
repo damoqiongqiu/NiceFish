@@ -1,6 +1,6 @@
 {
-    "total": 20,
-    "items": [
+    "totalElements": 20,
+    "content": [
         {
             "postId": 1,
             "title": "从头了解光刻机",

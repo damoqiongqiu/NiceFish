@@ -10,9 +10,10 @@ import { PostService } from "../post.service";
 	styleUrls: ["./post-list.component.scss"]
 })
 export class PostListComponent implements OnInit {
-	public itemsPerPage = 10;
-	public totalRecords = 11;
-	public currentPage = 1;
+	//以下是分页参数，需要跟服务端做对接，TODO:改到系统配置中
+	public rows = 10;//每页记录条数
+	public totalElements = 0;
+	public currentPage = 0;
 	public offset = 0;
 	public end = 0;
 
@@ -25,65 +26,9 @@ export class PostListComponent implements OnInit {
 		public router: Router,
 		public activeRoute: ActivatedRoute,
 		public postService: PostService) {
-
-		// console.log("------这里开始对比Promise和Observable，这块代码是为了学习Observable使用的------");
-
-		// //以下是Promise的写法
-		// let promise = new Promise(resolve => {
-		//     setTimeout(() => {
-		//         resolve("---promise timeout---");
-		//     }, 2000);
-		// });
-		// promise.then(value => console.log(value));
-
-		// //以下是Observable的写法
-		// let stream1$ = new Observable(observer => {
-		//     let timeout = setTimeout(() => {
-		//         observer.next("observable timeout");
-		//     }, 2000);
-
-		//     return () => {
-		//         clearTimeout(timeout);
-		//     }
-		// });
-		// let disposable = stream1$.subscribe(value => console.log(value));
-
-		// //【第一个核心不同点来了】：Observable是可以中途取消的，而Promise一旦触发就不能取消了
-		// setTimeout(() => {
-		//     disposable.unsubscribe();
-		// }, 1000);
-
-		// //【第二个核心不同点来了】：Observable可以持续发射很多值，而Promise只能发射一个值就结束了
-		// let stream2$ = new Observable<number>(observer => {
-		// 	let count = 0;
-		// 	let interval = setInterval(() => {
-		// 		observer.next(count++);
-		// 	}, 1000);
-
-		// 	return () => {
-		// 		clearInterval(interval);
-		// 	}
-		// });
-		// stream2$.subscribe(value => console.log("Observable>" + value));
-
-		// //【第三个核心不同点来了】：Observable提供了很多的工具函数，最最最常用的filter和map演示如下
-		// stream2$
-		// 	.pipe(
-		// 		filter(val => val % 2 == 0)
-		// 	)
-		// 	.subscribe(value => console.log("filter>" + value));
-
-		// stream2$
-		// 	.pipe(
-		// 		map(value => value * value)
-		// 	)
-		// 	.subscribe(value => console.log("map>" + value));
-
-		// console.log("------------------------------------------------");
 	}
 
 	ngOnInit() {
-		// 从路由里面获取URL参数
 		this.activeRoute.params.subscribe(params => {
 			console.log(params);
 			this.currentPage = params.page;
@@ -102,14 +47,17 @@ export class PostListComponent implements OnInit {
 	}
 
 	public loadData() {
-		this.offset = (this.currentPage - 1) * this.itemsPerPage;
-		this.end = (this.currentPage) * this.itemsPerPage;
-		return this.postService.getPostList().subscribe(
-			res => {
-				this.postList = res["items"].slice(this.offset, this.end > this.totalRecords ? this.totalRecords : this.end);
+		this.offset = (this.currentPage - 1) * this.rows;
+		this.end = (this.currentPage) * this.rows;
+		this.postService.getPostList(this.currentPage).subscribe(
+			(res) => {
+				console.log(res);
+				this.postList = res.content;
+				this.totalElements = res.totalElements;
 			},
-			error => { console.log(error) },
-			() => { }
+			error => {
+				console.log(error);
+			}
 		);
 	}
 
