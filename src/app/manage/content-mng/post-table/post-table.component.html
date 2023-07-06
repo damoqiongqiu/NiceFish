@@ -1,12 +1,13 @@
-<div class="post-table-container" [@flyIn]="'active'">
+<div class="post-table-container" [@fadeIn]="'active'">
     <form class="form-vertical" role="form">
         <div class="row">
             <div class="col-md-12">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="标题，作者">
+                    <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="标题">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i>
-                            搜索</button>
+                        <button class="btn btn-default" type="button" (click)="searchRole()">
+                            <i class="fa fa-search" aria-hidden="true"></i>搜索
+                        </button>
                     </span>
                 </div>
             </div>
@@ -15,7 +16,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="post-item-container">
-                <p-table [value]="postList" dataKey="id" editMode="row"  [paginator]="true" [rows]="10">
+                <p-table [value]="postList" dataKey="id" editMode="row"  
+                    [paginator]="true" [rows]="10" [pageLinks]="10" [totalRecords]="totalRecords"
+                    [lazy]="true" (onLazyLoad)="pageChanged($event)">
                     <ng-template pTemplate="header">
                         <tr>
                             <th>标题</th>
@@ -36,7 +39,8 @@
                                 {{rowData.time}}
                             </td>
                             <td style="text-align:center">
-                                <button pButton type="button" pCancelEditableRow icon="pi pi-times" class="ui-button-danger" (click)="delPost(rowData, ri)"></button>
+                                <a href="javascript:void(0);" (click)="editPost(rowData, ri)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="javascript:void(0);" (click)="delPost(rowData, ri)"><i class="fa fa-trash" aria-hidden="true"></i></a>
                             </td>
                         </tr>
                     </ng-template>

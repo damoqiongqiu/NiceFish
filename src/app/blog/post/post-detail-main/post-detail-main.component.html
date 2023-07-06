@@ -2,7 +2,9 @@
     <div class="row">
         <div class="col-md-9">
             <post-detail></post-detail>
-            <sign-in></sign-in>
+            <div *ngIf="!currentUser?.userName">
+                <sign-in></sign-in>
+            </div>
             <comment-list></comment-list>
         </div>
         <div class="col-md-3">

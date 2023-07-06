@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RetrievePwdService } from "./retrieve-pwd.service";
 import { fadeIn } from "../../../shared/animations/fade-in";
+import { environment } from "../../../../environments/environment";
 
 @Component({
 	selector: "retrieve-pwd",
@@ -9,6 +10,8 @@ import { fadeIn } from "../../../shared/animations/fade-in";
 	animations: [fadeIn]
 })
 export class RetrievePwdComponent implements OnInit {
+	public isMock=environment.envName.indexOf("mock")!=-1;
+
 	public user: any = {};
 	public message: string;
 	public messgeType: string;

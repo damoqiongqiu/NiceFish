@@ -1,1 +1,4 @@
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+describe("Component: AddComment", () => {
+
+});

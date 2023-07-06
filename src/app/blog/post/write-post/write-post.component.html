@@ -1,14 +1,26 @@
-<div class="container write-post-container" [@flyIn]="'active'">
+<div class="container write-post-container" [@fadeIn]="'active'">
     <div class="row">
         <div class="col-md-12">
-            <form role="form">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="标题，2到32个字符">
+            <form #writePostForm="ngForm" role="form" (ngSubmit)="writePostForm.form.valid&&doCommit()" novalidate>
+                <div class="form-group" [ngClass]="{ 'has-error': writePostForm.submitted && !title.valid }">
+                    <input required minlength="2" maxlength="32" name="title" #title="ngModel" 
+                        [(ngModel)]="post.title" type="text" class="form-control" placeholder="标题，2到32个字符">
                 </div>
-                <div class="form-group">
-                    <ckeditor [(ngModel)]="content" [editor]="Editor" name="content" (ready)="onReady($event)"></ckeditor>
+                <div class="form-group" [ngClass]="{ 'has-error': writePostForm.submitted && !content.valid }">
+                    <ckeditor [(ngModel)]="post.content" [editor]="Editor" name="content" #content="ngModel" 
+                    (ready)="onReady($event)"></ckeditor>
                 </div>
-                <button type="button" class="btn btn-primary" (click)="doAddPost()">{{'submit'|translate}}</button>
+                <!-- Mock 环境下不显示验证码，也不提交数据。-->
+                <div *ngIf="!isMock">
+                    <div class="form-group" [ngClass]="{ 'has-error': writePostForm.submitted && !captcha.valid }">
+                        <input required maxlength="4" [(ngModel)]="post.captcha" name="captcha" #captcha="ngModel" 
+                        type="text" class="form-control" placeholder="至少1位，最多4位" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <img src={{capchaURL}} (click)="refreshCaptcha()"/>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="writePostForm.invalid" class="btn btn-primary">提交</button>
             </form>
         </div>
     </div>

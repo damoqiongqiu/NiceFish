@@ -7,10 +7,10 @@ import { PaginatorModule } from "primeng/paginator";
 import { PostDetailComponent } from "./post-detail/post-detail.component";
 import { PostListComponent } from "./post-list/post-list.component";
 import { PostHeadlineComponent } from "./post-headline/post-headline.component";
-import { PostService } from "./post.service";
 import { PostDetailMainComponent } from "./post-detail-main/post-detail-main.component";
 import { CommentListComponent } from "../comment-list/comment-list.component";
 
+import { PostService } from "./post.service";
 import { CommentListService } from "../comment-list/comment-list.service";
 import { BooleanPipe } from "../../shared/pipes/boolean-pipe";
 

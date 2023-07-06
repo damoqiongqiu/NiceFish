@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from "@angular/router";
 import { SignInService } from "./sign-in.service";
 import { fadeIn } from "../../../shared/animations/fade-in";
+import { environment } from "../../../../environments/environment";
 
 @Component({
   selector: "sign-in",
@@ -10,16 +11,23 @@ import { fadeIn } from "../../../shared/animations/fade-in";
   animations: [fadeIn]
 })
 export class SignInComponent implements OnInit {
-  public user: any = {};
+  public isMock=environment.envName.indexOf("mock")!=-1;
+  public capchaURL = environment.dataURL.capchaURL;//FIXME:验证码相关的代码需要整合到一个公共服务中去，避免相似的代码散落在各处。
+  
+  public captcha: any = "";
   public error: Error;
+  public user: any = {
+    userName:"",
+    password:"",
+    captcha:"",
+    rememberMe:true
+  };
 
   constructor(
     public router: Router,
     public activatedRoute: ActivatedRoute,
     public signInService: SignInService
-  ) {
-    console.log(this.signInService);
-  }
+  ) {}
 
   ngOnInit() {
     console.log("--- sign-in-component ---");
@@ -35,17 +43,23 @@ export class SignInComponent implements OnInit {
     console.log(routerStateSnapshot);
   }
 
-  public doLogin(): void {
+  public doSignIn(): void {
     console.log(this.user);
-    this.signInService.login();
+    this.signInService.signIn(this.user);
   }
 
-  public doLogout(): void {
-    this.signInService.logout();
+  public doSignOut(): void {
+    if(!this.isMock){
+      this.signInService.signOut();
+    }
     this.router.navigateByUrl("home");
   }
 
   public retrievePwd(): void {
     this.router.navigateByUrl("retrievepwd");
+  }
+
+  public refreshCaptcha(): void {
+    this.capchaURL = `${this.capchaURL}&kill_cache=${new Date().getTime()}`;
   }
 }

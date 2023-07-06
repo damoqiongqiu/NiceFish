@@ -1,0 +1,73 @@
+{
+  "content": [
+    {
+      "userId": 1,
+      "userName": "admin",
+      "nickName": "admin",
+      "email": "admin@126.com",
+      "cellphone": "",
+      "gender": 1,
+      "createTime": "2019-08-27 12:40:18",
+      "avatar": "",
+      "salt": "111111",
+      "status": -1,
+      "remark": "管理员"
+    },
+    {
+      "userId": 12,
+      "userName": "253445528@qq.com",
+      "nickName": "小漠漠",
+      "email": "253445528@qq.com",
+      "cellphone": null,
+      "gender": null,
+      "createTime": "2019-08-27 12:40:18",
+      "avatar": null,
+      "salt": "b8f4f1",
+      "status": -1,
+      "remark": "管理员"
+    },
+    {
+      "userId": 22,
+      "userName": "damoqiongqiu@126.com",
+      "nickName": "大漠穷秋",
+      "email": "damoqiongqiu@126.com",
+      "cellphone": "",
+      "gender": 0,
+      "createTime": "2019-08-28 13:41:49",
+      "avatar": "",
+      "salt": "db22e1",
+      "status": -1,
+      "remark": "管理员"
+    },
+    {
+      "userId": 23,
+      "userName": "tester@126.com",
+      "nickName": "tester",
+      "email": "tester@126.com",
+      "cellphone": "",
+      "gender": 0,
+      "createTime": "2023-07-06 09:27:16",
+      "avatar": "",
+      "salt": "b37607",
+      "status": 0,
+      "remark": ""
+    }
+  ],
+  "pageable": {
+    "sort": { "sorted": false, "unsorted": true, "empty": true },
+    "offset": 0,
+    "pageSize": 10,
+    "pageNumber": 0,
+    "unpaged": false,
+    "paged": true
+  },
+  "totalElements": 4,
+  "totalPages": 1,
+  "last": true,
+  "size": 10,
+  "number": 0,
+  "sort": { "sorted": false, "unsorted": true, "empty": true },
+  "numberOfElements": 4,
+  "first": true,
+  "empty": false
+}

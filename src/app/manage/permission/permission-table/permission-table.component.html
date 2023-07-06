@@ -1,19 +1,21 @@
-<div class="permission-table-container" [@flyIn]="'active'">
+<div class="permission-table-container" [@fadeIn]="'active'">
   <form class="form-vertical" role="form">
     <div class="row">
       <div class="col-md-10">
         <div class="input-group">
-          <input class="form-control" type="text" placeholder="权限名称，权限代码">
+          <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="权限名称">
           <span class="input-group-btn">
-            <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i>
-              搜索</button>
+              <button class="btn btn-default" type="button" (click)="searchPermission()">
+                  <i class="fa fa-search" aria-hidden="true"></i>搜索
+              </button>
           </span>
         </div>
       </div>
       <div class="col-md-2">
         <div class="input-group pull-right">
-          <button class="btn btn-primary" type="button"><i class="fa fa-user" aria-hidden="true"></i>
-            创建权限</button>
+          <button class="btn btn-primary" type="button" (click)="newPermission()">
+            <i class="fa fa-user" aria-hidden="true"></i>创建权限
+          </button>
         </div>
       </div>
     </div>
@@ -21,38 +23,32 @@
   <div class="row">
     <div class="col-md-12">
       <div class="permission-item-container">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>序号</th>
-              <th>名称</th>
-              <th>操作</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>发表文章</td>
-              <td>
-                <a [routerLink]="['/manage/permission-edit',1]"><i class="fa fa-pencil-square-o"
-                    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="javascript:void(0);"><i class="fa fa-trash" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>删除文章</td>
-              <td>
-                <a [routerLink]="['/manage/permission-edit',1]"><i class="fa fa-pencil-square-o"
-                    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="javascript:void(0);"><i class="fa fa-trash" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <p-table [value]="permissionList" dataKey="id" editMode="row"  
+            [paginator]="true" [rows]="10" [pageLinks]="10" [totalRecords]="totalRecords"
+            [lazy]="true" (onLazyLoad)="pageChanged($event)">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>通配符</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
+                <tr [pEditableRow]="rowData">
+                    <td>
+                        {{rowData.permissionStr}}
+                    </td>
+                    <td>
+                        {{rowData.remark}}
+                    </td>
+                    <td style="text-align:center">
+                        <a href="javascript:void(0);" (click)="editPermission(rowData, ri)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:void(0);" (click)="delPermission(rowData, ri)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
       </div>
-      <p-paginator rows="5" totalRecords="20" first="0">
-      </p-paginator>
     </div>
   </div>
 </div>

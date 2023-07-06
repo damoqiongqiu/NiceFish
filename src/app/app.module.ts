@@ -18,6 +18,8 @@ import { SignUpService } from "./blog/user/sign-up/sign-up.service";
 import { RetrievePwdService } from "./blog/user/retrieve-pwd/retrieve-pwd.service";
 import { EqualValidator } from "./blog/user/sign-up/equal-validator.directive";
 import { AppRoutingModule } from './app.routing.module';
+import { ConfirmationService } from "primeng/api";
+import { AuthGuard } from "./shared/auth-guard";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -53,7 +55,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     SignInService,
     SignUpService,
     RetrievePwdService,
-    MessageService
+    MessageService,
+    ConfirmationService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
