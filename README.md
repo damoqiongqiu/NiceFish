@@ -154,10 +154,10 @@ webpack-bundle-analyzer 使用方法，请依次执行以下操作：
 ## 11.学习资源
 
 - 如果你需要基于 Angular 的微前端解决方案，请参考这个项目的代码和配置方式：https://gitee.com/mumu-osc/module-federation-plugin-example
-- 历次演讲中的所有 PPT 已经本项目对应的资料都在这里，您可以随意使用，https://gitee.com/mumu-osc/NiceFish/attach_files 。
-- 这里有93篇文章，详细解析了这个项目，或许对你有用：https://gitbook.cn/gitchat/column/5bebdaf22c33167c317cc285
+- 项目相关的 PPT 和资料：https://gitee.com/mumu-osc/NiceFish/attach_files 。
+- 这里有93篇文章，详细解析了项目结构和功能：https://gitbook.cn/gitchat/column/5bebdaf22c33167c317cc285
 
-## 12.开源许可证
+## 12.License
 
 MIT
 
