@@ -53,9 +53,10 @@
                             <td>
                                 {{rowData.createTime}}
                             </td>
-                            <td style="text-align:center">
-                                <a href="javascript:void(0);" (click)="editUser(rowData, ri)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="javascript:void(0);" (click)="delUser(rowData, ri)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <td style="text-align:right">
+                                <button type="button" class="btn btn-success btn-sm" (click)="editUser(rowData, ri)">编辑资料</button>&nbsp;&nbsp;
+                                <button type="button" class="btn btn-warning btn-sm">分配角色</button>&nbsp;&nbsp;
+                                <button type="button" class="btn btn-danger btn-sm" (click)="delUser(rowData, ri)">删除</button>
                             </td>
                         </tr>
                     </ng-template>

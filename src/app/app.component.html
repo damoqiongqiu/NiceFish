@@ -3,6 +3,13 @@
     <div class="container">
         <!-- 全局消息 -->
         <p-toast position="top-center"></p-toast>
+        <!-- 全局弹出确认 -->
+        <p-confirmDialog #cd [style]="{width:'50vw'}">
+            <ng-template pTemplate="footer">
+                <button type="button" pButton icon="pi pi-check" label="确定" style="btn btn-danger" (click)="cd.accept()"></button>
+                <button type="button" pButton icon="pi pi-times" label="取消" style="btn btn-success" (click)="cd.reject()"></button>
+            </ng-template>
+        </p-confirmDialog>
         <div class="navbar-header">
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
                 (click)="onMenuToggle()">

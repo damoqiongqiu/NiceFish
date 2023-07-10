@@ -1,6 +1,11 @@
-import { Component, OnInit } from "@angular/core";
 import { flyIn } from "../../../shared/animations/fly-in";
 import { fadeIn } from "../../../shared/animations/fade-in";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { RoleMngService } from "../role-mng.service";
+import { MessageService } from "primeng/api";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "role-edit",
@@ -9,36 +14,80 @@ import { fadeIn } from "../../../shared/animations/fade-in";
   animations: [flyIn, fadeIn]
 })
 export class RoleEditComponent implements OnInit {
-  public role: any = {};
+  public isMock=environment.envName.indexOf("mock")!=-1;
   public error: Error;
-  public srcList: any[] = [
-    {
-      permissionId: "1",
-      permissionName: "发表文章"
-    },
-    {
-      permissionId: "2",
-      permissionName: "删除文章"
-    },
-    {
-      permissionId: "4",
-      permissionName: "创建用户"
-    },
-    {
-      permissionId: "5",
-      permissionName: "删除用户"
-    }
-  ];
-  public selectedList: any[] = [
-    {
-      permissionId: "3",
-      permissionName: "阅读文章"
-    }
-  ];
 
-  constructor() { }
+  public roleInfo: any = {
+    roleId:"-1",
+    roleName:"",
+    roleEnabled:true,
+    status:1,
+    remark:"",
+  };
+
+  constructor(
+    public fb: FormBuilder,
+    public activeRoute: ActivatedRoute,
+    public router: Router,
+    public roleMngService: RoleMngService,
+    public messageService:MessageService
+    ) { 
+
+  }
 
   ngOnInit() {
+    this.activeRoute.params.subscribe(
+      params => {
+        if(params["roleId"]!=="-1"){
+          this.roleInfo.roleId=params["roleId"];
+          this.getRoleInfo();
+        }
+      }
+    );
+  }
+
+  public getRoleInfo(): void {
+    this.roleMngService.getRoleInfo(this.roleInfo.roleId).subscribe(
+      data => {
+        data.roleEnabled=data.status==1?true:false;
+        this.roleInfo=data;
+      },
+      error => console.error(error)
+    );
+  }
+
+  public save(): void {
+    this.roleInfo.status=this.roleInfo.roleEnabled?1:0;
+    console.log(this.roleInfo);
+
+    if(this.isMock){
+      return;
+    }
+    
+    //如果存在 roleId 参数，则为编辑状态，否则为新增状态。
+    if(this.roleInfo.roleId=="-1"){
+      this.roleMngService.newRole(this.roleInfo).subscribe(
+        data => {
+          this.messageService.add({severity:'success', summary:'成功', detail:'新增角色成功'});
+          window.history.back();
+        },
+        error => {
+          this.messageService.add({severity:'error', summary:'失败', detail:'新增角色失败'});
+          console.error(error);
+        }
+      );
+    }else{
+      this.roleMngService.updateRole(this.roleInfo).subscribe(
+        data => {
+          this.messageService.add({severity:'success', summary:'成功', detail:'更新角色成功'});
+          window.history.back();
+        },
+        error => {
+          this.messageService.add({severity:'error', summary:'失败', detail:'更新角色失败'});
+          console.error(error);
+        }
+      );
+    }
   }
 
   public cancel(): void {

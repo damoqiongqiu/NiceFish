@@ -67,8 +67,7 @@ export class RoleTableComponent implements OnInit {
     this.confirmationService.confirm({
         message: "确定要删除吗？",
         accept: () => {
-          let roleId=rowData.roleId;
-          this.roleMngService.del(roleId)
+          this.roleMngService.deleteRole(rowData.roleId)
           .subscribe(data=> {
             if(data&&data.success) {
               this.messageService.add({
@@ -102,7 +101,8 @@ export class RoleTableComponent implements OnInit {
   }
 
   public newRole() {
-    this.router.navigateByUrl("/manage/role-table/new-role");
+    this.router.navigateByUrl("/manage/role-table/edit-role/-1");//复用 RoleEditComponent ，roleId 传 -1 表示新建
+    return true;
   }
 
   public editRole(rowData, ri) {
