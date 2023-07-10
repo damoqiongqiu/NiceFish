@@ -28,8 +28,9 @@
             [lazy]="true" (onLazyLoad)="pageChanged($event)">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>名称</th>
-                    <th>代码</th>
+                    <th>角色名称</th>
+                    <th>状态</th>
+                    <th>备注</th>
                     <th>操作</th>
                 </tr>
             </ng-template>
@@ -39,11 +40,15 @@
                         {{rowData.roleName}}
                     </td>
                     <td>
-                        {{rowData.roleKey}}
+                      <span *ngIf="rowData.status==1" class='label label-success'>已启用</span> 
+                      <span *ngIf="rowData.status==0" class='label label-danger'>已禁用</span>
                     </td>
-                    <td style="text-align:center">
-                        <a href="javascript:void(0);" (click)="editRole(rowData, ri)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="javascript:void(0);" (click)="delRole(rowData, ri)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    <td>
+                        {{rowData.remark}}
+                    </td>
+                    <td style="text-align:right">
+                      <button type="button" class="btn btn-success btn-sm" (click)="editRole(rowData, ri)">编辑</button>&nbsp;&nbsp;
+                      <button type="button" class="btn btn-danger btn-sm" (click)="delRole(rowData, ri)">删除</button>
                     </td>
                 </tr>
             </ng-template>

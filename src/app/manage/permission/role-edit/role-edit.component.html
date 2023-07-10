@@ -1,36 +1,82 @@
 <div class="role-edit-container" [@fadeIn]>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">编辑角色</h3>
+      <h3 class="panel-title">创建/编辑角色</h3>
     </div>
     <div class="panel-body">
-      <form #form="ngForm" (ngSubmit)="form.form.valid" novalidate class="form-horizontal" role="form">
-        <div class="form-group" [ngClass]="{ 'has-error': form.submitted && !roleName.valid }">
-          <label class="col-md-2 control-label">名称：</label>
+      <form
+        #roleInfoForm="ngForm"
+        novalidate
+        class="form-horizontal"
+        role="form"
+      >
+        <div class="form-group" [ngClass]="{ 'has-error': !roleName.valid }">
+          <label class="col-md-2 control-label">角色名称：</label>
           <div class="col-md-10">
-            <input required name="roleName" [(ngModel)]="role.roleName" #roleName="ngModel" type="text"
-              class="form-control" placeholder="请输入名称">
-            <div *ngIf="form.submitted && !roleName.valid" class="text-danger">角色名称必须输入！</div>
+            <input
+              required
+              name="roleName"
+              [(ngModel)]="roleInfo.roleName"
+              #roleName="ngModel"
+              type="text"
+              class="form-control"
+              placeholder="请输入角色名称"
+              minlength="2"
+              maxlength="32"
+            />
+            <div *ngIf="!roleName.valid" class="text-danger">
+              角色名称必须输入
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <label class="col-md-2 control-label">权限：</label>
+        <div class="form-group" [ngClass]="{ 'has-error': !roleEnabled.valid }">
+          <label class="col-md-2 control-label">是否启用：</label>
           <div class="col-md-10">
-            <p-pickList [source]="srcList" [target]="selectedList" [responsive]="true" dragdrop="true"
-              sourceHeader="可选权限" targetHeader="现有权限">
-              <ng-template let-permission pTemplate="item">
-                <div class="ui-helper-clearfix">
-                  <div>{{permission.permissionName}}</div>
-                </div>
-              </ng-template>
-            </p-pickList>
+            <div class="checkbox">
+              <label>
+                <input
+                  name="roleEnabled"
+                  [(ngModel)]="roleInfo.roleEnabled"
+                  #roleEnabled="ngModel"
+                  type="checkbox"
+                />
+              </label>
+            </div>
           </div>
         </div>
-        <div *ngIf="error" class="col-md-offset-2 col-md-10 alert alert-danger">{{error}}</div>
+        <div class="form-group" [ngClass]="{ 'has-error': !remark.valid }">
+          <label class="col-md-2 control-label">备注：</label>
+          <div class="col-md-10">
+            <textarea
+              rows="5"
+              name="remark"
+              [(ngModel)]="roleInfo.remark"
+              #remark="ngModel"
+              type="text"
+              class="form-control"
+              placeholder="备注"
+              maxlength="200"
+            >
+            </textarea>
+            <div *ngIf="!remark.valid" class="text-danger">备注必须输入</div>
+          </div>
+        </div>
+
+        <div *ngIf="error" class="col-md-offset-2 col-md-10 alert alert-danger">
+          {{ error }}
+        </div>
         <div class="form-group">
           <div class="col-md-offset-2 col-md-10">
-            <button type="submit" class="btn btn-primary btn-margin-1rem">保存</button>
-            <button type="button" class="btn btn-default" (click)="cancel()">取消</button>
+            <button
+              type="button"
+              class="btn btn-success btn-margin-1rem"
+              (click)="roleInfoForm.form.valid && save()"
+            >
+              保存
+            </button>
+            <button type="button" class="btn btn-danger" (click)="cancel()">
+              取消
+            </button>
           </div>
         </div>
       </form>

@@ -10,6 +10,9 @@ export class RoleMngService {
 
     private roleTableURL = environment.dataURL.roleTableURL;
     private delRoleURL = environment.dataURL.delRoleURL;
+    private newRoleURL = environment.dataURL.newRoleURL;
+    private updateRoleURL = environment.dataURL.updateRoleURL;
+    private roleDetailURL = environment.dataURL.roleDetailURL;
     
     constructor(public httpClient: HttpClient) { }
 
@@ -25,29 +28,21 @@ export class RoleMngService {
         });
     }
 
-    public del(id): Observable<any> {
+    public getRoleInfo(roleId): Observable<any> {
+        let reqURL=_.template(this.roleDetailURL)({id:roleId});
+        return this.httpClient.get(reqURL);
+    }
+
+    public newRole(roleInfo:any): Observable<any> {
+        return this.httpClient.post(this.newRoleURL,roleInfo);
+    }
+    
+    public updateRole(roleInfo:any): Observable<any> {
+        return this.httpClient.post(this.updateRoleURL,roleInfo);
+    }
+    
+    public deleteRole(id): Observable<any> {
         let reqURL=_.template(this.delRoleURL)({id:id});
         return this.httpClient.delete(reqURL);
     }
-
-    public newRole(newURL:string,data:any): Observable<any> {
-        return this.httpClient.post(newURL,data);
-    }
-
-    public updateRole(updateURL:string,role:any): Observable<any> {
-        return this.httpClient.post(updateURL,role);
-    }
-
-    public getRoleDetails(dataURL: string,roleId): Observable<any> {
-        return this.httpClient.get(dataURL+roleId);
-    }
-
-    public getAllPermissionsByRoleId(dataURL: string,roleId): Observable<any> {
-        return this.httpClient.get(dataURL+roleId);
-    }
-
-    public getAllPermissions(dataURL: string,data): Observable<any> {
-        return this.httpClient.post(dataURL,data);
-    }
-
 }
