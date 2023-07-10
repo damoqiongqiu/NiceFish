@@ -1,6 +1,7 @@
 <!-- 顶部导航 -->
 <div class="navbar navbar-fixed-top main-nav" role="navigation">
     <div class="container">
+        
         <!-- 全局消息 -->
         <p-toast position="top-center"></p-toast>
         <!-- 全局弹出确认 -->
@@ -10,6 +11,8 @@
                 <button type="button" pButton icon="pi pi-times" label="取消" style="btn btn-success" (click)="cd.reject()"></button>
             </ng-template>
         </p-confirmDialog>
+
+
         <div class="navbar-header">
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
                 (click)="onMenuToggle()">

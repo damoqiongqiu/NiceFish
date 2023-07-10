@@ -61,6 +61,11 @@ export class UserTableComponent implements OnInit {
     this.router.navigateByUrl("/manage/user-table/page/" + this.currentPage);
   }
 
+  public editUser(rowData,ri): void {
+    let userId=rowData.userId;
+    this.router.navigateByUrl("/manage/profile/" + userId);
+  }
+
   public delUser(rowData,ri): void {
     this.confirmationService.confirm({
         message: "确定要删除吗？",
@@ -100,7 +105,7 @@ export class UserTableComponent implements OnInit {
   }
 
   public newUser(): void {
-    this.router.navigateByUrl("/manage/user-table/new-user");
+    this.router.navigateByUrl("/register");
   }
 
   public blockUser(userId: Number): void {

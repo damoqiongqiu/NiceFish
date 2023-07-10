@@ -24,6 +24,8 @@ export const dataURL = {
     commentListURL:"/cms/comment/manage/comment-table/<%= page %>",
     delCommentURL:"/cms/comment/manage/delete/<%= id %>",
     userListURL:"/auth/user/list/<%= page %>",
+    userDetailURL:"/auth/user/detail/<%= id %>",
+    updateUserURL:"/auth/user/edit",
     delUserURL:"/auth/user/delete/<%= id %>",
     roleTableURL:"/auth/role/list/<%= page %>",
     roleDetailURL:"/auth/role/detail/<%= id %>",

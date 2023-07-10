@@ -13,8 +13,7 @@
             </div>
             <div class="col-md-2">
                 <div class="input-group pull-right">
-                    <button class="btn btn-primary" type="button" (click)="newUser()"><i class="fa fa-user"
-                            aria-hidden="true"></i>
+                    <button class="btn btn-primary" type="button" (click)="newUser()"><i class="fa fa-user" aria-hidden="true"></i>
                         创建用户</button>
                 </div>
             </div>
@@ -30,6 +29,7 @@
                         <tr>
                             <th>用户名</th>
                             <th>昵称</th>
+                            <th>状态</th>
                             <th>email</th>
                             <th>手机号</th>
                             <th>注册时间</th>
@@ -45,6 +45,9 @@
                                 {{rowData.nickName}}
                             </td>
                             <td>
+                                <span *ngIf="rowData.status == 1" class="label label-success">正常</span>
+                                <span *ngIf="rowData.status == 0" class="label label-danger">禁用</span>
+                            <td>
                                 {{rowData.email}}
                             </td>
                             <td>
@@ -54,7 +57,7 @@
                                 {{rowData.createTime}}
                             </td>
                             <td style="text-align:right">
-                                <button type="button" class="btn btn-success btn-sm" (click)="editUser(rowData, ri)">编辑资料</button>&nbsp;&nbsp;
+                                <button type="button" class="btn btn-success btn-sm" (click)="editUser(rowData, ri)">编辑</button>&nbsp;&nbsp;
                                 <button type="button" class="btn btn-warning btn-sm">分配角色</button>&nbsp;&nbsp;
                                 <button type="button" class="btn btn-danger btn-sm" (click)="delUser(rowData, ri)">删除</button>
                             </td>

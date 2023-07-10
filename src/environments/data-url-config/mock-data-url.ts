@@ -16,6 +16,8 @@ export const dataURL = {
     commentListURL:"mock-data/comment-list-mock.json",
     delCommentURL:"",
     userListURL:"mock-data/user-list-mock.json",
+    userDetailURL:"mock-data/user-detail-mock.json",
+    updateUserURL:"mock-data/user-register-mock.json",
     delUserURL:"",
     roleTableURL:"mock-data/role-list-mock.json",
     roleDetailURL:"mock-data/role-detail-mock.json",

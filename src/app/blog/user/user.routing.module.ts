@@ -13,7 +13,6 @@ export const userRoutes:Routes = [
 			{ path: "", redirectTo: "posttable/page/1", pathMatch: "full" },
 			{ path: "post-table/page/:page", component: PostTableComponent },
 			{ path: "comment-table/page/:page", component: CommentTableComponent },
-			{ path: "profile", component: UserProfileComponent },
 			{ path: "**", redirectTo: "write" }
 		]
 	}
