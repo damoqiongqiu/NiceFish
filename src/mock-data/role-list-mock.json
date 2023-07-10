@@ -1,78 +1,25 @@
 {
   "content": [
     {
-      "roleId": 1,
-      "roleName": "管理员",
-      "roleKey": "admin",
-      "status": -1,
-      "remark": "管理员",
-      "userEntities": [
-        {
-          "userId": 1,
-          "userName": "admin",
-          "nickName": "admin",
-          "password": "29c67a30398638269fe600f73a054934",
-          "email": "admin@126.com",
-          "cellphone": "",
-          "gender": 1,
-          "createTime": "2019-08-27 12:40:18",
-          "avatar": "",
-          "salt": "111111",
-          "status": -1,
-          "remark": "管理员"
-        }
-      ]
+      "roleId": 3,
+      "roleName": "test1",
+      "status": 1,
+      "remark": "test1",
+      "userEntities": []
     },
     {
-      "roleId": 2,
-      "roleName": "普通用户",
-      "roleKey": "common",
-      "status": -1,
-      "remark": "普通角色",
-      "userEntities": [
-        {
-          "userId": 12,
-          "userName": "253445528@qq.com",
-          "nickName": "小漠漠",
-          "password": "123159e713693930e22e4c1c8ce546f4",
-          "email": "253445528@qq.com",
-          "cellphone": null,
-          "gender": null,
-          "createTime": "2019-08-27 12:40:18",
-          "avatar": null,
-          "salt": "b8f4f1",
-          "status": -1,
-          "remark": "管理员"
-        },
-        {
-          "userId": 22,
-          "userName": "damoqiongqiu@126.com",
-          "nickName": "大漠穷秋",
-          "password": "53c4eea9f0d6797ccfaefdd525a8e8f3",
-          "email": "damoqiongqiu@126.com",
-          "cellphone": "",
-          "gender": 0,
-          "createTime": "2019-08-28 13:41:49",
-          "avatar": "",
-          "salt": "db22e1",
-          "status": -1,
-          "remark": "管理员"
-        },
-        {
-          "userId": 23,
-          "userName": "tester@126.com",
-          "nickName": "tester",
-          "password": "83e0e0e27b54bb269a6258d8f1b3478b",
-          "email": "tester@126.com",
-          "cellphone": "",
-          "gender": 0,
-          "createTime": "2023-07-06 09:27:16",
-          "avatar": "",
-          "salt": "b37607",
-          "status": 0,
-          "remark": ""
-        }
-      ]
+      "roleId": 4,
+      "roleName": "test2",
+      "status": 0,
+      "remark": "test2",
+      "userEntities": []
+    },
+    {
+      "roleId": 5,
+      "roleName": "test4",
+      "status": 1,
+      "remark": "test4",
+      "userEntities": []
     }
   ],
   "pageable": {
@@ -80,16 +27,16 @@
     "offset": 0,
     "pageSize": 10,
     "pageNumber": 0,
-    "unpaged": false,
-    "paged": true
+    "paged": true,
+    "unpaged": false
   },
-  "totalElements": 2,
-  "totalPages": 1,
+  "totalElements": 3,
   "last": true,
+  "totalPages": 1,
   "size": 10,
   "number": 0,
   "sort": { "sorted": false, "unsorted": true, "empty": true },
-  "numberOfElements": 2,
+  "numberOfElements": 3,
   "first": true,
   "empty": false
 }
