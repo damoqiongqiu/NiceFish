@@ -149,7 +149,7 @@ export class SignUpComponent implements OnInit {
               this.messageService.add({ severity: "success", summary: "注册成功", detail: "请登录" });
               this.saveSuccess.emit("saveSuccess");
               if(!this.isEdit) {
-                this.router.navigateByUrl("login");
+                window.history.back();
               }
             } else {
               this.formErrors.formError = data.msg;

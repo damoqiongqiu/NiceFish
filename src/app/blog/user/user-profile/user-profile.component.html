@@ -1,38 +1,18 @@
 <div class="user-profile-container">
     <div class="panel panel-default">
-        <div class="panel-heading">基本资料</div>
+        <div class="panel-heading">创建/编辑用户</div>
         <div class="panel-body">
-            <form class="form-horizontal" role="form" [formGroup]="form">
+            <form class="form-horizontal" role="form" [formGroup]="formGroup">
                 <div *ngFor="let field of fields" class="form-group">
-                    <form-control [form]="form" [field]="field"></form-control>
+                    <form-control [form]="formGroup" [field]="field" [ngClass]="{'has-error': formGroup.get(field.key).invalid }"></form-control>
                 </div>
-            </form>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">关联角色</div>
-        <div class="panel-body">
-            <form novalidate class="form-horizontal">
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <p-pickList [source]="srcList" [target]="selectedList" [responsive]="true" dragdrop="true"
-                            sourceHeader="可选角色" targetHeader="现有角色">
-                            <ng-template let-role pTemplate="item">
-                                <div class="ui-helper-clearfix">
-                                    <div>{{role.roleName}}</div>
-                                </div>
-                            </ng-template>
-                        </p-pickList>
-                    </div>
-                </div>
-                <div *ngIf="error" class="col-md-offset-2 col-md-10 alert alert-danger">{{error}}</div>
             </form>
         </div>
     </div>
     <form class="form-horizontal" role="form">
         <div class="form-group">
-            <div class="col-md-10">
-                <button type="button" class="btn btn-primary btn-margin-1rem">保存</button>
+            <div class="col-md-12">
+                <button type="button" class="btn btn-primary btn-margin-1rem" (click)="save()">保存</button>
                 <button type="button" class="btn btn-default" (click)="cancel()">取消</button>
             </div>
         </div>

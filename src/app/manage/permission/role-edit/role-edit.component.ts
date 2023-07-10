@@ -2,7 +2,6 @@ import { flyIn } from "../../../shared/animations/fly-in";
 import { fadeIn } from "../../../shared/animations/fade-in";
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { RoleMngService } from "../role-mng.service";
 import { MessageService } from "primeng/api";
 import { environment } from "src/environments/environment";
@@ -26,7 +25,6 @@ export class RoleEditComponent implements OnInit {
   };
 
   constructor(
-    public fb: FormBuilder,
     public activeRoute: ActivatedRoute,
     public router: Router,
     public roleMngService: RoleMngService,

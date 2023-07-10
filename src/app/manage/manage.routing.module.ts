@@ -24,12 +24,11 @@ export const manageRoutes:Routes = [
 			{ path: "post-table/page/:page", component: PostTableComponent },
 			{ path: "comment-table/page/:page", component: CommentTableComponent },
 			{ path: "user-table/page/:page", component: UserTableComponent },
-			{ path: "user-table/edit-user/:userId", component: UserProfileComponent },
 			{ path: "role-table/page/:page", component: RoleTableComponent },
 			{ path: "role-table/edit-role/:roleId", component: RoleEditComponent },
 			{ path: "permission-table/page/:page", component: PermissionTableComponent },
 			{ path: "permission-edit/:permissionId", component: PermissionEditComponent },
-			{ path: "profile", component: UserProfileComponent },
+			{ path: "profile/:userId", component: UserProfileComponent },
 			{ path: "sysparam", component: SysParamComponent },
 			{ path: "**", redirectTo: "posttable/page/1" }
 		]
