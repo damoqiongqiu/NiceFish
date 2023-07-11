@@ -18,7 +18,7 @@ import { environment } from "../../../../environments/environment";
  * @see https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/frameworks/angular.html
  */
 export class WritePostComponent {
-  public isMock=environment.envName.indexOf("mock")!=-1;
+  public isMock=environment.isMock;
   public capchaURL = environment.dataURL.capchaURL;//FIXME:验证码相关的代码需要整合到一个公共服务中去，避免相似的代码散落在各处。
   //绑定到编辑器的数据模型，里面可以带HTML标签
   public post: any = {

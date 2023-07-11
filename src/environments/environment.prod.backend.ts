@@ -5,5 +5,6 @@ import { dataURL } from './data-url-config/backend-url';
 export const environment = {
     envName:'prod.backqend',
     production: true,
+    isMock:false,
     dataURL:dataURL
 };

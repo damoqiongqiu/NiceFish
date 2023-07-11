@@ -11,7 +11,7 @@ import { environment } from "../../../../environments/environment";
   animations: [fadeIn]
 })
 export class SignInComponent implements OnInit {
-  public isMock=environment.envName.indexOf("mock")!=-1;
+  public isMock=environment.isMock;
   public capchaURL = environment.dataURL.capchaURL;//FIXME:验证码相关的代码需要整合到一个公共服务中去，避免相似的代码散落在各处。
   
   public captcha: any = "";

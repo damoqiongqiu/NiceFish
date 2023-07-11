@@ -6,7 +6,7 @@ import { environment } from "../../../../environments/environment";
 
 @Injectable()
 export class SignInService {
-  public isMock=environment.envName.indexOf("mock")!=-1;
+  public isMock=environment.isMock;
   public signInURL = environment.dataURL.signInURL;
   public signOutURL=environment.dataURL.signOutURL;
   public getSessionUserURL=environment.dataURL.getSessionUserURL;

@@ -13,7 +13,7 @@ import { environment } from "../environments/environment";
 	styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-	public isMock=environment.envName.indexOf("mock")!=-1;
+	public isMock=environment.isMock;
 
 	public showToggleMenu = false;
 	public currentUser: any;

@@ -10,7 +10,7 @@ import { environment } from "../../../../environments/environment";
 	animations: [fadeIn]
 })
 export class RetrievePwdComponent implements OnInit {
-	public isMock=environment.envName.indexOf("mock")!=-1;
+	public isMock=environment.isMock;
 
 	public user: any = {};
 	public message: string;

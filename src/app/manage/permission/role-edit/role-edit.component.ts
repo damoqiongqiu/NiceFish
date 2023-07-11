@@ -13,7 +13,7 @@ import { environment } from "src/environments/environment";
   animations: [flyIn, fadeIn]
 })
 export class RoleEditComponent implements OnInit {
-  public isMock=environment.envName.indexOf("mock")!=-1;
+  public isMock=environment.isMock;
   public error: Error;
 
   public roleInfo: any = {
