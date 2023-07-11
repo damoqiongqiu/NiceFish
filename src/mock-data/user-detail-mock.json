@@ -1,0 +1,16 @@
+{
+  "data": {
+    "userId": 2,
+    "userName": "tester2@126.com",
+    "nickName": "tester2",
+    "email": "tester2@126.com",
+    "cellphone": "",
+    "gender": "1",
+    "createTime": "2023-07-10 21:54:27",
+    "avatarURL": "",
+    "salt": "a892c6",
+    "status": 1,
+    "remark": ""
+  },
+  "success": true
+}
