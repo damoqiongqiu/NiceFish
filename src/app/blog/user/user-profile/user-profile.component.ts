@@ -33,7 +33,7 @@ export class UserProfileComponent implements OnInit {
       }
     });
   }
-  
+
   buildFormGroup() {
     //FIXME:用户资料应该可以修改性别和状态字段。
     let fields:any[] = [
@@ -67,6 +67,11 @@ export class UserProfileComponent implements OnInit {
       },
       {
         key: "cellphone",
+        validators:[Validators.pattern("^[0-9]*$")],
+      },
+      {
+        key: "gender",
+        validators:[],
       },
       {
         key: "password",
@@ -83,6 +88,11 @@ export class UserProfileComponent implements OnInit {
           Validators.minLength(8),
           Validators.maxLength(16),
         ],
+      },
+      {
+        key: "status",
+        value:true,
+        validators: [],
       },
       {
         rows: 5,
@@ -131,6 +141,7 @@ export class UserProfileComponent implements OnInit {
     let userInfo = this.formGroup.value;
     delete userInfo.confirmPassword;
     delete userInfo.currentAvatarURL;
+    userInfo.status = userInfo.status ? 1 : 0;//数据库中status字段为int类型，0表示禁用，1表示启用。
 
     if (this.userId !== "-1") {
       userInfo.userId = this.userId;
@@ -173,6 +184,8 @@ export class UserProfileComponent implements OnInit {
         nickName: userDetail.nickName,
         email: userDetail.email,
         cellphone: userDetail.cellphone,
+        gender: userDetail.gender,
+        status: userDetail.status===1?true:false,
         remark: userDetail.remark,
       });
     });
