@@ -27,7 +27,7 @@ export class UserProfileComponent implements OnInit {
     public router: Router,
     public activeRoute: ActivatedRoute,
     public userMngService: UserMngService,
-    public messageService:MessageService
+    public messageService:MessageService,
   ) {}
 
   ngOnInit() {
