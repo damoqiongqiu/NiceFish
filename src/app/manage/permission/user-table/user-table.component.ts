@@ -105,7 +105,7 @@ export class UserTableComponent implements OnInit {
   }
 
   public newUser(): void {
-    this.router.navigateByUrl("/register");
+    this.router.navigateByUrl("/manage/profile/-1");
   }
 
   public blockUser(userId: Number): void {

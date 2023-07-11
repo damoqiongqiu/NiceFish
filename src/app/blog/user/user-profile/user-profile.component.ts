@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { MessageService } from "primeng/api";
 import { UserMngService } from "src/app/manage/permission/user-mng.service";
 
 @Component({
@@ -16,11 +17,17 @@ import { UserMngService } from "src/app/manage/permission/user-mng.service";
 export class UserProfileComponent implements OnInit {
   private userId: string = "-1";
   public formGroup: FormGroup;
+  public genderList: any = [
+    {label:'女',value:0},
+    {label:'男',value:1},
+    {label:'未知',value:2}
+  ];
 
   constructor(
     public router: Router,
     public activeRoute: ActivatedRoute,
-    public userMngService: UserMngService
+    public userMngService: UserMngService,
+    public messageService:MessageService
   ) {}
 
   ngOnInit() {
@@ -28,14 +35,11 @@ export class UserProfileComponent implements OnInit {
 
     this.activeRoute.params.subscribe((params) => {
       this.userId = params["userId"];
-      if (this.userId !== "-1") {
-        this.loadUserDetail();
-      }
+      this.loadUserDetail();
     });
   }
 
   buildFormGroup() {
-    //FIXME:用户资料应该可以修改性别和状态字段。
     let fields:any[] = [
       {
         key: "currentAvatarURL", //必须要有 key 属性，否则取不到数据。
@@ -71,6 +75,7 @@ export class UserProfileComponent implements OnInit {
       },
       {
         key: "gender",
+        value:"2",
         validators:[],
       },
       {
@@ -162,6 +167,13 @@ export class UserProfileComponent implements OnInit {
           console.log(response);
           if (response.success) {
             window.history.back();
+          }else{
+            this.messageService.add({
+              severity: "error",
+              summary: "Error",
+              detail: response.msg, 
+              sticky: true
+            });
           }
         },
         (error) => {
@@ -176,6 +188,22 @@ export class UserProfileComponent implements OnInit {
   }
 
   public loadUserDetail() {
+    //创建新用户
+    if(this.userId=="-1"){
+      this.formGroup.patchValue({
+        currentAvatarURL: "",
+        userName: "",
+        nickName: "",
+        email: "",
+        cellphone: "",
+        gender: 2,
+        status: 1,
+        remark: "",
+      });
+      return;
+    }
+
+    //编辑已经存在的用户
     this.userMngService.getUserDetail(this.userId).subscribe((response) => {
       let userDetail = response.data;
       this.formGroup.patchValue({
