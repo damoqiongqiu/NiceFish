@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule } from "@angular/router";
-import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
@@ -21,6 +21,8 @@ import { EqualValidator } from "./blog/user/sign-up/equal-validator.directive";
 import { AppRoutingModule } from './app.routing.module';
 import { ConfirmationService } from "primeng/api";
 import { AuthGuard } from "./shared/auth-guard";
+import { BlockService } from "./shared/block-spinner/block-service.service";
+import { NiceFishHttpInterceptor } from "./shared/NiceFishHttpInterceptor";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -59,6 +61,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     RetrievePwdService,
     MessageService,
     ConfirmationService,
+    BlockService,
+    { provide: HTTP_INTERCEPTORS, useClass: NiceFishHttpInterceptor, multi: true },
     AuthGuard
   ],
   bootstrap: [AppComponent]
