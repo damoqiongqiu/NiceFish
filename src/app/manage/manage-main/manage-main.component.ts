@@ -10,10 +10,13 @@ import { flyIn } from "../../shared/animations/fly-in";
   ]
 })
 export class ManageMainComponent implements OnInit {
+  //当前登录的用户
+  public currentUser:any={};
 
   constructor() { }
 
   ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
   }
 
 }
