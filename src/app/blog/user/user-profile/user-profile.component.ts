@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { MessageService } from "primeng/api";
 import { UserMngService } from "src/app/manage/permission/user-mng.service";
 
 @Component({
@@ -16,11 +17,17 @@ import { UserMngService } from "src/app/manage/permission/user-mng.service";
 export class UserProfileComponent implements OnInit {
   private userId: string = "-1";
   public formGroup: FormGroup;
+  public genderList: any = [
+    {label:'女',value:0},//value 必须是数值，与服务端的接口类型对应，否则无法选中。
+    {label:'男',value:1},
+    {label:'未知',value:2}
+  ];
 
   constructor(
     public router: Router,
     public activeRoute: ActivatedRoute,
-    public userMngService: UserMngService
+    public userMngService: UserMngService,
+    public messageService:MessageService
   ) {}
 
   ngOnInit() {
@@ -28,14 +35,11 @@ export class UserProfileComponent implements OnInit {
 
     this.activeRoute.params.subscribe((params) => {
       this.userId = params["userId"];
-      if (this.userId !== "-1") {
-        this.loadUserDetail();
-      }
+      this.loadUserDetail();
     });
   }
 
   buildFormGroup() {
-    //FIXME:用户资料应该可以修改性别和状态字段。
     let fields:any[] = [
       {
         key: "currentAvatarURL", //必须要有 key 属性，否则取不到数据。
@@ -71,23 +75,16 @@ export class UserProfileComponent implements OnInit {
       },
       {
         key: "gender",
+        value:2,
         validators:[],
       },
       {
         key: "password",
-        validators: [
-          Validators.required,
-          Validators.minLength(8),
-          Validators.maxLength(16),
-        ],
+        validators: [],
       },
       {
         key: "confirmPassword",
-        validators: [
-          Validators.required,
-          Validators.minLength(8),
-          Validators.maxLength(16),
-        ],
+        validators: [],
       },
       {
         key: "status",
@@ -112,19 +109,26 @@ export class UserProfileComponent implements OnInit {
     return new FormGroup(group, {
       //自己提供验证函数，验证两次密码是否一致
       validators: (fg: FormGroup) => {
-        const pwd = fg.get("password");
-        const pwd2 = fg.get("confirmPassword");
-        const password = pwd.value;
-        const confirmPassword = pwd2.value;
-
-        pwd.setErrors(null);
-        pwd2.setErrors(null);
-
-        if (password === "" && confirmPassword === "") {
+        const password = fg.get("password");
+        const confirmPassword = fg.get("confirmPassword");
+        const minLength=8;
+        const maxLength=32;
+        
+        if (password.value.length < minLength || password.value.length > maxLength) {
+          password.setErrors({ minlength: true });
           return null;
-        } else if (password !== confirmPassword) {
-          pwd.setErrors({ passwordNotMatch: true });
-          pwd2.setErrors({ passwordNotMatch: true });
+        }
+        if (confirmPassword.value.length < minLength || confirmPassword.value.length > maxLength) {
+          confirmPassword.setErrors({ minlength: true });
+          return null;
+        }
+
+        if (password.value !== confirmPassword.value) {
+          password.setErrors({ passwordNotMatch: true });
+          confirmPassword.setErrors({ passwordNotMatch: true });
+        }else{
+          password.setErrors(null);
+          confirmPassword.setErrors(null);
         }
         return null;
       },
@@ -137,7 +141,16 @@ export class UserProfileComponent implements OnInit {
     console.log(this.formGroup.getRawValue());
     console.log(this.formGroup.value);
 
-    if (!this.formGroup.valid) return;
+    if (!this.formGroup.valid) {
+      this.messageService.add({
+        severity: "error",
+        summary: "Error",
+        detail: "表单验证失败，请检查输入项",
+        sticky: false,
+      });
+      return;
+    }
+
     let userInfo = this.formGroup.value;
     delete userInfo.confirmPassword;
     delete userInfo.currentAvatarURL;
@@ -162,6 +175,13 @@ export class UserProfileComponent implements OnInit {
           console.log(response);
           if (response.success) {
             window.history.back();
+          }else{
+            this.messageService.add({
+              severity: "error",
+              summary: "Error",
+              detail: response.msg, 
+              sticky: true
+            });
           }
         },
         (error) => {
@@ -176,6 +196,22 @@ export class UserProfileComponent implements OnInit {
   }
 
   public loadUserDetail() {
+    //创建新用户
+    if(this.userId=="-1"){
+      this.formGroup.patchValue({
+        currentAvatarURL: "",
+        userName: "",
+        nickName: "",
+        email: "",
+        cellphone: "",
+        gender: 2,
+        status: 1,
+        remark: "",
+      });
+      return;
+    }
+
+    //编辑已经存在的用户
     this.userMngService.getUserDetail(this.userId).subscribe((response) => {
       let userDetail = response.data;
       this.formGroup.patchValue({

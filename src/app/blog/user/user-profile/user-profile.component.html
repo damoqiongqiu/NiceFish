@@ -58,15 +58,11 @@
         >
           <label class="col-md-2 control-label">性别：</label>
           <div class="col-md-10">
-            <label class="radio-inline">
-                <input type="radio" name="gender" value="0" formControlName="gender">男
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="gender" value="1" formControlName="gender">女
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="gender" value="2" formControlName="gender">未知
-              </label>
+              <ng-container *ngFor="let g of genderList; let i = index">
+                <label class="radio-inline">
+                  <input type="radio" name="gender" [value]="g.value" formControlName="gender"> {{g.label}}
+                </label>
+              </ng-container>
           </div>
         </div>
         <div
