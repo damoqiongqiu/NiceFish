@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 
 @Injectable()
 export class UserMngService {
-    public isMock=environment.envName.indexOf("mock")!=-1;
+    public isMock=environment.isMock;
 
     private userListURL = environment.dataURL.userListURL;
     private delUserURL = environment.dataURL.delUserURL;

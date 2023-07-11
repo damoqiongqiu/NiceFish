@@ -5,5 +5,6 @@ import {dataURL} from "./data-url-config/mock-data-url";
 export const environment = {
     envName:'prod.mock',
     production: true,
+    isMock:true,
     dataURL:dataURL
 };

@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 
 @Injectable()
 export class RoleMngService {
-    public isMock=environment.envName.indexOf("mock")!=-1;
+    public isMock=environment.isMock;
 
     private roleTableURL = environment.dataURL.roleTableURL;
     private delRoleURL = environment.dataURL.delRoleURL;

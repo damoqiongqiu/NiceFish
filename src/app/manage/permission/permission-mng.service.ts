@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 
 @Injectable()
 export class PermissionMngService {
-    public isMock=environment.envName.indexOf("mock")!=-1;
+    public isMock=environment.isMock;
 
     private permissionTableURL = environment.dataURL.permissionTableURL;
     private delPermissionURL = environment.dataURL.delPermissionURL;
