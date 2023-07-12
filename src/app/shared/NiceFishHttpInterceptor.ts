@@ -3,6 +3,7 @@ import { HttpEvent,HttpInterceptor,HttpHandler,HttpRequest,HttpResponse, HttpErr
 import { Observable,throwError } from "rxjs";
 import { filter,map,catchError} from "rxjs/operators";
 import { BlockService } from "./block-spinner/block-service.service";
+import { MessageService } from "primeng/api";
 
 /**
  * Http 请求拦截器，进行一些全局通用的处理。
@@ -12,6 +13,7 @@ import { BlockService } from "./block-spinner/block-service.service";
 export class NiceFishHttpInterceptor implements HttpInterceptor {
     constructor(
         private blockService: BlockService,
+        public messageService:MessageService,
     ){}
 
     intercept(httpRequest: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -24,7 +26,6 @@ export class NiceFishHttpInterceptor implements HttpInterceptor {
             }),
             catchError((error: HttpErrorResponse) => {
                 let errorMsg = '';
-                console.error('This is client side error');
                 if (error.error instanceof ErrorEvent) {
                     errorMsg = `Error: ${error.error.message}`;
                 } else {
@@ -32,6 +33,13 @@ export class NiceFishHttpInterceptor implements HttpInterceptor {
                 }
                 console.error(errorMsg);
                 this.blockService.unblock();
+                this.messageService.add({
+                    severity: "error",
+                    summary: "HTTP ERROR",
+                    detail: errorMsg,
+                    sticky: true,
+                    life: 1000
+                });
                 return throwError(errorMsg);
             })
         );

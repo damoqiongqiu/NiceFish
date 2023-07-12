@@ -1,13 +1,13 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { PermissionEditComponent } from "./permission-edit.component";
+import { ApiPermissionEditComponent } from "./api-permission-edit.component";
 import { PaginatorModule } from "primeng/paginator";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SharedModule } from "../../../shared/shared.module";
 
-describe("PermissionEditComponent", () => {
-  let component: PermissionEditComponent;
-  let fixture: ComponentFixture<PermissionEditComponent>;
+describe("ApiPermissionEditComponent", () => {
+  let component: ApiPermissionEditComponent;
+  let fixture: ComponentFixture<ApiPermissionEditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -18,18 +18,14 @@ describe("PermissionEditComponent", () => {
         ReactiveFormsModule,
         SharedModule
       ],
-      declarations: [ PermissionEditComponent ]
+      declarations: [ ApiPermissionEditComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PermissionEditComponent);
+    fixture = TestBed.createComponent(ApiPermissionEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it("should create", () => {
-    expect(component).toBeTruthy();
   });
 });

@@ -35,6 +35,7 @@ import { SanitizeHtmlPipe } from "./pipes/sanitize-html-pipe";
     BlockSpinnerComponent,
   ],
   exports: [
+    ReactiveFormsModule,
     TranslateModule,
     CommonModule,
     FormsModule,

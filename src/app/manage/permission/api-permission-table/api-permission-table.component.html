@@ -1,4 +1,4 @@
-<div class="permission-table-container" [@fadeIn]="'active'">
+<div class="api-permission-table-container" [@fadeIn]="'active'">
   <form class="form-vertical" role="form">
     <div class="row">
       <div class="col-md-10">
@@ -28,7 +28,11 @@
             [lazy]="true" (onLazyLoad)="pageChanged($event)">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>通配符</th>
+                    <th>API 名称</th>
+                    <th>API URL</th>
+                    <th>权限通配符</th>
+                    <th>创建时间</th>
+                    <th>更新时间</th>
                     <th>备注</th>
                     <th>操作</th>
                 </tr>
@@ -36,14 +40,26 @@
             <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
                 <tr [pEditableRow]="rowData">
                     <td>
-                        {{rowData.permissionStr}}
+                        {{rowData.apiName}}
+                    </td>
+                    <td>
+                        {{rowData.url}}
+                    </td>
+                    <td>
+                        {{rowData.permission}}
+                    </td>
+                    <td>
+                        {{rowData.createTime}}
+                    </td>  
+                    <td>
+                        {{rowData.updateTime}}
                     </td>
                     <td>
                         {{rowData.remark}}
                     </td>
-                    <td style="text-align:center">
-                        <a href="javascript:void(0);" (click)="editPermission(rowData, ri)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="javascript:void(0);" (click)="delPermission(rowData, ri)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    <td style="text-align:right">
+                      <button type="button" class="btn btn-success btn-sm" (click)="editPermission(rowData, ri)">编辑</button>&nbsp;&nbsp;
+                      <button type="button" class="btn btn-danger btn-sm" (click)="delPermission(rowData, ri)">删除</button>
                     </td>
                 </tr>
             </ng-template>
