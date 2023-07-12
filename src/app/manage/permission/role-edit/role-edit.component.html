@@ -24,9 +24,6 @@
               minlength="2"
               maxlength="32"
             />
-            <div *ngIf="!roleName.valid" class="text-danger">
-              角色名称必须输入
-            </div>
           </div>
         </div>
         <div class="form-group" [ngClass]="{ 'has-error': !roleEnabled.valid }">
@@ -58,7 +55,6 @@
               maxlength="200"
             >
             </textarea>
-            <div *ngIf="!remark.valid" class="text-danger">备注必须输入</div>
           </div>
         </div>
 

@@ -1,0 +1,93 @@
+<div class="role-edit-container" [@fadeIn]>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">创建/编辑权限</h3>
+    </div>
+    <div class="panel-body">
+      <form
+        class="form-horizontal"
+        role="form"
+        #roleInfoForm="ngForm"
+        novalidate
+      >
+        <div class="form-group" [ngClass]="{ 'has-error': !apiName.valid }">
+          <label class="col-md-2 control-label">API 名称：</label>
+          <div class="col-md-10">
+            <input
+              name="apiName"
+              [(ngModel)]="apiPermission.apiName"
+              #apiName="ngModel"
+              type="text"
+              class="form-control"
+              placeholder="请输入 API 名称"
+              required
+              minlength="2"
+              maxlength="32"
+            />
+          </div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': !url.valid }">
+          <label class="col-md-2 control-label">API 接口 URL：</label>
+          <div class="col-md-10">
+            <input
+              name="url"
+              [(ngModel)]="apiPermission.url"
+              #url="ngModel"
+              type="text"
+              class="form-control"
+              placeholder="请输入 URL"
+              maxlength="32"
+            />
+          </div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': !permission.valid }">
+          <label class="col-md-2 control-label">权限通配符：</label>
+          <div class="col-md-10">
+            <input
+              name="permission"
+              [(ngModel)]="apiPermission.permission"
+              #permission="ngModel"
+              type="text"
+              class="form-control"
+              placeholder="请输入权限通配符"
+              required=""
+              minlength="1"
+              maxlength="32"
+            />
+          </div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': !remark.valid }">
+          <label class="col-md-2 control-label">简介：</label>
+          <div class="col-md-10">
+            <textarea
+              name="remark"
+              [(ngModel)]="apiPermission.remark"
+              #remark="ngModel"
+              rows="5"
+              class="form-control"
+              placeholder="简介"
+              maxlength="500"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+            <button
+              type="submit"
+              class="btn btn-primary btn-margin-1rem"
+              (click)="save()"
+            >
+              保存
+            </button>
+            <button type="button" class="btn btn-default" (click)="cancel()">
+              取消
+            </button>
+          </div>
+        </div>
+      </form>
+      <p class="bg-danger">
+        Apache Shiro 通配符权限文档： https://shiro.apache.org/permissions.html
+      </p>
+    </div>
+  </div>
+</div>

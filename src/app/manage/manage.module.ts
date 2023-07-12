@@ -10,8 +10,8 @@ import { ManageMainComponent } from "./manage-main/manage-main.component";
 import { UserTableComponent } from "./permission/user-table/user-table.component";
 import { RoleTableComponent } from "./permission/role-table/role-table.component";
 import { RoleEditComponent } from "./permission/role-edit/role-edit.component";
-import { PermissionTableComponent } from "./permission/permission-table/permission-table.component";
-import { PermissionEditComponent } from "./permission/permission-edit/permission-edit.component";
+import { ApiPermissionTableComponent } from "./permission/api-permission-table/api-permission-table.component";
+import { ApiPermissionEditComponent } from "./permission/api-permission-edit/api-permission-edit.component";
 import { SysParamComponent } from "./sys-param/sys-param.component";
 import { ChartComponent } from "./chart/chart.component";
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -20,7 +20,7 @@ import { PostTableService } from "./content-mng/post-table/post-table.service";
 import { CommentTableService } from "./content-mng/comment-table/comment-table.service";
 import { UserMngService } from "./permission/user-mng.service";
 import { RoleMngService } from "./permission/role-mng.service";
-import { PermissionMngService } from "./permission/permission-mng.service";
+import { ApiPermissionService } from "./permission/api-permission.service";
 import { SysParamService } from "./sys-param/sys-param.service";
 import { AuthGuard } from "../shared/auth-guard";
 
@@ -33,9 +33,9 @@ import { ManageRoutingModule } from "./manage.routing.module";
     SysParamComponent,
     ChartComponent,
     RoleTableComponent,
-    PermissionTableComponent,
+    ApiPermissionTableComponent,
     RoleEditComponent,
-    PermissionEditComponent
+    ApiPermissionEditComponent
   ],
   imports: [
     CommonModule,
@@ -56,7 +56,7 @@ import { ManageRoutingModule } from "./manage.routing.module";
     CommentTableService,
     UserMngService,
     RoleMngService,
-    PermissionMngService,
+    ApiPermissionService,
     SysParamService,
     AuthGuard
   ]

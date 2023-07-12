@@ -4,14 +4,15 @@
             <h3 class="panel-title">{{'signIn.signIn' | translate}}</h3>
         </div>
         <div class="panel-body">
+            <p class="bg-danger">测试用户: admin@126.com / 12345678</p>
             <form #signInForm="ngForm" (ngSubmit)="signInForm.form.valid && doSignIn()" novalidate class="form-horizontal"
                 role="form">
                 <div class="form-group" [ngClass]="{ 'has-error': signInForm.submitted && !userName.valid }">
-                    <label class="col-md-2 control-label">用户名：</label>
+                    <label class="col-md-2 control-label">邮箱：</label>
                     <div class="col-md-10">
                         <input required name="userName" [(ngModel)]="user.userName" #userName="ngModel" type="text"
                             class="form-control" placeholder="请输入完整邮箱或者手机号">
-                        <div *ngIf="signInForm.submitted && !userName.valid" class="text-danger">用户名必须输入</div>
+                        <div *ngIf="signInForm.submitted && !userName.valid" class="text-danger">邮箱必须输入</div>
                     </div>
                 </div>
                 <div class="form-group" [ngClass]="{ 'has-error': signInForm.submitted && !password.valid }">

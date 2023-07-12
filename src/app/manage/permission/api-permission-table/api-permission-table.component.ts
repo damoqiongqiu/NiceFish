@@ -1,20 +1,19 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { PermissionMngService } from "../permission-mng.service";
+import { ApiPermissionService } from "../api-permission.service";
 import { MessageService } from "primeng/api";
 import { ConfirmationService } from "primeng/api";
 import { fadeIn } from "../../../shared/animations/fade-in";
 
 @Component({
-  selector: "permission-table",
-  templateUrl: "./permission-table.component.html",
-  styleUrls: ["./permission-table.component.scss"],
+  selector: "api-permission-table",
+  templateUrl: "./api-permission-table.component.html",
+  styleUrls: ["./api-permission-table.component.scss"],
   animations: [
     fadeIn
   ]
 })
-export class PermissionTableComponent implements OnInit {
-  
+export class ApiPermissionTableComponent implements OnInit {
   public searchStr="";
   public permissionList: Array<any>;
   public totalRecords=0;
@@ -23,7 +22,7 @@ export class PermissionTableComponent implements OnInit {
   constructor(
     public router: Router,
     public activeRoute: ActivatedRoute,
-    public permissionMngService: PermissionMngService,
+    public apiPermService: ApiPermissionService,
     public messageService:MessageService,
     private confirmationService: ConfirmationService
   ) {
@@ -39,7 +38,7 @@ export class PermissionTableComponent implements OnInit {
   }
 
   public getPermissionListByPage() {
-    return this.permissionMngService.getPermissionTable(this.currentPage,this.searchStr).subscribe(
+    return this.apiPermService.getApiPermissionTable(this.currentPage,this.searchStr).subscribe(
         data => {
           this.permissionList=data.content;
           this.totalRecords=data.totalElements;
@@ -60,15 +59,15 @@ export class PermissionTableComponent implements OnInit {
 
   public pageChanged(event: any): void {
     this.currentPage=(event.first/event.rows)+1;
-    this.router.navigateByUrl("/manage/permission-table/page/" + this.currentPage);
+    this.router.navigateByUrl("/manage/api-permission-table/page/" + this.currentPage);
   }
 
   public delPermission(rowData,ri): void {
     this.confirmationService.confirm({
         message: "确定要删除吗？",
         accept: () => {
-          let permissionId=rowData.permissionId;
-          this.permissionMngService.del(permissionId)
+          let apiId=rowData.apiId;
+          this.apiPermService.deleteByApiId(apiId)
           .subscribe(data=> {
             if(data&&data.success) {
               this.messageService.add({
@@ -102,11 +101,11 @@ export class PermissionTableComponent implements OnInit {
   }
 
   public newPermission() {
-    this.router.navigateByUrl("/manage/permission-table/new-permission");
+    this.router.navigateByUrl("/manage/api-permission-table/edit/-1");
   }
 
   public editPermission(rowData,ri): void {
-    let permissionId=rowData.permissionId;
-    this.router.navigateByUrl("/manage/permission-table/edit-permission/"+permissionId);
+    let apiId=rowData.apiId;
+    this.router.navigateByUrl("/manage/api-permission-table/edit/"+apiId);
   }
 }
