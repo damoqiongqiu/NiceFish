@@ -39,7 +39,7 @@
                                 {{rowData.time}}
                             </td>
                             <td style="text-align:center">
-                                <a href="javascript:void(0);" (click)="delComment(rowData, ri)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <button type="button" class="btn btn-danger btn-sm" (click)="delComment(rowData, ri)">删除</button>
                             </td>
                         </tr>
                     </ng-template>
