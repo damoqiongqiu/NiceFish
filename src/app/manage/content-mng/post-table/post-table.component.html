@@ -39,8 +39,8 @@
                                 {{rowData.postTime}}
                             </td>
                             <td style="text-align:center">
-                                <a href="javascript:void(0);" (click)="editPost(rowData, ri)"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="javascript:void(0);" (click)="delPost(rowData, ri)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <button type="button" class="btn btn-success btn-sm" (click)="editPost(rowData, ri)">编辑</button>&nbsp;&nbsp;
+                                <button type="button" class="btn btn-danger btn-sm" (click)="delPost(rowData, ri)">删除</button>
                             </td>
                         </tr>
                     </ng-template>
