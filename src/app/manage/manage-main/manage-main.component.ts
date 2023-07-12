@@ -14,9 +14,8 @@ export class ManageMainComponent implements OnInit {
   public currentUser:any={};
 
   constructor() { }
-
+  
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
   }
-
 }
