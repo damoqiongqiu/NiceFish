@@ -4,6 +4,9 @@ import { Observable } from "rxjs";
 import { environment } from "../../../environments/environment";
 import * as _ from 'lodash';
 
+/**
+ * 后端接口权限服务
+ */
 @Injectable()
 export class ApiPermissionService {
     public isMock=environment.isMock;

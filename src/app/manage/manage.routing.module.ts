@@ -11,6 +11,8 @@ import { RoleTableComponent } from "./permission/role-table/role-table.component
 import { RoleEditComponent } from "./permission/role-edit/role-edit.component";
 import { ApiPermissionTableComponent } from "./permission/api-permission-table/api-permission-table.component";
 import { ApiPermissionEditComponent } from "./permission/api-permission-edit/api-permission-edit.component";
+import { ComponentPermissionTableComponent } from './permission/component-permission-table/component-permission-table.component';
+import { ComponentPermissionEditComponent } from './permission/component-permission-edit/component-permission-edit.component';
 import { AuthGuard } from "../shared/auth-guard";
 
 export const manageRoutes:Routes = [
@@ -28,6 +30,8 @@ export const manageRoutes:Routes = [
 			{ path: "role-table/edit-role/:roleId", component: RoleEditComponent },
 			{ path: "api-permission-table/page/:page", component: ApiPermissionTableComponent },
 			{ path: "api-permission-table/edit/:apiId", component: ApiPermissionEditComponent },
+			{ path: "component-permission-table/page/:page", component: ComponentPermissionTableComponent },
+			{ path: "component-permission-table/edit/:apiId", component: ComponentPermissionEditComponent },
 			{ path: "profile/:userId", component: UserProfileComponent },
 			{ path: "sysparam", component: SysParamComponent },
 			{ path: "**", redirectTo: "posttable/page/1" }
