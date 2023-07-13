@@ -33,6 +33,7 @@
                             <th>email</th>
                             <th>手机号</th>
                             <th>注册时间</th>
+                            <th>角色列表</th>
                             <th>操作</th>
                         </tr>
                     </ng-template>
@@ -55,6 +56,11 @@
                             </td>
                             <td>
                                 {{rowData.createTime}}
+                            </td>
+                            <td style="width: 80px;">
+                                <h5>
+                                    <span *ngFor="let role of rowData.roleEntities" class="label label-success">{{role.roleName}}</span>
+                                </h5>
                             </td>
                             <td style="text-align:right">
                                 <button type="button" class="btn btn-success btn-sm" (click)="editUser(rowData, ri)">编辑</button>&nbsp;&nbsp;

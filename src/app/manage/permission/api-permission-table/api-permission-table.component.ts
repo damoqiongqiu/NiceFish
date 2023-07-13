@@ -15,7 +15,7 @@ import { fadeIn } from "../../../shared/animations/fade-in";
 })
 export class ApiPermissionTableComponent implements OnInit {
   public searchStr="";
-  public permissionList: Array<any>;
+  public apiPermissionList: Array<any>=[];
   public totalRecords=0;
   public currentPage=1;
 
@@ -40,9 +40,26 @@ export class ApiPermissionTableComponent implements OnInit {
   public getPermissionListByPage() {
     return this.apiPermService.getApiPermissionTable(this.currentPage,this.searchStr).subscribe(
         data => {
-          this.permissionList=data.content;
+          this.apiPermissionList=data.content;
           this.totalRecords=data.totalElements;
+          
+          this.getRolesAsync();
         },
+    );
+  }
+
+  /**
+   * 查询每一个权限对应的角色
+   */
+  private getRolesAsync() {
+    this.apiPermissionList.forEach(
+      (apiPerm,index)=> {
+        this.apiPermService.getRolesByApiId(apiPerm.apiId).subscribe(
+          res=> {
+            res.success&&res.data&&(apiPerm.roles=res.data);
+          }
+        );
+      }
     );
   }
 

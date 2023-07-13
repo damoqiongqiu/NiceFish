@@ -31,6 +31,8 @@
                     <th>角色名称</th>
                     <th>状态</th>
                     <th>备注</th>
+                    <th>前端页面权限</th>
+                    <th>后端接口权限</th>
                     <th>操作</th>
                 </tr>
             </ng-template>
@@ -45,6 +47,16 @@
                     </td>
                     <td>
                         {{rowData.remark}}
+                    </td>
+                    <td>
+                        <h5>
+                          <span *ngFor="let apiPermission of rowData.apiEntities" class="label label-success">{{apiPermission.apiName}}</span>
+                        </h5>
+                    </td>
+                    <td>
+                        <h5>
+                          <span *ngFor="let componentPermission of rowData.componentEntities" class="label label-success">{{apiPermission.apiName}}</span>
+                        </h5>
                     </td>
                     <td style="text-align:right">
                       <button type="button" class="btn btn-success btn-sm" (click)="editRole(rowData, ri)">编辑</button>&nbsp;&nbsp;

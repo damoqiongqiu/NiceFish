@@ -1,0 +1,61 @@
+<div class="component-permission-table-container" [@fadeIn]="'active'">
+    <form class="form-vertical" role="form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text"
+                        placeholder="组件名称或者权限字符串" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" (click)="searchPermission()">
+                            <i class="fa fa-search" aria-hidden="true"></i>搜索
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <p-multiSelect [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header" name="cols"
+                    [style]="{ width: '100%'}" selectedItemsLabel="{0} columns selected" defaultLabel="筛选"
+                    display="chip"></p-multiSelect>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group pull-right">
+                    <button class="btn btn-primary" type="button" (click)="newPermission()">
+                        <i class="fa fa-user" aria-hidden="true"></i>创建权限
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="permission-item-container">
+                <p-treeTable [value]="files" [columns]="selectedColumns" [paginator]="true" [rows]="10"
+                    [scrollable]="true" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th *ngFor="let col of columns">
+                                {{ col.header }}
+                            </th>
+                            <th style="width: 10rem">
+                                操作
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+                        <tr>
+                            <td *ngFor="let col of columns; let i = index">
+                                <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0"></p-treeTableToggler>
+                                {{ rowData[col.field] }}
+                            </td>
+                            <td style="text-align: right;">
+                                <p-button icon="pi pi-pencil" styleClass="p-button-success"
+                                    [style]="{ 'margin-right': '.5em' }"></p-button>
+                                <p-button icon="pi pi-trash" styleClass="p-button-danger"></p-button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-treeTable>
+            </div>
+        </div>
+    </div>
+</div>

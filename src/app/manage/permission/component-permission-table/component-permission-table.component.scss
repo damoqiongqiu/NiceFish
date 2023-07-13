@@ -1,0 +1,11 @@
+.component-permission-table-container {
+    .permission-item-container {
+        padding: 15px 0px;
+
+        td {
+            word-wrap:break-word; 
+            word-break:break-all;
+            max-width: 250px;
+        }
+    }
+}

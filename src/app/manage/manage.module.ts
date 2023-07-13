@@ -12,6 +12,8 @@ import { RoleTableComponent } from "./permission/role-table/role-table.component
 import { RoleEditComponent } from "./permission/role-edit/role-edit.component";
 import { ApiPermissionTableComponent } from "./permission/api-permission-table/api-permission-table.component";
 import { ApiPermissionEditComponent } from "./permission/api-permission-edit/api-permission-edit.component";
+import { ComponentPermissionTableComponent } from './permission/component-permission-table/component-permission-table.component';
+import { ComponentPermissionEditComponent } from './permission/component-permission-edit/component-permission-edit.component';
 import { SysParamComponent } from "./sys-param/sys-param.component";
 import { ChartComponent } from "./chart/chart.component";
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -21,6 +23,7 @@ import { CommentTableService } from "./content-mng/comment-table/comment-table.s
 import { UserMngService } from "./permission/user-mng.service";
 import { RoleMngService } from "./permission/role-mng.service";
 import { ApiPermissionService } from "./permission/api-permission.service";
+import { ComponentPermissionService } from "./permission/component-permission.service";
 import { SysParamService } from "./sys-param/sys-param.service";
 import { AuthGuard } from "../shared/auth-guard";
 
@@ -34,8 +37,10 @@ import { ManageRoutingModule } from "./manage.routing.module";
     ChartComponent,
     RoleTableComponent,
     ApiPermissionTableComponent,
+    ApiPermissionEditComponent,
+    ComponentPermissionTableComponent,
+    ComponentPermissionEditComponent,
     RoleEditComponent,
-    ApiPermissionEditComponent
   ],
   imports: [
     CommonModule,
@@ -57,6 +62,7 @@ import { ManageRoutingModule } from "./manage.routing.module";
     UserMngService,
     RoleMngService,
     ApiPermissionService,
+    ComponentPermissionService,
     SysParamService,
     AuthGuard
   ]

@@ -4,6 +4,9 @@ import { Observable } from "rxjs";
 import { environment } from "../../../environments/environment";
 import * as _ from 'lodash';
 
+/**
+ * 后端接口权限服务
+ */
 @Injectable()
 export class ApiPermissionService {
     public isMock=environment.isMock;
@@ -13,6 +16,7 @@ export class ApiPermissionService {
     private delApiPermissionURL = environment.dataURL.delApiPermissionURL;
     private newApiPermissionURL = environment.dataURL.newApiPermissionURL;
     private updateApiPermissionURL = environment.dataURL.updateApiPermissionURL;
+    private apiRoleListURL = environment.dataURL.apiRoleListURL;
 
     constructor(public httpClient: HttpClient) { }
 
@@ -26,6 +30,11 @@ export class ApiPermissionService {
         return this.httpClient.post(reqURL,{
             apiName:searchStr
         });
+    }
+
+    public getRolesByApiId(apiId): Observable<any> {
+        let reqURL=_.template(this.apiRoleListURL)({id:apiId});
+        return this.httpClient.get(reqURL);
     }
 
     public getApiPermDetails(apiId): Observable<any> {

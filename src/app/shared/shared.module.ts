@@ -4,9 +4,11 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { TranslateModule } from "@ngx-translate/core";
 import { PickListModule } from "primeng/picklist";
 import { BlockUIModule } from "primeng/blockui";
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ProgressSpinnerModule } from "primeng/progressspinner";
 import { PanelModule } from "primeng/panel";
-
+import { TreeTableModule } from "primeng/treetable";
+import { ButtonModule } from "primeng/button";
+import { MultiSelectModule } from "primeng/multiselect";
 import { SignInComponent } from "../blog/user/sign-in/sign-in.component";
 import { UserInfoComponent } from "../blog/user/user-info/user-info.component";
 import { UserProfileComponent } from "../blog/user/user-profile/user-profile.component";
@@ -25,6 +27,9 @@ import { SanitizeHtmlPipe } from "./pipes/sanitize-html-pipe";
     BlockUIModule,
     ProgressSpinnerModule,
     PanelModule,
+    TreeTableModule,
+    ButtonModule,
+    MultiSelectModule,
   ],
   declarations: [
     SignInComponent,
@@ -44,14 +49,14 @@ import { SanitizeHtmlPipe } from "./pipes/sanitize-html-pipe";
     BlockUIModule,
     ProgressSpinnerModule,
     PanelModule,
+    TreeTableModule,
+    ButtonModule,
+    MultiSelectModule,
     UserInfoComponent,
     UserProfileComponent,
     BlockSpinnerComponent,
     TrimStringPipe,
     SanitizeHtmlPipe,
-  ]
+  ],
 })
-
-export class SharedModule {
-
-}
+export class SharedModule {}
