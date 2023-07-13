@@ -29,6 +29,7 @@ export const dataURL = {
     delApiPermissionURL:"",
     newApiPermissionURL:"",
     updateApiPermissionURL:"",
+    apiRoleListURL:"mock-data/api-role-list-mock.json",
     sendEmailURL:"mock-data/forget-pwd-mock.json",
     getSysParamsURL:"mock-data/sys-params-mock.json",
     commentListByPostIdURL:"mock-data/comment-list-mock.json",

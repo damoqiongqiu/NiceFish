@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-10">
         <div class="input-group">
-          <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="权限名称">
+          <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="API 名称或者权限字符串">
           <span class="input-group-btn">
               <button class="btn btn-default" type="button" (click)="searchPermission()">
                   <i class="fa fa-search" aria-hidden="true"></i>搜索
@@ -23,7 +23,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="permission-item-container">
-          <p-table [value]="permissionList" dataKey="id" editMode="row"  
+          <p-table [value]="apiPermissionList" dataKey="id" editMode="row"  
             [paginator]="true" [rows]="10" [pageLinks]="10" [totalRecords]="totalRecords"
             [lazy]="true" (onLazyLoad)="pageChanged($event)">
             <ng-template pTemplate="header">
@@ -34,6 +34,7 @@
                     <th>创建时间</th>
                     <th>更新时间</th>
                     <th>备注</th>
+                    <th>已关联角色</th>
                     <th>操作</th>
                 </tr>
             </ng-template>
@@ -54,8 +55,13 @@
                     <td>
                         {{rowData.updateTime}}
                     </td>
-                    <td>
+                    <td style="width: 120px;">
                         {{rowData.remark}}
+                    </td>
+                    <td>
+                      <h5>
+                        <span *ngFor="let role of rowData.roles" class="label label-info">{{role.roleName}}</span>
+                      </h5>
                     </td>
                     <td style="text-align:right">
                       <button type="button" class="btn btn-success btn-sm" (click)="editPermission(rowData, ri)">编辑</button>&nbsp;&nbsp;
