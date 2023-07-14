@@ -23,7 +23,6 @@ export class ComponentPermissionTableComponent {
   public totalRecords = 0;
   public currentPage = 1;
 
-  files!: TreeNode[];
   cols!: Column[];
   selectedColumns!: Column[];
 
@@ -33,70 +32,55 @@ export class ComponentPermissionTableComponent {
     public compPermService: ComponentPermissionService,
     public messageService: MessageService,
     private confirmationService: ConfirmationService
-  ) {}
+  ) { }
 
   ngOnInit() {
-    this.files = [];
-    for (let i = 0; i < 50; i++) {
-      let node = {
-        data: {
-          name: "Item " + i,
-          icon: Math.floor(Math.random() * 1000) + 1 + "kb",
-          url: "url " + i,
-          displayOrder: 1,
-          permission: "*",
-          createTime: "2023-07-13",
-          updateTime: "2023-07-13",
-          visiable: true,
-          remark: "remark " + i,
-        },
-        children: [
-          {
-            data: {
-              name: "Item " + i + "-0",
-              icon: Math.floor(Math.random() * 1000) + 1 + "kb",
-              url: "url " + i,
-              displayOrder: 1,
-              permission: "*",
-              createTime: "2023-07-13",
-              updateTime: "2023-07-13",
-              visiable: true,
-              remark: "remark " + i,
-            },
-          },
-        ],
-      };
-      this.files.push(node);
-    }
-
     this.cols = [
-      { field: "name", header: "组件名称" },
-      { field: "icon", header: "图标" },
+      { field: "componentName", header: "组件名称" },
       { field: "url", header: "URL" },
       { field: "displayOrder", header: "显示顺序" },
       { field: "permission", header: "权限通配符" },
-      // { field: "createTime", header: "创建时间" },
-      // { field: "updateTime", header: "更新时间" },
       { field: "visiable", header: "是否可见" },
-      // { field: "remark", header: "备注" },
     ];
 
     this.selectedColumns = this.cols;
 
     this.activeRoute.params.subscribe((params) => {
       this.currentPage = params["page"];
-      // this.getCompPermListByPage();
+      this.getCompPermListByPage();
     });
+  }
+
+  /**
+   * PrimeNG 组件需要的数据格式与服务端返回的数据格式不一致。
+   * 这里 tree 递归，整理成 PrimeNG 组件需要的数据格式
+   * @param node 
+   * @returns 
+   */
+  private treeDataTransformer(node) {
+    let data = {};
+    this.cols.forEach((col) => {
+      data[col.field] = node[col.field];
+    });
+    node.data = data;
+    if (node.children) {
+      node.children.forEach((child) => {
+        this.treeDataTransformer(child);
+      });
+    }
+    return node;
   }
 
   public getCompPermListByPage() {
     return this.compPermService
       .getCompPermTable(this.currentPage, this.searchStr)
       .subscribe((data) => {
+        data.content.forEach((node) => {
+          this.treeDataTransformer(node);
+        });
         this.compPermList = data.content;
         this.totalRecords = data.totalElements;
-
-        this.getRolesAsync();
+        // this.getRolesAsync();
       });
   }
 

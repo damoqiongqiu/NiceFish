@@ -29,8 +29,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="permission-item-container">
-                <p-treeTable [value]="files" [columns]="selectedColumns" [paginator]="true" [rows]="10"
-                    [scrollable]="true" [tableStyle]="{ 'min-width': '50rem' }">
+                <p-treeTable [value]="compPermList" [columns]="selectedColumns" [paginator]="true" [rows]="10"
+                    [resizableColumns]="true" columnResizeMode="expand" [scrollable]="true">
                     <ng-template pTemplate="header" let-columns>
                         <tr>
                             <th *ngFor="let col of columns">
@@ -47,7 +47,7 @@
                                 <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0"></p-treeTableToggler>
                                 {{ rowData[col.field] }}
                             </td>
-                            <td style="text-align: right;">
+                            <td style="width: 10rem;text-align: right;">
                                 <p-button icon="pi pi-pencil" styleClass="p-button-success"
                                     [style]="{ 'margin-right': '.5em' }"></p-button>
                                 <p-button icon="pi pi-trash" styleClass="p-button-danger"></p-button>
