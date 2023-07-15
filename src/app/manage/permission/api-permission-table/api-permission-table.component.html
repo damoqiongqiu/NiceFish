@@ -6,7 +6,7 @@
           <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="API 名称或者权限字符串">
           <span class="input-group-btn">
             <button class="btn btn-default" type="button" (click)="searchPermission()">
-              <i class="fa fa-search" aria-hidden="true"></i>搜索
+              <i class="fa fa-search" aria-hidden="true"></i>
             </button>
           </span>
         </div>
@@ -14,7 +14,7 @@
       <div class="col-md-2">
         <div class="input-group pull-right">
           <button class="btn btn-primary" type="button" (click)="newPermission()">
-            <i class="fa fa-user" aria-hidden="true"></i>创建权限
+            <i class="pi pi-plus" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -63,9 +63,10 @@
                 </h5>
               </td>
               <td style="text-align:right">
-                <button type="button" class="btn btn-success btn-sm"
-                  (click)="editPermission(rowData, ri)">编辑</button>&nbsp;&nbsp;
-                <button type="button" class="btn btn-danger btn-sm" (click)="delPermission(rowData, ri)">删除</button>
+                <p-button icon="pi pi-pencil" styleClass="p-button-success" [style]="{ 'margin-right': '.5em' }"
+                  (click)="editPermission(rowData, ri)"></p-button>
+                <p-button icon="pi pi-trash" styleClass="p-button-danger"
+                  (click)="delPermission(rowData, ri)"></p-button>
               </td>
             </tr>
           </ng-template>
