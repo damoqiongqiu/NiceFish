@@ -14,22 +14,22 @@ import { environment } from "src/environments/environment";
   animations: [flyIn, fadeIn]
 })
 export class ApiPermissionEditComponent implements OnInit {
-  public isMock=environment.isMock;
+  public isMock = environment.isMock;
   public error: Error;
   private apiId: string = "-1";
   public apiPermission: any = {
-    apiId:this.apiId,
-    apiName:"",
-    url:"",
-    permission:"",
-    remark:"",
+    apiId: this.apiId,
+    apiName: "",
+    url: "",
+    permission: "",
+    remark: "",
   };
-  
+
   constructor(
     public router: Router,
     public activeRoute: ActivatedRoute,
     public apiPermService: ApiPermissionService,
-    public messageService:MessageService,
+    public messageService: MessageService,
   ) { }
 
   ngOnInit() {
@@ -40,42 +40,42 @@ export class ApiPermissionEditComponent implements OnInit {
     });
   }
 
-  loadApiPermissionDetail(){
-    if(this.apiId=="-1"){
+  loadApiPermissionDetail() {
+    if (this.apiId == "-1") {
       return;
     }
 
-    //编辑已经存在的用户
+    //编辑已经存在的 API 权限
     this.apiPermService.getApiPermDetails(this.apiId).subscribe((response) => {
       this.apiPermission = response.data;
     });
   }
 
-  save(){
-    if(this.isMock){
+  save() {
+    if (this.isMock) {
       return;
     }
-    
+
     //如果存在 apiId 参数，则为编辑状态，否则为新增状态。
-    if(this.apiPermission.apiId=="-1"){
+    if (this.apiPermission.apiId == "-1") {
       this.apiPermService.newApiPermission(this.apiPermission).subscribe(
         data => {
-          this.messageService.add({severity:'success', summary:'成功', detail:'新增角色成功'});
+          this.messageService.add({ severity: 'success', summary: '成功', detail: '新增角色成功' });
           window.history.back();
         },
         error => {
-          this.messageService.add({severity:'error', summary:'失败', detail:'新增角色失败'});
+          this.messageService.add({ severity: 'error', summary: '失败', detail: '新增角色失败' });
           console.error(error);
         }
       );
-    }else{
+    } else {
       this.apiPermService.updateApiPermission(this.apiPermission).subscribe(
         data => {
-          this.messageService.add({severity:'success', summary:'成功', detail:'更新角色成功'});
+          this.messageService.add({ severity: 'success', summary: '成功', detail: '更新角色成功' });
           window.history.back();
         },
         error => {
-          this.messageService.add({severity:'error', summary:'失败', detail:'更新角色失败'});
+          this.messageService.add({ severity: 'error', summary: '失败', detail: '更新角色失败' });
           console.error(error);
         }
       );
