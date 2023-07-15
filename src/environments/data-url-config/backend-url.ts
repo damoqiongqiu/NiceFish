@@ -40,7 +40,7 @@ export const dataURL = {
     apiRoleListURL: "/auth/role/list-by-api-id/<%= id %>",//根据 apiId 获取对应的角色列表
     compPermListURL: "/auth/component-permission/list/<%= page %>",
     compPermDetailURL: "",
-    delCompPermURL: "",
+    delCompPermURL: "/auth/component-permission/delete/<%= id %>",
     newCompPermURL: "",
     updateCompPermURL: "",
     compRoleListURL: "",

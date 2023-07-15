@@ -58,10 +58,11 @@ export class ComponentPermissionTableComponent {
    * @returns 
    */
   private treeDataTransformer(node) {
-    let data = {};
+    let data: any = {};
     this.cols.forEach((col) => {
       data[col.field] = node[col.field];
     });
+    data.compPermId = node.compPermId;
     node.data = data;
     if (node.children) {
       node.children.forEach((child) => {
@@ -115,12 +116,13 @@ export class ComponentPermissionTableComponent {
     );
   }
 
-  public delPermission(rowData, ri): void {
+  public delComponentPermission(rowData): void {
+    console.log(rowData);
     this.confirmationService.confirm({
       message: "确定要删除吗？",
       accept: () => {
-        let compId = rowData.compId;
-        this.compPermService.deleteByCompId(compId).subscribe(
+        let compPermId = rowData.compPermId;
+        this.compPermService.deleteByCompPermId(compPermId).subscribe(
           (data) => {
             if (data && data.success) {
               this.messageService.add({

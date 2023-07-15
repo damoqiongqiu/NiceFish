@@ -32,26 +32,26 @@ export class ComponentPermissionService {
         });
     }
 
-    public getRolesByCompId(compId): Observable<any> {
-        let reqURL = _.template(this.compRoleListURL)({ id: compId });
+    public getRolesByCompId(compPermId): Observable<any> {
+        let reqURL = _.template(this.compRoleListURL)({ id: compPermId });
         return this.httpClient.get(reqURL);
     }
 
-    public getCompPermDetails(compId): Observable<any> {
-        let reqURL = _.template(this.compPermDetailURL)({ id: compId });
+    public getCompPermDetails(compPermId): Observable<any> {
+        let reqURL = _.template(this.compPermDetailURL)({ id: compPermId });
         return this.httpClient.get(reqURL);
     }
 
-    public deleteByCompId(id): Observable<any> {
-        let reqURL = _.template(this.delCompPermURL)({ id: id });
+    public deleteByCompPermId(compPermId): Observable<any> {
+        let reqURL = _.template(this.delCompPermURL)({ id: compPermId });
         return this.httpClient.delete(reqURL);
     }
 
-    public newCompPerm(apiPermission: any): Observable<any> {
-        return this.httpClient.post(this.newCompPermURL, apiPermission);
+    public newCompPerm(compnentPermission: any): Observable<any> {
+        return this.httpClient.post(this.newCompPermURL, compnentPermission);
     }
 
-    public updateCompPerm(apiPermission: any): Observable<any> {
-        return this.httpClient.post(this.updateCompPermURL, apiPermission);
+    public updateCompPerm(compnentPermission: any): Observable<any> {
+        return this.httpClient.post(this.updateCompPermURL, compnentPermission);
     }
 }
