@@ -3,18 +3,20 @@
         <div class="row">
             <div class="col-md-10">
                 <div class="input-group">
-                    <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="用户名，手机号">
+                    <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text"
+                        placeholder="用户名，手机号">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button" (click)="searchUser()">
-                            <i class="fa fa-search" aria-hidden="true"></i>搜索
+                            <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </span>
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="input-group pull-right">
-                    <button class="btn btn-primary" type="button" (click)="newUser()"><i class="fa fa-user" aria-hidden="true"></i>
-                        创建用户</button>
+                    <button class="btn btn-primary" type="button" (click)="newUser()">
+                        <i class="pi pi-plus" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -22,9 +24,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="user-item-container">
-                <p-table [value]="userList" dataKey="id" editMode="row"  
-                    [paginator]="true" [rows]="10" [pageLinks]="10" [totalRecords]="totalRecords"
-                    [lazy]="true" (onLazyLoad)="pageChanged($event)">
+                <p-table [value]="userList" dataKey="id" editMode="row" [paginator]="true" [rows]="10" [pageLinks]="10"
+                    [totalRecords]="totalRecords" [lazy]="true" (onLazyLoad)="pageChanged($event)">
                     <ng-template pTemplate="header">
                         <tr>
                             <th>用户名</th>
@@ -59,13 +60,17 @@
                             </td>
                             <td style="width: 80px;">
                                 <h5>
-                                    <span *ngFor="let role of rowData.roleEntities" class="label label-success">{{role.roleName}}</span>
+                                    <span *ngFor="let role of rowData.roleEntities"
+                                        class="label label-success">{{role.roleName}}</span>
                                 </h5>
                             </td>
                             <td style="text-align:right">
-                                <button type="button" class="btn btn-success btn-sm" (click)="editUser(rowData, ri)">编辑</button>&nbsp;&nbsp;
-                                <button type="button" class="btn btn-warning btn-sm">分配角色</button>&nbsp;&nbsp;
-                                <button type="button" class="btn btn-danger btn-sm" (click)="delUser(rowData, ri)">删除</button>
+                                <p-button icon="pi pi-pencil" styleClass="p-button-success"
+                                    [style]="{ 'margin-right': '.5em' }" (click)="editUser(rowData, ri)"></p-button>
+                                <p-button icon="pi pi-user" styleClass="p-button-warning"
+                                    [style]="{ 'margin-right': '.5em' }"></p-button>
+                                <p-button icon="pi pi-trash" styleClass="p-button-danger"
+                                    (click)="delUser(rowData, ri)"></p-button>
                             </td>
                         </tr>
                     </ng-template>

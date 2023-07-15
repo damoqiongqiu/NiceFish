@@ -5,16 +5,16 @@
         <div class="input-group">
           <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="角色名称">
           <span class="input-group-btn">
-              <button class="btn btn-default" type="button" (click)="searchRole()">
-                  <i class="fa fa-search" aria-hidden="true"></i>搜索
-              </button>
+            <button class="btn btn-default" type="button" (click)="searchRole()">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
           </span>
         </div>
       </div>
       <div class="col-md-2">
         <div class="input-group pull-right">
           <button class="btn btn-primary" type="button" (click)="newRole()">
-            <i class="fa fa-user" aria-hidden="true"></i>创建角色
+            <i class="pi pi-plus" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -23,47 +23,49 @@
   <div class="row">
     <div class="col-md-12">
       <div class="role-item-container">
-          <p-table [value]="roleList" dataKey="id" editMode="row"  
-            [paginator]="true" [rows]="10" [pageLinks]="10" [totalRecords]="totalRecords"
-            [lazy]="true" (onLazyLoad)="pageChanged($event)">
-            <ng-template pTemplate="header">
-                <tr>
-                    <th>角色名称</th>
-                    <th>状态</th>
-                    <th>备注</th>
-                    <th>前端页面权限</th>
-                    <th>后端接口权限</th>
-                    <th>操作</th>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
-                <tr [pEditableRow]="rowData">
-                    <td>
-                        {{rowData.roleName}}
-                    </td>
-                    <td>
-                      <span *ngIf="rowData.status==1" class='label label-success'>已启用</span> 
-                      <span *ngIf="rowData.status==0" class='label label-danger'>已禁用</span>
-                    </td>
-                    <td>
-                        {{rowData.remark}}
-                    </td>
-                    <td>
-                        <h5>
-                          <span *ngFor="let apiPermission of rowData.apiEntities" class="label label-success">{{apiPermission.apiName}}</span>
-                        </h5>
-                    </td>
-                    <td>
-                        <h5>
-                          <span *ngFor="let componentPermission of rowData.componentEntities" class="label label-success">{{apiPermission.apiName}}</span>
-                        </h5>
-                    </td>
-                    <td style="text-align:right">
-                      <button type="button" class="btn btn-success btn-sm" (click)="editRole(rowData, ri)">编辑</button>&nbsp;&nbsp;
-                      <button type="button" class="btn btn-danger btn-sm" (click)="delRole(rowData, ri)">删除</button>
-                    </td>
-                </tr>
-            </ng-template>
+        <p-table [value]="roleList" dataKey="id" editMode="row" [paginator]="true" [rows]="10" [pageLinks]="10"
+          [totalRecords]="totalRecords" [lazy]="true" (onLazyLoad)="pageChanged($event)">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>角色名称</th>
+              <th>状态</th>
+              <th>备注</th>
+              <th>前端页面权限</th>
+              <th>后端接口权限</th>
+              <th>操作</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
+            <tr [pEditableRow]="rowData">
+              <td>
+                {{rowData.roleName}}
+              </td>
+              <td>
+                <span *ngIf="rowData.status==1" class='label label-success'>已启用</span>
+                <span *ngIf="rowData.status==0" class='label label-danger'>已禁用</span>
+              </td>
+              <td>
+                {{rowData.remark}}
+              </td>
+              <td>
+                <h5>
+                  <span *ngFor="let apiPermission of rowData.apiEntities"
+                    class="label label-success">{{apiPermission.apiName}}</span>
+                </h5>
+              </td>
+              <td>
+                <h5>
+                  <span *ngFor="let componentPermission of rowData.componentEntities"
+                    class="label label-success">{{apiPermission.apiName}}</span>
+                </h5>
+              </td>
+              <td style="text-align:right">
+                <p-button icon="pi pi-pencil" styleClass="p-button-success" [style]="{ 'margin-right': '.5em' }"
+                  (click)="editRole(rowData, ri)"></p-button>
+                <p-button icon="pi pi-trash" styleClass="p-button-danger" (click)="delRole(rowData, ri)"></p-button>
+              </td>
+            </tr>
+          </ng-template>
         </p-table>
       </div>
     </div>

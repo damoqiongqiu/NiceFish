@@ -6,7 +6,7 @@
                     <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="内容">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button" (click)="searchRole()">
-                            <i class="fa fa-search" aria-hidden="true"></i>搜索
+                            <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </span>
                 </div>
@@ -16,9 +16,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="comment-item-container">
-                <p-table [value]="commentList" dataKey="id" editMode="row"  
-                    [paginator]="true" [rows]="10" [pageLinks]="10" [totalRecords]="totalRecords"
-                    [lazy]="true" (onLazyLoad)="pageChanged($event)">
+                <p-table [value]="commentList" dataKey="id" editMode="row" [paginator]="true" [rows]="10"
+                    [pageLinks]="10" [totalRecords]="totalRecords" [lazy]="true" (onLazyLoad)="pageChanged($event)">
                     <ng-template pTemplate="header">
                         <tr>
                             <th>内容</th>
@@ -39,7 +38,8 @@
                                 {{rowData.time}}
                             </td>
                             <td style="text-align:center">
-                                <button type="button" class="btn btn-danger btn-sm" (click)="delComment(rowData, ri)">删除</button>
+                                <p-button icon="pi pi-trash" styleClass="p-button-danger"
+                                    (click)="delComment(rowData, ri)"></p-button>
                             </td>
                         </tr>
                     </ng-template>
