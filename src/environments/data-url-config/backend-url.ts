@@ -39,10 +39,10 @@ export const dataURL = {
     updateApiPermissionURL: "/auth/api-permission/edit",
     apiRoleListURL: "/auth/role/list-by-api-id/<%= id %>",//根据 apiId 获取对应的角色列表
     compPermListURL: "/auth/component-permission/list/<%= page %>",
-    compPermDetailURL: "",
+    compPermDetailURL: "/auth/component-permission/detail/<%= id %>",
     delCompPermURL: "/auth/component-permission/delete/<%= id %>",
-    newCompPermURL: "",
-    updateCompPermURL: "",
+    newCompPermURL: "/auth/component-permission/create",
+    updateCompPermURL: "/auth/component-permission/edit",
     compRoleListURL: "",
     sendEmailURL: "",
     getSysParamsURL: "/cms/param/all",

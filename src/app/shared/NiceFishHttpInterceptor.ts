@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { HttpEvent,HttpInterceptor,HttpHandler,HttpRequest,HttpResponse, HttpErrorResponse } from "@angular/common/http";
-import { Observable,throwError } from "rxjs";
-import { filter,map,catchError} from "rxjs/operators";
+import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse, HttpErrorResponse } from "@angular/common/http";
+import { Observable, throwError } from "rxjs";
+import { filter, map, catchError } from "rxjs/operators";
 import { BlockService } from "./block-spinner/block-service.service";
 import { MessageService } from "primeng/api";
 
@@ -13,8 +13,8 @@ import { MessageService } from "primeng/api";
 export class NiceFishHttpInterceptor implements HttpInterceptor {
     constructor(
         private blockService: BlockService,
-        public messageService:MessageService,
-    ){}
+        public messageService: MessageService,
+    ) { }
 
     intercept(httpRequest: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         this.blockService.block();
@@ -22,7 +22,7 @@ export class NiceFishHttpInterceptor implements HttpInterceptor {
             filter(event => event instanceof HttpResponse),
             map((event: HttpResponse<any>) => {
                 this.blockService.unblock();
-                return event.clone(); 
+                return event.clone();
             }),
             catchError((error: HttpErrorResponse) => {
                 let errorMsg = '';

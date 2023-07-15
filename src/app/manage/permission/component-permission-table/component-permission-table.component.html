@@ -19,8 +19,8 @@
             </div>
             <div class="col-md-2">
                 <div class="input-group pull-right">
-                    <button class="btn btn-primary" type="button" (click)="newPermission()">
-                        <i class="fa fa-user" aria-hidden="true"></i>创建权限
+                    <button class="btn btn-primary" type="button" (click)="newComponentPermission()">
+                        <i class="fa fa-user" aria-hidden="true"></i>创建页面权限
                     </button>
                 </div>
             </div>
@@ -49,7 +49,8 @@
                             </td>
                             <td style="width: 10rem;text-align: right;">
                                 <p-button icon="pi pi-pencil" styleClass="p-button-success"
-                                    [style]="{ 'margin-right': '.5em' }"></p-button>
+                                    [style]="{ 'margin-right': '.5em' }"
+                                    (click)="editComponentPermission(rowData)"></p-button>
                                 <p-button icon="pi pi-trash" styleClass="p-button-danger"
                                     (click)="delComponentPermission(rowData)"></p-button>
                             </td>

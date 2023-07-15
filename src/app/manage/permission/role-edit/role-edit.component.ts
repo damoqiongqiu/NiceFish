@@ -13,31 +13,29 @@ import { environment } from "src/environments/environment";
   animations: [flyIn, fadeIn]
 })
 export class RoleEditComponent implements OnInit {
-  public isMock=environment.isMock;
-  public error: Error;
-
+  public isMock = environment.isMock;
   public roleInfo: any = {
-    roleId:"-1",
-    roleName:"",
-    roleEnabled:true,
-    status:1,
-    remark:"",
+    roleId: "-1",
+    roleName: "",
+    roleEnabled: true,
+    status: 1,
+    remark: "",
   };
 
   constructor(
     public activeRoute: ActivatedRoute,
     public router: Router,
     public roleMngService: RoleMngService,
-    public messageService:MessageService
-    ) { 
+    public messageService: MessageService
+  ) {
 
   }
 
   ngOnInit() {
     this.activeRoute.params.subscribe(
       params => {
-        if(params["roleId"]!=="-1"){
-          this.roleInfo.roleId=params["roleId"];
+        if (params["roleId"] !== "-1") {
+          this.roleInfo.roleId = params["roleId"];
           this.getRoleInfo();
         }
       }
@@ -47,41 +45,41 @@ export class RoleEditComponent implements OnInit {
   public getRoleInfo(): void {
     this.roleMngService.getRoleInfo(this.roleInfo.roleId).subscribe(
       data => {
-        data.roleEnabled=data.status==1?true:false;
-        this.roleInfo=data;
+        data.roleEnabled = data.status == 1 ? true : false;
+        this.roleInfo = data;
       },
       error => console.error(error)
     );
   }
 
   public save(): void {
-    this.roleInfo.status=this.roleInfo.roleEnabled?1:0;
+    this.roleInfo.status = this.roleInfo.roleEnabled ? 1 : 0;
     console.log(this.roleInfo);
 
-    if(this.isMock){
+    if (this.isMock) {
       return;
     }
-    
+
     //如果存在 roleId 参数，则为编辑状态，否则为新增状态。
-    if(this.roleInfo.roleId=="-1"){
+    if (this.roleInfo.roleId == "-1") {
       this.roleMngService.newRole(this.roleInfo).subscribe(
         data => {
-          this.messageService.add({severity:'success', summary:'成功', detail:'新增角色成功'});
+          this.messageService.add({ severity: 'success', summary: '成功', detail: '新增角色成功' });
           window.history.back();
         },
         error => {
-          this.messageService.add({severity:'error', summary:'失败', detail:'新增角色失败'});
+          this.messageService.add({ severity: 'error', summary: '失败', detail: '新增角色失败' });
           console.error(error);
         }
       );
-    }else{
+    } else {
       this.roleMngService.updateRole(this.roleInfo).subscribe(
         data => {
-          this.messageService.add({severity:'success', summary:'成功', detail:'更新角色成功'});
+          this.messageService.add({ severity: 'success', summary: '成功', detail: '更新角色成功' });
           window.history.back();
         },
         error => {
-          this.messageService.add({severity:'error', summary:'失败', detail:'更新角色失败'});
+          this.messageService.add({ severity: 'error', summary: '失败', detail: '更新角色失败' });
           console.error(error);
         }
       );

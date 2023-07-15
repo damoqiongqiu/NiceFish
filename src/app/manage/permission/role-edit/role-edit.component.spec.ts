@@ -18,9 +18,9 @@ describe("RoleEditComponent", () => {
         ReactiveFormsModule,
         SharedModule
       ],
-      declarations: [ RoleEditComponent ]
+      declarations: [RoleEditComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

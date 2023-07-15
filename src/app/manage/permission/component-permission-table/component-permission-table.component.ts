@@ -91,7 +91,7 @@ export class ComponentPermissionTableComponent {
   private getRolesAsync() {
     this.compPermList.forEach((compPerm, index) => {
       this.compPermService
-        .getRolesByCompId(compPerm.compId)
+        .getRolesByCompId(compPerm.compPermId)
         .subscribe((res) => {
           res.success && res.data && (compPerm.roles = res.data);
         });
@@ -157,14 +157,14 @@ export class ComponentPermissionTableComponent {
     });
   }
 
-  public newPermission() {
+  public newComponentPermission() {
     this.router.navigateByUrl("/manage/component-permission-table/edit/-1");
   }
 
-  public editPermission(rowData, ri): void {
-    let compId = rowData.compId;
+  public editComponentPermission(rowData, ri): void {
+    let compPermId = rowData.compPermId;
     this.router.navigateByUrl(
-      "/manage/component-permission-table/edit/" + compId
+      "/manage/component-permission-table/edit/" + compPermId
     );
   }
 }
