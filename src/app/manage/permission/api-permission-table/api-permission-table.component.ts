@@ -14,16 +14,16 @@ import { fadeIn } from "../../../shared/animations/fade-in";
   ]
 })
 export class ApiPermissionTableComponent implements OnInit {
-  public searchStr="";
-  public apiPermissionList: Array<any>=[];
-  public totalRecords=0;
-  public currentPage=1;
+  public searchStr = "";
+  public apiPermissionList: Array<any> = [];
+  public totalRecords = 0;
+  public currentPage = 1;
 
   constructor(
     public router: Router,
     public activeRoute: ActivatedRoute,
     public apiPermService: ApiPermissionService,
-    public messageService:MessageService,
+    public messageService: MessageService,
     private confirmationService: ConfirmationService
   ) {
   }
@@ -31,62 +31,45 @@ export class ApiPermissionTableComponent implements OnInit {
   ngOnInit() {
     this.activeRoute.params.subscribe(
       params => {
-        this.currentPage=params["page"];
+        this.currentPage = params["page"];
         this.getPermissionListByPage();
       }
     );
   }
 
   public getPermissionListByPage() {
-    return this.apiPermService.getApiPermissionTable(this.currentPage,this.searchStr).subscribe(
-        data => {
-          this.apiPermissionList=data.content;
-          this.totalRecords=data.totalElements;
-          
-          this.getRolesAsync();
-        },
-    );
-  }
-
-  /**
-   * 查询每一个权限对应的角色
-   */
-  private getRolesAsync() {
-    this.apiPermissionList.forEach(
-      (apiPerm,index)=> {
-        this.apiPermService.getRolesByApiId(apiPerm.apiId).subscribe(
-          res=> {
-            res.success&&res.data&&(apiPerm.roles=res.data);
-          }
-        );
-      }
+    return this.apiPermService.getApiPermissionTable(this.currentPage, this.searchStr).subscribe(
+      data => {
+        this.apiPermissionList = data.content;
+        this.totalRecords = data.totalElements;
+      },
     );
   }
 
   public searchPermission() {
-    this.currentPage=1;
+    this.currentPage = 1;
     this.getPermissionListByPage();
   }
 
   public resetSearch() {
-    this.currentPage=1;
-    this.searchStr="";
+    this.currentPage = 1;
+    this.searchStr = "";
     this.getPermissionListByPage();
   }
 
   public pageChanged(event: any): void {
-    this.currentPage=(event.first/event.rows)+1;
+    this.currentPage = (event.first / event.rows) + 1;
     this.router.navigateByUrl("/manage/api-permission-table/page/" + this.currentPage);
   }
 
-  public delPermission(rowData,ri): void {
+  public delPermission(rowData, ri): void {
     this.confirmationService.confirm({
-        message: "确定要删除吗？",
-        accept: () => {
-          let apiId=rowData.apiId;
-          this.apiPermService.deleteByApiId(apiId)
-          .subscribe(data=> {
-            if(data&&data.success) {
+      message: "确定要删除吗？",
+      accept: () => {
+        let apiId = rowData.apiId;
+        this.apiPermService.deleteByApiId(apiId)
+          .subscribe(data => {
+            if (data && data.success) {
               this.messageService.add({
                 severity: "success",
                 summary: "Success Message",
@@ -99,21 +82,21 @@ export class ApiPermissionTableComponent implements OnInit {
               this.messageService.add({
                 severity: "error",
                 summary: "Fail Message",
-                detail: data.msg||"删除失败",
+                detail: data.msg || "删除失败",
                 sticky: false,
                 life: 1000
               });
             }
-          },error=> {
+          }, error => {
             this.messageService.add({
               severity: "error",
               summary: "Fail Message",
-              detail: error||"删除失败",
+              detail: error || "删除失败",
               sticky: false,
               life: 1000
             });
           });
-        }
+      }
     });
   }
 
@@ -121,8 +104,8 @@ export class ApiPermissionTableComponent implements OnInit {
     this.router.navigateByUrl("/manage/api-permission-table/edit/-1");
   }
 
-  public editPermission(rowData,ri): void {
-    let apiId=rowData.apiId;
-    this.router.navigateByUrl("/manage/api-permission-table/edit/"+apiId);
+  public editPermission(rowData, ri): void {
+    let apiId = rowData.apiId;
+    this.router.navigateByUrl("/manage/api-permission-table/edit/" + apiId);
   }
 }

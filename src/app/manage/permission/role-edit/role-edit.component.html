@@ -43,4 +43,51 @@
       </form>
     </div>
   </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">后端接口权限</h3>
+    </div>
+    <div class="panel-body">
+      <p-table [value]="apiPermissionListAll" dataKey="id" editMode="row" styleClass="p-datatable-gridlines">
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width: 4rem"></th>
+            <th>API 名称</th>
+            <th>API URL</th>
+            <th>权限通配符</th>
+            <th>备注</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
+          <tr [pEditableRow]="rowData">
+            <td>
+              <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td>
+            <td>
+              {{rowData.apiName}}
+            </td>
+            <td>
+              {{rowData.url}}
+            </td>
+            <td>
+              {{rowData.permission}}
+            </td>
+            <td style="width: 120px;">
+              {{rowData.remark}}
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">前端页面权限</h3>
+    </div>
+    <div class="panel-body">
+
+    </div>
+  </div>
 </div>

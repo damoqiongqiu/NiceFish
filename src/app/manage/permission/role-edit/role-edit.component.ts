@@ -4,6 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { RoleMngService } from "../role-mng.service";
 import { MessageService } from "primeng/api";
+import { ApiPermissionService } from "../api-permission.service";
 import { environment } from "src/environments/environment";
 
 @Component({
@@ -22,11 +23,15 @@ export class RoleEditComponent implements OnInit {
     remark: "",
   };
 
+  public apiPermissionListAll: Array<any> = [];
+  public apiPermissionListByRole: Array<any> = [];
+
   constructor(
     public activeRoute: ActivatedRoute,
     public router: Router,
     public roleMngService: RoleMngService,
-    public messageService: MessageService
+    public messageService: MessageService,
+    public apiPermService: ApiPermissionService,
   ) {
 
   }
@@ -34,10 +39,14 @@ export class RoleEditComponent implements OnInit {
   ngOnInit() {
     this.activeRoute.params.subscribe(
       params => {
-        if (params["roleId"] !== "-1") {
-          this.roleInfo.roleId = params["roleId"];
-          this.getRoleInfo();
-        }
+        if (params["roleId"] == "-1") return;
+
+        this.roleInfo.roleId = params["roleId"];
+        this.getRoleInfo();
+        this.getApiPermListAll();
+        this.getApiPermListByRoleId();
+        this.getCompPermListAll();
+        this.getCompPermListByRoleId();
       }
     );
   }
@@ -50,6 +59,43 @@ export class RoleEditComponent implements OnInit {
       },
       error => console.error(error)
     );
+  }
+
+  /**
+   * 获取所有 API 权限列表，TODO:带分页？？？
+   */
+  public getApiPermListAll() {
+    return this.apiPermService.getApiPermissionListAll().subscribe(
+      data => {
+        this.apiPermissionListAll = data;
+      },
+    );
+  }
+
+  /**
+   * 获取角色的 API 权限列表
+   */
+  public getApiPermListByRoleId() {
+    return this.apiPermService.getApiPermissionListAllByRole({ roleId: this.roleInfo.roleId }).subscribe(
+      data => {
+        console.log(data);
+        this.apiPermissionListByRole = data;
+      },
+    );
+  }
+
+  /**
+   * 获取角色的前端组件权限列表
+   */
+  public getCompPermListByRoleId(): void {
+
+  }
+
+  /**
+   * 获取所有前端组件权限列表，TODO:带分页？？？
+   */
+  public getCompPermListAll(): void {
+
   }
 
   public save(): void {
