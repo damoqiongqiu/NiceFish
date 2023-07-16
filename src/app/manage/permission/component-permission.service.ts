@@ -47,11 +47,11 @@ export class ComponentPermissionService {
         return this.httpClient.delete(reqURL);
     }
 
-    public newCompPerm(compnentPermission: any): Observable<any> {
-        return this.httpClient.post(this.newCompPermURL, compnentPermission);
+    public newCompPerm(componentPermission: any): Observable<any> {
+        return this.httpClient.post(this.newCompPermURL, componentPermission);
     }
 
-    public updateCompPerm(compnentPermission: any): Observable<any> {
-        return this.httpClient.post(this.updateCompPermURL, compnentPermission);
+    public updateCompPerm(componentPermission: any): Observable<any> {
+        return this.httpClient.post(this.updateCompPermURL, componentPermission);
     }
 }
