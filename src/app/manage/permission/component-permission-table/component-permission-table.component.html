@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-2">
                 <div class="input-group pull-right">
-                    <button class="btn btn-primary" type="button" (click)="newComponentPermission()">
+                    <button class="btn btn-primary" type="button" (click)="editComponentPermission({},false)">
                         <i class="pi pi-plus" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -36,7 +36,7 @@
                             <th *ngFor="let col of columns">
                                 {{ col.header }}
                             </th>
-                            <th style="width: 10rem">
+                            <th style="width: 15rem">
                                 操作
                             </th>
                         </tr>
@@ -47,10 +47,13 @@
                                 <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0"></p-treeTableToggler>
                                 {{ rowData[col.field] }}
                             </td>
-                            <td style="width: 10rem;text-align: right;">
+                            <td style="width: 15rem;text-align: right;">
                                 <p-button icon="pi pi-pencil" styleClass="p-button-success"
                                     [style]="{ 'margin-right': '.5em' }"
                                     (click)="editComponentPermission(rowData)"></p-button>
+                                <p-button icon="pi pi-plus" styleClass="p-button-warning"
+                                    [style]="{ 'margin-right': '.5em' }"
+                                    (click)="editComponentPermission(rowData,true)"></p-button>
                                 <p-button icon="pi pi-trash" styleClass="p-button-danger"
                                     (click)="delComponentPermission(rowData)"></p-button>
                             </td>

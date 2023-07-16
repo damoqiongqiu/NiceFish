@@ -17,7 +17,9 @@ export class ComponentPermissionEditComponent implements OnInit {
   public isMock = environment.isMock;
   public error: Error;
   public compPermId: string = "-1";
+  public pId: string = "-1";
   public componentPermission: any = {
+    parentEntity: null,
     compPermId: this.compPermId,
     componentName: "",
     icon: null,
@@ -39,14 +41,20 @@ export class ComponentPermissionEditComponent implements OnInit {
   ngOnInit() {
     this.activeRoute.params.subscribe((params) => {
       this.compPermId = params["compPermId"];
-      console.log(this.compPermId);
+      this.pId = params["pId"];
       this.loadComponentPermissionDetail();
     });
   }
 
   loadComponentPermissionDetail() {
-    //参数为 -1 时，表示新增
+    //this.compPermId 参数为 -1 时，表示新增
     if (this.compPermId == "-1") {
+      //this.pId 参数为 -1 时，表示新增的是根节点，否则新增的是子节点
+      if (this.pId !== "-1") {
+        this.compPermService.getCompPermDetails(this.pId).subscribe((response) => {
+          this.componentPermission.parentEntity = response;
+        });
+      }
       return;
     }
 
@@ -65,9 +73,13 @@ export class ComponentPermissionEditComponent implements OnInit {
       return;
     }
 
-
-    //如果存在 compPermId 参数，则为编辑状态，否则为新增状态。
-    if (this.componentPermission.compPermId == "-1") {
+    if (this.compPermId == "-1") {
+      //创建子节点时，只传递 compPermId 参数
+      if (this.pId !== "-1") {
+        this.componentPermission.parentEntity = {
+          compPermId: this.pId
+        }
+      }
       this.compPermService.newCompPerm(this.componentPermission).subscribe(
         data => {
           this.messageService.add({ severity: 'success', summary: '成功', detail: '新增页面权限成功' });

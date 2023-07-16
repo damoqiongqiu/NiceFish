@@ -31,7 +31,7 @@ export const manageRoutes: Routes = [
 			{ path: "api-permission-table/page/:page", component: ApiPermissionTableComponent },
 			{ path: "api-permission-table/edit/:apiId", component: ApiPermissionEditComponent },
 			{ path: "component-permission-table/page/:page", component: ComponentPermissionTableComponent },
-			{ path: "component-permission-table/edit/:compPermId", component: ComponentPermissionEditComponent },
+			{ path: "component-permission-table/edit/:compPermId/:pId", component: ComponentPermissionEditComponent },
 			{ path: "profile/:userId", component: UserProfileComponent },
 			{ path: "sysparam", component: SysParamComponent },
 			{ path: "**", redirectTo: "posttable/page/1" }

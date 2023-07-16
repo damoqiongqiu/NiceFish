@@ -157,14 +157,16 @@ export class ComponentPermissionTableComponent {
     });
   }
 
-  public newComponentPermission() {
-    this.router.navigateByUrl("/manage/component-permission-table/edit/-1");
-  }
-
-  public editComponentPermission(rowData, ri): void {
-    let compPermId = rowData.compPermId;
+  //新建和编辑都使用此方法，通过传递不同的参数进行区分
+  public editComponentPermission(rowData, newSub: boolean = true): void {
+    let compPermId = rowData.compPermId ? rowData.compPermId : -1;
+    let pId = rowData.parentEntity ? rowData.parentEntity.compPermId : -1;
+    let url = "/manage/component-permission-table/edit/" + compPermId + "/" + pId;
+    if (newSub) {
+      url = "/manage/component-permission-table/edit/-1/" + compPermId;
+    }
     this.router.navigateByUrl(
-      "/manage/component-permission-table/edit/" + compPermId
+      url
     );
   }
 }
