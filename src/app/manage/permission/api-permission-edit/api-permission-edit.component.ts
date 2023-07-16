@@ -23,6 +23,8 @@ export class ApiPermissionEditComponent implements OnInit {
     url: "",
     permission: "",
     remark: "",
+    createTime: new Date(),
+    updateTime: new Date(),
   };
 
   constructor(
@@ -55,6 +57,9 @@ export class ApiPermissionEditComponent implements OnInit {
     if (this.isMock) {
       return;
     }
+
+    delete this.apiPermission.createTime;
+    delete this.apiPermission.updateTime;
 
     //如果存在 apiId 参数，则为编辑状态，否则为新增状态。
     if (this.apiPermission.apiId == "-1") {
