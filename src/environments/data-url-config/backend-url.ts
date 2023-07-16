@@ -33,6 +33,8 @@ export const dataURL = {
     newRoleURL: "/auth/role/create",
     updateRoleURL: "/auth/role/edit",
     apiPermissionTableURL: "/auth/api-permission/list/<%= page %>",
+    apiPermissionListAll: "/auth/api-permission/list-all",
+    apiPermissionListAllByRole: "/auth/api-permission/list-all-by-role",
     apiPermissionDetailURL: "/auth/api-permission/detail/<%= id %>",
     delApiPermissionURL: "/auth/api-permission/delete/<%= id %>",
     newApiPermissionURL: "/auth/api-permission/create",

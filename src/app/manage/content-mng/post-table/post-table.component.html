@@ -17,7 +17,8 @@
         <div class="col-md-12">
             <div class="post-item-container">
                 <p-table [value]="postList" dataKey="id" editMode="row" [paginator]="true" [rows]="10" [pageLinks]="10"
-                    [totalRecords]="totalRecords" [lazy]="true" (onLazyLoad)="pageChanged($event)">
+                    [totalRecords]="totalRecords" [lazy]="true" (onLazyLoad)="pageChanged($event)"
+                    styleClass="p-datatable-gridlines">
                     <ng-template pTemplate="header">
                         <tr>
                             <th>标题</th>

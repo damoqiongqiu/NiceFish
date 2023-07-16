@@ -24,7 +24,8 @@
     <div class="col-md-12">
       <div class="role-item-container">
         <p-table [value]="roleList" dataKey="id" editMode="row" [paginator]="true" [rows]="10" [pageLinks]="10"
-          [totalRecords]="totalRecords" [lazy]="true" (onLazyLoad)="pageChanged($event)">
+          [totalRecords]="totalRecords" [lazy]="true" (onLazyLoad)="pageChanged($event)"
+          styleClass="p-datatable-gridlines">
           <ng-template pTemplate="header">
             <tr>
               <th>角色名称</th>
@@ -48,15 +49,13 @@
                 {{rowData.remark}}
               </td>
               <td>
-                <h5>
-                  <span *ngFor="let componentPermission of rowData.componentEntities"
-                    class="label label-success">{{componentPermission.componentName}}</span>
+                <h5 *ngFor="let componentPermission of rowData.componentEntities">
+                  <span class="label label-warning">{{componentPermission.componentName}}</span>
                 </h5>
               </td>
               <td>
-                <h5>
-                  <span *ngFor="let apiPermission of rowData.apiEntities"
-                    class="label label-success">{{apiPermission.apiName}}</span>
+                <h5 *ngFor="let apiPermission of rowData.apiEntities">
+                  <span class="label label-warning">{{apiPermission.apiName}}</span>
                 </h5>
               </td>
               <td style="text-align:right">

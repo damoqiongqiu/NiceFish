@@ -24,7 +24,8 @@
     <div class="col-md-12">
       <div class="permission-item-container">
         <p-table [value]="apiPermissionList" dataKey="id" editMode="row" [paginator]="true" [rows]="10" [pageLinks]="10"
-          [totalRecords]="totalRecords" [lazy]="true" (onLazyLoad)="pageChanged($event)">
+          [totalRecords]="totalRecords" [lazy]="true" (onLazyLoad)="pageChanged($event)"
+          styleClass="p-datatable-gridlines">
           <ng-template pTemplate="header">
             <tr>
               <th>API 名称</th>
@@ -50,8 +51,8 @@
                 {{rowData.remark}}
               </td>
               <td>
-                <h5>
-                  <span *ngFor="let role of rowData.roles" class="label label-info">{{role.roleName}}</span>
+                <h5 *ngFor="let role of rowData.roleEntities">
+                  <span class="label label-info">{{role.roleName}}</span>
                 </h5>
               </td>
               <td style="text-align:right">

@@ -25,6 +25,8 @@ export const dataURL = {
     newRoleURL: "",
     updateRoleURL: "",
     apiPermissionTableURL: "mock-data/permission-list-mock.json",
+    apiPermissionListAll: "mock-data/permission-list-mock.json",
+    apiPermissionListAllByRole: "mock-data/permission-list-by-role-mock.json",
     apiPermissionDetailURL: "mock-data/permission-detail-mock.json",
     delApiPermissionURL: "",
     newApiPermissionURL: "",
