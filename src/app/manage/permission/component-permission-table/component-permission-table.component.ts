@@ -81,21 +81,7 @@ export class ComponentPermissionTableComponent {
         });
         this.compPermList = data.content;
         this.totalRecords = data.totalElements;
-        // this.getRolesAsync();
       });
-  }
-
-  /**
-   * 查询每一个权限对应的角色
-   */
-  private getRolesAsync() {
-    this.compPermList.forEach((compPerm, index) => {
-      this.compPermService
-        .getRolesByCompId(compPerm.compPermId)
-        .subscribe((res) => {
-          res.success && res.data && (compPerm.roles = res.data);
-        });
-    });
   }
 
   public searchPermission() {

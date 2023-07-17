@@ -13,6 +13,7 @@ export class ComponentPermissionService {
 
     private compPermListURL = environment.dataURL.compPermListURL;
     private compPermDetailURL = environment.dataURL.compPermDetailURL;
+    private compPermissionListAllByRole = environment.dataURL.compPermissionListAllByRole;
     private delCompPermURL = environment.dataURL.delCompPermURL;
     private newCompPermURL = environment.dataURL.newCompPermURL;
     private updateCompPermURL = environment.dataURL.updateCompPermURL;
@@ -22,14 +23,20 @@ export class ComponentPermissionService {
 
     public getCompPermTable(page = 1, searchStr = ""): Observable<any> {
         let reqURL = _.template(this.compPermListURL)({ page: page });
-
         if (this.isMock) {
             return this.httpClient.get(this.compPermListURL);
         }
-
         return this.httpClient.post(reqURL, {
             componentName: searchStr,
         });
+    }
+
+    public getCompPermListByRoleId(roleEntity = {}): Observable<any> {
+        let reqURL = _.template(this.compPermissionListAllByRole)();
+        if (this.isMock) {
+            return this.httpClient.get(this.compPermissionListAllByRole);
+        }
+        return this.httpClient.post(reqURL, roleEntity);
     }
 
     public getRolesByCompId(compPermId): Observable<any> {
