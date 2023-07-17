@@ -19,7 +19,8 @@
             </div>
             <div class="col-md-2">
                 <div class="input-group pull-right">
-                    <button class="btn btn-primary" type="button" (click)="editComponentPermission({},false)">
+                    <button class="btn btn-primary" type="button"
+                        (click)="editComponentPermission({compPermId:-1,parentEntity:{compPermId:-1}},false)">
                         <i class="pi pi-plus" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -50,7 +51,8 @@
                             <td style="width: 15rem;text-align: right;">
                                 <p-button icon="pi pi-pencil" styleClass="p-button-success"
                                     [style]="{ 'margin-right': '.5em' }"
-                                    (click)="editComponentPermission(rowData)"></p-button>
+                                    (click)="editComponentPermission(rowData,false)"></p-button>
+                                <!-- 点击加号表示创建子节点 -->
                                 <p-button icon="pi pi-plus" styleClass="p-button-warning"
                                     [style]="{ 'margin-right': '.5em' }"
                                     (click)="editComponentPermission(rowData,true)"></p-button>

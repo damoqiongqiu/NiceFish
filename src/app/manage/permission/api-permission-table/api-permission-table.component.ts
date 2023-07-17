@@ -66,8 +66,8 @@ export class ApiPermissionTableComponent implements OnInit {
     this.confirmationService.confirm({
       message: "确定要删除吗？",
       accept: () => {
-        let apiId = rowData.apiId;
-        this.apiPermService.deleteByApiId(apiId)
+        let apiPermissionId = rowData.apiPermissionId;
+        this.apiPermService.deleteByApiId(apiPermissionId)
           .subscribe(data => {
             if (data && data.success) {
               this.messageService.add({
@@ -105,7 +105,7 @@ export class ApiPermissionTableComponent implements OnInit {
   }
 
   public editPermission(rowData, ri): void {
-    let apiId = rowData.apiId;
-    this.router.navigateByUrl("/manage/api-permission-table/edit/" + apiId);
+    let apiPermissionId = rowData.apiPermissionId;
+    this.router.navigateByUrl("/manage/api-permission-table/edit/" + apiPermissionId);
   }
 }

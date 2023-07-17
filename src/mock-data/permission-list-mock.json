@@ -1,7 +1,7 @@
 {
   "content": [
     {
-      "apiId": 1,
+      "apiPermissionId": 1,
       "apiName": "系统管理",
       "url": null,
       "permission": "sys:manage",
@@ -10,7 +10,7 @@
       "remark": null
     },
     {
-      "apiId": 2,
+      "apiPermissionId": 2,
       "apiName": "测试",
       "url": "",
       "permission": "*",

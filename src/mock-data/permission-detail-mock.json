@@ -1,6 +1,6 @@
 {
   "data": {
-    "apiId": 2,
+    "apiPermissionId": 2,
     "apiName": "测试",
     "url": "",
     "permission": "*",

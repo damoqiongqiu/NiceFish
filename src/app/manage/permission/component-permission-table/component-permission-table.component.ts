@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ComponentPermissionService } from "../component-permission.service";
 import { MessageService } from "primeng/api";
 import { ConfirmationService } from "primeng/api";
-import { TreeNode } from "primeng/api";
+import * as _ from 'lodash';
 import { fadeIn } from "../../../shared/animations/fade-in";
 
 interface Column {
@@ -62,7 +62,15 @@ export class ComponentPermissionTableComponent {
     this.cols.forEach((col) => {
       data[col.field] = node[col.field];
     });
+    // 为了方便接口调用，将 compPermId 和父层的 compPermId 保存在 data 中
     data.compPermId = node.compPermId;
+    let pId = -1;
+    if (_.isNumber(node.parentEntity)) {
+      pId = node.parentEntity;
+    } else if (_.isObject(node.parentEntity)) {
+      pId = node.parentEntity.compPermId;
+    }
+    data.parentEntity = { compPermId: pId };
     node.data = data;
     if (node.children) {
       node.children.forEach((child) => {
@@ -143,16 +151,22 @@ export class ComponentPermissionTableComponent {
     });
   }
 
-  //新建和编辑都使用此方法，通过传递不同的参数进行区分
+  /**
+   * 新建和编辑都使用此方法，通过传递不同的参数进行区分
+   * @param rowData 
+   * @param newSub true 为新建子节点
+   */
   public editComponentPermission(rowData, newSub: boolean = true): void {
-    let compPermId = rowData.compPermId ? rowData.compPermId : -1;
-    let pId = rowData.parentEntity ? rowData.parentEntity.compPermId : -1;
-    let url = "/manage/component-permission-table/edit/" + compPermId + "/" + pId;
+    let compPermId = 1;
+    let pId = -1;
     if (newSub) {
-      url = "/manage/component-permission-table/edit/-1/" + compPermId;
+      compPermId = -1;
+      pId = rowData.compPermId;
+    } else {
+      compPermId = rowData.compPermId;
+      pId = rowData.parentEntity.compPermId;
     }
-    this.router.navigateByUrl(
-      url
-    );
+    let url = "/manage/component-permission-table/edit/" + compPermId + "/" + pId;
+    this.router.navigateByUrl(url);
   }
 }

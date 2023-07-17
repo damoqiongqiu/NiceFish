@@ -54,6 +54,9 @@
                         <input name="permission" [(ngModel)]="componentPermission.permission" #permission="ngModel"
                             type="text" class="form-control" placeholder="请输入权限通配符" required="" minlength="1"
                             maxlength="32" />
+                        <p class="bg-danger">
+                            Apache Shiro 通配符权限文档： https://shiro.apache.org/permissions.html
+                        </p>
                     </div>
                 </div>
                 <div class="form-group" [ngClass]="{ 'has-error': !compVisiable.valid }">
@@ -100,9 +103,6 @@
                     </div>
                 </div>
             </form>
-            <p class="bg-danger">
-                Apache Shiro 通配符权限文档： https://shiro.apache.org/permissions.html
-            </p>
         </div>
     </div>
 </div>

@@ -62,13 +62,13 @@ export class ApiPermissionService {
         return this.httpClient.post(reqURL, roleEntity);
     }
 
-    public getRolesByApiId(apiId): Observable<any> {
-        let reqURL = _.template(this.apiRoleListURL)({ id: apiId });
+    public getRolesByApiId(apiPermissionId): Observable<any> {
+        let reqURL = _.template(this.apiRoleListURL)({ id: apiPermissionId });
         return this.httpClient.get(reqURL);
     }
 
-    public getApiPermDetails(apiId): Observable<any> {
-        let reqURL = _.template(this.apiPermissionDetailURL)({ id: apiId });
+    public getApiPermDetails(apiPermissionId): Observable<any> {
+        let reqURL = _.template(this.apiPermissionDetailURL)({ id: apiPermissionId });
         return this.httpClient.get(reqURL);
     }
 
