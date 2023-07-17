@@ -43,16 +43,20 @@
       </form>
     </div>
   </div>
-
+  <!-- 后端接口权限配置表格 -->
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">后端接口权限</h3>
     </div>
     <div class="panel-body">
-      <p-table [value]="apiPermissionListAll" dataKey="id" editMode="row" styleClass="p-datatable-gridlines">
+      <p-table [value]="apiPermissionListAll" dataKey="apiPermissionId" editMode="row"
+        styleClass="p-datatable-gridlines" [(selection)]="apiPermissionListByRole"
+        (selectionChange)="onApiPermSelectionChange($event)">
         <ng-template pTemplate="header">
           <tr>
-            <th style="width: 4rem"></th>
+            <th style="width: 4rem">
+              <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
             <th>API 名称</th>
             <th>API URL</th>
             <th>权限通配符</th>
@@ -81,13 +85,38 @@
       </p-table>
     </div>
   </div>
-
+  <!-- 前端页面权限配置表格 -->
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">前端页面权限</h3>
     </div>
     <div class="panel-body">
-
+      <p-treeTable [value]="compPermList" [columns]="cols" [resizableColumns]="true" columnResizeMode="expand"
+        [scrollable]="true" selectionMode="checkbox" [(selection)]="selectedComp"
+        (onNodeSelect)="onCompPermSelect($event)">
+        <ng-template pTemplate="caption">
+          <div class="flex">
+            <p-treeTableHeaderCheckbox></p-treeTableHeaderCheckbox>
+            <span class="ml-2">全选</span>
+          </div>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns">
+              {{ col.header }}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+          <tr>
+            <td *ngFor="let col of columns; let i = index">
+              <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0"></p-treeTableToggler>
+              <p-treeTableCheckbox [value]="rowNode" *ngIf="i === 0"></p-treeTableCheckbox>
+              {{ rowData[col.field] }}
+            </td>
+          </tr>
+        </ng-template>
+      </p-treeTable>
     </div>
   </div>
 </div>

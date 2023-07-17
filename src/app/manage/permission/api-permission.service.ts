@@ -30,11 +30,9 @@ export class ApiPermissionService {
      */
     public getApiPermissionTable(page = 1, searchStr = ""): Observable<any> {
         let reqURL = _.template(this.apiPermissionTableURL)({ page: page });
-
         if (this.isMock) {
             return this.httpClient.get(this.apiPermissionTableURL);
         }
-
         return this.httpClient.post(reqURL, {
             apiName: searchStr
         });
@@ -46,11 +44,9 @@ export class ApiPermissionService {
      */
     public getApiPermissionListAll(): Observable<any> {
         let reqURL = _.template(this.apiPermissionListAll)();
-
         if (this.isMock) {
             return this.httpClient.get(this.apiPermissionListAll);
         }
-
         return this.httpClient.post(reqURL, {});
     }
 
@@ -60,11 +56,9 @@ export class ApiPermissionService {
      */
     public getApiPermissionListAllByRole(roleEntity = {}): Observable<any> {
         let reqURL = _.template(this.apiPermissionListAllByRole)();
-
         if (this.isMock) {
             return this.httpClient.get(this.apiPermissionListAllByRole);
         }
-
         return this.httpClient.post(reqURL, roleEntity);
     }
 

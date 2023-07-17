@@ -3,9 +3,20 @@ import { fadeIn } from "../../../shared/animations/fade-in";
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { RoleMngService } from "../role-mng.service";
-import { MessageService } from "primeng/api";
+import { MessageService, TreeNode } from "primeng/api";
 import { ApiPermissionService } from "../api-permission.service";
+import { ComponentPermissionService } from "../component-permission.service";
 import { environment } from "src/environments/environment";
+
+interface Column {
+  field: string;
+  header: string;
+}
+
+interface NodeEvent {
+  originalEvent: Event;
+  node: TreeNode;
+}
 
 @Component({
   selector: "role-edit",
@@ -23,8 +34,21 @@ export class RoleEditComponent implements OnInit {
     remark: "",
   };
 
+  //以下是 API 权限相关的属性
   public apiPermissionListAll: Array<any> = [];
   public apiPermissionListByRole: Array<any> = [];
+  public selectAll: boolean = false;
+
+  //以下是前端组件权限相关的属性
+  public compPermList: Array<any> = [];
+  public cols: Column[] = [
+    { field: "componentName", header: "组件名称" },
+    { field: "url", header: "URL" },
+    { field: "displayOrder", header: "显示顺序" },
+    { field: "permission", header: "权限通配符" },
+    { field: "visiable", header: "是否可见" },
+  ];
+  public selectedComp: Array<any> = [];
 
   constructor(
     public activeRoute: ActivatedRoute,
@@ -32,6 +56,7 @@ export class RoleEditComponent implements OnInit {
     public roleMngService: RoleMngService,
     public messageService: MessageService,
     public apiPermService: ApiPermissionService,
+    public compPermService: ComponentPermissionService,
   ) {
 
   }
@@ -64,8 +89,8 @@ export class RoleEditComponent implements OnInit {
   /**
    * 获取所有 API 权限列表，TODO:带分页？？？
    */
-  public getApiPermListAll() {
-    return this.apiPermService.getApiPermissionListAll().subscribe(
+  public getApiPermListAll(): void {
+    this.apiPermService.getApiPermissionListAll().subscribe(
       data => {
         this.apiPermissionListAll = data;
       },
@@ -73,10 +98,10 @@ export class RoleEditComponent implements OnInit {
   }
 
   /**
-   * 获取角色的 API 权限列表
+   * 获取角色的全部 API 权限列表
    */
-  public getApiPermListByRoleId() {
-    return this.apiPermService.getApiPermissionListAllByRole({ roleId: this.roleInfo.roleId }).subscribe(
+  public getApiPermListByRoleId(): void {
+    this.apiPermService.getApiPermissionListAllByRole({ roleId: this.roleInfo.roleId }).subscribe(
       data => {
         console.log(data);
         this.apiPermissionListByRole = data;
@@ -84,22 +109,88 @@ export class RoleEditComponent implements OnInit {
     );
   }
 
-  /**
-   * 获取角色的前端组件权限列表
-   */
-  public getCompPermListByRoleId(): void {
+  public onApiPermSelectionChange(value = []): void {
+    console.log(value);
+    console.log(this.apiPermissionListByRole);
+  }
 
+  /**
+   * PrimeNG 组件需要的数据格式与服务端返回的数据格式不一致。
+   * 这里 tree 递归，整理成 PrimeNG 组件需要的数据格式，此方法直接修改原始节点上的数据，不生成副本。
+   * @param node 
+   * @returns 
+   */
+  private treeDataTransformer(node) {
+    let data: any = {};
+    this.cols.forEach((col) => {
+      data[col.field] = node[col.field];
+    });
+    data.compPermId = node.compPermId;
+    node.data = data;
+    if (node.children) {
+      node.children.forEach((child) => {
+        this.treeDataTransformer(child);
+      });
+    }
+    return node;
   }
 
   /**
    * 获取所有前端组件权限列表，TODO:带分页？？？
    */
   public getCompPermListAll(): void {
+    this.compPermService
+      .getCompPermTable(1, "")
+      .subscribe((data) => {
+        data.content.forEach((node) => {
+          this.treeDataTransformer(node);
+        });
+        this.compPermList = data.content;
+      });
+  }
 
+  /**
+   * 获取角色的前端组件权限列表
+   */
+  public getCompPermListByRoleId(): void {
+    this.compPermService
+      .getCompPermListByRoleId({ roleId: this.roleInfo.roleId })
+      .subscribe((data) => {
+        data.forEach((node) => {
+          this.treeDataTransformer(node);
+        });
+        this.selectedComp = data;
+      });
+  }
+
+  public onCompPermSelect(event: NodeEvent) {
+    console.log(event);
+    console.log(this.selectedComp);
   }
 
   public save(): void {
+    //整理成服务端接口需要的数据格式
     this.roleInfo.status = this.roleInfo.roleEnabled ? 1 : 0;
+    delete this.roleInfo.apiEntities;
+    delete this.roleInfo.componentEntities;
+
+    let apiPermListTemp = [];
+    this.apiPermissionListByRole.forEach((apiPerm) => {
+      apiPermListTemp.push({
+        apiPermissionId: apiPerm.apiPermissionId,//只传 id
+      });
+    });
+
+    let compPermListTemp = [];
+    this.selectedComp.forEach((compPerm) => {
+      compPermListTemp.push({
+        compPermId: compPerm.compPermId,//只传 id
+      });
+    });
+
+    this.roleInfo.apiEntities = apiPermListTemp;
+    this.roleInfo.componentEntities = compPermListTemp;
+
     console.log(this.roleInfo);
 
     if (this.isMock) {
@@ -133,6 +224,7 @@ export class RoleEditComponent implements OnInit {
   }
 
   public cancel(): void {
+    //FIXME:如果存在编辑过的数据，提示是否保存
     window.history.back();
   }
 }
