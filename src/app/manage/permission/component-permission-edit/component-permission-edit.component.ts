@@ -67,6 +67,13 @@ export class ComponentPermissionEditComponent implements OnInit {
 
   save() {
     this.componentPermission.visiable = this.componentPermission.compVisiable ? 1 : 0;
+    if (this.pId !== "-1") {
+      this.componentPermission.parentEntity = {
+        compPermId: this.pId
+      }
+    }
+    delete this.componentPermission.roleEntities;
+    delete this.componentPermission.children;
     console.log(this.componentPermission);
 
     if (this.isMock) {
@@ -75,11 +82,6 @@ export class ComponentPermissionEditComponent implements OnInit {
 
     if (this.compPermId == "-1") {
       //创建子节点时，只传递 compPermId 参数
-      if (this.pId !== "-1") {
-        this.componentPermission.parentEntity = {
-          compPermId: this.pId
-        }
-      }
       this.compPermService.newCompPerm(this.componentPermission).subscribe(
         data => {
           this.messageService.add({ severity: 'success', summary: '成功', detail: '新增页面权限成功' });

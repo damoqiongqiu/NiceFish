@@ -39,7 +39,7 @@ export const dataURL = {
     delApiPermissionURL: "/auth/api-permission/delete/<%= id %>",
     newApiPermissionURL: "/auth/api-permission/create",
     updateApiPermissionURL: "/auth/api-permission/edit",
-    apiRoleListURL: "/auth/role/list-by-api-id/<%= id %>",//根据 apiId 获取对应的角色列表
+    apiRoleListURL: "/auth/role/list-by-api-id/<%= id %>",//根据 apiPermissionId 获取对应的角色列表
     compPermListURL: "/auth/component-permission/list/<%= page %>",
     compPermissionListAllByRole: "/auth/component-permission/list-all-by-role",
     compPermDetailURL: "/auth/component-permission/detail/<%= id %>",

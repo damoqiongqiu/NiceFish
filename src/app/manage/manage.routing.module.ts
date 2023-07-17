@@ -29,7 +29,7 @@ export const manageRoutes: Routes = [
 			{ path: "role-table/page/:page", component: RoleTableComponent },
 			{ path: "role-table/edit-role/:roleId", component: RoleEditComponent },
 			{ path: "api-permission-table/page/:page", component: ApiPermissionTableComponent },
-			{ path: "api-permission-table/edit/:apiId", component: ApiPermissionEditComponent },
+			{ path: "api-permission-table/edit/:apiPermissionId", component: ApiPermissionEditComponent },
 			{ path: "component-permission-table/page/:page", component: ComponentPermissionTableComponent },
 			{ path: "component-permission-table/edit/:compPermId/:pId", component: ComponentPermissionEditComponent },
 			{ path: "profile/:userId", component: UserProfileComponent },

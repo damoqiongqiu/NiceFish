@@ -30,16 +30,6 @@
             </textarea>
           </div>
         </div>
-        <div class="form-group">
-          <div class="col-md-offset-2 col-md-10">
-            <button type="button" class="btn btn-success btn-margin-1rem" (click)="roleInfoForm.form.valid && save()">
-              保存
-            </button>
-            <button type="button" class="btn btn-danger" (click)="cancel()">
-              取消
-            </button>
-          </div>
-        </div>
       </form>
     </div>
   </div>
@@ -117,6 +107,16 @@
           </tr>
         </ng-template>
       </p-treeTable>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-success btn-margin-1rem" (click)="roleInfoForm.form.valid && save()">
+        保存
+      </button>
+      <button type="button" class="btn btn-danger" (click)="cancel()">
+        取消
+      </button>
     </div>
   </div>
 </div>

@@ -16,9 +16,9 @@ import { environment } from "src/environments/environment";
 export class ApiPermissionEditComponent implements OnInit {
   public isMock = environment.isMock;
   public error: Error;
-  private apiId: string = "-1";
+  private apiPermissionId: string = "-1";
   public apiPermission: any = {
-    apiId: this.apiId,
+    apiPermissionId: this.apiPermissionId,
     apiName: "",
     url: "",
     permission: "",
@@ -36,19 +36,19 @@ export class ApiPermissionEditComponent implements OnInit {
 
   ngOnInit() {
     this.activeRoute.params.subscribe((params) => {
-      this.apiId = params["apiId"];
-      console.log(this.apiId);
+      this.apiPermissionId = params["apiPermissionId"];
+      console.log(this.apiPermissionId);
       this.loadApiPermissionDetail();
     });
   }
 
   loadApiPermissionDetail() {
-    if (this.apiId == "-1") {
+    if (this.apiPermissionId == "-1") {
       return;
     }
 
     //编辑已经存在的 API 权限
-    this.apiPermService.getApiPermDetails(this.apiId).subscribe((response) => {
+    this.apiPermService.getApiPermDetails(this.apiPermissionId).subscribe((response) => {
       this.apiPermission = response.data;
     });
   }
@@ -61,8 +61,8 @@ export class ApiPermissionEditComponent implements OnInit {
     delete this.apiPermission.createTime;
     delete this.apiPermission.updateTime;
 
-    //如果存在 apiId 参数，则为编辑状态，否则为新增状态。
-    if (this.apiPermission.apiId == "-1") {
+    //如果存在 apiPermissionId 参数，则为编辑状态，否则为新增状态。
+    if (this.apiPermission.apiPermissionId == "-1") {
       this.apiPermService.newApiPermission(this.apiPermission).subscribe(
         data => {
           this.messageService.add({ severity: 'success', summary: '成功', detail: '新增角色成功' });

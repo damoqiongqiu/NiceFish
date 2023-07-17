@@ -7,7 +7,7 @@
       "remark": "删除此角色将会导致整个系统不可用。",
       "apiEntities": [
         {
-          "apiId": 1,
+          "apiPermissionId": 1,
           "apiName": "系统管理",
           "url": null,
           "permission": "sys:manage",
