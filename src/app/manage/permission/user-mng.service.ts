@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 
 @Injectable()
 export class UserMngService {
-    public isMock=environment.isMock;
+    public isMock = environment.isMock;
 
     private userListURL = environment.dataURL.userListURL;
     private delUserURL = environment.dataURL.delUserURL;
@@ -16,33 +16,33 @@ export class UserMngService {
 
     constructor(public httpClient: HttpClient) { }
 
-    public getUserTable(page=1,searchStr=""): Observable<any> {
-        let reqURL=_.template(this.userListURL)({page:page});
-        
+    public getUserTable(page = 1, searchStr = ""): Observable<any> {
+        let reqURL = _.template(this.userListURL)({ page: page });
+
         //mock
-        if(this.isMock){
+        if (this.isMock) {
             return this.httpClient.get(this.userListURL);
         }
 
-        return this.httpClient.post(reqURL,{userName:searchStr});
+        return this.httpClient.post(reqURL, { userName: searchStr });
     }
 
     public del(id): Observable<any> {
-        let reqURL=_.template(this.delUserURL)({id:id});
-        
+        let reqURL = _.template(this.delUserURL)({ id: id });
+
         //mock
-        if(this.isMock){
+        if (this.isMock) {
             return this.httpClient.get(this.delUserURL);
         }
 
         return this.httpClient.delete(reqURL);
     }
 
-    public getUserDetail(userId): Observable<any> {
-        let reqURL=_.template(this.userDetailURL)({id:userId});
+    public getUserDetails(userId): Observable<any> {
+        let reqURL = _.template(this.userDetailURL)({ id: userId });
 
         //mock
-        if(this.isMock){
+        if (this.isMock) {
             return this.httpClient.get(this.userDetailURL);
         }
 
@@ -51,19 +51,19 @@ export class UserMngService {
 
     public newUser(user): Observable<any> {
         //mock
-        if(this.isMock){
+        if (this.isMock) {
             return this.httpClient.get(this.signUpURL);
         }
-        
-        return this.httpClient.post(this.signUpURL,user);
+
+        return this.httpClient.post(this.signUpURL, user);
     }
 
     public updateUser(user): Observable<any> {
         //mock
-        if(this.isMock){
+        if (this.isMock) {
             return this.httpClient.get(this.updateUserURL);
         }
-        
-        return this.httpClient.post(this.updateUserURL,user);
+
+        return this.httpClient.post(this.updateUserURL, user);
     }
 }
