@@ -18,29 +18,29 @@ export class UserProfileComponent implements OnInit {
   private userId: string = "-1";
   public formGroup: FormGroup;
   public genderList: any = [
-    {label:'女',value:0},//value 必须是数值，与服务端的接口类型对应，否则无法选中。
-    {label:'男',value:1},
-    {label:'未知',value:2}
+    { label: '女', value: 0 },//value 必须是数值，与服务端的接口类型对应，否则无法选中。
+    { label: '男', value: 1 },
+    { label: '未知', value: 2 }
   ];
 
   constructor(
     public router: Router,
     public activeRoute: ActivatedRoute,
     public userMngService: UserMngService,
-    public messageService:MessageService,
-  ) {}
+    public messageService: MessageService,
+  ) { }
 
   ngOnInit() {
     this.formGroup = this.buildFormGroup();
 
     this.activeRoute.params.subscribe((params) => {
       this.userId = params["userId"];
-      this.loadUserDetail();
+      this.getUserDetails();
     });
   }
 
   buildFormGroup() {
-    let fields:any[] = [
+    let fields: any[] = [
       {
         key: "currentAvatarURL", //必须要有 key 属性，否则取不到数据。
         src: "assets/imgs/angular2-small.png",
@@ -71,12 +71,12 @@ export class UserProfileComponent implements OnInit {
       },
       {
         key: "cellphone",
-        validators:[Validators.pattern("^[0-9]*$")],
+        validators: [Validators.pattern("^[0-9]*$")],
       },
       {
         key: "gender",
-        value:2,
-        validators:[],
+        value: 2,
+        validators: [],
       },
       {
         key: "password",
@@ -88,7 +88,7 @@ export class UserProfileComponent implements OnInit {
       },
       {
         key: "status",
-        value:true,
+        value: true,
         validators: [],
       },
       {
@@ -111,9 +111,9 @@ export class UserProfileComponent implements OnInit {
       validators: (fg: FormGroup) => {
         const password = fg.get("password");
         const confirmPassword = fg.get("confirmPassword");
-        const minLength=8;
-        const maxLength=32;
-        
+        const minLength = 8;
+        const maxLength = 32;
+
         if (password.value.length < minLength || password.value.length > maxLength) {
           password.setErrors({ minlength: true });
           return null;
@@ -126,7 +126,7 @@ export class UserProfileComponent implements OnInit {
         if (password.value !== confirmPassword.value) {
           password.setErrors({ passwordNotMatch: true });
           confirmPassword.setErrors({ passwordNotMatch: true });
-        }else{
+        } else {
           password.setErrors(null);
           confirmPassword.setErrors(null);
         }
@@ -175,11 +175,11 @@ export class UserProfileComponent implements OnInit {
           console.log(response);
           if (response.success) {
             window.history.back();
-          }else{
+          } else {
             this.messageService.add({
               severity: "error",
               summary: "Error",
-              detail: response.msg, 
+              detail: response.msg,
               sticky: true
             });
           }
@@ -195,9 +195,9 @@ export class UserProfileComponent implements OnInit {
     window.history.back();
   }
 
-  public loadUserDetail() {
+  public getUserDetails() {
     //创建新用户
-    if(this.userId=="-1"){
+    if (this.userId == "-1") {
       this.formGroup.patchValue({
         currentAvatarURL: "",
         userName: "",
@@ -212,7 +212,7 @@ export class UserProfileComponent implements OnInit {
     }
 
     //编辑已经存在的用户
-    this.userMngService.getUserDetail(this.userId).subscribe((response) => {
+    this.userMngService.getUserDetails(this.userId).subscribe((response) => {
       let userDetail = response.data;
       this.formGroup.patchValue({
         currentAvatarURL: userDetail.avatarURL,
@@ -221,7 +221,7 @@ export class UserProfileComponent implements OnInit {
         email: userDetail.email,
         cellphone: userDetail.cellphone,
         gender: userDetail.gender,
-        status: userDetail.status===1?true:false,
+        status: userDetail.status === 1 ? true : false,
         remark: userDetail.remark,
       });
     });

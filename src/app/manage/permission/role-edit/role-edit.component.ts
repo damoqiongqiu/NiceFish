@@ -64,8 +64,6 @@ export class RoleEditComponent implements OnInit {
   ngOnInit() {
     this.activeRoute.params.subscribe(
       params => {
-        if (params["roleId"] == "-1") return;
-
         this.roleInfo.roleId = params["roleId"];
         this.getRoleInfo();
         this.getApiPermListAll();

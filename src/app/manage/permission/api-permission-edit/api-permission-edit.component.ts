@@ -18,7 +18,7 @@ export class ApiPermissionEditComponent implements OnInit {
   public error: Error;
   private apiPermissionId: string = "-1";
   public apiPermission: any = {
-    apiPermissionId: this.apiPermissionId,
+    apiPermissionId: "-1",
     apiName: "",
     url: "",
     permission: "",
@@ -37,6 +37,7 @@ export class ApiPermissionEditComponent implements OnInit {
   ngOnInit() {
     this.activeRoute.params.subscribe((params) => {
       this.apiPermissionId = params["apiPermissionId"];
+      this.apiPermission.apiPermissionId = this.apiPermissionId;
       console.log(this.apiPermissionId);
       this.loadApiPermissionDetail();
     });

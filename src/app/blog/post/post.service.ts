@@ -6,15 +6,15 @@ import * as _ from 'lodash'
 
 @Injectable()
 export class PostService {
-    public postDetailURL =  environment.dataURL.postDetailURL;
+    public postDetailURL = environment.dataURL.postDetailURL;
     public postListURL = environment.dataURL.postListURL;
 
     constructor(public httpClient: HttpClient) {
-        
+
     }
 
-    public getPostList (page = 1): Observable<any> {
-        let reqURL=_.template(this.postListURL)({page:page});
+    public getPostList(page = 1): Observable<any> {
+        let reqURL = _.template(this.postListURL)({ page: page });
         return this.httpClient.get(
             reqURL,
             {
@@ -26,7 +26,7 @@ export class PostService {
     }
 
     public getPostDetail(id: string): Observable<any> {
-        let reqURL=_.template(this.postDetailURL)({id:id});
+        let reqURL = _.template(this.postDetailURL)({ id: id });
         console.log(reqURL);
         return this.httpClient.get(reqURL);
     }
@@ -62,7 +62,7 @@ export class PostService {
             }
         )
     }
-    
+
     public search() {
 
     }
