@@ -19,6 +19,7 @@ export class RoleMngService {
     public getRoleTable(page = 1, searchStr = ""): Observable<any> {
         let reqURL = _.template(this.roleTableURL)({ page: page });
 
+        //mock
         if (this.isMock) {
             return this.httpClient.get(this.roleTableURL);
         }
@@ -34,14 +35,29 @@ export class RoleMngService {
     }
 
     public newRole(roleInfo: any): Observable<any> {
+        //mock
+        if (this.isMock) {
+            return;
+        }
+
         return this.httpClient.post(this.newRoleURL, roleInfo);
     }
 
     public updateRole(roleInfo: any): Observable<any> {
+        //mock
+        if (this.isMock) {
+            return;
+        }
+
         return this.httpClient.post(this.updateRoleURL, roleInfo);
     }
 
     public deleteRole(id): Observable<any> {
+        //mock
+        if (this.isMock) {
+            return;
+        }
+
         let reqURL = _.template(this.delRoleURL)({ id: id });
         return this.httpClient.delete(reqURL);
     }

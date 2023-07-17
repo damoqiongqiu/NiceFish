@@ -30,6 +30,7 @@ export class ApiPermissionService {
      */
     public getApiPermissionTable(page = 1, searchStr = ""): Observable<any> {
         let reqURL = _.template(this.apiPermissionTableURL)({ page: page });
+        //mock
         if (this.isMock) {
             return this.httpClient.get(this.apiPermissionTableURL);
         }
@@ -44,6 +45,7 @@ export class ApiPermissionService {
      */
     public getApiPermissionListAll(): Observable<any> {
         let reqURL = _.template(this.apiPermissionListAll)();
+        //mock
         if (this.isMock) {
             return this.httpClient.get(this.apiPermissionListAll);
         }
@@ -56,6 +58,7 @@ export class ApiPermissionService {
      */
     public getApiPermissionListAllByRole(roleEntity = {}): Observable<any> {
         let reqURL = _.template(this.apiPermissionListAllByRole)();
+        //mock
         if (this.isMock) {
             return this.httpClient.get(this.apiPermissionListAllByRole);
         }
@@ -73,15 +76,30 @@ export class ApiPermissionService {
     }
 
     public deleteByApiId(id): Observable<any> {
+        //mock
+        if (this.isMock) {
+            return;
+        }
+
         let reqURL = _.template(this.delApiPermissionURL)({ id: id });
         return this.httpClient.delete(reqURL);
     }
 
     public newApiPermission(apiPermission: any): Observable<any> {
+        //mock
+        if (this.isMock) {
+            return;
+        }
+
         return this.httpClient.post(this.newApiPermissionURL, apiPermission);
     }
 
     public updateApiPermission(apiPermission: any): Observable<any> {
+        //mock
+        if (this.isMock) {
+            return;
+        }
+
         return this.httpClient.post(this.updateApiPermissionURL, apiPermission);
     }
 }

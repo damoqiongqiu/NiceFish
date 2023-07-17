@@ -23,6 +23,7 @@ export class ComponentPermissionService {
 
     public getCompPermTable(page = 1, searchStr = ""): Observable<any> {
         let reqURL = _.template(this.compPermListURL)({ page: page });
+        //mock
         if (this.isMock) {
             return this.httpClient.get(this.compPermListURL);
         }
@@ -33,6 +34,7 @@ export class ComponentPermissionService {
 
     public getCompPermListByRoleId(roleEntity = {}): Observable<any> {
         let reqURL = _.template(this.compPermissionListAllByRole)();
+        //mock
         if (this.isMock) {
             return this.httpClient.get(this.compPermissionListAllByRole);
         }
@@ -50,15 +52,30 @@ export class ComponentPermissionService {
     }
 
     public deleteByCompPermId(compPermId): Observable<any> {
+        //mock
+        if (this.isMock) {
+            return;
+        }
+
         let reqURL = _.template(this.delCompPermURL)({ id: compPermId });
         return this.httpClient.delete(reqURL);
     }
 
     public newCompPerm(componentPermission: any): Observable<any> {
+        //mock
+        if (this.isMock) {
+            return;
+        }
+
         return this.httpClient.post(this.newCompPermURL, componentPermission);
     }
 
     public updateCompPerm(componentPermission: any): Observable<any> {
+        //mock
+        if (this.isMock) {
+            return;
+        }
+
         return this.httpClient.post(this.updateCompPermURL, componentPermission);
     }
 }

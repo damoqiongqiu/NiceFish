@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { RoleMngService } from "../role-mng.service";
 import { MessageService } from "primeng/api";
 import { ConfirmationService } from "primeng/api";
+import { environment } from "src/environments/environment";
 import { fadeIn } from "../../../shared/animations/fade-in";
 
 @Component({
@@ -14,17 +15,17 @@ import { fadeIn } from "../../../shared/animations/fade-in";
   ]
 })
 export class RoleTableComponent implements OnInit {
-  
-  public searchStr="";
+  public isMock = environment.isMock;
+  public searchStr = "";
   public roleList: Array<any>;
-  public totalRecords=0;
-  public currentPage=1;
+  public totalRecords = 0;
+  public currentPage = 1;
 
   constructor(
     public router: Router,
     public activeRoute: ActivatedRoute,
     public roleMngService: RoleMngService,
-    public messageService:MessageService,
+    public messageService: MessageService,
     private confirmationService: ConfirmationService
   ) {
   }
@@ -32,44 +33,49 @@ export class RoleTableComponent implements OnInit {
   ngOnInit() {
     this.activeRoute.params.subscribe(
       params => {
-        this.currentPage=params["page"];
+        this.currentPage = params["page"];
         this.getRoleListByPage();
       }
     );
   }
 
   public getRoleListByPage() {
-    return this.roleMngService.getRoleTable(this.currentPage,this.searchStr).subscribe(
-        data => {
-          this.roleList=data.content;
-          this.totalRecords=data.totalElements;
-        }
+    return this.roleMngService.getRoleTable(this.currentPage, this.searchStr).subscribe(
+      data => {
+        this.roleList = data.content;
+        this.totalRecords = data.totalElements;
+      }
     );
   }
 
   public pageChanged(event: any): void {
-    this.currentPage=(event.first/event.rows)+1;
+    this.currentPage = (event.first / event.rows) + 1;
     this.router.navigateByUrl("/manage/role-table/page/" + this.currentPage);
   }
 
   public searchRole() {
-    this.currentPage=1;
+    this.currentPage = 1;
     this.getRoleListByPage();
   }
 
   public resetSearch() {
-    this.currentPage=1;
-    this.searchStr="";
+    this.currentPage = 1;
+    this.searchStr = "";
     this.getRoleListByPage();
   }
 
-  public delRole(rowData,ri): void {
+  public delRole(rowData, ri): void {
     this.confirmationService.confirm({
-        message: "确定要删除吗？",
-        accept: () => {
-          this.roleMngService.deleteRole(rowData.roleId)
-          .subscribe(data=> {
-            if(data&&data.success) {
+      message: "确定要删除吗？",
+      accept: () => {
+
+        if (this.isMock) {
+          return;
+        }
+
+        this.roleMngService.deleteRole(rowData.roleId)
+          .subscribe(data => {
+            if (data && data.success) {
               this.messageService.add({
                 severity: "success",
                 summary: "Success Message",
@@ -82,21 +88,21 @@ export class RoleTableComponent implements OnInit {
               this.messageService.add({
                 severity: "error",
                 summary: "Fail Message",
-                detail: data.msg||"删除失败",
+                detail: data.msg || "删除失败",
                 sticky: false,
                 life: 1000
               });
             }
-          },error=> {
+          }, error => {
             this.messageService.add({
               severity: "error",
               summary: "Fail Message",
-              detail: error||"删除失败",
+              detail: error || "删除失败",
               sticky: false,
               life: 1000
             });
           });
-        }
+      }
     });
   }
 
@@ -106,7 +112,7 @@ export class RoleTableComponent implements OnInit {
   }
 
   public editRole(rowData, ri) {
-    let roleId=rowData.roleId;
-    this.router.navigateByUrl("/manage/role-table/edit-role/"+roleId);
+    let roleId = rowData.roleId;
+    this.router.navigateByUrl("/manage/role-table/edit-role/" + roleId);
   }
 }

@@ -1,0 +1,53 @@
+[
+    {
+        "apiPermissionId": 1,
+        "apiName": "角色管理",
+        "url": "",
+        "permission": "*",
+        "createTime": "2023-07-16 13:30:38",
+        "updateTime": "2023-07-17 22:36:03",
+        "remark": "角色管理角色管理角色管理角色管理角色管理角色管理角色管理角色管理角色管理角色管理角色管理角色管理",
+        "roleEntities": [
+            {
+                "roleId": 1,
+                "roleName": "系统管理员",
+                "remark": "删除此角色将会导致整个系统不可用。",
+                "status": 1
+            }
+        ]
+    },
+    {
+        "apiPermissionId": 2,
+        "apiName": "用户管理",
+        "url": "",
+        "permission": "*",
+        "createTime": "2023-07-16 13:30:49",
+        "updateTime": "2023-07-17 22:35:58",
+        "remark": "用户管理用户管理用户管理用户管理用户管理用户管理用户管理用户管理用户管理用户管理用户管理",
+        "roleEntities": [
+            {
+                "roleId": 1,
+                "roleName": "系统管理员",
+                "remark": "删除此角色将会导致整个系统不可用。",
+                "status": 1
+            }
+        ]
+    },
+    {
+        "apiPermissionId": 4,
+        "apiName": "权限管理",
+        "url": "",
+        "permission": "*",
+        "createTime": "2023-07-17 22:35:18",
+        "updateTime": "2023-07-17 22:35:49",
+        "remark": "权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理权限管理",
+        "roleEntities": [
+            {
+                "roleId": 1,
+                "roleName": "系统管理员",
+                "remark": "删除此角色将会导致整个系统不可用。",
+                "status": 1
+            }
+        ]
+    }
+]
