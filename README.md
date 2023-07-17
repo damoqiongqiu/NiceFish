@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="150" src="./src/assets/imgs/nice-fish.png">
+    <img width="150" src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/nice-fish.png">
 </p>
 
 <h1 align="center">NiceFish</h1>
@@ -57,13 +57,13 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
     ng test
 
-<img src="./src/assets/imgs/unit-test.png">
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/unit-test.png">
 
 默认使用 ChromeHeadless 执行单元测试，按照 CPU 核心数量并发执行测试用例，karmar.conf.js 配置方式参考了 VWware 的 Clarity 项目，参见 https://github.com/vmware-clarity/ng-clarity 。
 
 代码覆盖率报告：
 
-<img src="./src/assets/imgs/codecoverage.png">
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/codecoverage.png">
 
 关于单元测试的详细使用方法，以及 Jasmine 的语法，请参考： https://angular.io/guide/testing
 
@@ -73,7 +73,7 @@ Angular 从 v12 开始，官方废弃了原来的集成测试工具 Protractor �
 
     ng e2e 
 
-<img src="./src/assets/imgs/cypress.png">
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/cypress.png">
 
 关于 Cypress 的技术细节，请参考： https://testing-angular.com/end-to-end-testing/#end-to-end-testing
 
@@ -106,7 +106,7 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 5. 查看容器日志：docker logs --details CONTAINER_ID
 6. 进入容器：sudo docker exec -it CONTAINER_ID sh
 
-<img src="./src/assets/imgs/8.png">
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/8.png">
 
 ## 8.系列项目
 
@@ -122,34 +122,34 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 ## 9.界面截图
 
-<img src="./src/assets/imgs/1.png">
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/1.png">
 
-<img src="./src/assets/imgs/2.png">
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/2.png">
 
-<img src="./src/assets/imgs/3.png">
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/3.png">
 
-<img src="./src/assets/imgs/4.png">
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/4.png">
 
-<img src="./src/assets/imgs/5.png">
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/5.png">
 
-<img src="./src/assets/imgs/6.png">
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/6.png">
 
-<img src="./src/assets/imgs/7.png">
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/7.png">
 
 ## 10.打包分析
 
 以下是用 webpack-bundle-analyzer 分析打包之后的模块构成：
 
-<img src="./src/assets/imgs/bundle-report.png">
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/bundle-report.png">
 
 看起来CKEditor和ECharts占了很大的体积，需要做一下异步加载。
 
 webpack-bundle-analyzer 使用方法，请依次执行以下操作：
 
 1. npm i webpack-bundle-analyzer --save-dev
-1. package.json 的 scripts 配置里面加一行 "bundle-report": "webpack-bundle-analyzer dist/browser/stats.json"
-1. ng build --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
-1. 执行 npm run bundle-report 查看打包过程
+2. package.json 的 scripts 配置里面加一行 "bundle-report": "webpack-bundle-analyzer dist/browser/stats.json"
+3. ng build --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
+4. 执行 npm run bundle-report 查看打包过程
 
 ## 11.学习资源
 
