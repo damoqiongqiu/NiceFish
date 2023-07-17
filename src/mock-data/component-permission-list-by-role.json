@@ -1,0 +1,113 @@
+[
+    {
+        "compPermId": 37,
+        "componentName": "根节点1",
+        "icon": null,
+        "url": null,
+        "displayOrder": 1,
+        "permission": "*",
+        "createTime": "2023-07-17 20:23:27",
+        "updateTime": "2023-07-17 20:23:27",
+        "visiable": 1,
+        "remark": null,
+        "parentEntity": null,
+        "children": [
+            {
+                "compPermId": 38,
+                "componentName": "子节点1-1",
+                "icon": null,
+                "url": null,
+                "displayOrder": 1,
+                "permission": "*",
+                "createTime": "2023-07-17 20:23:42",
+                "updateTime": "2023-07-17 20:23:42",
+                "visiable": 1,
+                "remark": null,
+                "parentEntity": {
+                    "compPermId": 37,
+                    "componentName": "根节点1",
+                    "icon": null,
+                    "url": null,
+                    "displayOrder": 1,
+                    "permission": "*",
+                    "createTime": "2023-07-17 20:23:27",
+                    "updateTime": "2023-07-17 20:23:27",
+                    "visiable": 1,
+                    "remark": null,
+                    "parentEntity": null,
+                    "children": [
+                        {
+                            "compPermId": 38,
+                            "componentName": "子节点1-1",
+                            "icon": null,
+                            "url": null,
+                            "displayOrder": 1,
+                            "permission": "*",
+                            "createTime": "2023-07-17 20:23:42",
+                            "updateTime": "2023-07-17 20:23:42",
+                            "visiable": 1,
+                            "remark": null,
+                            "parentEntity": 37,
+                            "children": [],
+                            "roleEntities": [
+                                {
+                                    "roleId": 1,
+                                    "roleName": "系统管理员",
+                                    "remark": "删除此角色将会导致整个系统不可用。",
+                                    "status": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "roleEntities": [
+                        {
+                            "roleId": 1,
+                            "roleName": "系统管理员",
+                            "remark": "删除此角色将会导致整个系统不可用。",
+                            "status": 1
+                        }
+                    ]
+                },
+                "children": [],
+                "roleEntities": [
+                    {
+                        "roleId": 1,
+                        "roleName": "系统管理员",
+                        "remark": "删除此角色将会导致整个系统不可用。",
+                        "status": 1
+                    }
+                ]
+            }
+        ],
+        "roleEntities": [
+            {
+                "roleId": 1,
+                "roleName": "系统管理员",
+                "remark": "删除此角色将会导致整个系统不可用。",
+                "status": 1
+            }
+        ]
+    },
+    {
+        "compPermId": 38,
+        "componentName": "子节点1-1",
+        "icon": null,
+        "url": null,
+        "displayOrder": 1,
+        "permission": "*",
+        "createTime": "2023-07-17 20:23:42",
+        "updateTime": "2023-07-17 20:23:42",
+        "visiable": 1,
+        "remark": null,
+        "parentEntity": 37,
+        "children": [],
+        "roleEntities": [
+            {
+                "roleId": 1,
+                "roleName": "系统管理员",
+                "remark": "删除此角色将会导致整个系统不可用。",
+                "status": 1
+            }
+        ]
+    }
+]

@@ -1,0 +1,90 @@
+{
+    "content": [
+        {
+            "compPermId": 37,
+            "componentName": "根节点1",
+            "icon": null,
+            "url": null,
+            "displayOrder": 1,
+            "permission": "*",
+            "createTime": "2023-07-17 20:23:27",
+            "updateTime": "2023-07-17 20:23:27",
+            "visiable": 1,
+            "remark": null,
+            "parentEntity": null,
+            "children": [
+                {
+                    "compPermId": 38,
+                    "componentName": "子节点1-1",
+                    "icon": null,
+                    "url": null,
+                    "displayOrder": 1,
+                    "permission": "*",
+                    "createTime": "2023-07-17 20:23:42",
+                    "updateTime": "2023-07-17 20:23:42",
+                    "visiable": 1,
+                    "remark": null,
+                    "parentEntity": {
+                        "compPermId": 37,
+                        "componentName": "根节点1",
+                        "icon": null,
+                        "url": null,
+                        "displayOrder": 1,
+                        "permission": "*",
+                        "createTime": "2023-07-17 20:23:27",
+                        "updateTime": "2023-07-17 20:23:27",
+                        "visiable": 1,
+                        "remark": null,
+                        "parentEntity": null,
+                        "children": [
+                            {
+                                "compPermId": 38,
+                                "componentName": "子节点1-1",
+                                "icon": null,
+                                "url": null,
+                                "displayOrder": 1,
+                                "permission": "*",
+                                "createTime": "2023-07-17 20:23:42",
+                                "updateTime": "2023-07-17 20:23:42",
+                                "visiable": 1,
+                                "remark": null,
+                                "parentEntity": 37,
+                                "children": [],
+                                "roleEntities": []
+                            }
+                        ],
+                        "roleEntities": []
+                    },
+                    "children": [],
+                    "roleEntities": []
+                }
+            ],
+            "roleEntities": []
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "sorted": true,
+            "unsorted": false,
+            "empty": false
+        },
+        "pageSize": 10,
+        "pageNumber": 0,
+        "offset": 0,
+        "unpaged": false,
+        "paged": true
+    },
+    "totalElements": 1,
+    "totalPages": 1,
+    "last": true,
+    "sort": {
+        "sorted": true,
+        "unsorted": false,
+        "empty": false
+    },
+    "numberOfElements": 1,
+    "first": true,
+    "size": 10,
+    "number": 0,
+    "empty": false
+}

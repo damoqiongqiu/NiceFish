@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ApiPermissionService } from "../api-permission.service";
 import { MessageService } from "primeng/api";
 import { ConfirmationService } from "primeng/api";
+import { environment } from "src/environments/environment";
 import { fadeIn } from "../../../shared/animations/fade-in";
 
 @Component({
@@ -14,6 +15,7 @@ import { fadeIn } from "../../../shared/animations/fade-in";
   ]
 })
 export class ApiPermissionTableComponent implements OnInit {
+  public isMock = environment.isMock;
   public searchStr = "";
   public apiPermissionList: Array<any> = [];
   public totalRecords = 0;
@@ -66,6 +68,11 @@ export class ApiPermissionTableComponent implements OnInit {
     this.confirmationService.confirm({
       message: "确定要删除吗？",
       accept: () => {
+
+        if (this.isMock) {
+          return;
+        }
+
         let apiPermissionId = rowData.apiPermissionId;
         this.apiPermService.deleteByApiId(apiPermissionId)
           .subscribe(data => {
