@@ -17,8 +17,7 @@
                             type="text" class="form-control" placeholder="至少1位，最多4位" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <img src={{captchaService.capchaURL}} (click)="captchaService.refreshCaptchaURL()"
-                            style="cursor: pointer;" />
+                        <captcha></captcha>
                     </div>
                 </div>
                 <button type="submit" [disabled]="writePostForm.invalid" class="btn btn-primary">提交</button>

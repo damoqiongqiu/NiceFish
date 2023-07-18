@@ -17,8 +17,7 @@
                                 autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <img src={{captchaService.capchaURL}} (click)="captchaService.refreshCaptchaURL()"
-                                style="cursor: pointer;" />
+                            <captcha #captchaComp></captcha>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success">提交</button>

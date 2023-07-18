@@ -5,7 +5,6 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { SignUpService } from "./sign-up.service";
 import { fadeIn } from "../../../shared/animations/fade-in";
 import { environment } from "../../../../environments/environment";
-import { CaptchaService } from "src/app/shared/captcha.service";
 
 /**
  * 用户注册和后台创建都使用这个组件完成。
@@ -61,7 +60,6 @@ export class SignUpComponent implements OnInit {
 
   constructor(public fb: FormBuilder,
     public signUpService: SignUpService,
-    public captchaService: CaptchaService,
     public route: ActivatedRoute,
     public router: Router,
     private messageService: MessageService) {

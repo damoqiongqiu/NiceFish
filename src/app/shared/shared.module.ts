@@ -13,10 +13,10 @@ import { SignInComponent } from "../blog/user/sign-in/sign-in.component";
 import { UserInfoComponent } from "../blog/user/user-info/user-info.component";
 import { UserProfileComponent } from "../blog/user/user-profile/user-profile.component";
 import { BlockSpinnerComponent } from "./block-spinner/block-spinner.component";
+import { CaptchaComponent } from "./captcha/captcha.component";
 
 import { TrimStringPipe } from "./pipes/trim-string.pipe";
 import { SanitizeHtmlPipe } from "./pipes/sanitize-html-pipe";
-import { CaptchaService } from "./captcha.service";
 
 @NgModule({
   imports: [
@@ -39,6 +39,7 @@ import { CaptchaService } from "./captcha.service";
     TrimStringPipe,
     SanitizeHtmlPipe,
     BlockSpinnerComponent,
+    CaptchaComponent,
   ],
   exports: [
     ReactiveFormsModule,
@@ -56,11 +57,9 @@ import { CaptchaService } from "./captcha.service";
     UserInfoComponent,
     UserProfileComponent,
     BlockSpinnerComponent,
+    CaptchaComponent,
     TrimStringPipe,
     SanitizeHtmlPipe,
-  ],
-  providers: [
-    CaptchaService
   ],
 })
 export class SharedModule { }
