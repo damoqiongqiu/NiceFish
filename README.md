@@ -4,9 +4,13 @@
 
 <h1 align="center">NiceFish</h1>
 
-<div align="left">
+<p align="left">
 NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离的开发+部署模式。前端有3个版本：浏览器环境、移动端环境、Electron 环境；后端有2个版本：SpringBoot 版本和 SpringCloud 版本。
-</div>
+</p>
+
+<p>
+🚀🚀🚀请不要吝惜你的⭐️ Star ⭐️，星星越多，动力越足。🚀🚀🚀
+</p>
 
 ## 1.主要依赖
 
