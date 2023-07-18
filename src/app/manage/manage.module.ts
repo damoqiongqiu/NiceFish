@@ -4,10 +4,12 @@ import { NgModule } from "@angular/core";
 import { PaginatorModule } from "primeng/paginator";
 import { SharedModule } from "../shared/shared.module";
 import { PostSharedModule } from "../shared/post.module";
-import {TableModule} from "primeng/table";
+import { TableModule } from "primeng/table";
+import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ManageMainComponent } from "./manage-main/manage-main.component";
 import { UserTableComponent } from "./permission/user-table/user-table.component";
+import { UserEditRoleComponent } from "./permission/user-edit-role/user-edit-role.component";
 import { RoleTableComponent } from "./permission/role-table/role-table.component";
 import { RoleEditComponent } from "./permission/role-edit/role-edit.component";
 import { ApiPermissionTableComponent } from "./permission/api-permission-table/api-permission-table.component";
@@ -16,7 +18,6 @@ import { ComponentPermissionTableComponent } from './permission/component-permis
 import { ComponentPermissionEditComponent } from './permission/component-permission-edit/component-permission-edit.component';
 import { SysParamComponent } from "./sys-param/sys-param.component";
 import { ChartComponent } from "./chart/chart.component";
-import { NgxEchartsModule } from 'ngx-echarts';
 
 import { PostTableService } from "./content-mng/post-table/post-table.service";
 import { CommentTableService } from "./content-mng/comment-table/comment-table.service";
@@ -33,6 +34,7 @@ import { ManageRoutingModule } from "./manage.routing.module";
   declarations: [
     ManageMainComponent,
     UserTableComponent,
+    UserEditRoleComponent,
     SysParamComponent,
     ChartComponent,
     RoleTableComponent,
