@@ -14,6 +14,7 @@ export class RoleMngService {
     private newRoleURL = environment.dataURL.newRoleURL;
     private updateRoleURL = environment.dataURL.updateRoleURL;
     private roleDetailURL = environment.dataURL.roleDetailURL;
+    private updateUserRoleRelationURL = environment.dataURL.updateUserRoleRelationURL;
 
     constructor(public httpClient: HttpClient) { }
 
@@ -38,6 +39,14 @@ export class RoleMngService {
     public getRoleListAllByUserId(userId: any): Observable<any> {
         let reqURL = _.template(this.roleListByUserIdURL)({ userId: userId });
         return this.httpClient.get(reqURL);
+    }
+
+    public saveUserRoleRelation(userId: any, roles: Array<any>): Observable<any> {
+        //mock
+        if (this.isMock) {
+            return;
+        }
+        return this.httpClient.post(this.updateUserRoleRelationURL, { userId: userId, roleEntities: roles });
     }
 
     public getRoleInfo(roleId): Observable<any> {

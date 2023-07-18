@@ -135,6 +135,38 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  public getUserDetails() {
+    //创建新用户
+    if (this.userId == "-1") {
+      this.formGroup.patchValue({
+        currentAvatarURL: "",
+        userName: "",
+        nickName: "",
+        email: "",
+        cellphone: "",
+        gender: 2,
+        status: 1,
+        remark: "",
+      });
+      return;
+    }
+
+    //编辑已经存在的用户
+    this.userMngService.getUserDetails(this.userId).subscribe((response) => {
+      let userDetail = response.data;
+      this.formGroup.patchValue({
+        currentAvatarURL: userDetail.avatarURL,
+        userName: userDetail.userName,
+        nickName: userDetail.nickName,
+        email: userDetail.email,
+        cellphone: userDetail.cellphone,
+        gender: userDetail.gender,
+        status: userDetail.status === 1 ? true : false,
+        remark: userDetail.remark,
+      });
+    });
+  }
+
   //TODO:user.password用MD5加密后传输
   public save(): void {
     this.formGroup.updateValueAndValidity();
@@ -193,37 +225,5 @@ export class UserProfileComponent implements OnInit {
 
   public cancel(): void {
     window.history.back();
-  }
-
-  public getUserDetails() {
-    //创建新用户
-    if (this.userId == "-1") {
-      this.formGroup.patchValue({
-        currentAvatarURL: "",
-        userName: "",
-        nickName: "",
-        email: "",
-        cellphone: "",
-        gender: 2,
-        status: 1,
-        remark: "",
-      });
-      return;
-    }
-
-    //编辑已经存在的用户
-    this.userMngService.getUserDetails(this.userId).subscribe((response) => {
-      let userDetail = response.data;
-      this.formGroup.patchValue({
-        currentAvatarURL: userDetail.avatarURL,
-        userName: userDetail.userName,
-        nickName: userDetail.nickName,
-        email: userDetail.email,
-        cellphone: userDetail.cellphone,
-        gender: userDetail.gender,
-        status: userDetail.status === 1 ? true : false,
-        remark: userDetail.remark,
-      });
-    });
   }
 }

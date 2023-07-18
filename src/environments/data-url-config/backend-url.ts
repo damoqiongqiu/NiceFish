@@ -29,6 +29,7 @@ export const dataURL = {
     delUserURL: "/auth/user/delete/<%= id %>",
     roleTableURL: "/auth/role/list/<%= page %>",
     roleListByUserIdURL: "/auth/role/list-by-user-id/<%= userId %>",
+    updateUserRoleRelationURL: "/auth/user/update-user-role-relation",
     roleDetailURL: "/auth/role/detail/<%= id %>",
     delRoleURL: "/auth/role/delete/<%= id %>",
     newRoleURL: "/auth/role/update",

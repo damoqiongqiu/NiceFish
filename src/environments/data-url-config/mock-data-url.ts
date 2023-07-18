@@ -21,6 +21,7 @@ export const dataURL = {
     delUserURL: "",
     roleTableURL: "mock-data/role-list-mock.json",
     roleListByUserIdURL: "mock-data/role-list-mock.json",
+    updateUserRoleRelationURL: "",
     roleDetailURL: "mock-data/role-detail-mock.json",
     delRoleURL: "",
     newRoleURL: "",
