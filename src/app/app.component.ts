@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2} from "@angular/core";
+import { Component, ElementRef, Renderer2 } from "@angular/core";
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
 import { SignInService } from "./blog/user/sign-in/sign-in.service";
@@ -13,7 +13,7 @@ import { environment } from "../environments/environment";
 	styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-	public isMock=environment.isMock;
+	public isMock = environment.isMock;
 
 	public showToggleMenu = false;
 	public currentUser: any;
@@ -28,7 +28,7 @@ export class AppComponent {
 		public signInService: SignInService,
 		public signUpService: SignUpService,
 		private messageService: MessageService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.globalClickCallbackFn = this.renderer.listen(this.elementRef.nativeElement, "click", (event: any) => {
@@ -66,7 +66,7 @@ export class AppComponent {
 
 
 		setTimeout(() => {
-			if(this.isMock){
+			if (this.isMock) {
 				this.messageService.add({
 					severity: "warn",
 					summary: "Warn",
