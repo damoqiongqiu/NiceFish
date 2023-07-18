@@ -6,6 +6,7 @@ import { CommentListService } from "./comment-list.service";
 import { MessageService } from "primeng/api";
 import { merge } from "rxjs"
 import { environment } from "../../../environments/environment";
+import { CaptchaService } from "src/app/shared/captcha.service";
 
 @Component({
   selector: "comment-list",
@@ -13,8 +14,7 @@ import { environment } from "../../../environments/environment";
   styleUrls: ["./comment-list.component.scss"]
 })
 export class CommentListComponent implements OnInit {
-  public isMock=environment.isMock;
-  public capchaURL = environment.dataURL.capchaURL;//FIXME:验证码相关的代码需要整合到一个公共服务中去，避免相似的代码散落在各处。
+  public isMock = environment.isMock;
 
   public currentUser: any;
   public postId: string;
@@ -31,7 +31,8 @@ export class CommentListComponent implements OnInit {
     public commentListService: CommentListService,
     public signInService: SignInService,
     public signUpService: SignUpService,
-    private messageService: MessageService,
+    public messageService: MessageService,
+    public captchaService: CaptchaService,
     public router: Router,
     public activatedRoute: ActivatedRoute) {
   }
@@ -68,7 +69,7 @@ export class CommentListComponent implements OnInit {
   }
 
   public doWriteComment() {
-    if(this.isMock){
+    if (this.isMock) {
       this.messageService.add({
         severity: "warn",
         summary: "Warn",
@@ -81,10 +82,10 @@ export class CommentListComponent implements OnInit {
     this.comment.postId = this.postId;
     this.commentListService.writeComment(this.comment).subscribe(
       (res) => {
-        this.comment= {};
+        this.comment = {};
         this.currentPage = 1;
         this.getCommentList();
-        this.refreshCaptcha();
+        this.captchaService.refreshCaptchaURL();
       },
       (error) => {
         console.log(error);
@@ -95,9 +96,5 @@ export class CommentListComponent implements OnInit {
   public pageChanged(event: any): void {
     this.currentPage = parseInt(event.page) + 1;
     this.getCommentList();
-  }
-
-  public refreshCaptcha(): void {
-    this.capchaURL = `${this.capchaURL}&kill_cache=${new Date().getTime()}`;
   }
 }

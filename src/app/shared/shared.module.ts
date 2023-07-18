@@ -16,6 +16,7 @@ import { BlockSpinnerComponent } from "./block-spinner/block-spinner.component";
 
 import { TrimStringPipe } from "./pipes/trim-string.pipe";
 import { SanitizeHtmlPipe } from "./pipes/sanitize-html-pipe";
+import { CaptchaService } from "./captcha.service";
 
 @NgModule({
   imports: [
@@ -58,5 +59,8 @@ import { SanitizeHtmlPipe } from "./pipes/sanitize-html-pipe";
     TrimStringPipe,
     SanitizeHtmlPipe,
   ],
+  providers: [
+    CaptchaService
+  ],
 })
-export class SharedModule {}
+export class SharedModule { }

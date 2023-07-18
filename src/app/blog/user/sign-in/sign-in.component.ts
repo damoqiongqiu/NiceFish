@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from "@angular/router";
 import { SignInService } from "./sign-in.service";
-import { fadeIn } from "../../../shared/animations/fade-in";
+import { CaptchaService } from "src/app/shared/captcha.service";
 import { environment } from "../../../../environments/environment";
+import { fadeIn } from "../../../shared/animations/fade-in";
 
 @Component({
   selector: "sign-in",
@@ -12,11 +13,8 @@ import { environment } from "../../../../environments/environment";
 })
 export class SignInComponent implements OnInit {
   public isMock = environment.isMock;
-  public capchaURL = environment.dataURL.capchaURL;//FIXME:验证码相关的代码需要整合到一个公共服务中去，避免相似的代码散落在各处。
-
-  public captcha: any = "";
   public error: Error;
-  public user: any = {
+  public signInInfo: any = {
     userName: "",
     password: "",
     captcha: "",
@@ -25,26 +23,16 @@ export class SignInComponent implements OnInit {
 
   constructor(
     public router: Router,
-    public activatedRoute: ActivatedRoute,
-    public signInService: SignInService
+    public signInService: SignInService,
+    public captchaService: CaptchaService
   ) { }
 
   ngOnInit() {
-    console.log(this.router);
-    console.log(this.activatedRoute);
-
-    let activatedRouteSnapshot: ActivatedRouteSnapshot = this.activatedRoute.snapshot;
-    let routerState: RouterState = this.router.routerState;
-    let routerStateSnapshot: RouterStateSnapshot = routerState.snapshot;
-
-    console.log(activatedRouteSnapshot);
-    console.log(routerState);
-    console.log(routerStateSnapshot);
   }
 
   public doSignIn(): void {
-    console.log(this.user);
-    this.signInService.signIn(this.user);
+    console.log(this.signInInfo);
+    this.signInService.signIn(this.signInInfo);
   }
 
   public doSignOut(): void {
@@ -56,9 +44,5 @@ export class SignInComponent implements OnInit {
 
   public retrievePwd(): void {
     this.router.navigateByUrl("retrievepwd");
-  }
-
-  public refreshCaptcha(): void {
-    this.capchaURL = `${this.capchaURL}&kill_cache=${new Date().getTime()}`;
   }
 }

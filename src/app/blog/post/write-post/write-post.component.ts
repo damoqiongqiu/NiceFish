@@ -5,6 +5,7 @@ import { PostService } from "../post.service";
 import { MessageService } from "primeng/api";
 import { fadeIn } from "../../../shared/animations/fade-in";
 import { environment } from "../../../../environments/environment";
+import { CaptchaService } from "src/app/shared/captcha.service";
 
 @Component({
   selector: "write-post",
@@ -18,13 +19,12 @@ import { environment } from "../../../../environments/environment";
  * @see https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/frameworks/angular.html
  */
 export class WritePostComponent {
-  public isMock=environment.isMock;
-  public capchaURL = environment.dataURL.capchaURL;//FIXME:验证码相关的代码需要整合到一个公共服务中去，避免相似的代码散落在各处。
+  public isMock = environment.isMock;
   //绑定到编辑器的数据模型，里面可以带HTML标签
   public post: any = {
     title: "",
     content: "",
-    captcha:""
+    captcha: ""
   };
   public Editor = ClassicEditor;
   private isEdit = false;
@@ -33,6 +33,7 @@ export class WritePostComponent {
     public router: Router,
     public activeRoute: ActivatedRoute,
     public postService: PostService,
+    public captchaService: CaptchaService,
     private messageService: MessageService) {
   }
 
@@ -43,18 +44,18 @@ export class WritePostComponent {
     } else {
       this.isEdit = false;
     }
-    if(this.isEdit) {
+    if (this.isEdit) {
       this.activeRoute.params.subscribe(
         params => this.getPostDetail(params["postId"])
       );
     }
   }
 
-  public onReady( editor ) {
-      editor.ui.getEditableElement().parentElement.insertBefore(
-          editor.ui.view.toolbar.element,
-          editor.ui.getEditableElement()
-      );
+  public onReady(editor) {
+    editor.ui.getEditableElement().parentElement.insertBefore(
+      editor.ui.view.toolbar.element,
+      editor.ui.getEditableElement()
+    );
   }
 
   public getPostDetail(id: string) {
@@ -97,7 +98,7 @@ export class WritePostComponent {
         this.messageService.add({
           severity: "error",
           summary: "Error",
-          detail: "提交失败"+error,
+          detail: "提交失败" + error,
           sticky: true,
           life: 1000
         });
@@ -106,7 +107,7 @@ export class WritePostComponent {
   }
 
   doCommit() {
-    if(this.isMock){
+    if (this.isMock) {
       this.messageService.add({
         severity: "warn",
         summary: "Warn",
@@ -124,9 +125,5 @@ export class WritePostComponent {
     } else {
       this.doWritePost();
     }
-  }
-
-  public refreshCaptcha(): void {
-    this.capchaURL = `${this.capchaURL}&kill_cache=${new Date().getTime()}`;
   }
 }
