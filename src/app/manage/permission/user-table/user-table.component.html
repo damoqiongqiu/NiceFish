@@ -69,7 +69,7 @@
                                 <p-button icon="pi pi-pencil" styleClass="p-button-success"
                                     [style]="{ 'margin-right': '.5em' }" (click)="editUser(rowData, ri)"></p-button>
                                 <p-button icon="pi pi-user" styleClass="p-button-warning"
-                                    [style]="{ 'margin-right': '.5em' }"></p-button>
+                                    [style]="{ 'margin-right': '.5em' }" (click)="userEditRole(rowData,ri)"></p-button>
                                 <p-button icon="pi pi-trash" styleClass="p-button-danger"
                                     (click)="delUser(rowData, ri)"></p-button>
                             </td>

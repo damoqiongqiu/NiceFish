@@ -76,9 +76,10 @@ export class RoleEditComponent implements OnInit {
 
   public getRoleInfo(): void {
     this.roleMngService.getRoleInfo(this.roleInfo.roleId).subscribe(
-      data => {
-        data.roleEnabled = data.status == 1 ? true : false;
-        this.roleInfo = data;
+      response => {
+        if (!response) return;
+        response.roleEnabled = response.status == 1 ? true : false;
+        this.roleInfo = response;
       },
       error => console.error(error)
     );
@@ -100,9 +101,8 @@ export class RoleEditComponent implements OnInit {
    */
   public getApiPermListByRoleId(): void {
     this.apiPermService.getApiPermissionListAllByRole({ roleId: this.roleInfo.roleId }).subscribe(
-      data => {
-        console.log(data);
-        this.apiPermissionListByRole = data;
+      response => {
+        this.apiPermissionListByRole = response;
       },
     );
   }
@@ -125,6 +125,7 @@ export class RoleEditComponent implements OnInit {
     });
     data.compPermId = node.compPermId;
     node.data = data;
+    node.expanded = true;
     if (node.children) {
       node.children.forEach((child) => {
         this.treeDataTransformer(child);
@@ -198,7 +199,7 @@ export class RoleEditComponent implements OnInit {
     //如果存在 roleId 参数，则为编辑状态，否则为新增状态。
     if (this.roleInfo.roleId == "-1") {
       this.roleMngService.newRole(this.roleInfo).subscribe(
-        data => {
+        response => {
           this.messageService.add({ severity: 'success', summary: '成功', detail: '新增角色成功' });
           window.history.back();
         },
@@ -209,7 +210,7 @@ export class RoleEditComponent implements OnInit {
       );
     } else {
       this.roleMngService.updateRole(this.roleInfo).subscribe(
-        data => {
+        response => {
           this.messageService.add({ severity: 'success', summary: '成功', detail: '更新角色成功' });
           window.history.back();
         },

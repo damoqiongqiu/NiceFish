@@ -68,6 +68,10 @@ export class UserTableComponent implements OnInit {
     this.router.navigateByUrl("/manage/profile/" + userId);
   }
 
+  public userEditRole(rowData, ri): void {
+    this.router.navigateByUrl(`/manage/user-table/user-edit-role/${rowData.userId}/1`);
+  }
+
   public delUser(rowData, ri): void {
     this.confirmationService.confirm({
       message: "确定要删除吗？",

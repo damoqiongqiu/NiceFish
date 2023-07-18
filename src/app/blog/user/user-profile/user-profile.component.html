@@ -61,7 +61,7 @@
             <input class="form-control" type="password" placeholder="重复密码" formControlName="confirmPassword" />
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('confirmPassword').invalid }">
+        <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('status').invalid }">
           <label class="col-md-2 control-label">启用：</label>
           <div class="col-md-10">
             <div class="checkbox">
@@ -74,7 +74,7 @@
         <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('remark').invalid }">
           <label class="col-md-2 control-label">简介：</label>
           <div class="col-md-10">
-            <textarea rows="5" class="form-control" formControlName="remark" placeholder="简介"></textarea>
+            <textarea name="remark" rows="5" class="form-control" formControlName="remark" placeholder="简介"></textarea>
           </div>
         </div>
       </form>
