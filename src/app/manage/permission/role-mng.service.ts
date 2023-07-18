@@ -9,6 +9,7 @@ export class RoleMngService {
     public isMock = environment.isMock;
 
     private roleTableURL = environment.dataURL.roleTableURL;
+    private roleListByUserIdURL = environment.dataURL.roleListByUserIdURL;
     private delRoleURL = environment.dataURL.delRoleURL;
     private newRoleURL = environment.dataURL.newRoleURL;
     private updateRoleURL = environment.dataURL.updateRoleURL;
@@ -27,6 +28,16 @@ export class RoleMngService {
         return this.httpClient.post(reqURL, {
             roleName: searchStr
         });
+    }
+
+    /**
+     * 根据 userId 获取此用户的所有角色列表
+     * @param userId 
+     * @returns 
+     */
+    public getRoleListAllByUserId(userId: any): Observable<any> {
+        let reqURL = _.template(this.roleListByUserIdURL)({ userId: userId });
+        return this.httpClient.get(reqURL);
     }
 
     public getRoleInfo(roleId): Observable<any> {

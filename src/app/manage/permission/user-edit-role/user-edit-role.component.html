@@ -1,0 +1,63 @@
+<div class="role-edit-container" [@fadeIn]>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">编辑用户-角色关联关系</h3>
+        </div>
+        <div class="panel-body">
+            <p-table [value]="roleList" [(selection)]="selectedRoles" (selectionChange)="onSelectionChange($event)"
+                dataKey="roleId" editMode="row" [paginator]="true" [rows]="10" [pageLinks]="10"
+                [totalRecords]="totalRecords" styleClass="p-datatable-gridlines" [lazy]="true"
+                (onLazyLoad)="pageChanged($event)">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 4rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+                        <th>角色名称</th>
+                        <th>状态</th>
+                        <th>备注</th>
+                        <th>前端页面权限</th>
+                        <th>后端接口权限</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
+                    <tr [pEditableRow]="rowData">
+                        <td>
+                            <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+                        </td>
+                        <td>
+                            {{rowData.roleName}}
+                        </td>
+                        <td>
+                            <span *ngIf="rowData.status==1" class='label label-success'>已启用</span>
+                            <span *ngIf="rowData.status==0" class='label label-danger'>已禁用</span>
+                        </td>
+                        <td>
+                            {{rowData.remark}}
+                        </td>
+                        <td>
+                            <h5 *ngFor="let componentPermission of rowData.componentEntities">
+                                <span class="label label-warning">{{componentPermission.componentName}}</span>
+                            </h5>
+                        </td>
+                        <td>
+                            <h5 *ngFor="let apiPermission of rowData.apiEntities">
+                                <span class="label label-warning">{{apiPermission.apiName}}</span>
+                            </h5>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-success btn-margin-1rem">
+                保存
+            </button>
+            <button type="button" class="btn btn-danger" (click)="cancel()">
+                取消
+            </button>
+        </div>
+    </div>
+</div>
