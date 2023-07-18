@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SignInService } from "../user/sign-in/sign-in.service";
 import { SignUpService } from "../user/sign-up/sign-up.service";
@@ -6,7 +6,7 @@ import { CommentListService } from "./comment-list.service";
 import { MessageService } from "primeng/api";
 import { merge } from "rxjs"
 import { environment } from "../../../environments/environment";
-import { CaptchaService } from "src/app/shared/captcha.service";
+import { CaptchaComponent } from "src/app/shared/captcha/captcha.component";
 
 @Component({
   selector: "comment-list",
@@ -27,12 +27,13 @@ export class CommentListComponent implements OnInit {
   public offset = 0;
   public end = 0;
 
+  @ViewChild("captchaComp") captchaComp: CaptchaComponent;
+
   constructor(
     public commentListService: CommentListService,
     public signInService: SignInService,
     public signUpService: SignUpService,
     public messageService: MessageService,
-    public captchaService: CaptchaService,
     public router: Router,
     public activatedRoute: ActivatedRoute) {
   }
@@ -85,7 +86,7 @@ export class CommentListComponent implements OnInit {
         this.comment = {};
         this.currentPage = 1;
         this.getCommentList();
-        this.captchaService.refreshCaptchaURL();
+        this.captchaComp.refreshCaptchaURL();
       },
       (error) => {
         console.log(error);

@@ -5,7 +5,6 @@ import { PostService } from "../post.service";
 import { MessageService } from "primeng/api";
 import { fadeIn } from "../../../shared/animations/fade-in";
 import { environment } from "../../../../environments/environment";
-import { CaptchaService } from "src/app/shared/captcha.service";
 
 @Component({
   selector: "write-post",
@@ -33,7 +32,6 @@ export class WritePostComponent {
     public router: Router,
     public activeRoute: ActivatedRoute,
     public postService: PostService,
-    public captchaService: CaptchaService,
     private messageService: MessageService) {
   }
 

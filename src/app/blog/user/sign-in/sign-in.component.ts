@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from "@angular/router";
+import { Router } from "@angular/router";
 import { SignInService } from "./sign-in.service";
-import { CaptchaService } from "src/app/shared/captcha.service";
 import { environment } from "../../../../environments/environment";
 import { fadeIn } from "../../../shared/animations/fade-in";
 
@@ -24,7 +23,6 @@ export class SignInComponent implements OnInit {
   constructor(
     public router: Router,
     public signInService: SignInService,
-    public captchaService: CaptchaService
   ) { }
 
   ngOnInit() {
