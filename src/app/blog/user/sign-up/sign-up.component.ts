@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { SignUpService } from "./sign-up.service";
 import { fadeIn } from "../../../shared/animations/fade-in";
 import { environment } from "../../../../environments/environment";
+import { CaptchaService } from "src/app/shared/captcha.service";
 
 /**
  * 用户注册和后台创建都使用这个组件完成。
@@ -16,14 +17,12 @@ import { environment } from "../../../../environments/environment";
   animations: [fadeIn]
 })
 export class SignUpComponent implements OnInit {
-  @Input() panelTitle="用户注册";
-  @Input() btnLabel="注册";
-  @Input() isEdit=false;
+  @Input() panelTitle = "用户注册";
+  @Input() btnLabel = "注册";
+  @Input() isEdit = false;
   @Output() saveSuccess = new EventEmitter();
 
-  public isMock=environment.isMock;
-  public capchaURL = environment.dataURL.capchaURL;//FIXME:验证码相关的代码需要整合到一个公共服务中去，避免相似的代码散落在各处。
-  
+  public isMock = environment.isMock;
   public userForm: FormGroup;
   public userInfo: any = {};
 
@@ -33,7 +32,7 @@ export class SignUpComponent implements OnInit {
     "confirmPassword": "",
     "formError": "",
     "captcha": "",
-    "nickName":""
+    "nickName": ""
   };
   validationMessages = {
     "email": {
@@ -62,6 +61,7 @@ export class SignUpComponent implements OnInit {
 
   constructor(public fb: FormBuilder,
     public signUpService: SignUpService,
+    public captchaService: CaptchaService,
     public route: ActivatedRoute,
     public router: Router,
     private messageService: MessageService) {
@@ -135,7 +135,7 @@ export class SignUpComponent implements OnInit {
       this.userInfo = this.userForm.value;
       console.log(this.userInfo);
 
-      if(this.isMock){
+      if (this.isMock) {
         localStorage.setItem("currentUser", JSON.stringify(this.userInfo));
         this.router.navigateByUrl("home");
         return;
@@ -148,7 +148,7 @@ export class SignUpComponent implements OnInit {
             if (data && data.success) {
               this.messageService.add({ severity: "success", summary: "注册成功", detail: "请登录" });
               this.saveSuccess.emit("saveSuccess");
-              if(!this.isEdit) {
+              if (!this.isEdit) {
                 window.history.back();
               }
             } else {
@@ -176,9 +176,5 @@ export class SignUpComponent implements OnInit {
           console.error(error);
         }
       )
-  }
-
-  public refreshCaptcha(): void {
-    this.capchaURL = `${this.capchaURL}&kill_cache=${new Date().getTime()}`;
   }
 }

@@ -20,7 +20,7 @@ export const dataURL = {
     signOutURL: "/auth/shiro/logout",
     getSessionUserURL: "/auth/user/getSessionUser",
     testEmailURL: "",
-    signUpURL: "/auth/user/register",
+    signUpURL: "/auth/shiro/register",
     commentListURL: "/cms/comment/manage/comment-table/<%= page %>",
     delCommentURL: "/cms/comment/manage/delete/<%= id %>",
     userListURL: "/auth/user/list/<%= page %>",

@@ -12,11 +12,13 @@
                     <!-- Mock 环境下不显示验证码，也不提交数据。-->
                     <div *ngIf="!isMock">
                         <div class="form-group" [ngClass]="{ 'has-error': commentForm.submitted && !captcha.valid }">
-                            <input required maxlength="4" [(ngModel)]="comment.captcha" name="captcha" #captcha="ngModel"
-                                type="text" class="form-control" placeholder="至少1位，最多4位" autocomplete="off">
+                            <input required maxlength="4" [(ngModel)]="comment.captcha" name="captcha"
+                                #captcha="ngModel" type="text" class="form-control" placeholder="至少1位，最多4位"
+                                autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <img src={{capchaURL}} (click)="refreshCaptcha()"/>
+                            <img src={{captchaService.capchaURL}} (click)="captchaService.refreshCaptchaURL()"
+                                style="cursor: pointer;" />
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success">提交</button>
