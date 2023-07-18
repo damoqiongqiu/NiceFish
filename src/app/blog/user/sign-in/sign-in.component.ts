@@ -11,26 +11,25 @@ import { environment } from "../../../../environments/environment";
   animations: [fadeIn]
 })
 export class SignInComponent implements OnInit {
-  public isMock=environment.isMock;
+  public isMock = environment.isMock;
   public capchaURL = environment.dataURL.capchaURL;//FIXME:验证码相关的代码需要整合到一个公共服务中去，避免相似的代码散落在各处。
-  
+
   public captcha: any = "";
   public error: Error;
   public user: any = {
-    userName:"",
-    password:"",
-    captcha:"",
-    rememberMe:true
+    userName: "",
+    password: "",
+    captcha: "",
+    rememberMe: true
   };
 
   constructor(
     public router: Router,
     public activatedRoute: ActivatedRoute,
     public signInService: SignInService
-  ) {}
+  ) { }
 
   ngOnInit() {
-    console.log("--- sign-in-component ---");
     console.log(this.router);
     console.log(this.activatedRoute);
 
@@ -49,7 +48,7 @@ export class SignInComponent implements OnInit {
   }
 
   public doSignOut(): void {
-    if(!this.isMock){
+    if (!this.isMock) {
       this.signInService.signOut();
     }
     this.router.navigateByUrl("home");
