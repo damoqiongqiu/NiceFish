@@ -125,6 +125,7 @@ export class RoleEditComponent implements OnInit {
     });
     data.compPermId = node.compPermId;
     node.data = data;
+    node.expanded = true;
     if (node.children) {
       node.children.forEach((child) => {
         this.treeDataTransformer(child);

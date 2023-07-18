@@ -74,6 +74,7 @@ export class ComponentPermissionTableComponent {
     }
     data.parentEntity = { compPermId: pId };
     node.data = data;
+    node.expanded = true;
     if (node.children) {
       node.children.forEach((child) => {
         this.treeDataTransformer(child);
