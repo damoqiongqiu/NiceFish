@@ -17,6 +17,8 @@ import { CaptchaComponent } from "./captcha/captcha.component";
 
 import { TrimStringPipe } from "./pipes/trim-string.pipe";
 import { SanitizeHtmlPipe } from "./pipes/sanitize-html-pipe";
+import { RightPadStringPipe } from "./pipes/right-pad-string.pipe";
+import { BooleanPipe } from "./pipes/boolean-pipe";
 
 @NgModule({
   imports: [
@@ -36,10 +38,12 @@ import { SanitizeHtmlPipe } from "./pipes/sanitize-html-pipe";
     SignInComponent,
     UserInfoComponent,
     UserProfileComponent,
-    TrimStringPipe,
-    SanitizeHtmlPipe,
     BlockSpinnerComponent,
     CaptchaComponent,
+    TrimStringPipe,
+    SanitizeHtmlPipe,
+    RightPadStringPipe,
+    BooleanPipe,
   ],
   exports: [
     ReactiveFormsModule,
@@ -60,6 +64,8 @@ import { SanitizeHtmlPipe } from "./pipes/sanitize-html-pipe";
     CaptchaComponent,
     TrimStringPipe,
     SanitizeHtmlPipe,
+    RightPadStringPipe,
+    BooleanPipe,
   ],
 })
 export class SharedModule { }

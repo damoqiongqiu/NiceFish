@@ -23,7 +23,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="abs">{{post.content | slice:0:140 | trim}}...</div>
+                        <div class="abs" [innerHTML]="post.content | slice:0:140 | trim  | rightPad | sanitizeHtml">
+                        </div>
                     </div>
                 </div>
             </div>
