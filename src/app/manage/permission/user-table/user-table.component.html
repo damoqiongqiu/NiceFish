@@ -1,7 +1,7 @@
 <div class="user-table-container" [@fadeIn]="'active'">
     <form class="form-vertical" role="form">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-11">
                 <div class="input-group">
                     <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text"
                         placeholder="用户名，手机号">
@@ -12,7 +12,7 @@
                     </span>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <div class="input-group pull-right">
                     <button class="btn btn-primary" type="button" (click)="newUser()">
                         <i class="pi pi-plus" aria-hidden="true"></i>

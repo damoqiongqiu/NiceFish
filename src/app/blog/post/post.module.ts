@@ -12,7 +12,6 @@ import { CommentListComponent } from "../comment-list/comment-list.component";
 
 import { PostService } from "./post.service";
 import { CommentListService } from "../comment-list/comment-list.service";
-import { BooleanPipe } from "../../shared/pipes/boolean-pipe";
 
 import { PostRoutingModule } from "./post.routing.module";
 
@@ -24,13 +23,11 @@ import { PostRoutingModule } from "./post.routing.module";
         CKEditorModule,
         PostRoutingModule
     ],
-    exports: [BooleanPipe],
     declarations: [
         PostListComponent,
         PostDetailMainComponent,
         PostDetailComponent,
         CommentListComponent,
-        BooleanPipe,
         PostHeadlineComponent
     ],
     providers: [
