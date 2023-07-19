@@ -1,7 +1,7 @@
 <div class="component-permission-table-container" [@fadeIn]="'active'">
     <form class="form-vertical" role="form">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-11">
                 <div class="input-group">
                     <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text"
                         placeholder="组件名称或者权限字符串" />
@@ -12,12 +12,7 @@
                     </span>
                 </div>
             </div>
-            <div class="col-md-4">
-                <p-multiSelect [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header" name="cols"
-                    [style]="{ width: '100%'}" selectedItemsLabel="{0} columns selected" defaultLabel="筛选"
-                    display="chip"></p-multiSelect>
-            </div>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <div class="input-group pull-right">
                     <button class="btn btn-primary" type="button"
                         (click)="editComponentPermission({compPermId:-1,parentEntity:{compPermId:-1}},false)">
@@ -32,6 +27,13 @@
             <div class="permission-item-container">
                 <p-treeTable [value]="compPermList" [columns]="selectedColumns" [paginator]="true" [rows]="10"
                     [resizableColumns]="true" columnResizeMode="expand" [scrollable]="true">
+                    <ng-template pTemplate="caption">
+                        <div style="text-align:left">
+                            <p-multiSelect [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header"
+                                name="cols" [style]="{ width: '100%'}" selectedItemsLabel="{0} columns selected"
+                                defaultLabel="筛选" display="chip"></p-multiSelect>
+                        </div>
+                    </ng-template>
                     <ng-template pTemplate="header" let-columns>
                         <tr>
                             <th *ngFor="let col of columns">
