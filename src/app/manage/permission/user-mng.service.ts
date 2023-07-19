@@ -13,6 +13,7 @@ export class UserMngService {
     private userDetailURL = environment.dataURL.userDetailURL;
     private signUpURL = environment.dataURL.signUpURL;
     private updateUserURL = environment.dataURL.updateUserURL;
+    private userMenuListURL = environment.dataURL.userMenuListURL;
 
     constructor(public httpClient: HttpClient) { }
 
@@ -65,5 +66,21 @@ export class UserMngService {
         }
 
         return this.httpClient.post(this.updateUserURL, user);
+    }
+
+    /**
+     * 根据 userId 加载此用户的菜单
+     * @param userId 
+     * @returns 
+     */
+    public getMenuByUser(userId): Observable<any> {
+        let reqURL = _.template(this.userMenuListURL)({ id: userId });
+
+        //mock
+        if (this.isMock) {
+            return this.httpClient.get(this.userMenuListURL);
+        }
+
+        return this.httpClient.get(reqURL);
     }
 }
