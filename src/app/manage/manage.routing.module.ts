@@ -26,16 +26,20 @@ export const manageRoutes: Routes = [
 			{ path: "chart", component: ChartComponent },
 			{ path: "post-table/page/:page", component: PostTableComponent },
 			{ path: "comment-table/page/:page", component: CommentTableComponent },
+			{ path: "profile/:userId", component: UserProfileComponent },
+
+			//以下 path 需要和数据库中的配置一致 
+			//FIXME:需要更好的处理方式？防止两头的数据不一致
 			{ path: "user-table/page/:page", component: UserTableComponent },
 			{ path: "user-table/user-edit-role/:userId/:page", component: UserEditRoleComponent },
-			{ path: "profile/:userId", component: UserProfileComponent },
 			{ path: "role-table/page/:page", component: RoleTableComponent },
 			{ path: "role-table/edit-role/:roleId", component: RoleEditComponent },
 			{ path: "api-permission-table/page/:page", component: ApiPermissionTableComponent },
 			{ path: "api-permission-table/edit/:apiPermissionId", component: ApiPermissionEditComponent },
 			{ path: "component-permission-table/page/:page", component: ComponentPermissionTableComponent },
 			{ path: "component-permission-table/edit/:compPermId/:pId", component: ComponentPermissionEditComponent },
-			{ path: "sysparam", component: SysParamComponent },
+			{ path: "sys-settings", component: SysParamComponent },
+
 			{ path: "**", redirectTo: "posttable/page/1" }
 		]
 	}

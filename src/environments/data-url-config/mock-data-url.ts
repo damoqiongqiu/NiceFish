@@ -19,6 +19,7 @@ export const dataURL = {
     userDetailURL: "mock-data/user-detail-mock.json",
     updateUserURL: "mock-data/user-register-mock.json",
     delUserURL: "",
+    userMenuListURL: "mock-data/user-menu-list-mock.json",  //用户对应的菜单
     roleTableURL: "mock-data/role-list-mock.json",
     roleListByUserIdURL: "mock-data/role-list-mock.json",
     updateUserRoleRelationURL: "",

@@ -27,6 +27,7 @@ export const dataURL = {
     userDetailURL: "/auth/user/detail/<%= id %>",
     updateUserURL: "/auth/user/update",
     delUserURL: "/auth/user/delete/<%= id %>",
+    userMenuListURL: "/auth/shiro/menu/<%= id %>",  //用户对应的菜单
     roleTableURL: "/auth/role/list/<%= page %>",
     roleListByUserIdURL: "/auth/role/list-by-user-id/<%= userId %>",
     updateUserRoleRelationURL: "/auth/user/update-user-role-relation",
