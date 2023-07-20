@@ -30,6 +30,8 @@ import { AuthGuard } from "../shared/auth-guard";
 
 import { ManageRoutingModule } from "./manage.routing.module";
 
+import * as echarts from 'echarts';
+
 @NgModule({
   declarations: [
     ManageMainComponent,
@@ -51,9 +53,7 @@ import { ManageRoutingModule } from "./manage.routing.module";
     PaginatorModule,
     TableModule,
     ManageRoutingModule,
-    NgxEchartsModule.forRoot({
-      echarts: () => import('echarts')
-    })
+    NgxEchartsModule.forRoot({ echarts })//FIXME:这里会把整个 echarts 都打包到最终产物里
   ],
   exports: [
     ManageMainComponent
