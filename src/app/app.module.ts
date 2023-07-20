@@ -23,8 +23,14 @@ import { AuthGuard } from "./shared/auth-guard";
 import { BlockService } from "./shared/block-spinner/block-service.service";
 import { NiceFishHttpInterceptor } from "./shared/NiceFishHttpInterceptor";
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+/**
+ * Angular Ivy 要求导出一个模块
+ * @see https://github.com/ngx-translate/core
+ * @param http 
+ * @returns 
+ */
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -41,9 +47,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
+      defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
+        useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
     }),
