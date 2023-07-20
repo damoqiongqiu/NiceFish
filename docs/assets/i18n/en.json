@@ -1,0 +1,47 @@
+{
+    "app": {
+        "welcome": "Welcome",
+        "echarts": "Echarts",
+        "gaodemap": "Amap",
+        "jsplumb": "BPM",
+        "logout": "Logout",
+        "signin": "SignIn",
+        "signup": "SignUp",
+        "articles": "Articles",
+        "doc": "Document",
+        "console": "Console",
+        "userlist": "UserList",
+        "read": "Read",
+        "write": "Write"
+    },
+    "post": {
+        "publish": "publish"
+    },
+    "userSignUp": {
+        "userSignUp": "Sign Up",
+        "userName": "UserName:",
+        "userName-placeholder": "4-32 characters",
+        "nickName": "NickName:",
+        "nickName-placeholder": "2-32 characters",
+        "email": "Email:",
+        "email-placeholder": "Frequently used mailboxes, sign in after verification.",
+        "notice": "If you do not receive a verification email in your inbox, check your trash.",
+        "password": "Password:",
+        "password-placeholder": "Password, at least 8 characters.",
+        "repeat-pwd": "Repeat PWD:",
+        "repeat-pwd-placeholder": "Repeat password, two inputs must be consistent.",
+        "signUp": "SignUp"
+    },
+    "signIn": {
+        "signIn": "Sign In"
+    },
+    "search": "search",
+    "submit": "Submit",
+    "firstPage": "First",
+    "lastPage": "Last",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "click": "Click",
+    "comment": "Comment",
+    "authorInfo": "Author Info"
+}

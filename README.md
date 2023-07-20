@@ -36,7 +36,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 打开浏览器，访问 http://localhost:4200/
 
-**中文开发者**：网络原因，推荐安装 nrm 来管理 npm 的 registry。
+**🚀🚀🚀中文开发者**：网络原因，推荐安装 nrm 来管理 npm 的 registry。
 
     npm i -g nrm 
     nrm use taobao
@@ -45,17 +45,14 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 ## 3.在 Mock 版本和带服务端版本之间切换
 
-为了方便前后端分离的开发模式，本项目提供2种启动模式：
+为了方便前后端分离开发，本项目提供2种启动模式：
 
-- 带 mock 数据的启动模式：ng serve --configuration development-mock （或者直接 ng serve 启动，默认是 mock 模式）
-- 访问真实的服务端接口的启动模式： ng serve --configuration development-backend 
-
-所有的 mock 数据都在 mock-data 目录中，json 格式。
+- 带 mock 数据的启动模式：ng serve --configuration development-mock （或者直接 ng serve 启动，默认是 mock 模式），所有 mock 数据都在 src/mock-data 目录中，json 格式，与服务端接口返回的数据格式保持一致。
+- 访问真实的服务端接口的启动模式： ng serve --configuration development-backend  （使用此模式启动需要有真实的服务端，把 proxy.config.json 中的服务端地址改成你自己的接口地址，NiceFish 提供了一个基于 SpringBoot 的服务端接口实现版本，参见： https://gitee.com/mumu-osc/nicefish-spring-boot。）
 
 与启动环境有关的配置项在 environment.* 和 angular.json 中。
-当采用直接访问服务端接口的启动模式时，需要把 proxy.config.json 中的服务端地址改成你自己的接口地址，NiceFish 提供了一个基于 SpringBoot 的服务端接口实现版本，参见： https://gitee.com/mumu-osc/nicefish-spring-boot。
 
-## 3.单元测试
+## 4.单元测试
 
 执行以下命令进行单元测试：
 
@@ -71,7 +68,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 关于单元测试的详细使用方法，以及 Jasmine 的语法，请参考： https://angular.io/guide/testing
 
-## 4.集成测试
+## 5.集成测试
 
 Angular 从 v12 开始，官方废弃了原来的集成测试工具 Protractor （量角器），本项目已经切换到官方推荐的 Cypress 集成测试工具，执行以下命令启动集成测试：
 
@@ -81,25 +78,20 @@ Angular 从 v12 开始，官方废弃了原来的集成测试工具 Protractor �
 
 关于 Cypress 的技术细节，请参考： https://testing-angular.com/end-to-end-testing/#end-to-end-testing
 
-## 5.关于 NodeJS 环境的常见坑点
+## 6.构建
 
-* 中文开发者：如果你使用 cnpm 来安装依赖，可能会导致某些包不一致，导致应用起不来，目前原因不明，需要 cnpm 官方来解决。（cnpm 不是单纯的加速节点，它做了很多自己的处理，包括对一些 C++ 编写的 Node 模块做了预编译缓存，因此用它安装的包可能和官方源不一致。这不是 Angular 框架的问题，所有前端框架都存在这个问题。）
-* 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
-* 如果之前装过老版本的 angular-cli 需要先卸载：npm uninstall -g angular-cli
-* 如果你之前已经尝试用npm install安装过 node 模块，请手动把 NiceFish 根目录下的 node_moduels 目录删掉重新 npm install
-* 命令行删除 node_modules 速度更快，Windows 平台使用： rmdir /s/q node_modules ，*nix平台使用：sudo rm -rf node_modules
-* 如果你遇到其它任何看起来比较玄幻的问题，请手动删掉 node_modules 目录，然后切换到 npm 官方源，重新安装所有 node 模块
-* 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
-How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有。（请注意，这个配置不是 Angular 所特有的，当前主流的 SPA 型前端框架都需要做这个配置。）
+与开发状态对应，构建模式有2种：
+1. 构建开发环境（带 mock 数据，不访问服务端）：ng build --configuration development-mock
+2. 构建带有服务端接口的开发环境（访问真实的服务端接口）：ng build --configuration development-backend
 
-## 6.直接部署到 nginx
+## 7.直接部署到 nginx
 
-1. 运行 ng build 构建出最终产物。
+1. 根据上一步的描述构建出最终产物。
 1. 安装好 nginx，把 dist/browser 目录下的所有内容拷贝到 nginx 的 html 目录下。
 1. 参考本项目根目录下的 nginx.conf 配置文件，修改配置（此项目中的默认配置用于 Docker 环境，在 Windows 平台下无法使用）。
 1. 重启 nginx。
 
-## 7.部署到 Docker 环境
+## 8.部署到 Docker 环境
 
 请依次执行以下命令（请不要使用我的 ID ，改成你自己的 Docker 平台 ID ）：
 
@@ -112,7 +104,22 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 <img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/8.png">
 
-## 8.系列项目
+## 9.打包分析
+
+以下是用 webpack-bundle-analyzer 分析打包之后的模块构成：
+
+<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/bundle-report.png">
+
+看起来CKEditor和ECharts占了很大的体积，需要做一下异步加载。
+
+webpack-bundle-analyzer 使用方法，请依次执行以下操作：
+
+1. npm i webpack-bundle-analyzer --save-dev
+2. package.json 的 scripts 配置里面加一行 "bundle-report": "webpack-bundle-analyzer dist/browser/stats.json"
+3. ng build --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
+4. 执行 npm run bundle-report 查看打包过程
+
+## 10.系列项目
 
 |  名称   | 描述  | Stars  |
 |  ----  | ----  | ----  |
@@ -124,7 +131,18 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 | [nicefish-spring-cloud](https://gitee.com/mumu-osc/nicefish-spring-cloud)  | 用来示范前后端分离模式下，前端代码与分布式后端服务的对接方式。  | <a href='https://gitee.com/mumu-osc/nicefish-spring-cloud/stargazers'><img src='https://gitee.com/mumu-osc/nicefish-spring-cloud/badge/star.svg?theme=dark' alt='star'></img></a> |
 | [OpenWMS](https://gitee.com/mumu-osc/OpenWMS-Frontend)  | 用来示范管理后台型系统的开发模式。| <a href='https://gitee.com/mumu-osc/OpenWMS-Frontend/stargazers'><img src='https://gitee.com/mumu-osc/OpenWMS-Frontend/badge/star.svg?theme=dark' alt='star'></img></a> |
 
-## 9.界面截图
+## 11.关于 NodeJS 环境的常见坑点
+
+* 中文开发者：如果你使用 cnpm 来安装依赖，可能会导致某些包不一致，导致应用起不来，目前原因不明，需要 cnpm 官方来解决。（cnpm 不是单纯的加速节点，它做了很多自己的处理，包括对一些 C++ 编写的 Node 模块做了预编译缓存，因此用它安装的包可能和官方源不一致。这不是 Angular 框架的问题，所有前端框架都存在这个问题。）
+* 如果之前装过@angular/cli 需要先卸载：npm uninstall -g @angular/cli
+* 如果之前装过老版本的 angular-cli 需要先卸载：npm uninstall -g angular-cli
+* 如果你之前已经尝试用npm install安装过 node 模块，请手动把 NiceFish 根目录下的 node_moduels 目录删掉重新 npm install
+* 命令行删除 node_modules 速度更快，Windows 平台使用： rmdir /s/q node_modules ，*nix平台使用：sudo rm -rf node_modules
+* 如果你遇到其它任何看起来比较玄幻的问题，请手动删掉 node_modules 目录，然后切换到 npm 官方源，重新安装所有 node 模块
+* 如果你需要把项目发布到其它类型的 Server 上，例如 Tomcat，需要对 Server 进行一些简单的配置才能支持 HTML5 下的 PushState 路由模式，请从以下链接里面查找对应的配置方式：https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions ，在
+How to: Configure your server to work with html5Mode 这个小节里面把常见的 WEB 容器的配置方式都列举出来了，包括：IIS、Apache、nginx、NodeJS、Tomcat 全部都有。（请注意，这个配置不是 Angular 所特有的，当前主流的 SPA 型前端框架都需要做这个配置。）
+
+## 12.界面截图
 
 <img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/1.png">
 
@@ -140,28 +158,13 @@ How to: Configure your server to work with html5Mode 这个小节里面把常见
 
 <img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/7.png">
 
-## 10.打包分析
-
-以下是用 webpack-bundle-analyzer 分析打包之后的模块构成：
-
-<img src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/bundle-report.png">
-
-看起来CKEditor和ECharts占了很大的体积，需要做一下异步加载。
-
-webpack-bundle-analyzer 使用方法，请依次执行以下操作：
-
-1. npm i webpack-bundle-analyzer --save-dev
-2. package.json 的 scripts 配置里面加一行 "bundle-report": "webpack-bundle-analyzer dist/browser/stats.json"
-3. ng build --stats-json 编译（--stats-json 选项会生成一份stats.json配置文件）
-4. 执行 npm run bundle-report 查看打包过程
-
-## 11.学习资源
+## 13.学习资源
 
 - 如果你需要基于 Angular 的微前端解决方案，请参考这个项目的代码和配置方式：https://gitee.com/mumu-osc/module-federation-plugin-example
 - 项目相关的 PPT 和资料：https://gitee.com/mumu-osc/NiceFish/attach_files 。
 - 这里有93篇文章，详细解析了项目结构和功能：https://gitbook.cn/gitchat/column/5bebdaf22c33167c317cc285
 
-## 12.License
+## 14.License
 
 MIT
 
