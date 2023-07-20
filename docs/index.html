@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit"/>
+  <title>NiceFish</title>
+  <base href="/"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <style type="text/css">
+    /* Loading 动画 */
+    html,
+    body,
+    root {
+      height: 100%;
+      margin: 0;
+    }
+
+    .splash-screen {
+      background-color: #04091e;
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    .splash-logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+      margin-left: -25px;
+      margin-top: -25px;
+      z-index: 2;
+      text-align: center;
+      color: #ffffff;
+      line-height: 46px;
+      font-size: 32px;
+      display: block;
+    }
+
+    .splash-loader,
+    .splash-loader::before,
+    .splash-loader::after {
+      left: 50%;
+      top: 50%;
+      margin-left: -50px;
+      margin-top: -50px;
+      position: absolute;
+      vertical-align: middle;
+      background: #f6214b;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .splash-loader::before {
+      content: "";
+      animation: bounce 1.5s infinite;
+    }
+
+    .splash-loader::after {
+      content: "";
+      animation: bounce 1.5s -0.4s infinite;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    @-webkit-keyframes bounce {
+      0% {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        opacity: 0;
+      }
+    }
+  </style>
+<link rel="stylesheet" href="styles.d68200afdf00594c.css"></head>
+
+<body>
+  <root>
+    <div class="splash-screen">
+      <div class="splash-loader"></div>
+      <div class="splash-logo">漁</div>
+    </div>
+  </root>
+<script src="runtime.a76128e9e8a59135.js" type="module"></script><script src="polyfills.ee601d55a5c2a8c1.js" type="module"></script><script src="scripts.3c95c0732b871423.js" defer></script><script src="vendor.bc899c7a4fcbb5f2.js" type="module"></script><script src="main.cec7fdc351f41c0b.js" type="module"></script></body>
+
+</html>

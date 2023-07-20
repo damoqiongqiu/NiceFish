@@ -1,0 +1,47 @@
+{
+    "app": {
+        "articles": "动态",
+        "echarts": "Echarts",
+        "gaodemap": "高德地图",
+        "jsplumb": "流程图",
+        "welcome": "欢迎你",
+        "logout": "退出",
+        "signin": "登录",
+        "signup": "注册",
+        "doc": "官方文档",
+        "console": "管理后台",
+        "userlist": "用户列表",
+        "read": "阅读",
+        "write": "写作"
+    },
+    "post": {
+        "publish": "发布文章"
+    },
+    "userSignUp": {
+        "userSignUp": "用户注册",
+        "userName": "用户名：",
+        "userName-placeholder": "用户名4到32个字符",
+        "nickName": "昵称：",
+        "nickName-placeholder": "昵称2到32个字符",
+        "email": "常用邮箱：",
+        "email-placeholder": "常用邮箱，验证后才能登录",
+        "notice": "【如果您未在收件箱收到验证邮件，请到垃圾箱查收。】",
+        "password": "密码：",
+        "password-placeholder": "密码，至少8位",
+        "repeat-pwd": "重复密码：",
+        "repeat-pwd-placeholder": "重复密码，两次输入必须一致",
+        "signUp": "注册"
+    },
+    "signIn": {
+        "signIn": "用户登录"
+    },
+    "search": "搜索",
+    "submit": "提交",
+    "firstPage": "首页",
+    "lastPage": "末页",
+    "previousPage": "上一页",
+    "nextPage": "下一页",
+    "click": "点击",
+    "comment": "评论",
+    "authorInfo": "作者信息"
+}

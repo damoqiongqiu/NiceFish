@@ -1,0 +1,290 @@
+{
+  "content": [
+    {
+      "roleId": 1,
+      "roleName": "系统管理员",
+      "status": 1,
+      "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+      "apiEntities": [
+        {
+          "apiPermissionId": 5,
+          "apiName": "系统管理",
+          "url": null,
+          "permission": "*",
+          "createTime": "2023-07-18 08:59:45",
+          "updateTime": "2023-07-19 13:54:36",
+          "remark": "系统管理权限是最高权限，拥有此权限可以对系统进行任意操作，删除此权限会导致系统管理员无法对系统进行维护。根据 Apache Shiro 的权限规则，此权限代码拥有最高优先级，将会覆盖其它所有权限代码。",
+          "roleEntities": [
+            {
+              "roleId": 1,
+              "roleName": "系统管理员",
+              "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+              "status": 1
+            }
+          ]
+        }
+      ],
+      "componentEntities": [
+        {
+          "compPermId": 42,
+          "componentName": "用户管理",
+          "icon": null,
+          "url": "user-table/page/1",
+          "displayOrder": 1,
+          "permission": "menu:view:user-management",
+          "createTime": "2023-07-19 14:13:59",
+          "updateTime": "2023-07-19 15:10:57",
+          "visiable": 1,
+          "remark": "拥有此权限代码的角色可以看到管理后台右侧边栏的【用户管理】菜单项。\n删除此项将会导致菜单入口消失。",
+          "parentEntity": null,
+          "children": [],
+          "roleEntities": [
+            {
+              "roleId": 1,
+              "roleName": "系统管理员",
+              "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+              "status": 1
+            },
+            {
+              "roleId": 10,
+              "roleName": "测试角色-1",
+              "remark": "此角色用来测试，上面没有配置权限点。",
+              "status": 1
+            }
+          ]
+        },
+        {
+          "compPermId": 43,
+          "componentName": "角色管理",
+          "icon": null,
+          "url": "role-table/page/1",
+          "displayOrder": 2,
+          "permission": "menu:view:role-management",
+          "createTime": "2023-07-19 14:14:18",
+          "updateTime": "2023-07-19 14:31:58",
+          "visiable": 1,
+          "remark": "拥有此权限代码的角色可以看到管理后台右侧边栏的【角色管理】菜单项。",
+          "parentEntity": null,
+          "children": [],
+          "roleEntities": [
+            {
+              "roleId": 1,
+              "roleName": "系统管理员",
+              "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+              "status": 1
+            }
+          ]
+        },
+        {
+          "compPermId": 44,
+          "componentName": "后端接口权限",
+          "icon": null,
+          "url": "api-permission-table/page/1",
+          "displayOrder": 3,
+          "permission": "menu:view:api-permission-management",
+          "createTime": "2023-07-19 14:14:54",
+          "updateTime": "2023-07-19 14:32:12",
+          "visiable": 1,
+          "remark": "拥有此权限代码的角色可以看到管理后台右侧边栏的【后端接口权限】菜单项。",
+          "parentEntity": null,
+          "children": [],
+          "roleEntities": [
+            {
+              "roleId": 1,
+              "roleName": "系统管理员",
+              "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+              "status": 1
+            }
+          ]
+        },
+        {
+          "compPermId": 45,
+          "componentName": "前端页面权限",
+          "icon": null,
+          "url": "component-permission-table/page/1",
+          "displayOrder": 4,
+          "permission": "menu:view:component-permission-management",
+          "createTime": "2023-07-19 14:15:18",
+          "updateTime": "2023-07-19 14:32:26",
+          "visiable": 1,
+          "remark": "拥有此权限代码的角色可以看到管理后台右侧边栏的【前端页面权限】菜单项。",
+          "parentEntity": null,
+          "children": [],
+          "roleEntities": [
+            {
+              "roleId": 1,
+              "roleName": "系统管理员",
+              "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+              "status": 1
+            }
+          ]
+        },
+        {
+          "compPermId": 46,
+          "componentName": "系统设置",
+          "icon": null,
+          "url": "sys-settings",
+          "displayOrder": 5,
+          "permission": "menu:view:sys-settings",
+          "createTime": "2023-07-19 14:15:48",
+          "updateTime": "2023-07-19 14:32:38",
+          "visiable": 1,
+          "remark": "拥有此权限代码的角色可以看到管理后台右侧边栏的【系统设置】菜单项。",
+          "parentEntity": null,
+          "children": [],
+          "roleEntities": [
+            {
+              "roleId": 1,
+              "roleName": "系统管理员",
+              "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+              "status": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "roleId": 10,
+      "roleName": "测试角色-1",
+      "status": 1,
+      "remark": "此角色用来测试，上面没有配置权限点。",
+      "apiEntities": [
+        {
+          "apiPermissionId": 7,
+          "apiName": "管理用户",
+          "url": "",
+          "permission": "sys:manage:user",
+          "createTime": "2023-07-19 13:48:36",
+          "updateTime": "2023-07-19 13:48:36",
+          "remark": "管理用户",
+          "roleEntities": [
+            {
+              "roleId": 10,
+              "roleName": "测试角色-1",
+              "remark": "此角色用来测试，上面没有配置权限点。",
+              "status": 1
+            },
+            {
+              "roleId": 11,
+              "roleName": "测试角色-2",
+              "remark": "测试角色-2",
+              "status": 1
+            }
+          ]
+        }
+      ],
+      "componentEntities": [
+        {
+          "compPermId": 42,
+          "componentName": "用户管理",
+          "icon": null,
+          "url": "user-table/page/1",
+          "displayOrder": 1,
+          "permission": "menu:view:user-management",
+          "createTime": "2023-07-19 14:13:59",
+          "updateTime": "2023-07-19 15:10:57",
+          "visiable": 1,
+          "remark": "拥有此权限代码的角色可以看到管理后台右侧边栏的【用户管理】菜单项。\n删除此项将会导致菜单入口消失。",
+          "parentEntity": null,
+          "children": [],
+          "roleEntities": [
+            {
+              "roleId": 1,
+              "roleName": "系统管理员",
+              "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+              "status": 1
+            },
+            {
+              "roleId": 10,
+              "roleName": "测试角色-1",
+              "remark": "此角色用来测试，上面没有配置权限点。",
+              "status": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "roleId": 11,
+      "roleName": "测试角色-2",
+      "status": 1,
+      "remark": "测试角色-2",
+      "apiEntities": [
+        {
+          "apiPermissionId": 6,
+          "apiName": "关注用户",
+          "url": "",
+          "permission": "user:follow",
+          "createTime": "2023-07-18 14:30:04",
+          "updateTime": "2023-07-19 13:51:20",
+          "remark": "拥有此权限可以关注用户，否则不可以。【这是一条测试数据，无意义】",
+          "roleEntities": [
+            {
+              "roleId": 11,
+              "roleName": "测试角色-2",
+              "remark": "测试角色-2",
+              "status": 1
+            }
+          ]
+        },
+        {
+          "apiPermissionId": 7,
+          "apiName": "管理用户",
+          "url": "",
+          "permission": "sys:manage:user",
+          "createTime": "2023-07-19 13:48:36",
+          "updateTime": "2023-07-19 13:48:36",
+          "remark": "管理用户",
+          "roleEntities": [
+            {
+              "roleId": 10,
+              "roleName": "测试角色-1",
+              "remark": "此角色用来测试，上面没有配置权限点。",
+              "status": 1
+            },
+            {
+              "roleId": 11,
+              "roleName": "测试角色-2",
+              "remark": "测试角色-2",
+              "status": 1
+            }
+          ]
+        }
+      ],
+      "componentEntities": []
+    },
+    {
+      "roleId": 12,
+      "roleName": "普通用户默认角色",
+      "status": 1,
+      "remark": "普通用户拥有的默认角色，删除此角色将导致普通用户失去对应的接口和菜单权限。",
+      "apiEntities": [],
+      "componentEntities": []
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "pageSize": 10,
+    "pageNumber": 0,
+    "unpaged": false,
+    "paged": true
+  },
+  "totalPages": 1,
+  "totalElements": 4,
+  "last": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "numberOfElements": 4,
+  "first": true,
+  "empty": false
+}

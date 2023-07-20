@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "roleId": 1,
+      "roleName": "系统管理员",
+      "status": 1,
+      "remark": "删除此角色将会导致整个系统不可用。",
+      "apiEntities": [
+        {
+          "apiPermissionId": 1,
+          "apiName": "系统管理",
+          "url": null,
+          "permission": "sys:manage",
+          "createTime": "2023-07-12 20:57:31",
+          "updateTime": "2023-07-12 20:57:31",
+          "remark": "删除此权限将会导致整个系统无法运行。"
+        }
+      ],
+      "componentEntities": []
+    }
+  ],
+  "success": true
+}

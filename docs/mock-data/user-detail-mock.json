@@ -1,0 +1,162 @@
+{
+  "data": {
+    "userId": 2,
+    "userName": "admin@126.com",
+    "nickName": "admin",
+    "password": "36a901ef49e2c44155863906692a5e1a",
+    "email": "admin@126.com",
+    "cellphone": "",
+    "gender": 0,
+    "createTime": "2023-07-17 23:02:37",
+    "avatarURL": "",
+    "salt": "6c0e2d",
+    "status": 1,
+    "remark": "",
+    "roleEntities": [
+      {
+        "roleId": 1,
+        "roleName": "系统管理员",
+        "status": 1,
+        "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+        "apiEntities": [
+          {
+            "apiPermissionId": 5,
+            "apiName": "系统管理",
+            "url": null,
+            "permission": "*",
+            "createTime": "2023-07-18 08:59:45",
+            "updateTime": "2023-07-19 13:54:36",
+            "remark": "系统管理权限是最高权限，拥有此权限可以对系统进行任意操作，删除此权限会导致系统管理员无法对系统进行维护。根据 Apache Shiro 的权限规则，此权限代码拥有最高优先级，将会覆盖其它所有权限代码。",
+            "roleEntities": [
+              {
+                "roleId": 1,
+                "roleName": "系统管理员",
+                "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+                "status": 1
+              }
+            ]
+          }
+        ],
+        "componentEntities": [
+          {
+            "compPermId": 42,
+            "componentName": "用户管理",
+            "icon": null,
+            "url": "user-table/page/1",
+            "displayOrder": 1,
+            "permission": "menu:view:user-management",
+            "createTime": "2023-07-19 14:13:59",
+            "updateTime": "2023-07-19 15:10:57",
+            "visiable": 1,
+            "remark": "拥有此权限代码的角色可以看到管理后台右侧边栏的【用户管理】菜单项。\n删除此项将会导致菜单入口消失。",
+            "parentEntity": null,
+            "children": [],
+            "roleEntities": [
+              {
+                "roleId": 1,
+                "roleName": "系统管理员",
+                "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+                "status": 1
+              },
+              {
+                "roleId": 10,
+                "roleName": "测试角色-1",
+                "remark": "此角色用来测试，上面没有配置权限点。",
+                "status": 1
+              }
+            ]
+          },
+          {
+            "compPermId": 43,
+            "componentName": "角色管理",
+            "icon": null,
+            "url": "role-table/page/1",
+            "displayOrder": 2,
+            "permission": "menu:view:role-management",
+            "createTime": "2023-07-19 14:14:18",
+            "updateTime": "2023-07-19 14:31:58",
+            "visiable": 1,
+            "remark": "拥有此权限代码的角色可以看到管理后台右侧边栏的【角色管理】菜单项。",
+            "parentEntity": null,
+            "children": [],
+            "roleEntities": [
+              {
+                "roleId": 1,
+                "roleName": "系统管理员",
+                "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+                "status": 1
+              }
+            ]
+          },
+          {
+            "compPermId": 44,
+            "componentName": "后端接口权限",
+            "icon": null,
+            "url": "api-permission-table/page/1",
+            "displayOrder": 3,
+            "permission": "menu:view:api-permission-management",
+            "createTime": "2023-07-19 14:14:54",
+            "updateTime": "2023-07-19 14:32:12",
+            "visiable": 1,
+            "remark": "拥有此权限代码的角色可以看到管理后台右侧边栏的【后端接口权限】菜单项。",
+            "parentEntity": null,
+            "children": [],
+            "roleEntities": [
+              {
+                "roleId": 1,
+                "roleName": "系统管理员",
+                "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+                "status": 1
+              }
+            ]
+          },
+          {
+            "compPermId": 45,
+            "componentName": "前端页面权限",
+            "icon": null,
+            "url": "component-permission-table/page/1",
+            "displayOrder": 4,
+            "permission": "menu:view:component-permission-management",
+            "createTime": "2023-07-19 14:15:18",
+            "updateTime": "2023-07-19 14:32:26",
+            "visiable": 1,
+            "remark": "拥有此权限代码的角色可以看到管理后台右侧边栏的【前端页面权限】菜单项。",
+            "parentEntity": null,
+            "children": [],
+            "roleEntities": [
+              {
+                "roleId": 1,
+                "roleName": "系统管理员",
+                "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+                "status": 1
+              }
+            ]
+          },
+          {
+            "compPermId": 46,
+            "componentName": "系统设置",
+            "icon": null,
+            "url": "sys-settings",
+            "displayOrder": 5,
+            "permission": "menu:view:sys-settings",
+            "createTime": "2023-07-19 14:15:48",
+            "updateTime": "2023-07-19 14:32:38",
+            "visiable": 1,
+            "remark": "拥有此权限代码的角色可以看到管理后台右侧边栏的【系统设置】菜单项。",
+            "parentEntity": null,
+            "children": [],
+            "roleEntities": [
+              {
+                "roleId": 1,
+                "roleName": "系统管理员",
+                "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+                "status": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "success": true
+}

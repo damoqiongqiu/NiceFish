@@ -1,0 +1,20 @@
+{
+    "data": {
+        "apiPermissionId": 5,
+        "apiName": "系统管理",
+        "url": null,
+        "permission": "*",
+        "createTime": "2023-07-18 08:59:45",
+        "updateTime": "2023-07-19 13:54:36",
+        "remark": "系统管理权限是最高权限，拥有此权限可以对系统进行任意操作，删除此权限会导致系统管理员无法对系统进行维护。根据 Apache Shiro 的权限规则，此权限代码拥有最高优先级，将会覆盖其它所有权限代码。",
+        "roleEntities": [
+            {
+                "roleId": 1,
+                "roleName": "系统管理员",
+                "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+                "status": 1
+            }
+        ]
+    },
+    "success": true
+}
