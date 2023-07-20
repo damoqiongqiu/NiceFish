@@ -84,6 +84,10 @@ Angular 从 v12 开始，官方废弃了原来的集成测试工具 Protractor �
 1. 构建开发环境（带 mock 数据，不访问服务端）：ng build --configuration development-mock
 2. 构建带有服务端接口的开发环境（访问真实的服务端接口）：ng build --configuration development-backend
 
+如果需要在构建产物的 index.html 中出现 &lt;base href="/NiceFish/"/&gt;，请在以上命令后面加上参数： --base-href /NiceFish/ 
+
+注意，这里的 NiceFish 是项目名，如果你把项目名改成了其它的，请把 NiceFish 改成你自己的项目名。
+
 ## 7.直接部署到 nginx
 
 1. 根据上一步的描述构建出最终产物。
