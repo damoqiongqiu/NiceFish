@@ -18,7 +18,7 @@ export const dataURL = {
     capchaURL: "/auth/captcha/captchaImage?type=math",
     signInURL: "/auth/shiro/login",
     signOutURL: "/auth/shiro/logout",
-    getSessionUserURL: "/auth/user/getSessionUser",
+    getSessionUserURL: "/auth/user/get-session-user",
     testEmailURL: "",
     signUpURL: "/auth/shiro/register",
     commentListURL: "/cms/comment/manage/comment-table/<%= page %>",
