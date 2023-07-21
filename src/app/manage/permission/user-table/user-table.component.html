@@ -60,9 +60,8 @@
                                 {{rowData.createTime}}
                             </td>
                             <td style="width: 80px;">
-                                <h5>
-                                    <span *ngFor="let role of rowData.roleEntities"
-                                        class="label label-success">{{role.roleName}}</span>
+                                <h5 *ngFor="let role of rowData.roleEntities">
+                                    <span class="label label-success">{{role.roleName}}</span>
                                 </h5>
                             </td>
                             <td style="text-align:right">
