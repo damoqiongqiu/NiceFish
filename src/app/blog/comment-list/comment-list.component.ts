@@ -15,7 +15,6 @@ import { CaptchaComponent } from "src/app/shared/captcha/captcha.component";
 })
 export class CommentListComponent implements OnInit {
   public isMock = environment.isMock;
-
   public currentUser: any;
   public postId: string;
   public comment: any = {};
@@ -70,16 +69,6 @@ export class CommentListComponent implements OnInit {
   }
 
   public doWriteComment() {
-    if (this.isMock) {
-      this.messageService.add({
-        severity: "warn",
-        summary: "Warn",
-        detail: "注意：当前为 Mock 模式，不会与服务端交互，所有输入项都可以随意输入，符合校验规则即可。如果需要与服务端交互，请重新启动到 backend 模式 ng serve --configuration development-backend",
-        sticky: true
-      });
-      return;
-    }
-
     this.comment.postId = this.postId;
     this.commentListService.writeComment(this.comment).subscribe(
       (res) => {

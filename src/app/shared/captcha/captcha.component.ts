@@ -8,13 +8,9 @@ import * as _ from 'lodash';
   styleUrls: ['./captcha.component.scss']
 })
 export class CaptchaComponent {
-
-  public isMock = environment.isMock;
   public capchaURL = environment.dataURL.capchaURL;
 
-  constructor() {
-
-  }
+  constructor() { }
 
   ngOnInit() {
     this.refreshCaptchaURL();

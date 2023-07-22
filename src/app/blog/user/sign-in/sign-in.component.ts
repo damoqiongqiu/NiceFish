@@ -34,9 +34,7 @@ export class SignInComponent implements OnInit {
   }
 
   public doSignOut(): void {
-    if (!this.isMock) {
-      this.signInService.signOut();
-    }
+    this.signInService.signOut();
     this.router.navigateByUrl("home");
   }
 

@@ -5,7 +5,6 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { MessageService } from "primeng/api";
 import { ApiPermissionService } from "../api-permission.service";
-import { environment } from "src/environments/environment";
 
 @Component({
   selector: "api-permission-edit",
@@ -14,7 +13,6 @@ import { environment } from "src/environments/environment";
   animations: [flyIn, fadeIn]
 })
 export class ApiPermissionEditComponent implements OnInit {
-  public isMock = environment.isMock;
   public error: Error;
   private apiPermissionId: string = "-1";
   public apiPermission: any = {
@@ -55,10 +53,6 @@ export class ApiPermissionEditComponent implements OnInit {
   }
 
   save() {
-    if (this.isMock) {
-      return;
-    }
-
     delete this.apiPermission.createTime;
     delete this.apiPermission.updateTime;
 

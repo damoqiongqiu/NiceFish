@@ -6,7 +6,6 @@ import { environment } from "../../../../environments/environment";
 
 @Injectable()
 export class SignInService {
-  public isMock = environment.isMock;
   public signInURL = environment.dataURL.signInURL;
   public signOutURL = environment.dataURL.signOutURL;
   public getSessionUserURL = environment.dataURL.getSessionUserURL;
@@ -21,24 +20,6 @@ export class SignInService {
   }
 
   public signIn(user: any) {
-    //mock
-    if (this.isMock) {
-      return this.httpClient
-        .get(this.signInURL)
-        .subscribe(
-          data => {
-            console.log("login success>" + data);
-            let user = data;
-            console.log("user object>" + user);
-            localStorage.setItem("currentUser", JSON.stringify(user));
-            this.subject.next(Object.assign({}, user));
-          },
-          error => {
-            console.error(error);
-          }
-        );
-    }
-
     //TODO:passowrd用MD5加密之后传输，服务端需要做一些对应的处理
     return this.httpClient
       .post(
@@ -92,18 +73,6 @@ export class SignInService {
   }
 
   public signOut(): void {
-    if (this.isMock) {
-      localStorage.removeItem("currentUser");
-      this.messageService.add({
-        severity: "success",
-        summary: "Success Message",
-        detail: "退出成功",
-        life: 3000
-      });
-      this.subject.next(Object.assign({}));
-      return;
-    }
-
     this.httpClient
       .get(this.signOutURL)
       .subscribe(

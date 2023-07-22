@@ -6,8 +6,6 @@ import * as _ from 'lodash';
 
 @Injectable()
 export class UserMngService {
-    public isMock = environment.isMock;
-
     private userListURL = environment.dataURL.userListURL;
     private delUserURL = environment.dataURL.delUserURL;
     private userDetailURL = environment.dataURL.userDetailURL;
@@ -19,52 +17,24 @@ export class UserMngService {
 
     public getUserTable(page = 1, searchStr = ""): Observable<any> {
         let reqURL = _.template(this.userListURL)({ page: page });
-
-        //mock
-        if (this.isMock) {
-            return this.httpClient.get(this.userListURL);
-        }
-
         return this.httpClient.post(reqURL, { userName: searchStr });
     }
 
     public del(id): Observable<any> {
         let reqURL = _.template(this.delUserURL)({ id: id });
-
-        //mock
-        if (this.isMock) {
-            return this.httpClient.get(this.delUserURL);
-        }
-
         return this.httpClient.delete(reqURL);
     }
 
     public getUserDetails(userId): Observable<any> {
         let reqURL = _.template(this.userDetailURL)({ id: userId });
-
-        //mock
-        if (this.isMock) {
-            return this.httpClient.get(this.userDetailURL);
-        }
-
         return this.httpClient.get(reqURL);
     }
 
     public newUser(user): Observable<any> {
-        //mock
-        if (this.isMock) {
-            return this.httpClient.get(this.signUpURL);
-        }
-
         return this.httpClient.post(this.signUpURL, user);
     }
 
     public updateUser(user): Observable<any> {
-        //mock
-        if (this.isMock) {
-            return this.httpClient.get(this.updateUserURL);
-        }
-
         return this.httpClient.post(this.updateUserURL, user);
     }
 
@@ -75,12 +45,6 @@ export class UserMngService {
      */
     public getMenuByUser(userId): Observable<any> {
         let reqURL = _.template(this.userMenuListURL)({ id: userId });
-
-        //mock
-        if (this.isMock) {
-            return this.httpClient.get(this.userMenuListURL);
-        }
-
         return this.httpClient.get(reqURL);
     }
 }

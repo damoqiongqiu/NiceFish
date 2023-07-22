@@ -6,7 +6,6 @@ import { RoleMngService } from "../role-mng.service";
 import { MessageService, TreeNode } from "primeng/api";
 import { ApiPermissionService } from "../api-permission.service";
 import { ComponentPermissionService } from "../component-permission.service";
-import { environment } from "src/environments/environment";
 
 interface Column {
   field: string;
@@ -25,7 +24,6 @@ interface NodeEvent {
   animations: [flyIn, fadeIn]
 })
 export class RoleEditComponent implements OnInit {
-  public isMock = environment.isMock;
   public roleInfo: any = {
     roleId: "-1",
     roleName: "",
@@ -90,8 +88,8 @@ export class RoleEditComponent implements OnInit {
    */
   public getApiPermListAll(): void {
     this.apiPermService.getApiPermissionListAll().subscribe(
-      data => {
-        this.apiPermissionListAll = data;
+      response => {
+        this.apiPermissionListAll = response;
       },
     );
   }
@@ -154,11 +152,11 @@ export class RoleEditComponent implements OnInit {
   public getCompPermListByRoleId(): void {
     this.compPermService
       .getCompPermListByRoleId({ roleId: this.roleInfo.roleId })
-      .subscribe((data) => {
-        data.forEach((node) => {
+      .subscribe((response) => {
+        response.forEach((node) => {
           this.treeDataTransformer(node);
         });
-        this.selectedComp = data;
+        this.selectedComp = response;
       });
   }
 
@@ -191,10 +189,6 @@ export class RoleEditComponent implements OnInit {
     this.roleInfo.componentEntities = compPermListTemp;
 
     console.log(this.roleInfo);
-
-    if (this.isMock) {
-      return;
-    }
 
     //如果存在 roleId 参数，则为编辑状态，否则为新增状态。
     if (this.roleInfo.roleId == "-1") {

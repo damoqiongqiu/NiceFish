@@ -105,19 +105,6 @@ export class WritePostComponent {
   }
 
   doCommit() {
-    if (this.isMock) {
-      this.messageService.add({
-        severity: "warn",
-        summary: "Warn",
-        detail: "注意：当前为 Mock 模式，不会与服务端交互，所有输入项都可以随意输入，符合校验规则即可。如果需要与服务端交互，请重新启动到 backend 模式 ng serve --configuration development-backend",
-        sticky: true
-      });
-      setTimeout(() => {
-        this.router.navigateByUrl("/home");
-      }, 1000);
-      return;
-    }
-
     if (this.isEdit) {
       this.doEditPost();
     } else {
