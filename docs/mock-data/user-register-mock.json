@@ -1,6 +1,7 @@
 {
-    "id": 1,
-    "username": "admin",
-    "email": "XXXXX@qq.com",
-    "token": "fake-jwt-token"
+    "success": true,
+    "data": {
+        "userId": 1,
+        "userName": "admin"
+    }
 }
