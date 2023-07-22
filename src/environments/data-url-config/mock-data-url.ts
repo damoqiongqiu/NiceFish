@@ -37,7 +37,7 @@ export const dataURL = {
     apiRoleListURL: "mock-data/api-role-list-mock.json",
     compPermListURL: "mock-data/component-permission-list.json",
     compPermissionListAllByRole: "mock-data/component-permission-list-by-role.json",
-    compPermDetailURL: "",
+    compPermDetailURL: "mock-data/component-permission-detail-mock",
     delCompPermURL: "",
     newCompPermURL: "",
     updateCompPermURL: "",

@@ -1,0 +1,22 @@
+{
+    "compPermId": 45,
+    "componentName": "前端页面权限",
+    "icon": null,
+    "url": "component-permission-table/page/1",
+    "displayOrder": 4,
+    "permission": "menu:view:component-permission-management",
+    "createTime": "2023-07-19 14:15:18",
+    "updateTime": "2023-07-19 14:32:26",
+    "visiable": 1,
+    "remark": "拥有此权限代码的角色可以看到管理后台右侧边栏的【前端页面权限】菜单项。",
+    "parentEntity": null,
+    "children": [],
+    "roleEntities": [
+        {
+            "roleId": 1,
+            "roleName": "系统管理员",
+            "remark": "【系统管理员角色拥有系统最高权限，删除或者禁用此角色将会导致管理员无法登录系统。】",
+            "status": 1
+        }
+    ]
+}
