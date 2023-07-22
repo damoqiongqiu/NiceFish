@@ -4,7 +4,6 @@ import { ComponentPermissionService } from "../component-permission.service";
 import { MessageService } from "primeng/api";
 import { ConfirmationService } from "primeng/api";
 import * as _ from 'lodash';
-import { environment } from "src/environments/environment";
 import { fadeIn } from "../../../shared/animations/fade-in";
 
 interface Column {
@@ -19,7 +18,6 @@ interface Column {
   animations: [fadeIn],
 })
 export class ComponentPermissionTableComponent {
-  public isMock = environment.isMock;
   public searchStr = "";
   public compPermList: Array<any> = [];
   public totalRecords = 0;
@@ -118,11 +116,6 @@ export class ComponentPermissionTableComponent {
     this.confirmationService.confirm({
       message: "确定要删除吗？",
       accept: () => {
-
-        if (this.isMock) {
-          return;
-        }
-
         let compPermId = rowData.compPermId;
         this.compPermService.deleteByCompPermId(compPermId).subscribe(
           (data) => {

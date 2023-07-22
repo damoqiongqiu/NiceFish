@@ -3,7 +3,6 @@ import { ActivatedRoute, Router, UrlTree, PRIMARY_OUTLET, UrlSegmentGroup, UrlSe
 import { UserMngService } from "../user-mng.service";
 import { MessageService } from "primeng/api";
 import { ConfirmationService } from "primeng/api";
-import { environment } from "src/environments/environment";
 import { fadeIn } from "../../../shared/animations/fade-in";
 
 @Component({
@@ -15,7 +14,6 @@ import { fadeIn } from "../../../shared/animations/fade-in";
   ]
 })
 export class UserTableComponent implements OnInit {
-  public isMock = environment.isMock;
   public searchStr = "";
   public userList: Array<any>;
   public totalRecords = 0;
@@ -76,11 +74,6 @@ export class UserTableComponent implements OnInit {
     this.confirmationService.confirm({
       message: "确定要删除吗？",
       accept: () => {
-
-        if (this.isMock) {
-          return;
-        }
-
         let userId = rowData.userId;
         this.userMngService.del(userId)
           .subscribe(data => {

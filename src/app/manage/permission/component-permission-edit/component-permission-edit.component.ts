@@ -4,7 +4,6 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { MessageService } from "primeng/api";
 import { ComponentPermissionService } from "../component-permission.service";
-import { environment } from "src/environments/environment";
 
 @Component({
   selector: "component-permission-edit",
@@ -13,7 +12,6 @@ import { environment } from "src/environments/environment";
   animations: [flyIn, fadeIn]
 })
 export class ComponentPermissionEditComponent implements OnInit {
-  public isMock = environment.isMock;
   public error: Error;
   public compPermId: string = "-1";
   public pId: string = "-1";
@@ -74,11 +72,6 @@ export class ComponentPermissionEditComponent implements OnInit {
     delete this.componentPermission.roleEntities;
     delete this.componentPermission.children;
     console.log(this.componentPermission);
-
-    if (this.isMock) {
-      return;
-    }
-
     if (this.compPermId == "-1") {
       //创建子节点时，只传递 compPermId 参数
       this.compPermService.newCompPerm(this.componentPermission).subscribe(

@@ -4,7 +4,6 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { MessageService } from "primeng/api";
 import { UserMngService } from "src/app/manage/permission/user-mng.service";
 import { RoleMngService } from "../role-mng.service";
-import { environment } from "src/environments/environment";
 import { fadeIn } from "../../../shared/animations/fade-in";
 
 @Component({
@@ -16,7 +15,6 @@ import { fadeIn } from "../../../shared/animations/fade-in";
   ]
 })
 export class UserEditRoleComponent {
-  public isMock = environment.isMock;
   public userId: string = "-1";
   public searchStr = "";
   public totalRecords = 0;

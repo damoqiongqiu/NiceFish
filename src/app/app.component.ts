@@ -5,7 +5,6 @@ import { SignInService } from "./blog/user/sign-in/sign-in.service";
 import { SignUpService } from "./blog/user/sign-up/sign-up.service";
 import { merge } from "rxjs"
 import { MessageService } from "primeng/api";
-import { environment } from "../environments/environment";
 
 @Component({
 	selector: "root",
@@ -13,8 +12,6 @@ import { environment } from "../environments/environment";
 	styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-	public isMock = environment.isMock;
-
 	public showToggleMenu = false;
 	public currentUser: any;
 	private globalClickCallbackFn: Function;
@@ -63,18 +60,6 @@ export class AppComponent {
 		const browserLang = this.translate.getBrowserLang();
 		console.log("获取到浏览器的语言>" + browserLang);
 		this.translate.use(browserLang.match(/zh|en/) ? browserLang : "zh");
-
-
-		setTimeout(() => {
-			if (this.isMock) {
-				this.messageService.add({
-					severity: "warn",
-					summary: "Warn",
-					detail: "注意：当前为 Mock 模式，不会与服务端交互，所有输入项都可以随意输入，符合校验规则即可。如果需要与服务端交互，请重新启动到 backend 模式 ng serve --configuration development-backend",
-					sticky: true
-				});
-			}
-		}, 1500);
 	}
 
 	ngOnDestroy() {

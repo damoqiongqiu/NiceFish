@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { RoleMngService } from "../role-mng.service";
 import { MessageService } from "primeng/api";
 import { ConfirmationService } from "primeng/api";
-import { environment } from "src/environments/environment";
 import { fadeIn } from "../../../shared/animations/fade-in";
 
 @Component({
@@ -15,7 +14,6 @@ import { fadeIn } from "../../../shared/animations/fade-in";
   ]
 })
 export class RoleTableComponent implements OnInit {
-  public isMock = environment.isMock;
   public searchStr = "";
   public roleList: Array<any>;
   public totalRecords = 0;
@@ -68,11 +66,6 @@ export class RoleTableComponent implements OnInit {
     this.confirmationService.confirm({
       message: "确定要删除吗？",
       accept: () => {
-
-        if (this.isMock) {
-          return;
-        }
-
         this.roleMngService.deleteRole(rowData.roleId)
           .subscribe(data => {
             if (data && data.success) {

@@ -132,13 +132,6 @@ export class SignUpComponent implements OnInit {
     if (this.userForm.valid) {
       this.userInfo = this.userForm.value;
       console.log(this.userInfo);
-
-      if (this.isMock) {
-        localStorage.setItem("currentUser", JSON.stringify(this.userInfo));
-        this.router.navigateByUrl("home");
-        return;
-      }
-
       this.signUpService
         .signup(this.userInfo)
         .subscribe(
