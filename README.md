@@ -48,7 +48,7 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 为了方便前后端分离开发，本项目提供 2 种启动模式：
 
 - 带 mock 数据的启动模式：ng serve --configuration development-mock （或者直接 ng serve 启动，默认是 mock 模式），所有 mock 数据都在 src/mock-data 目录中，json 格式，与服务端接口返回的数据格式保持一致。
-- 访问真实的服务端接口的启动模式： ng serve --configuration development-backend （使用此模式启动需要有真实的服务端，把 proxy.config.json 中的服务端地址改成你自己的接口地址，NiceFish 提供了一个基于 SpringBoot 的服务端接口实现版本，参见： https://gitee.com/mumu-osc/nicefish-spring-boot。）
+- 访问真实的服务端接口的启动模式： ng serve --configuration development-backend （使用此模式启动需要有真实的服务端，把 proxy.config.json 中的服务端地址改成你自己的接口地址，NiceFish 提供了一个基于 SpringBoot 的服务端接口实现版本，参见： https://gitee.com/mumu-osc/nicefish-spring-boot 。）
 
 与启动环境有关的配置项在 environment.\* 和 angular.json 中。
 
