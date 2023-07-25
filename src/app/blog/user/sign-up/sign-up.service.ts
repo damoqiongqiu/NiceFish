@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient,HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, Subject } from "rxjs";
 import { environment } from "../../../../environments/environment";
 
@@ -7,7 +7,7 @@ import { environment } from "../../../../environments/environment";
 export class SignUpService {
     public signUpURL = environment.dataURL.signUpURL;
     public testEmailURL = environment.dataURL.testEmailURL;
-    
+
     public subject: Subject<any> = new Subject<any>();
 
     constructor(public httpClient: HttpClient) {
@@ -22,11 +22,11 @@ export class SignUpService {
         return this.httpClient.post(
             this.signUpURL,
             {
-                userName:user.email,
-                nickName:user.nickName,
-                password:user.password,
-                email:user.email,
-                captcha:user.captcha
+                userName: user.email,
+                nickName: user.nickName,
+                password: user.password,
+                email: user.email,
+                captcha: user.captcha
             },
             {
                 headers: new HttpHeaders({

@@ -1,24 +1,42 @@
-$textColor:#777;
-$postListContainerBgColor:#ecf0f1;
+$textColor: #777;
+$postListContainerBgColor: #ecf0f1;
+
 .post-list-container {
     background-color: #ffffff;
     padding: 20px;
+
     .post-item-container {
         margin: 0 0 30px 0;
         background-color: #ffffff;
+
         .post-item-text-container {
             margin: 0px;
             padding-left: 5px;
+
             h3 {
                 font-size: 18px;
                 margin: 0px 0px 10px 0px;
                 font-weight: 600;
+                white-space: nowrap;
+                overflow: hidden;
+                white-space: pre-wrap;
+                /* CSS3 */
+                white-space: -moz-pre-wrap;
+                /* Firefox */
+                white-space: -pre-wrap;
+                /* Opera <7 */
+                white-space: -o-pre-wrap;
+                /* Opera 7 */
+                word-wrap: break-word;
+                /* IE */
             }
+
             .user-name-intitle {
                 font-size: 12px;
                 color: #777;
                 padding-bottom: 5px;
             }
+
             .abs {
                 line-height: 18px;
                 color: $textColor;
