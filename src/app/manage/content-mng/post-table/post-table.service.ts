@@ -6,13 +6,13 @@ import * as _ from 'lodash';
 
 @Injectable()
 export class PostTableService {
-    public delPostURL =  environment.dataURL.delPostURL;
+    public delPostURL = environment.dataURL.delPostURL;
     public postTableURL = environment.dataURL.postTableURL;
 
     constructor(public httpClient: HttpClient) { }
 
-    public getPostTable(page=1): Observable<any> {
-        let reqURL=_.template(this.postTableURL)({page:page});
+    public getPostTable(page = 1): Observable<any> {
+        let reqURL = _.template(this.postTableURL)({ page: page });
         return this.httpClient.get(
             reqURL,
             {
@@ -24,7 +24,7 @@ export class PostTableService {
     }
 
     public del(id): Observable<any> {
-        let reqURL=_.template(this.delPostURL)({id:id});
+        let reqURL = _.template(this.delPostURL)({ id: id });
         return this.httpClient.delete(reqURL);
     }
 }
