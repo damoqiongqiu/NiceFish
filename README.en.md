@@ -1,3 +1,5 @@
+[简体中文](README.md) | English
+
 <p align="center">
     <img width="150" src="https://gitee.com/mumu-osc/NiceFish/raw/master/src/assets/imgs/nice-fish.png">
 </p>
