@@ -13,7 +13,7 @@
 export const dataURL = {
     postListURL: "/cms/post/post-list/<%= page %>",
     postDetailURL: "/cms/post/post-detail/<%= id %>",
-    postTableURL: "/cms/post/manage/post-table/<%= page %>",
+    postTableURL: "/cms/post/manage/post-table/<%= userId %>/<%= page %>",
     delPostURL: "/cms/post/manage/del-post/<%= id %>",
     capchaURL: "/auth/captcha/captchaImage?type=math",
     signInURL: "/auth/shiro/login",
