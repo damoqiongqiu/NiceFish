@@ -11,8 +11,8 @@ export class PostTableService {
 
     constructor(public httpClient: HttpClient) { }
 
-    public getPostTable(page = 1): Observable<any> {
-        let reqURL = _.template(this.postTableURL)({ page: page });
+    public getPostTable(userId, page = 1): Observable<any> {
+        let reqURL = _.template(this.postTableURL)({ userId, page });
         return this.httpClient.get(
             reqURL,
             {
