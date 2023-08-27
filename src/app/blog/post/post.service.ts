@@ -13,8 +13,8 @@ export class PostService {
 
     }
 
-    public getPostList(page = 1): Observable<any> {
-        let reqURL = _.template(this.postListURL)({ page: page });
+    public getPostList(page = 1, rows = 20): Observable<any> {
+        let reqURL = _.template(this.postListURL)({ page, rows });
         return this.httpClient.get(
             reqURL,
             {
