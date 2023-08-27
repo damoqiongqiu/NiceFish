@@ -1,61 +1,68 @@
 <div class="role-edit-container" [@fadeIn]>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">编辑用户-角色关联关系</h3>
+    <div class="card">
+        <div class="card-header">
+            <h5>编辑用户-角色关联关系</h5>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
             <h3>用户资料</h3>
             <div class="bg-info user-info-form-container">
-                <form class="form-horizontal" role="form" [formGroup]="formGroup">
-                    <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('userName').invalid }">
-                        <label class="col-md-2 control-label">用户名：</label>
+                <form role="form" [formGroup]="formGroup">
+                    <div class="row mb-3">
+                        <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">用户名：</label>
                         <div class="col-md-10">
-                            <input class="form-control" required="required" type="input" formControlName="userName" />
+                            <input class="form-control" [ngClass]="{ 'is-invalid': formGroup.get('userName').invalid }"
+                                required="required" type="input" formControlName="userName" />
                         </div>
                     </div>
-                    <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('nickName').invalid }">
-                        <label class="col-md-2 control-label">昵称：</label>
+                    <div class="row mb-3">
+                        <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">昵称：</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="input" formControlName="nickName" />
+                            <input class="form-control" [ngClass]="{ 'is-invalid': formGroup.get('nickName').invalid }"
+                                type="input" formControlName="nickName" />
                         </div>
                     </div>
-                    <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('gender').invalid }">
-                        <label class="col-md-2 control-label">性别：</label>
+                    <div class="row mb-3">
+                        <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">性别：</label>
                         <div class="col-md-10">
                             <ng-container *ngFor="let g of genderList; let i = index">
                                 <label class="radio-inline">
-                                    <input type="radio" name="gender" [value]="g.value" formControlName="gender">
+                                    <input type="radio" name="gender" [value]="g.value" formControlName="gender"
+                                        [ngClass]="{ 'is-invalid': formGroup.get('gender').invalid }">
                                     {{g.label}}
                                 </label>
                             </ng-container>
                         </div>
                     </div>
-                    <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('email').invalid }">
-                        <label class="col-md-2 control-label">常用邮箱：</label>
+                    <div class="row mb-3">
+                        <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">常用邮箱：</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="input" formControlName="email" />
+                            <input class="form-control" [ngClass]="{ 'is-invalid': formGroup.get('email').invalid }"
+                                type="input" formControlName="email" />
                         </div>
                     </div>
-                    <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('cellphone').invalid }">
-                        <label class="col-md-2 control-label">手机号：</label>
+                    <div class="row mb-3">
+                        <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">手机号：</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="input" formControlName="cellphone" />
+                            <input class="form-control" [ngClass]="{ 'is-invalid': formGroup.get('cellphone').invalid }"
+                                type="input" formControlName="cellphone" />
                         </div>
                     </div>
-                    <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('status').invalid }">
-                        <label class="col-md-2 control-label">启用：</label>
+                    <div class="row mb-3 align-items-center">
+                        <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">启用：</label>
                         <div class="col-md-10">
-                            <div class="checkbox">
-                                <label>
-                                    <input name="status" type="checkbox" formControlName="status" checked />
-                                </label>
+                            <div class="form-check">
+                                <input name="status" type="checkbox" formControlName="status" checked
+                                    class="form-check-input"
+                                    [ngClass]="{ 'is-invalid': formGroup.get('status').invalid }" />
                             </div>
                         </div>
                     </div>
-                    <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('remark').invalid }">
-                        <label class="col-md-2 control-label">简介：</label>
+                    <div class="row mb-3">
+                        <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">简介：</label>
                         <div class="col-md-10">
-                            <textarea rows="5" class="form-control" formControlName="remark"></textarea>
+                            <textarea rows="5" class="form-control"
+                                [ngClass]="{ 'is-invalid': formGroup.get('remark').invalid }"
+                                formControlName="remark"></textarea>
                         </div>
                     </div>
                 </form>
@@ -86,20 +93,20 @@
                             {{rowData.roleName}}
                         </td>
                         <td>
-                            <span *ngIf="rowData.status==1" class='label label-success'>已启用</span>
-                            <span *ngIf="rowData.status==0" class='label label-danger'>已禁用</span>
+                            <span *ngIf="rowData.status==1" class='badge bg-success'>已启用</span>
+                            <span *ngIf="rowData.status==0" class='badge bg-danger'>已禁用</span>
                         </td>
                         <td>
                             {{rowData.remark}}
                         </td>
                         <td>
                             <h5 *ngFor="let componentPermission of rowData.componentEntities">
-                                <span class="label label-warning">{{componentPermission.componentName}}</span>
+                                <span class="badge bg-warning">{{componentPermission.componentName}}</span>
                             </h5>
                         </td>
                         <td>
                             <h5 *ngFor="let apiPermission of rowData.apiEntities">
-                                <span class="label label-warning">{{apiPermission.apiName}}</span>
+                                <span class="badge bg-warning">{{apiPermission.apiName}}</span>
                             </h5>
                         </td>
                     </tr>

@@ -16,13 +16,16 @@ NiceFish is a series of projects aimed at demonstrating the development and depl
 
 ## 1. Main Dependencies
 
-- Angular 15.2.4
-- PrimeNG 15.3.0
-- Bootstrap 3.4.1
-- echarts 5.4.2
-- ngx-echarts 15.0.3
-- ckeditor5-angular 5.2.0
-- font-awesome 4.7.0
+| Name              | Version | Description                                       |
+| ----------------- | ------- | ------------------------------------------------- |
+| Angular           | 16.2.0  | Angular Core Library.                             |
+| PrimeNG           | 16.2.0  | Open-source component library.                    |
+| Bootstrap         | 5.2.3   | Responsive layout framework.                      |
+| ngx-bootstrap     | 11.0.2  | Open-source component library based on Bootstrap. |
+| echarts           | 5.4.2   | Graphics library from Baidu.                      |
+| ngx-echarts       | 15.0.3  | Angular wrapper for echarts library.              |
+| ckeditor5-angular | 5.2.0   | Rich text editor.                                 |
+| font-awesome      | 4.7.0   | Open-source icon library.                         |
 
 **Note: To prevent NodeJS module compatibility issues, this project locks all Node module versions in package.json. If necessary, you can test compatible version numbers yourself (not recommended, as it consumes a lot of time).**
 

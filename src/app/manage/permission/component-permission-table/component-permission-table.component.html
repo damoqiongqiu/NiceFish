@@ -6,7 +6,7 @@
                     <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text"
                         placeholder="组件名称或者权限字符串" />
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" (click)="searchPermission()">
+                        <button class="btn btn-secondary" type="button" (click)="searchPermission()">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </span>
@@ -16,7 +16,7 @@
                 <div class="input-group pull-right">
                     <button class="btn btn-primary" type="button"
                         (click)="editComponentPermission({compPermId:-1,parentEntity:{compPermId:-1}},false)">
-                        <i class="pi pi-plus" aria-hidden="true"></i>
+                        <i class="fa fa-plus" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
@@ -51,14 +51,14 @@
                                 {{ rowData[col.field] }}
                             </td>
                             <td style="width: 15rem;text-align: right;">
-                                <p-button icon="pi pi-pencil" styleClass="p-button-success"
+                                <p-button icon="fa fa-pencil" styleClass="p-button-success"
                                     [style]="{ 'margin-right': '.5em' }"
                                     (click)="editComponentPermission(rowData,false)"></p-button>
                                 <!-- 点击加号表示创建子节点 -->
-                                <p-button icon="pi pi-plus" styleClass="p-button-warning"
+                                <p-button icon="fa fa-plus" styleClass="p-button-warning"
                                     [style]="{ 'margin-right': '.5em' }"
                                     (click)="editComponentPermission(rowData,true)"></p-button>
-                                <p-button icon="pi pi-trash" styleClass="p-button-danger"
+                                <p-button icon="fa fa-trash" styleClass="p-button-danger"
                                     (click)="delComponentPermission(rowData)"></p-button>
                             </td>
                         </tr>

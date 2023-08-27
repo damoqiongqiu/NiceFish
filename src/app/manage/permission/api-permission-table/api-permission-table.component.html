@@ -5,7 +5,7 @@
         <div class="input-group">
           <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="API 名称或者权限字符串">
           <span class="input-group-btn">
-            <button class="btn btn-default" type="button" (click)="searchPermission()">
+            <button class="btn btn-secondary" type="button" (click)="searchPermission()">
               <i class="fa fa-search" aria-hidden="true"></i>
             </button>
           </span>
@@ -14,7 +14,7 @@
       <div class="col-md-1">
         <div class="input-group pull-right">
           <button class="btn btn-primary" type="button" (click)="newPermission()">
-            <i class="pi pi-plus" aria-hidden="true"></i>
+            <i class="fa fa-plus" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -52,13 +52,13 @@
               </td>
               <td>
                 <h5 *ngFor="let role of rowData.roleEntities">
-                  <span class="label label-info">{{role.roleName}}</span>
+                  <span class="badge bg-info">{{role.roleName}}</span>
                 </h5>
               </td>
               <td style="text-align:right">
-                <p-button icon="pi pi-pencil" styleClass="p-button-success" [style]="{ 'margin-right': '.5em' }"
+                <p-button icon="fa fa-pencil" styleClass="p-button-success" [style]="{ 'margin-right': '.5em' }"
                   (click)="editPermission(rowData, ri)"></p-button>
-                <p-button icon="pi pi-trash" styleClass="p-button-danger"
+                <p-button icon="fa fa-trash" styleClass="p-button-danger"
                   (click)="delPermission(rowData, ri)"></p-button>
               </td>
             </tr>
