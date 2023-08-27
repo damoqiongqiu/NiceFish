@@ -4,7 +4,7 @@ import { PostDetailMainComponent } from "./post-detail-main/post-detail-main.com
 import { PostListComponent } from "./post-list/post-list.component";
 import { AuthGuard } from "../../shared/auth-guard";
 
-export const postRoutes:Routes = [
+export const postRoutes: Routes = [
 	{
 		path: "",
 		redirectTo: "page/1",

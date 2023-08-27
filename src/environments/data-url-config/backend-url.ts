@@ -11,7 +11,7 @@
  * @see https://angular.io/guide/workspace-config#alternate-build-configurations
  */
 export const dataURL = {
-    postListURL: "/cms/post/post-list/<%= page %>",
+    postListURL: "/cms/post/post-list/<%= page %>/<%= rows %>",
     postDetailURL: "/cms/post/post-detail/<%= id %>",
     postTableURL: "/cms/post/manage/post-table/<%= userId %>/<%= page %>",
     delPostURL: "/cms/post/manage/del-post/<%= id %>",
