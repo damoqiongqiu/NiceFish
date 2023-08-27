@@ -1,78 +1,82 @@
 <!-- 顶部导航 -->
-<div class="navbar navbar-fixed-top main-nav" role="navigation">
+<nav class="navbar navbar-expand-md navbar-fixed-top main-nav">
     <div class="container">
-
-        <!-- 全局消息 -->
-        <p-toast position="top-center"></p-toast>
-
-        <!-- 全局弹出确认 -->
-        <p-confirmDialog #cd [style]="{width:'50vw'}">
-            <ng-template pTemplate="footer">
-                <button type="button" pButton icon="pi pi-check" label="确定" class="btn btn-danger"
-                    (click)="cd.accept()"></button>
-                <button type="button" pButton icon="pi pi-times" label="取消" class="btn btn-success"
-                    (click)="cd.reject()"></button>
-            </ng-template>
-        </p-confirmDialog>
-
-        <!-- 全局遮罩 -->
-        <block-spinner></block-spinner>
-
-        <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
-                (click)="onMenuToggle()">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a routerLink="posts" class="navbar-brand-my">
-                <img src="assets/imgs/nice-fish.png" width="45">
-            </a>
-        </div>
-        <div class="navbar-collapse collapse" [ngClass]="{'in':showToggleMenu===true}">
-            <ul class="nav navbar-nav" (click)="onMenuToggle()">
-                <li routerLinkActive="active">
-                    <a routerLink="posts">{{'app.read' | translate}}</a>
+        <a routerLink="posts" class="navbar-brand navbar-brand-my">
+            <img src="assets/imgs/nice-fish.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item me-2" routerLinkActive="active">
+                    <a class="nav-link" routerLink="posts">{{'app.read' | translate}}</a>
                 </li>
-                <li routerLinkActive="active">
-                    <a routerLink="post/write">{{'app.write' | translate}}</a>
+                <li class="nav-item me-2" routerLinkActive="active">
+                    <a class="nav-link" routerLink="post/write">{{'app.write' | translate}}</a>
                 </li>
             </ul>
-            <ul *ngIf="!currentUser?.userName" class="nav navbar-nav navbar-right" (click)="onMenuToggle()">
-                <li routerLinkActive="active">
-                    <a href="https://gitee.com/mumu-osc/NiceFish" target="_blank"><i class="fa fa-github"></i></a>
+            <!-- <div class="d-flex justify-content-center align-items-center flex-grow-1">
+                <form>
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div> -->
+            <ul *ngIf="!currentUser?.userName" class="navbar-nav" (click)="onMenuToggle()">
+                <li class="nav-item me-2" routerLinkActive="active">
+                    <a class="nav-link" href="https://gitee.com/mumu-osc/NiceFish" target="_blank"><i
+                            class="fa fa-github"></i></a>
                 </li>
-                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a routerLink="login"><i class="fa fa-sign-in"></i></a>
+                <li class="nav-item me-2" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="login"><i class="fa fa-sign-in"></i></a>
                 </li>
-                <li routerLinkActive="active">
-                    <a routerLink="register"><i class="fa fa-user-plus"></i></a>
+                <li class="nav-item me-2" routerLinkActive="active">
+                    <a class="nav-link" routerLink="register"><i class="fa fa-user-plus"></i></a>
                 </li>
             </ul>
-            <ul *ngIf="currentUser?.userName" class="nav navbar-nav navbar-right" (click)="onMenuToggle()">
-                <li routerLinkActive="active">
-                    <a href="https://gitee.com/mumu-osc/NiceFish" target="_blank"><i class="fa fa-github"></i></a>
+            <ul *ngIf="currentUser?.userName" class="navbar-nav" (click)="onMenuToggle()">
+                <li class="nav-item me-2" routerLinkActive="active">
+                    <a class="nav-link" href="https://gitee.com/mumu-osc/NiceFish" target="_blank"><i
+                            class="fa fa-github"></i></a>
                 </li>
-                <li routerLinkActive="active">
-                    <a routerLink="home"><i class="fa fa-user"></i></a>
+                <li class="nav-item me-2" routerLinkActive="active">
+                    <a class="nav-link" routerLink="home"><i class="fa fa-user"></i></a>
                 </li>
-                <li routerLinkActive="active">
-                    <a routerLink="manage"><i class="fa fa-cog"></i></a>
+                <li class="nav-item me-2" routerLinkActive="active">
+                    <a class="nav-link" routerLink="manage"><i class="fa fa-cog"></i></a>
                 </li>
-                <li routerLinkActive="active">
-                    <a href="javascript:void(0);" (click)="doLogout()"><i class="fa fa-sign-out"></i></a>
+                <li class="nav-item me-2" routerLinkActive="active">
+                    <a class="nav-link" href="javascript:void(0);" (click)="doLogout()"><i
+                            class="fa fa-sign-out"></i></a>
                 </li>
             </ul>
         </div>
     </div>
-</div>
+</nav>
+
 <!-- 主体内容区域 -->
 <div class="container main-container">
     <router-outlet></router-outlet>
 </div>
+
+<!-- 全局消息 -->
+<p-toast position="top-center"></p-toast>
+
+<!-- 全局弹出确认 -->
+<p-confirmDialog #cd [style]="{width:'50vw'}">
+    <ng-template pTemplate="footer">
+        <button type="button" pButton icon="pi pi-check" label="确定" class="btn btn-danger"
+            (click)="cd.accept()"></button>
+        <button type="button" pButton icon="pi pi-times" label="取消" class="btn btn-success"
+            (click)="cd.reject()"></button>
+    </ng-template>
+</p-confirmDialog>
+
+<!-- 全局遮罩 -->
+<block-spinner></block-spinner>
+
 <!-- 底部区域 -->
-<div class="footer bs-footer">
+<div class="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

@@ -1,16 +1,16 @@
 <div class="user-info-container">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">{{panelTitle}}</h3>
+    <div class="card">
+        <div class="card-header">
+            <h5>{{panelTitle}}</h5>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
             <p><a href="#">头像图片</a></p>
             <p><a href="#">{{currentUser?.userName}}</a></p>
             <p>相看两不厌，唯有敬亭山。</p>
             <p>文章：500</p>
             <p>评论：10</p>
         </div>
-        <div class="panel-footer">
+        <div class="card-footer">
             <button class="btn btn-primary" (click)="followBtnClick()">关注</button>
         </div>
     </div>

@@ -1,32 +1,32 @@
 <div class="role-edit-container" [@fadeIn]>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">创建/编辑角色</h3>
+  <div class="card mb-3">
+    <div class="card-header">
+      <h5>创建/编辑角色</h5>
     </div>
-    <div class="panel-body">
-      <form #roleInfoForm="ngForm" novalidate class="form-horizontal" role="form">
-        <div class="form-group" [ngClass]="{ 'has-error': !roleName.valid }">
-          <label class="col-md-2 control-label">角色名称：</label>
+    <div class="card-body">
+      <form #roleInfoForm="ngForm" novalidate role="form">
+        <div class="row mb-3">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">角色名称：</label>
           <div class="col-md-10">
             <input required name="roleName" [(ngModel)]="roleInfo.roleName" #roleName="ngModel" type="text"
-              class="form-control" placeholder="请输入角色名称" minlength="2" maxlength="32" />
+              class="form-control" [ngClass]="{ 'is-invalid': !roleName.valid }" placeholder="请输入角色名称" minlength="2"
+              maxlength="32" />
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': !roleEnabled.valid }">
-          <label class="col-md-2 control-label">是否启用：</label>
+        <div class="row mb-3 align-items-center">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">是否启用：</label>
           <div class="col-md-10">
-            <div class="checkbox">
-              <label>
-                <input name="roleEnabled" [(ngModel)]="roleInfo.roleEnabled" #roleEnabled="ngModel" type="checkbox" />
-              </label>
+            <div class="form-check">
+              <input name="roleEnabled" [(ngModel)]="roleInfo.roleEnabled" #roleEnabled="ngModel" type="checkbox"
+                class="form-check-input" [ngClass]="{ 'is-invalid': !roleEnabled.valid }" />
             </div>
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': !remark.valid }">
-          <label class="col-md-2 control-label">备注：</label>
+        <div class="row mb-3">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">备注：</label>
           <div class="col-md-10">
             <textarea rows="5" name="remark" [(ngModel)]="roleInfo.remark" #remark="ngModel" type="text"
-              class="form-control" placeholder="备注" maxlength="200">
+              class="form-control" [ngClass]="{ 'is-invalid': !remark.valid }" placeholder="备注" maxlength="200">
             </textarea>
           </div>
         </div>
@@ -34,11 +34,11 @@
     </div>
   </div>
   <!-- 后端接口权限配置表格 -->
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">后端接口权限</h3>
+  <div class="card mb-3">
+    <div class="card-header">
+      <h5>后端接口权限</h5>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
       <p-table [value]="apiPermissionListAll" dataKey="apiPermissionId" editMode="row"
         styleClass="p-datatable-gridlines" [(selection)]="apiPermissionListByRole"
         (selectionChange)="onApiPermSelectionChange($event)">
@@ -76,11 +76,11 @@
     </div>
   </div>
   <!-- 前端页面权限配置表格 -->
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">前端页面权限</h3>
+  <div class="card mb-3">
+    <div class="card-header">
+      <h5>前端页面权限</h5>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
       <p-treeTable [value]="compPermList" [columns]="cols" [resizableColumns]="true" columnResizeMode="expand"
         [scrollable]="true" selectionMode="checkbox" [(selection)]="selectedComp"
         (onNodeSelect)="onCompPermSelect($event)">
@@ -114,7 +114,7 @@
       <button type="button" class="btn btn-success btn-margin-1rem" (click)="roleInfoForm.form.valid && save()">
         保存
       </button>
-      <button type="button" class="btn btn-danger" (click)="cancel()">
+      <button type="button" class="btn btn-secondary" (click)="cancel()">
         取消
       </button>
     </div>

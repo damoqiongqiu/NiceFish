@@ -1,60 +1,63 @@
 <div class="user-login-container" [@fadeIn]>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">{{'signIn.signIn' | translate}}</h3>
+    <div class="card">
+        <div class="card-header">
+            <h5>{{'signIn.signIn' | translate}}</h5>
         </div>
-        <div class="panel-body">
-            <p class="bg-danger">测试用户: admin@126.com / 12345678</p>
-            <form #signInForm="ngForm" (ngSubmit)="signInForm.form.valid && doSignIn()" novalidate
-                class="form-horizontal" role="form">
-                <div class="form-group" [ngClass]="{ 'has-error': signInForm.submitted&&!userName.valid }">
-                    <label class="col-md-2 control-label">邮箱：</label>
+        <div class="card-body">
+            <p class="bg-info">测试用户: admin@126.com / 12345678</p>
+            <form #signInForm="ngForm" (ngSubmit)="signInForm.form.valid && doSignIn()" novalidate role="form">
+                <div class="row mb-3">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">邮箱：</label>
                     <div class="col-md-10">
                         <input required name="userName" [(ngModel)]="signInInfo.userName" #userName="ngModel"
-                            type="text" class="form-control" placeholder="请输入完整邮箱或者手机号">
+                            type="text" class="form-control"
+                            [ngClass]="{ 'is-invalid': signInForm.submitted&&!userName.valid }"
+                            placeholder="请输入完整邮箱或者手机号">
                         <div *ngIf="signInForm.submitted&&!userName.valid" class="text-danger">邮箱必须输入</div>
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{ 'has-error': signInForm.submitted&&!password.valid }">
-                    <label class="col-md-2 control-label">密码：</label>
+                <div class="row mb-3">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">密码：</label>
                     <div class="col-md-10">
                         <input required minlength="8" [(ngModel)]="signInInfo.password" name="password"
-                            #password="ngModel" type="password" class="form-control" placeholder="至少8位">
+                            #password="ngModel" type="password" class="form-control"
+                            [ngClass]="{ 'is-invalid': signInForm.submitted&&!password.valid }" placeholder="至少8位">
                         <div *ngIf="signInForm.submitted&&!password.valid" class="text-danger">密码必须输入,至少要8位</div>
                     </div>
                 </div>
                 <!-- Mock 环境下不显示验证码，也不提交数据。-->
                 <div *ngIf="!isMock">
-                    <div class="form-group" [ngClass]="{ 'has-error': signInForm.submitted&&!captcha.valid }">
-                        <label class="col-md-2 control-label">验证码：</label>
+                    <div class="row mb-3">
+                        <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">验证码：</label>
                         <div class="col-md-10">
                             <input required maxlength="4" [(ngModel)]="signInInfo.captcha" name="captcha" type="text"
-                                #captcha="ngModel" class="form-control" placeholder="至少1位，最多4位" autocomplete="off">
+                                #captcha="ngModel" class="form-control"
+                                [ngClass]="{ 'is-invalid': signInForm.submitted&&!captcha.valid }"
+                                placeholder="至少1位，最多4位" autocomplete="off">
                             <div *ngIf="signInForm.submitted&&!captcha.valid" class="text-danger">至少1位，最多4位</div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-10 col-md-offset-2">
+                    <div class="row mb-3">
+                        <div class="col-md-10 offset-md-2">
                             <captcha></captcha>
                         </div>
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{ 'has-error': signInForm.submitted&&!rememberMe.valid }">
-                    <label class="col-md-2 control-label">记住我：</label>
+                <div class="row mb-3 align-items-center">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">记住我：</label>
                     <div class="col-md-10">
-                        <div class="checkbox">
-                            <label>
-                                <input [(ngModel)]="signInInfo.rememberMe" name="rememberMe" #rememberMe="ngModel"
-                                    type="checkbox">
-                            </label>
+                        <div class="form-check">
+                            <input [(ngModel)]="signInInfo.rememberMe" name="rememberMe" #rememberMe="ngModel"
+                                type="checkbox" class="form-check-input"
+                                [ngClass]="{ 'is-invalid': signInForm.submitted&&!rememberMe.valid }">
                         </div>
                     </div>
                 </div>
-                <div *ngIf="error" class="col-md-offset-2 col-md-10 alert alert-danger">{{error}}</div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
+                <div *ngIf="error" class="offset-md-2 col-md-10 alert alert-danger">{{error}}</div>
+                <div class="row mb-3">
+                    <div class="offset-md-2 col-md-10">
                         <button type="submit" class="btn btn-primary btn-margin-1rem">登录</button>
-                        <button type="button" class="btn btn-default" (click)="retrievePwd()">忘记密码？</button>
+                        <button type="button" class="btn btn-secondary" (click)="retrievePwd()">忘记密码？</button>
                     </div>
                 </div>
             </form>

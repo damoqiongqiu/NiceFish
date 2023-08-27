@@ -1,139 +1,157 @@
 <div class="sys-param-container" [@fadeIn]="'active'">
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card mb-3">
+        <div class="card-header">
             文章设置
         </div>
-        <div class="panel-body">
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label class="col-md-4 control-label">文章标题最小长度：</label>
+        <div class="card-body">
+            <form role="form">
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">文章标题最小长度：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.POST_TITLE_MIN_LEN" name="POST_TITLE_MIN_LEN" type="text" required class="form-control" placeholder="文章标题最小长度">
+                        <input [(ngModel)]="param.POST_TITLE_MIN_LEN" name="POST_TITLE_MIN_LEN" type="text" required
+                            class="form-control" placeholder="文章标题最小长度">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">文章标题最大长度：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">文章标题最大长度：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.POST_TITLE_MAX_LEN" name="POST_TITLE_MAX_LEN" type="text" required class="form-control" placeholder="文章标题最大长度">
+                        <input [(ngModel)]="param.POST_TITLE_MAX_LEN" name="POST_TITLE_MAX_LEN" type="text" required
+                            class="form-control" placeholder="文章标题最大长度">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">文章内容最小长度：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">文章内容最小长度：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.POST_CONTENT_MIN_LEN" name="POST_CONTENT_MIN_LEN" type="text" required class="form-control" placeholder="文章内容最小长度">
+                        <input [(ngModel)]="param.POST_CONTENT_MIN_LEN" name="POST_CONTENT_MIN_LEN" type="text" required
+                            class="form-control" placeholder="文章内容最小长度">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">文章内容最大长度：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">文章内容最大长度：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.POST_CONTENT_MAX_LEN" name="POST_CONTENT_MAX_LEN" type="text" required class="form-control" placeholder="文章内容最大长度">
+                        <input [(ngModel)]="param.POST_CONTENT_MAX_LEN" name="POST_CONTENT_MAX_LEN" type="text" required
+                            class="form-control" placeholder="文章内容最大长度">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">文章列表显示条数：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">文章列表显示条数：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.POST_PAGE_SIZE" name="POST_PAGE_SIZE" type="text" required class="form-control" placeholder="文章列表显示条数">
+                        <input [(ngModel)]="param.POST_PAGE_SIZE" name="POST_PAGE_SIZE" type="text" required
+                            class="form-control" placeholder="文章列表显示条数">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">每日发文数量限制：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">每日发文数量限制：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.POST_NUM_EACH_DAY" name="POST_NUM_EACH_DAY" type="text" required class="form-control" placeholder="每日发文数量限制">
+                        <input [(ngModel)]="param.POST_NUM_EACH_DAY" name="POST_NUM_EACH_DAY" type="text" required
+                            class="form-control" placeholder="每日发文数量限制">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">每篇文章附件数量：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">每篇文章附件数量：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.POST_ATTACH_NUM_MAX" name="POST_ATTACH_NUM_MAX" type="text" required class="form-control" placeholder="每篇文章附件数量">
+                        <input [(ngModel)]="param.POST_ATTACH_NUM_MAX" name="POST_ATTACH_NUM_MAX" type="text" required
+                            class="form-control" placeholder="每篇文章附件数量">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">每个附件最大体积：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">每个附件最大体积：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.POST_ATTACH_SIZE_MAX" name="POST_ATTACH_SIZE_MAX" type="text" required class="form-control" placeholder="每个附件最大体积">
+                        <input [(ngModel)]="param.POST_ATTACH_SIZE_MAX" name="POST_ATTACH_SIZE_MAX" type="text" required
+                            class="form-control" placeholder="每个附件最大体积">
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card mb-3">
+        <div class="card-header">
             评论设置
         </div>
-        <div class="panel-body">
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label class="col-md-4 control-label">评论最小长度：</label>
+        <div class="card-body">
+            <form role="form">
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">评论最小长度：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.COMMENT_MIN_LEN" name="COMMENT_MIN_LEN" type="text" required class="form-control" placeholder="评论最小长度">
+                        <input [(ngModel)]="param.COMMENT_MIN_LEN" name="COMMENT_MIN_LEN" type="text" required
+                            class="form-control" placeholder="评论最小长度">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">评论最大长度：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">评论最大长度：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.COMMENT_MAX_LEN" name="COMMENT_MAX_LEN" type="text" required class="form-control" placeholder="评论最大长度">
+                        <input [(ngModel)]="param.COMMENT_MAX_LEN" name="COMMENT_MAX_LEN" type="text" required
+                            class="form-control" placeholder="评论最大长度">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">评论列表每页显示条数：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">评论列表每页显示条数：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.COMMENT_PAGE_SIZE" name="COMMENT_PAGE_SIZE" type="text" required class="form-control" placeholder="评论列表每页显示条数">
+                        <input [(ngModel)]="param.COMMENT_PAGE_SIZE" name="COMMENT_PAGE_SIZE" type="text" required
+                            class="form-control" placeholder="评论列表每页显示条数">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">评论时间间隔（分钟）：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">评论时间间隔（分钟）：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.COMMENT_TIME_INTERVAL" name="COMMENT_TIME_INTERVAL" type="text" required class="form-control" placeholder="评论时间间隔（分钟）">
+                        <input [(ngModel)]="param.COMMENT_TIME_INTERVAL" name="COMMENT_TIME_INTERVAL" type="text"
+                            required class="form-control" placeholder="评论时间间隔（分钟）">
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card mb-3">
+        <div class="card-header">
             用户设置
         </div>
-        <div class="panel-body">
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label class="col-md-4 control-label">用户名最小长度：</label>
+        <div class="card-body">
+            <form role="form">
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">用户名最小长度：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.USER_NAME_MIN_LEN" name="USER_NAME_MIN_LEN" type="text" required class="form-control" placeholder="用户名最小长度">
+                        <input [(ngModel)]="param.USER_NAME_MIN_LEN" name="USER_NAME_MIN_LEN" type="text" required
+                            class="form-control" placeholder="用户名最小长度">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">用户名最大长度：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">用户名最大长度：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.USER_NAME_MAX_LEN" name="USER_NAME_MAX_LEN" type="text" required class="form-control" placeholder="用户名最大长度">
+                        <input [(ngModel)]="param.USER_NAME_MAX_LEN" name="USER_NAME_MAX_LEN" type="text" required
+                            class="form-control" placeholder="用户名最大长度">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">密码最小长度：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">密码最小长度：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.USER_PWD_MIN_LEN" name="USER_PWD_MIN_LEN" type="text" required class="form-control" placeholder="密码最小长度">
+                        <input [(ngModel)]="param.USER_PWD_MIN_LEN" name="USER_PWD_MIN_LEN" type="text" required
+                            class="form-control" placeholder="密码最小长度">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">密码最大长度：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">密码最大长度：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.USER_PWD_MAX_LEN" name="USER_PWD_MAX_LEN" type="text" required class="form-control" placeholder="密码最大长度">
+                        <input [(ngModel)]="param.USER_PWD_MAX_LEN" name="USER_PWD_MAX_LEN" type="text" required
+                            class="form-control" placeholder="密码最大长度">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">个人简介最大长度：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">个人简介最大长度：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.USER_DESC_MAX_LEN" name="USER_DESC_MAX_LEN" type="text" required class="form-control" placeholder="个人简介最大长度">
+                        <input [(ngModel)]="param.USER_DESC_MAX_LEN" name="USER_DESC_MAX_LEN" type="text" required
+                            class="form-control" placeholder="个人简介最大长度">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">新用户自动禁言时间（5分钟）：</label>
+                <div class="row mb-3">
+                    <label class="col-md-4 col-form-label">新用户自动禁言时间（5分钟）：</label>
                     <div class="col-md-8">
-                        <input [(ngModel)]="param.USER_AUTO_MUTE_TIME" name="USER_AUTO_MUTE_TIME" type="text" required class="form-control" placeholder="新用户自动禁言时间（5分钟）">
+                        <input [(ngModel)]="param.USER_AUTO_MUTE_TIME" name="USER_AUTO_MUTE_TIME" type="text" required
+                            class="form-control" placeholder="新用户自动禁言时间（5分钟）">
                     </div>
                 </div>
             </form>
         </div>
     </div>
     <button type="submit" class="btn btn-primary btn-margin-1rem" (click)="saveSysParams()">保存</button>
-    <button type="button" class="btn btn-default" (click)="cancel()">取消</button>
+    <button type="button" class="btn btn-secondary" (click)="cancel()">取消</button>
 </div>

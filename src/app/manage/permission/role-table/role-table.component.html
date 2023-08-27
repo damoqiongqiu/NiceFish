@@ -5,7 +5,7 @@
         <div class="input-group">
           <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="角色名称">
           <span class="input-group-btn">
-            <button class="btn btn-default" type="button" (click)="searchRole()">
+            <button class="btn btn-secondary" type="button" (click)="searchRole()">
               <i class="fa fa-search" aria-hidden="true"></i>
             </button>
           </span>
@@ -14,7 +14,7 @@
       <div class="col-md-1">
         <div class="input-group pull-right">
           <button class="btn btn-primary" type="button" (click)="newRole()">
-            <i class="pi pi-plus" aria-hidden="true"></i>
+            <i class="fa fa-plus" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -42,26 +42,26 @@
                 {{rowData.roleName}}
               </td>
               <td>
-                <span *ngIf="rowData.status==1" class='label label-success'>已启用</span>
-                <span *ngIf="rowData.status==0" class='label label-danger'>已禁用</span>
+                <span *ngIf="rowData.status==1" class='badge bg-success'>已启用</span>
+                <span *ngIf="rowData.status==0" class='badge bg-danger'>已禁用</span>
               </td>
               <td>
                 {{rowData.remark}}
               </td>
               <td>
                 <h5 *ngFor="let componentPermission of rowData.componentEntities">
-                  <span class="label label-warning">{{componentPermission.componentName}}</span>
+                  <span class="badge bg-warning">{{componentPermission.componentName}}</span>
                 </h5>
               </td>
               <td>
                 <h5 *ngFor="let apiPermission of rowData.apiEntities">
-                  <span class="label label-warning">{{apiPermission.apiName}}</span>
+                  <span class="badge bg-warning">{{apiPermission.apiName}}</span>
                 </h5>
               </td>
               <td style="text-align:right">
-                <p-button icon="pi pi-pencil" styleClass="p-button-success" [style]="{ 'margin-right': '.5em' }"
+                <p-button icon="fa fa-pencil" styleClass="p-button-success" [style]="{ 'margin-right': '.5em' }"
                   (click)="editRole(rowData, ri)"></p-button>
-                <p-button icon="pi pi-trash" styleClass="p-button-danger" (click)="delRole(rowData, ri)"></p-button>
+                <p-button icon="fa fa-trash" styleClass="p-button-danger" (click)="delRole(rowData, ri)"></p-button>
               </td>
             </tr>
           </ng-template>

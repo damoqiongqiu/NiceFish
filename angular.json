@@ -16,7 +16,9 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js"
+            ],
             "assets": [
               "src/assets",
               "src/mock-data",
@@ -39,7 +41,7 @@
               "extractLicenses": true,
               "vendorChunk": true,
               "buildOptimizer": true,
-              "statsJson":true,
+              "statsJson": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -56,7 +58,7 @@
               "extractLicenses": true,
               "vendorChunk": true,
               "buildOptimizer": true,
-              "statsJson":true,
+              "statsJson": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -145,7 +147,10 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "./karma.conf.js",
             "codeCoverage": true,
-            "polyfills": ["zone.js","zone.js/testing"],
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "scripts": [
               "node_modules/echarts/dist/echarts.js"
             ],
@@ -226,7 +231,6 @@
       }
     }
   },
-  "defaultProject": "NiceFish",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "",

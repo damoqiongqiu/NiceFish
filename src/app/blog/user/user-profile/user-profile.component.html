@@ -1,95 +1,101 @@
 <div class="user-profile-container">
-  <div class="panel panel-default">
-    <div class="panel-heading">创建/编辑用户</div>
-    <div class="panel-body">
-      <form class="form-horizontal" role="form" [formGroup]="formGroup">
-        <div class="form-group">
-          <label class="col-md-2 control-label">当前头像：</label>
+  <div class="card">
+    <div class="card-header">创建/编辑用户</div>
+    <div class="card-body">
+      <form role="form" [formGroup]="formGroup">
+        <div class="row mb-3">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">当前头像：</label>
           <div class="col-md-10">
             <img src="assets/imgs/angular2-small.png" />
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('avatarURL').invalid }">
-          <label class="col-md-2 control-label">上传头像：</label>
+        <div class="row mb-3">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">上传头像：</label>
           <div class="col-md-10">
-            <input class="form-control" type="file" placeholder="上传头像" formControlName="avatarURL" />
+            <input class="form-control" [ngClass]="{ 'is-invalid': formGroup.get('avatarURL').invalid }" type="file"
+              placeholder="上传头像" formControlName="avatarURL" />
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('userName').invalid }">
-          <label class="col-md-2 control-label">用户名：</label>
+        <div class="row mb-3">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">用户名：</label>
           <div class="col-md-10">
-            <input class="form-control" required="required" type="input" placeholder="用户名" formControlName="userName" />
+            <input class="form-control" [ngClass]="{ 'is-invalid': formGroup.get('userName').invalid }"
+              required="required" type="input" placeholder="用户名" formControlName="userName" />
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('nickName').invalid }">
-          <label class="col-md-2 control-label">昵称：</label>
+        <div class="row mb-3">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">昵称：</label>
           <div class="col-md-10">
-            <input class="form-control" type="input" placeholder="昵称" formControlName="nickName" />
+            <input class="form-control" [ngClass]="{ 'is-invalid': formGroup.get('nickName').invalid }" type="input"
+              placeholder="昵称" formControlName="nickName" />
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('gender').invalid }">
-          <label class="col-md-2 control-label">性别：</label>
+        <div class="row mb-3 align-items-center">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">性别：</label>
           <div class="col-md-10">
             <ng-container *ngFor="let g of genderList; let i = index">
               <label class="radio-inline">
-                <input type="radio" name="gender" [value]="g.value" formControlName="gender"> {{g.label}}
+                <input type="radio" name="gender" [value]="g.value" formControlName="gender"
+                  [ngClass]="{ 'is-invalid': formGroup.get('gender').invalid }"> {{g.label}}
               </label>
             </ng-container>
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('email').invalid }">
-          <label class="col-md-2 control-label">常用邮箱：</label>
+        <div class="row mb-3">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">常用邮箱：</label>
           <div class="col-md-10">
-            <input class="form-control" type="input" placeholder="常用邮箱" formControlName="email" />
+            <input class="form-control" [ngClass]="{ 'is-invalid': formGroup.get('email').invalid }" type="input"
+              placeholder="常用邮箱" formControlName="email" />
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('cellphone').invalid }">
-          <label class="col-md-2 control-label">手机号：</label>
+        <div class="row mb-3">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">手机号：</label>
           <div class="col-md-10">
-            <input class="form-control" type="input" placeholder="手机号" formControlName="cellphone" />
+            <input class="form-control" [ngClass]="{ 'is-invalid': formGroup.get('cellphone').invalid }" type="input"
+              placeholder="手机号" formControlName="cellphone" />
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('password').invalid }">
-          <label class="col-md-2 control-label">密码：</label>
+        <div class="row mb-3">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">密码：</label>
           <div class="col-md-10">
-            <input class="form-control" type="password" placeholder="密码" formControlName="password" />
+            <input class="form-control" [ngClass]="{ 'is-invalid': formGroup.get('password').invalid }" type="password"
+              placeholder="密码" formControlName="password" />
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('confirmPassword').invalid }">
-          <label class="col-md-2 control-label">重复密码：</label>
+        <div class="row mb-3">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">重复密码：</label>
           <div class="col-md-10">
-            <input class="form-control" type="password" placeholder="重复密码" formControlName="confirmPassword" />
+            <input class="form-control" [ngClass]="{ 'is-invalid': formGroup.get('confirmPassword').invalid }"
+              type="password" placeholder="重复密码" formControlName="confirmPassword" />
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('status').invalid }">
-          <label class="col-md-2 control-label">启用：</label>
+        <div class="row mb-3 align-items-center">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">启用：</label>
           <div class="col-md-10">
-            <div class="checkbox">
-              <label>
-                <input name="status" type="checkbox" formControlName="status" checked />
-              </label>
+            <div class="form-check">
+              <input name="status" type="checkbox" class="form-check-input" formControlName="status" checked
+                [ngClass]="{ 'is-invalid': formGroup.get('status').invalid }" />
             </div>
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': formGroup.get('remark').invalid }">
-          <label class="col-md-2 control-label">简介：</label>
+        <div class="row mb-3">
+          <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">简介：</label>
           <div class="col-md-10">
-            <textarea name="remark" rows="5" class="form-control" formControlName="remark" placeholder="简介"></textarea>
+            <textarea name="remark" rows="5" class="form-control" formControlName="remark" placeholder="简介"
+              [ngClass]="{ 'is-invalid': formGroup.get('remark').invalid }"></textarea>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-12 offset-md-2">
+            <button type="button" class="btn btn-primary btn-margin-1rem" (click)="save()">
+              保存
+            </button>
+            <button type="button" class="btn btn-secondary" (click)="cancel()">
+              取消
+            </button>
           </div>
         </div>
       </form>
     </div>
   </div>
-  <form class="form-horizontal" role="form">
-    <div class="form-group">
-      <div class="col-md-12">
-        <button type="button" class="btn btn-primary btn-margin-1rem" (click)="save()">
-          保存
-        </button>
-        <button type="button" class="btn btn-default" (click)="cancel()">
-          取消
-        </button>
-      </div>
-    </div>
-  </form>
 </div>

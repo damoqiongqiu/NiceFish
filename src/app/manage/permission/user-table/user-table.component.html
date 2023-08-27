@@ -6,7 +6,7 @@
                     <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text"
                         placeholder="用户名，手机号">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" (click)="searchUser()">
+                        <button class="btn btn-secondary" type="button" (click)="searchUser()">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </span>
@@ -15,7 +15,7 @@
             <div class="col-md-1">
                 <div class="input-group pull-right">
                     <button class="btn btn-primary" type="button" (click)="newUser()">
-                        <i class="pi pi-plus" aria-hidden="true"></i>
+                        <i class="fa fa-plus" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
@@ -25,8 +25,8 @@
         <div class="col-md-12">
             <div class="user-item-container">
                 <p-table [value]="userList" dataKey="id" editMode="row" [paginator]="true" [rows]="10" [pageLinks]="10"
-                    [totalRecords]="totalRecords" [lazy]="true" (onLazyLoad)="pageChanged($event)"
-                    styleClass="p-datatable-gridlines">
+                    [totalRecords]="totalRecords" [resizableColumns]="true" [lazy]="true"
+                    (onLazyLoad)="pageChanged($event)" styleClass="p-datatable-gridlines">
                     <ng-template pTemplate="header">
                         <tr>
                             <th>用户名</th>
@@ -34,7 +34,6 @@
                             <th>状态</th>
                             <th>email</th>
                             <th>手机号</th>
-                            <th>注册时间</th>
                             <th>角色列表</th>
                             <th>操作</th>
                         </tr>
@@ -48,28 +47,25 @@
                                 {{rowData.nickName}}
                             </td>
                             <td>
-                                <span *ngIf="rowData.status == 1" class="label label-success">正常</span>
-                                <span *ngIf="rowData.status == 0" class="label label-danger">禁用</span>
+                                <span *ngIf="rowData.status == 1" class="badge bg-success">正常</span>
+                                <span *ngIf="rowData.status == 0" class="badge bg-danger">禁用</span>
                             <td>
                                 {{rowData.email}}
                             </td>
                             <td>
                                 {{rowData.cellphone}}
                             </td>
-                            <td>
-                                {{rowData.createTime}}
-                            </td>
                             <td style="width: 80px;">
                                 <h5 *ngFor="let role of rowData.roleEntities">
-                                    <span class="label label-success">{{role.roleName}}</span>
+                                    <span class="badge bg-success">{{role.roleName}}</span>
                                 </h5>
                             </td>
                             <td style="text-align:right">
-                                <p-button icon="pi pi-pencil" styleClass="p-button-success"
+                                <p-button icon="fa fa-pencil" styleClass="p-button-success"
                                     [style]="{ 'margin-right': '.5em' }" (click)="editUser(rowData, ri)"></p-button>
                                 <p-button icon="pi pi-user" styleClass="p-button-warning"
                                     [style]="{ 'margin-right': '.5em' }" (click)="userEditRole(rowData,ri)"></p-button>
-                                <p-button icon="pi pi-trash" styleClass="p-button-danger"
+                                <p-button icon="fa fa-trash" styleClass="p-button-danger"
                                     (click)="delUser(rowData, ri)"></p-button>
                             </td>
                         </tr>

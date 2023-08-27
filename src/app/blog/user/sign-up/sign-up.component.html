@@ -1,45 +1,53 @@
 <div class="user-register-container" [@fadeIn]>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">{{panelTitle}}</h3>
+    <div class="card">
+        <div class="card-header">
+            <h5>{{panelTitle}}</h5>
         </div>
-        <div class="panel-body">
-            <form [formGroup]="userForm" class="form-horizontal" role="form" novalidate>
-                <div class="form-group" [ngClass]="{'has-error': formErrors.email }">
-                    <label class="col-md-3 control-label">{{'userSignUp.email' | translate}}</label>
+        <div class="card-body">
+            <form [formGroup]="userForm" role="form" novalidate>
+                <div class="row mb-3">
+                    <label class="col-md-3 col-form-label d-flex justify-content-end  pe-3">{{'userSignUp.email'
+                        | translate}}</label>
                     <div class="col-md-9">
                         <input formControlName="email" type="email" class="form-control"
+                            [ngClass]="{'is-invalid': formErrors.email }"
                             placeholder="{{'userSignUp.email-placeholder' | translate}}">
                         <div *ngIf="formErrors.email" class="text-danger">
                             {{ formErrors.email }}
                         </div>
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{'has-error': formErrors.nickName }">
-                    <label class="col-md-3 control-label">{{'userSignUp.nickName' | translate}}</label>
+                <div class="row mb-3">
+                    <label class="col-md-3 col-form-label d-flex justify-content-end  pe-3">{{'userSignUp.nickName'
+                        | translate}}</label>
                     <div class="col-md-9">
                         <input required formControlName="nickName" type="nickName" class="form-control"
+                            [ngClass]="{'is-invalid': formErrors.nickName }"
                             placeholder="{{'userSignUp.nickName-placeholder' | translate}}">
                         <div *ngIf="formErrors.nickName" class="text-danger">
                             {{ formErrors.nickName }}
                         </div>
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{'has-error': formErrors.password }">
-                    <label class="col-md-3 control-label">{{'userSignUp.password' | translate}}</label>
+                <div class="row mb-3">
+                    <label class="col-md-3 col-form-label d-flex justify-content-end  pe-3">{{'userSignUp.password'
+                        | translate}}</label>
                     <div class="col-md-9">
                         <input formControlName="password" validateEqual="confirmPassword" reverse=true type="password"
-                            class="form-control" placeholder="{{'userSignUp.password-placeholder' | translate}}">
+                            class="form-control" [ngClass]="{'is-invalid': formErrors.password }"
+                            placeholder="{{'userSignUp.password-placeholder' | translate}}">
                         <div *ngIf="formErrors.password" class="text-danger">
                             {{ formErrors.password }}
                         </div>
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{'has-error': formErrors.confirmPassword }">
-                    <label class="col-md-3 control-label">{{'userSignUp.repeat-pwd' | translate}}</label>
+                <div class="row mb-3">
+                    <label class="col-md-3 col-form-label d-flex justify-content-end  pe-3">{{'userSignUp.repeat-pwd'
+                        | translate}}</label>
                     <div class="col-md-9">
                         <input formControlName="confirmPassword" validateEqual="password" type="password"
-                            class="form-control" placeholder="{{'userSignUp.repeat-pwd-placeholder' | translate}}">
+                            class="form-control" [ngClass]="{'is-invalid': formErrors.confirmPassword }"
+                            placeholder="{{'userSignUp.repeat-pwd-placeholder' | translate}}">
                         <div *ngIf="formErrors.confirmPassword" class="text-danger">
                             {{ formErrors.confirmPassword }}
                         </div>
@@ -47,24 +55,24 @@
                 </div>
                 <!-- Mock 环境下不显示验证码，也不提交数据。-->
                 <div *ngIf="!isMock">
-                    <div class="form-group" [ngClass]="{ 'has-error': formErrors.captcha }">
-                        <label class="col-md-3 control-label">验证码：</label>
+                    <div class="row mb-3">
+                        <label class="col-md-3 col-form-label d-flex justify-content-end  pe-3">验证码：</label>
                         <div class="col-md-9">
                             <input required maxlength="4" formControlName="captcha" type="text" class="form-control"
-                                placeholder="至少1位，最多4位">
+                                [ngClass]="{ 'is-invalid': formErrors.captcha }" placeholder="至少1位，最多4位">
                             <div *ngIf="formErrors.captcha" class="text-danger" autocomplete="off">至少1位，最多4位</div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-9 col-md-offset-3">
+                    <div class="row mb-3">
+                        <div class="col-md-9 offset-md-3">
                             <captcha></captcha>
                         </div>
                     </div>
                 </div>
-                <div *ngIf="formErrors.formError" class="col-md-offset-3 col-md-9 alert alert-danger">
+                <div *ngIf="formErrors.formError" class="offset-md-3 col-md-9 alert alert-danger">
                     {{ formErrors.formError }}</div>
-                <div class="form-group">
-                    <div class="col-md-offset-3 col-md-9">
+                <div class="row mb-3">
+                    <div class="offset-md-3 col-md-9">
                         <button [disabled]="userForm.invalid" type="button" (click)="doSignUp()"
                             class="btn btn-success">{{btnLabel}}</button>
                     </div>
