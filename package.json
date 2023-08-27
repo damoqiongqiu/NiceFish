@@ -40,7 +40,7 @@
     "font-awesome": "4.7.0",
     "lodash": "4.17.21",
     "md5": "2.2.1",
-    "ngx-bootstrap": "^11.0.2",
+    "ngx-bootstrap": "11.0.2",
     "ngx-echarts": "15.0.3",
     "primeicons": "6.0.1",
     "primeng": "16.2.0",
