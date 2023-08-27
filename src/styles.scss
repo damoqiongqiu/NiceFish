@@ -1,14 +1,17 @@
-@import "assets/css/bootstrap-3.3.7-custom/css/bootstrap.min.css";
+//bootstrap5 基础样式 https://getbootstrap.com/docs/5.3
+//FIXME:这里无法导入 bootstrap.scss 
+@import '~bootstrap/dist/css/bootstrap.css';
 
 //PrimeNG 官方样式定制工具：https://primeng.org/
 @import "assets/css/primeng-theme/bootstrap-light/theme.css";
 @import "assets/css/primeng-bootstrap-custom.scss";
-@import "~font-awesome/css/font-awesome.min.css";
 @import "~primeng/resources/primeng.min.css";
 
 //PrimeNG 提供的图标库 https://primeng.org/icons#download
 @import "~primeicons/primeicons.css";
 
+//font-awesome 图标库 https://fontawesome.com
+@import "~font-awesome/css/font-awesome.min.css";
 
 /* 一些自定义的全局样式 */
 * {

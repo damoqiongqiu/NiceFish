@@ -1,22 +1,22 @@
-<div class="container forget-pwd-container" [@fadeIn]>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">找回密码</h3>
+<div class="forget-pwd-container" [@fadeIn]>
+    <div class="card">
+        <div class="card-header">
+            <h5>找回密码</h5>
         </div>
-        <div class="panel-body">
-            <form *ngIf="!message" class="form-horizontal" #form="ngForm"
-                (ngSubmit)="form.form.valid && sendValidationEmail()" role="form" novalidate>
-                <div class="form-group" [ngClass]="{'has-error': form.submitted && !email.valid}">
-                    <label class="col-md-2 control-label">邮箱：</label>
+        <div class="card-body">
+            <form *ngIf="!message" #form="ngForm" (ngSubmit)="form.form.valid && sendValidationEmail()" role="form"
+                novalidate>
+                <div class="row mb-3">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">邮箱：</label>
                     <div class="col-md-10">
                         <input required pattern="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$"
                             #email="ngModel" [(ngModel)]="user.email" name="email" type="email" class="form-control"
-                            placeholder="注册时使用的邮箱">
+                            [ngClass]="{'is-invalid': form.submitted && !email.valid}" placeholder="注册时使用的邮箱">
                         <div *ngIf="form.submitted && !email.valid" class="text-danger">请输入注册时使用的邮箱。</div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
+                <div class="row mb-3">
+                    <div class="offset-md-2 col-md-10">
                         <button type="button" class="btn btn-primary" (click)="sendValidationEmail()">发送验证邮件</button>
                     </div>
                 </div>

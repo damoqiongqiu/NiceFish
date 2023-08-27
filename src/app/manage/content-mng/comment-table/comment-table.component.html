@@ -5,7 +5,7 @@
                 <div class="input-group">
                     <input [(ngModel)]="searchStr" name="searchStr" class="form-control" type="text" placeholder="内容">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" (click)="searchRole()">
+                        <button class="btn btn-secondary" type="button" (click)="searchRole()">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </span>
@@ -39,7 +39,7 @@
                                 {{rowData.time}}
                             </td>
                             <td style="text-align:center">
-                                <p-button icon="pi pi-trash" styleClass="p-button-danger"
+                                <p-button icon="fa fa-trash" styleClass="p-button-danger"
                                     (click)="delComment(rowData, ri)"></p-button>
                             </td>
                         </tr>

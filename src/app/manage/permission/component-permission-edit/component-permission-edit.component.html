@@ -1,103 +1,108 @@
 <div class="role-edit-container" [@fadeIn]>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">创建/编辑前端组件权限</h3>
+    <div class="card">
+        <div class="card-header">
+            <h5>创建/编辑前端组件权限</h5>
         </div>
-        <div class="panel-body">
-            <form class="form-horizontal" role="form" #roleInfoForm="ngForm" novalidate>
-                <div class="form-group" *ngIf="(compPermId=='-1')&&(!componentPermission.parentEntity)">
-                    <label class="col-md-2 control-label">父层组件：</label>
+        <div class="card-body">
+            <form role="form" #roleInfoForm="ngForm" novalidate>
+                <div class="row mb-3" *ngIf="(compPermId=='-1')&&(!componentPermission.parentEntity)">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">父层组件：</label>
                     <div class="col-md-10">
-                        <span class="label label-danger form-control">无</span>
+                        <span class="badge bg-danger form-control">无</span>
                     </div>
                 </div>
-                <div class="form-group" *ngIf="componentPermission.parentEntity">
-                    <label class="col-md-2 control-label">父层组件：</label>
+                <div class="row mb-3" *ngIf="componentPermission.parentEntity">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">父层组件：</label>
                     <div class="col-md-10">
                         <span
-                            class="label label-danger form-control">{{componentPermission.parentEntity.componentName}}</span>
+                            class="badge bg-danger form-control">{{componentPermission.parentEntity.componentName}}</span>
                     </div>
                 </div>
-                <div class=" form-group" [ngClass]="{ 'has-error': !componentName.valid }">
-                    <label class="col-md-2 control-label">组件名称：</label>
+                <div class=" row mb-3">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">组件名称：</label>
                     <div class="col-md-10">
                         <input name="componentName" [(ngModel)]="componentPermission.componentName"
-                            #componentName="ngModel" type="text" class="form-control" placeholder="请输入组件名称" required
+                            #componentName="ngModel" type="text" class="form-control"
+                            [ngClass]="{ 'is-invalid': !componentName.valid }" placeholder="请输入组件名称" required
                             minlength="2" maxlength="64" />
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{ 'has-error': !icon.valid }">
-                    <label class="col-md-2 control-label">组件图标：</label>
+                <div class="row mb-3">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">组件图标：</label>
                     <div class="col-md-10">
                         <input name="icon" [(ngModel)]="componentPermission.icon" #icon="ngModel" type="text"
-                            class="form-control" placeholder="请输入图标 URL" maxlength="1024" />
+                            class="form-control" [ngClass]="{ 'is-invalid': !icon.valid }" placeholder="请输入图标 URL"
+                            maxlength="1024" />
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{ 'has-error': !url.valid }">
-                    <label class="col-md-2 control-label">组件 URL：</label>
+                <div class="row mb-3">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">组件
+                        URL：</label>
                     <div class="col-md-10">
                         <input name="url" [(ngModel)]="componentPermission.url" #url="ngModel" type="text"
-                            class="form-control" placeholder="请输入 URL" maxlength="512" />
+                            class="form-control" [ngClass]="{ 'is-invalid': !url.valid }" placeholder="请输入 URL"
+                            maxlength="512" />
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{ 'has-error': !displayOrder.valid }">
-                    <label class="col-md-2 control-label">显示顺序：</label>
+                <div class="row mb-3">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">显示顺序：</label>
                     <div class="col-md-10">
                         <input name="displayOrder" [(ngModel)]="componentPermission.displayOrder"
-                            #displayOrder="ngModel" type="number" class="form-control" placeholder="请输入显示顺序" required
+                            #displayOrder="ngModel" type="number" class="form-control"
+                            [ngClass]="{ 'is-invalid': !displayOrder.valid }" placeholder="请输入显示顺序" required
                             minlength="1" maxlength="32" />
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{ 'has-error': !permission.valid }">
-                    <label class="col-md-2 control-label">权限通配符：</label>
+                <div class="row mb-3">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">权限通配符：</label>
                     <div class="col-md-10">
                         <input name="permission" [(ngModel)]="componentPermission.permission" #permission="ngModel"
-                            type="text" class="form-control" placeholder="请输入权限通配符" required="" minlength="1"
-                            maxlength="512" />
-                        <p class="bg-danger">
+                            type="text" class="form-control" [ngClass]="{ 'is-invalid': !permission.valid }"
+                            placeholder="请输入权限通配符" required="" minlength="1" maxlength="512" />
+                        <p class="bg-info">
                             Apache Shiro 通配符权限文档： https://shiro.apache.org/permissions.html
                         </p>
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{ 'has-error': !compVisiable.valid }">
-                    <label class="col-md-2 control-label">是否启用：</label>
+                <div class="row mb-3 align-items-center">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">是否启用：</label>
                     <div class="col-md-10">
-                        <div class="checkbox">
-                            <label>
-                                <input name="compVisiable" [(ngModel)]="componentPermission.compVisiable"
-                                    #compVisiable="ngModel" type="checkbox" required />
-                            </label>
+                        <div class="form-check">
+                            <input name="compVisiable" [(ngModel)]="componentPermission.compVisiable"
+                                #compVisiable="ngModel" type="checkbox" required class="form-check-input"
+                                [ngClass]="{ 'is-invalid': !compVisiable.valid }" />
                         </div>
                     </div>
                 </div>
                 <!-- 编辑的时候显示，新建的时候不显示 -->
-                <div class="form-group" *ngIf="compPermId!=='-1'">
-                    <label class="col-md-2 control-label">创建时间：</label>
+                <div class="row mb-3 align-items-center" *ngIf="compPermId!=='-1'">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">创建时间：</label>
                     <div class="col-md-10">
                         {{componentPermission.createTime | date: 'yyyy-MM-dd HH:mm:ss'}}
                     </div>
                 </div>
                 <!-- 编辑的时候显示，新建的时候不显示 -->
-                <div class="form-group" *ngIf="compPermId!=='-1'">
-                    <label class="col-md-2 control-label">更新时间：</label>
+                <div class="row mb-3 align-items-center" *ngIf="compPermId!=='-1'">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">更新时间：</label>
                     <div class="col-md-10">
                         {{componentPermission.updateTime | date: 'yyyy-MM-dd HH:mm:ss'}}
                     </div>
                 </div>
-                <div class="form-group" [ngClass]="{ 'has-error': !remark.valid }">
-                    <label class="col-md-2 control-label">备注：</label>
+                <div class="row mb-3">
+                    <label class="col-md-2 col-form-label d-flex justify-content-end  pe-3">备注：</label>
                     <div class="col-md-10">
                         <textarea rows="5" name="remark" [(ngModel)]="componentPermission.remark" #remark="ngModel"
-                            type="text" class="form-control" placeholder="备注" maxlength="1024">
+                            type="text" class="form-control" [ngClass]="{ 'is-invalid': !remark.valid }"
+                            placeholder="备注" maxlength="1024">
                         </textarea>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
+                <div class="row mb-3">
+                    <div class="offset-md-2 col-md-10">
                         <button type="submit" class="btn btn-primary btn-margin-1rem" (click)="save()">
                             保存
                         </button>
-                        <button type="button" class="btn btn-default" (click)="cancel()">
+                        <button type="button" class="btn btn-secondary" (click)="cancel()">
                             取消
                         </button>
                     </div>

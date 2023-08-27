@@ -1,23 +1,31 @@
 <div class="add-component-container">
     <div *ngIf="currentUser?.userName">
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-md-12">
                 <form role="form" #commentForm="ngForm" (ngSubmit)="commentForm.form.valid&&doWriteComment()"
                     novalidate>
-                    <div class="form-group" [ngClass]="{ 'has-error': commentForm.submitted && !content.valid }">
-                        <textarea required minlength="5" maxlength="140" name="content" #content="ngModel"
-                            [(ngModel)]="comment.content" rows="5" class="form-control"
-                            placeholder="5-140个字符，非法字符自动截断。"></textarea>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <textarea required minlength="5" maxlength="140" name="content" #content="ngModel"
+                                [(ngModel)]="comment.content" rows="5" class="form-control"
+                                [ngClass]="{ 'is-invalid': commentForm.submitted && !content.valid }"
+                                placeholder="5-140个字符，非法字符自动截断。"></textarea>
+                        </div>
                     </div>
                     <!-- Mock 环境下不显示验证码，也不提交数据。-->
                     <div *ngIf="!isMock">
-                        <div class="form-group" [ngClass]="{ 'has-error': commentForm.submitted && !captcha.valid }">
-                            <input required maxlength="4" [(ngModel)]="comment.captcha" name="captcha"
-                                #captcha="ngModel" type="text" class="form-control" placeholder="至少1位，最多4位"
-                                autocomplete="off">
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <input required maxlength="4" [(ngModel)]="comment.captcha" name="captcha"
+                                    #captcha="ngModel" type="text" class="form-control"
+                                    [ngClass]="{ 'is-invalid': commentForm.submitted && !captcha.valid }"
+                                    placeholder="至少1位，最多4位" autocomplete="off">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <captcha #captchaComp></captcha>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <captcha #captchaComp></captcha>
+                            </div>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success">提交</button>

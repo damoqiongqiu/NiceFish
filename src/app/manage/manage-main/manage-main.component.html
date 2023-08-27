@@ -1,20 +1,20 @@
-<div class="container" [@flyIn]="'active'">
+<div class="" [@flyIn]="'active'">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-10">
             <div class="mng-main-container">
                 <router-outlet></router-outlet>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="list-group">
+        <div class="col-md-2">
+            <div class="list-group mb-3">
                 <a routerLink="chart" class="list-group-item">统计图表</a>
             </div>
-            <div class="list-group">
+            <div class="list-group mb-3">
                 <a routerLink="post-table/page/1" class="list-group-item">文章管理</a>
                 <a routerLink="comment-table/page/1" class="list-group-item">评论管理</a>
                 <a routerLink="profile/{{currentUser.userId}}" class="list-group-item">个人资料</a>
             </div>
-            <div class="list-group">
+            <div class="list-group mb-3">
                 <a *ngFor="let menu of menuList" routerLink="{{menu.url}}"
                     class="list-group-item">{{menu.componentName}}</a>
             </div>

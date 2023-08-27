@@ -1,21 +1,26 @@
-$navbarBgColor:#04091e;
-$navbarBgHoverColor:#303d47;
+$navbarBgColor: #04091e;
+$navbarBgHoverColor: #303d47;
+
 .main-nav {
     background: $navbarBgColor;
     height: 50px;
     min-height: 50px;
     padding: 0;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
+
     .navbar-toggle {
         .icon-bar {
             background-color: #fff;
         }
     }
+
     .navbar-collapse {
         background: $navbarBgColor;
+
         li>a {
             color: #fff;
         }
+
         li.active,
         li>a:hover,
         li>a:focus,
@@ -26,24 +31,31 @@ $navbarBgHoverColor:#303d47;
             background-color: $navbarBgHoverColor;
         }
     }
+
     .navbar-brand-my {
         color: #fff;
         line-height: 50px;
-        padding: 0 15px 0 0;
+        padding: 0;
+        margin: 0;
         text-align: left;
-        vertical-align: middle;
+
+        img {
+            width: 50px;
+        }
     }
 }
 
 .main-container {
     min-height: 1024px;
-    padding: 70px 0 20px 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .footer {
     padding: 30px 0px;
     background: $navbarBgColor;
     color: #fff;
+
     a {
         color: #fff;
     }

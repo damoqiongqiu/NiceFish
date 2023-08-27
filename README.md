@@ -16,13 +16,16 @@ NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离�
 
 ## 1.主要依赖
 
-- Angular 15.2.4
-- PrimeNG 15.3.0
-- Bootstrap 3.4.1
-- echarts 5.4.2
-- ngx-echarts 15.0.3
-- ckeditor5-angular 5.2.0
-- font-awesome 4.7.0
+| 名称              | 版本   | 描述                                 |
+| ----------------- | ------ | ------------------------------------ |
+| Angular           | 16.2.0 | Angular 核心库。                     |
+| PrimeNG           | 16.2.0 | 开源组件库。                         |
+| Bootstrap         | 5.2.3  | 响应式布局。                         |
+| ngx-bootstrap     | 11.0.2 | 基于 Bootstrap 的开源组件库。        |
+| echarts           | 5.4.2  | 来自百度的图形库。                   |
+| ngx-echarts       | 15.0.3 | 基于 echarts 封装的 Angular 组件库。 |
+| ckeditor5-angular | 5.2.0  | 富文本编辑器。                       |
+| font-awesome      | 4.7.0  | 开源图标库。                         |
 
 **注意：为了防止出现 NodeJS 模块兼容性问题，本项目在 package.json 中锁定了所有 Node 模块版本。如有需要，您可以自己测试兼容版本号（不建议这样做，因为会消耗掉大量的时间）。**
 
