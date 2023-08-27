@@ -2,20 +2,22 @@
 @create by hbxyxuxixiaodong，bootstrap样式重置
 */
 
-$buttonPrimaryBgColor:#f6214b;
-$buttonPrimaryHoverColor:#f6214b;
+$buttonPrimaryBgColor: #f6214b;
+$buttonPrimaryHoverColor: #f6214b;
 $buttonBgColor: #04091e;
 $buttonHoverBgColor: #303d47;
 $buttondefaultBgColor: #04091e;
 $buttondefaultHoverBgColor: #303d47;
-$checkboxBorderColor:#757575;
+$checkboxBorderColor: #757575;
 $buttonTextColor: #fff;
 $formBgColor: #fff;
 $buttonMarginRight: 1rem;
-$textColor:#666;
+$textColor: #666;
+
 .btn {
     &:focus {
         outline: none;
+
         &:active {
             outline: none;
         }
@@ -37,13 +39,16 @@ $textColor:#666;
 .btn.btn-primary {
     background-color: $buttonPrimaryBgColor;
     border-color: $buttonPrimaryBgColor;
+
     &:focus {
         outline: 0;
     }
+
     &:hover {
         background-color: $buttonPrimaryBgColor;
         border-color: $buttonPrimaryBgColor;
     }
+
     &:active {
         outline: none;
         background-color: darken($buttonPrimaryBgColor, 5%);
@@ -51,17 +56,20 @@ $textColor:#666;
     }
 }
 
-.btn.btn-default {
+.btn.btn-secondary {
     background-color: $buttondefaultBgColor;
     border-color: $buttondefaultBgColor;
     color: $buttonTextColor;
+
     &:focus {
         outline: 0;
     }
+
     &:hover {
         background-color: $buttondefaultHoverBgColor;
         border-color: $buttondefaultHoverBgColor;
     }
+
     &:active {
         outline: none;
         color: $buttonTextColor;
@@ -88,27 +96,32 @@ $textColor:#666;
 
 a {
     color: $buttonBgColor;
+
     &:hover {
         color: darken($buttonBgColor, 5%);
     }
+
     &.text-danger {
         color: #cb4a1c;
+
         &:hover {
-            color: darken( #cb4a1c, 5%)
+            color: darken(#cb4a1c, 5%)
         }
     }
+
     &.list-group-item {
         color: $textColor;
     }
 }
 
-.panel-default>.panel-heading {
+.panel-default>.card-header {
     color: $textColor;
 }
 
 //primeng and customtable style
-$linkColor:#f6214b;
-$linkHoverBgColor:#e8e8e8;
+$linkColor: #f6214b;
+$linkHoverBgColor: #e8e8e8;
+
 @mixin text-center {
     text-align: center;
 }
@@ -118,6 +131,7 @@ body {
         margin: 0;
         @include text-center;
         padding: .125em;
+
         .ui-paginator-pages {
             .ui-paginator-page {
                 padding: 0;
@@ -125,18 +139,22 @@ body {
                 color: $linkColor;
                 transition: background-color 0.3s;
                 border-radius: 0;
+
                 &:hover.ui-state-active {
                     background-color: $linkColor;
                 }
+
                 &:focus {
                     outline: 0;
                 }
             }
+
             .ui-state-active {
                 color: $buttonTextColor;
                 background-color: $linkColor;
             }
         }
+
         .ui-paginator-first,
         .ui-paginator-prev,
         .ui-paginator-next,
@@ -147,6 +165,7 @@ body {
             min-width: 2em;
             padding: 0.5em 0.5em;
             vertical-align: middle;
+
             &:focus {
                 outline: 0;
             }
@@ -173,9 +192,11 @@ body .ui-datatable thead th {
         background-color: $linkColor;
         border-color: $linkColor;
     }
+
     &:focus {
         outline: 0;
     }
+
     &.ui-state-active {
         background-color: $linkColor;
         border-color: $linkColor;
@@ -208,6 +229,7 @@ body .ui-chkbox .ui-chkbox-box.ui-state-active {
     thead th {
         @include text-center
     }
+
     tbody td {
         @include text-center
     }
