@@ -7,7 +7,19 @@
 <h1 align="center">NiceFish</h1>
 
 <p align="left">
-NiceFish is a series of projects aimed at demonstrating the development and deployment model of front-end and back-end separation. There are three front-end versions: browser environment, mobile environment, and Electron environment; and two back-end versions: SpringBoot version and SpringCloud version.
+NiceFish is a series of projects that implements a front-end and back-end separation development and deployment model.
+
+The front end has 3 versions:
+
+- Browser environment
+- Mobile environment
+- Electron environment
+
+The server has 2 versions:
+
+- SpringBoot version (implements RBAC access control based on Apache Shiro)
+- SpringCloud version
+
 </p>
 
 <p>
