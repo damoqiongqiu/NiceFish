@@ -7,7 +7,19 @@
 <h1 align="center">NiceFish</h1>
 
 <p align="left">
-NiceFish（美人鱼） 是一个系列项目，目标是示范前后端分离的开发+部署模式。前端有3个版本：浏览器环境、移动端环境、Electron 环境；后端有2个版本：SpringBoot 版本和 SpringCloud 版本。
+NiceFish（美人鱼） 是一个系列项目，实现了前后端分离的开发+部署模式。
+
+前端有 3 个版本：
+
+- 浏览器环境
+- 移动端环境
+- Electron 环境
+
+服务端有 2 个版本：
+
+- SpringBoot 版本（已实现基于 Apache Shiro 的 RBAC 权限控制）
+- SpringCloud 版本
+
 </p>
 
 <p>
