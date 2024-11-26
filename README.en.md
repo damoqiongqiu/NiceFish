@@ -196,3 +196,5 @@ To use webpack-bundle-analyzer, follow these steps:
 MIT
 
 (Supplementary statement: You are free to use this project, but I am not responsible for any losses resulting from your use of this project.)
+
+**(The author of this project is currently seeking a new job opportunity. If you have a good opportunity, please contact me on WeChat: lanxinshuma.)**
